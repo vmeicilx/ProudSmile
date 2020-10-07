@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ProudSmile"
+    }
+  },
+  "defaultProject": "ProudSmile",
+  "cli": {
+    "analytics": false
+  }
 }

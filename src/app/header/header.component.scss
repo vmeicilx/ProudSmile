@@ -1,0 +1,40 @@
+.header {
+  min-height: 13vh;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  margin: 1vh 0;
+}
+
+.logo svg {
+  cursor: pointer;
+  max-height: 100%;
+}
+
+.menuContainer {
+  margin: 1vh 0;
+}
+
+.smallMenu {
+  flex: 1;
+  flex-direction: column;
+}
+
+.bigMenu {
+}
+
+.bigMenuItem {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.bigMenuItem:focus {
+  outline: none;
+}

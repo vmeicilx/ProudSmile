@@ -1,0 +1,36 @@
+.homePage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.firstSection {
+  background: #f99573;
+}
+
+.firstSection img {
+  max-width: 100%;
+  display: block;
+  margin-right: 4vw;
+}
+
+.videoSection {
+  background: lightskyblue;
+  height: 824px;
+  width: 500px;
+}
+
+.videoSection video {
+  width: 500px;
+}
+
+.homePageText {
+  position: absolute;
+  top: 36vh;
+  left: 15vw;
+}
+
+.homePageText svg {
+  max-width: 70%;
+}
