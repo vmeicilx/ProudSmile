@@ -1,7 +1,8 @@
-<div fxLayout="column" [ngClass]="'mainPage'">
-  <app-header></app-header>
-  <app-home-page></app-home-page>
-  <app-footer></app-footer>
-</div>
+<scrollbar class="scrollbar">
+  <div fxLayout="column" [ngClass]="'mainPage'">
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </div>
+</scrollbar>
 
-<router-outlet></router-outlet>

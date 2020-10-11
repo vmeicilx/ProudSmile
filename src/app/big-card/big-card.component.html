@@ -1,0 +1,21 @@
+<div fxLayout={{layoutDirection}} fxLayoutAlign="center" fxLayoutGap="6vw">
+    <div class="imageContainer">
+        <img src={{imageUrl}}>
+    </div>
+    <div fxLayout="column" fxLayoutGap="6vh" class="textContainer">
+        <div fxLayout="column" class="number" fxFlexOffset="-12vh">
+            <div>
+                <img src={{number}}>
+            </div>
+        </div>
+        <div class="title"><p [innerHTML]="title"></p></div>
+        <div class="text"><p>{{text}}</p></div>
+        <div fxLayout fxLayoutAlign=" center" class="link">
+            <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+            <div>
+                <img src="../../assets/homePage/arrow.png">
+            </div>
+        </div>
+    </div>
+</div>
+    

@@ -1,0 +1,15 @@
+<div fxLayout="column" fxLayoutGap="6vh" class="textCardContainer">
+  <div fxLayout fxLayoutAlign=" center" class="lineAndText">
+    <div class="line"></div>
+    <p>{{ index }}</p>
+  </div>
+  <div class="title"><p [innerHTML]="title"> </p></div>
+  <div class="text">
+    <p>{{ text }}</p>
+  </div>
+  <div fxLayout fxLayoutAlign=" center" class="link">
+    <button>
+      <p>READ MORE</p>
+    </button>
+  </div>
+</div>

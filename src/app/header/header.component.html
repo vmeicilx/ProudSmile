@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutGap="4vw" [ngClass]="'header'">
-  <div fxFlex="0 0 auto" fxLayout fxLayoutAlign=" center" [ngClass]="'logo'">
+  <div fxFlex="0 0 auto" fxLayout fxLayoutAlign=" center" [ngClass]="'logo'" (click)="onLogoClick()">
     <svg
       width="107px"
       height="52px"
@@ -37,16 +37,20 @@
     fxLayoutAlign="center end"
     [ngClass]="'menuContainer'"
   >
-    <div [ngClass]="'smallMenu'"></div>
-    <div [ngClass]="'bigMenu'">
-      <button [ngClass]="'bigMenuItem'">Why Proud Smile</button>
-      <button [ngClass]="'bigMenuItem'">Health</button>
-      <button [ngClass]="'bigMenuItem'">Aesthetics</button>
-      <button [ngClass]="'bigMenuItem'">Implants</button>
-      <button [ngClass]="'bigMenuItem'">Smileasy Payment Plan</button>
-      <button [ngClass]="'bigMenuItem'">Specials</button>
-      <button [ngClass]="'bigMenuItem'">Contact</button>
-      <button [ngClass]="'bigMenuItem'">Instant Online Booking</button>
+    <div fxFlex fxLayout="row" fxLayoutGap="2vw" [ngClass]="'smallMenu'">
+      <button [ngClass]="'smallMenuItem'">22 Bundal Road Bundall QLD 4271</button>
+      <button [ngClass]="'smallMenuItem'">Today 8:30 - 17:30 Tuesday 8:30 - 19:00</button>
+      <button [ngClass]="'smallMenuItem'">AU patients - Free Phone 07 5570 3311</button>
+    </div>
+    <div fxFlex fxLayout="row wrap" fxLayoutGap="2vw" [ngClass]="'bigMenu'">
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Why Proud Smile</button>
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Health</button>
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Aesthetics</button>
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Implants</button>
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Smileasy Payment Plan</button>
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Specials</button>
+      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Contact</button>
+      <button [ngClass]="'bigMenuItem'" id="onlineBooking" (click)="onMenuItemClick('why-proud-smile-component')">Instant Online Booking</button>
     </div>
   </div>
 </div>

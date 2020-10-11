@@ -1,20 +1,26 @@
+
 .header {
   min-height: 13vh;
-  position: relative;
+  position: absolute;
+  width: 100%;
   z-index: 1;
+  padding: 0 4vw;
 }
 
 .logo {
   margin: 1vh 0;
+  max-width: 100%;
 }
 
 .logo svg {
   cursor: pointer;
-  max-height: 100%;
+  max-height: 20vh;
+  max-width: 15vw;
 }
 
 .menuContainer {
   margin: 1vh 0;
+  max-width: 100%;
 }
 
 .smallMenu {
@@ -30,11 +36,32 @@
   background: transparent;
   color: white;
   font-size: 16px;
-  font-family: Roboto;
+  font-family: robotoMedium;
   font-weight: 400;
   cursor: pointer;
 }
 
-.bigMenuItem:focus {
+.smallMenuItem {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 14px;
+  font-family: robotoMedium;
+  cursor: pointer;
+}
+
+.bigMenuItem:focus, .smallMenuItem:focus {
   outline: none;
+}
+
+@media screen and (max-width:360px){
+  .bigMenuItem{
+      font-size:10px;
+  }  
+}
+
+#onlineBooking {
+  background: #015C50;
+  border-radius: 24px;
+  padding:0 24px;
 }
