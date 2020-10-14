@@ -1,9 +1,6 @@
 
 .header {
   min-height: 13vh;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
   padding: 0 4vw;
 }
 
@@ -16,6 +13,14 @@
   cursor: pointer;
   max-height: 20vh;
   max-width: 15vw;
+}
+
+.logo svg .black {
+  fill: black
+}
+
+.logo svg .white {
+  fill: white
 }
 
 .menuContainer {
@@ -34,19 +39,22 @@
 .bigMenuItem {
   border: 0;
   background: transparent;
-  color: white;
   font-size: 16px;
-  font-family: robotoMedium;
-  font-weight: 400;
+  color: #565960;
+  font-family: "robotoMedium";
   cursor: pointer;
+}
+
+.smallMenuItem.secondStyle, .bigMenuItem.secondStyle {
+  color:white;
 }
 
 .smallMenuItem {
   border: 0;
   background: transparent;
-  color: white;
   font-size: 14px;
-  font-family: robotoMedium;
+  color: #565960;
+  font-family: "robotoMedium";
   cursor: pointer;
 }
 
@@ -62,6 +70,7 @@
 
 #onlineBooking {
   background: #015C50;
+  color: white;
   border-radius: 24px;
   padding:0 24px;
 }

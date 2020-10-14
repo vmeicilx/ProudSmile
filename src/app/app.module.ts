@@ -7,7 +7,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SmallCardComponent } from './small-card/small-card.component';
 import { ScrollToPlayDirective } from './scroll-to-play.directive';
@@ -18,8 +17,14 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { BigCardComponent } from './big-card/big-card.component';
 import { TextCardComponent } from './text-card/text-card.component';
 import { SmileCardComponent } from './smile-card/smile-card.component';
-import { WhyProudSmileComponent } from './why-proud-smile/why-proud-smile.component';
+import { WhyProudSmileComponent } from './pages/why-proud-smile/why-proud-smile.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { DemoMaterialModule } from './material-module';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ImageTextComponent } from './cards/image-text/image-text.component';
+import { HealthComponent } from './pages/health/health.component';
+import { AestheticsComponent } from './pages/aesthetics/aesthetics.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +41,19 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
     SmileCardComponent,
     WhyProudSmileComponent,
     ComingSoonComponent,
+    ImageTextComponent,
+    HealthComponent,
+    AestheticsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     FlexLayoutModule,
-    ScrollbarModule
+    ScrollbarModule,
+    DemoMaterialModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
   ],
   providers: [NG_EVENT_PLUGINS],
   bootstrap: [AppComponent],

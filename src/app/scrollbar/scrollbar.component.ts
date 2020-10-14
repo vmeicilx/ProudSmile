@@ -70,6 +70,9 @@ import {
       // just to trigger change detection
       //var scrollingVideo = document.querySelector("#scrollingVideo");
       //scrollingVideo.dispatchEvent(new CustomEvent('onCustomScroll', {detail: {position: this.verticalPosition}}));
+
+      //var homePage = document.querySelector("#homePageId");
+      //homePage.dispatchEvent(new CustomEvent('onCustomScroll'));
     }
   
     onVertical(scrollTop: number) {

@@ -8,6 +8,13 @@ import { AfterViewChecked, Component } from '@angular/core';
 export class AppComponent implements AfterViewChecked{
   title = 'ProudSmile';
 
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number;
+  color: string;
+
   ngAfterViewChecked() {
   }
 }

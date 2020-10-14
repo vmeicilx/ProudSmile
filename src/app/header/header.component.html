@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" fxLayoutGap="4vw" [ngClass]="'header'">
+<div fxLayout="row wrap" fxLayoutGap="4vw" [ngClass]="'header'" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">
   <div fxFlex="0 0 auto" fxLayout fxLayoutAlign=" center" [ngClass]="'logo'" (click)="onLogoClick()">
     <svg
       width="107px"
@@ -13,11 +13,11 @@
         id="Design"
         stroke="none"
         stroke-width="1"
-        fill="none"
         fill-rule="evenodd"
       >
         <g
           id="Homepage"
+          class="black"
           transform="translate(-83.000000, -104.000000)"
           fill="#F5F5F5"
         >
@@ -38,18 +38,18 @@
     [ngClass]="'menuContainer'"
   >
     <div fxFlex fxLayout="row" fxLayoutGap="2vw" [ngClass]="'smallMenu'">
-      <button [ngClass]="'smallMenuItem'">22 Bundal Road Bundall QLD 4271</button>
-      <button [ngClass]="'smallMenuItem'">Today 8:30 - 17:30 Tuesday 8:30 - 19:00</button>
-      <button [ngClass]="'smallMenuItem'">AU patients - Free Phone 07 5570 3311</button>
+      <button id="smallMenuItem1" [ngClass]="'smallMenuItem'">22 Bundal Road Bundall QLD 4271</button>
+      <button id="smallMenuItem2" [ngClass]="'smallMenuItem'">Today 8:30 - 17:30 Tuesday 8:30 - 19:00</button>
+      <button id="smallMenuItem3" [ngClass]="'smallMenuItem'">AU patients - Free Phone 07 5570 3311</button>
     </div>
-    <div fxFlex fxLayout="row wrap" fxLayoutGap="2vw" [ngClass]="'bigMenu'">
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Why Proud Smile</button>
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Health</button>
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Aesthetics</button>
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Implants</button>
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Smileasy Payment Plan</button>
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Specials</button>
-      <button [ngClass]="'bigMenuItem'" (click)="onMenuItemClick('why-proud-smile-component')">Contact</button>
+    <div id="BigMenuItems" fxFlex fxLayout="row wrap" fxLayoutGap="2vw" [ngClass]="'bigMenu'">
+      <button [ngClass]="'bigMenuItem'" id="menuItem1" (click)="onMenuItemClick('why-proud-smile-component')">Why Proud Smile</button>
+      <button [ngClass]="'bigMenuItem'" id="menuItem2" (click)="onMenuItemClick('health-component')">Health</button>
+      <button [ngClass]="'bigMenuItem'" id="menuItem3" (click)="onMenuItemClick('aesthetics-component')">Aesthetics</button>
+      <button [ngClass]="'bigMenuItem'" id="menuItem4" (click)="onMenuItemClick('why-proud-smile-component')">Implants</button>
+      <button [ngClass]="'bigMenuItem'" id="menuItem5" (click)="onMenuItemClick('why-proud-smile-component')">Smileasy Payment Plan</button>
+      <button [ngClass]="'bigMenuItem'" id="menuItem6" (click)="onMenuItemClick('why-proud-smile-component')">Specials</button>
+      <button [ngClass]="'bigMenuItem'" id="menuItem7" (click)="onMenuItemClick('why-proud-smile-component')">Contact</button>
       <button [ngClass]="'bigMenuItem'" id="onlineBooking" (click)="onMenuItemClick('why-proud-smile-component')">Instant Online Booking</button>
     </div>
   </div>

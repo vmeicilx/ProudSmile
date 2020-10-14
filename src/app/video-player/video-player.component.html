@@ -4,7 +4,7 @@
     </video>
     <!-- <img src="../../assets/homePage/videoPlay.png" (click)="playVideo($event)"> -->
     <div fxLayout fxLayoutAlign=" center" [ngClass]="'playButton'" (click)="playVideo($event)">
-        <div>
+        <div matRipple matRippleUnbounded=true matRippleColor="gray" class="example-ripple-container mat-elevation-z4">
             <img src="../../assets/homePage/videoPlay.png">
         </div>
         <div [ngClass]="'playButtonText'">

@@ -11,9 +11,17 @@ export class VideoPlayerComponent implements OnInit {
   
   @Input() text: string;
 
+  centered = false;
+  disabled = false;
+  unbounded = false;
+
+  radius: number = 300;
+  color: string = "blue";
+
   constructor(el: ElementRef, renderer: Renderer2) {
     this.elRef = el;
     this.renderer = renderer;
+    this.color="red";
   }
 
   ngOnInit(): void {
