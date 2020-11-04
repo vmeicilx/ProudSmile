@@ -1,0 +1,23 @@
+:host {
+  height: 100%;
+  .imageTextCard {
+    height: 100%;
+    .textContainer {
+      width: 5vw;
+
+      p {
+        font-family: "robotoMedium";
+        font-size: 1.65vmin;
+        color: #55311b;
+        line-height: 2vmin;
+        max-width: 7.5vw;
+        margin-bottom: 0;
+      }
+    }
+
+    img {
+      max-width: 9.4vw;
+      display: block;
+    }
+  }
+}

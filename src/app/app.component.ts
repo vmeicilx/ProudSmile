@@ -1,11 +1,12 @@
-import { AfterViewChecked, Component } from '@angular/core';
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewChecked{
+export class AppComponent implements AfterViewChecked, OnInit{
   title = 'ProudSmile';
 
   centered = false;
@@ -15,6 +16,11 @@ export class AppComponent implements AfterViewChecked{
   radius: number;
   color: string;
 
-  ngAfterViewChecked() {
+  constructor() { }
+  ngAfterViewChecked(): void {
   }
+
+  ngOnInit() {
+  }
+
 }

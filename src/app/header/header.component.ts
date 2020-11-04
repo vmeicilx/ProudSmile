@@ -1,93 +1,109 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from "@angular/core";
+import {  NavigationEnd, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
   private elRef: ElementRef;
   private renderer: Renderer2;
+  styleStatus: boolean = true;
+  currentRoute: string;
+  isMouseOn: boolean = false;
+  isWhyProudSmile: boolean = false;
+
   constructor(private router: Router, el: ElementRef, renderer: Renderer2) {
-    
     this.elRef = el;
     this.renderer = renderer;
+
+    router.events.subscribe((val) => {
+      // see also 
+      if(val instanceof NavigationEnd)
+      {
+        this.styleStatus = val.url === "/home-page-component" || val.url === "/";
+        console.log("6", val.url);
+        this.isWhyProudSmile = val.url === "/proud-smile-experience-component" || val.url === "/who-we-are-component" || val.url === "/dental-clinic-component";
+
+        if(val.url === "/proud-smile-experience-component")
+        {
+          for (var i = 0; i < this.elRef.nativeElement.children[2].children[0].children.length; i++) {
+            this.elRef.nativeElement.children[2].children[0].children[i].classList.remove('active');
+          }
+          this.elRef.nativeElement.children[2].children[0].children[0].classList.add('active');
+        }
+        if(val.url === "/who-we-are-component")
+        {
+          for (var i = 0; i < this.elRef.nativeElement.children[2].children[0].children.length; i++) {
+            this.elRef.nativeElement.children[2].children[0].children[i].classList.remove('active');
+          }
+          this.elRef.nativeElement.children[2].children[0].children[1].classList.add('active');
+        }
+        if(val.url === "/dental-clinic-component")
+        {
+          for (var i = 0; i < this.elRef.nativeElement.children[2].children[0].children.length; i++) {
+            this.elRef.nativeElement.children[2].children[0].children[i].classList.remove('active');
+          }
+          this.elRef.nativeElement.children[2].children[0].children[2].classList.add('active');
+        }
+      }
+  });
   }
 
   ngOnInit(): void {}
 
   onLogoClick() {
-    this.router.navigate(['/', 'home-page-component']);
+    this.styleStatus = true;
+    console.log("1", this.styleStatus);
+    this.router.navigate(["/", "home-page-component"]);
+    window.scrollTo(0, 0)
   }
 
   onMenuItemClick(item: string) {
-    this.router.navigate(['/', item]);
+    this.router.navigate(["/", item]);
+    this.styleStatus = window.pageYOffset <= 5 && item === "home-page-component";
+    console.log("2", this.styleStatus);
+    window.scrollTo(0, 0)
   }
 
-  mouseEnter(){
-    //this.removeSecondStyle();
- }
+  @HostListener("window:scroll", ["$event"])
+  onScroll(event) {
+    this.styleStatus = window.pageYOffset <= 5 && this.router.url === "/home-page-component" && !this.isMouseOn;
+    console.log("3", this.styleStatus);
+  }
 
- mouseLeave(){
-  //this.setSecondStyle();
- }
+  mouseEnter() {
+    this.styleStatus = false;
+    console.log("4", this.styleStatus);
+    this.isMouseOn = true;
+  }
 
- setSecondStyle(){
-   
-  var header = this.elRef.nativeElement;
-  header.classList.add("secondStyle");
-  var logo = header.querySelector('#Homepage');
-  //var bigMenuItems = header.querySelector('#BigMenuItems');
-  var menuItem1 = header.querySelector('#menuItem1');
-  menuItem1.classList.add("secondStyle");
-  var menuItem2 = header.querySelector('#menuItem2');
-  menuItem2.classList.add("secondStyle");
-  var menuItem3 = header.querySelector('#menuItem3');
-  menuItem3.classList.add("secondStyle");
-  var menuItem4 = header.querySelector('#menuItem4');
-  menuItem4.classList.add("secondStyle");
-  var menuItem5 = header.querySelector('#menuItem5');
-  menuItem5.classList.add("secondStyle");
-  var menuItem6 = header.querySelector('#menuItem6');
-  menuItem6.classList.add("secondStyle");
-  var menuItem7 = header.querySelector('#menuItem7');
-  menuItem7.classList.add("secondStyle");
-  var smallMenuItem1 = header.querySelector('#smallMenuItem1');
-  smallMenuItem1.classList.add("secondStyle");
-  var smallMenuItem2 = header.querySelector('#smallMenuItem2');
-  smallMenuItem2.classList.add("secondStyle");
-  var smallMenuItem3 = header.querySelector('#smallMenuItem3');
-  smallMenuItem3.classList.add("secondStyle");
-  logo.style.fill = "white";
- }
- 
- removeSecondStyle(){
-   
-  var header = this.elRef.nativeElement;
-  header.classList.remove("secondStyle");
-  var logo = header.querySelector('#Homepage');
-  //var bigMenuItems = header.querySelector('#BigMenuItems');
-  var menuItem1 = header.querySelector('#menuItem1');
-  menuItem1.classList.remove("secondStyle");
-  var menuItem2 = header.querySelector('#menuItem2');
-  menuItem2.classList.remove("secondStyle");
-  var menuItem3 = header.querySelector('#menuItem3');
-  menuItem3.classList.remove("secondStyle");
-  var menuItem4 = header.querySelector('#menuItem4');
-  menuItem4.classList.remove("secondStyle");
-  var menuItem5 = header.querySelector('#menuItem5');
-  menuItem5.classList.remove("secondStyle");
-  var menuItem6 = header.querySelector('#menuItem6');
-  menuItem6.classList.remove("secondStyle");
-  var menuItem7 = header.querySelector('#menuItem7');
-  menuItem7.classList.remove("secondStyle");
-  var smallMenuItem1 = header.querySelector('#smallMenuItem1');
-  smallMenuItem1.classList.remove("secondStyle");
-  var smallMenuItem2 = header.querySelector('#smallMenuItem2');
-  smallMenuItem2.classList.remove("secondStyle");
-  var smallMenuItem3 = header.querySelector('#smallMenuItem3');
-  smallMenuItem3.classList.remove("secondStyle");
-  logo.style.fill = "black";
- }
+  mouseLeave() {
+    this.isMouseOn = false;
+    this.styleStatus = window.pageYOffset <= 5 && this.router.url === "/home-page-component";
+    console.log("5", this.styleStatus);
+  }
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
+
+  onClick(event, item: string)
+  {
+    for (var i = 0; i < this.elRef.nativeElement.children[2].children[0].children.length; i++) {
+      this.elRef.nativeElement.children[2].children[0].children[i].classList.remove('active');
+    }
+    var target = event.currentTarget;
+    target.classList.add("active");
+    
+    this.router.navigate(["/", item]);
+    window.scrollTo(0, 0)
+  }
 }

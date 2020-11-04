@@ -1,4 +1,7 @@
-.mainPage {
+:host {
+  .mainPage {
+    position: relative;
+  }
 }
 
 .scrollbar {
@@ -9,20 +12,4 @@
 
 .horizontal p {
   width: 1200px;
-}
-
-.both p {
-  width: 500px;
-}
-
-
-app-header {
-  position: sticky;
-  top:0;
-  z-index: 1;
-  background: #F5F5F5;
-}
-
-app-footer {
-  background-color: rgba(173, 175, 178, 0.05);
 }

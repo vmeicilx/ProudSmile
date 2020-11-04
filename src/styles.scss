@@ -1,33 +1,5 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-//@import '~@angular/material/theming';
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-//@include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-//$ProudSmile-primary: mat-palette($mat-indigo);
-//$ProudSmile-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-//$ProudSmile-warn: mat-palette($mat-red);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-// $ProudSmile-theme: mat-light-theme((
-//   color: (
-//     primary: $ProudSmile-primary,
-//     accent: $ProudSmile-accent,
-//     warn: $ProudSmile-warn,
-//   )
-// ));
-
+@import '~@angular/material/theming';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 @font-face {
   font-family: robotoBold;
@@ -45,6 +17,11 @@
 }
 
 @font-face {
+  font-family: robotoThin;
+  src: url(assets/fonts/Roboto-Thin.ttf) format("opentype");
+}
+
+@font-face {
   font-family: libreItalic;
   src: url(assets/fonts/LibreBaskerville-Italic.ttf) format("opentype");
 }
@@ -57,12 +34,50 @@
   src: url(assets/fonts/LibreBaskerville-Bold.ttf) format("opentype");
 }
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-// @include angular-material-theme($ProudSmile-theme);
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-family: "robotoRegular";
+}
 
-/* You can add global styles to this file, and also import other style files */
+* {
+  // cursor: default;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
 
-html, body { height: 100%; overflow: hidden;}
-body { margin: 0; }
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+.ng-image-slider img {
+  border-radius:0 !important;
+}
+
+@media only screen and (min-width: 1201px){
+  html, body {
+    font-size:24px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px){
+  html, body {
+    font-size:20px;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px){
+  html, body {
+    font-size:16px;
+  }
+}
+
+@media only screen and (max-width: 299px), (max-height: 99px){
+  html, body {
+    display: none;
+  }
+}

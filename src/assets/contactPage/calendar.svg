@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="Icons_Calendar" data-name="Icons/Calendar" opacity="0.5">
+    <path id="Combined_Shape" data-name="Combined Shape" d="M2.2,20A2.109,2.109,0,0,1,0,18V2A2.109,2.109,0,0,1,2.2,0H19.8A2.109,2.109,0,0,1,22,2V18a2.109,2.109,0,0,1-2.2,2ZM1,18a1.061,1.061,0,0,0,1.112,1H19.889A1.061,1.061,0,0,0,21,18V5H1ZM19.889,1h0ZM12,17H3V7H19v7H16v3Zm-2-1h2V14H10ZM7,16H9V14H7ZM4,16H6V14H4Zm12-3h2V11H16Zm-3,0h2V11H13Zm-3,0h2V11H10ZM7,13H9V11H7ZM4,13H6V11H4Zm12-3h2V8H16Zm-3,0h2V8H13Zm-3,0h2V8H10ZM7,10H9V8H7ZM4,10H6V8H4Z" transform="translate(1 2)" fill="#fff"/>
+  </g>
+</svg>

@@ -1,7 +1,60 @@
+:host {
+  background: #f5f5f5;
+
+  .firstSection {
+    padding: 22vh 24.5vw 22vh 15.5vw;
+    .it {
+      font-family: "libreItalic";
+    }
+    .textContainer {
+      max-width: 29vw;
+    }
+    app-button {
+      margin-top: 4.1vh;
+    }
+    .titleText p {
+      color: #565960;
+      font-family: "libreRegular";
+      font-size: 2.7rem;
+      line-height: 3rem;
+      margin: 0;
+    }
+    .mainText {
+      margin-top: 4.1vh;
+      max-width: 25vw;
+      p {
+        color: #565960;
+        font-family: "robotoRegular";
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 0;
+      }
+    }
+    .lineAndText {
+      opacity: 0.5;
+      margin-bottom: 2vh;
+      .line {
+        border-top: 1px solid #565960;
+        opacity: 0.5;
+        width: 2vw;
+      }
+      p {
+        line-height: 0.91rem;
+        margin-top: 0;
+        margin-left: 1vw;
+        margin-bottom: 0;
+        color: #565960;
+        font-size: 0.66rem;
+        font-family: "robotoMedium";
+      }
+    }
+  }
+}
+
 .horizontalLine {
   width: 100%;
   height: 1px;
-  background-color: rgba(173, 175, 178, 0.3);
+  background-color: #CCCCCC;
 }
 
 .footerMenu {
@@ -20,78 +73,184 @@
 
 .footerCopyright {
   width: 100%;
-  margin-top: 4vh;
-  margin-bottom: 27vh;
+  margin: 10vh 0;
+
+  p {
+    margin: 0;
+  }
 }
 
 .copyrightMainText {
-    width: 35vw;
-    font-family: "robotoRegular";
-    font-size:1.5vmin;
-    line-height: 2.2vmin;
-    opacity: 0.4;
+  width: 33.5vw;
+  font-size: 0.5rem;
+  line-height: 0.7rem;
+  opacity: 0.4;
 }
 
 .copyrightSecondaryText {
-    width: 10vw;
-    margin-left: 6vw;
-    text-align: end;
-    font-family: "robotoMedium";
-    font-size: 1.3vmin;
-    line-height: 2vmin;
-    opacity: 0.2;
+  width: 11vw;
+  margin-left: 10vw;
+  text-align: end;
+  font-family: "robotoBold";
+  font-size: 0.5rem;
+  line-height: 0.66rem;
+  opacity: 0.3;
+  color: #565960;
 }
 
-.footerCopyrightFirst {
-}
+.copyrightIcon {
+  margin-right: 2.5vw;
 
-.copyrightIcon
-{
-    width:24px;
-    height:24px;
-    margin-right:2vw;
-    margin-top:2vh;
+  svg {
+    opacity: 0.9;
+    width: 62px;
+    height: 30px;
+  }
 }
 
 .copyrightMenu {
-    margin-top: 4vh;
-    font-family: "robotoMedium";
-    font-size: 1.3vmin;
-    line-height: 2vmin;
-    opacity: 0.3;
+  margin-top: 4vh;
+  font-family: "robotoMedium";
+  font-size: 1.3vmin;
+  line-height: 2vmin;
+  opacity: 0.3;
+
+  a {
+    cursor: pointer;
+  }
 }
 .copyrightMenuIcons {
-    margin-top: 4vh;
+  margin-top: 4vh;
+
+  img {
+    cursor: pointer;
+  }
 }
 
 .subscribeSection {
-    width: 100%;
+  width: 100%;
+  margin-top: 10vh;
+}
+.locationSection {
+  width: 100%;
 }
 .subscribeCard {
-    width: 26vw;
+  width: 26vw;
+  margin-bottom: 5.5vh;
 }
 
-.subscribeSectionImage img{
-    display:block;
+.locationCard {
+  margin-top: 5.67vh;
+}
+
+.subscribeCardInput {
+  width: 100%;
+}
+
+.subscribeSectionImage {
+  align-self: flex-end;
+}
+
+.subscribeSectionImage img {
+  display: block;
+}
+.locationSectionImage img {
+  display: block;
 }
 
 .subscribeCardTitle {
-    font-family: "robotoBold";
-}
-.subscribeCardSubtitle {
-    font-family: "robotoRegular";
-}
+  font-size: 1rem;
+  line-height: 1.33rem;
+  color: #565960;
+  padding-bottom: 1vh;
 
-.subscribeCardTitle, .subscribeCardSubtitle {
-    font-size: 2.5vmin;
-    line-height: 4vmin;
-    color: #565960;
+  p {
+    margin-top: 0.8vh;
+    margin-bottom: 0;
+  }
+}
+.locationCardTitle {
+  max-width: 14vw;
+  font-size: 1rem;
+  line-height: 1.33rem;
+  color: #565960;
+
+  p {
+    margin-top: 0.8vh;
+    margin-bottom: 0.8vh;
+  }
 }
 
 .subscribeCardText {
-    font-family: "robotoRegular";
-    font-size: 1.65vmin;
-    line-height: 2.5vmin;
-    color: #565960;
-    opacity: 0.5;
+  font-family: "robotoRegular";
+  font-size: 1.65vmin;
+  line-height: 2.5vmin;
+  color: #565960;
+  opacity: 0.5;
+  padding-top: 1vh;
+
+  a {
+    color: unset;
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.locationCardText {
+  font-family: "robotoRegular";
+  font-size: 1.65vmin;
+  line-height: 2.5vmin;
+  color: #565960;
+
+  a {
+    color: unset;
+    cursor: pointer;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.link {
+  color: #f5701d;
+  font-family: "robotoMedium";
+}
+
+.link p {
+  color: #f5701d;
+  font-size: 0.66rem;
+  line-height: 0.91rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.link img {
+  padding-left: 8px;
+  display: block;
+  cursor: pointer;
+}
+
+.subscribeCardButtons {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 3.9vh;
+}
+
+.subscribeCheckBox {
+  margin-right: 1.5vw;
+  cursor: unset;
 }

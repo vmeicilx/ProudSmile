@@ -1,0 +1,345 @@
+:host {
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .noMargin {
+    margin-left: 0;
+  }
+
+  .firstSection {
+    background: #f99573;
+    position: relative;
+    height: 118vh;
+    .homePageImageContainer {
+      height: 100%;
+      position: relative;
+      .heroImage {
+        width: 100%;
+        img {
+          margin-left: 42vw;
+          position: absolute;
+          max-width: 100vw;
+          max-height: 120vh;
+          bottom: 0;
+        }
+      }
+      .homePageText {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 18% 49% 15% 15%;
+        svg {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+  .firstSectionBottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 22vh;
+
+    .lineText {
+      width: 100%;
+      height: 4vh;
+      color: white;
+      font-size: 1rem;
+      padding-bottom: 0.7vh;
+      p {
+        margin: 0;
+      }
+      .line {
+        text-align: center;
+        height: 1px;
+        background: white;
+        opacity: 0.5;
+      }
+    }
+
+    .smallCardsContainer {
+      width: 100%;
+      height: 18vh;
+      padding: 0 10vw;
+      padding-bottom: 0.83vh;
+    }
+  }
+
+  .aestheticsAndHealthSection {
+    height: 178vh;
+    .aesthetics {
+      background-color: #f15023;
+      width: 50vw;
+      height: 100%;
+      padding: 20.93vh 0 0 19.84vw;
+      > div {
+        max-width: 21vw;
+      }
+    }
+    .health {
+      background-color: #015c50;
+      width: 50vw;
+      height: 100%;
+      padding-left: 4.89vw;
+      padding-top: 20.93vh;
+      > div {
+        max-width: 21vw;
+      }
+    }
+    p {
+      color: white;
+      font-size: 2rem;
+      line-height: 2.66rem;
+      font-family: "libreRegular";
+    }
+    .title p {
+      font-size: 0.87rem;
+      line-height: 1.5rem;
+      font-family: "robotoRegular";
+      span {
+        opacity: 0.3;
+        font-family: "robotoThin";
+        &.middleSlash {
+          padding: 0 0.83vw;
+        }
+      }
+    }
+    .horizontalLine {
+      height: 1px;
+      background-color: white;
+      opacity: 0.5;
+      width: 100%;
+      margin: 1vh 0;
+    }
+    .link {
+      cursor: pointer;
+      padding-top: 2vh;
+      p {
+        margin: 0;
+        font-size: 0.66rem;
+        line-height: 0.87rem;
+        padding: 0 0.93vw;
+      }
+    }
+  }
+
+  .instaSection {
+    background-color: #adafb2;
+    padding: 20vh 0;
+    .instaFeed {
+      width: 100%;
+      .text {
+        padding: 6vh 15.78vw;
+        color: white;
+        font-size: 0.66rem;
+        line-height: 0.87rem;
+        font-family: "robotoRegular";
+        .rightText {
+          cursor: pointer;
+        }
+      }
+    }
+    .title {
+      position: relative;
+      margin-top: 30vh;
+      .year {
+        position: absolute;
+        top: -11vh;
+      }
+      .text {
+        z-index: 1;
+        color: white;
+        font-family: "robotoRegular";
+        font-size: 1.66rem;
+        line-height: 2.33rem;
+        max-width: 37.4vw;
+        text-align: center;
+        span {
+          font-family: "robotoMedium";
+        }
+      }
+    }
+  }
+
+  .bigCardsContainer {
+    background: #f5f5f5;
+    padding-bottom: 22vh;
+
+    .firstTitle {
+      padding-top: 22vh;
+    }
+    
+    .firstTitle p {
+      font-family: "libre";
+      font-size: 9vh;
+      max-width: 50vw;
+      color: #55311b;
+      line-height: 13vh;
+      text-align: center;
+      margin: 0;
+    }
+    
+    .firstTitle span {
+      font-family: "libreItalic";
+    }
+
+    .bigCard {
+      .imageContainer img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .textContainer {
+        width: 32vw;
+      }
+
+      .title .it {
+        font-family: "libreItalic";
+      }
+
+      .textContainer .text p {
+        font-family: "robotoRegular";
+        font-size: 32px;
+        max-width: 29vw;
+        color: #a7958a;
+        line-height: 5vh;
+        margin: 0;
+      }
+
+      .textContainer .title p {
+        font-family: "libre";
+        font-size: 7vh;
+        max-width: 25vw;
+        color: #55311b;
+        line-height: 8vh;
+        margin: 0;
+      }
+
+      .textContainer .link {
+        color: #f5701d;
+        font-family: "robotoMedium";
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .textContainer .link p {
+        color: #f5701d;
+        margin: 0;
+      }
+
+      .textContainer .link img {
+        padding-left: 8px;
+        max-width: 2vw;
+        display: block;
+      }
+    }
+
+    .title .it {
+      font-family: "libreItalic";
+    }
+  }
+}
+
+.setHeight {
+  display: block;
+  height: 2000px;
+}
+
+.viewport {
+  position: relative;
+}
+
+.scroll-container {
+}
+
+.playingVideo {
+  position: fixed;
+}
+
+#bgVideoFwd,
+#bgVideoBwd {
+  position: absolute;
+  height: 100%;
+  max-width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+  -moz-transform: translate(-50%, -50%) scale(0.8);
+  -ms-transform: translate(-50%, -50%) scale(0.8);
+  -o-transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+#bgVideoFwd {
+  opacity: 1;
+  visibility: visible;
+}
+
+#bgVideoBwd {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scrollToPlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.teamContainer {
+  background: #fff9f6;
+}
+
+.teamContainer .mainTitle .it {
+  font-family: "libreItalic";
+}
+
+.teamContainer .mainTitle p {
+  font-family: "libre";
+  font-size: 9vmin;
+  max-width: 50vw;
+  color: #55311b;
+  line-height: 13vh;
+  text-align: center;
+  margin: 0;
+}
+
+.teamContainer .subTitle p {
+  font-family: "libre";
+  font-size: 3vmin;
+  max-width: 50vw;
+  color: #55311b;
+  line-height: 5vh;
+  text-align: center;
+  margin: 2vh 0 0 0;
+}
+
+.lineAndText {
+  padding-top: 21vh;
+  margin-right: 31vh;
+}
+
+.lineAndText p {
+  margin-left: 1vw;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #a7958a;
+  font-size: 2vmin;
+}
+
+.lineAndText .line {
+  border-top: 1px solid #a7958a;
+  opacity: 0.5;
+  width: 2vw;
+}
+
+.officeContainer {
+  background: #faece9;
+}

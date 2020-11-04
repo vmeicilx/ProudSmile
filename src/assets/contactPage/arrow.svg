@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_2" data-name="Clip 2" d="M0,0H12V12H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Icons_arrow_2" data-name="Icons/arrow_2" opacity="0.5">
+    <g id="Group_3" data-name="Group 3">
+      <path id="Clip_2-2" data-name="Clip 2" d="M0,0H12V12H0Z" fill="none"/>
+      <g id="Group_3-2" data-name="Group 3" clip-path="url(#clip-path)">
+        <path id="Fill_1" data-name="Fill 1" d="M6,12a6,6,0,1,1,6-6A6.007,6.007,0,0,1,6,12ZM5.4,3.4a.773.773,0,0,0-.564.237.8.8,0,0,0,0,1.137L6.063,6,4.838,7.225A.8.8,0,1,0,5.975,8.362L7.768,6.568A.771.771,0,0,0,8.009,6a.823.823,0,0,0-.24-.568L5.975,3.638A.8.8,0,0,0,5.4,3.4Z" transform="translate(0 0)" fill="#f5f5f5"/>
+      </g>
+    </g>
+  </g>
+</svg>

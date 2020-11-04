@@ -1,0 +1,391 @@
+@import "../../../../styleSettings.scss";
+
+
+:host {
+    .lineAndText {
+      .line {
+        border-top: 1px solid #a7958a;
+        opacity: 0.5;
+        width: 2vw;
+      }
+      p {
+        line-height: 0.91rem;
+        margin-top: 0;
+        margin-left: 1vw;
+        margin-bottom: 0;
+        color: #a7958a;
+        font-size: 0.6rem;
+        font-family: "robotoMedium";
+      }
+    }
+    .titleText p {
+      color: #55311b;
+      font-family: "libreRegular";
+      font-size: 2.33rem;
+      line-height: 3rem;
+      margin: 0;
+    }
+    .mainText {
+      margin-top: 4.1vh;
+      p {
+        color: #55311b;
+        font-family: "robotoRegular";
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin: 0;
+      }
+    }
+    .textContainer {
+      max-width: 29vw;
+    }
+    .imageText {
+      > :nth-child(1) {
+        margin: 2vh 3.2vw;
+      }
+      > :nth-child(2) {
+        margin: 2vh 3.2vw;
+      }
+      .horizontalLine {
+        width: 100%;
+        margin: 3.33vh 0;
+      }
+    }
+    .noMargin {
+      margin-top: 0px;
+    }
+  
+    app-button {
+      margin-top: 4.1vh;
+    }
+  
+    .firstSection {
+      background: linear-gradient(0deg, #ffffff 0%, #faece9 100%);
+      padding-top: 24vh;
+      .title {
+        margin-top: 19vh;
+        margin-bottom: 24vh;
+        .lineAndText {
+          margin-left: 3vw;
+        }
+        .titleText p {
+          text-align: center;
+        }
+      }
+      .content {
+        > :nth-child(1) {
+          margin-bottom: 24vh;
+        }
+      }
+    }
+  
+    .secondSection {
+      background: #fff9f6;
+      padding-bottom: 20vh;
+      padding-top: 24vh;
+      .title {
+        .lineAndText {
+          align-self: center;
+        }
+        .titleText p {
+          text-align: center;
+        }
+        .mainText {
+          margin-left: 3.2vw;
+          margin-right: 3.2vw;
+          p {
+            text-align: center;
+          }
+        }
+      }
+      .content {
+        margin-top: 11vh;
+        .videoContent {
+          height: 264px;
+          app-video-player {
+            width: 470px;
+          }
+          .verticalLine {
+            height: 80%;
+            margin: 0 5.4vw;
+            background: #d8d8d8;
+            width: 1px;
+          }
+          .horizontalLine {
+            width: 60%;
+            margin: 2.4vh 0;
+            background: #d8d8d8;
+            height: 1px;
+          }
+        }
+        .headphones {
+          > :nth-child(1) {
+            margin: 0 1.92vw 2vh 1.92vw;
+          }
+          > :nth-child(2) {
+            margin: 0 1.92vw 2vh 1.92vw;
+          }
+          .mainText {
+            max-width: 29vw;
+            p {
+              color: #565960;
+            }
+          }
+        }
+      }
+    }
+  
+    .thirdSection {
+      background: linear-gradient(0deg, #ffffff 0%, #faece9 100%);
+      padding: 24vh 0;
+      > :nth-child(1) {
+        margin-bottom: 24vh;
+      }
+    }
+  
+    .fourthSection {
+      background: linear-gradient(0deg, #ffffff 0%, #fff9f6 100%);
+      padding: 0 0 24vh 0;
+  
+      .imageText {
+        .textContainer {
+          img {
+            max-width: 28px;
+          }
+        }
+        .imageContainer {
+          margin-top: 0;
+        }
+      }
+    }
+  
+    .fifthSection {
+      background: linear-gradient(0deg, #ffffff 0%, #faece9 100%);
+      padding: 24vh 0;
+      > :nth-child(1) {
+        margin-bottom: 24vh;
+      }
+      > :nth-child(2) {
+        margin-bottom: 24vh;
+      }
+      .customText p {
+        color: #55311b;
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+      }
+    }
+  
+    .sixthSection {
+      background-color: #f99573;
+      background-image: url("../../../../assets/whyProudSmilePage/Spa.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      .horizontalLine {
+        width: 100%;
+        margin: 3.33vh 0;
+      }
+      .textContainer {
+        padding: 24vh 0;
+        align-self: flex-end;
+        margin-right: 19vw;
+        .faceSpa {
+          width: 100%;
+          .faceSpaText {
+            max-width: 20vw;
+          }
+        }
+        p {
+          color: white;
+        }
+        .imageContainer {
+        }
+      }
+    }
+  
+    .horizontalLine {
+      width: 70vw;
+      margin: 5.8vh 0;
+      background: #d8d8d8;
+      height: 1px;
+    }
+  
+    img {
+      display: block;
+      max-width: 100%;
+    }
+  
+    .it {
+      font-family: "libreItalic";
+    }
+    .mainText.robBold p {
+      font-family: "robotoBold";
+    }
+  
+    @media only screen and (min-width: 1201px) {
+      .firstSection .title .titleText p {
+        font-size: 3.66rem;
+        line-height: 5rem;
+      }
+      .secondSection .title .mainText {
+        max-width: 31vw;
+      }
+      .secondSection .videoContent .horizontalLine {
+        display: none;
+      }
+    }
+  
+    @media only screen and (min-width: 601px) and (max-width: 1200px) {
+      .firstSection .title .titleText p {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+      .textContainer {
+        max-width: 70vw;
+      }
+      app-button {
+        align-self: center;
+      }
+      .firstSection .title {
+        margin-top: 14vh;
+        margin-bottom: 18vh;
+      }
+      .firstSection .content > :nth-child(1) {
+        margin-bottom: 18vh;
+      }
+      .secondSection {
+        padding-top: 18vh;
+        padding-bottom: 14vh;
+      }
+      .secondSection .content .videoContent {
+        height: 152px;
+      }
+      .secondSection .content .videoContent app-video-player {
+        width: 270px;
+      }
+      .secondSection .content .videoContent .verticalLine {
+        margin: 0 2.4vw;
+      }
+      .secondSection .videoContent .horizontalLine {
+        display: none;
+      }
+      .thirdSection {
+        padding: 18vh 0;
+        > :nth-child(1) {
+          margin-bottom: 18vh;
+        }
+      }
+      .fourthSection {
+        padding: 0 0 18vh 0;
+      }
+      .fifthSection {
+        padding: 18vh 0;
+  
+        > :nth-child(1) {
+          margin-bottom: 18vh;
+        }
+        > :nth-child(2) {
+          margin-bottom: 18vh;
+        }
+      }
+      .sixthSection {
+        .textContainer {
+          margin-right: 1vw;
+          max-width: 50vw;
+          .faceSpa {
+            .faceSpaText {
+              max-width: 40vw;
+            }
+          }
+        }
+      }
+    }
+  
+    @media only screen and (min-width: 300px) and (max-width: 600px) {
+      .firstSection .title .lineAndText {
+        margin: 0 25vw;
+      }
+      .firstSection .title .titleText p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+      .textContainer {
+        max-width: 90vw;
+      }
+      app-button,
+      .lineAndText,
+      .titleText,
+      .mainText {
+        align-self: center;
+      }
+      .mainText p {
+        text-align: center;
+      }
+      app-button button {
+        padding: 2vh 4vw;
+      }
+      .firstSection .title {
+        margin-top: 10vh;
+        margin-bottom: 12vh;
+      }
+      .firstSection .content > :nth-child(1) {
+        margin-bottom: 12vh;
+      }
+      .secondSection {
+        padding-top: 12vh;
+        padding-bottom: 8vh;
+      }
+      .secondSection .content .videoContent {
+        height: unset;
+      }
+      .secondSection .content .videoContent app-video-player {
+        width: 80vw;
+      }
+      .secondSection .content .videoContent .verticalLine {
+        display: none;
+      }
+      .secondSection .content .headphones .mainText {
+        margin: 0 3.2vw 2vh 3.2vw;
+        max-width: unset;
+      }
+      .thirdSection {
+        padding: 12vh 0;
+        > :nth-child(1) {
+          p {
+            text-align: center;
+          }
+        }
+      }
+      .fourthSection {
+        padding: 12vh 0;
+        > :nth-child(1) {
+          p {
+            text-align: center;
+          }
+        }
+      }
+      .fifthSection {
+        padding: 12vh 0;
+  
+        > :nth-child(1) {
+          margin-bottom: 12vh;
+        }
+        > :nth-child(2) {
+          margin-bottom: 12vh;
+        }
+      }
+      .sixthSection {
+        .textContainer {
+          margin-right: 1vw;
+          align-self: center;
+          .faceSpa {
+            .faceSpaText {
+              max-width: 80vw;
+              p {
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

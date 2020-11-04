@@ -1,5 +1,15 @@
-<div fxLayout="row wrap" fxLayoutGap="4vw" [ngClass]="'header'" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()">
-  <div fxFlex="0 0 auto" fxLayout fxLayoutAlign=" center" [ngClass]="'logo'" (click)="onLogoClick()">
+<mat-menu #scheduleMenu="matMenu">
+  <div id="Schedule">
+    <p>Monday: 8:30am - 5:30pm</p>
+    <p>Tuesday: 8:30am - 7:00pm</p>
+    <p>Wednesday: 8:30am - 6:30pm</p>
+    <p>Thursday: 8:30am - 5:30pm</p>
+    <p>Friday: 8:30am - 5:30pm</p>
+  </div>
+</mat-menu>
+<div class="header" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()" [ngClass]="styleStatus ? 'whiteStyle' : 'blackStyle'" fxLayout="row" fxLayoutAlign="center center" fxHide.lt-lg="true">
+
+  <div class="logo" fxLayout fxLayoutAlign=" center" (click)="onLogoClick()">
     <svg
       width="107px"
       height="52px"
@@ -17,7 +27,7 @@
       >
         <g
           id="Homepage"
-          class="black"
+          class="svgFill"
           transform="translate(-83.000000, -104.000000)"
           fill="#F5F5F5"
         >
@@ -31,26 +41,61 @@
       </g>
     </svg>
   </div>
-  <div
-    fxLayout="column"
-    fxFlex="1 1 auto"
-    fxLayoutAlign="center end"
-    [ngClass]="'menuContainer'"
-  >
-    <div fxFlex fxLayout="row" fxLayoutGap="2vw" [ngClass]="'smallMenu'">
-      <button id="smallMenuItem1" [ngClass]="'smallMenuItem'">22 Bundal Road Bundall QLD 4271</button>
-      <button id="smallMenuItem2" [ngClass]="'smallMenuItem'">Today 8:30 - 17:30 Tuesday 8:30 - 19:00</button>
-      <button id="smallMenuItem3" [ngClass]="'smallMenuItem'">AU patients - Free Phone 07 5570 3311</button>
+
+  <div class="menu" fxLayout="column" fxLayoutAlign="center end" fxLayoutGap="0.8vh">
+
+    <div class="smallMenu" fxLayout fxLayoutAlign="end center" fxLayoutGap="3vw">
+      <button fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="goToLink('https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191')"><mat-icon>place</mat-icon><p>122 Bundall Road Bundall QLD 4217 </p></button>
+      <button fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" [matMenuTriggerFor]="scheduleMenu"><p>Today 8:30 - 17:30 Tuesday 8:30 - 19:00</p><mat-icon>expand_more</mat-icon></button>
+      <button class="noPointer" fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw"><mat-icon>phone</mat-icon><p>07 5570 3311</p></button>
+    </div> 
+
+    
+    <div class="menuContainer" fxLayout="row wrap" fxLayoutGap="2vw">
+
+      <div id="BigMenuItems" class="bigMenuItems" fxLayout fxLayoutGap="2vw">
+        <button (click)="onMenuItemClick('proud-smile-experience-component')"><p>Why Proud Smile</p></button>
+        <button (click)="onMenuItemClick('health-component')"><p>Health</p></button>
+        <button (click)="onMenuItemClick('aesthetics-component')"><p>Aesthetics</p></button>
+        <button (click)="onMenuItemClick('why-proud-smile-component')"><p>Implants</p></button>
+        <button class="payment-plan" (click)="onMenuItemClick('payment-page-component')"><p>Smileasy Payment Plan</p></button>
+        <button (click)="onMenuItemClick('why-proud-smile-component')"><p>Specials</p></button>
+        <button (click)="onMenuItemClick('contact-page-component')"><p>Contact</p></button>
+      </div>
+      <button class="onlineBooking" fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="goToLink('https://praktika.praktika.net.au/php/onlineBooking/praktika/searchAppointments.php?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490')"><img src="../../assets/header/calendar.png"/><p>Instant Online Booking</p></button>
     </div>
-    <div id="BigMenuItems" fxFlex fxLayout="row wrap" fxLayoutGap="2vw" [ngClass]="'bigMenu'">
-      <button [ngClass]="'bigMenuItem'" id="menuItem1" (click)="onMenuItemClick('why-proud-smile-component')">Why Proud Smile</button>
-      <button [ngClass]="'bigMenuItem'" id="menuItem2" (click)="onMenuItemClick('health-component')">Health</button>
-      <button [ngClass]="'bigMenuItem'" id="menuItem3" (click)="onMenuItemClick('aesthetics-component')">Aesthetics</button>
-      <button [ngClass]="'bigMenuItem'" id="menuItem4" (click)="onMenuItemClick('why-proud-smile-component')">Implants</button>
-      <button [ngClass]="'bigMenuItem'" id="menuItem5" (click)="onMenuItemClick('why-proud-smile-component')">Smileasy Payment Plan</button>
-      <button [ngClass]="'bigMenuItem'" id="menuItem6" (click)="onMenuItemClick('why-proud-smile-component')">Specials</button>
-      <button [ngClass]="'bigMenuItem'" id="menuItem7" (click)="onMenuItemClick('why-proud-smile-component')">Contact</button>
-      <button [ngClass]="'bigMenuItem'" id="onlineBooking" (click)="onMenuItemClick('why-proud-smile-component')">Instant Online Booking</button>
-    </div>
+
+  </div>
+
+</div>
+
+
+<div [hidden]="!isWhyProudSmile">
+  <div class="subHeader" fxFlexLayout fxLayoutAlign="center center">
+    <app-image-text
+      (click)="onClick($event, 'proud-smile-experience-component')"
+      fxFlex="3 3 auto"
+      layoutAlign="end center"
+      imageUrl="../../assets/Shape.png"
+      text="The Proud Smile Experience"
+      textMaxWdith="7.5vw"
+    ></app-image-text>
+    <app-image-text
+      (click)="onClick($event, 'who-we-are-component')"
+      fxFlex="1 1 auto"
+      layoutAlign="center center"
+      imageUrl="../../assets/header/Team.png"
+      text="Who We Are"
+      textMaxWdith="4vw"
+    ></app-image-text>
+    <app-image-text
+      (click)="onClick($event, 'dental-clinic-component')"
+      fxFlex="3 3 auto"
+      layoutAlign="start center"
+      imageUrl="../../assets/header/Chair.png"
+      text="Our Dental Clinic"
+      textMaxWdith="6vw"
+    ></app-image-text>
   </div>
 </div>
+

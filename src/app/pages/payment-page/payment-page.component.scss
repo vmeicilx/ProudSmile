@@ -1,0 +1,20 @@
+@import "../../../styleSettings.scss";
+
+:host {
+    .lineAndText {
+        .line {
+          border-top: 1px solid $color-brown-light;
+          width: 2vw;
+        }
+        p {
+          margin-left: 1vw;
+        }
+      }
+
+    .firstSection {
+        background-color: $color-gray;
+        .lineAndText {
+            margin-left: 30%;
+        }
+    }
+}

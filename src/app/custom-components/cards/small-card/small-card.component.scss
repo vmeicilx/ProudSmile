@@ -1,0 +1,29 @@
+.smallCard {
+    color: white;
+    height: 100%;
+
+    .imageContainer {
+      height: 50%;
+    }
+    .smallCardText {
+      height: 50%;
+        max-width: 7vw;
+        text-align: center;
+        p {
+          margin: 0;
+        }
+    }  
+}
+
+
+.smallCard img {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.smallCard p {
+  font-size: 0.66rem;
+  font-family: "robotoRegular";
+  line-height: 0.87rem;
+}

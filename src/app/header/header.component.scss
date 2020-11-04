@@ -1,76 +1,145 @@
-
-.header {
-  min-height: 13vh;
-  padding: 0 4vw;
+::ng-deep .mat-menu-content {
+  background: #f5f5f5;
 }
 
-.logo {
-  margin: 1vh 0;
-  max-width: 100%;
+
+#Schedule {
+  p {
+    font-size: 0.66rem;
+    margin: 2vh 1vw;
+  }
 }
 
-.logo svg {
-  cursor: pointer;
-  max-height: 20vh;
-  max-width: 15vw;
-}
+:host {
+  
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  .whiteStyle button.onlineBooking p,
+  .blackStyle button.onlineBooking p {
+    color: white;
+    transition: color 1000ms linear;
+    margin: 0;
+  }
+  .whiteStyle mat-icon {
+    color: white;
+    transition: color 1000ms linear;
+    opacity: 0.8;
+  }
+  .blackStyle mat-icon {
+    color: black;
+    transition: color 1000ms linear;
+    opacity: 0.8;
+  }
+  .header.whiteStyle {
+    background-color: transparent;
+    transition: background-color 1000ms linear;
+  }
+  .header.blackStyle {
+    background-color: #f5f5f5;
+    transition: background-color 1000ms linear;
+  }
+  .whiteStyle button p {
+    color: white;
+    transition: color 1000ms linear;
+  }
+  .whiteStyle svg .svgFill {
+    fill: white;
+    transition: fill 1000ms linear;
+  }
+  .blackStyle svg .svgFill {
+    fill: black;
+    transition: fill 1000ms linear;
+  }
+  .blackStyle p {
+    color: #565960;
+    transition: color 1000ms linear;
+  }
+  button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font-size: 0.66rem;
+    font-family: "robotoRegular";
+    cursor: pointer;
+    mat-icon {
+      cursor: pointer;
+    }
+    p {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  button.onlineBooking {
+    background: #015c50;
+    border-radius: 38px;
+    padding: 0 1.8vw;
+  }
 
-.logo svg .black {
-  fill: black
-}
+  .header {
+    padding: 1vh 4vw;
 
-.logo svg .white {
-  fill: white
-}
+    .logo svg{
+      cursor: pointer;
+    }
 
-.menuContainer {
-  margin: 1vh 0;
-  max-width: 100%;
-}
+    .smallMenu {
+      align-self: flex-end;
+      margin-right:1vw;
+      p {
+        font-size: 0.58rem;
+      }
+      .noPointer {
+        cursor: default;
+        mat-icon {
+          cursor: default;
+        }
+        p {
+          cursor: default;
+        }
+      }
+    }
 
-.smallMenu {
-  flex: 1;
-  flex-direction: column;
-}
+    .menu {
+      width: 100%;
 
-.bigMenu {
-}
+      .payment-plan:focus {
+        font-family: "libreItalic";
+        p {
+          color: #85920D;
+        }
+      }
+    }
 
-.bigMenuItem {
-  border: 0;
-  background: transparent;
-  font-size: 16px;
-  color: #565960;
-  font-family: "robotoMedium";
-  cursor: pointer;
-}
+    .logo svg .black {
+      fill: black;
+      transition: fill 1000ms linear;
+    }
+  }
 
-.smallMenuItem.secondStyle, .bigMenuItem.secondStyle {
-  color:white;
-}
+  .subHeader {
+    z-index: 1;
+    background: #fff9f6;
+    height: 10.7vmin;
 
-.smallMenuItem {
-  border: 0;
-  background: transparent;
-  font-size: 14px;
-  color: #565960;
-  font-family: "robotoMedium";
-  cursor: pointer;
-}
+    app-image-text {
+      padding-right: 3.33vw;
+      cursor: pointer;
+      background: rgba(167, 149, 138, 0.2);
 
-.bigMenuItem:focus, .smallMenuItem:focus {
-  outline: none;
-}
+      &.active {
+        background: #fff9f6;
 
-@media screen and (max-width:360px){
-  .bigMenuItem{
-      font-size:10px;
-  }  
-}
-
-#onlineBooking {
-  background: #015C50;
-  color: white;
-  border-radius: 24px;
-  padding:0 24px;
+        p {
+          opacity: 0.5;
+        }
+        img {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
 }
