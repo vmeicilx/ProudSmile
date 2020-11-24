@@ -1,35 +1,49 @@
+@import "../../proud-smile-style.scss";
+
 ::ng-deep .mat-menu-content {
-  background: #f5f5f5;
+  background: white;
 }
 
+::ng-deep snack-bar-container span {
+  margin: auto;
+  text-align: center;
+}
+
+#MobileMenu {
+  > * {
+    padding: 1vh 2vw;
+  }
+}
 
 #Schedule {
   p {
-    font-size: 0.66rem;
     margin: 2vh 1vw;
+  }
+}
+#Schedule2 {
+  p {
+    margin: 2vh 4vw;
   }
 }
 
 :host {
-  
-  position: fixed;
   width: 100%;
-  top: 0;
   z-index: 2;
+  position: absolute;
   .whiteStyle button.onlineBooking p,
   .blackStyle button.onlineBooking p {
     color: white;
     transition: color 1000ms linear;
     margin: 0;
   }
-  .whiteStyle mat-icon {
-    color: white;
-    transition: color 1000ms linear;
+  .whiteStyle .icons {
+    fill: white;
+    transition: fill 1000ms linear;
     opacity: 0.8;
   }
-  .blackStyle mat-icon {
-    color: black;
-    transition: color 1000ms linear;
+  .blackStyle .icons {
+    fill: black;
+    transition: fill 1000ms linear;
     opacity: 0.8;
   }
   .header.whiteStyle {
@@ -37,7 +51,7 @@
     transition: background-color 1000ms linear;
   }
   .header.blackStyle {
-    background-color: #f5f5f5;
+    background-color: white;
     transition: background-color 1000ms linear;
   }
   .whiteStyle button p {
@@ -60,12 +74,7 @@
     border: 0;
     padding: 0;
     background: transparent;
-    font-size: 0.66rem;
-    font-family: "robotoRegular";
     cursor: pointer;
-    mat-icon {
-      cursor: pointer;
-    }
     p {
       cursor: pointer;
     }
@@ -76,27 +85,31 @@
   button.onlineBooking {
     background: #015c50;
     border-radius: 38px;
-    padding: 0 1.8vw;
+    padding: 12px 30px;
+  }
+
+  p {
+    margin: 0;
   }
 
   .header {
-    padding: 1vh 4vw;
+    padding: 24px 4vw;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    height: 129px;
 
-    .logo svg{
+    .logo svg {
       cursor: pointer;
     }
 
     .smallMenu {
       align-self: flex-end;
-      margin-right:1vw;
-      p {
-        font-size: 0.58rem;
-      }
+      margin-right: 1vw;
+      margin-bottom: 14px;
       .noPointer {
         cursor: default;
-        mat-icon {
-          cursor: default;
-        }
         p {
           cursor: default;
         }
@@ -109,9 +122,14 @@
       .payment-plan:focus {
         font-family: "libreItalic";
         p {
-          color: #85920D;
+          color: #85920d;
         }
       }
+    }
+
+    .menu2 {
+      width: 100%;
+      padding: 0 20px;
     }
 
     .logo svg .black {
@@ -122,24 +140,118 @@
 
   .subHeader {
     z-index: 1;
-    background: #fff9f6;
-    height: 10.7vmin;
+    background: rgba(167, 149, 138, 0.2);
+    height: 104px;
+    position: relative;
+    top: 129px;
 
-    app-image-text {
-      padding-right: 3.33vw;
-      cursor: pointer;
-      background: rgba(167, 149, 138, 0.2);
-
-      &.active {
-        background: #fff9f6;
-
-        p {
-          opacity: 0.5;
-        }
-        img {
-          opacity: 0.5;
-        }
+    .active {
+      background: $color-dirty-white;
+      .imageTextCard {
+        opacity: 0.2;
       }
     }
+
+    .text-container {
+      padding-right: 2vw;
+    }
+
+    > * {
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (min-width: 1201px) {
+    .menu2 {
+      display: none !important;
+    }
+    #Schedule2 {
+      display: none !important;
+    }
+    .subHeader {
+      .imageTextCard {
+        padding-right: 2vw;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .menu {
+      display: none !important;
+    }
+    #Schedule2 {
+      display: none !important;
+    }
+
+    .header {
+      justify-content: space-between !important;
+    }
+
+    .subHeader {
+      justify-content: space-around;
+      .imageTextCard {
+        display: none;
+      }
+      text-align: center;
+      > * {
+        flex: 1 1 auto !important;
+        place-content: center center !important;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .menu {
+      display: none !important;
+    }
+    .header {
+      justify-content: space-between !important;
+      padding: 12px 4vw;
+      height: 80px;
+    }
+
+    .loc {
+      display: none !important;
+    }
+
+    #Schedule {
+      display: none !important;
+    }
+
+    .logo svg {
+      width: 80px;
+    }
+
+    .subHeader {
+      justify-content: space-around;
+      position: relative;
+      height: 80px;
+      top: 80px;
+      .imageTextCard {
+        display: none;
+      }
+      > * {
+        flex: 1 1 auto !important;
+        place-content: center center !important;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  #Schedule2 {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  #Schedule2 {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  #Schedule {
+    display: none !important;
   }
 }

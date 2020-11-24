@@ -38,22 +38,9 @@ export class FooterComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
-
-  onFacebookClick() {
-    this.router.navigate(["/why-proud-smile-component"]);
-  }
-  onTwitterClick() {
-    this.router.navigate(["/why-proud-smile-component"]);
-  }
-  onInstagramClick() {
-    this.router.navigate(["/why-proud-smile-component"]);
-  }
-
-  onNewsletterClick() {
-    this.router.navigate(["/why-proud-smile-component"]);
-  }
   
-  onDirectionsClick() {
-    this.router.navigate(["/why-proud-smile-component"]);
+  goToLink(url: string) {
+    window.open(url, "_blank");
   }
+
 }

@@ -1,101 +1,632 @@
-<mat-menu #scheduleMenu="matMenu">
-  <div id="Schedule">
+<mat-menu id="SCH" #scheduleMenu="matMenu">
+  <div id="Schedule" class="fix-text-1">
     <p>Monday: 8:30am - 5:30pm</p>
     <p>Tuesday: 8:30am - 7:00pm</p>
     <p>Wednesday: 8:30am - 6:30pm</p>
     <p>Thursday: 8:30am - 5:30pm</p>
     <p>Friday: 8:30am - 5:30pm</p>
   </div>
+  <div id="Schedule2" class="fix-text-1">
+    <p>
+      Monday:<br />
+      8:30am - 5:30pm
+    </p>
+    <p>
+      Tuesday:<br />
+      8:30am - 7:00pm
+    </p>
+    <p>
+      Wednesday:<br />
+      8:30am - 6:30pm
+    </p>
+    <p>
+      Thursday:<br />
+      8:30am - 5:30pm
+    </p>
+    <p>
+      Friday:<br />
+      8:30am - 5:30pm
+    </p>
+  </div>
 </mat-menu>
-<div class="header" (mouseenter) ="mouseEnter() "  (mouseleave) ="mouseLeave()" [ngClass]="styleStatus ? 'whiteStyle' : 'blackStyle'" fxLayout="row" fxLayoutAlign="center center" fxHide.lt-lg="true">
-
-  <div class="logo" fxLayout fxLayoutAlign=" center" (click)="onLogoClick()">
-    <svg
-      width="107px"
-      height="52px"
-      viewBox="0 0 107 52"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+<mat-menu #menu="matMenu">
+  <div id="MobileMenu" fxLayout="column" fxLayoutGap="1vh">
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('proud-smile-experience-component')"
     >
-      <title>2242BC19-DC12-4DBD-A4A5-91F685C5E0F9</title>
-      <g
-        id="Design"
-        stroke="none"
-        stroke-width="1"
-        fill-rule="evenodd"
+      <p>Why Proud Smile</p>
+    </button>
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('health-component')"
+    >
+      <p>Health</p>
+    </button>
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('aesthetics-component')"
+    >
+      <p>Aesthetics</p>
+    </button>
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('why-proud-smile-component')"
+    >
+      <p>Implants</p>
+    </button>
+    <button
+      class="payment-plan fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('payment-page-component')"
+    >
+      <p>Smileasy Payment Plan</p>
+    </button>
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('why-proud-smile-component')"
+    >
+      <p>Specials</p>
+    </button>
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('contact-page-component')"
+    >
+      <p>Contact</p>
+    </button>
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="
+        goToLink(
+          'https://praktika.praktika.net.au/php/onlineBooking/praktika/searchAppointments.php?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+        )
+      "
+    >
+      <p>Instant Online Booking</p>
+    </button>
+  </div>
+</mat-menu>
+<div>
+  <div
+    class="header"
+    (mouseenter)="mouseEnter()"
+    (mouseleave)="mouseLeave()"
+    [ngClass]="styleStatus ? 'whiteStyle' : 'blackStyle'"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+  >
+    <div class="logo" fxLayout fxLayoutAlign=" center" (click)="onLogoClick()">
+      <svg
+        width="107px"
+        viewBox="0 0 107 52"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
       >
-        <g
-          id="Homepage"
-          class="svgFill"
-          transform="translate(-83.000000, -104.000000)"
-          fill="#F5F5F5"
-        >
-          <g id="Logo" transform="translate(83.000000, 104.000000)">
-            <path
-              d="M55.0683401,17.8226601 C55.0683401,23.7783251 50.7259985,28.1083744 45.1877977,28.1083744 C39.5074661,28.1083744 35.3072554,24.3448276 35.3072554,18.5665025 C35.3072554,12.6059113 39.6446959,8.28078818 45.2221052,8.28078818 C50.9024368,8.28078818 55.0683401,12.0738916 55.0683401,17.8226601 Z M48.1529406,19.5566502 C48.1529406,13.0689655 47.2315409,8.77339901 45.0456669,8.77339901 C42.9627153,8.77339901 42.2569623,11.862069 42.2569623,16.8275862 C42.2569623,23.320197 43.173461,27.6109318 45.364236,27.6109318 C47.4471876,27.6305419 48.1529406,24.5615764 48.1529406,19.5566502 L48.1529406,19.5566502 Z M59.3077593,51.182266 L59.3077593,51.6453202 L48.9322096,51.6453202 L48.9322096,51.182266 C50.3437156,51.0738916 50.7995145,50.9359606 50.7995145,49.7980296 L50.7995145,38.270936 C50.7995145,36.6748768 50.2015848,35.6453202 48.5058171,35.6453202 C47.5892229,35.6547162 46.6901482,35.8988594 45.8935508,36.3546798 L45.8935508,49.7980296 C45.8935508,50.9359606 46.3199432,51.0738916 47.7314492,51.182266 L47.7314492,51.6453202 L37.4980304,51.6453202 L37.4980304,51.182266 C38.9095365,51.0738916 39.3653353,50.9359606 39.3653353,49.7980296 L39.3653353,38.270936 C39.3653353,36.6748768 38.7674056,35.6453202 37.1108465,35.6453202 C36.1817006,35.6536437 35.2696877,35.8976381 34.4593716,36.3546798 L34.4593716,49.7980296 C34.4593716,50.9359606 34.9200715,51.0738916 36.3315775,51.182266 L36.3315775,51.6453202 L25.9560278,51.6453202 L25.9560278,51.182266 C27.3675339,51.0738916 27.9164529,50.9359606 27.9164529,49.7980296 L27.9164529,36.3546798 L25.9560278,34.3842365 L25.9560278,34.2413793 L34.4593716,32.1871921 L34.6015024,32.1871921 L34.4593716,36.1280788 C35.5180011,34.4581281 37.8901154,32.1871921 40.830753,32.1871921 C43.4773269,32.1871921 45.2760169,33.6650246 45.8396391,36.1280788 C46.8982686,34.4581281 49.2997893,32.1871921 52.2110205,32.1871921 C55.455524,32.1871921 57.254214,34.3842365 57.254214,38 L57.254214,49.8226601 C57.2934225,50.9359606 57.8962532,51.0738916 59.3077593,51.182266 Z M69.3157292,49.7980296 C69.3157292,50.9359606 69.9185599,51.0738916 71.330066,51.182266 L71.330066,51.6453202 L60.8123855,51.6453202 L60.8123855,51.182266 C62.2238915,51.0738916 62.7728106,50.9359606 62.7728106,49.7980296 L62.7728106,36.3546798 L60.8123855,34.3842365 L60.8123855,34.2413793 L69.1735984,32.1871921 L69.3157292,32.1871921 L69.3157292,49.7980296 Z M97.2174789,24.6305419 L97.2174789,-9.23705556e-15 L97.0802492,-9.23705556e-15 L88.7484427,2.05418719 L88.7484427,2.19704433 L90.7088677,4.16748768 L90.7088677,9.02955665 C89.840538,8.52729464 88.8532813,8.27028336 87.8515482,8.28571429 C82.1369091,8.28571429 77.6524368,12.364532 77.6524368,19.2807882 C77.6524368,21.9408867 78.4268047,24.1625616 79.7157842,25.6847291 L76.7506413,26.4187192 C74.9715555,26.3793103 74.7265024,25.8472906 74.7265024,24.6108374 L74.7265024,12.7881773 L74.9029406,8.28571429 L74.7608098,8.28571429 L66.326081,9.95073892 L66.326081,10.3054187 C67.9483327,10.7684729 68.1982869,11.3349754 68.1982869,12.5763547 L68.1982869,24.0295567 C67.4633218,24.5424159 66.588545,24.8142771 65.6938439,24.8078818 C63.9294613,24.8078818 63.1158849,23.8226601 63.1158849,21.8522167 L63.1158849,12.817734 L63.3266306,8.31527094 L63.1844998,8.31527094 L54.6811561,9.98029557 L54.6811561,10.3349754 C56.3377153,10.7980296 56.5876695,11.364532 56.5876695,12.6059113 L56.5876695,22.1477833 C56.5876695,26.226601 58.8078509,28.1083744 61.9151246,28.1083744 C64.7724441,28.1083744 66.9632191,26.137931 68.1982869,24.3842365 L68.1051667,28.1231527 L68.2472975,28.1231527 L74.8441279,27.137931 L74.8441279,49.7980296 C74.8441279,50.9359606 74.2461982,51.0738916 72.8346922,51.182266 L72.8346922,51.6453202 L83.3523727,51.6453202 L83.3523727,51.182266 C81.9408666,51.0738916 81.3380359,50.9359606 81.3380359,49.7980296 L81.3380359,27.137931 C82.3920052,27.7921729 83.6084748,28.1337053 84.8471968,28.1231527 C87.8809546,28.1231527 89.7482594,26.2068966 90.728472,24.3596059 L90.5863412,28.1231527 L90.7235709,28.1231527 L99.3004306,26.8817734 L99.3004306,26.453202 C97.4674331,26.4039409 97.2174789,25.8719212 97.2174789,24.6305419 Z M90.7235709,24.0295567 C90.1214005,24.4393159 89.4067766,24.649459 88.6798278,24.6305419 C85.9989465,24.6305419 84.3031788,22.0049261 84.3031788,17.0738916 C84.3031788,12.4630542 85.572554,8.91625616 88.150513,8.91625616 C89.8070722,8.91625616 90.7235709,10.5123153 90.7235709,13.0295567 L90.7235709,24.0295567 Z M93.2868267,52 C88.2779406,52 84.2541682,48.453202 84.2541682,42.5270936 C84.2541682,36.6748768 88.5916086,32.182266 93.7083181,32.182266 C98.8250275,32.182266 101.402986,35.6305419 101.402986,39.7684729 L101.402986,39.9852217 L90.0374221,39.9852217 C90.106037,44.9507389 92.3997343,47.679803 96.0706303,47.679803 C98.1165224,47.7608911 100.075335,46.8434529 101.329471,45.2167488 L101.471601,45.2906404 C100.731541,49.3399015 97.5556523,52 93.2868267,52 Z M90.0374221,39.2660099 L95.7863686,39.2660099 C95.7863686,35.5024631 95.0120007,32.7389163 93.1397948,32.7389163 C91.1352602,32.7389163 90.1452455,35.7881773 90.0374221,39.2660099 Z M105.230716,4.44334975 C104.543945,4.61590247 103.843852,4.72961032 103.137963,4.78325123 C102.46395,4.73280989 101.796121,4.61901218 101.14323,4.44334975 C101.304012,5.45079503 102.166943,6.1930386 103.182072,6.19704433 C104.198624,6.20237772 105.070975,5.45740411 105.230716,4.44334975 Z M106.259698,2.64079611 C106.777084,3.8923542 106.493162,5.33395022 105.540396,6.29299474 C104.587631,7.25203926 103.153784,7.53953401 101.907829,7.02134574 C100.661874,6.50315748 99.8493496,5.28140524 99.8493496,3.92610837 C99.85204,2.07913349 101.339593,0.581777008 103.177171,0.576347397 C104.525576,0.574361596 105.742311,1.38923801 106.259698,2.64079611 Z M99.3543422,3.92610837 C99.3543422,6.04818771 101.065881,7.76847291 103.177171,7.76847291 C105.288461,7.76847291 107,6.04818771 107,3.92610837 C107,1.80402904 105.288461,0.0837438424 103.177171,0.0837438424 C101.065881,0.0837438424 99.3543422,1.80402904 99.3543422,3.92610837 Z M33.2782155,8.28078818 C30.7002565,8.28078818 29.1466196,10.9753695 28.2840326,14.8226601 L28.4212624,8.26108374 L28.2840326,8.26108374 L22.2459234,9.73891626 L22.2459234,9.73891626 C22.2459234,5.72906404 19.0014199,2.84236453 12.1546354,2.84236453 L6.13129619e-15,2.84236453 L6.13129619e-15,3.37438424 C2.3623122,3.62068966 2.5730579,3.9408867 2.5730579,5.78817734 L2.5730579,24.8078818 C2.5730579,26.6551724 2.3623122,26.9704433 6.13129619e-15,27.2216749 L6.13129619e-15,27.7536946 L11.1548186,27.7536946 C8.74350309,29.0858402 7.25174876,31.6383746 7.26827593,34.4039409 C7.26827593,43.3448276 20.0453463,40.2216749 20.0453463,47.3497537 C20.0453463,49.9753695 17.9967021,51.4334975 15.3501283,51.4334975 C11.0813027,51.4334975 8.11615977,47.137931 7.26827593,43.1674877 L6.88109198,43.1674877 L7.26827593,49.6206897 C8.92973617,50.9359606 12.0321088,52 15.2815134,52 C20.8589227,52 25.3041865,48.591133 25.3041865,43.4876847 C25.3041865,33.9802956 12.3163705,36.4975369 12.3163705,30.7881773 C12.3163705,28.4827586 14.0121381,26.955665 16.5508886,26.955665 C19.9375229,26.955665 22.4811744,30.0049261 23.3633657,34.2610837 L23.7162422,34.2610837 L23.5741114,28.4827586 L23.5741114,28.4827586 L23.5741114,27.7536946 L31.0874405,27.7536946 L31.0874405,27.2906404 C29.1858281,27.137931 28.2840326,26.9014778 28.2840326,25.7684729 L28.2840326,15.2315271 C29.798461,14.1330049 31.8471052,14.0246305 34.1064951,14.0246305 L34.9494778,14.0246305 L34.9494778,8.73891626 C34.4463269,8.43130399 33.8670777,8.27251961 33.2782155,8.28078818 Z M9.49335837,3.5270936 L10.2334188,3.5270936 C13.4436149,3.5270936 15.4922591,5.90147783 15.4922591,9.83743842 C15.4922591,13.773399 13.6543606,16.2413793 10.2334188,16.2413793 L9.49335837,16.2413793 L9.49335837,3.5270936 Z M21.746015,25.9064039 C21.746015,26.6847291 21.4715555,26.9950739 20.8540216,27.1477833 C19.3947595,26.6389073 17.8602181,26.3823986 16.3156376,26.3891626 C14.9915446,26.3948539 13.6801292,26.6487877 12.4486992,27.137931 C10.2334188,26.8965517 9.50806156,26.4137931 9.50806156,24.7881773 L9.50806156,16.9359606 L11.6596281,16.9359606 C17.1243129,16.9359606 20.5305515,15.320197 21.7558171,12.4334975 L21.7852235,12.4630542 L21.746015,25.9064039 Z"
-              id="Shape"
-            ></path>
+        <title>2242BC19-DC12-4DBD-A4A5-91F685C5E0F9</title>
+        <g id="Design" stroke="none" stroke-width="1" fill-rule="evenodd">
+          <g
+            id="Homepage"
+            class="svgFill"
+            transform="translate(-83.000000, -104.000000)"
+            fill="#F5F5F5"
+          >
+            <g id="Logo" transform="translate(83.000000, 104.000000)">
+              <path
+                d="M55.0683401,17.8226601 C55.0683401,23.7783251 50.7259985,28.1083744 45.1877977,28.1083744 C39.5074661,28.1083744 35.3072554,24.3448276 35.3072554,18.5665025 C35.3072554,12.6059113 39.6446959,8.28078818 45.2221052,8.28078818 C50.9024368,8.28078818 55.0683401,12.0738916 55.0683401,17.8226601 Z M48.1529406,19.5566502 C48.1529406,13.0689655 47.2315409,8.77339901 45.0456669,8.77339901 C42.9627153,8.77339901 42.2569623,11.862069 42.2569623,16.8275862 C42.2569623,23.320197 43.173461,27.6109318 45.364236,27.6109318 C47.4471876,27.6305419 48.1529406,24.5615764 48.1529406,19.5566502 L48.1529406,19.5566502 Z M59.3077593,51.182266 L59.3077593,51.6453202 L48.9322096,51.6453202 L48.9322096,51.182266 C50.3437156,51.0738916 50.7995145,50.9359606 50.7995145,49.7980296 L50.7995145,38.270936 C50.7995145,36.6748768 50.2015848,35.6453202 48.5058171,35.6453202 C47.5892229,35.6547162 46.6901482,35.8988594 45.8935508,36.3546798 L45.8935508,49.7980296 C45.8935508,50.9359606 46.3199432,51.0738916 47.7314492,51.182266 L47.7314492,51.6453202 L37.4980304,51.6453202 L37.4980304,51.182266 C38.9095365,51.0738916 39.3653353,50.9359606 39.3653353,49.7980296 L39.3653353,38.270936 C39.3653353,36.6748768 38.7674056,35.6453202 37.1108465,35.6453202 C36.1817006,35.6536437 35.2696877,35.8976381 34.4593716,36.3546798 L34.4593716,49.7980296 C34.4593716,50.9359606 34.9200715,51.0738916 36.3315775,51.182266 L36.3315775,51.6453202 L25.9560278,51.6453202 L25.9560278,51.182266 C27.3675339,51.0738916 27.9164529,50.9359606 27.9164529,49.7980296 L27.9164529,36.3546798 L25.9560278,34.3842365 L25.9560278,34.2413793 L34.4593716,32.1871921 L34.6015024,32.1871921 L34.4593716,36.1280788 C35.5180011,34.4581281 37.8901154,32.1871921 40.830753,32.1871921 C43.4773269,32.1871921 45.2760169,33.6650246 45.8396391,36.1280788 C46.8982686,34.4581281 49.2997893,32.1871921 52.2110205,32.1871921 C55.455524,32.1871921 57.254214,34.3842365 57.254214,38 L57.254214,49.8226601 C57.2934225,50.9359606 57.8962532,51.0738916 59.3077593,51.182266 Z M69.3157292,49.7980296 C69.3157292,50.9359606 69.9185599,51.0738916 71.330066,51.182266 L71.330066,51.6453202 L60.8123855,51.6453202 L60.8123855,51.182266 C62.2238915,51.0738916 62.7728106,50.9359606 62.7728106,49.7980296 L62.7728106,36.3546798 L60.8123855,34.3842365 L60.8123855,34.2413793 L69.1735984,32.1871921 L69.3157292,32.1871921 L69.3157292,49.7980296 Z M97.2174789,24.6305419 L97.2174789,-9.23705556e-15 L97.0802492,-9.23705556e-15 L88.7484427,2.05418719 L88.7484427,2.19704433 L90.7088677,4.16748768 L90.7088677,9.02955665 C89.840538,8.52729464 88.8532813,8.27028336 87.8515482,8.28571429 C82.1369091,8.28571429 77.6524368,12.364532 77.6524368,19.2807882 C77.6524368,21.9408867 78.4268047,24.1625616 79.7157842,25.6847291 L76.7506413,26.4187192 C74.9715555,26.3793103 74.7265024,25.8472906 74.7265024,24.6108374 L74.7265024,12.7881773 L74.9029406,8.28571429 L74.7608098,8.28571429 L66.326081,9.95073892 L66.326081,10.3054187 C67.9483327,10.7684729 68.1982869,11.3349754 68.1982869,12.5763547 L68.1982869,24.0295567 C67.4633218,24.5424159 66.588545,24.8142771 65.6938439,24.8078818 C63.9294613,24.8078818 63.1158849,23.8226601 63.1158849,21.8522167 L63.1158849,12.817734 L63.3266306,8.31527094 L63.1844998,8.31527094 L54.6811561,9.98029557 L54.6811561,10.3349754 C56.3377153,10.7980296 56.5876695,11.364532 56.5876695,12.6059113 L56.5876695,22.1477833 C56.5876695,26.226601 58.8078509,28.1083744 61.9151246,28.1083744 C64.7724441,28.1083744 66.9632191,26.137931 68.1982869,24.3842365 L68.1051667,28.1231527 L68.2472975,28.1231527 L74.8441279,27.137931 L74.8441279,49.7980296 C74.8441279,50.9359606 74.2461982,51.0738916 72.8346922,51.182266 L72.8346922,51.6453202 L83.3523727,51.6453202 L83.3523727,51.182266 C81.9408666,51.0738916 81.3380359,50.9359606 81.3380359,49.7980296 L81.3380359,27.137931 C82.3920052,27.7921729 83.6084748,28.1337053 84.8471968,28.1231527 C87.8809546,28.1231527 89.7482594,26.2068966 90.728472,24.3596059 L90.5863412,28.1231527 L90.7235709,28.1231527 L99.3004306,26.8817734 L99.3004306,26.453202 C97.4674331,26.4039409 97.2174789,25.8719212 97.2174789,24.6305419 Z M90.7235709,24.0295567 C90.1214005,24.4393159 89.4067766,24.649459 88.6798278,24.6305419 C85.9989465,24.6305419 84.3031788,22.0049261 84.3031788,17.0738916 C84.3031788,12.4630542 85.572554,8.91625616 88.150513,8.91625616 C89.8070722,8.91625616 90.7235709,10.5123153 90.7235709,13.0295567 L90.7235709,24.0295567 Z M93.2868267,52 C88.2779406,52 84.2541682,48.453202 84.2541682,42.5270936 C84.2541682,36.6748768 88.5916086,32.182266 93.7083181,32.182266 C98.8250275,32.182266 101.402986,35.6305419 101.402986,39.7684729 L101.402986,39.9852217 L90.0374221,39.9852217 C90.106037,44.9507389 92.3997343,47.679803 96.0706303,47.679803 C98.1165224,47.7608911 100.075335,46.8434529 101.329471,45.2167488 L101.471601,45.2906404 C100.731541,49.3399015 97.5556523,52 93.2868267,52 Z M90.0374221,39.2660099 L95.7863686,39.2660099 C95.7863686,35.5024631 95.0120007,32.7389163 93.1397948,32.7389163 C91.1352602,32.7389163 90.1452455,35.7881773 90.0374221,39.2660099 Z M105.230716,4.44334975 C104.543945,4.61590247 103.843852,4.72961032 103.137963,4.78325123 C102.46395,4.73280989 101.796121,4.61901218 101.14323,4.44334975 C101.304012,5.45079503 102.166943,6.1930386 103.182072,6.19704433 C104.198624,6.20237772 105.070975,5.45740411 105.230716,4.44334975 Z M106.259698,2.64079611 C106.777084,3.8923542 106.493162,5.33395022 105.540396,6.29299474 C104.587631,7.25203926 103.153784,7.53953401 101.907829,7.02134574 C100.661874,6.50315748 99.8493496,5.28140524 99.8493496,3.92610837 C99.85204,2.07913349 101.339593,0.581777008 103.177171,0.576347397 C104.525576,0.574361596 105.742311,1.38923801 106.259698,2.64079611 Z M99.3543422,3.92610837 C99.3543422,6.04818771 101.065881,7.76847291 103.177171,7.76847291 C105.288461,7.76847291 107,6.04818771 107,3.92610837 C107,1.80402904 105.288461,0.0837438424 103.177171,0.0837438424 C101.065881,0.0837438424 99.3543422,1.80402904 99.3543422,3.92610837 Z M33.2782155,8.28078818 C30.7002565,8.28078818 29.1466196,10.9753695 28.2840326,14.8226601 L28.4212624,8.26108374 L28.2840326,8.26108374 L22.2459234,9.73891626 L22.2459234,9.73891626 C22.2459234,5.72906404 19.0014199,2.84236453 12.1546354,2.84236453 L6.13129619e-15,2.84236453 L6.13129619e-15,3.37438424 C2.3623122,3.62068966 2.5730579,3.9408867 2.5730579,5.78817734 L2.5730579,24.8078818 C2.5730579,26.6551724 2.3623122,26.9704433 6.13129619e-15,27.2216749 L6.13129619e-15,27.7536946 L11.1548186,27.7536946 C8.74350309,29.0858402 7.25174876,31.6383746 7.26827593,34.4039409 C7.26827593,43.3448276 20.0453463,40.2216749 20.0453463,47.3497537 C20.0453463,49.9753695 17.9967021,51.4334975 15.3501283,51.4334975 C11.0813027,51.4334975 8.11615977,47.137931 7.26827593,43.1674877 L6.88109198,43.1674877 L7.26827593,49.6206897 C8.92973617,50.9359606 12.0321088,52 15.2815134,52 C20.8589227,52 25.3041865,48.591133 25.3041865,43.4876847 C25.3041865,33.9802956 12.3163705,36.4975369 12.3163705,30.7881773 C12.3163705,28.4827586 14.0121381,26.955665 16.5508886,26.955665 C19.9375229,26.955665 22.4811744,30.0049261 23.3633657,34.2610837 L23.7162422,34.2610837 L23.5741114,28.4827586 L23.5741114,28.4827586 L23.5741114,27.7536946 L31.0874405,27.7536946 L31.0874405,27.2906404 C29.1858281,27.137931 28.2840326,26.9014778 28.2840326,25.7684729 L28.2840326,15.2315271 C29.798461,14.1330049 31.8471052,14.0246305 34.1064951,14.0246305 L34.9494778,14.0246305 L34.9494778,8.73891626 C34.4463269,8.43130399 33.8670777,8.27251961 33.2782155,8.28078818 Z M9.49335837,3.5270936 L10.2334188,3.5270936 C13.4436149,3.5270936 15.4922591,5.90147783 15.4922591,9.83743842 C15.4922591,13.773399 13.6543606,16.2413793 10.2334188,16.2413793 L9.49335837,16.2413793 L9.49335837,3.5270936 Z M21.746015,25.9064039 C21.746015,26.6847291 21.4715555,26.9950739 20.8540216,27.1477833 C19.3947595,26.6389073 17.8602181,26.3823986 16.3156376,26.3891626 C14.9915446,26.3948539 13.6801292,26.6487877 12.4486992,27.137931 C10.2334188,26.8965517 9.50806156,26.4137931 9.50806156,24.7881773 L9.50806156,16.9359606 L11.6596281,16.9359606 C17.1243129,16.9359606 20.5305515,15.320197 21.7558171,12.4334975 L21.7852235,12.4630542 L21.746015,25.9064039 Z"
+                id="Shape"
+              ></path>
+            </g>
           </g>
         </g>
-      </g>
-    </svg>
-  </div>
-
-  <div class="menu" fxLayout="column" fxLayoutAlign="center end" fxLayoutGap="0.8vh">
-
-    <div class="smallMenu" fxLayout fxLayoutAlign="end center" fxLayoutGap="3vw">
-      <button fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="goToLink('https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191')"><mat-icon>place</mat-icon><p>122 Bundall Road Bundall QLD 4217 </p></button>
-      <button fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" [matMenuTriggerFor]="scheduleMenu"><p>Today 8:30 - 17:30 Tuesday 8:30 - 19:00</p><mat-icon>expand_more</mat-icon></button>
-      <button class="noPointer" fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw"><mat-icon>phone</mat-icon><p>07 5570 3311</p></button>
-    </div> 
-
-    
-    <div class="menuContainer" fxLayout="row wrap" fxLayoutGap="2vw">
-
-      <div id="BigMenuItems" class="bigMenuItems" fxLayout fxLayoutGap="2vw">
-        <button (click)="onMenuItemClick('proud-smile-experience-component')"><p>Why Proud Smile</p></button>
-        <button (click)="onMenuItemClick('health-component')"><p>Health</p></button>
-        <button (click)="onMenuItemClick('aesthetics-component')"><p>Aesthetics</p></button>
-        <button (click)="onMenuItemClick('why-proud-smile-component')"><p>Implants</p></button>
-        <button class="payment-plan" (click)="onMenuItemClick('payment-page-component')"><p>Smileasy Payment Plan</p></button>
-        <button (click)="onMenuItemClick('why-proud-smile-component')"><p>Specials</p></button>
-        <button (click)="onMenuItemClick('contact-page-component')"><p>Contact</p></button>
-      </div>
-      <button class="onlineBooking" fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="goToLink('https://praktika.praktika.net.au/php/onlineBooking/praktika/searchAppointments.php?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490')"><img src="../../assets/header/calendar.png"/><p>Instant Online Booking</p></button>
+      </svg>
     </div>
 
+    <div class="menu" fxLayout="column" fxLayoutAlign="center end">
+      <div
+        class="smallMenu"
+        fxLayout
+        fxLayoutAlign="end center"
+        fxLayoutGap="3vw"
+      >
+        <button
+          class="fix-text-0 roboto-medium"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+          (click)="
+            goToLink(
+              'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+            )
+          "
+        >
+          <svg
+            data-name="Icons/marker"
+            viewBox="0 0 16 16"
+            width="18px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="icons"
+              transform="translate(3.333 1.333)"
+              d="M5,13.333a.679.679,0,0,1-.556-.282C3.7,12.148,0,7.513,0,5.052A5.032,5.032,0,0,1,5,0a5.032,5.032,0,0,1,5,5.052c0,2.463-3.7,7.1-4.445,8A.678.678,0,0,1,5,13.333ZM5,2.947A2.176,2.176,0,1,0,5,7.3,2.123,2.123,0,0,0,7.084,5.192,2.171,2.171,0,0,0,5,2.947Z"
+            />
+          </svg>
+          <p>122 Bundall Road Bundall QLD 4217</p>
+        </button>
+        <button
+          class="fix-text-0 roboto-medium"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+          [matMenuTriggerFor]="scheduleMenu"
+          (menuOpened)="menuOpened()"
+          (menuClosed)="menuClosed()"
+        >
+          <p>{{ scheduleText }}</p>
+          <svg
+            data-name="Icons/arrow_1 Copy"
+            viewBox="0 0 16 16"
+            width="16px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="icons"
+              transform="translate(1.333 1.333)"
+              d="M11.334,13.333H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0h9.334a2,2,0,0,1,2,2v9.334A2,2,0,0,1,11.334,13.333ZM3.7,4.667a.352.352,0,0,0-.242.1.422.422,0,0,0-.035.563.415.415,0,0,0,.033.036L6.405,8.548a.362.362,0,0,0,.263.119l.041,0a.361.361,0,0,0,.219-.116L9.876,5.363A.422.422,0,0,0,9.907,4.8a.358.358,0,0,0-.276-.134.352.352,0,0,0-.244.1c-.012.012-.022.024-.033.037l-2.688,2.9L3.98,4.8A.359.359,0,0,0,3.7,4.667Z"
+              data-name="Combined Shape"
+            />
+          </svg>
+        </button>
+        <button
+          class="fix-text-0 roboto-medium"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+          (click)="goToLinkWithotNewTab('tel:0749113545')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="icons"
+            width="18px"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+            />
+          </svg>
+          <p>07 5570 3311</p>
+        </button>
+      </div>
+
+      <div
+        class="menuContainer color-gray-dark"
+        fxLayout="row wrap"
+        fxLayoutGap="2vw"
+      >
+        <div id="BigMenuItems" class="bigMenuItems" fxLayout fxLayoutGap="2vw">
+          <button
+            class="fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('proud-smile-experience-component')"
+          >
+            <p>Why Proud Smile</p>
+          </button>
+          <button
+            class="fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('Extractions')"
+          >
+            <p>Health</p>
+          </button>
+          <button
+            class="fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('aesthetics-component')"
+          >
+            <p>Aesthetics</p>
+          </button>
+          <button
+            class="fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('why-proud-smile-component')"
+          >
+            <p>Implants</p>
+          </button>
+          <button
+            class="payment-plan fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('payment-page-component')"
+          >
+            <p>Smileasy Payment Plan</p>
+          </button>
+          <button
+            class="fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('why-proud-smile-component')"
+          >
+            <p>Specials</p>
+          </button>
+          <button
+            class="fix-text-1 roboto-medium"
+            (click)="onMenuItemClick('contact-page-component')"
+          >
+            <p>Contact</p>
+          </button>
+        </div>
+        <button
+          class="onlineBooking fix-text-0"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+          (click)="
+            goToLink(
+              'https://praktika.praktika.net.au/php/onlineBooking/praktika/searchAppointments.php?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+            )
+          "
+        >
+          <img src="../../assets/header/calendar.png" />
+          <p>Instant Online Booking</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="menu2" fxLayout fxLayoutAlign="space-around center">
+      <button
+        class="fix-text-0 roboto-medium"
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.5vw"
+        (click)="
+          goToLink(
+            'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+          )
+        "
+      >
+        <svg
+          data-name="Icons/marker"
+          viewBox="0 0 16 16"
+          width="27px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="icons"
+            transform="translate(3.333 1.333)"
+            d="M5,13.333a.679.679,0,0,1-.556-.282C3.7,12.148,0,7.513,0,5.052A5.032,5.032,0,0,1,5,0a5.032,5.032,0,0,1,5,5.052c0,2.463-3.7,7.1-4.445,8A.678.678,0,0,1,5,13.333ZM5,2.947A2.176,2.176,0,1,0,5,7.3,2.123,2.123,0,0,0,7.084,5.192,2.171,2.171,0,0,0,5,2.947Z"
+          />
+        </svg>
+        <p class="loc">122 Bundall Road Bundall QLD 4217</p>
+      </button>
+      <button
+        class="fix-text-0 roboto-medium"
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.5vw"
+        [matMenuTriggerFor]="scheduleMenu"
+        (menuOpened)="menuOpened()"
+        (menuClosed)="menuClosed()"
+      >
+        <svg
+          class="icons"
+          width="27px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+          />
+          <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+        </svg>
+      </button>
+      <button
+        class="fix-text-0 roboto-medium"
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.5vw"
+        (click)="goToLinkWithotNewTab('tel:0749113545')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="icons"
+          width="27px"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
+          />
+        </svg>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <svg
+          class="icons"
+          width="33px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </svg>
+      </button>
+    </div>
   </div>
-
 </div>
-
 
 <div [hidden]="!isWhyProudSmile">
-  <div class="subHeader" fxFlexLayout fxLayoutAlign="center center">
-    <app-image-text
+  <div
+    class="subHeader font-extra-small roboto-medium color-brown"
+    fxFlexLayout
+    fxLayoutAlign="center center"
+  >
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="end center"
       (click)="onClick($event, 'proud-smile-experience-component')"
-      fxFlex="3 3 auto"
-      layoutAlign="end center"
-      imageUrl="../../assets/Shape.png"
-      text="The Proud Smile Experience"
-      textMaxWdith="7.5vw"
-    ></app-image-text>
-    <app-image-text
-      (click)="onClick($event, 'who-we-are-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          The Proud<br />
+          Smile Experience
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
       fxFlex="1 1 auto"
-      layoutAlign="center center"
-      imageUrl="../../assets/header/Team.png"
-      text="Who We Are"
-      textMaxWdith="4vw"
-    ></app-image-text>
-    <app-image-text
-      (click)="onClick($event, 'dental-clinic-component')"
+      fxLayoutAlign="center center"
+      (click)="onClick($event, 'who-we-are-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/header/Team.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Who We<br />
+          Are
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
       fxFlex="3 3 auto"
-      layoutAlign="start center"
-      imageUrl="../../assets/header/Chair.png"
-      text="Our Dental Clinic"
-      textMaxWdith="6vw"
-    ></app-image-text>
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'dental-clinic-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/header/Chair.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Our Dental<br />
+          Clinic
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
+<div [hidden]="!isAesthetics">
+  <div
+    class="subHeader font-extra-small-4 roboto-medium color-brown"
+    fxFlexLayout
+    fxLayoutAlign="center center"
+  >
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="end center"
+      (click)="onClick($event, 'Extractions')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Extractions</p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="center center"
+      (click)="onClick($event, 'RootCanalTherapy')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Root Canal<br />
+          Therapy
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'ClearBraces')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Clear Braces</p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'Invisalign')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Invisalign</p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'AnxiousPatients')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Anxious<br />
+          Patients
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'SameDayCrowns')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Same Day<br />
+          Crowns
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="subHeader font-extra-small-4 roboto-medium color-brown line-1"
+    fxFlexLayout
+    fxLayoutAlign="center center"
+  >
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="end center"
+      (click)="onClick($event, 'GeneralAndPreventiveCare')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>General and<br />Preventive care</p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="center center"
+      (click)="onClick($event, 'DVA')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          DVA (Department of<br />
+          Veteran Affairs)
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'MedicareChildBenefitScheme')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Medicare Child<br />Benefit Scheme</p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'MouthguardsAndSplints')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Mouthguards<br />and Splints</p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'DentalEmergency')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Dental<br />
+          Emergency
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

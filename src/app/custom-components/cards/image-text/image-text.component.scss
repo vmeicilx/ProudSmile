@@ -1,23 +1,19 @@
+@import "../../../../proud-smile-style.scss";
+
 :host {
   height: 100%;
   .imageTextCard {
     height: 100%;
-    .textContainer {
+    .text-container {
+      height: 100%;
       width: 5vw;
-
-      p {
-        font-family: "robotoMedium";
-        font-size: 1.65vmin;
-        color: #55311b;
-        line-height: 2vmin;
-        max-width: 7.5vw;
-        margin-bottom: 0;
-      }
     }
-
-    img {
-      max-width: 9.4vw;
-      display: block;
+    .image-container {
+      height: 100%;
+      img {
+        max-height: 100%;
+        display: block;
+      }
     }
   }
 }

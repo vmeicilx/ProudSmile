@@ -1,0 +1,156 @@
+$line-height-factor1: 1.1em;
+$line-height-factor2: 1.2em;
+$line-height-factor3: 1.3em;
+$line-height-factor4: 1.4em;
+$line-height-factor5: 1.5em;
+
+//25 - 88
+.font-large {
+  font-size: calc(3.89vw + 13.33px);
+  line-height: $line-height-factor4;
+}
+
+//24 - 64
+.font-cat {
+  font-size: calc(2.46vw + 16.59px);
+  line-height: $line-height-factor4;
+}
+
+//24 - 56
+.font-dog {
+  font-size: calc(1.97vw + 18.07px);
+  line-height: $line-height-factor4;
+}
+
+//24 - 48
+.font-fish {
+  font-size: calc(1.48vw + 19.55px);
+  line-height: $line-height-factor4;
+}
+
+//22 - 32
+.font-lion {
+  font-size: calc(0.61vw + 20.14px);
+  line-height: $line-height-factor4;
+}
+
+//16 - 32
+.font-tiger {
+  font-size: calc(0.98vw + 13.03px);
+  line-height: $line-height-factor4;
+}
+
+//20 - 24
+.font-medium {
+  font-size: calc(0.24vw + 19.25px);
+  line-height: $line-height-factor4;
+}
+
+//18 - 24
+.font-small {
+  font-size: calc(0.37vw + 16.88px);
+  line-height: $line-height-factor4;
+}
+
+//14 - 24
+.font-small-2 {
+  font-size: calc(0.61vw + 12.14px);
+  line-height: $line-height-factor4;
+}
+
+//16 - 21
+.font-small-3 {
+  font-size: calc(0.3vw + 15.07px);
+  line-height: $line-height-factor4;
+}
+
+//14 - 16
+.font-extra-small {
+  font-size: calc(0.12vw + 13.62px);
+  line-height: $line-height-factor4;
+}
+
+//12 - 14
+.font-extra-small-2 {
+  font-size: calc(0.12vw + 11.62px);
+  line-height: $line-height-factor4;
+}
+
+//12 - 16
+.font-extra-small-3 {
+  font-size: calc(0.24vw + 11.25px);
+  line-height: $line-height-factor4;
+}
+
+//10 - 16
+.font-extra-small-4 {
+  font-size: calc(0.37vw + 8.88px);
+  line-height: $line-height-factor4;
+}
+
+.copyright-text {
+  font-size: 12px;
+  line-height: $line-height-factor4;
+}
+
+.fix-text-0 {
+  font-size: 14px;
+  line-height: $line-height-factor4;
+}
+.fix-text-1 {
+  font-size: 16px;
+  line-height: $line-height-factor4;
+}
+.fix-text-2 {
+  font-size: 24px;
+  line-height: $line-height-factor4;
+}
+
+@media only screen and (min-width: 1201px) {
+  .primary-text-1 {
+    font-size: 3.7rem;
+    line-height: 5rem;
+    width: 900px;
+  }
+
+  .primary-text-2 {
+    font-size: 1rem;
+    line-height: 1.33rem;
+  }
+
+  .primary-text-3 {
+    font-size: 0.66rem;
+    line-height: 1rem;
+  }
+
+  .primary-text-4 {
+    font-size: 0.58rem;
+    line-height: 0.66rem;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .primary-text-1 {
+    font-size: 2.7rem;
+    line-height: 4rem;
+    width: 560px;
+  }
+
+  .primary-text-3 {
+    font-size: 0.63rem;
+    line-height: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+  .primary-text-1 {
+    font-size: 1.7rem;
+    line-height: 3rem;
+    width: 290px;
+  }
+
+  .primary-text-3 {
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+  }
+}

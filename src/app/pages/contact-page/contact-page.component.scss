@@ -1,50 +1,90 @@
-@import "../../../styleSettings.scss";
+@import "../../../proud-smile-style.scss";
 
 :host {
-  .section {
-    padding-bottom: 10vh;
+  .contact-section {
+    background: linear-gradient(to bottom,  $color-gray-light 0%,$color-gray-light 20%,white 50%,white 100%);
   }
   .no-horizontal-padding {
     padding-left: 0px;
     padding-right: 0px;
   }
 
-  .test {
-    font-size: 4.58vw;
-    line-height: 6.2vw;
-    width: 900px;
+  .title {
+    padding-left: calc(7.09em - 157.38px);
+    padding-right: calc(7.09em - 157.38px);
+    position: relative;
+    bottom: -240px;
+    z-index: 1;
   }
 
   .map-image-container {
-    height: 1127px;
+    background-image: url("../../../assets/contactPage/background_pattern.png");
+    height: 1429px;
     .map-image {
-      right: 0px;
+      left: 50%;
+      margin-left: calc(-1656.8px + 4vw);
       max-width: unset;
     }
     .location {
-      background: orange;
       cursor: pointer;
     }
-    .bundall-clinic {
-      right: 910px;
+    .australia {
+      right: 0;
+      margin-right: 3vw;
       top: 50%;
-      margin-top: -340px;
+      margin-top: -333px;
+    }
+    .box1 {
+      left: 50%;
+      margin-left: calc(-262px + 4vw);
+      top: 50%;
+      margin-top: -344px;
+    }
+    .box-index-1 {
+      left: 50%;
+      margin-left: calc(-250px + 4vw);
+      top: 50%;
+      margin-top: -331px;
+    }
+    .bundall-clinic {
+      left: 50%;
+      margin-left: calc(-208px + 4vw);
+      top: 50%;
+      margin-top: -341px;
+    }
+    .box2 {
+      left: 50%;
+      margin-left: calc(-18.8px + 4vw);
+      top: 50%;
+      margin-top: 254px;
+    }
+    .box-index-2 {
+      left: 50%;
+      margin-left: calc(-7.8px + 4vw);
+      top: 50%;
+      margin-top: 266px;
     }
     .pacific-clinic {
-      right: 650px;
+      left: 50%;
+      margin-left: calc(37.8px + 4vw);
       top: 50%;
-      margin-top: 200px;
+      margin-top: 258px;
     }
   }
 
   .scheduler-container {
-    top: -120px;
+    top: -200px;
     padding: 0 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    > * {
+    > :nth-child(1) {
       margin-right: 5.3vw;
+    }
+    > :nth-child(2) {
+      margin-right: 5.3vw;
+    }
+    > * {
       margin-bottom: 4vh;
       align-items: start;
       justify-content: center;
@@ -80,7 +120,16 @@
       display: none;
     }
     .scheduler-container {
+      top: -100px;
       flex-direction: column;
+      > :nth-child(1) {
+        margin-right: 0px;
+      }
+      > * {
+        margin-right: 0px;
+        align-items: center;
+        justify-content: center;
+      }
     }
     .test {
       width: 560px;
@@ -92,11 +141,14 @@
       display: none;
     }
     .scheduler {
-      padding-left: 0px;
-      max-width: 250px;
+      padding-left: 10vw;
     }
     .scheduler-container {
+      top: -100px;
       flex-direction: column;
+      > :nth-child(1) {
+        margin-right: 0px;
+      }
       > * {
         margin-right: 0px;
         align-items: center;
@@ -108,6 +160,35 @@
     }
     .test {
       width: 290px;
+    }
+    .map-image-container {
+      .map-image {
+        margin-left: calc(-1753.8px + 4vw);
+      }
+      .australia {
+        margin-top: -170px;
+        right: 50%;
+        margin-right: -134px;
+      }
+      .box1 {
+        transform: scaleX(-1);
+        margin-left: calc(-130.8px + 4vw);
+      }
+      .box-index-1 {
+        margin-left: calc(78.8px + 4vw);
+      }
+      .bundall-clinic {
+        margin-left: calc(-98.8px + 4vw);
+      }
+      .box2 {
+        margin-left: calc(-115.8px + 4vw);
+      }
+      .box-index-2 {
+        margin-left: calc(-104.8px + 4vw);
+      }
+      .pacific-clinic {
+        margin-left: calc(-60.8px + 4vw);
+      }
     }
   }
 }

@@ -1,27 +1,34 @@
+@import "../../../proud-smile-style.scss";
+
 :host {
     button {
         border-radius: 37px;
-        padding: 2.5vh 2.6vw;
-        background: #F05024;
+        background: $color-orange;
         border: 0;
-        color: white;
-        font-family: "robotoMedium";
-        font-size: 0.58rem;
-        cursor: pointer;
         outline: none;
     }
     
   @media only screen and (min-width: 1201px) {
 
+    button {
+      padding: 24px 48px;
+    }
+
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
 
+    button {
+      padding: 18px 36px;
+    }
+
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+
     button {
-      padding: 2vh 4vw;
+      padding: 12px 24px;
     }
+
   }
 }

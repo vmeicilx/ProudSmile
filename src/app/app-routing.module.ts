@@ -4,24 +4,50 @@ import { ComingSoonComponent } from "./custom-components/coming-soon/coming-soon
 import { HeaderComponent } from "./header/header.component";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { AestheticsComponent } from "./pages/aesthetics/aesthetics.component";
-import { HealthComponent } from "./pages/health/health.component";
 import { WhyProudSmileComponent } from "./pages/why-proud-smile/why-proud-smile.component";
 import { ProudSmileExperienceComponent } from "./pages/why-proud-smile/proud-smile-experience/proud-smile-experience.component";
-import { WhoWeAreComponent } from './pages/why-proud-smile/who-we-are/who-we-are.component';
-import { DentalClinicComponent } from './pages/why-proud-smile/dental-clinic/dental-clinic.component';
-import { ContactPageComponent } from './pages/contact-page/contact-page.component';
-import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { WhoWeAreComponent } from "./pages/why-proud-smile/who-we-are/who-we-are.component";
+import { DentalClinicComponent } from "./pages/why-proud-smile/dental-clinic/dental-clinic.component";
+import { ContactPageComponent } from "./pages/contact-page/contact-page.component";
+import { PaymentPageComponent } from "./pages/payment-page/payment-page.component";
+import { AnxiousPatientsComponent } from "./pages/health/anxious-patients/anxious-patients.component";
+import { ClearBracesComponent } from "./pages/health/clear-braces/clear-braces.component";
+import { DentalEmergencyComponent } from "./pages/health/dental-emergency/dental-emergency.component";
+import { DvaComponent } from "./pages/health/dva/dva.component";
+import { ExtractionsComponent } from "./pages/health/extractions/extractions.component";
+import { GeneralAndPreventiveCareComponent } from "./pages/health/general-and-preventive-care/general-and-preventive-care.component";
+import { InvasilignComponent } from "./pages/health/invasilign/invasilign.component";
+import { MedicareChildComponent } from "./pages/health/medicare-child/medicare-child.component";
+import { MouthguardsComponent } from "./pages/health/mouthguards/mouthguards.component";
+import { RootCanalTherapyComponent } from "./pages/health/root-canal-therapy/root-canal-therapy.component";
+import { SameDayCrownsComponent } from "./pages/health/same-day-crowns/same-day-crowns.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home-page-component", pathMatch: "full" },
   { path: "home-page-component", component: HomePageComponent },
-  { path: "proud-smile-experience-component", component: ProudSmileExperienceComponent },
+  {
+    path: "proud-smile-experience-component",
+    component: ProudSmileExperienceComponent
+  },
   { path: "who-we-are-component", component: WhoWeAreComponent },
   { path: "dental-clinic-component", component: DentalClinicComponent },
   { path: "header-component", component: HeaderComponent },
   { path: "why-proud-smile-component", component: WhyProudSmileComponent },
-  { path: "health-component", component: HealthComponent },
   { path: "aesthetics-component", component: AestheticsComponent },
+  { path: "AnxiousPatients", component: AnxiousPatientsComponent },
+  { path: "ClearBraces", component: ClearBracesComponent },
+  { path: "DentalEmergency", component: DentalEmergencyComponent },
+  { path: "DVA", component: DvaComponent },
+  { path: "Extractions", component: ExtractionsComponent },
+  {
+    path: "GeneralAndPreventiveCare",
+    component: GeneralAndPreventiveCareComponent
+  },
+  { path: "Invisalign", component: InvasilignComponent },
+  { path: "MedicareChildBenefitScheme", component: MedicareChildComponent },
+  { path: "MouthguardsAndSplints", component: MouthguardsComponent },
+  { path: "RootCanalTherapy", component: RootCanalTherapyComponent },
+  { path: "SameDayCrowns", component: SameDayCrownsComponent },
   { path: "coming-soon-component", component: ComingSoonComponent },
   { path: "payment-page-component", component: PaymentPageComponent },
   { path: "contact-page-component", component: ContactPageComponent },
@@ -30,6 +56,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

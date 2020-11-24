@@ -1,8 +1,11 @@
-<div fxLayout fxLayoutAlign={{layoutAlign}} class="imageTextCard" fxLayoutGap="1.66vw">
-  <div>
-    <img src={{imageUrl}} />
+<div
+  class="imageTextCard flexy roboto-medium color-brown fix-text-1"
+  fxLayoutGap="1.66vw"
+>
+  <div class="image-container">
+    <img src="{{ imageUrl }}" />
   </div>
-  <div class="textContainer">
-      <p [style.max-width]="getTextMaxWidth()">{{text}}</p>
-  </div>
+</div>
+<div class="text-container">
+  <p [style.max-width]="getTextMaxWidth()">{{ text }}</p>
 </div>

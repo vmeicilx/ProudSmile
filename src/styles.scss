@@ -1,5 +1,6 @@
-@import '~@angular/material/theming';
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./proud-smile-style.scss";
 
 @font-face {
   font-family: robotoBold;
@@ -26,7 +27,7 @@
   src: url(assets/fonts/LibreBaskerville-Italic.ttf) format("opentype");
 }
 @font-face {
-  font-family: libre;
+  font-family: libreRegular;
   src: url(assets/fonts/LibreBaskerville-Regular.ttf) format("opentype");
 }
 @font-face {
@@ -44,7 +45,6 @@ body {
 }
 
 * {
-  // cursor: default;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
 }
@@ -55,29 +55,12 @@ a {
 }
 
 .ng-image-slider img {
-  border-radius:0 !important;
+  border-radius: 0 !important;
 }
 
-@media only screen and (min-width: 1201px){
-  html, body {
-    font-size:24px;
-  }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1200px){
-  html, body {
-    font-size:20px;
-  }
-}
-
-@media only screen and (min-width: 300px) and (max-width: 600px){
-  html, body {
-    font-size:16px;
-  }
-}
-
-@media only screen and (max-width: 299px), (max-height: 99px){
-  html, body {
+@media only screen and (max-width: 299px), (max-height: 99px) {
+  html,
+  body {
     display: none;
   }
 }

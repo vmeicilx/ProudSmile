@@ -1,63 +1,67 @@
 <div fxLayout="column" fxLayout="center center">
-  <div class="firstSection" fxLayout fxLayoutAlign="space-between" style="width: 100%">
-    <div class="textContainer" fxLayout="column" fxLayoutAlign="start start">
-      <div class="lineAndText" fxLayout fxLayoutAlign=" center">
-        <div class="line"></div>
+  <div class="firstSection section full-width flexy-row-w">
+    <div class="color-gray-dark flexy-column text-container">
+      <div
+        class="lineAndText flexy-row cscc font-extra-small opacity-5 roboto-medium"
+      >
+        <div class="line width-1"></div>
         <p>EASY TO TALK TO</p>
       </div>
-      <div class="titleText">
-        <p>Have a question<br> for ProudSmile?<br> <span class='it'>Just text us.</span></p>
-      </div>
-      <div class="mainText">
+      <div class="font-dog libre-regular">
         <p>
-          Any questions? Our team will respon to any questions you may have about the practice or your dento - facial needs.
+          Have a question<br />
+          for ProudSmile?<br />
+          <span class="libre-italic">Just text us.</span>
+        </p>
+      </div>
+      <div class="mainText max-width-1 font-small roboto-regular">
+        <p>
+          Any questions? Our team will respond to any questions you may have
+          about the practice or your dento - facial needs.
         </p>
       </div>
       <app-button text="GET IN TOUCH"></app-button>
     </div>
     <div>
-      <img src="../../assets/footer/chat.png"/>
+      <img src="../../assets/footer/chat.png" />
     </div>
   </div>
 
   <div class="horizontalLine"></div>
 
   <div
-    class="locationSection"
+    class="locationSection full-width"
     fxLayout
     fxLayoutAlign="center start"
     fxLayoutGap="8.4vw"
   >
-
-    <div class="locationCard" fxLayout="column" fxLayoutAlign="start start">
+    <div class="locationCard flexy-column sscc">
       <div class="locationCardIcon">
         <img src="../../assets/footer/Cangur.png" />
       </div>
-      <div class="locationCardTitle">
-        <p>
-          <span style="font-family: 'robotoBold'"
-            >Come over for coffe and a friendly chat.</span
-          >
-        </p>
+      <div class="locationCardTitle font-small roboto-bold color-gray-dark">
+        <p>Come over for coffe and a friendly chat.</p>
       </div>
 
-      <div fxLayout class="locationCardText">
-        <p>
-          <span style="opacity: 0.5;">122 Bundall Road, Bundall QLD 4217 Australia</span>
-          <span
-            ><div
-            fxLayout
-            fxLayoutAlign=" center"
-            class="link directionLink"
-            (click)="onDirectionsClick()"
-          >
-            <p fxLayout fxLayoutAlign="center center">Get directions to our clinic</p>
-            <div>
-              <img src="../../assets/orangeArrow.svg" />
-            </div>
-          </div></span
-          >
-        </p>
+      <div
+        class="locationCardText roboto-regular color-gray-dark font-extra-small flexy-column sscc"
+      >
+        <p class="opacity-5">122 Bundall Road, Bundall QLD 4217 Australia</p>
+        <div
+          fxLayout
+          fxLayoutAlign=" center"
+          class="color-orange directionLink cursor-pointer roboto-medium"
+          (click)="
+            goToLink(
+              'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+            )
+          "
+        >
+          <p>Get directions to our clinic</p>
+          <div class="link-image">
+            <img src="../../assets/orangeArrow.svg" />
+          </div>
+        </div>
       </div>
     </div>
 
@@ -69,29 +73,22 @@
   <div class="horizontalLine"></div>
 
   <div
-    class="subscribeSection"
-    fxLayout
-    fxLayoutAlign="center start"
-    fxLayoutGap="8.4vw"
+    class="subscribeSection full-width color-gray-dark flexy-row-w-r"
   >
     <div class="subscribeSectionImage">
       <img src="../../assets/footer/footerNewsletter.png" />
     </div>
-    <div class="subscribeCard" fxLayout="column" fxLayoutAlign="start start">
+    <div class="subscribeCard flexy-column sscc">
       <div class="subscribeCardIcon">
         <img src="../../assets/footer/Bumerang.png" />
       </div>
-      <div class="subscribeCardTitle">
-        <p>
-          <span style="font-family: 'robotoBold'"
-            >We'll make the first move, what`s your email?</span
-          >
-          No commitments, unsubscribe anytime.
-        </p>
+      <div class="subscribeCardTitle font-small">
+        <p class="roboto-bold">We'll make the first move, what`s your email?</p>
+        <p class="roboto-regular">No commitments, unsubscribe anytime.</p>
       </div>
-      <div class="subscribeCardInput">
-        <form class="example-form">
-          <mat-form-field class="example-full-width">
+      <div class="subscribeCardInput full-width">
+        <form class="example-form full-width">
+          <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
             <input
               matInput
@@ -114,7 +111,7 @@
           </mat-form-field>
         </form>
       </div>
-      <div fxLayout class="subscribeCardText">
+      <div fxLayout class="subscribeCardText opacity-5 font-extra-small">
         <mat-checkbox color="primary" class="subscribeCheckBox"> </mat-checkbox>
         <p>
           I give my consent that my personal information can be collected and
@@ -126,17 +123,21 @@
           >
         </p>
       </div>
-      <div fxLayout class="subscribeCardButtons">
+      <div class="subscribeCardButtons full-width">
         <app-button text="SUBSCRIBE"></app-button>
 
         <div
           fxLayout
           fxLayoutAlign=" center"
-          class="link"
-          (click)="onNewsletterClick()"
+          class="color-orange directionLink cursor-pointer roboto-medium font-extra-small"
+          (click)="
+            goToLink(
+              'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+            )
+          "
         >
-          <p fxLayout fxLayoutAlign="center center">See A Newsletter Sample</p>
-          <div>
+          <p>See A Newsletter Sample</p>
+          <div class="link-image">
             <img src="../../assets/orangeArrow.svg" />
           </div>
         </div>
@@ -146,7 +147,7 @@
 
   <div class="horizontalLine"></div>
 
-  <div class="footerCopyright" fxLayout fxLayoutAlign="center">
+  <div class="footerCopyright color-gray-dark full-width">
     <div class="copyrightIcon">
       <svg
         width="107px"
@@ -175,10 +176,10 @@
       </svg>
     </div>
 
-    <div class="footerCopyrightFirst" fxLayout="column" fxLayoutAlign="start">
-      <div class="copyrightMainText">
+    <div fxLayout="column" fxLayoutAlign="start">
+      <div class="copyrightMainText copyright-text roboto-regular opacity-5">
         <p>
-          <span style="font-family: 'robotoBold'">© Proud Smile Dental</span> -
+          <span class="roboto-bold">© Proud Smile Dental</span> -
           iPhone XR pricing is after trade‑in of iPhone 7 Plus in good
           condition. Monthly pricing requires a 24‑month installment loan with a
           0% APR, and iPhone activation. Applicable sales tax and fees due at
@@ -186,7 +187,7 @@
           balance.
         </p>
       </div>
-      <div class="copyrightMenu" fxLayout fxLayoutGap="1.9vw">
+      <div class="copyrightMenu roboto-bold copyright-text opacity-3" fxLayout fxLayoutGap="1.9vw">
         <div>
           <p><a [routerLink]="['/why-proud-smile-component']">CONTACT</a></p>
         </div>
@@ -209,9 +210,8 @@
     <div
       class="footerCopyrightSecond"
       fxLayout="column"
-      fxLayoutAlign="center end"
     >
-      <div class="copyrightSecondaryText">
+      <div class="copyrightSecondaryText copyright-text roboto-bold opacity-3">
         <p>
           MADE WITH PRIDE BY PROUD SMILE CLINIC. ALL RIGHTS AND COPYRIGHTS
           RESERVED 2019
@@ -221,19 +221,17 @@
         <div>
           <img
             src="../../assets/footer/facebook.svg"
-            (click)="onFacebookClick()"
           />
         </div>
         <div>
           <img
             src="../../assets/footer/twitter.svg"
-            (click)="onTwitterClick()"
           />
         </div>
         <div>
           <img
             src="../../assets/footer/instagram.svg"
-            (click)="onInstagramClick()"
+            (click)="goToLink('https://www.instagram.com/proud.smile.dental/')"
           />
         </div>
       </div>

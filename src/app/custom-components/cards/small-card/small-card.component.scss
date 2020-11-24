@@ -1,29 +1,38 @@
-.smallCard {
-    color: white;
+@import "../../../../proud-smile-style.scss";
+
+:host {
+  .smallCard {
     height: 100%;
-
-    .imageContainer {
-      height: 50%;
-    }
     .smallCardText {
-      height: 50%;
-        max-width: 7vw;
-        text-align: center;
-        p {
-          margin: 0;
-        }
-    }  
-}
+      padding-top: 1vh;
+      text-align: center;
+    }
+  }
 
+  @media only screen and (min-width: 1201px) {
+    .smallCard {
+      .smallCardText {
+        max-width:140px;
+      }
+    }
+  }
 
-.smallCard img {
-  max-height: 100%;
-  max-width: 100%;
-  display: block;
-}
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .smallCard {
+      .smallCardText {
+        max-width:120px;
+      }
+    }
+  }
 
-.smallCard p {
-  font-size: 0.66rem;
-  font-family: "robotoRegular";
-  line-height: 0.87rem;
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .smallCard {
+      .imageContainer {
+        max-width:50%;
+      }
+      .smallCardText {
+        max-width: 100px;
+      }
+    }
+  }
 }
