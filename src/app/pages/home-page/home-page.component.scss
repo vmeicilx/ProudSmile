@@ -84,15 +84,8 @@
       width: 70%;
       margin: 1vh 0;
     }
-    .link {
-      cursor: pointer;
-      padding-top: 2vh;
-      p {
-        padding: 0 0.93vw;
-      }
-    }
     .element {
-      margin-top:10vh;
+      margin-top: 10vh;
     }
   }
 
@@ -134,57 +127,8 @@
     }
   }
 
-  .bigCardsContainer {
-    background: #f5f5f5;
-
-    .firstTitle {
-      padding-top: calc(6.17vw + 81.48px);
-      padding-bottom: calc(6.17vw + 81.48px);
-      padding-left: calc(7.09em - 157.38px);
-      padding-right: calc(7.09em - 157.38px);
-    }
-
-    .firstTitle p {
-      text-align: center;
-    }
-
-    .bigCard {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-start;
-      margin-bottom:30vh;
-      > :nth-child(1) {
-        margin-right: 6vw;
-      }
-      .imageContainer {
-        max-width: calc(122vw - 436.36px);
-      }
-
-      .textContainer.no-margin {
-        margin-right: 0px;
-      }
-
-      .textContainer {
-        width: 32vw;
-        .number {
-          margin-top:-12vh;
-        }
-      }
-
-      .textContainer .title p {
-        max-width: 25vw;
-      }
-
-      .textContainer .link img {
-        padding-left: 8px;
-      }
-    }
-  }
-
   .officeContainer {
     > :nth-child(1) {
-
       justify-content: center;
       align-items: center;
     }
@@ -193,17 +137,17 @@
     }
     .text-container {
       width: 28vw;
-      margin-right:10vw;
+      margin-right: 10vw;
       .title {
         margin-bottom: 4vh;
       }
       .mainText {
         margin-bottom: 4vh;
       }
-      
-    .lineAndText {
-      margin-right: unset;
-    }
+
+      .lineAndText {
+        margin-right: unset;
+      }
     }
   }
 
@@ -227,14 +171,6 @@
       }
     }
 
-    .bigCardsContainer {
-      .bigCard {
-        .imageContainer {
-          max-width: 50%;
-        }
-      }
-    }
-    
     .officeContainer {
       .image-container {
         max-width: 50%;
@@ -243,7 +179,7 @@
         margin-bottom: 4vh;
       }
       .lineAndText {
-        padding-top:10vh;
+        padding-top: 10vh;
         align-items: center;
       }
     }
@@ -257,45 +193,6 @@
             right: unset;
             left: 50%;
           }
-        }
-      }
-    }
-
-    .bigCardsContainer {
-      .rev {
-        flex-direction: column-reverse;
-      }
-      .no-rev {
-        flex-direction: column;
-      }
-      .bigCard {
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 10vh;
-        > :nth-child(1) {
-          margin: 0;
-        }
-        .imageContainer {
-          max-width: 90%;
-        }
-
-        .textContainer.margin-bottom {
-          margin-bottom:3vh;
-        }
-
-        .textContainer {
-          width: 80vw;
-          justify-self: center;
-          align-items: center;
-          .number {
-            margin-top:3vh;
-            max-width: 40vw;
-          }
-        }
-        .textContainer .title p {
-          padding-left: calc(1.13vw + 2px);
-          padding-right: calc(1.13vw + 2px);
-          max-width: unset;
         }
       }
     }
@@ -316,7 +213,7 @@
       .content {
         flex-direction: column;
       }
-      .text-container {        
+      .text-container {
         width: 90vw;
         margin-right: unset;
         align-items: center;
@@ -383,21 +280,7 @@
   right: 0;
 }
 
-.teamContainer {
-  background: #fff9f6;
-}
-
-.teamContainer .mainTitle p {
-  text-align: center;
-}
-
-.teamContainer .subTitle p {
-  text-align: center;
-  margin: 2vh 0 0 0;
-}
-
 .lineAndText {
-  padding-top: 21vh;
   margin-right: 31vh;
 }
 

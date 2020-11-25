@@ -1,15 +1,5 @@
-import {
-  Component,
-  OnInit,
-  ElementRef,
-  ViewChild,
-  Renderer2,
-  HostListener
-} from "@angular/core";
-import {
-  VgApiService,
-  VgPlayerComponent
-} from "@videogular/ngx-videogular/core";
+import { Component, OnInit, ElementRef, Renderer2 } from "@angular/core";
+
 import { Router } from "@angular/router";
 
 @Component({
@@ -20,8 +10,6 @@ import { Router } from "@angular/router";
 export class HomePageComponent implements OnInit {
   private elRef: ElementRef;
   private renderer: Renderer2;
-  vg: VgApiService;
-  @ViewChild(VgPlayerComponent) vgPlayer: VgPlayerComponent;
 
   imageObject: Array<object> = [
     {
@@ -85,16 +73,7 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {}
 
-  ngAfterViewInit() {
-    this.vgPlayer.fsAPI.onChangeFullscreen.subscribe((event) => {
-      if (event) {
-        this.vgPlayer.elem.style.display = "block";
-      } else {
-        this.vgPlayer.elem.style.display = "none";
-      }
-    });
-    this.vgPlayer.elem.style.display = "none";
-  }
+  ngAfterViewInit() {}
 
   seeAllHealth() {
     this.router.navigate(["/", "health-component"]);
@@ -106,13 +85,5 @@ export class HomePageComponent implements OnInit {
 
   goToLink(url: string) {
     window.open(url, "_blank");
-  }
-
-  onPlayerReady(api: VgApiService) {
-    this.vg = api;
-  }
-
-  fullscreen() {
-    this.vg.fsAPI.toggleFullscreen();
   }
 }

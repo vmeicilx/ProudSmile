@@ -54,210 +54,182 @@
   </div>
 </div>
 
-<app-button (click)="fullscreen()"></app-button>
-
-<div class="video-player-wrapper">
-  <vg-player (onPlayerReady)="onPlayerReady($event)">
-    <vg-overlay-play></vg-overlay-play>
-    <vg-buffering></vg-buffering>
-
-    <vg-scrub-bar>
-      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-    </vg-scrub-bar>
-
-    <vg-controls>
-      <vg-play-pause></vg-play-pause>
-      <vg-playback-button></vg-playback-button>
-
-      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-
-      <vg-scrub-bar style="pointer-events: none"></vg-scrub-bar>
-
-      <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
-      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-
-      <vg-mute></vg-mute>
-      <vg-volume></vg-volume>
-
-      <vg-fullscreen></vg-fullscreen>
-    </vg-controls>
-
-    <video [vgMedia]="media" #media id="singleVideo" preload="auto" crossorigin>
-      <source
-        src="../../../assets/homePage/PorcelainVeneers.mp4"
-        type="video/mp4"
-      />
-    </video>
-  </vg-player>
-</div>
-
-<!-- <mat-video src="../../../assets/homePage/PorcelainVeneers.mp4"></mat-video> -->
-
-<!-- <app-video-player
-  id="HomePageVideo"
+<app-video-player
   videoSource="../../../assets/homePage/PorcelainVeneers.mp4"
-  text="Watch one of our clinic videos"
-></app-video-player> -->
+  text="Watch one of Our Clinic Videos"
+></app-video-player>
 
-<div fxLayout="column" fxLayoutAlign="center" class="bigCardsContainer">
+<div
+  fxLayout="column"
+  fxLayoutAlign="center"
+  class="padding-chef color-brown background-10 padding-bottom-1"
+>
   <div
     fxLayout="column"
     fxLayoutAlign="center center"
-    class="firstTitle color-brown font-large libre-regular"
+    class="font-large libre-regular center-text padding-top-bottom-1 margin-bottom-2"
   >
-    <div>
+    <div class="width-1">
       <img src="../../../assets/Shape.png" />
     </div>
     <p>
-      The dentist you'll actually
+      The dentist you'll<br />
+      actually
       <span class="libre-italic">Want to Visit</span>
     </p>
   </div>
 
-  <div class="bigCard rev">
-    <div class="imageContainer">
-      <img src="../../assets/homePage/couch.png" />
-    </div>
-    <div
-      fxLayout="column"
-      fxLayoutGap="6vh"
-      class="textContainer margin-bottom"
-    >
-      <div fxLayout="column" class="number">
-        <div>
+  <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w-r sscc margin-bottom-2">
+      <div class="margin-right-1 flex-1 no-margin-on-sm">
+        <img src="../../assets/homePage/couch.png" />
+      </div>
+      <div
+        fxLayout="column"
+        class="flex-1 sscc margin-bottom-on-sm relative-container top1"
+      >
+        <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img src="../../assets/homePage/1.png" />
         </div>
-      </div>
-      <div class="title color-brown font-cat libre-regular">
-        <p>
-          <span class="libre-italic">Unique</span> as <br />
-          you are
-        </p>
-      </div>
-      <div class="text color-brown-light roboto-regular font-lion">
-        <p>
-          We're all different and so are our needs. That's why our treatment
-          plans are made just for you.
-        </p>
-      </div>
-      <div
-        fxLayout
-        fxLayoutAlign=" center"
-        class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-      >
-        <p fxLayout fxLayoutAlign="center center">READ MORE</p>
-        <div>
-          <img src="../../assets/homePage/arrow.png" />
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p>
+            <span class="libre-italic">Unique</span> as <br />
+            you are
+          </p>
+        </div>
+        <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
+          <p class="center-text-on-sm">
+            We’re all different and so are our needs. That’s why our treatment
+            plans are made just for you.
+          </p>
+        </div>
+        <div
+          fxLayout
+          fxLayoutAlign=" center"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
+        >
+          <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+          <div style="padding-left: 8px">
+            <img src="../../assets/homePage/arrow.png" />
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="bigCard no-rev">
-    <div
-      fxLayout="column"
-      fxLayoutGap="6vh"
-      class="textContainer no-margin margin-bottom"
-    >
-      <div fxLayout="column" class="number">
-        <div>
+  <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w sscc margin-bottom-2">
+      <div
+        fxLayout="column"
+        class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm"
+      >
+        <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img src="../../assets/homePage/2.png" />
         </div>
-      </div>
-      <div class="title color-brown font-cat libre-regular">
-        <p>You can <span class="libre-italic">easily afoord it</span></p>
-      </div>
-      <div class="text color-brown-light roboto-regular font-lion">
-        <p>
-          No it's not an arm and a leg, just your teeth. With our super lexibile
-          payment methods, no credit checks and transparent prices chances are
-          we a solution for anyone.
-        </p>
-      </div>
-      <div
-        fxLayout
-        fxLayoutAlign=" center"
-        class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-      >
-        <p fxLayout fxLayoutAlign="center center">READ MORE</p>
-        <div>
-          <img src="../../assets/homePage/arrow.png" />
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p>
+            You can
+            <span class="libre-italic"
+              >easily<br />
+              afoord it</span
+            >
+          </p>
+        </div>
+        <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
+          <p class="center-text-on-sm" style="max-width: 540px">
+            No it's not an arm and a leg, just your teeth. With our super
+            lexibile payment methods, no credit checks and transparent prices
+            chances are we a solution for anyone.
+          </p>
+        </div>
+        <div
+          fxLayout
+          fxLayoutAlign=" center"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
+        >
+          <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+          <div style="padding-left: 8px">
+            <img src="../../assets/homePage/arrow.png" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="imageContainer">
-      <img src="../../assets/homePage/relation.png" />
+      <div class="flex-1">
+        <img src="../../assets/homePage/relation.png" />
+      </div>
     </div>
   </div>
 
-  <div class="bigCard rev">
-    <div class="imageContainer">
-      <img src="../../assets/homePage/media.png" />
-    </div>
-    <div
-      fxLayout="column"
-      fxLayoutGap="6vh"
-      class="textContainer margin-bottom"
-    >
-      <div fxLayout="column" class="number">
-        <div>
+  <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w-r sscc margin-bottom-2">
+      <div class="margin-right-1 flex-1 no-margin-on-sm">
+        <img src="../../assets/homePage/media.png" />
+      </div>
+      <div
+        fxLayout="column"
+        class="flex-1 sscc margin-bottom-on-sm relative-container top1"
+      >
+        <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img src="../../assets/homePage/3.png" />
         </div>
-      </div>
-      <div class="title color-brown font-cat libre-regular">
-        <p><span class="libre-italic">You</span> first, then your teeth</p>
-      </div>
-      <div class="text color-brown-light roboto-regular font-lion">
-        <p>
-          We all have a story to tell adn we're here to listen, judgement free.
-          Then we'll give you the smile you'll be proud of.
-        </p>
-      </div>
-      <div
-        fxLayout
-        fxLayoutAlign=" center"
-        class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-      >
-        <p fxLayout fxLayoutAlign="center center">READ MORE</p>
-        <div>
-          <img src="../../assets/homePage/arrow.png" />
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p>
+            <span class="libre-italic">You</span> first, then<br />
+            your teeth
+          </p>
+        </div>
+        <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
+          <p class="center-text-on-sm">
+            We all have a story to tell and we're here to listen, judgement
+            free. Then we'll give you the smile you'll be proud of.
+          </p>
+        </div>
+        <div
+          fxLayout
+          fxLayoutAlign=" center"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
+        >
+          <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+          <div style="padding-left: 8px">
+            <img src="../../assets/homePage/arrow.png" />
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="bigCard no-rev">
-    <div
-      fxLayout="column"
-      fxLayoutGap="6vh"
-      class="textContainer margin-bottom"
-    >
-      <div fxLayout="column" class="number">
-        <div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w sscc">
+      <div
+        fxLayout="column"
+        class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm"
+      >
+        <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img src="../../assets/homePage/4.png" />
         </div>
-      </div>
-      <div class="title color-brown font-cat libre-regular">
-        <p>Technology that <span class="it">Comforts</span></p>
-      </div>
-      <div class="text color-brown-light roboto-regular font-lion">
-        <p>Yes, we're high tech, but all that to make forget where you are.</p>
-      </div>
-      <div
-        fxLayout
-        fxLayoutAlign=" center"
-        class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-      >
-        <p fxLayout fxLayoutAlign="center center">READ MORE</p>
-        <div>
-          <img src="../../assets/homePage/arrow.png" />
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p>Technology that <span class="it">Comforts</span></p>
+        </div>
+        <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
+          <p class="center-text-on-sm" style="max-width: 540px">
+            Yes, we're high tech, but all that to make forget where you are.
+          </p>
+        </div>
+        <div
+          fxLayout
+          fxLayoutAlign=" center"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
+        >
+          <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+          <div style="padding-left: 8px">
+            <img src="../../assets/homePage/arrow.png" />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="imageContainer">
-      <img src="../../assets/homePage/technology.png" />
+
+      <div class="flex-1">
+        <img src="../../assets/homePage/technology.png" />
+      </div>
     </div>
   </div>
 </div>
@@ -266,7 +238,7 @@
   fxLayout="column"
   fxLayoutAlign="center"
   fxLayoutGap="9vh"
-  class="teamContainer"
+  class="background-2 padding-top-bottom-1"
 >
   <div fxLayout="column" fxLayoutAlign="center center" class="title">
     <div
