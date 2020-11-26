@@ -9,18 +9,20 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root-canal-therapy",
-  templateUrl: "./root-canal-therapy.component.html"
+  templateUrl: "./root-canal-therapy.component.html",
+  styleUrls: ["./root-canal-therapy.component.scss"]
 })
 export class RootCanalTherapyComponent implements OnInit {
   constructor(private router: Router) {}
 
   @ViewChild("rootCanalVideo") video: ElementRef;
+  @ViewChild("teethVideo") teeth: ElementRef;
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     this.video.nativeElement.muted = true;
-    this.video.nativeElement.muted = false;
+    this.teeth.nativeElement.muted = true;
   }
 
   seeAllFinancial() {
@@ -33,10 +35,7 @@ export class RootCanalTherapyComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (
-      this.video.nativeElement.getBoundingClientRect().top < 350 &&
-      this.video.nativeElement.getBoundingClientRect().top > -1000
-    ) {
+    if (this.inTheViewport(this.video.nativeElement)) {
       if (this.video.nativeElement.paused) {
         this.video.nativeElement.play();
       }
@@ -44,6 +43,31 @@ export class RootCanalTherapyComponent implements OnInit {
       if (!this.video.nativeElement.paused) {
         this.video.nativeElement.pause();
       }
+    }
+
+    console.log(this.teeth.nativeElement.getBoundingClientRect());
+    if (this.inTheViewport(this.teeth.nativeElement)) {
+      if (this.teeth.nativeElement.paused) {
+        this.teeth.nativeElement.play();
+      }
+    } else {
+      if (!this.teeth.nativeElement.paused) {
+        this.teeth.nativeElement.pause();
+      }
+    }
+  }
+
+  inTheViewport(elem): boolean {
+    var bounding = elem.getBoundingClientRect();
+    if (
+      bounding.top >= -elem.offsetHeight &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) +
+          elem.offsetHeight
+    ) {
+      return true;
+    } else {
+      return false;
     }
   }
 }

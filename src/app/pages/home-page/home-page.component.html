@@ -238,110 +238,130 @@
   fxLayout="column"
   fxLayoutAlign="center"
   fxLayoutGap="9vh"
-  class="background-2 padding-top-bottom-1"
+  class="background-2 padding-top-3"
 >
-  <div fxLayout="column" fxLayoutAlign="center center" class="title">
+  <div fxLayout="column" fxLayoutAlign="center center">
     <div
+      class="roboto-medium color-brown-light font-extra-small margin-bottom-3"
       fxLayout
-      fxLayoutAlign="center center"
-      class="lineAndText color-brown-light"
+      fxLayoutAlign=" center"
     >
-      <div class="line roboto-medium font-extra-small width-1"></div>
-      <p>THIS IS US</p>
+      <div class="opacity-5 width-3 line-1"></div>
+      <p class="margin-left-1">THIS IS US</p>
     </div>
-    <div class="mainTitle libre-regular font-large color-brown">
-      <p>
+    <div class="libre-regular font-large color-brown margin-bottom-1">
+      <p class="center-text">
         A top Team,<br />that just <span class="libre-italic">Cares More</span>
       </p>
     </div>
-    <div class="subTitle roboto-regular color-brown-light font-tiger">
-      <p>
+    <div class="roboto-regular color-brown-light font-tiger">
+      <p class="center-text">
         We're honest, experienced, spontaneous,<br />
         compassionate, funny, and not at all modest.
       </p>
     </div>
   </div>
-  <div fxLayout fxLayoutAlign="center center" class="teamImageContainer">
-    <div class="teamImage">
+  <div fxLayout fxLayoutAlign="center center">
+    <div>
       <img src="../../assets/homePage/Team.png" />
     </div>
   </div>
 </div>
 
-<div fxLayout fxLayoutAlign="center" fxLayoutGap="9vh" class="officeContainer">
-  <div class="full-width flexy-row content">
-    <div class="color-brown flexy-column text-container">
+<div
+  class="padding-chef color-brown background-11 padding-bottom-1"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w sscc">
       <div
-        class="lineAndText flexy-row font-extra-small opacity-5 roboto-medium"
+        class="flex-1 sscc margin-right-1 no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1"
+        fxLayout="column"
       >
-        <div class="line width-1"></div>
-        <p>THE OFFICE</p>
+        <div
+          class="roboto-medium color-brown-light font-extra-small margin-bottom-3"
+          fxLayout
+          fxLayoutAlign=" center"
+        >
+          <div class="opacity-5 width-3 line-1"></div>
+          <p class="margin-left-1">THE OFFICE</p>
+        </div>
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p class="center-text-on-sm">
+            A dental <br />practice, <span class="libre-italic">but not</span
+            ><br /><span class="libre-italic">how you know it</span>.
+          </p>
+        </div>
+        <div class="roboto-regular font-tiger margin-bottom-1">
+          <p class="center-text-on-sm">
+            Leather couch, beautiful scent, freshly ground Zarrafas coffee,
+            Netflix on tratment rooms, noise cancelling headphones, you’ll
+            wonder if you’ve come to the right place.
+          </p>
+        </div>
+        <app-button text="READ MORE"></app-button>
       </div>
-      <div class="font-dog libre-regular title">
-        <p>
-          A dental<br />
-          practice,
-          <span class="libre-italic">but not how you know it</span>
-        </p>
+      <div class="flex-1">
+        <img src="../../assets/homePage/group.png" />
       </div>
-      <div class="mainText max-width-1 font-small roboto-regular">
-        <p>
-          Leather couch, beautiful scent, freshly ground Zarrafas coffe, Netflix
-          on treatment rooms, noise cancelling headphones, you'll wonder if
-          you've come to the right place.
-        </p>
-      </div>
-      <app-button text="READ MORE"></app-button>
-    </div>
-    <div class="image-container">
-      <img src="../../assets/homePage/group.png" />
     </div>
   </div>
 </div>
 
-<div class="aestheticsAndHealthSection" fxLayout fxLayoutAlign="center center">
-  <div class="aesthetics" fxLayout="column" fxLayoutAlign="start start">
-    <div class="title color-white font-small-3">
-      <p class="roboto-regular">
-        AESTHETICS<span class="middleSlash roboto-thin opacity-3"> / </span
-        ><span class="roboto-thin opacity-3"> Become more confident</span>
-      </p>
-    </div>
-    <div class="horizontalLine"></div>
-    <div class="element libre-regular color-white font-fish">
-      <p>
-        ZOOM Teeth<br />
-        Whitening
-      </p>
-    </div>
-    <div class="element libre-regular color-white font-fish">
-      <p>Ultra Thin Veneers</p>
-    </div>
-    <div class="element libre-regular color-white font-fish">
-      <p>Same Day Veneers</p>
-    </div>
-    <div class="element libre-regular color-white font-fish">
-      <p>Invisalign</p>
-    </div>
-    <div class="element horizontalLine"></div>
-    <div
-      class="link roboto-regular color-white font-small-3"
-      fxLayout
-      fxLayoutAlign="center center"
-      (click)="seeAllAesthetic()"
-    >
-      <div>
-        <img src="../../../assets/homePage/Dots.png" />
+<div class="aestheticsAndHealthSection" fxLayout>
+  <div
+    class="aesthetics padding-top-bottom-1"
+    fxLayout="column"
+    fxLayoutAlign="start end"
+  >
+    <div fxLayout="column" fxLayoutAlign="start start">
+      <div class="title color-white font-small-3">
+        <p class="roboto-regular">
+          AESTHETICS<span class="middleSlash roboto-thin opacity-3"> / </span
+          ><span class="roboto-thin opacity-3"> Become more confident</span>
+        </p>
       </div>
-      <div>
-        <p>See all aesthetic services</p>
+      <div class="horizontalLine"></div>
+      <div class="element libre-regular color-white font-fish">
+        <p>
+          ZOOM Teeth<br />
+          Whitening
+        </p>
       </div>
-      <div>
-        <img src="../../../assets/homePage/WhiteArrow.png" />
+      <div class="element libre-regular color-white font-fish">
+        <p>Ultra Thin Veneers</p>
+      </div>
+      <div class="element libre-regular color-white font-fish">
+        <p>Same Day Veneers</p>
+      </div>
+      <div class="element libre-regular color-white font-fish">
+        <p>Invisalign</p>
+      </div>
+      <div class="element horizontalLine"></div>
+      <div
+        class="link roboto-regular color-white font-small-3"
+        fxLayout
+        fxLayoutAlign="center center"
+        (click)="seeAllAesthetic()"
+      >
+        <div>
+          <img src="../../../assets/homePage/Dots.png" />
+        </div>
+        <div class="margin-left-1">
+          <p>See all aesthetic services</p>
+        </div>
+        <div class="margin-left-1">
+          <img src="../../../assets/homePage/WhiteArrow.png" />
+        </div>
       </div>
     </div>
   </div>
-  <div class="health" fxLayout="column" fxLayoutAlign="start start">
+  <div
+    class="health padding-top-bottom-1"
+    fxLayout="column"
+    fxLayoutAlign="start start"
+  >
     <div class="title color-white font-small-3">
       <p>
         HEALTH<span class="middleSlash roboto-thin opacity-3"> / </span
@@ -375,10 +395,10 @@
       <div>
         <img src="../../../assets/homePage/Dots.png" />
       </div>
-      <div>
+      <div class="margin-left-1">
         <p>See all health services</p>
       </div>
-      <div>
+      <div class="margin-left-1">
         <img src="../../../assets/homePage/WhiteArrow.png" />
       </div>
     </div>

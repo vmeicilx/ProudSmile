@@ -1,11 +1,13 @@
 <div
-  class="padding-chef color-white background-5 padding-top-bottom-1 margin-top-2"
+  class="color-white background-12 padding-top-bottom-1 margin-top-2 relative-container"
+  fxLayout="column"
+  fxLayoutAlign="center center"
 >
   <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
     <div
       class="roboto-medium font-extra-small margin-bottom-3"
       fxLayout
-      fxLayoutAlign=" center"
+      fxLayoutAlign="center center"
     >
       <div class="width-3 line-6"></div>
       <p class="margin-left-1">02</p>
@@ -21,6 +23,93 @@
       <p>The “heart” of the tooth</p>
     </div>
   </div>
+
+  <div
+    class="relative-container full-width"
+    fxLayout
+    fxLayoutAlign="center center"
+  >
+    <video
+      style="max-width: 1000px"
+      class="full-width"
+      preload="auto"
+      muted
+      #teethVideo
+      loop
+    >
+      <source src="../../../../assets/healthPage/teeth.mp4" type="video/mp4" />
+    </video>
+
+    <div
+      class="absolute-container hide-on-sm"
+      style="top: 36%; left: 52%; width: 12vw"
+    >
+      <img src="../../../../assets/healthPage/linie_video.svg" />
+    </div>
+    <div class="absolute-container nerve">
+      <div class="margin-bottom-5" style="width: 8vw">
+        <img src="../../../../assets/healthPage/n1.svg" />
+      </div>
+      <div class="roboto-regular font-extra-small-4 center-text-on-sm">
+        <p class="left-text">
+          <span class="roboto-medium">THE NERVE</span><br />
+          Each tooth has inside it an individual little nerve and blood supply
+          vessels. This is what provides nourishment and sensations to a tooth
+          so not only it will fight trauma but also warn you when things are
+          going wrong. This is called the Pulp, or more commonly called the
+          Nerve of the tooth.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="absolute-container hide-on-sm rotate-line"
+      style="top: 56%; left: 38%; width: 12vw"
+    >
+      <img src="../../../../assets/healthPage/linie_video.svg" />
+    </div>
+    <div
+      class="absolute-container puple"
+      fxLayout="column"
+      fxLayoutAlign="center flex-end"
+    >
+      <div class="margin-bottom-5" style="max-width: 8vw">
+        <img src="../../../../assets/healthPage/n2.svg" />
+      </div>
+      <div class="roboto-regular font-extra-small-4 center-text-on-sm">
+        <p style="text-align: right">
+          <span class="roboto-medium">THE PULPE</span><br />
+          This pulp can get damaged when you have decay or a hole on the tooth
+          and it keeps growing bigger. When decay or bacteria reaches the pulp
+          it gets inflamed and in some cases it just dies as it cannot cope with
+          the amount of trauma. Then this happens your tooth needs a root canal
+          therapy.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="absolute-container hide-on-sm"
+      style="top: 72%; left: 51%; width: 12vw"
+    >
+      <img src="../../../../assets/healthPage/linie_video.svg" />
+    </div>
+    <div class="absolute-container therapy">
+      <div class="margin-bottom-5" style="width: 8vw">
+        <img src="../../../../assets/healthPage/n3.svg" />
+      </div>
+      <div class="roboto-regular font-extra-small-4 center-text-on-sm">
+        <p class="left-text">
+          <span class="roboto-medium">THERAPY</span><br />
+          Root canal therapy is a dental procedure that replaces the dead or
+          inflamed pulp with a filling material, thus saving your tooth from
+          having to be removed. The success rate of a root canal treatment is
+          fairly high, usually 90% if the tooth is properly protected with a
+          crown.
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div
@@ -28,7 +117,7 @@
   fxLayout="column"
   fxLayoutAlign="center center"
 >
-  <video class="height-1" preload="auto" #rootCanalVideo loop>
+  <video class="height-1" preload="auto" muted #rootCanalVideo loop>
     <source
       src="../../../../assets/healthPage/what_to_expect.mp4"
       type="video/mp4"
@@ -85,7 +174,7 @@
         </div>
         <div class="line-6 opacity-5 full-width margin-top-bottom-2"></div>
         <div
-          class="link roboto-regular color-white font-small-3"
+          class="cursor-pointer roboto-regular color-white font-small-3"
           fxLayout
           fxLayoutAlign="center center"
           (click)="seeAllFinancial()"
