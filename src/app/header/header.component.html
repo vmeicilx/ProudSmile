@@ -39,7 +39,7 @@
     </button>
     <button
       class="fix-text-1 roboto-medium"
-      (click)="onMenuItemClick('health-component')"
+      (click)="onMenuItemClick('Extractions')"
     >
       <p>Health</p>
     </button>
@@ -415,7 +415,7 @@
   </div>
 </div>
 
-<div [hidden]="!isAesthetics">
+<div [hidden]="!isHealth">
   <div
     class="subHeader font-extra-small-4 roboto-medium color-brown"
     fxFlexLayout
@@ -462,7 +462,7 @@
       class="full-height"
       fxLayout
       fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="center center"
       (click)="onClick($event, 'ClearBraces')"
     >
       <div class="imageTextCard flexy">
@@ -479,7 +479,7 @@
       class="full-height"
       fxLayout
       fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="center center"
       (click)="onClick($event, 'Invisalign')"
     >
       <div class="imageTextCard flexy">
@@ -496,7 +496,7 @@
       class="full-height"
       fxLayout
       fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="center center"
       (click)="onClick($event, 'AnxiousPatients')"
     >
       <div class="imageTextCard flexy">
@@ -514,6 +514,7 @@
 
     <div
       class="full-height"
+      style="padding-left: 2vw"
       fxLayout
       fxFlex="3 3 auto"
       fxLayoutAlign="start center"
@@ -579,7 +580,7 @@
       class="full-height"
       fxLayout
       fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="center center"
       (click)="onClick($event, 'MedicareChildBenefitScheme')"
     >
       <div class="imageTextCard flexy">
@@ -596,7 +597,7 @@
       class="full-height"
       fxLayout
       fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      fxLayoutAlign="center center"
       (click)="onClick($event, 'MouthguardsAndSplints')"
     >
       <div class="imageTextCard flexy">
@@ -611,6 +612,7 @@
 
     <div
       class="full-height"
+      style="padding-left: 2vw"
       fxLayout
       fxFlex="3 3 auto"
       fxLayoutAlign="start center"

@@ -1,16 +1,25 @@
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  Renderer2,
+  ViewChild
+} from "@angular/core";
 
 @Component({
-  selector: 'app-video-player',
-  templateUrl: './video-player.component.html',
-  styleUrls: ['./video-player.component.scss']
+  selector: "app-video-player",
+  templateUrl: "./video-player.component.html",
+  styleUrls: ["./video-player.component.scss"]
 })
 export class VideoPlayerComponent implements OnInit {
   private elRef: ElementRef;
   private renderer: Renderer2;
-  
+
   @Input() text: string;
   @Input() videoSource: string;
+
+  @ViewChild("proudVideo") video: ElementRef;
 
   centered = false;
   disabled = false;
@@ -22,15 +31,29 @@ export class VideoPlayerComponent implements OnInit {
   constructor(el: ElementRef, renderer: Renderer2) {
     this.elRef = el;
     this.renderer = renderer;
-    this.color="red";
+    this.color = "red";
   }
 
-  ngOnInit(): void {
+  fullscreenChangeHandler(event) {
+    let elem = event.target;
+    let isFullscreen = document.fullscreenElement === elem;
+    if (!isFullscreen) {
+      elem.style.display = "none";
+    }
   }
 
-  playVideo(event){
-    //event.currentTarget.previousSibling.play();
-    event.currentTarget.play();
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    this.video.nativeElement.style.display = "none";
+    this.video.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
   }
 
+  playVideo() {
+    let video = this.video.nativeElement;
+    video.style.display = "block";
+    video.setAttribute("controls", "controls");
+    video.requestFullscreen();
+    video.play();
+  }
 }

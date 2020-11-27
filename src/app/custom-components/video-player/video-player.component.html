@@ -1,14 +1,23 @@
 <div class="videoSection">
-    <video preload="auto" muted="" plays-inline="" (click)="playVideo($event)">
-      <source src={{videoSource}} type="video/mp4">
-    </video>
-    <!-- <div fxLayout fxLayoutAlign=" center" [ngClass]="'playButton'" (click)="playVideo($event)">
-        <div matRipple matRippleUnbounded=true matRippleColor="gray" class="example-ripple-container mat-elevation-z4">
-            <img src="../../assets/homePage/videoPlay.png">
-        </div>
-        <div [ngClass]="'playButtonText'">
-            <p>{{text}}</p>
-        </div>
-    </div> -->
-    
+  <video preload="auto" #proudVideo>
+    <source src="{{ videoSource }}" type="video/mp4" />
+  </video>
+  <div>
+    <div>
+      <img src="../../assets/homePage/videoPreview.png" />
+    </div>
+    <div
+      fxLayout
+      fxLayoutAlign=" center"
+      [ngClass]="'playButton'"
+      (click)="playVideo()"
+    >
+      <div>
+        <img class="pulse-button" src="../../assets/homePage/videoPlay.png" />
+      </div>
+      <div class="roboto-medium font-extra-small" [ngClass]="'playButtonText'">
+        <p>{{ text }}</p>
+      </div>
+    </div>
+  </div>
 </div>

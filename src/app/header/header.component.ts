@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
   isMouseOn: boolean = false;
   scheduleActive: boolean = false;
   isWhyProudSmile: boolean = false;
-  isAesthetics: boolean = false;
+  isHealth: boolean = false;
   horizontalPosition: MatSnackBarHorizontalPosition = "center";
   verticalPosition: MatSnackBarVerticalPosition = "top";
   scheduleText: string;
@@ -44,15 +44,15 @@ export class HeaderComponent implements OnInit {
     router.events.subscribe((val) => {
       // see also
       if (val instanceof NavigationEnd) {
-        this.styleStatus =
-          val.url === "/home-page-component" || val.url === "/";
+        window.scrollTo(0, 0);
+        this.styleStatus = val.url === "/HomePage" || val.url === "/";
 
         this.isWhyProudSmile =
           val.url === "/proud-smile-experience-component" ||
           val.url === "/who-we-are-component" ||
           val.url === "/dental-clinic-component";
 
-        this.isAesthetics =
+        this.isHealth =
           val.url === "/AnxiousPatients" ||
           val.url === "/ClearBraces" ||
           val.url === "/DentalEmergency" ||
@@ -204,14 +204,13 @@ export class HeaderComponent implements OnInit {
 
   onLogoClick() {
     this.styleStatus = true;
-    this.router.navigate(["/", "home-page-component"]);
+    this.router.navigate(["/", "HomePage"]);
     window.scrollTo(0, 0);
   }
 
   onMenuItemClick(item: string) {
     this.router.navigate(["/", item]);
-    this.styleStatus =
-      window.pageYOffset <= 5 && item === "home-page-component";
+    this.styleStatus = window.pageYOffset <= 5 && item === "HomePage";
     window.scrollTo(0, 0);
   }
 
@@ -219,7 +218,7 @@ export class HeaderComponent implements OnInit {
   onScroll(event) {
     this.styleStatus =
       window.pageYOffset <= 5 &&
-      this.router.url === "/home-page-component" &&
+      this.router.url === "/HomePage" &&
       !this.isMouseOn;
   }
 
@@ -233,7 +232,7 @@ export class HeaderComponent implements OnInit {
     console.log(this.scheduleActive);
     this.styleStatus =
       window.pageYOffset <= 5 &&
-      this.router.url === "/home-page-component" &&
+      this.router.url === "/HomePage" &&
       !this.scheduleActive;
   }
 

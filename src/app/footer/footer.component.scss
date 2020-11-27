@@ -71,7 +71,7 @@
       margin-left: 10vw;
       text-align: end;
     }
-    
+
     .footerCopyrightSecond {
       align-items: flex-end;
       justify-self: center;
@@ -134,10 +134,16 @@
     .footerCopyright {
       .copyrightMainText {
         width: 305px;
+        p {
+          text-align: left !important;
+        }
       }
 
       .copyrightSecondaryText {
         width: 100px;
+        p {
+          text-align: left !important;
+        }
       }
     }
   }
@@ -199,15 +205,15 @@
       align-items: center;
       .copyrightMainText {
         width: 280px;
-        margin-top:2vh;
+        margin-top: 2vh;
         p {
           text-align: center;
         }
       }
 
       .copyrightSecondaryText {
-        margin-left:0;
-        margin-top:2vh;
+        margin-left: 0;
+        margin-top: 2vh;
         width: 200px;
         p {
           text-align: center;

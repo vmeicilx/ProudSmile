@@ -21,10 +21,12 @@ import { MedicareChildComponent } from "./pages/health/medicare-child/medicare-c
 import { MouthguardsComponent } from "./pages/health/mouthguards/mouthguards.component";
 import { RootCanalTherapyComponent } from "./pages/health/root-canal-therapy/root-canal-therapy.component";
 import { SameDayCrownsComponent } from "./pages/health/same-day-crowns/same-day-crowns.component";
+import { ImplantsComponent } from "./pages/implants/implants.component";
+import { SpecialsComponent } from "./pages/specials/specials.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/home-page-component", pathMatch: "full" },
-  { path: "home-page-component", component: HomePageComponent },
+  { path: "", redirectTo: "/HomePage", pathMatch: "full" },
+  { path: "HomePage", component: HomePageComponent },
   {
     path: "proud-smile-experience-component",
     component: ProudSmileExperienceComponent
@@ -48,10 +50,12 @@ const routes: Routes = [
   { path: "MouthguardsAndSplints", component: MouthguardsComponent },
   { path: "RootCanalTherapy", component: RootCanalTherapyComponent },
   { path: "SameDayCrowns", component: SameDayCrownsComponent },
+  { path: "Implants", component: ImplantsComponent },
+  { path: "Specials", component: SpecialsComponent },
   { path: "coming-soon-component", component: ComingSoonComponent },
   { path: "payment-page-component", component: PaymentPageComponent },
   { path: "contact-page-component", component: ContactPageComponent },
-  { path: "**", redirectTo: "/home-page-component" }
+  { path: "**", redirectTo: "/HomePage" }
 ];
 
 @NgModule({

@@ -46,6 +46,8 @@ import { VgCoreModule } from "@videogular/ngx-videogular/core";
 import { VgControlsModule } from "@videogular/ngx-videogular/controls";
 import { VgOverlayPlayModule } from "@videogular/ngx-videogular/overlay-play";
 import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
+import { ImplantsComponent } from './pages/implants/implants.component';
+import { SpecialsComponent } from './pages/specials/specials.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,9 @@ import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
     DvaComponent,
     MedicareChildComponent,
     MouthguardsComponent,
-    DentalEmergencyComponent
+    DentalEmergencyComponent,
+    ImplantsComponent,
+    SpecialsComponent
   ],
   imports: [
     BrowserModule,
