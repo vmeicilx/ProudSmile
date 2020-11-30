@@ -22,9 +22,15 @@ $line-height-factor5: 1.5em;
   line-height: $line-height-factor4;
 }
 
-//24 - 48
+//16 - 48
 .font-fish {
-  font-size: calc(1.48vw + 19.55px);
+  font-size: calc(1.97vw + 10.07px);
+  line-height: $line-height-factor4;
+}
+
+//16 - 40
+.font-wolf {
+  font-size: calc(1.48vw + 11.55px);
   line-height: $line-height-factor4;
 }
 
@@ -61,6 +67,12 @@ $line-height-factor5: 1.5em;
 //16 - 21
 .font-small-3 {
   font-size: calc(0.3vw + 15.07px);
+  line-height: $line-height-factor4;
+}
+
+//14 - 18
+.font-small-4 {
+  font-size: calc(0.24vw + 13.25px);
   line-height: $line-height-factor4;
 }
 

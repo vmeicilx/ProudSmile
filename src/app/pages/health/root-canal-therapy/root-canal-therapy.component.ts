@@ -23,6 +23,7 @@ export class RootCanalTherapyComponent implements OnInit {
   ngAfterViewInit(): void {
     this.video.nativeElement.muted = true;
     this.teeth.nativeElement.muted = true;
+    this.video.nativeElement.style.display = "block";
   }
 
   seeAllFinancial() {
@@ -45,7 +46,6 @@ export class RootCanalTherapyComponent implements OnInit {
       }
     }
 
-    console.log(this.teeth.nativeElement.getBoundingClientRect());
     if (this.inTheViewport(this.teeth.nativeElement)) {
       if (this.teeth.nativeElement.paused) {
         this.teeth.nativeElement.play();

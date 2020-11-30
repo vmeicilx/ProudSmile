@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="168" height="23" viewBox="0 0 168 23">
+  <g id="Group_5" data-name="Group 5" opacity="0.5">
+    <g id="Oval" fill="#adafb2" stroke="#55311b" stroke-miterlimit="10" stroke-width="3">
+      <circle cx="11.5" cy="11.5" r="11.5" stroke="none"/>
+      <circle cx="11.5" cy="11.5" r="10" fill="none"/>
+    </g>
+    <circle id="Oval-2" data-name="Oval" cx="4" cy="4" r="4" transform="translate(160 8)" fill="#55311b"/>
+    <rect id="Rectangle" width="143" height="2" transform="translate(23 11)" fill="#55311b"/>
+  </g>
+</svg>

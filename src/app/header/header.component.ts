@@ -197,7 +197,7 @@ export class HeaderComponent implements OnInit {
     if (day === 6) {
       this.scheduleText = "Today closed Monday 8:30am - 5:30pm";
     }
-    if (day === 7) {
+    if (day === 0) {
       this.scheduleText = "Today closed Monday 8:30am - 5:30pm";
     }
   }
@@ -229,7 +229,6 @@ export class HeaderComponent implements OnInit {
 
   mouseLeave() {
     this.isMouseOn = false;
-    console.log(this.scheduleActive);
     this.styleStatus =
       window.pageYOffset <= 5 &&
       this.router.url === "/HomePage" &&

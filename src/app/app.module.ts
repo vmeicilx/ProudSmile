@@ -48,6 +48,7 @@ import { VgOverlayPlayModule } from "@videogular/ngx-videogular/overlay-play";
 import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
 import { ImplantsComponent } from './pages/implants/implants.component';
 import { SpecialsComponent } from './pages/specials/specials.component';
+import { DropdownComponent } from './custom-components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { SpecialsComponent } from './pages/specials/specials.component';
     MouthguardsComponent,
     DentalEmergencyComponent,
     ImplantsComponent,
-    SpecialsComponent
+    SpecialsComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

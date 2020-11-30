@@ -1,0 +1,37 @@
+:host {
+  @media only screen and (min-width: 1201px) {
+    .braces {
+      max-width: 426px;
+      top: 52%;
+      right: 51%;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .braces {
+      max-width: 426px;
+      top: 36%;
+      left: 5%;
+      right: 5%;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      p {
+        text-align: left !important;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .braces {
+      max-width: 426px;
+      top: 36%;
+      left: 5%;
+      right: 5%;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+      p {
+        text-align: left !important;
+      }
+    }
+  }
+}

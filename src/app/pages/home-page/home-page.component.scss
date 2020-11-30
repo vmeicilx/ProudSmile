@@ -1,5 +1,21 @@
 @import "../../../proud-smile-style.scss";
 
+::ng-deep .ng-image-slider {
+  height: 300px !important;
+  .main {
+    height: 300px !important;
+    .img-div {
+      box-shadow: unset !important;
+      margin-left: 20px !important;
+      margin-right: 20px !important;
+      width: 171px !important;
+      img {
+        bottom: unset !important;
+        height: unset !important;
+      }
+    }
+  }
+}
 :host {
   .noMargin {
     margin-left: 0;
@@ -88,16 +104,13 @@
   }
 
   .instaSection {
-    background-color: #adafb2;
-    padding: 20vh 0;
     .instaFeed {
       width: 100%;
       .text {
-        padding: 6vh 15.78vw;
-        color: white;
-        font-size: 0.66rem;
-        line-height: 0.87rem;
-        font-family: "robotoRegular";
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         .rightText {
           cursor: pointer;
         }
@@ -105,22 +118,14 @@
     }
     .title {
       position: relative;
-      margin-top: 30vh;
+      margin-top: 20vh;
       .year {
         position: absolute;
-        top: -11vh;
+        top: -16vh;
       }
       .text {
         z-index: 1;
-        color: white;
-        font-family: "robotoRegular";
-        font-size: 1.66rem;
-        line-height: 2.33rem;
-        max-width: 37.4vw;
         text-align: center;
-        span {
-          font-family: "robotoMedium";
-        }
       }
     }
   }
@@ -141,6 +146,9 @@
   @media only screen and (min-width: 300px) and (max-width: 600px) {
     .firstSection {
       .homePageImageContainer {
+        .homePageText {
+          max-width: 35vw;
+        }
         .heroImage {
           img {
             right: unset;
@@ -149,13 +157,21 @@
         }
       }
     }
+    .instaSection {
+      .instaFeed {
+        .text {
+          flex-direction: column;
+        }
+      }
+    }
 
     .aestheticsAndHealthSection {
       .aesthetics {
-        padding: 10vh 0 0 1vw;
+        padding: 10vh 4vw 0 4vw;
       }
       .health {
-        padding-left: 1vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
         padding-top: 10vh;
       }
     }

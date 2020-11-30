@@ -1,7 +1,7 @@
 <div [ngClass]="'firstSection'">
   <div fxLayout [ngClass]="'homePageImageContainer'">
     <div class="heroImage">
-      <img src="../../assets/homePage/Hero.png" />
+      <img src="../../assets/homePage/Hero2.png" />
     </div>
     <div [ngClass]="'homePageText'">
       <img src="../../../assets/homePage/homePageText.svg" />
@@ -311,10 +311,46 @@
 
 <div class="aestheticsAndHealthSection" fxLayout>
   <div
-    class="aesthetics padding-top-bottom-1"
+    class="aesthetics padding-top-bottom-1 relative-container"
     fxLayout="column"
     fxLayoutAlign="start end"
   >
+    <div
+      class="absolute-container"
+      style="top: 1%; left: 78%; filter: blur(10px)"
+    >
+      <img src="../../../assets/homePage/Oval1.svg" />
+    </div>
+    <div
+      class="absolute-container"
+      style="top: 82%; left: 20%; filter: blur(10px)"
+    >
+      <img src="../../../assets/homePage/Oval2.svg" />
+    </div>
+    <div
+      class="absolute-container"
+      style="top: 72%; left: 56%; filter: blur(6px)"
+    >
+      <img src="../../../assets/homePage/Oval3.svg" />
+    </div>
+    <div
+      class="absolute-container"
+      style="top: 14%; left: 14%; filter: blur(5px)"
+    >
+      <img src="../../../assets/homePage/Oval4.svg" />
+    </div>
+    <div
+      class="absolute-container"
+      style="top: 68%; left: 22%; filter: blur(28px)"
+    >
+      <img src="../../../assets/homePage/Oval5.svg" />
+    </div>
+    <div
+      class="absolute-container"
+      style="top: 6%; left: 12%; filter: blur(10px)"
+    >
+      <img src="../../../assets/homePage/Oval6.svg" />
+    </div>
     <div fxLayout="column" fxLayoutAlign="start start">
       <div class="title color-white font-small-3">
         <p class="roboto-regular">
@@ -340,19 +376,23 @@
       </div>
       <div class="element horizontalLine"></div>
       <div
-        class="link roboto-regular color-white font-small-3"
+        class="link roboto-regular color-white font-extra-small-3 cursor-pointer relative-container"
+        style="z-index: 1"
         fxLayout
         fxLayoutAlign="center center"
         (click)="seeAllAesthetic()"
       >
-        <div>
+        <div class="hide-on-sm">
           <img src="../../../assets/homePage/Dots.png" />
         </div>
         <div class="margin-left-1">
           <p>See all aesthetic services</p>
         </div>
         <div class="margin-left-1">
-          <img src="../../../assets/homePage/WhiteArrow.png" />
+          <img
+            style="max-width: unset"
+            src="../../../assets/homePage/WhiteArrow.svg"
+          />
         </div>
       </div>
     </div>
@@ -387,32 +427,40 @@
     </div>
     <div class="element horizontalLine"></div>
     <div
-      class="link roboto-regular color-white font-small-3"
+      class="link roboto-regular color-white font-extra-small-3 cursor-pointer relative-container"
+      style="z-index: 1"
       fxLayout
       fxLayoutAlign="center center"
       (click)="seeAllHealth()"
     >
-      <div>
+      <div class="hide-on-sm">
         <img src="../../../assets/homePage/Dots.png" />
       </div>
       <div class="margin-left-1">
         <p>See all health services</p>
       </div>
       <div class="margin-left-1">
-        <img src="../../../assets/homePage/WhiteArrow.png" />
+        <img
+          style="max-width: unset"
+          src="../../../assets/homePage/WhiteArrow.svg"
+        />
       </div>
     </div>
   </div>
 </div>
 
-<div class="instaSection" fxLayout="column" fxLayoutAlign="center center">
+<div
+  class="instaSection background-17 color-white padding-top-bottom-1 relative-container"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
   <div class="instaFeed">
-    <div class="text" fxLayout fxLayoutAlign="space-between">
-      <div class="leftText">
+    <div class="text margin-bottom-1 padding-chef">
+      <div class="leftText roboto-medium font-extra-small">
         <p>OUR INSTAGRAM FEED</p>
       </div>
       <div
-        class="rightText"
+        class="rightText roboto-medium font-extra-small"
         fxLayout
         fxLayoutAlign="center center"
         fxLayoutGap="1vw"
@@ -424,6 +472,7 @@
         <p>Follow ProudSmile on Instagram</p>
       </div>
     </div>
+
     <ng-image-slider
       [infinite]="true"
       [autoSlide]="3"
@@ -436,15 +485,18 @@
     <div class="year">
       <img src="../../../assets/homePage/2019.svg" />
     </div>
-    <div class="text">
+    <div class="text roboto-regular font-wolf margin-bottom-1">
       <p>
-        We take pride in our work. Until now we have
-        <span>578 Completed Cases, 26 Dedicated Partners and 789 Clients</span>
-        all Over The Worldwide
+        We take pride in our work. Until now<br />
+        we have
+        <span class="roboto-bold"
+          >578 Completed Cases, 26<br />
+          Dedicated Partners and 789 Clients</span
+        >
+        all<br />
+        Over The Worldwide
       </p>
     </div>
-    <div class="button">
-      <app-button text="Let’s tell your story next"></app-button>
-    </div>
+    <app-button text="Let’s tell your story next"></app-button>
   </div>
 </div>

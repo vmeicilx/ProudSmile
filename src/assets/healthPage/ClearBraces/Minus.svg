@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Arrow_big_contur" data-name="Arrow_big contur" transform="translate(40 40) rotate(180)" opacity="0.9">
+    <path id="Circle" d="M16.667,33.333A16.667,16.667,0,1,1,33.333,16.667,16.685,16.685,0,0,1,16.667,33.333Zm0-30A13.334,13.334,0,1,0,30,16.667,13.349,13.349,0,0,0,16.667,3.333Z" transform="translate(3.333 3.333)" fill="#fff"/>
+    <rect id="Rectangle" width="3.333" height="13.333" rx="1" transform="translate(26.667 18.333) rotate(90)" fill="#fff"/>
+  </g>
+</svg>
