@@ -1,6 +1,33 @@
 @import "../../../../proud-smile-style.scss";
 
 :host {
+  .pulse-button {
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 rgba(#f05024, 0.5);
+    animation: pulse 1.5s infinite;
+    animation-iteration-count: 5;
+  }
+  .pulse-button:hover {
+    animation: none;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 1vw rgba(#f05024, 0);
+    }
+    100% {
+      transform: scale(0.9);
+      box-shadow: 0 0 0 0 rgba(#f05024, 0);
+    }
+  }
+
   .imageText {
     .horizontalLine {
       width: 100%;
@@ -17,12 +44,8 @@
 
   .secondSection {
     .content {
-      margin-top: 11vh;
       .videoContent {
         height: 264px;
-        app-video-player {
-          width: 470px;
-        }
         .verticalLine {
           height: 80%;
           margin: 0 5.4vw;
@@ -103,18 +126,11 @@
     app-button {
       align-self: center;
     }
-
     .secondSection .content .videoContent {
-      height: 152px;
-    }
-    .secondSection .content .videoContent app-video-player {
-      width: 270px;
+      height: unset;
     }
     .secondSection .content .videoContent .verticalLine {
       margin: 0 2.4vw;
-    }
-    .secondSection .videoContent .horizontalLine {
-      display: none;
     }
     .sixthSection {
       .textContainer {
@@ -171,6 +187,10 @@
           }
         }
       }
+    }
+
+    .face-spa-section {
+      height: 900px;
     }
   }
 }

@@ -6,6 +6,9 @@
 .left-text {
   text-align: left;
 }
+.right-text {
+  text-align: right;
+}
 
 .auto-margins-x {
   margin-left: auto;
@@ -24,6 +27,12 @@
 .padding-chef {
   padding-left: calc(17.65vw - 42.96px);
   padding-right: calc(17.65vw - 42.96px);
+}
+
+// 10 - 168
+.padding-captain {
+  padding-left: calc(9.75vw - 19.25px);
+  padding-right: calc(9.75vw - 19.25px);
 }
 
 // 10 - 48
@@ -53,6 +62,13 @@
 .padding-top-1 {
   padding-top: 233px;
 }
+.padding-top-4 {
+  padding-top: 160px;
+}
+
+.top-1 {
+  top: calc(233px + 9vw);
+}
 
 .padding-top-2 {
   padding-top: 337px;
@@ -60,6 +76,10 @@
 
 .padding-top-3 {
   padding-top: 9vw;
+}
+
+.padding-top-4 {
+  padding-top: 233px;
 }
 
 .padding-right-1 {
@@ -73,6 +93,10 @@
 
 .margin-top-2 {
   margin-top: 337px;
+}
+
+.margin-top-3 {
+  margin-top: 3vw;
 }
 
 .margin-top-bottom-2 {
@@ -235,6 +259,19 @@
     align-items: center;
     justify-content: center;
   }
+  .hide-on-big {
+    display: none;
+  }
+  .background-image-1 {
+    img {
+      width: 100%;
+    }
+  }
+  .background-image-2 {
+    img {
+      width: 100%;
+    }
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
@@ -293,6 +330,9 @@
   .no-margin-on-sm {
     margin: 0;
   }
+  .no-padding-on-sm {
+    padding: 0;
+  }
   .margin-bottom-on-sm {
     margin-bottom: 4vh;
   }
@@ -310,6 +350,21 @@
   // 10 - 296
   .padding-chef-left-on-sm {
     padding-left: calc(17.65vw - 42.96px);
+  }
+
+  .max-width-unset-on-sm {
+    max-width: unset;
+  }
+
+  .background-image-1 {
+    img {
+      max-width: 1234px !important;
+    }
+  }
+  .background-image-2 {
+    img {
+      max-width: 1450px !important;
+    }
   }
 }
 
@@ -369,6 +424,9 @@
   .no-margin-on-sm {
     margin: 0;
   }
+  .no-padding-on-sm {
+    padding: 0;
+  }
   .no-margin-right-on-sm {
     margin-right: 0;
   }
@@ -377,6 +435,13 @@
   }
   .padding-top-1 {
     padding-top: 188px;
+  }
+  .padding-top-4 {
+    padding-top: 160px;
+  }
+
+  .top-1 {
+    top: calc(188px + 9vw);
   }
   .padding-top-2 {
     padding-top: 268px;
@@ -390,8 +455,25 @@
   .hide-on-sm {
     display: none;
   }
+  .hide-on-phone {
+    display: none;
+  }
   // 10 - 296
   .padding-chef-left-on-sm {
     padding-left: calc(17.65vw - 42.96px);
+  }
+  .max-width-unset-on-sm {
+    max-width: unset;
+  }
+
+  .background-image-1 {
+    img {
+      max-width: 1234px !important;
+    }
+  }
+  .background-image-2 {
+    img {
+      max-width: 1450px !important;
+    }
   }
 }

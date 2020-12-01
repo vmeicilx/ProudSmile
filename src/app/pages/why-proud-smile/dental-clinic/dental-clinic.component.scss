@@ -1,0 +1,28 @@
+@import "../../../../proud-smile-style.scss";
+
+:host {
+  @media only screen and (min-width: 1201px) {
+    .coffe {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .coffe {
+      img {
+        max-width: 1234px !important;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .coffe {
+      img {
+        max-width: 1234px !important;
+      }
+    }
+  }
+}

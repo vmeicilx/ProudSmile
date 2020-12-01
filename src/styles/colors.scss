@@ -9,6 +9,7 @@ $color-brown-light: #a7958a;
 $color-gray-dark: #565960;
 $color-pink-light: #faece9;
 $color-dirty-white: #fff9f6;
+$color-gray-pale: #adafb2;
 
 .color-white {
   color: $color-white;
@@ -42,6 +43,9 @@ $color-dirty-white: #fff9f6;
 }
 .color-dirty-white {
   color: $color-dirty-white;
+}
+.color-gray-pale {
+  color: $color-gray-pale;
 }
 
 .background-1 {
@@ -110,4 +114,8 @@ $color-dirty-white: #fff9f6;
 
 .background-17 {
   background: #adafb2;
+}
+
+.background-18 {
+  background: #333939;
 }
