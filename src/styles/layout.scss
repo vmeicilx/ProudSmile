@@ -112,6 +112,9 @@
 .margin-right-1 {
   margin-right: 7vw;
 }
+.margin-right-2 {
+  margin-right: 2vw;
+}
 
 .margin-left-1 {
   margin-left: 1vw;
@@ -135,6 +138,12 @@
 
 .margin-bottom-5 {
   margin-bottom: 8px;
+}
+.margin-bottom-6 {
+  margin-bottom: 6vw;
+}
+.margin-bottom-7 {
+  margin-bottom: 16px;
 }
 
 // 20 - 40
@@ -261,6 +270,9 @@
   }
   .hide-on-big {
     display: none;
+  }
+  .max-width-unset-on-big {
+    max-width: unset !important;
   }
   .background-image-1 {
     img {

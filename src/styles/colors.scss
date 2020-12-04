@@ -10,6 +10,11 @@ $color-gray-dark: #565960;
 $color-pink-light: #faece9;
 $color-dirty-white: #fff9f6;
 $color-gray-pale: #adafb2;
+$color-yellow: #cb9f05;
+
+.color-yellow {
+  color: $color-yellow;
+}
 
 .color-white {
   color: $color-white;
@@ -118,4 +123,19 @@ $color-gray-pale: #adafb2;
 
 .background-18 {
   background: #333939;
+}
+
+.background-19 {
+  background: rgba(115, 7, 15, 0.7);
+}
+
+.background-20 {
+  background: linear-gradient(0deg, #ffffff 0%, #f1f67433 100%);
+}
+
+.background-21 {
+  background: linear-gradient(0deg, #ffffff 0%, #e7ecee 100%);
+}
+.background-22 {
+  background: linear-gradient(0deg, #ffffff 0%, #f9957333 100%);
 }

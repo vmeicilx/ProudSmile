@@ -36,6 +36,21 @@ button {
   }
 }
 
+.button-2 {
+  background: #17866b;
+  border-radius: 38px;
+  padding: 19px 30px;
+
+  display: flex;
+  align-items: center;
+  img {
+    padding-right: 12px;
+  }
+  p {
+    color: $color-white;
+  }
+}
+
 .link-1 {
   p {
     margin-right: 6px;
