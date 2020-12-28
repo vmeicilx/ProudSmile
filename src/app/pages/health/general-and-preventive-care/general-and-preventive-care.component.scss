@@ -1,0 +1,33 @@
+:host {
+  @media only screen and (min-width: 1201px) {
+    .lady {
+      position: relative;
+      margin-left: calc(60.07vw - 1201px);
+    }
+    .gel {
+      bottom: -20%;
+      right: 0;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .gel {
+      bottom: -10%;
+      right: -5%;
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .gel {
+      bottom: -10%;
+      right: -5%;
+    }
+    .scale-on-sm {
+      max-width: 80%;
+      margin: auto;
+    }
+    .card {
+      width: 10vw;
+    }
+  }
+}

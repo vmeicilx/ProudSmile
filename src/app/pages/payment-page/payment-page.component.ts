@@ -13,22 +13,97 @@ import {
 })
 export class PaymentPageComponent implements OnInit {
   @ViewChild("input1") input1: ElementRef;
+  @ViewChild("input2") input2: ElementRef;
+  @ViewChild("input3") input3: ElementRef;
   @ViewChild("pointer") pointer: ElementRef;
   pointerGrabbed: boolean = false;
   mousePosition: number;
   initialPointerPosition: number;
+  depositNumber: number;
+  monthly: number;
+  weekly: number;
   constructor() {}
 
-  ngOnInit(): void {}
+  imageObject: Array<object> = [
+    {
+      image: "../../../assets/homePage/instaFeed/1.png",
+      thumbImage: "../../../assets/homePage/instaFeed/1.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/2.png",
+      thumbImage: "../../../assets/homePage/instaFeed/2.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/3.png",
+      thumbImage: "../../../assets/homePage/instaFeed/3.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/4.png",
+      thumbImage: "../../../assets/homePage/instaFeed/4.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/5.png",
+      thumbImage: "../../../assets/homePage/instaFeed/5.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/6.png",
+      thumbImage: "../../../assets/homePage/instaFeed/6.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/7.png",
+      thumbImage: "../../../assets/homePage/instaFeed/7.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/8.png",
+      thumbImage: "../../../assets/homePage/instaFeed/8.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/9.png",
+      thumbImage: "../../../assets/homePage/instaFeed/9.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/10.png",
+      thumbImage: "../../../assets/homePage/instaFeed/10.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/11.png",
+      thumbImage: "../../../assets/homePage/instaFeed/11.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/12.png",
+      thumbImage: "../../../assets/homePage/instaFeed/12.png"
+    },
+    {
+      image: "../../../assets/homePage/instaFeed/13.png",
+      thumbImage: "../../../assets/homePage/instaFeed/13.png"
+    }
+  ];
+
+  ngOnInit(): void {
+    this.depositNumber = 25;
+  }
 
   ngAfterViewInit(): void {
     this.input1.nativeElement.value = 5000;
+    this.input2.nativeElement.value = "25%";
     this.oninput1();
+    window.addEventListener("touchmove", this.preventBehavior.bind(this), {
+      passive: false
+    });
+    this.calculatorClick();
+  }
 
-    // var left =
-    //   this.input1.nativeElement.value * 0.0088888888888888889 -
-    //   -6.666666666666667;
-    // this.pointer.nativeElement.style.left = "calc(" + left + "% - 24px)";
+  preventBehavior(e) {
+    console.log(this.pointerGrabbed);
+    if (this.pointerGrabbed) {
+      e.preventDefault();
+    }
+  }
+
+  onDepositClick(value) {
+    this.depositNumber = value;
+    this.input2.nativeElement.value = value + "%";
+    this.doCalculation(this.input1.nativeElement.value);
   }
 
   oninput1() {
@@ -44,9 +119,12 @@ export class PaymentPageComponent implements OnInit {
 
     if (this.input1.nativeElement.value < 750) {
       left = 0;
-    }
-    if (this.input1.nativeElement.value > 12000) {
+      this.doCalculation(750);
+    } else if (this.input1.nativeElement.value > 12000) {
       left = 100;
+      this.doCalculation(12000);
+    } else {
+      this.doCalculation(this.input1.nativeElement.value);
     }
     this.pointer.nativeElement.style.left =
       "calc(" + left + "% - " + offset + "px)";
@@ -92,18 +170,14 @@ export class PaymentPageComponent implements OnInit {
 
   @HostListener("window:resize", ["$event"])
   onResize(event) {
-    var left =
-      this.input1.nativeElement.value * 0.0088888888888888889 -
-      -6.666666666666667;
-
-    var offset = 24;
+    var left = ((this.input1.nativeElement.value - 750) * 100) / 11250;
+    var offset = 26;
 
     if (this.input1.nativeElement.value < 750) {
       left = 0;
     }
     if (this.input1.nativeElement.value > 12000) {
       left = 100;
-      offset = 28;
     }
     this.pointer.nativeElement.style.left =
       "calc(" + left + "% - " + offset + "px)";
@@ -143,5 +217,26 @@ export class PaymentPageComponent implements OnInit {
     var inputValue = (leftPercent * 11250) / 100 + 750;
 
     this.input1.nativeElement.value = parseInt(inputValue.toString(), 10);
+
+    this.doCalculation(this.input1.nativeElement.value);
+  }
+
+  doCalculation(amount: number) {
+    this.input3.nativeElement.value = (amount * this.depositNumber) / 100;
+  }
+
+  calculatorClick() {
+    this.monthly =
+      Math.round(
+        (this.input3.nativeElement.value / 20 + Number.EPSILON) * 100
+      ) / 100;
+    this.weekly =
+      Math.round(
+        (this.input3.nativeElement.value / 80 + Number.EPSILON) * 100
+      ) / 100;
+  }
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
   }
 }

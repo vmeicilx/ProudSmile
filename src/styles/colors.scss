@@ -2,6 +2,7 @@ $color-brown: #55311b;
 $color-white: white;
 $color-orange: #f05024;
 $color-orange-light: #f5701d;
+$color-orange-red: #e05741;
 $color-green: #85920d;
 $color-gray: #eef0f3;
 $color-gray-light: #f5f5f5;
@@ -11,6 +12,28 @@ $color-pink-light: #faece9;
 $color-dirty-white: #fff9f6;
 $color-gray-pale: #adafb2;
 $color-yellow: #cb9f05;
+$color-green-pale: #015c50;
+$color-blue: #16a0d5;
+$color-violet: #353695;
+$color-blue-dark: #0067ac;
+
+.color-blue-dark {
+  color: $color-blue-dark;
+}
+
+.color-violet {
+  color: $color-violet;
+}
+.color-orange-red {
+  color: $color-orange-red;
+}
+.color-blue {
+  color: $color-blue;
+}
+
+.color-green-pale {
+  color: $color-green-pale;
+}
 
 .color-yellow {
   color: $color-yellow;
@@ -126,7 +149,7 @@ $color-yellow: #cb9f05;
 }
 
 .background-19 {
-  background: rgba(115, 7, 15, 0.7);
+  background: rgba(115, 7, 15, 0.3);
 }
 
 .background-20 {
@@ -138,4 +161,40 @@ $color-yellow: #cb9f05;
 }
 .background-22 {
   background: linear-gradient(0deg, #ffffff 0%, #f9957333 100%);
+}
+.background-23 {
+  background: linear-gradient(0deg, #faece9 0%, #ffffff 100%);
+}
+
+.background-24 {
+  background: #f7f7f7;
+}
+.background-25 {
+  background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, #f1f1f1 100%);
+}
+.background-26 {
+  background: linear-gradient(
+    180deg,
+    rgba(238, 238, 238, 0) 0%,
+    #0082581a 100%
+  );
+}
+.background-27 {
+  background: #faece9;
+}
+
+.background-28 {
+  background: #1339764d;
+}
+
+.background-29 {
+  background: #f3fcff;
+}
+
+.background-30 {
+  background: #4e7a99;
+}
+
+.background-31 {
+  background: #015c5099;
 }

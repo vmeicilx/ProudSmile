@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+  <g id="Molecules_Check_Marking" data-name="Molecules/Check_Marking" opacity="0.3">
+    <g id="Icons_Circle" data-name="Icons/Circle">
+      <path id="Circle" d="M10.833,21.666A10.833,10.833,0,1,1,21.666,10.833,10.845,10.845,0,0,1,10.833,21.666Zm0-19.5A8.667,8.667,0,1,0,19.5,10.833,8.677,8.677,0,0,0,10.833,2.166Z" transform="translate(2.167 2.167)" fill="#fff"/>
+    </g>
+    <g id="Icons_Check_Mark" data-name="Icons/Check_Mark">
+      <path id="Path" d="M3.224,7.283a1.1,1.1,0,0,0,1.512,0l5.784-5.535a.992.992,0,0,0,0-1.448A1.1,1.1,0,0,0,9.006.3L3.979,5.111,1.826,3.051a1.1,1.1,0,0,0-1.513,0,.993.993,0,0,0,0,1.448Z" transform="translate(7.583 9.75)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

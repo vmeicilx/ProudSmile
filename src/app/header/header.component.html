@@ -77,7 +77,7 @@
       class="fix-text-1 roboto-medium"
       (click)="
         goToLink(
-          'https://praktika.praktika.net.au/php/onlineBooking/praktika/searchAppointments.php?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
         )
       "
     >
@@ -182,7 +182,7 @@
           fxLayout
           fxLayoutAlign="center center"
           fxLayoutGap="0.5vw"
-          (click)="goToLinkWithotNewTab('tel:0749113545')"
+          (click)="goToLinkWithotNewTab('tel:0755703311')"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -209,43 +209,43 @@
             class="fix-text-1 roboto-medium"
             (click)="onMenuItemClick('proud-smile-experience-component')"
           >
-            <p>Why Proud Smile</p>
+            <p #WhyProudSmileText>Why Proud Smile</p>
           </button>
           <button
             class="fix-text-1 roboto-medium"
             (click)="onMenuItemClick('Extractions')"
           >
-            <p>Health</p>
+            <p #HealthText>Health</p>
           </button>
           <button
             class="fix-text-1 roboto-medium"
             (click)="onMenuItemClick('aesthetics-component')"
           >
-            <p>Aesthetics</p>
+            <p #AestheticsText>Aesthetics</p>
           </button>
           <button
             class="fix-text-1 roboto-medium"
             (click)="onMenuItemClick('why-proud-smile-component')"
           >
-            <p>Implants</p>
+            <p #ImplantsText>Implants</p>
           </button>
           <button
             class="payment-plan fix-text-1 roboto-medium"
             (click)="onMenuItemClick('payment-page-component')"
           >
-            <p>Smileasy Payment Plan</p>
+            <p #PaymentPlanText>Smileasy Payment Plan</p>
           </button>
           <button
             class="fix-text-1 roboto-medium"
             (click)="onMenuItemClick('why-proud-smile-component')"
           >
-            <p>Specials</p>
+            <p #SpecialsText>Specials</p>
           </button>
           <button
             class="fix-text-1 roboto-medium"
             (click)="onMenuItemClick('contact-page-component')"
           >
-            <p>Contact</p>
+            <p #ContactText>Contact</p>
           </button>
         </div>
         <button
@@ -260,7 +260,7 @@
           "
         >
           <img src="../../assets/header/calendar.png" />
-          <p>Instant Online Booking</p>
+          <p class="roboto-medium">Instant Online Booking</p>
         </button>
       </div>
     </div>
@@ -318,7 +318,7 @@
         fxLayout
         fxLayoutAlign="center center"
         fxLayoutGap="0.5vw"
-        (click)="goToLinkWithotNewTab('tel:0749113545')"
+        (click)="goToLinkWithotNewTab('tel:0755703311')"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -347,9 +347,10 @@
   </div>
 </div>
 
-<div [hidden]="!isWhyProudSmile">
+<div [hidden]="!isWhyProudSmile" #whyProudSmile>
   <div
     class="subHeader font-extra-small roboto-medium color-brown"
+    (mouseleave)="subheadermouseLeave()"
     fxFlexLayout
     fxLayoutAlign="center center"
   >
@@ -382,7 +383,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/header/Team.png" />
+          <img loading="lazy" src="../../assets/header/Team.png" />
         </div>
       </div>
       <div class="text-container">
@@ -415,9 +416,10 @@
   </div>
 </div>
 
-<div [hidden]="!isHealth">
+<div [hidden]="!isHealth" (mouseleave)="subheadermouseLeave()">
   <div
     class="subHeader font-extra-small-4 roboto-medium color-brown"
+    #health1Subheader
     fxFlexLayout
     fxLayoutAlign="center center"
   >
@@ -430,7 +432,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/extraction.svg" />
         </div>
       </div>
       <div class="text-container">
@@ -447,7 +449,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/rootcanal.png" />
         </div>
       </div>
       <div class="text-container">
@@ -467,7 +469,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/clearbraces.svg" />
         </div>
       </div>
       <div class="text-container">
@@ -484,7 +486,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/invisalign.png" />
         </div>
       </div>
       <div class="text-container">
@@ -501,7 +503,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/anxios.png" />
         </div>
       </div>
       <div class="text-container">
@@ -522,7 +524,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/sameday.svg" />
         </div>
       </div>
       <div class="text-container">
@@ -536,6 +538,7 @@
 
   <div
     class="subHeader font-extra-small-4 roboto-medium color-brown line-1"
+    #health2Subheader
     fxFlexLayout
     fxLayoutAlign="center center"
   >
@@ -548,7 +551,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/general.svg" />
         </div>
       </div>
       <div class="text-container">
@@ -565,7 +568,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/dva.svg" />
         </div>
       </div>
       <div class="text-container">
@@ -585,7 +588,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/medicare.png" />
         </div>
       </div>
       <div class="text-container">
@@ -602,7 +605,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/mouthguards.png" />
         </div>
       </div>
       <div class="text-container">
@@ -620,7 +623,7 @@
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/healthPage/emergency.png" />
         </div>
       </div>
       <div class="text-container">

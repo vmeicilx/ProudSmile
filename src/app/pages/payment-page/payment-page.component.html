@@ -1,3 +1,11 @@
+<mat-menu class="deposit-menu" #deposit="matMenu">
+  <button (click)="onDepositClick(10)" mat-menu-item>10%</button>
+  <button (click)="onDepositClick(25)" mat-menu-item>25%</button>
+  <button (click)="onDepositClick(50)" mat-menu-item>50%</button>
+  <button (click)="onDepositClick(75)" mat-menu-item>75%</button>
+  <button (click)="onDepositClick(100)" mat-menu-item>100%</button>
+</mat-menu>
+
 <div
   class="color-brown relative-container"
   style="margin-top: 129px"
@@ -61,22 +69,10 @@
   </div>
 </div>
 
-<!-- <div
-  class="color-brown relative-container"
-  style="margin-top: 129px"
-  fxLayout="column"
-  fxLayoutAlign="center center"
->
-  <div class="lady-container">
-    <img
-      class="max-width-unset-on-big"
-      style="min-width: 800px"
-      src="../../../assets/SmileasyPaymentPlan/Erwin.jpg"
-    />
-  </div>
+<div class="color-brown flexy-row">
   <div
-    class="sscc margin-right-1 no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1 absolute-container"
-    style="left: 0; margin-left: 13vw; max-width: 560px"
+    class="spp sscc margin-right-1 no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1"
+    style="margin-left: 13vw"
     fxLayout="column"
   >
     <div class="font-dog libre-regular margin-bottom-1">
@@ -170,7 +166,14 @@
       </div>
     </div>
   </div>
-</div> -->
+  <div class="lady-container">
+    <img
+      class="max-width-unset-on-big"
+      style="min-width: 800px"
+      src="../../../assets/SmileasyPaymentPlan/Erwin.jpg"
+    />
+  </div>
+</div>
 
 <div class="flexy-column padding-chef padding-top-bottom-1 background-1">
   <div
@@ -188,13 +191,13 @@
     class="margin-bottom-6 relative-container flexy-row cccc dialog-without-tooltip"
     style="align-self: flex-start"
   >
-    <img src="../../../assets/SmileasyPaymentPlan/Shape1.svg" />
+    <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape1.svg" />
     <div
       class="dialog-content flexy-row absolute-container"
       style="margin: auto"
     >
       <div class="margin-right-2" style="max-width: 10vw">
-        <img src="../../../assets/SmileasyPaymentPlan/1.svg" />
+        <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/1.svg" />
       </div>
       <div class="font-small-3 color-white margin-right-2">
         <p class="roboto-bold">Examination</p>
@@ -208,9 +211,23 @@
       </div>
 
       <div style="align-self: center" style="max-width: 15vw">
-        <img src="../../../assets/SmileasyPaymentPlan/teeth.svg" />
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/teeth.svg"
+        />
       </div>
     </div>
+    <button
+      class="book1 color-white roboto-medium font-extra-small-2 cursor-pointer absolute-container"
+      style="bottom: -33px; left: 19%"
+      (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+        )
+      "
+    >
+      INSTANT ONLINE BOOKING
+    </button>
   </div>
   <div
     class="margin-bottom-6 relative-container flexy-row cccc dialog-with-tooltip"
@@ -225,7 +242,11 @@
       style="margin: auto"
     >
       <div class="margin-right-2" style="max-width: 10vw">
-        <img src="../../../assets/SmileasyPaymentPlan/1.svg" />
+        <img
+          loading="lazy"
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/1.svg"
+        />
       </div>
       <div class="font-small-3 color-white margin-right-2">
         <p class="roboto-bold">Examination</p>
@@ -239,7 +260,10 @@
       </div>
 
       <div style="align-self: center" style="max-width: 15vw">
-        <img src="../../../assets/SmileasyPaymentPlan/teeth.svg" />
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/teeth.svg"
+        />
       </div>
     </div>
   </div>
@@ -248,13 +272,13 @@
     class="margin-bottom-6 relative-container flexy-row cccc dialog-without-tooltip"
     style="align-self: center"
   >
-    <img src="../../../assets/SmileasyPaymentPlan/Shape2.svg" />
+    <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape2.svg" />
     <div
       class="dialog-content flexy-row absolute-container"
       style="margin: auto"
     >
       <div class="margin-right-2" style="max-width: 10vw">
-        <img src="../../../assets/SmileasyPaymentPlan/1.svg" />
+        <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/2.svg" />
       </div>
       <div class="font-small-3 color-white margin-right-2">
         <p class="roboto-bold">Calculation</p>
@@ -265,7 +289,10 @@
       </div>
 
       <div style="align-self: center" style="max-width: 15vw">
-        <img src="../../../assets/SmileasyPaymentPlan/teeth.svg" />
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/calculator.svg"
+        />
       </div>
     </div>
   </div>
@@ -275,13 +302,13 @@
     matTooltip="Treatment Plan is provided, Payment Plan calculation."
     matTooltipPosition="above"
   >
-    <img src="../../../assets/SmileasyPaymentPlan/Shape2.svg" />
+    <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape2.svg" />
     <div
       class="dialog-content flexy-row absolute-container"
       style="margin: auto"
     >
       <div class="margin-right-2" style="max-width: 10vw">
-        <img src="../../../assets/SmileasyPaymentPlan/1.svg" />
+        <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/2.svg" />
       </div>
       <div class="font-small-3 color-white margin-right-2">
         <p class="roboto-bold">Calculation</p>
@@ -291,8 +318,11 @@
         </p>
       </div>
 
-      <div style="align-self: center" style="max-width: 15vw">
-        <img src="../../../assets/SmileasyPaymentPlan/teeth.svg" />
+      <div style="align-self: center" style="max-width: 10vw">
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/calculator.svg"
+        />
       </div>
     </div>
   </div>
@@ -301,13 +331,13 @@
     class="relative-container flexy-row cccc dialog-without-tooltip"
     style="align-self: flex-end"
   >
-    <img src="../../../assets/SmileasyPaymentPlan/Shape3.svg" />
+    <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape3.svg" />
     <div
       class="dialog-content flexy-row absolute-container"
       style="margin: auto"
     >
       <div class="margin-right-2" style="max-width: 10vw">
-        <img src="../../../assets/SmileasyPaymentPlan/1.svg" />
+        <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/3.svg" />
       </div>
       <div class="font-small-3 color-white margin-right-2">
         <p class="roboto-bold">Done</p>
@@ -317,8 +347,11 @@
         </p>
       </div>
 
-      <div style="align-self: center" style="max-width: 15vw">
-        <img src="../../../assets/SmileasyPaymentPlan/teeth.svg" />
+      <div style="align-self: center" style="max-width: 10vw">
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/chair.svg"
+        />
       </div>
     </div>
   </div>
@@ -328,13 +361,13 @@
     matTooltip="You're ready to start treatment."
     matTooltipPosition="above"
   >
-    <img src="../../../assets/SmileasyPaymentPlan/Shape3.svg" />
+    <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape3.svg" />
     <div
       class="dialog-content flexy-row absolute-container"
       style="margin: auto"
     >
       <div class="margin-right-2" style="max-width: 10vw">
-        <img src="../../../assets/SmileasyPaymentPlan/1.svg" />
+        <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/3.svg" />
       </div>
       <div class="font-small-3 color-white margin-right-2">
         <p class="roboto-bold">Done</p>
@@ -344,8 +377,11 @@
         </p>
       </div>
 
-      <div style="align-self: center" style="max-width: 15vw">
-        <img src="../../../assets/SmileasyPaymentPlan/teeth.svg" />
+      <div style="align-self: center" style="max-width: 10vw">
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/chair.svg"
+        />
       </div>
     </div>
   </div>
@@ -357,11 +393,42 @@
   fxLayoutAlign="center center"
 >
   <div fxLayout="column" fxLayoutAlign="center center">
-    <div class="flexy-row-w sscc margin-bottom-2">
+    <div class="flexy-row-w sscc">
       <div
-        class="margin-right-1 flex-1 margin-bottom-on-sm no-margin-right-on-sm"
+        class="margin-right-1 flex-1 margin-bottom-on-sm no-margin-right-on-sm relative-container"
       >
-        <img src="../../../assets/whyProudSmilePage/surf.png" />
+        <img
+          loading="lazy"
+          src="../../../assets/SmileasyPaymentPlan/3_photos.png"
+        />
+        <div class="absolute-container" style="top: -8%; left: 20%">
+          <img
+            loading="lazy"
+            src="../../../assets/SmileasyPaymentPlan/bubble_green.svg"
+          />
+          <div
+            class="absolute-container flexy-row roboto-regular color-white font-small-3"
+            style="margin: auto; top: 0; left: 0; bottom: 0; right: 0"
+          >
+            <p class="center-text">
+              <span class="roboto-bold">Veneers + Invisalign</span><br />($5500)
+            </p>
+          </div>
+        </div>
+        <div class="absolute-container" style="top: 54%; left: 12%">
+          <img
+            loading="lazy"
+            src="../../../assets/SmileasyPaymentPlan/bubble_orange.svg"
+          />
+          <div
+            class="absolute-container flexy-row roboto-regular color-white font-small-3"
+            style="margin: auto; top: 0; left: 0; bottom: 0; right: 0"
+          >
+            <p class="center-text">
+              <span class="roboto-bold">Root Canal</span><br />($1200)
+            </p>
+          </div>
+        </div>
       </div>
       <div class="flex-1 sscc" fxLayout="column">
         <div class="font-dog libre-regular margin-bottom-1">
@@ -377,10 +444,13 @@
           </p>
         </div>
         <div
-          class="roboto-bold color-gray-dark font-extra-small margin-bottom-1 flexy-row"
+          class="roboto-bold color-gray-dark font-extra-small margin-bottom-7 flexy-row"
         >
           <div>
-            <img src="../../../assets/SmileasyPaymentPlan/Calculator1.svg" />
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/Calculator1.svg"
+            />
           </div>
           <p style="margin-left: 10px">TREATMENT AMOUNT</p>
         </div>
@@ -409,6 +479,7 @@
         </div>
         <div
           class="slider flexy-row full-width color-gray-pale roboto-medium font-extra-small"
+          style="margin-bottom: calc(84px + 2vw)"
         >
           <div class="left-value">
             <p>$750</p>
@@ -421,170 +492,935 @@
               (touchstart)="onDragStart($event)"
             >
               <img
+                loading="lazy"
                 draggable="false"
                 (dragstart)="onImageDragStart($event)"
                 src="../../../assets/SmileasyPaymentPlan/Pointer.svg"
               />
             </div>
             <div class="big-step">
-              <img src="../../../assets/SmileasyPaymentPlan/BigStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="big-step">
-              <img src="../../../assets/SmileasyPaymentPlan/BigStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="big-step">
-              <img src="../../../assets/SmileasyPaymentPlan/BigStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="big-step">
-              <img src="../../../assets/SmileasyPaymentPlan/BigStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="big-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/BigStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="small-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/SmallStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+              />
             </div>
             <div class="big-step hide-on-phone">
-              <img src="../../../assets/SmileasyPaymentPlan/BigStep.svg" />
+              <img
+                loading="lazy"
+                src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+              />
             </div>
           </div>
           <div class="right-value">
             <p>$12000</p>
           </div>
         </div>
+        <div class="flexy-row-w sscc margin-bottom-1">
+          <div
+            class="flexy-column sscc margin-right-2 margin-bottom-on-sm no-margin-right-on-sm"
+          >
+            <div
+              class="roboto-bold color-gray-dark font-extra-small margin-bottom-7 flexy-row"
+              style="min-height: 24px"
+            >
+              <div>
+                <img
+                  loading="lazy"
+                  src="../../../assets/SmileasyPaymentPlan/Calculator2.svg"
+                />
+              </div>
+              <p style="margin-left: 10px">DEPOSIT OF</p>
+            </div>
+            <div
+              class="input-1 cursor-pointer amount"
+              [matMenuTriggerFor]="deposit"
+              style="width: 160px"
+            >
+              <input
+                #input2
+                disabled
+                class="color-brown roboto-medium cursor-pointer"
+                type="text"
+                style="width: 100px"
+              />
+              <div class="sign">
+                <img
+                  loading="lazy"
+                  src="../../../assets/SmileasyPaymentPlan/DownArrow.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flexy-column sscc">
+            <div
+              class="roboto-bold color-gray-dark font-extra-small margin-bottom-7 flexy-row"
+              style="min-height: 24px"
+            >
+              <p style="margin-left: 10px">DEPOSIT AMOUNT</p>
+            </div>
+            <div class="input-1" style="background: #ebebeb80">
+              <div class="amount">
+                <input
+                  #input3
+                  disabled
+                  class="color-brown roboto-medium"
+                  type="number"
+                />
+              </div>
+              <div class="sign">
+                <p class="roboto-medium color-white">$</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="calculate color-white roboto-medium font-extra-small-2 cursor-pointer"
+          (click)="calculatorClick()"
+        >
+          CALCULATE
+        </button>
+
+        <div class="line-2 opacity-2 full-width margin-top-bottom-2"></div>
+
+        <div class="flexy-row-w sscc">
+          <div
+            class="flexy-column margin-right-2 no-margin-right-on-sm margin-bottom-on-sm sscc"
+          >
+            <div class="flexy-row">
+              <div style="margin-bottom: 8px; margin-right: 8px">
+                <img
+                  loading="lazy"
+                  src="../../../assets/SmileasyPaymentPlan/monthly.svg"
+                />
+              </div>
+              <div
+                class="roboto-bold font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+              >
+                <p>MONTHLY PAYMENTS</p>
+              </div>
+            </div>
+
+            <div class="margin-bottom-8 roboto-regular color-orange font-small">
+              <p class="center-text-on-sm">
+                <span class="roboto-bold">20</span> monthly payments<br />
+                of
+                <span class="roboto-bold">${{ monthly }}</span>
+              </p>
+            </div>
+            <button
+              class="book1 color-white roboto-medium font-extra-small-2 cursor-pointer"
+              (click)="
+                goToLink(
+                  'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+                )
+              "
+            >
+              INSTANT ONLINE BOOKING
+            </button>
+          </div>
+          <div class="flexy-column margin-right-2 cccc hide-on-sm">
+            <div class="vertical-line-1" style="margin-bottom: 8px"></div>
+            <div
+              class="roboto-bold font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+            >
+              <p>OR</p>
+            </div>
+            <div class="vertical-line-2"></div>
+          </div>
+          <div class="flexy-column sscc">
+            <div class="flexy-row">
+              <div style="margin-bottom: 8px; margin-right: 8px">
+                <img
+                  loading="lazy"
+                  src="../../../assets/SmileasyPaymentPlan/weekly.svg"
+                />
+              </div>
+              <div
+                class="roboto-bold font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+              >
+                <p>WEEKLY PAYMENTS</p>
+              </div>
+            </div>
+
+            <div
+              class="margin-bottom-8 roboto-regular color-green-pale font-small"
+            >
+              <p class="center-text-on-sm">
+                <span class="roboto-bold">80</span> weekly payments<br />
+                of
+                <span class="roboto-bold">${{ weekly }}</span>
+              </p>
+            </div>
+            <button
+              class="book2 color-white roboto-medium font-extra-small-2 cursor-pointer"
+              (click)="
+                goToLink(
+                  'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+                )
+              "
+            >
+              INSTANT ONLINE BOOKING
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="flexy-column padding-captain padding-top-bottom-1 background-15">
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="font-large libre-regular center-text color-brown margin-bottom-2"
+    style="top: 0"
+  >
+    <p>
+      Other <span class="libre-italic">Payment</span> <br />
+      <span class="libre-italic">Solutions</span>
+    </p>
+  </div>
+  <div
+    class="flexy-row-w margin-bottom-2"
+    style="justify-content: space-around"
+  >
+    <div
+      class="flexy-column margin-right-2 margin-bottom-on-sm payment-solution"
+    >
+      <div
+        class="margin-bottom-9 flexy-row"
+        style="align-self: center; height: 89px; align-items: center"
+      >
+        <div>
+          <img
+            loading="lazy"
+            src="../../../assets/SmileasyPaymentPlan/AfterPay.png"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-blue">4 Easy Payments.</span> Pay
+              for your treatment in four interest-free installments (due every
+              two weeks).
+            </p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-blue"
+                >Nothing Extra to Pay.</span
+              >
+              Always zero interest, never additional fees when you pay on time.
+            </p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row margin-bottom-1">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-blue"
+                >Instant Approval Decision.</span
+              >
+              No long forms. You’ll know if you’re approved instantly and your
+              treatment will start straight away.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="goToLink('https://www.afterpay.com/how-it-works')"
+        class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+      >
+        APPLY NOW
+      </button>
+    </div>
+    <div
+      class="flexy-column margin-right-2 margin-bottom-on-sm payment-solution"
+    >
+      <div
+        class="margin-bottom-9 flexy-row"
+        style="align-self: center; height: 89px; align-items: center"
+      >
+        <div>
+          <img
+            loading="lazy"
+            src="../../../assets/SmileasyPaymentPlan/ZIP.png"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-orange-red">Account limit.</span>
+              Under or over $1000
+            </p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-orange-red"
+                >Interest free period.
+              </span>
+              From 0% interest for 3 months Promotional offers 6-48 months.
+            </p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-orange-red"
+                >Establishment fee.</span
+              >
+              $0 - $99
+            </p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row margin-bottom-1">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>
+              <span class="roboto-medium color-orange-red">Account fee.</span>
+              $6/month waived if you have no balance.
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        (click)="
+          goToLink(
+            'https://account.zipmoney.com.au/?_ga=2.172903715.1824648551.1512797100-451365438.1512797100#/'
+          )
+        "
+        class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+      >
+        APPLY NOW
+      </button>
+    </div>
+    <div
+      class="flexy-column margin-right-2 margin-bottom-on-sm payment-solution"
+    >
+      <div
+        class="margin-bottom-9 flexy-row"
+        style="align-self: center; height: 89px"
+      >
+        <div>
+          <img
+            loading="lazy"
+            src="../../../assets/SmileasyPaymentPlan/HCFCBHS.png"
+          />
+        </div>
+      </div>
+      <div>
+        <div
+          class="roboto-regular color-gray-dark font-small-3 margin-bottom-1"
+          style="line-height: 3.75vh"
+        >
+          <p>
+            <span class="roboto-medium"
+              >We accept all major Health Insurances.</span
+            >
+            Claims are maid on the spot using our
+            <span class="roboto-medium">HICAPS</span> machine which means you’ll
+            only need to pay us the gap, all the claiming process will be done
+            for you. We’re preferred providers for <span>HCF</span> and
+            <span class="roboto-medium">CBHS</span> which means you’ll receive:
+          </p>
+        </div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/VioletCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-medium font-small-3 color-violet margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>Twice a year Free Dental Check ups</p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/VioletCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-medium font-small-3 color-violet margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>X-rays and Scale and Cleans</p>
+          </div>
+        </div>
+        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="flexy-row margin-bottom-1">
+          <div class="margin-right-3" style="flex: 0 0 28px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/VioletCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-medium font-small-3 color-violet margin-bottom-1"
+            style="line-height: 3.75vh"
+          >
+            <p>An fluoride treatment</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+        (click)="
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+          )
+        "
+      >
+        INSTANT ONLINE BOOKING
+      </button>
+    </div>
+  </div>
+
+  <div class="flexy-col full-width">
+    <app-dropdown
+      question="What treatments can I use the payment plan??"
+      index="01"
+    >
+      <p class="left-text">
+        Yes, even though we won’t be placing braces on an 8 year old child we
+        can certainly identify early problems at this age, including bad habits.
+        In fact, 8 is the perfect time to start because a few adult teeth are
+        present and we can check for growth problems too such as excessive
+        growth of the lower jaw, not enough development of the upper jaw,
+        crowding, cross bites amongst other problems. If we do identify a
+        problem we can often treat these with removable or fixed appliances and
+        by doing that we’ll be minimising or even avoiding all together the need
+        for braces in the near future.<br /><br />
+        Twin block - This is an appliance to correct the relationship between
+        the top and bottom jaws. If your child has a large overbite and the
+        lower jaw is not developed enough we can improve and treat that with
+        these types of appliances. The results can be pretty incredible
+        dependable on compliance and your child will benefit from increased
+        confidence at school and better speech capabilities.<br /><br />
+        Cross bite: This is the condition where the bottom teeth are in front of
+        the top teeth in a cross situation. This can lead to problems with the
+        mouth joints and should be treated and intervened as early as possible.
+        We can use an appliance called “palatal expander”. This appliance causes
+        the top jaw to expand and grow thus correcting the crossbite and
+        improving airway as well and it will also reduce the chances of crowding
+        by allowing extra space in the mouth.<br /><br />
+        Thumb sucking: We know it’s cute and comforting for your child to suck
+        the thumb, however this habit can cause severe problems with the top
+        teeth and jaw if not stopped early. The main consequence is an open bite
+        where the front teeth don’t touch. We can produce appliances that could
+        help to discourage your child to continue with the habit.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="Can I use my Health Insurance and still get a payment plan?"
+      index="02"
+    >
+      <p class="left-text">
+        Contrary to popular belief braces is for everyone, there’s no age limit.
+        The advantages of straight teeth are worth pursuing on every age
+        bracket. Provided your teeth and gums are healthy you can get braces.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="What if I’m an Australian Resident but not a Citizen?"
+      index="03"
+    >
+      <p class="left-text">
+        Yes we do. Even though our speciality is clear braces we do have the
+        metal type for those who prefer a stronger option or for the kids who
+        love coloured elastics for a funky look.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="I am a student or a temporary resident, am I eligible for the payment plan?"
+      index="04"
+    >
+      <p class="left-text">
+        Good question. Some conditions are better treated with braces and others
+        with Invisalign but perhaps the biggest difference is how discreet you
+        want to be about your treatment and your lifestyle. It may even be that
+        we can use both systems to treat your case for maximum efficiency. Below
+        is a table with the main points of difference between the two
+        treatments. We do offer Invisalign too, you can find more information by
+        clicking on the Invisalign logo.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="My credit rating is not great, can I still apply?"
+      index="05"
+    >
+      <p class="left-text">
+        No, we’re a general dental practice but we offer orthodontics. Our
+        dentists have acquired further knowledge through a few more years of
+        specific training, but they’re not specialist orthodontics. We treat a
+        broad range of conditions but usually not involving surgical needs or
+        extreme skeletal problems. These are referred to specialist
+        orthodontics. If we identify your case cannot be treated by us we’ll
+        gladly recommend an orthodontist for your consideration.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="I have an emergency, what options are available for me?"
+      index="06"
+    >
+      <p class="left-text">
+        No, we’re a general dental practice but we offer orthodontics. Our
+        dentists have acquired further knowledge through a few more years of
+        specific training, but they’re not specialist orthodontics. We treat a
+        broad range of conditions but usually not involving surgical needs or
+        extreme skeletal problems. These are referred to specialist
+        orthodontics. If we identify your case cannot be treated by us we’ll
+        gladly recommend an orthodontist for your consideration.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="Are there options with no deposits and longer than 24 months for
+      payment?"
+      index="07"
+    >
+      <p class="left-text"></p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="I’m thinking about using my Super to pay for dental treatment, what are my options?"
+      index="08"
+    >
+      <p class="left-text">
+        I’m thinking about using my Super to pay for dental treatment, what are
+        my options?
+      </p>
+    </app-dropdown>
+  </div>
+</div>
+
+<div
+  class="instaSection background-17 color-white padding-top-bottom-1 relative-container"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div class="instaFeed">
+    <div class="text margin-bottom-1 padding-chef">
+      <div class="leftText roboto-medium font-extra-small">
+        <p>OUR INSTAGRAM FEED</p>
+      </div>
+      <div
+        class="rightText roboto-medium font-extra-small"
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="1vw"
+        (click)="goToLink('https://www.instagram.com/proud.smile.dental/')"
+      >
+        <div>
+          <img loading="lazy" src="../../../assets/homePage/instagram.svg" />
+        </div>
+        <p>Follow ProudSmile on Instagram</p>
+      </div>
+    </div>
+
+    <ng-image-slider
+      [infinite]="true"
+      [autoSlide]="3"
+      [showArrow]="false"
+      [images]="imageObject"
+      #nav
+    ></ng-image-slider>
+  </div>
+  <div class="title" fxLayout="column" fxLayoutAlign="start center">
+    <div class="year">
+      <img loading="lazy" src="../../../assets/homePage/2019.svg" />
+    </div>
+    <div class="text roboto-regular font-wolf margin-bottom-1">
+      <p>
+        We take pride in our work. Until now<br />
+        we have
+        <span class="roboto-bold"
+          >578 Completed Cases, 26<br />
+          Dedicated Partners and 789 Clients</span
+        >
+        all<br />
+        Over The Worldwide
+      </p>
+    </div>
+    <app-button text="Let’s tell your story next"></app-button>
   </div>
 </div>

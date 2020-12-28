@@ -76,14 +76,29 @@ export class HomePageComponent implements OnInit {
   ngAfterViewInit() {}
 
   seeAllHealth() {
-    this.router.navigate(["/", "health-component"]);
+    this.router.navigate(["/", "Extractions"]);
+    window.scrollTo(0, 0);
   }
 
   seeAllAesthetic() {
-    this.router.navigate(["/", "aesthetics-component  "]);
+    this.router.navigate(["/", "aesthetics-component"]);
+    window.scrollTo(0, 0);
+  }
+  seeOurClinic() {
+    this.router.navigate(["/", "dental-clinic-component"]);
+    window.scrollTo(0, 0);
+  }
+  seeProudSmileExperience() {
+    this.router.navigate(["/", "proud-smile-experience-component"]);
+    window.scrollTo(0, 0);
   }
 
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+
+  onInternalLink(item: string) {
+    this.router.navigate(["/", item]);
+    window.scrollTo(0, 0);
   }
 }

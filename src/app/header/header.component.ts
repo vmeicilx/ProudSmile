@@ -4,7 +4,8 @@ import {
   ElementRef,
   HostListener,
   OnInit,
-  Renderer2
+  Renderer2,
+  ViewChild
 } from "@angular/core";
 import {
   MatSnackBar,
@@ -30,6 +31,17 @@ export class HeaderComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = "center";
   verticalPosition: MatSnackBarVerticalPosition = "top";
   scheduleText: string;
+
+  @ViewChild("whyProudSmile") whyProudSmileSubheader: ElementRef;
+  @ViewChild("health1Subheader") health1Subheader: ElementRef;
+  @ViewChild("health2Subheader") health2Subheader: ElementRef;
+  @ViewChild("WhyProudSmileText") whyProudSmileText: ElementRef;
+  @ViewChild("HealthText") healthText: ElementRef;
+  @ViewChild("AestheticsText") aestheticsText: ElementRef;
+  @ViewChild("ImplantsText") implantsText: ElementRef;
+  @ViewChild("PaymentPlanText") paymentPlanText: ElementRef;
+  @ViewChild("SpecialsText") specialsText: ElementRef;
+  @ViewChild("ContactText") contactText: ElementRef;
 
   constructor(
     private router: Router,
@@ -65,49 +77,95 @@ export class HeaderComponent implements OnInit {
           val.url === "/RootCanalTherapy" ||
           val.url === "/SameDayCrowns";
 
+        this.whyProudSmileText.nativeElement.classList.remove("active-text");
+        this.healthText.nativeElement.classList.remove("active-text");
+        this.aestheticsText.nativeElement.classList.remove("active-text");
+        this.implantsText.nativeElement.classList.remove("active-text");
+        this.paymentPlanText.nativeElement.classList.remove(
+          "payment-plan-active"
+        );
+        this.specialsText.nativeElement.classList.remove("active-text");
+        this.contactText.nativeElement.classList.remove("active-text");
+
         if (val.url === "/proud-smile-experience-component") {
           this.setActiveSubheader1(0);
+          this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/who-we-are-component") {
           this.setActiveSubheader1(1);
+          this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/dental-clinic-component") {
           this.setActiveSubheader1(2);
+          this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
 
         if (val.url === "/Extractions") {
           this.setActiveSubheader2(0);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/RootCanalTherapy") {
           this.setActiveSubheader2(1);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/ClearBraces") {
           this.setActiveSubheader2(2);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/Invisalign") {
           this.setActiveSubheader2(3);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/AnxiousPatients") {
           this.setActiveSubheader2(4);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/SameDayCrowns") {
           this.setActiveSubheader2(5);
+          this.healthText.nativeElement.classList.add("active-text");
         }
 
         if (val.url === "/GeneralAndPreventiveCare") {
           this.setActiveSubheader3(0);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/DVA") {
           this.setActiveSubheader3(1);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/MedicareChildBenefitScheme") {
           this.setActiveSubheader3(2);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/MouthguardsAndSplints") {
           this.setActiveSubheader3(3);
+          this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/DentalEmergency") {
           this.setActiveSubheader3(4);
+          this.healthText.nativeElement.classList.add("active-text");
+        }
+
+        if (val.url === "/aesthetics-component") {
+          this.aestheticsText.nativeElement.classList.add("active-text");
+        }
+
+        if (val.url === "/Implants") {
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+
+        if (val.url === "/payment-page-component") {
+          this.paymentPlanText.nativeElement.classList.add(
+            "payment-plan-active"
+          );
+        }
+
+        if (val.url === "/Specials") {
+          this.specialsText.nativeElement.classList.add("active-text");
+        }
+
+        if (val.url === "/contact-page-component") {
+          this.contactText.nativeElement.classList.add("active-text");
         }
       }
     });
@@ -225,6 +283,12 @@ export class HeaderComponent implements OnInit {
   mouseEnter() {
     this.styleStatus = false;
     this.isMouseOn = true;
+    this.whyProudSmileSubheader.nativeElement.children[0].classList.add(
+      "fixed-position"
+    );
+    this.health1Subheader.nativeElement.classList.add("fixed-health-position");
+    this.health2Subheader.nativeElement.classList.add("fixed-health-position");
+    this.health2Subheader.nativeElement.classList.add("health2-fixed-position");
   }
 
   mouseLeave() {
@@ -233,6 +297,21 @@ export class HeaderComponent implements OnInit {
       window.pageYOffset <= 5 &&
       this.router.url === "/HomePage" &&
       !this.scheduleActive;
+  }
+
+  subheadermouseLeave() {
+    this.whyProudSmileSubheader.nativeElement.children[0].classList.remove(
+      "fixed-position"
+    );
+    this.health1Subheader.nativeElement.classList.remove(
+      "fixed-health-position"
+    );
+    this.health2Subheader.nativeElement.classList.remove(
+      "fixed-health-position"
+    );
+    this.health2Subheader.nativeElement.classList.remove(
+      "health2-fixed-position"
+    );
   }
 
   goToLink(url: string) {

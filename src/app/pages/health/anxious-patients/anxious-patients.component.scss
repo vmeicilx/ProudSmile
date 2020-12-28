@@ -1,0 +1,19 @@
+:host {
+  @media only screen and (min-width: 1201px) {
+    .anxious-background {
+      background: linear-gradient(#faece9 80%, white 80%);
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .anxious-background {
+      background: linear-gradient(#faece9 83%, white 83%);
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .anxious-background {
+      background: linear-gradient(#faece9 86%, white 86%);
+    }
+  }
+}

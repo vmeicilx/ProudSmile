@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="23px" viewBox="0 0 24 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>weekly</title>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.300000012">
+        <g id="Smileeasy-Payment-Plan" transform="translate(-1320.000000, -6918.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Online-Calculator" transform="translate(0.000000, 5505.000000)">
+                <g id="Group-24" transform="translate(295.000000, 232.000000)">
+                    <g id="Group-19" transform="translate(667.000000, 1181.000000)">
+                        <g id="CalendarDay" transform="translate(358.000000, 0.000000)">
+                            <path d="M19.5,1.5 L24,1.5 L24,22.5 L0,22.5 L0,1.5 L4.5,1.5 L4.5,0 L6,0 L6,1.5 L18,1.5 L18,0 L19.5,0 L19.5,1.5 Z M4.5,3 L1.5,3 L1.5,6 L22.5,6 L22.5,3 L19.5,3 L19.5,4.5 L18,4.5 L18,3 L6,3 L6,4.5 L4.5,4.5 L4.5,3 Z M1.5,21 L22.5,21 L22.5,7.5 L1.5,7.5 L1.5,21 Z M4.5,19.5 L4.5,9 L10.5,9 L10.5,19.5 L4.5,19.5 Z M6,10.5 L6,18 L9,18 L9,10.5 L6,10.5 Z M13.5,19.5 L13.5,9 L19.5,9 L19.5,19.5 L13.5,19.5 Z M15,10.5 L15,18 L18,18 L18,10.5 L15,10.5 Z" id="weekly"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

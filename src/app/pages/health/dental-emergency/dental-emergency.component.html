@@ -1,7 +1,11 @@
 <div
-  class="padding-chef color-white background-4 padding-top-bottom-1 margin-top-2"
+  class="padding-chef color-white background-4 padding-top-bottom-1 margin-top-6 relative-container"
 >
-  <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
+  <div
+    class="center-text margin-bottom-2"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
     <div class="width-1">
       <img src="../../../assets/WhiteShape.svg" />
     </div>
@@ -22,6 +26,556 @@
         injury or severe pain there’s only one thing you need and that is to be
         seen Right Now. So follow these easy 3 steps to get help now:
       </p>
+    </div>
+  </div>
+  <div class="absolute-container" style="top: -20%; left: -10%">
+    <img src="../../../../assets/healthPage/DentalEmergency/BigShape.svg" />
+  </div>
+  <div class="absolute-container" style="top: 26%; right: 15%">
+    <img src="../../../../assets/healthPage/DentalEmergency/SmallShape.svg" />
+  </div>
+  <div class="absolute-container" style="left: -30%; bottom: -10%">
+    <img
+      class="max-width-unset-on-big max-width-unset-on-sm"
+      src="../../../../assets/healthPage/DentalEmergency/ProudSmile.svg"
+    />
+  </div>
+
+  <div class="hide-on-sm color-white flexy-row">
+    <div class="flexy-column" style="flex: 1">
+      <div class="margin-bottom-1">
+        <img src="../../../../assets/healthPage/RootCanal/1.svg" />
+      </div>
+      <div class="margin-bottom-1 roboto-regular font-medium">
+        <p>
+          <span class="roboto-medium"
+            >Book an appointment online now or call us on 5570 3311 if you can’t
+            find availability.</span
+          >
+          We reserve emergency appointments on most days and we will do our best
+          to see you straight away. If your emergency relates to a serious
+          accident or you’re having difficulty in breathing please look for your
+          closest hospital or call an ambulance.
+        </p>
+      </div>
+      <div
+        (click)="goToLinkWithotNewTab('tel:0755703311')"
+        class="flexy-column cccc"
+        style="width: 370px"
+      >
+        <button
+          class="onlineBooking roboto-medium color-white font-lion margin-bottom-5"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+        >
+          <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+          <p class="margin-left-1">5570 3311</p>
+        </button>
+        <div
+          class="cursor-pointer opacity-4 roboto-medium color-white font-small-4 margin-bottom-1"
+          style="align-self: center"
+        >
+          <p>Click to Call Now</p>
+        </div>
+      </div>
+
+      <div class="line-3 opacity-5 full-width margin-bottom-1"></div>
+      <div class="margin-bottom-1">
+        <img src="../../../../assets/healthPage/RootCanal/3.svg" />
+      </div>
+
+      <div class="margin-bottom-1 roboto-regular font-medium">
+        <p>
+          <span class="roboto-medium">Head to our office.</span> We’re located
+          on 122 Bundall Road, Bundall, just opposite to the HOTA (Home of The
+          Arts). You can park either in front of our building or on the rear
+          parking, accessible via Crombie Ave and Frigo Court.
+        </p>
+      </div>
+      <div class="flexy-row">
+        <div class="">
+          <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
+        </div>
+        <div class="flexy-column margin-left-1">
+          <div class="roboto-bold font-medium">
+            <p>Google Maps</p>
+          </div>
+          <div
+            class="flexy-row cursor-pointer cccc relative-container"
+            style="z-index: 2"
+            (click)="
+              goToLink(
+                'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+              )
+            "
+          >
+            <div class="roboto-regular font-extra-small opacity-5">
+              <p>Get directions to our clinic</p>
+            </div>
+            <div class="margin-left-1 opacity-5">
+              <img
+                loading="lazy"
+                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flexy-column vertical-line-1" style="flex: 0 0 1px"></div>
+    <div class="flexy-column" style="flex: 1">
+      <div class="margin-bottom-1">
+        <img src="../../../../assets/healthPage/RootCanal/2.svg" />
+      </div>
+
+      <div class="margin-bottom-1 roboto-medium font-medium">
+        <p>
+          Follow these tips according to the emergency you’re experiencing,
+          until you arrive at our practice:
+        </p>
+      </div>
+
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>TOOTH ACHE</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p>
+              If you haven’t already, take a pain killer that you have ready at
+              home and that you usually take for a headache as soon as you’ve
+              made your appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>BROKEN OR LOST TOOTH</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p>
+              Save the piece that’s broken. If the entire tooth came out place
+              it in milk and bring it with you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>LOST CROWN</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p>
+              It is important to bring the crown with you to your appointment.
+              You can use clove oil to help ease any pain or discomfort to your
+              gums.
+              <span style="text-decoration: underline"
+                >DO NOT use super glue or other sticky substances to glue the
+                crown back on.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>YOU’RE BLEEDING</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p>
+              If you have a cut in your mouth grab a handkerchief and bite hard
+              on it. It may also help to put a cold bag on your face on where
+              you’re bruised.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>ABSCESS OR PUS</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p>
+              If you have a yellow pus coming from your gums or tooth, just
+              rinse your mouth with warm water, don’t do anything to the tooth
+              or gums and don’t attempt to drain the abscess, we’ll take care of
+              that for you once you arrive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hide-on-big margin-bottom-1 color-white flexy-row">
+    <div class="flexy-column cccc" style="flex: 1">
+      <div class="margin-bottom-1">
+        <img src="../../../../assets/healthPage/RootCanal/1.svg" />
+      </div>
+      <div class="margin-bottom-1 roboto-regular font-medium">
+        <p>
+          <span class="roboto-medium"
+            >Book an appointment online now or call us on 5570 3311 if you can’t
+            find availability.</span
+          >
+          We reserve emergency appointments on most days and we will do our best
+          to see you straight away. If your emergency relates to a serious
+          accident or you’re having difficulty in breathing please look for your
+          closest hospital or call an ambulance.
+        </p>
+      </div>
+      <div
+        (click)="goToLinkWithotNewTab('tel:0755703311')"
+        class="flexy-column cccc"
+        style="width: 240px"
+      >
+        <button
+          class="onlineBooking roboto-medium color-white font-lion margin-bottom-5"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+        >
+          <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+          <p class="margin-left-1">5570 3311</p>
+        </button>
+        <div
+          class="cursor-pointer opacity-4 roboto-medium color-white font-small-4 margin-bottom-1"
+          style="align-self: center"
+        >
+          <p>Click to Call Now</p>
+        </div>
+      </div>
+
+      <div class="line-3 opacity-5 full-width margin-bottom-1"></div>
+
+      <div class="margin-bottom-1">
+        <img src="../../../../assets/healthPage/RootCanal/2.svg" />
+      </div>
+
+      <div class="margin-bottom-1 roboto-medium font-medium">
+        <p>
+          Follow these tips according to the emergency you’re experiencing,
+          until you arrive at our practice:
+        </p>
+      </div>
+
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+        style="align-self: flex-start"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>TOOTH ACHE</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p class="left-text">
+              If you haven’t already, take a pain killer that you have ready at
+              home and that you usually take for a headache as soon as you’ve
+              made your appointment.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+        style="align-self: flex-start"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>BROKEN OR LOST TOOTH</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p class="left-text">
+              Save the piece that’s broken. If the entire tooth came out place
+              it in milk and bring it with you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+        style="align-self: flex-start"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>LOST CROWN</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p class="left-text">
+              It is important to bring the crown with you to your appointment.
+              You can use clove oil to help ease any pain or discomfort to your
+              gums.
+              <span style="text-decoration: underline"
+                >DO NOT use super glue or other sticky substances to glue the
+                crown back on.</span
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+        style="align-self: flex-start"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>YOU’RE BLEEDING</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p class="left-text">
+              If you have a cut in your mouth grab a handkerchief and bite hard
+              on it. It may also help to put a cold bag on your face on where
+              you’re bruised.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flexy-row margin-bottom-1 roboto-medium font-medium margin-left-3"
+        style="align-self: flex-start"
+      >
+        <div class="flexy-column" style="flex: 0 0 50px">
+          <div>
+            <img
+              src="../../../../assets/healthPage/DentalEmergency/check.svg"
+            />
+          </div>
+        </div>
+        <div class="flexy-column font-extra-small">
+          <div class="flexy-row roboto-medium">
+            <p>ABSCESS OR PUS</p>
+          </div>
+          <div class="flexy-row roboto-regular">
+            <p class="left-text">
+              If you have a yellow pus coming from your gums or tooth, just
+              rinse your mouth with warm water, don’t do anything to the tooth
+              or gums and don’t attempt to drain the abscess, we’ll take care of
+              that for you once you arrive.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="line-3 opacity-5 full-width margin-bottom-1"></div>
+
+      <div class="margin-bottom-1">
+        <img src="../../../../assets/healthPage/RootCanal/3.svg" />
+      </div>
+
+      <div class="margin-bottom-1 roboto-regular font-medium">
+        <p>
+          <span class="roboto-medium">Head to our office.</span> We’re located
+          on 122 Bundall Road, Bundall, just opposite to the HOTA (Home of The
+          Arts). You can park either in front of our building or on the rear
+          parking, accessible via Crombie Ave and Frigo Court.
+        </p>
+      </div>
+      <div class="flexy-row">
+        <div class="">
+          <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
+        </div>
+        <div class="flexy-column margin-left-1">
+          <div class="roboto-bold font-medium">
+            <p>Google Maps</p>
+          </div>
+          <div
+            (click)="
+              goToLink(
+                'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+              )
+            "
+            class="flexy-row cursor-pointer cccc relative-container"
+            style="z-index: 2"
+          >
+            <div class="roboto-regular font-extra-small opacity-5">
+              <p>Get directions to our clinic</p>
+            </div>
+            <div class="margin-left-1 opacity-5">
+              <img
+                loading="lazy"
+                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flexy-column sscc margin-bottom-1">
+    <div class="instant-credit flexy-row-w margin-bottom-1">
+      <div
+        class="logos med margin-right-1 margin-left-2 no-margin-right-on-sm margin-bottom-on-sm"
+      >
+        <img
+          class="max-width-unset-on-big max-width-unset-on-sm"
+          src="../../../../assets/healthPage/DentalEmergency/Med.png"
+        />
+      </div>
+      <div class="font-small-3 color-white roboto-regular">
+        <p>
+          How about we create like a little credit card with proud smile name on
+          it and with "instant Credit" written on it? <br /><br />
+          If required we can provide you with Penthrox Sedation, also know as
+          “the green whistle”. This will calm you and help relieve the pain
+          before and during treatment.
+          <span class="roboto-bolds"
+            >All emergency treatments will be performed using gold graded local
+            anaesthesia.</span
+          >
+        </p>
+      </div>
+    </div>
+    <div class="line-3 opacity-5 full-width margin-bottom-6"></div>
+    <div class="flexy-row-w margin-bottom-1 sscc">
+      <div
+        class="logos margin-right-1 margin-left-2 no-margin-right-on-sm margin-bottom-on-sm"
+      >
+        <img
+          class="max-width-unset-on-big max-width-unset-on-sm"
+          src="../../../../assets/healthPage/DentalEmergency/Card.svg"
+        />
+      </div>
+      <div class="font-small-3 color-white roboto-regular">
+        <p class="margin-bottom-1">
+          Has this emergency caught you by surprise and at the worst time
+          financially? Don’t worry. We accept both Zip or Afterpay. These are
+          instant credit accounts that you can apply very quickly right at our
+          office or at home, then use it straight away for your appointment.
+          Click on the links below to apply.
+        </p>
+        <div class="flexy-row-w" style="flex-wrap: wrap">
+          <div
+            class="applies flexy-column sscc margin-right-2 no-margin-right-on-sm margin-bottom-1"
+          >
+            <div class="margin-bottom-3">
+              <img
+                src="../../../../assets/healthPage/DentalEmergency/true.png"
+              />
+            </div>
+            <div
+              (click)="goToLink('https://www.afterpay.com/how-it-works')"
+              class="flexy-row cursor-pointer cccc relative-container"
+              style="z-index: 2"
+            >
+              <div class="roboto-medium font-medium">
+                <p>Apply for a Afterpay Account</p>
+              </div>
+              <div class="margin-left-1 opacity-5">
+                <img
+                  loading="lazy"
+                  src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="applies flexy-column sscc">
+            <div class="margin-bottom-3">
+              <img
+                src="../../../../assets/healthPage/DentalEmergency/zip.svg"
+              />
+            </div>
+            <div
+              class="flexy-row cursor-pointer cccc relative-container"
+              style="z-index: 2"
+              (click)="
+                goToLink(
+                  'https://account.zipmoney.com.au/?_ga=2.172903715.1824648551.1512797100-451365438.1512797100#/'
+                )
+              "
+            >
+              <div class="roboto-medium font-medium">
+                <p>Apply for a Zip Account</p>
+              </div>
+              <div class="margin-left-1 opacity-5">
+                <img
+                  loading="lazy"
+                  src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

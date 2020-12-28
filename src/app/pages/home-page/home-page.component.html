@@ -70,7 +70,7 @@
     class="font-large libre-regular center-text padding-top-bottom-1 margin-bottom-2"
   >
     <div class="width-1">
-      <img src="../../../assets/Shape.svg" />
+      <img loading="lazy" src="../../../assets/Shape.svg" />
     </div>
     <p>
       The dentist you'll<br />
@@ -82,14 +82,14 @@
   <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w-r sscc margin-bottom-2">
       <div class="margin-right-1 flex-1 no-margin-on-sm">
-        <img src="../../assets/homePage/couch.png" />
+        <img loading="lazy" src="../../assets/homePage/couch.png" />
       </div>
       <div
         fxLayout="column"
         class="flex-1 sscc margin-bottom-on-sm relative-container top1"
       >
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-          <img src="../../assets/homePage/1.png" />
+          <img loading="lazy" src="../../assets/homePage/1.png" />
         </div>
         <div class="font-dog libre-regular margin-bottom-1">
           <p>
@@ -107,10 +107,11 @@
           fxLayout
           fxLayoutAlign=" center"
           class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
+          (click)="seeProudSmileExperience()"
         >
           <p fxLayout fxLayoutAlign="center center">READ MORE</p>
           <div style="padding-left: 8px">
-            <img src="../../assets/orangeArrow.svg" />
+            <img loading="lazy" src="../../assets/orangeArrow.svg" />
           </div>
         </div>
       </div>
@@ -124,7 +125,7 @@
         class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm"
       >
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-          <img src="../../assets/homePage/2.png" />
+          <img loading="lazy" src="../../assets/homePage/2.png" />
         </div>
         <div class="font-dog libre-regular margin-bottom-1">
           <p>
@@ -145,17 +146,18 @@
         <div
           fxLayout
           fxLayoutAlign=" center"
+          (click)="onInternalLink('payment-page-component')"
           class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
         >
           <p fxLayout fxLayoutAlign="center center">READ MORE</p>
           <div style="padding-left: 8px">
-            <img src="../../assets/orangeArrow.svg" />
+            <img loading="lazy" src="../../assets/orangeArrow.svg" />
           </div>
         </div>
       </div>
 
       <div class="flex-1">
-        <img src="../../assets/homePage/relation.png" />
+        <img loading="lazy" src="../../assets/homePage/relation.png" />
       </div>
     </div>
   </div>
@@ -163,14 +165,14 @@
   <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w-r sscc margin-bottom-2">
       <div class="margin-right-1 flex-1 no-margin-on-sm">
-        <img src="../../assets/homePage/media.png" />
+        <img loading="lazy" src="../../assets/homePage/media.png" />
       </div>
       <div
         fxLayout="column"
         class="flex-1 sscc margin-bottom-on-sm relative-container top1"
       >
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-          <img src="../../assets/homePage/3.png" />
+          <img loading="lazy" src="../../assets/homePage/3.png" />
         </div>
         <div class="font-dog libre-regular margin-bottom-1">
           <p>
@@ -185,13 +187,18 @@
           </p>
         </div>
         <div
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+            )
+          "
           fxLayout
           fxLayoutAlign=" center"
           class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
         >
-          <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+          <p fxLayout fxLayoutAlign="center center">TELL US YOUR STORY</p>
           <div style="padding-left: 8px">
-            <img src="../../assets/orangeArrow.svg" />
+            <img loading="lazy" src="../../assets/orangeArrow.svg" />
           </div>
         </div>
       </div>
@@ -205,7 +212,7 @@
         class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm"
       >
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-          <img src="../../assets/homePage/4.png" />
+          <img loading="lazy" src="../../assets/homePage/4.png" />
         </div>
         <div class="font-dog libre-regular margin-bottom-1">
           <p>Technology that <span class="it">Comforts</span></p>
@@ -216,19 +223,20 @@
           </p>
         </div>
         <div
+          (click)="seeOurClinic()"
           fxLayout
           fxLayoutAlign=" center"
           class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
         >
           <p fxLayout fxLayoutAlign="center center">READ MORE</p>
           <div style="padding-left: 8px">
-            <img src="../../assets/orangeArrow.svg" />
+            <img loading="lazy" src="../../assets/orangeArrow.svg" />
           </div>
         </div>
       </div>
 
       <div class="flex-1">
-        <img src="../../assets/homePage/technology.png" />
+        <img loading="lazy" src="../../assets/homePage/technology.png" />
       </div>
     </div>
   </div>
@@ -255,7 +263,7 @@
   </div>
   <div fxLayout fxLayoutAlign="center center">
     <div>
-      <img src="../../assets/homePage/Team.png" />
+      <img loading="lazy" src="../../assets/homePage/Team.png" />
     </div>
   </div>
 </div>
@@ -284,10 +292,10 @@
             wonder if you’ve come to the right place.
           </p>
         </div>
-        <app-button text="READ MORE"></app-button>
+        <app-button (click)="seeOurClinic()" text="READ MORE"></app-button>
       </div>
       <div class="flex-1">
-        <img src="../../assets/homePage/group.png" />
+        <img loading="lazy" src="../../assets/homePage/group.png" />
       </div>
     </div>
   </div>
@@ -303,37 +311,37 @@
       class="absolute-container"
       style="top: 1%; left: 78%; filter: blur(10px)"
     >
-      <img src="../../../assets/homePage/Oval1.svg" />
+      <img loading="lazy" src="../../../assets/homePage/Oval1.svg" />
     </div>
     <div
       class="absolute-container"
       style="top: 82%; left: 20%; filter: blur(10px)"
     >
-      <img src="../../../assets/homePage/Oval2.svg" />
+      <img loading="lazy" src="../../../assets/homePage/Oval2.svg" />
     </div>
     <div
       class="absolute-container"
       style="top: 72%; left: 56%; filter: blur(6px)"
     >
-      <img src="../../../assets/homePage/Oval3.svg" />
+      <img loading="lazy" src="../../../assets/homePage/Oval3.svg" />
     </div>
     <div
       class="absolute-container"
       style="top: 14%; left: 14%; filter: blur(5px)"
     >
-      <img src="../../../assets/homePage/Oval4.svg" />
+      <img loading="lazy" src="../../../assets/homePage/Oval4.svg" />
     </div>
     <div
       class="absolute-container"
       style="top: 68%; left: 22%; filter: blur(28px)"
     >
-      <img src="../../../assets/homePage/Oval5.svg" />
+      <img loading="lazy" src="../../../assets/homePage/Oval5.svg" />
     </div>
     <div
       class="absolute-container"
       style="top: 6%; left: 12%; filter: blur(10px)"
     >
-      <img src="../../../assets/homePage/Oval6.svg" />
+      <img loading="lazy" src="../../../assets/homePage/Oval6.svg" />
     </div>
     <div fxLayout="column" fxLayoutAlign="start start">
       <div class="title color-white font-small-3">
@@ -367,13 +375,14 @@
         (click)="seeAllAesthetic()"
       >
         <div class="hide-on-sm">
-          <img src="../../../assets/homePage/Dots.png" />
+          <img loading="lazy" src="../../../assets/homePage/Dots.png" />
         </div>
         <div class="margin-left-1">
           <p>See all aesthetic services</p>
         </div>
         <div class="margin-left-1">
           <img
+            loading="lazy"
             style="max-width: unset"
             src="../../../assets/homePage/WhiteArrow.svg"
           />
@@ -418,13 +427,14 @@
       (click)="seeAllHealth()"
     >
       <div class="hide-on-sm">
-        <img src="../../../assets/homePage/Dots.png" />
+        <img loading="lazy" src="../../../assets/homePage/Dots.png" />
       </div>
       <div class="margin-left-1">
         <p>See all health services</p>
       </div>
       <div class="margin-left-1">
         <img
+          loading="lazy"
           style="max-width: unset"
           src="../../../assets/homePage/WhiteArrow.svg"
         />
@@ -451,7 +461,7 @@
         (click)="goToLink('https://www.instagram.com/proud.smile.dental/')"
       >
         <div>
-          <img src="../../../assets/homePage/instagram.svg" />
+          <img loading="lazy" src="../../../assets/homePage/instagram.svg" />
         </div>
         <p>Follow ProudSmile on Instagram</p>
       </div>
@@ -467,7 +477,7 @@
   </div>
   <div class="title" fxLayout="column" fxLayoutAlign="start center">
     <div class="year">
-      <img src="../../../assets/homePage/2019.svg" />
+      <img loading="lazy" src="../../../assets/homePage/2019.svg" />
     </div>
     <div class="text roboto-regular font-wolf margin-bottom-1">
       <p>

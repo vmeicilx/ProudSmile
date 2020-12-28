@@ -30,4 +30,8 @@ export class ProudSmileExperienceComponent implements OnInit {
   seeAllFinancial() {
     this.router.navigate(["/", "payment-page-component"]);
   }
+
+  onWhoWeAre() {
+    this.router.navigate(["/", "who-we-are-component"]);
+  }
 }

@@ -1,5 +1,35 @@
 @import "../../../proud-smile-style.scss";
 
+::ng-deep .ng-image-slider {
+  height: 300px !important;
+  .main {
+    height: 300px !important;
+    .img-div {
+      box-shadow: unset !important;
+      margin-left: 20px !important;
+      margin-right: 20px !important;
+      width: 171px !important;
+      img {
+        bottom: unset !important;
+        height: unset !important;
+      }
+    }
+  }
+}
+
+::ng-deep .deposit-menu.mat-menu-panel {
+  width: 100px;
+  .mat-menu-content {
+    margin: 0;
+    button {
+      text-align: center;
+      color: #55311b;
+      font-size: 24px;
+      font-family: "robotoMedium";
+    }
+  }
+}
+
 :host {
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
@@ -18,7 +48,7 @@
     width: 200px;
     height: 53px;
     border-radius: 4px;
-    background: #ebebeb80;
+    background: white;
     display: flex;
     input {
       border: none;
@@ -57,6 +87,79 @@
       }
     }
   }
+  .calculate {
+    border-radius: 37px;
+    background: #cccccc;
+    border: 0;
+    outline: none;
+  }
+  .book1 {
+    border-radius: 37px;
+    background: $color-orange;
+    padding: 24px 24px;
+    border: 0;
+    outline: none;
+  }
+  .book2 {
+    border-radius: 37px;
+    background: #015c50;
+    padding: 24px 24px;
+    border: 0;
+    outline: none;
+  }
+  .book3 {
+    border-radius: 37px;
+    background: $color-orange;
+    padding: 24px 36px;
+    border: 0;
+    outline: none;
+    align-self: center;
+    margin-top: auto;
+  }
+
+  .vertical-line-1 {
+    opacity: 0.5;
+    height: 24px;
+    width: 2px;
+    background-color: #d8d8d8;
+  }
+  .vertical-line-2 {
+    opacity: 0.5;
+    width: 2px;
+    height: 48px;
+    background-color: #d8d8d8;
+  }
+
+  .payment-solution p {
+    text-align: left;
+  }
+  .instaSection {
+    .instaFeed {
+      width: 100%;
+      .text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .rightText {
+          cursor: pointer;
+        }
+      }
+    }
+    .title {
+      position: relative;
+      margin-top: 20vh;
+      .year {
+        position: absolute;
+        top: -16vh;
+      }
+      .text {
+        z-index: 1;
+        text-align: center;
+      }
+    }
+  }
+
   @media only screen and (min-width: 1900px) {
     .lady-container {
       width: 100%;
@@ -69,6 +172,15 @@
   @media only screen and (min-width: 1201px) {
     .dialog-with-tooltip {
       display: none;
+    }
+    button {
+      padding: 24px 48px;
+    }
+    .payment-solution {
+      max-width: 300px;
+    }
+    .spp {
+      flex: 0 0 560px;
     }
   }
 
@@ -87,6 +199,12 @@
     .dialog-without-tooltip {
       display: none;
     }
+    button {
+      padding: 18px 36px;
+    }
+    .spp {
+      flex: 0 0 320px;
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
@@ -103,6 +221,19 @@
     }
     .dialog-without-tooltip {
       display: none;
+    }
+    button {
+      padding: 12px 24px;
+    }
+    .instaSection {
+      .instaFeed {
+        .text {
+          flex-direction: column;
+        }
+      }
+    }
+    .spp {
+      flex: 0 0 250px;
     }
   }
 }

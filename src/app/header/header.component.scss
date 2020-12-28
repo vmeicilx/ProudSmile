@@ -119,11 +119,13 @@
     .menu {
       width: 100%;
 
-      .payment-plan:focus {
+      .payment-plan-active {
         font-family: "libreItalic";
-        p {
-          color: #85920d;
-        }
+        color: #85920d;
+      }
+      .active-text {
+        color: $color-brown;
+        font-family: "robotoBold";
       }
     }
 
@@ -141,9 +143,22 @@
   .subHeader {
     z-index: 1;
     background: rgba(167, 149, 138, 0.2);
-    height: 104px;
+    height: 88px;
     position: relative;
     top: 129px;
+    &.fixed-position {
+      position: fixed;
+      width: 100%;
+      background-color: #e9dcd7;
+    }
+    &.fixed-health-position {
+      position: fixed;
+      width: 100%;
+      background-color: rgb(237, 234, 232);
+    }
+    &.health2-fixed-position {
+      top: 217px;
+    }
 
     .active {
       background: $color-dirty-white;
@@ -233,6 +248,10 @@
       > * {
         flex: 1 1 auto !important;
         place-content: center center !important;
+      }
+
+      &.health2-fixed-position {
+        top: 160px;
       }
     }
   }
