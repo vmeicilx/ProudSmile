@@ -1,0 +1,43 @@
+:host {
+  .vertical-line-1 {
+    opacity: 0.7;
+    height: 10vw;
+    width: 4px;
+    background-color: hsla(0, 0%, 100%, 0.2);
+  }
+  .bruxism {
+    justify-content: flex-end;
+  }
+  @media only screen and (min-width: 1201px) {
+    .silver-mouth {
+      margin-left: -9%;
+    }
+    .mouthguard {
+      margin-bottom: 300px;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .silver-mouth {
+      margin: auto;
+    }
+    .mouthguard {
+      margin-bottom: 4vw;
+    }
+    .bruxism {
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .silver-mouth {
+      margin: auto;
+    }
+    .mouthguard {
+      margin-bottom: 4vw;
+    }
+    .bruxism {
+      justify-content: center;
+    }
+  }
+}

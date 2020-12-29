@@ -1,0 +1,53 @@
+:host {
+  .box {
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .vertical-line-1 {
+    opacity: 0.5;
+    height: 48px;
+    width: 2px;
+    background-color: #d8d8d8;
+  }
+  .vertical-line-2 {
+    opacity: 0.5;
+    width: 2px;
+    height: 48px;
+    background-color: #d8d8d8;
+  }
+  @media only screen and (min-width: 2801px) {
+    .tech-2 {
+      left: 0;
+    }
+  }
+  @media only screen and (min-width: 1201px) and (max-width: 2800px) {
+    .tech-2 {
+      left: calc(77.82vw - 2344px);
+    }
+  }
+
+  @media only screen and (min-width: 1201px) {
+    .box {
+      width: 60vw;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .tech-2 {
+      left: calc(77.82vw - 2344px);
+    }
+    .box {
+      width: 80vw;
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .tech-2 {
+      left: calc(77.82vw - 2344px);
+    }
+    .box {
+      width: 90vw;
+    }
+  }
+}
