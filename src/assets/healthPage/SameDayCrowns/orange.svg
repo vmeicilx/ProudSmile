@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="465px" height="80px" viewBox="0 0 465 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Combined Shape Copy</title>
-    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Health---Same-Day-Crowns" transform="translate(-1015.000000, -9057.000000)" fill="#F05024">
-            <g id="Group-10" transform="translate(0.000000, 7125.000000)">
-                <g id="Group-7" transform="translate(381.000000, 1272.000000)">
-                    <path d="M906.5,467.5 L906.5,932.5 L902.499096,932.5 L902.499096,932.5 C902.499096,928.081722 898.917374,924.5 894.499096,924.5 C890.080818,924.5 886.499096,928.081722 886.499096,932.5 L874.5,932.5 L874.5,932.5 C874.5,928.081722 870.918278,924.5 866.5,924.5 C862.081722,924.5 858.5,928.081722 858.5,932.5 L846.5,932.5 L846.5,932.5 C846.5,928.081722 842.918278,924.5 838.5,924.5 C834.081722,924.5 830.5,928.081722 830.5,932.5 L826.5,932.5 L826.5,467.5 L906.5,467.5 Z" id="Combined-Shape-Copy" transform="translate(866.500000, 700.000000) rotate(-90.000000) translate(-866.500000, -700.000000) "></path>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg height="80" viewBox="0 0 465 80" width="465" xmlns="http://www.w3.org/2000/svg"><path d="m906.5 467.5v465h-4.000904c0-4.418278-3.581722-8-8-8s-8 3.581722-8 8h-11.999096c0-4.418278-3.581722-8-8-8s-8 3.581722-8 8h-12c0-4.418278-3.581722-8-8-8s-8 3.581722-8 8h-4v-465z" fill="#f05024" fill-rule="evenodd" transform="matrix(0 -1 1 0 -467.5 906.5)"/></svg>

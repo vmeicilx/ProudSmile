@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="712.983" height="121.825" viewBox="0 0 712.983 121.825">
-  <defs>
-    <linearGradient id="linear-gradient" y1="0.589" x2="1" y2="0.589" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#f05362"/>
-      <stop offset="1" stop-color="#fc8f14"/>
-    </linearGradient>
-  </defs>
-  <path id="Combined_Shape" data-name="Combined Shape" d="M-521,122H-60A60,60,0,0,0,0,62,60.173,60.173,0,0,0-60,1.827L-633,.176A60.825,60.825,0,0,0-694,61a60.773,60.773,0,0,0,5.525,25.4C-689.768,100.767-694.236,116-707,119c-22.736,4.8,25.773.761,38.273-8.552a60.709,60.709,0,0,0,24.019,10.43A15.315,15.315,0,0,0-639,122Z" transform="translate(712.983 -0.175)" opacity="0.7" fill="url(#linear-gradient)"/>
-</svg>
+<svg height="121.825" viewBox="0 0 712.983 121.825" width="712.983" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" gradientUnits="objectBoundingBox" x2="1" y1=".589" y2=".589"><stop offset="0" stop-color="#f05362"/><stop offset="1" stop-color="#fc8f14"/></linearGradient><path d="m-521 122h461a60 60 0 0 0 60-60 60.173 60.173 0 0 0 -60-60.173l-573-1.651a60.825 60.825 0 0 0 -61 60.824 60.773 60.773 0 0 0 5.525 25.4c-1.293 14.367-5.761 29.6-18.525 32.6-22.736 4.8 25.773.761 38.273-8.552a60.709 60.709 0 0 0 24.019 10.43 15.315 15.315 0 0 0 5.708 1.122z" fill="url(#a)" opacity=".7" transform="translate(712.983 -.175)"/></svg>

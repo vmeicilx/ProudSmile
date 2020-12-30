@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="13.18" height="8.476" viewBox="0 0 13.18 8.476">
-  <g id="Icons_12x12_Grey_Arrow_down" data-name="Icons / 12x12 / Grey / Arrow down" transform="translate(-0.333 0)">
-    <g id="Group_3" data-name="Group 3" transform="translate(0.333)">
-      <path id="Fill_1" data-name="Fill 1" d="M0,6.591,1.887,8.475,8.475,1.885,6.591,0Z" transform="translate(4.705 0)" fill="#fff"/>
-      <path id="Fill_2" data-name="Fill 2" d="M0,1.884,6.591,8.475,8.475,6.588,1.885,0Z" transform="translate(0 0.002)" fill="#fff"/>
-    </g>
-  </g>
-</svg>
+<svg height="8.476" viewBox="0 0 13.18 8.476" width="13.18" xmlns="http://www.w3.org/2000/svg"><g fill="#fff"><path d="m0 6.591 1.887 1.884 6.588-6.59-1.884-1.885z" transform="translate(4.705)"/><path d="m0 1.884 6.591 6.591 1.884-1.887-6.59-6.588z" transform="translate(0 .002)"/></g></svg>

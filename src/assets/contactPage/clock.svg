@@ -1,3 +1,1 @@
-<svg id="Icons_clock" data-name="Icons/clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-  <path id="Shape" d="M10,20A10,10,0,1,1,20,10,10.011,10.011,0,0,1,10,20ZM10,4A1,1,0,0,0,9,5V9.422L6.9,10.634a1,1,0,1,0,1,1.733l2.6-1.5A1.01,1.01,0,0,0,11,10V5A1,1,0,0,0,10,4Z" transform="translate(2 2)" fill="#55311b"/>
-</svg>
+<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m10 20a10 10 0 1 1 10-10 10.011 10.011 0 0 1 -10 10zm0-16a1 1 0 0 0 -1 1v4.422l-2.1 1.212a1 1 0 1 0 1 1.733l2.6-1.5a1.01 1.01 0 0 0 .5-.867v-5a1 1 0 0 0 -1-1z" fill="#55311b" transform="translate(2 2)"/></svg>

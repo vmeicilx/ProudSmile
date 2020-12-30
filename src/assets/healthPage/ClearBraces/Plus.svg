@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-  <g id="Arrow_big_contur" data-name="Arrow_big contur" transform="translate(40) rotate(90)" opacity="0.3">
-    <path id="Circle" d="M16.667,33.333A16.667,16.667,0,1,1,33.333,16.667,16.685,16.685,0,0,1,16.667,33.333Zm0-30A13.334,13.334,0,1,0,30,16.667,13.349,13.349,0,0,0,16.667,3.333Z" transform="translate(3.333 3.333)"/>
-    <path id="Combined_Shape" data-name="Combined Shape" d="M6,13.333a1,1,0,0,1-1-1v-4H1a1,1,0,0,1-1-1V6A1,1,0,0,1,1,5H5V1A1,1,0,0,1,6,0H7.333a1,1,0,0,1,1,1V5h4a1,1,0,0,1,1,1V7.333a1,1,0,0,1-1,1h-4v4a1,1,0,0,1-1,1Z" transform="translate(13.333 13.333)"/>
-  </g>
-</svg>
+<svg height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg"><g opacity=".3" transform="matrix(0 1 -1 0 40 0)"><path d="m16.667 33.333a16.667 16.667 0 1 1 16.666-16.666 16.685 16.685 0 0 1 -16.666 16.666zm0-30a13.334 13.334 0 1 0 13.333 13.334 13.349 13.349 0 0 0 -13.333-13.334z" transform="translate(3.333 3.333)"/><path d="m6 13.333a1 1 0 0 1 -1-1v-4h-4a1 1 0 0 1 -1-1v-1.333a1 1 0 0 1 1-1h4v-4a1 1 0 0 1 1-1h1.333a1 1 0 0 1 1 1v4h4a1 1 0 0 1 1 1v1.333a1 1 0 0 1 -1 1h-4v4a1 1 0 0 1 -1 1z" transform="translate(13.333 13.333)"/></g></svg>
