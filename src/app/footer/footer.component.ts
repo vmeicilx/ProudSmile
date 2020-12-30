@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import {
   FormControl,
   FormGroupDirective,
@@ -6,7 +6,7 @@ import {
   Validators
 } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material/core";
-import { Router } from "@angular/router";
+import { NavigationEnd, Router } from "@angular/router";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -34,8 +34,33 @@ export class FooterComponent implements OnInit {
     Validators.email
   ]);
 
+  isContactPage: boolean = false;
+
+  @ViewChild("item1") it1: ElementRef;
+  @ViewChild("item2") it2: ElementRef;
+  @ViewChild("item3") it3: ElementRef;
+  @ViewChild("item4") it4: ElementRef;
+
   matcher = new MyErrorStateMatcher();
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+      // see also
+      if (val instanceof NavigationEnd) {
+        window.scrollTo(0, 0);
+
+        this.it1.nativeElement.classList.remove("display-none");
+        this.it2.nativeElement.classList.remove("display-none");
+        this.it3.nativeElement.classList.remove("display-none");
+        this.it4.nativeElement.classList.remove("display-none");
+        if (val.url === "/contact-page-component") {
+          this.it1.nativeElement.classList.add("display-none");
+          this.it2.nativeElement.classList.add("display-none");
+          this.it3.nativeElement.classList.add("display-none");
+          this.it4.nativeElement.classList.add("display-none");
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {}
 

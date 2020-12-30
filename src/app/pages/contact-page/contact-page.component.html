@@ -242,3 +242,85 @@
     </div>
   </div>
 </div>
+
+<div
+  class="padding-chef padding-top-bottom-1 firstSection background-37 flexy-row-w"
+>
+  <div class="color-gray-dark flexy-column text-container">
+    <div
+      class="lineAndText flexy-row cscc font-extra-small opacity-5 roboto-medium"
+    >
+      <div class="line width-1"></div>
+      <p>EASY TO TALK TO</p>
+    </div>
+    <div class="font-dog libre-regular">
+      <p>
+        Have a question<br />
+        for ProudSmile?<br />
+        <span class="libre-italic"
+          >Just chat to us, in<br />
+          your own time.</span
+        >
+      </p>
+    </div>
+    <div class="mainText max-width-1 font-small roboto-regular">
+      <p>Chat to us in real time and in your own time.</p>
+    </div>
+    <app-button (click)="onContactPage()" text="GET IN TOUCH"></app-button>
+  </div>
+  <div>
+    <img loading="lazy" src="../../assets/footer/chat.png" />
+  </div>
+</div>
+
+<div
+  class="instaSection background-17 color-white padding-top-bottom-1 relative-container"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div class="instaFeed">
+    <div class="text margin-bottom-1 padding-chef">
+      <div class="leftText roboto-medium font-extra-small">
+        <p>OUR INSTAGRAM FEED</p>
+      </div>
+      <div
+        class="rightText roboto-medium font-extra-small"
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="1vw"
+        (click)="goToLink('https://www.instagram.com/proud.smile.dental/')"
+      >
+        <div>
+          <img loading="lazy" src="../../../assets/homePage/instagram.svg" />
+        </div>
+        <p>Follow ProudSmile on Instagram</p>
+      </div>
+    </div>
+
+    <ng-image-slider
+      [infinite]="true"
+      [autoSlide]="3"
+      [showArrow]="false"
+      [images]="imageObject"
+      #nav
+    ></ng-image-slider>
+  </div>
+  <div class="instaTitle" fxLayout="column" fxLayoutAlign="start center">
+    <div class="year">
+      <img loading="lazy" src="../../../assets/homePage/2019.svg" />
+    </div>
+    <div class="text roboto-regular font-wolf margin-bottom-1">
+      <p>
+        We take pride in our work. Until now<br />
+        we have
+        <span class="roboto-bold"
+          >578 Completed Cases, 26<br />
+          Dedicated Partners and 789 Clients</span
+        >
+        all<br />
+        Over The Worldwide
+      </p>
+    </div>
+    <app-button text="Let’s tell your story next"></app-button>
+  </div>
+</div>

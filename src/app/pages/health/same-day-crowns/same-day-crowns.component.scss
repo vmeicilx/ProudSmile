@@ -16,6 +16,17 @@
     height: 48px;
     background-color: #d8d8d8;
   }
+
+  .book3 {
+    border-radius: 37px;
+    background: #f05024;
+    padding: 24px 36px;
+    border: 0;
+    outline: none;
+    align-self: center;
+    justify-self: center;
+    margin-top: auto;
+  }
   @media only screen and (min-width: 2801px) {
     .tech-2 {
       left: 0;
@@ -31,6 +42,10 @@
     .box {
       width: 60vw;
     }
+    .ticket {
+      font-size: calc(0.68vw + 7.9px);
+      line-height: 1.4em;
+    }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
@@ -40,6 +55,10 @@
     .box {
       width: 80vw;
     }
+    .ticket {
+      font-size: calc(0.3vw + 15.07px);
+      line-height: 1.4em;
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
@@ -48,6 +67,10 @@
     }
     .box {
       width: 90vw;
+    }
+    .ticket {
+      font-size: calc(0.3vw + 15.07px);
+      line-height: 1.4em;
     }
   }
 }

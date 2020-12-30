@@ -3,6 +3,10 @@
   margin: auto;
 }
 
+.display-none {
+  display: none !important;
+}
+
 .left-text {
   text-align: left;
 }
@@ -55,6 +59,11 @@
   padding-bottom: 3vw;
 }
 
+.padding-top-bottom-3 {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
 .padding-bottom-1 {
   padding-bottom: 9vw;
 }
@@ -93,6 +102,12 @@
 // 10 - 251
 .padding-left-1 {
   padding-left: calc(14.87vw - 44.62px);
+}
+.padding-left-4 {
+  padding-left: 4vw;
+}
+.padding-right-4 {
+  padding-right: 4vw;
 }
 
 .margin-top-2 {
@@ -137,6 +152,9 @@
 }
 .margin-left-3 {
   margin-left: 3vw;
+}
+.margin-left-4 {
+  margin-left: 4vw;
 }
 
 .margin-bottom-1 {

@@ -35,16 +35,13 @@
         >
       </p>
     </div>
-    <div class="flexy-row" style="width: 100vw">
+
+    <div class="hide-on-sm flexy-row" style="width: 100vw">
       <div class="relative-container" style="left: -6%; align-self: flex-end">
         <div class="absolute-container" style="top: -16%; left: -25%">
-          <img
-            loading="lazy"
-            src="../../../../assets/healthPage/MedicareChild/ShapeBig.svg"
-          />
+          <img src="../../../../assets/healthPage/MedicareChild/ShapeBig.svg" />
         </div>
         <img
-          loading="lazy"
           class="relative-container"
           src="../../../../assets/healthPage/MedicareChild/Kid.png"
         />
@@ -55,26 +52,18 @@
         style="left: -16%; max-width: 26vw"
       >
         <div class="absolute-container" style="top: 4%; left: 50%">
-          <img
-            loading="lazy"
-            src="../../../../assets/healthPage/MedicareChild/Crab.svg"
-          />
+          <img src="../../../../assets/healthPage/MedicareChild/Crab.svg" />
         </div>
         <div class="absolute-container" style="top: 22%; right: -18%">
           <img
-            loading="lazy"
             src="../../../../assets/healthPage/MedicareChild/StarSmall.svg"
           />
         </div>
         <div class="absolute-container" style="top: 8%; left: -30%">
-          <img
-            loading="lazy"
-            src="../../../../assets/healthPage/MedicareChild/StarBig.svg"
-          />
+          <img src="../../../../assets/healthPage/MedicareChild/StarBig.svg" />
         </div>
         <div class="margin-bottom-1">
           <img
-            loading="lazy"
             src="../../../../assets/healthPage/MedicareChild/FreeDental.png"
           />
         </div>
@@ -106,6 +95,63 @@
           <p>Instant Online Booking</p>
         </button>
         <div>
+          <img
+            loading="lazy"
+            src="../../../../assets/healthPage/MedicareChild/medicare.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="hide-on-big flexy-row">
+      <div class="flexy-column relative-container cccc padding-top-3">
+        <div class="absolute-container" style="top: -16%">
+          <img src="../../../../assets/healthPage/MedicareChild/ShapeBig.svg" />
+        </div>
+        <div class="absolute-container" style="top: 4%; left: 50%">
+          <img src="../../../../assets/healthPage/MedicareChild/Crab.svg" />
+        </div>
+        <div class="absolute-container" style="top: 22%; right: -18%">
+          <img
+            src="../../../../assets/healthPage/MedicareChild/StarSmall.svg"
+          />
+        </div>
+        <div class="absolute-container" style="top: 8%; left: -30%">
+          <img src="../../../../assets/healthPage/MedicareChild/StarBig.svg" />
+        </div>
+        <div class="margin-bottom-1" style="max-width: 280px">
+          <img
+            src="../../../../assets/healthPage/MedicareChild/FreeDental.png"
+          />
+        </div>
+        <div
+          class="font-medium color-yellow libre-regular margin-bottom-4 padding-captain"
+        >
+          <p class="center-text">
+            <span
+              class="cursor-pointer"
+              style="text-decoration: underline"
+              (click)="goToLinkWithotNewTab('tel:0755703311')"
+              >Call us today</span
+            >
+            and book your consultation or book online using our Instant Online
+            Booking below
+          </p>
+        </div>
+        <button
+          class="button-2 roboto-medium font-small-3 margin-bottom-2"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+            )
+          "
+        >
+          <img loading="lazy" src="../../assets/header/calendar.png" />
+          <p>Instant Online Booking</p>
+        </button>
+        <div class="margin-bottom-10">
           <img
             loading="lazy"
             src="../../../../assets/healthPage/MedicareChild/medicare.jpg"

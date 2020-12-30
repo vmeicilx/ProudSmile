@@ -1,12 +1,62 @@
 @import "../../../proud-smile-style.scss";
 
+::ng-deep .ng-image-slider {
+  height: 300px !important;
+  .main {
+    height: 300px !important;
+    .img-div {
+      box-shadow: unset !important;
+      margin-left: 20px !important;
+      margin-right: 20px !important;
+      width: 171px !important;
+      img {
+        bottom: unset !important;
+        height: unset !important;
+      }
+    }
+  }
+}
+
 :host {
   .contact-section {
-    background: linear-gradient(to bottom,  $color-gray-light 0%,$color-gray-light 20%,white 50%,white 100%);
+    background: linear-gradient(
+      to bottom,
+      $color-gray-light 0%,
+      $color-gray-light 20%,
+      white 50%,
+      white 100%
+    );
   }
   .no-horizontal-padding {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .instaSection {
+    .instaFeed {
+      width: 100%;
+      .text {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .rightText {
+          cursor: pointer;
+        }
+      }
+    }
+    .instaTitle {
+      position: relative;
+      margin-top: 20vh;
+      .year {
+        position: absolute;
+        top: -16vh;
+      }
+      .text {
+        z-index: 1;
+        text-align: center;
+      }
+    }
   }
 
   .title {
@@ -108,10 +158,39 @@
     top: 0px;
     left: -40px;
   }
+  .firstSection {
+    align-items: center;
+    justify-content: center;
+    app-button,
+    .mainText {
+      margin-top: 4.1vh;
+    }
+    .lineAndText {
+      margin-bottom: 2vh;
+      .line {
+        border-top: 1px solid #565960;
+      }
+      p {
+        margin-left: 1vw;
+      }
+    }
+  }
 
   @media only screen and (min-width: 1201px) {
     .scheduler-container {
       flex-direction: row;
+    }
+    .firstSection {
+      .text-container {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      .text-container {
+        padding-right: calc(17.22vw - 176.66px);
+      }
+      .mainText {
+        max-width: 460px;
+      }
     }
   }
 
@@ -134,9 +213,47 @@
     .test {
       width: 560px;
     }
+    .firstSection {
+      .text-container {
+        align-items: center;
+        justify-content: center;
+      }
+      p {
+        text-align: center;
+      }
+      .text-container {
+        padding-bottom: 8vh;
+      }
+      .mainText {
+        max-width: 410px;
+      }
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .firstSection {
+      .text-container {
+        align-items: center;
+        justify-content: center;
+      }
+      p {
+        text-align: center;
+      }
+      .text-container {
+        padding-bottom: 4vh;
+      }
+      .mainText {
+        max-width: 288px;
+      }
+    }
+
+    .instaSection {
+      .instaFeed {
+        .text {
+          flex-direction: column;
+        }
+      }
+    }
     .vertical-line {
       display: none;
     }
