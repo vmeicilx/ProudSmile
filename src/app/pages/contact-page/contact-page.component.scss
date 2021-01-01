@@ -17,6 +17,12 @@
   }
 }
 
+::placeholder {
+  opacity: 0.3;
+  font-family: "robotoRegular";
+  font-size: 28px;
+}
+
 :host {
   .contact-section {
     background: linear-gradient(
@@ -173,6 +179,30 @@
       p {
         margin-left: 1vw;
       }
+    }
+  }
+
+  .contact-form {
+    width: 100%;
+    border-collapse: collapse;
+    td,
+    th {
+      border: 2px solid #d4d4d4;
+      padding: 24px;
+    }
+    input {
+      border: none;
+      outline: transparent;
+      background: transparent;
+      font-size: 28px;
+    }
+    textarea {
+      border: none;
+      width: 100%;
+      outline: transparent;
+      background: transparent;
+      font-size: 28px;
+      font-family: "robotoRegular";
     }
   }
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1195px" height="56px" viewBox="0 0 1195 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>marker_right</title>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Health---Same-Day-Crowns" transform="translate(-353.000000, -10821.000000)">
+            <g id="Group-16" transform="translate(-1.000000, 9489.000000)">
+                <g id="marker_right" transform="translate(354.000000, 1332.000000)">
+                    <g id="Group-13" transform="translate(36.500000, 28.000000) rotate(-270.000000) translate(-36.500000, -28.000000) translate(9.000000, -8.000000)">
+                        <circle id="Oval-Copy-3" fill="#AFE0D6" cx="27.4559991" cy="43.6079777" r="27.4559991"></circle>
+                        <path d="M27.4559991,0.311979068 C28.4567301,3.82268005 30.0809737,7.21607154 32.32873,10.4921535 C34.5764862,13.7682355 37.8802425,17.4148438 42.2399986,21.4319784 L12.6719996,21.4319784 C17.0394832,17.4035812 20.3726443,13.7141155 22.671483,10.3635814 C24.9703217,7.0130473 26.5651604,3.66251318 27.4559991,0.311979068 Z" id="Triangle" fill="#AFE0D6"></path>
+                        <rect id="Rectangle" fill="#FFFFFF" x="26.3999992" y="29.8799781" width="2.11199993" height="27.4559991" rx="1.05599997"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#FFFFFF" x="30.623999" y="35.159978" width="2.11199993" height="16.8959995" rx="1.05599997"></rect>
+                        <rect id="Rectangle-Copy-9" fill="#FFFFFF" transform="translate(23.231999, 43.607978) rotate(-180.000000) translate(-23.231999, -43.607978) " x="22.1759993" y="35.159978" width="2.11199993" height="16.8959995" rx="1.05599997"></rect>
+                        <rect id="Rectangle-Copy-10" fill="#FFFFFF" transform="translate(19.007999, 43.607978) rotate(-180.000000) translate(-19.007999, -43.607978) " x="17.9519994" y="39.3839778" width="2.11199993" height="8.44799973" rx="1.05599997"></rect>
+                        <rect id="Rectangle-Copy-8" fill="#FFFFFF" x="34.8479989" y="39.3839778" width="2.11199993" height="8.44799973" rx="1.05599997"></rect>
+                    </g>
+                    <circle id="Oval" stroke="#FFFFFF" stroke-width="8" fill="#AFE0D6" cx="1183" cy="27" r="8"></circle>
+                    <rect id="Rectangle" fill="#AFE0D6" x="88" y="26" width="1096" height="2" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

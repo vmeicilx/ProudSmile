@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,6 +7,12 @@ import { Router } from "@angular/router";
   styleUrls: ["./contact-page.component.scss"]
 })
 export class ContactPageComponent implements OnInit {
+  @ViewChild("name") name: ElementRef;
+  @ViewChild("email") email: ElementRef;
+  @ViewChild("company") company: ElementRef;
+  @ViewChild("phone") phone: ElementRef;
+  @ViewChild("message") message: ElementRef;
+
   constructor(private router: Router) {}
 
   imageObject: Array<object> = [
@@ -68,6 +74,29 @@ export class ContactPageComponent implements OnInit {
 
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+
+  onSendMessage() {
+    var name = this.name.nativeElement.value;
+    var email = this.email.nativeElement.value;
+    var company = this.company.nativeElement.value;
+    var phone = this.phone.nativeElement.value;
+    var message = this.message.nativeElement.value;
+
+    if (this.name.nativeElement.value === "") {
+      alert("Name is a required field.");
+      return;
+    }
+    if (this.email.nativeElement.value === "") {
+      alert("Email is a required field.");
+      return;
+    }
+    if (this.phone.nativeElement.value === "") {
+      alert("Phone is a required field.");
+      return;
+    }
+
+    alert("Message sent successfully!");
   }
 
   onContactPage() {
