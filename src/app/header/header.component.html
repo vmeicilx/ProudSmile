@@ -635,3 +635,109 @@
     </div>
   </div>
 </div>
+
+<div
+  class="cursor-pointer"
+  style="position: fixed; bottom: 8%; right: 1%; z-index: 5"
+>
+  <div class="relative-container" style="z-index: 6">
+    <img class="max-width-unset" src="../../assets/chat/Body.svg" />
+    <div
+      class="absolute-container flexy-column cccc"
+      style="
+        top: 13px;
+        left: 26px;
+        width: 64px;
+        height: 192px;
+        justify-content: space-evenly;
+      "
+    >
+      <div
+        id="LiveChat"
+        class="flexy-column cccc live-chat relative-container"
+        style="z-index: 1"
+        (click)="onLiveChat()"
+      >
+        <div>
+          <img src="../../assets/chat/icon_chat.svg" />
+        </div>
+        <div class="center-text roboto-bold color-gray-dark font-extra-small-2">
+          <p>LiveChat</p>
+        </div>
+      </div>
+      <div style="z-index: 1">
+        <img src="../../assets/chat/line.svg" />
+      </div>
+      <div
+        id="CalculatorLink"
+        class="flexy-column cccc"
+        style="z-index: 1"
+        (click)="onPaymentPlan()"
+      >
+        <div>
+          <img src="../../assets/chat/Icons-calculator.svg" />
+        </div>
+        <div class="center-text roboto-bold color-gray-dark font-extra-small-2">
+          <p>Payment<br />Plans</p>
+        </div>
+      </div>
+
+      <div
+        id="DialogPopout1"
+        class="flexy-row absolute-container dialog-popout"
+      >
+        <div
+          class="absolute-container"
+          style="
+            bottom: 0;
+            right: 24px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid white;
+            border-radius: 4px;
+            bottom: -9px;
+            transform: rotate(45deg);
+            background-color: white;
+          "
+        ></div>
+        <div style="flex: 0 0 50px">
+          <img src="../../assets/chat/icon_chat.svg" />
+        </div>
+        <div>
+          <p>
+            Hi there, have a<br />
+            question? Text us here!
+          </p>
+        </div>
+      </div>
+      <div
+        id="DialogPopout2"
+        class="flexy-row absolute-container dialog-popout"
+      >
+        <div
+          class="absolute-container"
+          style="
+            bottom: 0;
+            right: 24px;
+            width: 18px;
+            height: 18px;
+            border: 1px solid white;
+            border-radius: 4px;
+            bottom: -9px;
+            transform: rotate(45deg);
+            background-color: white;
+          "
+        ></div>
+        <div style="flex: 0 0 50px">
+          <img src="../../assets/chat/Icons-calculator.svg" />
+        </div>
+        <div>
+          <p>
+            Calculate how easy is<br />
+            to pay step-by-step!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

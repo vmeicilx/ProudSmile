@@ -20,8 +20,8 @@ export class PaymentPageComponent implements OnInit {
   mousePosition: number;
   initialPointerPosition: number;
   depositNumber: number;
-  monthly: number;
-  weekly: number;
+  monthly: number = 65.5;
+  weekly: number = 15.63;
   constructor() {}
 
   imageObject: Array<object> = [
@@ -79,18 +79,16 @@ export class PaymentPageComponent implements OnInit {
     }
   ];
 
-  ngOnInit(): void {
-    this.depositNumber = 25;
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit(): void {
+    this.depositNumber = 25;
     this.input1.nativeElement.value = 5000;
     this.input2.nativeElement.value = "25%";
     this.oninput1();
     window.addEventListener("touchmove", this.preventBehavior.bind(this), {
       passive: false
     });
-    this.calculatorClick();
   }
 
   preventBehavior(e) {

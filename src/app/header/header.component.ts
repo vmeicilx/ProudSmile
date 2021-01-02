@@ -348,4 +348,27 @@ export class HeaderComponent implements OnInit {
   menuClosed() {
     this.scheduleActive = false;
   }
+
+  onLiveChat() {
+    const promise1 = new Promise((resolve, reject) => {
+      this.router.navigate(["/", "contact-page-component"]);
+      resolve("Success!");
+    });
+
+    promise1.then((value) => {
+      var clientForm = document.getElementById("ClientForm");
+      clientForm.scrollIntoView(true);
+    });
+  }
+  onPaymentPlan() {
+    const promise1 = new Promise((resolve, reject) => {
+      this.router.navigate(["/", "payment-page-component"]);
+      resolve("Success!");
+    });
+
+    promise1.then((value) => {
+      var clientForm = document.getElementById("OnlineCalculator");
+      clientForm.scrollIntoView(true);
+    });
+  }
 }
