@@ -13,6 +13,12 @@ export class ContactPageComponent implements OnInit {
   @ViewChild("phone") phone: ElementRef;
   @ViewChild("message") message: ElementRef;
 
+  @ViewChild("nameSmall") nameSmall: ElementRef;
+  @ViewChild("emailSmall") emailSmall: ElementRef;
+  @ViewChild("companySmall") companySmall: ElementRef;
+  @ViewChild("phoneSmall") phoneSmall: ElementRef;
+  @ViewChild("messageSmall") messageSmall: ElementRef;
+
   constructor(private router: Router) {}
 
   imageObject: Array<object> = [
@@ -92,6 +98,28 @@ export class ContactPageComponent implements OnInit {
       return;
     }
     if (this.phone.nativeElement.value === "") {
+      alert("Phone is a required field.");
+      return;
+    }
+
+    alert("Message sent successfully!");
+  }
+  onSendMessageSmall() {
+    var name = this.nameSmall.nativeElement.value;
+    var email = this.emailSmall.nativeElement.value;
+    var company = this.companySmall.nativeElement.value;
+    var phone = this.phoneSmall.nativeElement.value;
+    var message = this.messageSmall.nativeElement.value;
+
+    if (name === "") {
+      alert("Name is a required field.");
+      return;
+    }
+    if (email === "") {
+      alert("Email is a required field.");
+      return;
+    }
+    if (phone === "") {
       alert("Phone is a required field.");
       return;
     }

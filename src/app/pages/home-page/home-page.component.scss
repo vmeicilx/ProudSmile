@@ -58,8 +58,9 @@
 
     .smallCardsContainer {
       width: 100%;
+      max-width: 1392px;
       padding-bottom: 2vh;
-      justify-content: space-evenly;
+      justify-content: space-between;
       > * {
         max-width: 25vw;
       }

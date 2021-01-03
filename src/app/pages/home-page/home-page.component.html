@@ -1,6 +1,6 @@
 <div [ngClass]="'firstSection'">
   <div fxLayout [ngClass]="'homePageImageContainer'">
-    <div class="heroImage">
+    <div class="heroImage relative-container">
       <img src="../../assets/homePage/Hero2.png" />
     </div>
     <div [ngClass]="'homePageText'">
@@ -25,27 +25,23 @@
       </div>
       <div fxFlex="4 1 auto" class="line opacity-5"></div>
     </div>
-    <div class="smallCardsContainer" fxLayout>
+    <div class="smallCardsContainer flexy-row">
       <app-small-card
-        fxFlex
         text="Free Mini Consultation"
         imageUrl="../../assets/homePage/smallCard1.png"
       >
       </app-small-card>
       <app-small-card
-        fxFlex
         text="$99 or Gap Free Comprehensive Examination"
         imageUrl="../../assets/homePage/smallCard2.png"
       >
       </app-small-card>
       <app-small-card
-        fxFlex
         text="Free Smile Assessment"
         imageUrl="../../assets/homePage/smallCard3.png"
       >
       </app-small-card>
       <app-small-card
-        fxFlex
         text="Emergency Appointment"
         imageUrl="../../assets/homePage/smallCard4.png"
       >

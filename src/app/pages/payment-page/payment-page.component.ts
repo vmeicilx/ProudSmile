@@ -20,7 +20,7 @@ export class PaymentPageComponent implements OnInit {
   mousePosition: number;
   initialPointerPosition: number;
   depositNumber: number;
-  monthly: number = 65.5;
+  monthly: number = 62.5;
   weekly: number = 15.63;
   constructor() {}
 
