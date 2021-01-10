@@ -107,7 +107,7 @@
   padding-left: 4vw;
 }
 .padding-right-4 {
-  padding-right: 4vw;
+  padding-right: 1vw;
 }
 
 .margin-top-2 {
@@ -287,6 +287,10 @@
   .section {
     padding: 24vh 15vw;
   }
+  // 10 - 296
+  .padding-chef-right-on-big {
+    padding-right: calc(17.65vw - 42.96px);
+  }
 
   .large-padding-top {
     padding-top: 30vh;
@@ -437,6 +441,11 @@
   .height-5 {
     height: 1450px;
   }
+  // 10 - 296
+  .padding-right-4-sm {
+    padding-left: calc(17.65vw - 42.96px);
+    padding-right: calc(17.65vw - 42.96px);
+  }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
@@ -559,5 +568,10 @@
   }
   .height-5 {
     height: 1450px;
+  }
+  // 10 - 296
+  .padding-chef-on-sm {
+    padding-left: calc(17.65vw - 42.96px);
+    padding-right: calc(17.65vw - 42.96px);
   }
 }

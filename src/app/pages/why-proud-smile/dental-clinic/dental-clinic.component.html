@@ -4,10 +4,12 @@
   fxLayoutAlign="center end"
 >
   <div class="full-width background-image-1">
-    <img
-      style="max-width: unset"
-      src="../../../assets/dentalClinic/Coffe.jpg"
-    />
+    <video class="full-width dpb" preload="auto" muted #practiceButVideo loop>
+      <source
+        src="../../../../assets/dentalClinic/DentalPracticeBut.mp4"
+        type="video/mp4"
+      />
+    </video>
   </div>
   <div
     class="absolute-container padding-chef top-1"
@@ -95,7 +97,19 @@
 >
   <div class="flexy-row-w-r sscc margin-bottom-2">
     <div class="margin-right-1 flex-1 no-margin-on-sm">
-      <img loading="lazy" src="../../../../assets/dentalClinic/relax.jpg" />
+      <video
+        loading="lazy"
+        preload="auto"
+        muted
+        #roomVideo
+        loop
+        style="display: none"
+      >
+        <source
+          src="../../../../assets/dentalClinic/Lights_Room.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
     <div class="flex-1 sscc margin-bottom-on-sm" fxLayout="column">
       <div class="font-dog libre-regular margin-bottom-1">

@@ -50,10 +50,19 @@
   </div>
 </div>
 
-<app-video-player
+<div class="full-width" fxLayout fxLayoutAlign="center center">
+  <video class="full-width" preload="auto" muted #relaxVideo loop>
+    <source
+      src="../../../assets/dentalClinic/DentalPracticeBut.mp4"
+      type="video/mp4"
+    />
+  </video>
+</div>
+
+<!-- <app-video-player
   videoSource="../../../assets/homePage/PorcelainVeneers.mp4"
   text="Watch one of Our Clinic Videos"
-></app-video-player>
+></app-video-player> -->
 
 <div
   fxLayout="column"

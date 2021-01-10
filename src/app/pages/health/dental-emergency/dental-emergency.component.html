@@ -76,7 +76,29 @@
           class="cursor-pointer opacity-4 roboto-medium color-white font-small-4 margin-bottom-1"
           style="align-self: center"
         >
-          <p>Click to Call Now</p>
+          <p>Bundall Location</p>
+        </div>
+      </div>
+
+      <div
+        (click)="goToLinkWithotNewTab('tel:0755703311')"
+        class="flexy-column cccc"
+        style="width: 370px"
+      >
+        <button
+          class="onlineBooking roboto-medium color-white font-lion margin-bottom-5"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+        >
+          <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+          <p class="margin-left-1">5538 6277</p>
+        </button>
+        <div
+          class="cursor-pointer opacity-4 roboto-medium color-white font-small-4 margin-bottom-1"
+          style="align-self: center"
+        >
+          <p>Pacific Fair Mall Location</p>
         </div>
       </div>
 
@@ -87,13 +109,10 @@
 
       <div class="margin-bottom-1 roboto-regular font-medium">
         <p>
-          <span class="roboto-medium">Head to our office.</span> We’re located
-          on 122 Bundall Road, Bundall, just opposite to the HOTA (Home of The
-          Arts). You can park either in front of our building or on the rear
-          parking, accessible via Crombie Ave and Frigo Court.
+          <span class="roboto-medium">Head to our office.</span>
         </p>
       </div>
-      <div class="flexy-row">
+      <div class="flexy-row margin-bottom-1">
         <div class="">
           <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
         </div>
@@ -111,7 +130,36 @@
             "
           >
             <div class="roboto-regular font-extra-small opacity-5">
-              <p>Get directions to our clinic</p>
+              <p>Get directions to our Bundall clinic</p>
+            </div>
+            <div class="margin-left-1 opacity-5">
+              <img
+                loading="lazy"
+                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flexy-row">
+        <div class="">
+          <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
+        </div>
+        <div class="flexy-column margin-left-1">
+          <div class="roboto-bold font-medium">
+            <p>Google Maps</p>
+          </div>
+          <div
+            class="flexy-row cursor-pointer cccc relative-container"
+            style="z-index: 2"
+            (click)="
+              goToLink(
+                'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
+              )
+            "
+          >
+            <div class="roboto-regular font-extra-small opacity-5">
+              <p>Get directions to our Pacific Fair Mall clinic</p>
             </div>
             <div class="margin-left-1 opacity-5">
               <img

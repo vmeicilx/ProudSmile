@@ -6,9 +6,7 @@
             <g id="Group-16" transform="translate(-1.000000, 9489.000000)">
                 <g id="calculation" transform="translate(676.000000, 760.000000)">
                     <g id="1" transform="translate(120.000000, 41.000000)">
-                        <text font-family="Roboto-Medium, Roboto" font-size="21" font-weight="400" line-spacing="36" fill="#FFFFFF">
-                            <tspan x="14" y="21">1</tspan>
-                        </text>
+                        <polygon fill="#FFFFFF" fill-rule="nonzero" points="21.5263672 27 21.5263672 12.0703125 16.0712891 13.2290039 16.0712891 14.859375 19.034668 14.859375 19.034668 27"></polygon>
                         <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="20" cy="20" r="19"></circle>
                     </g>
                 </g>

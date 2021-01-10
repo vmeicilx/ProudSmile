@@ -24,11 +24,6 @@
   .locationSection {
     .locationCardTitle {
       max-width: 260px;
-
-      p {
-        margin-top: 0.8vh;
-        margin-bottom: 0.8vh;
-      }
     }
   }
 
@@ -117,6 +112,11 @@
       .locationCardTitle {
         max-width: unset;
       }
+
+      .locationCard {
+        margin-top: 5.67vh;
+        margin-bottom: 5.67vh;
+      }
     }
 
     .subscribeSection {
@@ -171,6 +171,11 @@
       }
       .locationCardTitle {
         max-width: 200px;
+      }
+
+      .locationCard {
+        margin-top: 5.67vh;
+        margin-bottom: 5.67vh;
       }
     }
 
@@ -277,11 +282,6 @@
 }
 .subscribeCard {
   margin-bottom: 5.5vh;
-}
-
-.locationCard {
-  margin-top: 5.67vh;
-  margin-bottom: 5.67vh;
 }
 
 .subscribeCardText {

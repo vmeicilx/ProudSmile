@@ -110,12 +110,43 @@
     font-family: "robotoBold";
   }
 
+  .cosmetic-hero {
+    right: calc(68.83vw - 1376px);
+  }
+  @media only screen and (min-width: 2001px) {
+    .title-on-big {
+      font-size: 56px;
+      line-height: 72px;
+    }
+    .subtitle-on-big {
+      font-size: 32px;
+      line-height: 46px;
+    }
+    .text-on-big {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    .cosmetic {
+      padding-top: 129px !important;
+    }
+
+    .line-6-on-big {
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
   @media only screen and (min-width: 1201px) {
     .secondSection .title .mainText {
       max-width: 31vw;
     }
     .secondSection .videoContent .horizontalLine {
       display: none;
+    }
+    .cosmetic {
+      margin-left: calc(17.65vw - 42.96px);
+      max-width: 560px;
+      max-height: 1070px;
     }
   }
 

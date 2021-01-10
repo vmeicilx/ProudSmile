@@ -10,8 +10,8 @@
       <div class="font-dog libre-regular">
         <p>
           Have a question<br />
-          for ProudSmile?<br />
-          <span class="libre-italic">Just text us.</span>
+          for Proud Smile?<br />
+          <span class="libre-italic">Talk to us.</span>
         </p>
       </div>
       <div class="mainText max-width-1 font-small roboto-regular">
@@ -23,7 +23,7 @@
       <app-button (click)="onContactPage()" text="GET IN TOUCH"></app-button>
     </div>
     <div>
-      <img loading="lazy" src="../../assets/footer/chat.png" />
+      <img loading="lazy" src="../../assets/footer/chat.svg" />
     </div>
   </div>
 
@@ -33,24 +33,25 @@
     #item3
     class="locationSection full-width"
     fxLayout
-    fxLayoutAlign="center start"
+    fxLayoutAlign="center center"
     fxLayoutGap="8.4vw"
   >
-    <div class="locationCard flexy-column sscc">
-      <div class="locationCardIcon">
+    <div class="locationCard flexy-column sscc" style="margin-top: 2.5vw">
+      <div class="locationCardIcon margin-bottom-5">
         <img loading="lazy" src="../../assets/footer/Cangur.png" />
       </div>
-      <div class="locationCardTitle font-small roboto-bold color-gray-dark">
+      <div
+        class="locationCardTitle margin-bottom-3 font-small roboto-bold color-gray-dark"
+        style="margin-bottom: 2.5vw"
+      >
         <p>Come over for coffe and a friendly chat.</p>
       </div>
 
       <div
         class="locationCardText roboto-regular color-gray-dark font-extra-small flexy-column sscc"
+        style="margin-bottom: 2.5vw"
       >
-        <p class="opacity-5">122 Bundall Road, Bundall QLD 4217 Australia</p>
         <div
-          fxLayout
-          fxLayoutAlign=" center"
           class="color-orange directionLink cursor-pointer roboto-medium"
           (click)="
             goToLink(
@@ -58,10 +59,45 @@
             )
           "
         >
-          <p>Get directions to our clinic</p>
-          <div class="link-image">
-            <img loading="lazy" src="../../assets/orangeArrow.svg" />
-          </div>
+          <p>
+            <span class="color-gray-dark roboto-regular opacity-5"
+              >122 Bundall Road, Bundall QLD 4217<br />
+              Australia</span
+            >
+            Get directions to our clinic
+            <img
+              style="display: inline; vertical-align: middle"
+              loading="lazy"
+              src="../../assets/orangeArrow.svg"
+            />
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="locationCardText roboto-regular color-gray-dark font-extra-small flexy-column sscc"
+        style="margin-bottom: 2.5vw"
+      >
+        <div
+          class="color-orange directionLink cursor-pointer roboto-medium"
+          (click)="
+            goToLink(
+              'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
+            )
+          "
+        >
+          <p>
+            <span class="color-gray-dark roboto-regular opacity-5"
+              >Shop 82, 2 Hooker Boulevard Broadbeach<br />
+              Waters, QLD 4218</span
+            >
+            Get directions to our clinic
+            <img
+              style="display: inline; vertical-align: middle"
+              loading="lazy"
+              src="../../assets/orangeArrow.svg"
+            />
+          </p>
         </div>
       </div>
     </div>

@@ -6,9 +6,7 @@
             <g id="Group-16" transform="translate(-1.000000, 9489.000000)">
                 <g id="calculation" transform="translate(499.000000, 2615.000000)">
                     <g id="4" transform="translate(144.000000, 41.000000)">
-                        <text font-family="Roboto-Medium, Roboto" font-size="21" font-weight="400" line-spacing="36" fill="#FFFFFF">
-                            <tspan x="14" y="21">4</tspan>
-                        </text>
+                        <path d="M23.5258789,27 L23.5258789,23.6879883 L25.4125977,23.6879883 L25.4125977,21.6782227 L23.5258789,21.6782227 L23.5258789,12.0703125 L20.9624023,12.0703125 L14.5742188,22.1601562 L14.6357422,23.6879883 L21.0444336,23.6879883 L21.0444336,27 L23.5258789,27 Z M21.0444336,21.6782227 L17.0351562,21.6782227 L20.777832,16.0385742 L21.0136719,15.5361328 L21.0444336,15.5463867 L21.0444336,21.6782227 Z" fill="#FFFFFF" fill-rule="nonzero"></path>
                         <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="20" cy="20" r="19"></circle>
                     </g>
                 </g>

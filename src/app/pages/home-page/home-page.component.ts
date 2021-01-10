@@ -1,4 +1,11 @@
-import { Component, OnInit, ElementRef, Renderer2 } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  Renderer2,
+  ViewChild,
+  HostListener
+} from "@angular/core";
 
 import { Router } from "@angular/router";
 
@@ -10,6 +17,8 @@ import { Router } from "@angular/router";
 export class HomePageComponent implements OnInit {
   private elRef: ElementRef;
   private renderer: Renderer2;
+
+  @ViewChild("relaxVideo") relaxVideo: ElementRef;
 
   imageObject: Array<object> = [
     {
@@ -73,7 +82,37 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit() {}
 
-  ngAfterViewInit() {}
+  ngAfterViewInit(): void {
+    this.relaxVideo.nativeElement.muted = true;
+    this.relaxVideo.nativeElement.style.display = "block";
+  }
+
+  @HostListener("window:scroll", ["$event"]) // for window scroll events
+  onScroll(event) {
+    if (this.inTheViewport(this.relaxVideo.nativeElement)) {
+      if (this.relaxVideo.nativeElement.paused) {
+        this.relaxVideo.nativeElement.play();
+      }
+    } else {
+      if (!this.relaxVideo.nativeElement.paused) {
+        this.relaxVideo.nativeElement.pause();
+      }
+    }
+  }
+
+  inTheViewport(elem): boolean {
+    var bounding = elem.getBoundingClientRect();
+    if (
+      bounding.top >= -elem.offsetHeight &&
+      bounding.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) +
+          elem.offsetHeight
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   seeAllHealth() {
     this.router.navigate(["/", "Extractions"]);

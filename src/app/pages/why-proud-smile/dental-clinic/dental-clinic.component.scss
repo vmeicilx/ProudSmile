@@ -1,6 +1,9 @@
 @import "../../../../proud-smile-style.scss";
 
 :host {
+  .dpb {
+    width: calc(25vw + 1520px);
+  }
   @media only screen and (min-width: 1201px) {
     .coffe {
       width: 100%;
