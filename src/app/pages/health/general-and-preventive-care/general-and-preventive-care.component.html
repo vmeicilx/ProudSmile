@@ -1,6 +1,6 @@
-<div class="padding-chef color-brown background-29 padding-top-3 margin-top-6">
+<div class="color-brown background-43 padding-top-3 margin-top-6">
   <div
-    class="center-text margin-bottom-1"
+    class="center-text margin-bottom-1 padding-chef"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -26,13 +26,13 @@
       </p>
     </div>
   </div>
-  <div class="full-width" fxLayout fxLayoutAlign="center center">
-    <video class="full-width" preload="auto" muted #chairVideo loop>
-      <source
-        src="../../../../assets/healthPage/GeneralAndPreventive/Chair.mp4"
-        type="video/mp4"
-      />
-    </video>
+  <div class="background-43" fxLayout fxLayoutAlign="center center">
+    <app-scroll-framer
+      urlPattern="../../../../assets/healthPage/GeneralAndPreventive/chair/Layer ##id##.jpg"
+      numberOfFrames="57"
+      animationFactor="2000"
+    >
+    </app-scroll-framer>
   </div>
 </div>
 

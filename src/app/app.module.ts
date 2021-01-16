@@ -49,6 +49,8 @@ import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
 import { ImplantsComponent } from './pages/implants/implants.component';
 import { SpecialsComponent } from './pages/specials/specials.component';
 import { DropdownComponent } from './custom-components/dropdown/dropdown.component';
+import { SingleToothComponent } from './pages/implants/single-tooth/single-tooth.component';
+import { ScrollFramerComponent } from './custom-components/scroll-framer/scroll-framer.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,9 @@ import { DropdownComponent } from './custom-components/dropdown/dropdown.compone
     DentalEmergencyComponent,
     ImplantsComponent,
     SpecialsComponent,
-    DropdownComponent
+    DropdownComponent,
+    SingleToothComponent,
+    ScrollFramerComponent
   ],
   imports: [
     BrowserModule,

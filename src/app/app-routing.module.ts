@@ -23,6 +23,7 @@ import { RootCanalTherapyComponent } from "./pages/health/root-canal-therapy/roo
 import { SameDayCrownsComponent } from "./pages/health/same-day-crowns/same-day-crowns.component";
 import { ImplantsComponent } from "./pages/implants/implants.component";
 import { SpecialsComponent } from "./pages/specials/specials.component";
+import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -50,7 +51,7 @@ const routes: Routes = [
   { path: "MouthguardsAndSplints", component: MouthguardsComponent },
   { path: "RootCanalTherapy", component: RootCanalTherapyComponent },
   { path: "SameDayCrowns", component: SameDayCrownsComponent },
-  { path: "Implants", component: ImplantsComponent },
+  { path: "SingleTooth", component: SingleToothComponent },
   { path: "Specials", component: SpecialsComponent },
   { path: "coming-soon-component", component: ComingSoonComponent },
   { path: "payment-page-component", component: PaymentPageComponent },

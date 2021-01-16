@@ -28,11 +28,13 @@ export class HeaderComponent implements OnInit {
   scheduleActive: boolean = false;
   isWhyProudSmile: boolean = false;
   isHealth: boolean = false;
+  isImplants: boolean = false;
   horizontalPosition: MatSnackBarHorizontalPosition = "center";
   verticalPosition: MatSnackBarVerticalPosition = "top";
   scheduleText: string;
 
   @ViewChild("whyProudSmile") whyProudSmileSubheader: ElementRef;
+  @ViewChild("implants") implantsSubheader: ElementRef;
   @ViewChild("health1Subheader") health1Subheader: ElementRef;
   @ViewChild("health2Subheader") health2Subheader: ElementRef;
   @ViewChild("WhyProudSmileText") whyProudSmileText: ElementRef;
@@ -54,7 +56,6 @@ export class HeaderComponent implements OnInit {
     this.renderer = renderer;
 
     router.events.subscribe((val) => {
-      // see also
       if (val instanceof NavigationEnd) {
         window.scrollTo(0, 0);
         this.styleStatus = val.url === "/HomePage" || val.url === "/";
@@ -63,6 +64,11 @@ export class HeaderComponent implements OnInit {
           val.url === "/proud-smile-experience-component" ||
           val.url === "/who-we-are-component" ||
           val.url === "/dental-clinic-component";
+
+        this.isImplants =
+          val.url === "/SingleTooth" ||
+          val.url === "/FullArchRehabilitation" ||
+          val.url === "/ImplantDentures";
 
         this.isHealth =
           val.url === "/AnxiousPatients" ||
@@ -98,6 +104,19 @@ export class HeaderComponent implements OnInit {
         if (val.url === "/dental-clinic-component") {
           this.setActiveSubheader1(2);
           this.whyProudSmileText.nativeElement.classList.add("active-text");
+        }
+
+        if (val.url === "/SingleTooth") {
+          this.setActiveSubheader1(0);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/FullArchRehabilitation") {
+          this.setActiveSubheader1(1);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/ImplantDentures") {
+          this.setActiveSubheader1(2);
+          this.implantsText.nativeElement.classList.add("active-text");
         }
 
         if (val.url === "/Extractions") {
@@ -286,6 +305,9 @@ export class HeaderComponent implements OnInit {
     this.whyProudSmileSubheader.nativeElement.children[0].classList.add(
       "fixed-position"
     );
+    this.implantsSubheader.nativeElement.children[0].classList.add(
+      "fixed-position"
+    );
     this.health1Subheader.nativeElement.classList.add("fixed-health-position");
     this.health2Subheader.nativeElement.classList.add("fixed-health-position");
     this.health2Subheader.nativeElement.classList.add("health2-fixed-position");
@@ -301,6 +323,9 @@ export class HeaderComponent implements OnInit {
 
   subheadermouseLeave() {
     this.whyProudSmileSubheader.nativeElement.children[0].classList.remove(
+      "fixed-position"
+    );
+    this.implantsSubheader.nativeElement.children[0].classList.remove(
       "fixed-position"
     );
     this.health1Subheader.nativeElement.classList.remove(

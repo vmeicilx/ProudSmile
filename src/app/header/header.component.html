@@ -51,7 +51,7 @@
     </button>
     <button
       class="fix-text-1 roboto-medium"
-      (click)="onMenuItemClick('Implants')"
+      (click)="onMenuItemClick('SingleTooth')"
     >
       <p>Implants</p>
     </button>
@@ -225,7 +225,7 @@
           </button>
           <button
             class="font-extra-small roboto-medium"
-            (click)="onMenuItemClick('Implants')"
+            (click)="onMenuItemClick('SingleTooth')"
           >
             <p #ImplantsText>Implants</p>
           </button>
@@ -631,6 +631,75 @@
         <p>
           Dental<br />
           Emergency
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="!isImplants" #implants>
+  <div
+    class="subHeader font-extra-small roboto-medium color-brown"
+    (mouseleave)="subheadermouseLeave()"
+    fxFlexLayout
+    fxLayoutAlign="center center"
+  >
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="end center"
+      (click)="onClick($event, 'proud-smile-experience-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Single<br />
+          Tooth
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="center center"
+      (click)="onClick($event, 'who-we-are-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img loading="lazy" src="../../assets/header/Team.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Full Arch<br />
+          Rehabilitation
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'dental-clinic-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/header/Chair.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Implant<br />
+          Dentures
         </p>
       </div>
     </div>
