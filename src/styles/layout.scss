@@ -71,6 +71,9 @@
 .padding-bottom-1 {
   padding-bottom: 9vw;
 }
+.padding-bottom-2 {
+  padding-bottom: 18vw;
+}
 
 .padding-top-1 {
   padding-top: 233px;
@@ -146,6 +149,10 @@
 }
 .margin-right-3 {
   margin-right: 18px;
+}
+
+.margin-right-4 {
+  margin-right: 4.5vw;
 }
 
 .margin-left-1 {
@@ -242,6 +249,9 @@
 }
 .height-5 {
   height: 1153px;
+}
+.height-6 {
+  height: 982px;
 }
 
 .relative-container {
@@ -344,6 +354,9 @@
       width: 100%;
     }
   }
+  .align-self-start-on-big {
+    align-self: start;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
@@ -427,6 +440,12 @@
     padding-left: calc(17.65vw - 42.96px);
   }
 
+  // 10 - 296
+  .padding-chef-left-right-on-sm {
+    padding-left: calc(17.65vw - 42.96px);
+    padding-right: calc(17.65vw - 42.96px);
+  }
+
   .max-width-unset-on-sm {
     max-width: unset;
   }
@@ -449,6 +468,13 @@
   .padding-right-4-sm {
     padding-left: calc(17.65vw - 42.96px);
     padding-right: calc(17.65vw - 42.96px);
+  }
+  .hide-on-tablet {
+    display: none;
+  }
+
+  .no-absolute-on-sm {
+    position: relative;
   }
 }
 
@@ -577,5 +603,8 @@
   .padding-chef-on-sm {
     padding-left: calc(17.65vw - 42.96px);
     padding-right: calc(17.65vw - 42.96px);
+  }
+  .no-absolute-on-sm {
+    position: relative;
   }
 }

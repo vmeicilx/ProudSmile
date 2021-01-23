@@ -14,7 +14,6 @@ import { Router } from "@angular/router";
 })
 export class GeneralAndPreventiveCareComponent implements OnInit {
   @ViewChild("firstVideo") video: ElementRef;
-  //@ViewChild("chairVideo") chair: ElementRef;
 
   id: number;
 
@@ -24,7 +23,6 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.video.nativeElement.muted = true;
-    //this.chair.nativeElement.muted = true;
     this.video.nativeElement.style.display = "block";
   }
 
@@ -39,15 +37,6 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
         this.video.nativeElement.pause();
       }
     }
-    // if (this.inTheViewport(this.chair.nativeElement)) {
-    //   if (this.chair.nativeElement.paused) {
-    //     this.chair.nativeElement.play();
-    //   }
-    // } else {
-    //   if (!this.chair.nativeElement.paused) {
-    //     this.chair.nativeElement.pause();
-    //   }
-    // }
   }
 
   inTheViewport(elem): boolean {
@@ -67,4 +56,6 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
   seeAllFinancial() {
     this.router.navigate(["/", "payment-page-component"]);
   }
+
+  maximize() {}
 }

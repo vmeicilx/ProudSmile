@@ -107,15 +107,15 @@ export class HeaderComponent implements OnInit {
         }
 
         if (val.url === "/SingleTooth") {
-          this.setActiveSubheader1(0);
+          this.setActiveSubheader4(0);
           this.implantsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/FullArchRehabilitation") {
-          this.setActiveSubheader1(1);
+          this.setActiveSubheader4(1);
           this.implantsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/ImplantDentures") {
-          this.setActiveSubheader1(2);
+          this.setActiveSubheader4(2);
           this.implantsText.nativeElement.classList.add("active-text");
         }
 
@@ -249,6 +249,21 @@ export class HeaderComponent implements OnInit {
       ].classList.remove("active");
     }
     this.elRef.nativeElement.children[4].children[1].children[
+      index
+    ].classList.add("active");
+  }
+
+  setActiveSubheader4(index: number) {
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[5].children[0].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[5].children[0].children[
+        i
+      ].classList.remove("active");
+    }
+    this.elRef.nativeElement.children[5].children[0].children[
       index
     ].classList.add("active");
   }

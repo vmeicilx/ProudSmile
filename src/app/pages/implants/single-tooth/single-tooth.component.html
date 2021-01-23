@@ -1,12 +1,12 @@
 <div
-  class="padding-captain color-brown background-1 padding-bottom-1 padding-top-1"
+  class="padding-captain color-brown background-1 padding-bottom-2 padding-top-1"
   fxLayout="column"
   fxLayoutAlign="center center"
 >
   <div
     fxLayout="column"
     fxLayoutAlign="center center"
-    class="font-large libre-regular center-text padding-top-1"
+    class="font-large libre-regular center-text padding-top-3 margin-bottom-10"
   >
     <div class="width-1">
       <img src="../../../assets/Shape.svg" />
@@ -17,15 +17,16 @@
     </p>
   </div>
 
-  <div
-    class="relative-container full-width"
-    fxLayout
-    fxLayoutAlign="center center"
-  >
-    <img src="../../../../assets/healthPage/Extractions/second_chance.png" />
+  <div class="relative-container full-width hide-on-sm flexy-row cccc">
+    <video class="full-width" preload="auto" muted #implantVideo loop>
+      <source
+        src="../../../../assets/implants/SingleTooth/spiningImplant.mp4"
+        type="video/mp4"
+      />
+    </video>
 
     <div
-      class="absolute-container text2"
+      class="absolute-container text2 hide-on-sm"
       fxLayout="column"
       fxLayoutAlign="center flex-end"
     >
@@ -43,7 +44,7 @@
       </div>
     </div>
 
-    <div class="absolute-container text1">
+    <div class="absolute-container hide-on-sm text1">
       <div class="margin-bottom-5" style="width: 8vw">
         <img src="../../../../assets/implants/SingleTooth/2.svg" />
       </div>
@@ -57,12 +58,76 @@
       </div>
     </div>
 
-    <div class="absolute-container text3">
-      <div class="margin-bottom-5" style="width: 8vw">
+    <div class="absolute-container hide-on-sm text3">
+      <div class="flexy-row">
+        <div class="margin-bottom-5 margin-right-4" style="flex: 0 1 100%">
+          <img src="../../../../assets/implants/SingleTooth/Implant.png" />
+        </div>
+        <div>
+          <div class="margin-bottom-5" style="width: 8vw">
+            <img src="../../../../assets/implants/SingleTooth/3.svg" />
+          </div>
+          <div class="roboto-regular font-extra-small-4 center-text-on-sm">
+            <p class="left-text">
+              Also with the help of digital technology, in some situations we
+              can delivery a temporary Implant Crown or Full Arch Prosthesis in
+              as little as 24 hours from surgery. That ensures you’re not
+              toothless during any stage of your treatment. If an immediate
+              Implant crown is not possible we’ll discuss other temporary
+              solutions with you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hide-on-big flexy-column">
+    <video
+      class="full-width hide-on-sm"
+      preload="auto"
+      muted
+      #implantVideoSmall
+      loop
+    >
+      <source
+        src="../../../../assets/implants/SingleTooth/spiningImplant.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <div class="flexy-column cccc margin-bottom-10" style="margin-top: 10vw">
+      <div class="margin-bottom-5 margin-bottom-1">
+        <img src="../../../../assets/implants/SingleTooth/1.svg" />
+      </div>
+      <div class="roboto-regular font-extra-small-4 center-text-on-sm">
+        <p>
+          Sometimes we loose teeth, either from disease or accidents.
+          Fortunately with dental implants we can revert that. Implants are more
+          than just artificial roots and teeth, it’s a second chance to replace
+          vital teeth structure, which are so important to eat, speak, preserve
+          bone and provide aesthetics.
+        </p>
+      </div>
+    </div>
+    <div class="flexy-column cccc margin-bottom-10">
+      <div class="margin-bottom-5 margin-bottom-1">
+        <img src="../../../../assets/implants/SingleTooth/2.svg" />
+      </div>
+      <div class="roboto-regular font-extra-small-4 center-text-on-sm">
+        <p>
+          With Implants we can replace 1 or more teeth, or even an entire mouth.
+          They are also very useful to substantially increase stability of
+          dentures. With as little as 2 implants we can stabilise and improve
+          retention on a full lower denture for example.
+        </p>
+      </div>
+    </div>
+    <div class="flexy-column cccc">
+      <div class="margin-bottom-5 margin-bottom-1">
         <img src="../../../../assets/implants/SingleTooth/3.svg" />
       </div>
       <div class="roboto-regular font-extra-small-4 center-text-on-sm">
-        <p class="left-text">
+        <p>
           Also with the help of digital technology, in some situations we can
           delivery a temporary Implant Crown or Full Arch Prosthesis in as
           little as 24 hours from surgery. That ensures you’re not toothless
@@ -75,13 +140,13 @@
 </div>
 
 <div
-  class="padding-chef color-white relative-container height-5"
+  class="padding-chef color-white relative-container height-6"
   fxLayout="column"
   fxLayoutAlign="center center"
 >
   <video
     loading="lazy"
-    class="height-5"
+    class="height-6"
     preload="auto"
     muted
     #rightVideo
@@ -89,15 +154,14 @@
     style="display: none"
   >
     <source
-      src="../../../../assets/healthPage/RootCanal/what_to_expect.mp4"
+      src="../../../../assets/implants/SingleTooth/rightVideo.mp4"
       type="video/mp4"
     />
   </video>
 
   <div
-    class="absolute-container opacity-7 background-33 height-5 padding-chef padding-top-bottom-1 full-width"
+    class="absolute-container opacity-7 background-33 height-6 padding-chef padding-top-bottom-1 full-width sscc"
     fxLayout="column"
-    fxLayoutAlign="center start"
   >
     <div class="flexy-row-w sscc" style="max-width: 600px">
       <div class="flex-1 sscc margin-bottom-on-sm" fxLayout="column">
@@ -128,16 +192,15 @@
   fxLayout="column"
   fxLayoutAlign="center end"
 >
-  <div class="height-2">
+  <div>
     <img
       loading="lazy"
-      class="height-2"
       style="max-width: unset"
-      src="../../../assets/healthPage/RootCanal/what_happens_after.png"
+      src="../../../../assets/implants/SingleTooth/virtual.png"
     />
   </div>
   <div
-    class="absolute-container height-2 padding-chef"
+    class="absolute-container padding-chef"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -172,15 +235,18 @@
   fxLayoutAlign="center center"
 >
   <div
-    class="padding-chef-left-on-sm"
+    class="padding-chef-left-right-on-sm"
+    style="padding-bottom: 20vw"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
-    <div class="padding-chef-right flexy-row-w sscc margin-bottom-10">
-      <div class="margin-right-1 flex-1 no-margin-on-sm">
+    <div
+      class="padding-chef-right no-padding-on-sm flexy-row-w sscc margin-bottom-2"
+    >
+      <div class="margin-right-1 flex-1 no-margin-on-sm margin-bottom-on-sm">
         <img
           loading="lazy"
-          src="../../../assets/healthPage/ClearBraces/Brace.png"
+          src="../../../../assets/implants/SingleTooth/Implanted.png"
         />
       </div>
       <div class="flex-1 sscc" fxLayout="column">
@@ -200,8 +266,15 @@
         </div>
       </div>
     </div>
-    <div class="padding-chef-left flexy-row-w sscc">
-      <div class="flex-1 sscc" fxLayout="column">
+    <div class="padding-chef-left no-padding-on-sm flexy-row-w sscc">
+      <div class="margin-right-1 flex-1 sscc" fxLayout="column">
+        <div class="margin-bottom-1">
+          <img
+            loading="lazy"
+            src="../../../../assets/implants/SingleTooth/teethIcon.svg"
+          />
+        </div>
+
         <div class="font-dog libre-regular margin-bottom-1">
           <p>Teeth, Regained</p>
         </div>
@@ -221,10 +294,10 @@
           </p>
         </div>
       </div>
-      <div class="margin-right-1 flex-1 no-margin-on-sm">
+      <div class="flex-1 no-margin-on-sm">
         <img
           loading="lazy"
-          src="../../../assets/healthPage/ClearBraces/Brace.png"
+          src="../../../../assets/implants/SingleTooth/TeethRegained.png"
         />
       </div>
     </div>
@@ -239,16 +312,13 @@
   <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w" style="justify-content: flex-end">
       <div
-        class="gel flex-1 margin-bottom-on-sm absolute-container"
-        style="width: 50vw; z-index: 1"
+        class="gel flex-1 margin-bottom-on-sm absolute-container no-absolute-on-sm"
+        style="width: 87vw; z-index: 1"
       >
-        <img
-          loading="lazy"
-          src="../../../../assets/healthPage/GeneralAndPreventive/WhiteningGel.png"
-        />
+        <img src="../../../../assets/implants/SingleTooth/implantPic.png" />
       </div>
       <div
-        class="sscc margin-right-1 margin-bottom-on-sm"
+        class="sscc margin-bottom-on-sm"
         style="flex: 0 0 560px"
         fxLayout="column"
       >
@@ -258,7 +328,7 @@
             implants?
           </p>
         </div>
-        <div class="roboto-regular font-medium margin-bottom-1">
+        <div class="roboto-regular font-medium margin-bottom-10">
           <p class="center-text-on-sm">
             There’s no short answer for that. Each case is different and needs
             to be assessed with care, which is why we can’t often give
@@ -269,6 +339,88 @@
             the procedures we can do to still be able to place implants even in
             areas with poor bone availability.
           </p>
+        </div>
+        <div
+          (click)="scrollToTargetAdjusted()"
+          class="relative-container cursor-pointer"
+          style="z-index: 2"
+        >
+          <div>
+            <img
+              loading="lazy"
+              src="../../../../assets/implants/SingleTooth/sinus1.png"
+            />
+          </div>
+          <div
+            class="absolute-container flexy-row"
+            style="
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              justify-content: flex-end;
+              align-items: center;
+            "
+          >
+            <div class="roboto-medium color-brown font-tiger">
+              <p>Sinus Lift</p>
+            </div>
+            <div style="margin-left: 16%; margin-right: 5%">
+              <svg
+                height="24"
+                viewBox="0 0 16 16"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6.667 13.333a6.667 6.667 0 1 1 6.667-6.667 6.674 6.674 0 0 1 -6.667 6.667zm-.753-9.333a.588.588 0 0 0 -.412.164.554.554 0 0 0 0 .8l1.762 1.703-1.755 1.707a.553.553 0 0 0 0 .8.607.607 0 0 0 .412.163.614.614 0 0 0 .411-.163l2.168-2.108a.568.568 0 0 0 .168-.4.549.549 0 0 0 -.168-.4l-2.173-2.1a.588.588 0 0 0 -.413-.166z"
+                  fill="#f05024"
+                  transform="translate(1.333 1.333)"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative-container cursor-pointer margin-bottom-10"
+          (click)="scrollToTargetAdjusted()"
+          style="z-index: 2"
+        >
+          <div>
+            <img
+              loading="lazy"
+              src="../../../../assets/implants/SingleTooth/bone1.png"
+            />
+          </div>
+          <div
+            class="absolute-container flexy-row"
+            style="
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              justify-content: flex-end;
+              align-items: center;
+            "
+          >
+            <div class="roboto-medium color-brown font-tiger">
+              <p>Bone Graft</p>
+            </div>
+            <div style="margin-left: 14%; margin-right: 5%">
+              <svg
+                height="24"
+                viewBox="0 0 16 16"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m6.667 13.333a6.667 6.667 0 1 1 6.667-6.667 6.674 6.674 0 0 1 -6.667 6.667zm-.753-9.333a.588.588 0 0 0 -.412.164.554.554 0 0 0 0 .8l1.762 1.703-1.755 1.707a.553.553 0 0 0 0 .8.607.607 0 0 0 .412.163.614.614 0 0 0 .411-.163l2.168-2.108a.568.568 0 0 0 .168-.4.549.549 0 0 0 -.168-.4l-2.173-2.1a.588.588 0 0 0 -.413-.166z"
+                  fill="#f05024"
+                  transform="translate(1.333 1.333)"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
         <div class="roboto-regular font-medium margin-bottom-1">
           <p class="center-text-on-sm">
@@ -293,12 +445,14 @@
     </div>
   </div>
 
-  <div class="flexy-row-w sscc">
+  <div #target class="flexy-row-w sscc">
     <div
-      class="flex-1 sscc margin-right-1 color-brown no-margin-on-sm full-width"
+      class="flex-1 sscc margin-right-1 color-brown margin-bottom-on-sm no-margin-on-sm full-width"
       fxLayout="column"
     >
-      <div class="align-self-start libre-regular font-dog flexy-row">
+      <div
+        class="align-self-start-on-big libre-regular font-dog flexy-row margin-bottom-10"
+      >
         <div class="flex-1 margin-left-1">
           <p>
             Bone, the holy<br />
@@ -306,13 +460,15 @@
           </p>
         </div>
       </div>
-      <div class="align-self-start roboto-medium font-small-3 flexy-row">
+      <div
+        class="align-self-start-on-big roboto-medium font-small-3 flexy-row margin-bottom-10"
+      >
         <img
           loading="lazy"
-          src="../../../../assets/implants/SingleTooth/1.svg"
+          src="../../../../assets/implants/SingleTooth/Bone_3.png"
         />
       </div>
-      <div class="align-self-start roboto-regular font-small flexy-row">
+      <div class="align-self-start-on-big roboto-regular font-small flexy-row">
         <div class="flex-1 margin-left-1">
           <p>
             When we talk about implants bone is the single most important factor
@@ -340,7 +496,9 @@
       class="flex-1 sscc color-brown no-margin-on-sm margin-bottom-on-sm full-width"
       fxLayout="column"
     >
-      <div class="align-self-start libre-regular font-dog flexy-row">
+      <div
+        class="align-self-start-on-big libre-regular font-dog flexy-row margin-bottom-10"
+      >
         <div class="flex-1 margin-left-1">
           <p>
             Sinus Lift<br />
@@ -348,13 +506,15 @@
           </p>
         </div>
       </div>
-      <div class="align-self-start roboto-medium font-small-3 flexy-row">
+      <div
+        class="align-self-start-on-big roboto-medium font-small-3 flexy-row margin-bottom-10"
+      >
         <img
           loading="lazy"
-          src="../../../../assets/implants/SingleTooth/1.svg"
+          src="../../../../assets/implants/SingleTooth/Bone_4.png"
         />
       </div>
-      <div class="align-self-start roboto-regular font-small flexy-row">
+      <div class="align-self-start-on-big roboto-regular font-small flexy-row">
         <div class="flex-1 margin-left-1">
           <p>
             You’ll probably know what sinuses are if you’ve had a sinusitis

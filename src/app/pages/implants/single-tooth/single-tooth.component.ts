@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { HeaderComponent } from "src/app/header/header.component";
 
 @Component({
   selector: "app-single-tooth",
@@ -13,6 +14,9 @@ import {
 })
 export class SingleToothComponent implements OnInit {
   @ViewChild("rightVideo") rightVideo: ElementRef;
+  @ViewChild("implantVideo") implantVideo: ElementRef;
+  @ViewChild("implantVideoSmall") implantVideoSmall: ElementRef;
+  @ViewChild("target") scrollTarget: ElementRef;
 
   constructor() {}
 
@@ -20,7 +24,11 @@ export class SingleToothComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.rightVideo.nativeElement.muted = true;
+    this.implantVideo.nativeElement.muted = true;
+    this.implantVideoSmall.nativeElement.muted = true;
     this.rightVideo.nativeElement.style.display = "block";
+    this.implantVideo.nativeElement.style.display = "block";
+    this.implantVideoSmall.nativeElement.style.display = "block";
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
@@ -32,6 +40,24 @@ export class SingleToothComponent implements OnInit {
     } else {
       if (!this.rightVideo.nativeElement.paused) {
         this.rightVideo.nativeElement.pause();
+      }
+    }
+    if (this.inTheViewport(this.implantVideo.nativeElement)) {
+      if (this.implantVideo.nativeElement.paused) {
+        this.implantVideo.nativeElement.play();
+      }
+    } else {
+      if (!this.implantVideo.nativeElement.paused) {
+        this.implantVideo.nativeElement.pause();
+      }
+    }
+    if (this.inTheViewport(this.implantVideoSmall.nativeElement)) {
+      if (this.implantVideoSmall.nativeElement.paused) {
+        this.implantVideoSmall.nativeElement.play();
+      }
+    } else {
+      if (!this.implantVideoSmall.nativeElement.paused) {
+        this.implantVideoSmall.nativeElement.pause();
       }
     }
   }
@@ -52,5 +78,26 @@ export class SingleToothComponent implements OnInit {
 
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+
+  scrollToElement($element): void {
+    $element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
+  }
+
+  scrollToTargetAdjusted() {
+    var headerOffset =
+      document.getElementById("HeaderItem").getBoundingClientRect().height + 20;
+    var elementPosition = this.scrollTarget.nativeElement.getBoundingClientRect()
+      .top;
+    const y = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth"
+    });
   }
 }

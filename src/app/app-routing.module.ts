@@ -24,6 +24,8 @@ import { SameDayCrownsComponent } from "./pages/health/same-day-crowns/same-day-
 import { ImplantsComponent } from "./pages/implants/implants.component";
 import { SpecialsComponent } from "./pages/specials/specials.component";
 import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
+import { FulArchRehabilitationComponent } from "./pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component";
+import { ImplantDenturesComponent } from "./pages/implants/implant-dentures/implant-dentures.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -52,6 +54,8 @@ const routes: Routes = [
   { path: "RootCanalTherapy", component: RootCanalTherapyComponent },
   { path: "SameDayCrowns", component: SameDayCrownsComponent },
   { path: "SingleTooth", component: SingleToothComponent },
+  { path: "FullArchRehabilitation", component: FulArchRehabilitationComponent },
+  { path: "ImplantDentures", component: ImplantDenturesComponent },
   { path: "Specials", component: SpecialsComponent },
   { path: "coming-soon-component", component: ComingSoonComponent },
   { path: "payment-page-component", component: PaymentPageComponent },

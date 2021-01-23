@@ -14,19 +14,45 @@ import { Router } from "@angular/router";
 })
 export class SameDayCrownsComponent implements OnInit {
   @ViewChild("cerec") cerecVideo: ElementRef;
+  @ViewChild("bridgeVideo") bridgeVideo: ElementRef;
+  @ViewChild("marylandVideo") marylandVideo: ElementRef;
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
+    this.bridgeVideo.nativeElement.muted = true;
+    this.bridgeVideo.nativeElement.style.display = "block";
+    this.marylandVideo.nativeElement.muted = true;
+    this.marylandVideo.nativeElement.style.display = "block";
     this.cerecVideo.nativeElement.muted = true;
     this.cerecVideo.nativeElement.style.display = "none";
     this.cerecVideo.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
-  onScroll(event) {}
+  onScroll(event) {
+    if (this.inTheViewport(this.bridgeVideo.nativeElement)) {
+      if (this.bridgeVideo.nativeElement.paused) {
+        this.bridgeVideo.nativeElement.play();
+      }
+    } else {
+      if (!this.bridgeVideo.nativeElement.paused) {
+        this.bridgeVideo.nativeElement.pause();
+      }
+    }
+
+    if (this.inTheViewport(this.marylandVideo.nativeElement)) {
+      if (this.marylandVideo.nativeElement.paused) {
+        this.marylandVideo.nativeElement.play();
+      }
+    } else {
+      if (!this.marylandVideo.nativeElement.paused) {
+        this.marylandVideo.nativeElement.pause();
+      }
+    }
+  }
 
   inTheViewport(elem): boolean {
     var bounding = elem.getBoundingClientRect();

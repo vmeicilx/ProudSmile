@@ -51,6 +51,8 @@ import { SpecialsComponent } from './pages/specials/specials.component';
 import { DropdownComponent } from './custom-components/dropdown/dropdown.component';
 import { SingleToothComponent } from './pages/implants/single-tooth/single-tooth.component';
 import { ScrollFramerComponent } from './custom-components/scroll-framer/scroll-framer.component';
+import { FulArchRehabilitationComponent } from './pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component';
+import { ImplantDenturesComponent } from './pages/implants/implant-dentures/implant-dentures.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +90,9 @@ import { ScrollFramerComponent } from './custom-components/scroll-framer/scroll-
     SpecialsComponent,
     DropdownComponent,
     SingleToothComponent,
-    ScrollFramerComponent
+    ScrollFramerComponent,
+    FulArchRehabilitationComponent,
+    ImplantDenturesComponent
   ],
   imports: [
     BrowserModule,

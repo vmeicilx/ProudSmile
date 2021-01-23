@@ -88,6 +88,7 @@
 <div>
   <div
     class="header"
+    id="HeaderItem"
     (mouseenter)="mouseEnter()"
     (mouseleave)="mouseLeave()"
     [ngClass]="styleStatus ? 'whiteStyle' : 'blackStyle'"
@@ -649,11 +650,11 @@
       fxLayout
       fxFlex="3 3 auto"
       fxLayoutAlign="end center"
-      (click)="onClick($event, 'proud-smile-experience-component')"
+      (click)="onClick($event, 'SingleTooth')"
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/Shape.svg" />
+          <img src="../../assets/implants/single_tooth.png" />
         </div>
       </div>
       <div class="text-container">
@@ -669,11 +670,11 @@
       fxLayout
       fxFlex="1 1 auto"
       fxLayoutAlign="center center"
-      (click)="onClick($event, 'who-we-are-component')"
+      (click)="onClick($event, 'FullArchRehabilitation')"
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img loading="lazy" src="../../assets/header/Team.png" />
+          <img loading="lazy" src="../../assets/implants/Fullarch.png" />
         </div>
       </div>
       <div class="text-container">
@@ -689,11 +690,11 @@
       fxLayout
       fxFlex="3 3 auto"
       fxLayoutAlign="start center"
-      (click)="onClick($event, 'dental-clinic-component')"
+      (click)="onClick($event, 'ImplantDentures')"
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/header/Chair.png" />
+          <img src="../../assets/implants/implant.png" />
         </div>
       </div>
       <div class="text-container">
