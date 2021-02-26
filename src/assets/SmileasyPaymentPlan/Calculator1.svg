@@ -1,1 +1,16 @@
-<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g opacity=".5"><circle cx="12" cy="12" fill="#565960" r="12"/><text fill="#fff" font-family="Roboto-Bold, Roboto" font-size="13" font-weight="700" transform="translate(8.4 15.2)"><tspan x="0" y="0">1</tspan></text></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>1@2x</title>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Smileeasy-Payment-Plan" transform="translate(-950.000000, -6199.000000)">
+            <g id="Online-Calculator" transform="translate(0.000000, 5505.000000)">
+                <g id="Group-24" transform="translate(295.000000, 232.000000)">
+                    <g id="1" transform="translate(655.000000, 462.000000)">
+                        <circle id="Oval" fill="#565960" cx="12" cy="12" r="12"></circle>
+                        <polygon fill="#FFFFFF" fill-rule="nonzero" points="13.8566895 16.6210938 13.8566895 7.37890625 10.1433105 8.15332031 10.1433105 9.33398438 12.0095215 9.33398438 12.0095215 16.6210938"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -46,14 +46,22 @@ export class VideoPlayerComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.video.nativeElement.style.display = "none";
-    this.video.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
+    if (typeof this.video.nativeElement.onfullscreenchange != "undefined") {
+      this.video.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
+    } else {
+      this.video.nativeElement.onwebkitfullscreenchange = this.fullscreenChangeHandler;
+    }
   }
 
   playVideo() {
     let video = this.video.nativeElement;
     video.style.display = "block";
     video.setAttribute("controls", "controls");
-    video.requestFullscreen();
+    if (typeof video.requestFullscreen != "undefined") {
+      video.requestFullscreen();
+    } else {
+      video.webkitRequestFullScreen();
+    }
     video.play();
   }
 }

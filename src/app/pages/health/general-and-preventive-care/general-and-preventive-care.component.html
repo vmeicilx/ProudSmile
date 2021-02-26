@@ -368,12 +368,10 @@
           </p>
         </div>
         <div class="margin-bottom-1">
-          <img
-            loading="lazy"
-            src="../../../../assets/healthPage/GeneralAndPreventive/teeth.png"
-          />
+          <app-grid-to-full-screen></app-grid-to-full-screen>
         </div>
-        <div (click)="maximize()" class="flexy-row cursor-pointer">
+
+        <div (click)="maximize($event)" class="flexy-row cursor-pointer">
           <div>
             <img
               loading="lazy"

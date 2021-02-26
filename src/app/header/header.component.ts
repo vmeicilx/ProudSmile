@@ -44,6 +44,19 @@ export class HeaderComponent implements OnInit {
   @ViewChild("PaymentPlanText") paymentPlanText: ElementRef;
   @ViewChild("SpecialsText") specialsText: ElementRef;
   @ViewChild("ContactText") contactText: ElementRef;
+  @ViewChild("CalculatorOverlay") calculatorOverlay: ElementRef;
+
+  @ViewChild("input1Mini") input1: ElementRef;
+  @ViewChild("input2Mini") input2: ElementRef;
+  @ViewChild("input3Mini") input3: ElementRef;
+  @ViewChild("pointerMini") pointer: ElementRef;
+
+  pointerGrabbed: boolean = false;
+  mousePosition: number;
+  initialPointerPosition: number;
+  depositNumber: number;
+  monthly: number = 62.5;
+  weekly: number = 15.63;
 
   constructor(
     private router: Router,
@@ -190,37 +203,29 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  setActiveSubheader1(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[3].children[0].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[3].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    this.elRef.nativeElement.children[3].children[0].children[
-      index
-    ].classList.add("active");
+  ngAfterViewInit(): void {
+    this.depositNumber = 25;
+    this.input1.nativeElement.value = 5000;
+    this.input2.nativeElement.value = "25%";
+    this.oninput1Mini();
+    window.addEventListener("touchmove", this.preventBehavior.bind(this), {
+      passive: false
+    });
   }
 
-  setActiveSubheader2(index: number) {
+  preventBehavior(e) {
+    if (this.pointerGrabbed) {
+      e.preventDefault();
+    }
+  }
+
+  setActiveSubheader1(index: number) {
     for (
       var i = 0;
       i < this.elRef.nativeElement.children[4].children[0].children.length;
       i++
     ) {
       this.elRef.nativeElement.children[4].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[4].children[1].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[4].children[1].children[
         i
       ].classList.remove("active");
     }
@@ -229,31 +234,7 @@ export class HeaderComponent implements OnInit {
     ].classList.add("active");
   }
 
-  setActiveSubheader3(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[4].children[0].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[4].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[4].children[1].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[4].children[1].children[
-        i
-      ].classList.remove("active");
-    }
-    this.elRef.nativeElement.children[4].children[1].children[
-      index
-    ].classList.add("active");
-  }
-
-  setActiveSubheader4(index: number) {
+  setActiveSubheader2(index: number) {
     for (
       var i = 0;
       i < this.elRef.nativeElement.children[5].children[0].children.length;
@@ -263,7 +244,55 @@ export class HeaderComponent implements OnInit {
         i
       ].classList.remove("active");
     }
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[5].children[1].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[5].children[1].children[
+        i
+      ].classList.remove("active");
+    }
     this.elRef.nativeElement.children[5].children[0].children[
+      index
+    ].classList.add("active");
+  }
+
+  setActiveSubheader3(index: number) {
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[5].children[0].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[5].children[0].children[
+        i
+      ].classList.remove("active");
+    }
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[5].children[1].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[5].children[1].children[
+        i
+      ].classList.remove("active");
+    }
+    this.elRef.nativeElement.children[5].children[1].children[
+      index
+    ].classList.add("active");
+  }
+
+  setActiveSubheader4(index: number) {
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[6].children[0].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[6].children[0].children[
+        i
+      ].classList.remove("active");
+    }
+    this.elRef.nativeElement.children[6].children[0].children[
       index
     ].classList.add("active");
   }
@@ -401,14 +430,156 @@ export class HeaderComponent implements OnInit {
     });
   }
   onPaymentPlan() {
-    const promise1 = new Promise((resolve, reject) => {
-      this.router.navigate(["/", "payment-page-component"]);
-      resolve("Success!");
-    });
+    // const promise1 = new Promise((resolve, reject) => {
+    //   this.router.navigate(["/", "payment-page-component"]);
+    //   resolve("Success!");
+    // });
 
-    promise1.then((value) => {
-      var clientForm = document.getElementById("OnlineCalculator");
-      clientForm.scrollIntoView(true);
-    });
+    // promise1.then((value) => {
+    //   var clientForm = document.getElementById("OnlineCalculator");
+    //   clientForm.scrollIntoView(true);
+    // });
+
+    this.calculatorOverlay.nativeElement.style.display = "block";
+  }
+
+  onCalculatorCancel() {
+    this.calculatorOverlay.nativeElement.style.display = "none";
+  }
+
+  oninput1Mini() {
+    if (this.input1.nativeElement.value.length > 6) {
+      this.input1.nativeElement.value = this.input1.nativeElement.value.slice(
+        0,
+        6
+      );
+    }
+
+    var left = ((this.input1.nativeElement.value - 750) * 100) / 11250;
+    var offset = 26;
+
+    if (this.input1.nativeElement.value < 750) {
+      left = 0;
+      this.doCalculation(750);
+    } else if (this.input1.nativeElement.value > 12000) {
+      left = 100;
+      this.doCalculation(12000);
+    } else {
+      this.doCalculation(this.input1.nativeElement.value);
+    }
+    this.pointer.nativeElement.style.left =
+      "calc(" + left + "% - " + offset + "px)";
+  }
+
+  onInput1FocusOutMini() {
+    if (this.input1.nativeElement.value < 750) {
+      this.input1.nativeElement.value = 750;
+    }
+    if (this.input1.nativeElement.value > 12000) {
+      this.input1.nativeElement.value = 12000;
+    }
+  }
+
+  onImageDragStartMini(event) {
+    return false;
+  }
+  onDragStartMini(event) {
+    if (event.touches) {
+      this.mousePosition = event.touches[0].clientX;
+    } else {
+      this.mousePosition = event.pageX;
+    }
+
+    this.pointerGrabbed = true;
+    this.initialPointerPosition = this.pointer.nativeElement.offsetLeft;
+  }
+
+  doCalculation(amount: number) {
+    this.input3.nativeElement.value = (amount * this.depositNumber) / 100;
+  }
+
+  calculatorClick() {
+    this.monthly =
+      Math.round(
+        (this.input3.nativeElement.value / 20 + Number.EPSILON) * 100
+      ) / 100;
+    this.weekly =
+      Math.round(
+        (this.input3.nativeElement.value / 80 + Number.EPSILON) * 100
+      ) / 100;
+  }
+
+  onDepositClick(value) {
+    this.depositNumber = value;
+    this.input2.nativeElement.value = value + "%";
+    this.doCalculation(this.input1.nativeElement.value);
+  }
+
+  @HostListener("document:mousemove", ["$event"])
+  @HostListener("document:touchmove", ["$event"])
+  onMouseMove(event) {
+    if (this.pointerGrabbed) {
+      this.onDrag(event);
+    }
+  }
+  @HostListener("document:mouseup", ["$event"])
+  @HostListener("document:touchend", ["$event"])
+  onMouseUp(event) {
+    if (this.pointerGrabbed) {
+      this.pointerGrabbed = false;
+    }
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    var left = ((this.input1.nativeElement.value - 750) * 100) / 11250;
+    var offset = 26;
+
+    if (this.input1.nativeElement.value < 750) {
+      left = 0;
+    }
+    if (this.input1.nativeElement.value > 12000) {
+      left = 100;
+    }
+    this.pointer.nativeElement.style.left =
+      "calc(" + left + "% - " + offset + "px)";
+  }
+
+  onDrag(event) {
+    let currentMousePosition = 0;
+
+    if (event.touches) {
+      currentMousePosition = event.touches[0].clientX;
+    } else {
+      currentMousePosition = event.pageX;
+    }
+
+    if (currentMousePosition === 0) {
+      return;
+    }
+
+    const offset = currentMousePosition - this.mousePosition;
+    let newPosition = this.initialPointerPosition + offset;
+
+    if (newPosition < -26) {
+      newPosition = -26;
+    }
+    if (
+      newPosition >
+      this.pointer.nativeElement.parentElement.offsetWidth - 26
+    ) {
+      newPosition = this.pointer.nativeElement.parentElement.offsetWidth - 26;
+    }
+    this.pointer.nativeElement.style.left = newPosition + "px";
+
+    var leftPercent =
+      ((newPosition + 26) * 100) /
+      this.pointer.nativeElement.parentElement.offsetWidth;
+
+    var inputValue = (leftPercent * 11250) / 100 + 750;
+
+    this.input1.nativeElement.value = parseInt(inputValue.toString(), 10);
+
+    this.doCalculation(this.input1.nativeElement.value);
   }
 }

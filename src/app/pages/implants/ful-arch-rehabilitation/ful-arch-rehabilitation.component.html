@@ -1,1 +1,199 @@
-<p>ful-arch-rehabilitation works!</p>
+<div class="color-white margin-top-7 relative-container">
+  <img
+    class="absolute-container full-height"
+    style="max-width: unset; right: 0"
+    src="../../../../assets/implants/FullArch/Bitmap.png"
+  />
+  <div
+    class="absolute-container full-height"
+    style="width: 100%; height: 100%"
+  ></div>
+  <div
+    class="center-text background-19 relative-container padding-chef padding-top-bottom-1"
+    style="top: 0"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <div class="width-1">
+      <img src="../../../assets/WhiteShape.svg" />
+    </div>
+    <div class="libre-regular font-large margin-bottom-10">
+      <p>
+        Having no teeth is a<br />
+        disability
+      </p>
+    </div>
+    <div class="font-medium padding-chef roboto-regular margin-bottom-10">
+      <p>
+        A lot of us think that being disable means you’re missing a leg, or an
+        arm, however having no teeth at all is also a severe form of disability.
+        Teeth are extremely important for our eating and speaking capabilities.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="flexy-column cccc color-brown background-1 relative-container hide-on-phone"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div #toothContainer class="flexy-row ssss">
+      <div
+        class="gel flex-1 margin-bottom-on-sm absolute-container"
+        style="width: 50vw; z-index: 1"
+      >
+        <img
+          #toothImage
+          (load)="toothLoaded()"
+          src="../../../../assets/implants/FullArch/tooth.png"
+        />
+      </div>
+      <div style="width: 50vw"></div>
+      <div
+        class="tooth-text-container ssss margin-bottom-on-sm relative-container"
+        fxLayout="column"
+      >
+        <div class="tooth-line absolute-container">
+          <img
+            loading="lazy"
+            src="../../../../assets/implants/FullArch/LineBrown.svg"
+          />
+        </div>
+        <div class="tooth-text roboto-medium font-medium">
+          <p class="left-text">
+            Being able to restore such an important part of our body can have an
+            amazing impact in the lives of our patients, not only physically but
+            also mentally.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="flexy-column cccc color-brown background-1 relative-container hide-on-tablet hide-on-big"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-column ssss">
+      <div
+        class="gel flex-1 margin-bottom-on-sm"
+        style="width: 80vw; z-index: 1"
+      >
+        <img src="../../../../assets/implants/FullArch/tooth.png" />
+      </div>
+      <div
+        class="padding-chef ssss margin-bottom-on-sm relative-container"
+        fxLayout="column"
+      >
+        <div class="roboto-medium font-medium">
+          <p class="center-text">
+            Being able to restore such an important part of our body can have an
+            amazing impact in the lives of our patients, not only physically but
+            also mentally.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  #ErwContainer
+  class="color-brown background-44 relative-container"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div
+    class="padding-chef-left-right-on-sm full-width padding-chef padding-top-3"
+    style="padding-bottom: 20vw"
+    fxLayout="column"
+  >
+    <div class="no-padding-on-sm flexy-row-w sscc padding-top-3">
+      <div
+        class="flex-1 no-margin-on-sm absolute-container hide-on-phone"
+        style="left: 0; top: 0"
+      >
+        <img
+          #ErwImg
+          loading="lazy"
+          style="object-position: -200px; max-width: unset"
+          src="../../../../assets/implants/FullArch/erwin.png"
+          (load)="erwImgLoad()"
+        />
+      </div>
+      <div
+        class="margin-right-1 flex-1 sscc relative-container"
+        fxLayout="column"
+        style="max-width: 480px"
+      >
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p>
+            Come on in, let’s<br />
+            talk about it
+          </p>
+        </div>
+        <div class="roboto-regular font-medium margin-bottom-1">
+          <p class="center-text-on-sm">
+            Disabilities have an enormous impact in a person’s state of mind and
+            we completely understand that making the decision to talk about it
+            can be one of he hardest things, whether it’s due to embarrassment
+            or just being lost and not knowing what to do.<br /><br />
+            <span class="roboto-bold">
+              Our team is here to help, and we do care.<br />
+              Let’s talk.
+            </span>
+          </p>
+        </div>
+        <button
+          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+            )
+          "
+        >
+          BOOK YOUR FREE IMPLANT ASSESSMENT
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="color-brown background-1 padding-chef padding-top-bottom-1"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div class="flex-1 cccc" fxLayout="column">
+    <div class="font-dog libre-regular margin-bottom-1">
+      <p>The Journey, explained</p>
+    </div>
+    <div
+      class="roboto-regular font-medium margin-bottom-1"
+      style="max-width: 80%"
+    >
+      <p class="center-text">
+        The journey to a full mouth of teeth is a complex one but the rewards
+        are just as intense and worthwhile. Here we use almost all resources
+        available in Dentistry to get the job done. From a full suite of digital
+        imaging and software planning to fully milled and incredibly realistic
+        Zirconium prosthesis and everything in between, all to reclaim what you
+        lost.
+        <span class="roboto-medium"
+          >The video below will explain how it’s done, if you’re the curious
+          type.</span
+        >
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <video class="full-width" preload="auto" muted #biocareVideo loop>
+    <source
+      src="../../../../assets/implants/FullArch/biocare.mp4"
+      type="video/mp4"
+    />
+  </video>
+</div>

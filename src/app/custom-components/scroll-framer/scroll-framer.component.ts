@@ -30,6 +30,16 @@ export class ScrollFramerComponent implements OnInit {
     this.start();
   }
 
+  createImageBitmap2 = async function (blob) {
+    return new Promise((resolve, reject) => {
+      let img = document.createElement("img");
+      img.addEventListener("load", function () {
+        resolve(this);
+      });
+      img.src = URL.createObjectURL(blob);
+    });
+  };
+
   async start() {
     const videoContainer = document.querySelector("#ScrollFramerContainer");
     const animationContainer = document.querySelector(
@@ -81,9 +91,13 @@ export class ScrollFramerComponent implements OnInit {
             res
               .blob()
               .then((blob) =>
-                createImageBitmap(blob).then((bitmap) =>
-                  bitmaps.push({ id: index, bitmap: bitmap })
-                )
+                "createImageBitmap" in window
+                  ? createImageBitmap(blob).then((bitmap) =>
+                      bitmaps.push({ id: index, bitmap: bitmap })
+                    )
+                  : this.createImageBitmap2(blob).then((bitmap) =>
+                      bitmaps.push({ id: index, bitmap: bitmap })
+                    )
               )
           )
         );

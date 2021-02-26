@@ -85,6 +85,11 @@
     </button>
   </div>
 </mat-menu>
+<mat-menu class="deposit-menu" #depositMini="matMenu">
+  <button (click)="onDepositClick(20)" mat-menu-item>20%</button>
+  <button (click)="onDepositClick(25)" mat-menu-item>25%</button>
+  <button (click)="onDepositClick(30)" mat-menu-item>30%</button>
+</mat-menu>
 <div>
   <div
     class="header"
@@ -750,6 +755,571 @@
         </div>
         <div class="center-text roboto-bold color-gray-dark font-extra-small-2">
           <p>Payment<br />Plans</p>
+        </div>
+      </div>
+
+      <div
+        #CalculatorOverlay
+        class=""
+        style="
+          cursor: default;
+          position: fixed;
+          top: 15%;
+          right: 7%;
+          width: 500px;
+          height: 600px;
+          display: none;
+        "
+      >
+        <div>
+          <img src="../../assets/header/box.svg" />
+        </div>
+
+        <div
+          class="absolute-container"
+          style="
+            top: 20px;
+            right: 40px;
+            width: 20px;
+            cursor: pointer;
+            z-index: 51;
+          "
+          (click)="onCalculatorCancel()"
+        >
+          <img src="../../assets/header/cancel.svg" />
+        </div>
+
+        <div
+          class="color-brown absolute-container"
+          style="top: 0; padding: 1vw"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div fxLayout="column" fxLayoutAlign="center center">
+            <div class="flexy-row-w sscc">
+              <div class="flex-1 sscc" fxLayout="column">
+                <div
+                  class="width-1"
+                  style="align-self: center; margin-bottom: 1vw"
+                >
+                  <img src="../../assets/GrayShape.svg" />
+                </div>
+                <div
+                  class="roboto-medium color-gray-dark font-extra-small margin-bottom-7 flexy-row"
+                >
+                  <div>
+                    <img
+                      loading="lazy"
+                      src="../../../assets/SmileasyPaymentPlan/Calculator1.svg"
+                    />
+                  </div>
+                  <p style="margin-left: 10px">TREATMENT AMOUNT</p>
+                </div>
+                <div class="input-1 margin-bottom-7">
+                  <div class="amount">
+                    <input
+                      #input1Mini
+                      (input)="oninput1Mini()"
+                      (focusout)="onInput1FocusOutMini()"
+                      class="color-brown roboto-medium"
+                      type="number"
+                    />
+                  </div>
+                  <div class="sign">
+                    <p class="roboto-medium color-white">$</p>
+                  </div>
+                </div>
+                <div
+                  class="slider flexy-row full-width color-gray-dark roboto-regular font-extra-small"
+                  style="margin-bottom: calc(30px + 2vw)"
+                >
+                  <div class="left-value">
+                    <p>$750</p>
+                  </div>
+                  <div class="steps flexy-row relative-container">
+                    <div
+                      #pointerMini
+                      class="pointer absolute-container"
+                      (mousedown)="onDragStartMini($event)"
+                      (touchstart)="onDragStartMini($event)"
+                    >
+                      <img
+                        style="width: 35px"
+                        loading="lazy"
+                        draggable="false"
+                        (dragstart)="onImageDragStartMini($event)"
+                        src="../../../assets/SmileasyPaymentPlan/Pointer.svg"
+                      />
+                    </div>
+                    <div class="big-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="big-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="big-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="big-step">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="big-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="small-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/SmallStep.svg"
+                      />
+                    </div>
+                    <div class="big-step hide-on-phone">
+                      <img
+                        loading="lazy"
+                        src="../../../assets/SmileasyPaymentPlan/BigStep.svg"
+                      />
+                    </div>
+                  </div>
+                  <div class="right-value">
+                    <p>$12000</p>
+                  </div>
+                </div>
+                <div class="flexy-row-w sscc">
+                  <div
+                    class="flexy-column sscc margin-right-2 margin-bottom-on-sm no-margin-right-on-sm"
+                  >
+                    <div
+                      class="roboto-medium color-gray-dark font-extra-small margin-bottom-7 flexy-row"
+                      style="min-height: 24px"
+                    >
+                      <div>
+                        <img
+                          loading="lazy"
+                          src="../../../assets/SmileasyPaymentPlan/Calculator2.svg"
+                        />
+                      </div>
+                      <p style="margin-left: 10px">DEPOSIT OF</p>
+                    </div>
+                    <div
+                      class="input-1 cursor-pointer amount"
+                      [matMenuTriggerFor]="depositMini"
+                      style="width: 100px"
+                    >
+                      <input
+                        #input2Mini
+                        disabled
+                        class="color-brown roboto-medium cursor-pointer"
+                        type="text"
+                        style="width: 60px"
+                      />
+                      <div class="sign">
+                        <img
+                          loading="lazy"
+                          src="../../../assets/SmileasyPaymentPlan/DownArrow.svg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flexy-column sscc">
+                    <div
+                      class="roboto-medium color-gray-dark font-extra-small margin-bottom-7 flexy-row"
+                      style="min-height: 24px"
+                    >
+                      <p style="margin-left: 10px">DEPOSIT AMOUNT</p>
+                    </div>
+                    <div class="input-1" style="background: #ebebeb80">
+                      <div class="amount">
+                        <input
+                          #input3Mini
+                          disabled
+                          class="color-brown roboto-medium"
+                          type="number"
+                        />
+                      </div>
+                      <div class="sign">
+                        <p class="roboto-medium color-white">$</p>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    id="MiniCalculate"
+                    class="calculate color-white roboto-regular font-extra-small-2 cursor-pointer"
+                    style="align-self: flex-end"
+                    (click)="calculatorClick()"
+                  >
+                    CALCULATE
+                  </button>
+                </div>
+
+                <div
+                  class="line-2 opacity-2 full-width margin-top-bottom-2"
+                ></div>
+
+                <div class="flexy-row-w sscc">
+                  <div
+                    class="flexy-column no-margin-right-on-sm margin-bottom-on-sm sscc"
+                  >
+                    <div class="flexy-row">
+                      <div style="margin-bottom: 8px; margin-right: 8px">
+                        <img
+                          loading="lazy"
+                          src="../../../assets/SmileasyPaymentPlan/monthly.svg"
+                        />
+                      </div>
+                      <div
+                        class="roboto-medium font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+                      >
+                        <p>MONTHLY PAYMENTS</p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="margin-bottom-8 roboto-regular color-orange font-small-4"
+                    >
+                      <p class="center-text-on-sm">
+                        <span class="roboto-bold">20</span> monthly payments<br />
+                        of
+                        <span class="roboto-bold">${{ monthly }}</span>
+                      </p>
+                    </div>
+                    <button
+                      class="book1 color-white roboto-regular font-extra-small-2 cursor-pointer"
+                      (click)="
+                        goToLink(
+                          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+                        )
+                      "
+                    >
+                      INSTANT ONLINE BOOKING
+                    </button>
+                  </div>
+                  <div
+                    class="flexy-column cccc hide-on-sm"
+                    style="margin-right: 1vw; margin-left: 1vw"
+                  >
+                    <div
+                      class="roboto-medium font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+                    >
+                      <p>OR</p>
+                    </div>
+                  </div>
+                  <div class="flexy-column sscc">
+                    <div class="flexy-row">
+                      <div style="margin-bottom: 8px; margin-right: 8px">
+                        <img
+                          loading="lazy"
+                          src="../../../assets/SmileasyPaymentPlan/weekly.svg"
+                        />
+                      </div>
+                      <div
+                        class="roboto-medium font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+                      >
+                        <p>WEEKLY PAYMENTS</p>
+                      </div>
+                    </div>
+
+                    <div
+                      class="margin-bottom-8 roboto-regular color-green-pale font-small-4"
+                    >
+                      <p class="center-text-on-sm">
+                        <span class="roboto-bold">80</span> weekly payments<br />
+                        of
+                        <span class="roboto-bold">${{ weekly }}</span>
+                      </p>
+                    </div>
+                    <button
+                      class="book2 color-white roboto-regular font-extra-small-2 cursor-pointer"
+                      (click)="
+                        goToLink(
+                          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+                        )
+                      "
+                    >
+                      INSTANT ONLINE BOOKING
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

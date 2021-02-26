@@ -6,6 +6,7 @@ import {
   ViewChild
 } from "@angular/core";
 import { Router } from "@angular/router";
+import { SharedService } from "src/app/shared/shared-service";
 
 @Component({
   selector: "app-general-and-preventive-care",
@@ -17,7 +18,7 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
 
   id: number;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sharedService: SharedService) {}
 
   ngOnInit(): void {}
 
@@ -57,5 +58,7 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
     this.router.navigate(["/", "payment-page-component"]);
   }
 
-  maximize() {}
+  maximize(ev) {
+    this.sharedService.sendClickEvent(ev);
+  }
 }

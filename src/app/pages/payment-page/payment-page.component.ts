@@ -92,7 +92,6 @@ export class PaymentPageComponent implements OnInit {
   }
 
   preventBehavior(e) {
-    console.log(this.pointerGrabbed);
     if (this.pointerGrabbed) {
       e.preventDefault();
     }

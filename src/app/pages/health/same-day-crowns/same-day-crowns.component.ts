@@ -16,6 +16,7 @@ export class SameDayCrownsComponent implements OnInit {
   @ViewChild("cerec") cerecVideo: ElementRef;
   @ViewChild("bridgeVideo") bridgeVideo: ElementRef;
   @ViewChild("marylandVideo") marylandVideo: ElementRef;
+  @ViewChild("bridgeMask") bridgeMask: ElementRef;
 
   constructor(private router: Router) {}
 
@@ -28,7 +29,14 @@ export class SameDayCrownsComponent implements OnInit {
     this.marylandVideo.nativeElement.style.display = "block";
     this.cerecVideo.nativeElement.muted = true;
     this.cerecVideo.nativeElement.style.display = "none";
-    this.cerecVideo.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
+
+    if (
+      typeof this.cerecVideo.nativeElement.onfullscreenchange != "undefined"
+    ) {
+      this.cerecVideo.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
+    } else {
+      this.cerecVideo.nativeElement.onwebkitfullscreenchange = this.fullscreenChangeHandler;
+    }
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
@@ -51,6 +59,16 @@ export class SameDayCrownsComponent implements OnInit {
       if (!this.marylandVideo.nativeElement.paused) {
         this.marylandVideo.nativeElement.pause();
       }
+    }
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    if (this.bridgeVideo) {
+      this.bridgeMask.nativeElement.style.height =
+        this.bridgeVideo.nativeElement.getBoundingClientRect().height -
+        22 +
+        "px";
     }
   }
 
@@ -80,7 +98,15 @@ export class SameDayCrownsComponent implements OnInit {
     let video = this.cerecVideo.nativeElement;
     video.style.display = "block";
     video.setAttribute("controls", "controls");
-    video.requestFullscreen();
+
+    if (
+      typeof document.exitFullscreen != "undefined" &&
+      document.fullscreenEnabled === true
+    ) {
+      video.requestFullscreen();
+    } else {
+      video.webkitRequestFullScreen();
+    }
     video.play();
   }
 
@@ -89,5 +115,11 @@ export class SameDayCrownsComponent implements OnInit {
   }
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+
+  bridgeLoaded() {
+    this.bridgeMask.nativeElement.style.display = "block";
+    this.bridgeMask.nativeElement.style.height =
+      this.bridgeVideo.nativeElement.getBoundingClientRect().height - 22 + "px";
   }
 }

@@ -1,0 +1,30 @@
+:host {
+  .box {
+    box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.36);
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+  }
+  .vertical-line-1 {
+    opacity: 0.2;
+    height: 150px;
+    width: 2px;
+    background-color: #a7958a;
+  }
+  @media only screen and (min-width: 1201px) {
+    .box {
+      width: 60vw;
+    }
+  }
+  @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .box {
+      width: 80vw;
+    }
+  }
+
+  @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .box {
+      width: 90vw;
+    }
+  }
+}

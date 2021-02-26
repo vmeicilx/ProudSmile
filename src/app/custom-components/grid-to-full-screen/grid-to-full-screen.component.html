@@ -1,0 +1,28 @@
+<div #shaderEffectItemContainer class="shader-effect"></div>
+<div #shaderEffectItemsWrapper>
+  <img
+    #shaderEffectItem
+    (mousedown)="onThumbMouseDown($event)"
+    src="../../../../assets/healthPage/GeneralAndPreventive/teeth.png"
+  />
+  <img
+    class="full-image"
+    #shaderEffectItemFull
+    src="../../../../assets/healthPage/GeneralAndPreventive/WhiteFillingsFull.png"
+  />
+</div>
+
+<div class="fullview">
+  <button
+    class="fullview__close"
+    #backToGrid
+    (click)="onBackToGridClick()"
+    aria-label="Close preview"
+  >
+    <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+      <path
+        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+      />
+    </svg>
+  </button>
+</div>
