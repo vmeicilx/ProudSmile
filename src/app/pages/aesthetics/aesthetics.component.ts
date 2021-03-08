@@ -8,4 +8,8 @@ export class AestheticsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onCalculatorCancel() {
+    //this.calculatorOverlay.nativeElement.style.display = "none";
+  }
 }

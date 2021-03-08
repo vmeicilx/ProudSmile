@@ -45,7 +45,7 @@
     </button>
     <button
       class="fix-text-1 roboto-medium"
-      (click)="onMenuItemClick('aesthetics-component')"
+      (click)="onMenuItemClick('PorcelainVeneers')"
     >
       <p>Aesthetics</p>
     </button>
@@ -225,7 +225,7 @@
           </button>
           <button
             class="font-extra-small roboto-medium"
-            (click)="onMenuItemClick('aesthetics-component')"
+            (click)="onMenuItemClick('PorcelainVeneers')"
           >
             <p #AestheticsText>Aesthetics</p>
           </button>
@@ -706,6 +706,135 @@
         <p>
           Implant<br />
           Dentures
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="!isAesthetics" #aesthetics>
+  <div
+    class="subHeader font-extra-small roboto-medium color-brown"
+    (mouseleave)="subheadermouseLeave()"
+    fxFlexLayout
+    fxLayoutAlign="center center"
+  >
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="end center"
+      (click)="onClick($event, 'PorcelainVeneers')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Porcelain<br />
+          Veneers
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="center center"
+      (click)="onClick($event, 'UltraThinVeneers')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Ultra Thin<br />
+          Veneers
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'SameDayVeneers')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Same Day<br />
+          Veneers
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'InvisalignVeneer')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Invisaling + Veneer<br />
+          package
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="1 1 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'ZoomWhitening')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Zoom<br />
+          Whitening
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height"
+      fxLayout
+      fxFlex="3 3 auto"
+      fxLayoutAlign="start center"
+      (click)="onClick($event, 'FaceSpaFacialAesthetics')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          FaceSpa Facial<br />
+          Aesthetics
         </p>
       </div>
     </div>

@@ -26,6 +26,12 @@ import { SpecialsComponent } from "./pages/specials/specials.component";
 import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
 import { FulArchRehabilitationComponent } from "./pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component";
 import { ImplantDenturesComponent } from "./pages/implants/implant-dentures/implant-dentures.component";
+import { PorcelainVeneersComponent } from "./pages/aesthetics/porcelain-veneers/porcelain-veneers.component";
+import { UltraThinVeneersComponent } from "./pages/aesthetics/ultra-thin-veneers/ultra-thin-veneers.component";
+import { SameDayVeneersComponent } from "./pages/aesthetics/same-day-veneers/same-day-veneers.component";
+import { InvisalignVeneerComponent } from "./pages/aesthetics/invisalign-veneer/invisalign-veneer.component";
+import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-whitening.component";
+import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -56,6 +62,12 @@ const routes: Routes = [
   { path: "SingleTooth", component: SingleToothComponent },
   { path: "FullArchRehabilitation", component: FulArchRehabilitationComponent },
   { path: "ImplantDentures", component: ImplantDenturesComponent },
+  { path: "PorcelainVeneers", component: PorcelainVeneersComponent },
+  { path: "UltraThinVeneers", component: UltraThinVeneersComponent },
+  { path: "SameDayVeneers", component: SameDayVeneersComponent },
+  { path: "InvisalignVeneer", component: InvisalignVeneerComponent },
+  { path: "ZoomWhitening", component: ZoomWhiteningComponent },
+  { path: "FaceSpaFacialAesthetics", component: FacespaFacialComponent },
   { path: "Specials", component: SpecialsComponent },
   { path: "coming-soon-component", component: ComingSoonComponent },
   { path: "payment-page-component", component: PaymentPageComponent },

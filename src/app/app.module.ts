@@ -46,14 +46,20 @@ import { VgCoreModule } from "@videogular/ngx-videogular/core";
 import { VgControlsModule } from "@videogular/ngx-videogular/controls";
 import { VgOverlayPlayModule } from "@videogular/ngx-videogular/overlay-play";
 import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
-import { ImplantsComponent } from './pages/implants/implants.component';
-import { SpecialsComponent } from './pages/specials/specials.component';
-import { DropdownComponent } from './custom-components/dropdown/dropdown.component';
-import { SingleToothComponent } from './pages/implants/single-tooth/single-tooth.component';
-import { ScrollFramerComponent } from './custom-components/scroll-framer/scroll-framer.component';
-import { FulArchRehabilitationComponent } from './pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component';
-import { ImplantDenturesComponent } from './pages/implants/implant-dentures/implant-dentures.component';
-import { GridToFullScreenComponent } from './custom-components/grid-to-full-screen/grid-to-full-screen.component';
+import { ImplantsComponent } from "./pages/implants/implants.component";
+import { SpecialsComponent } from "./pages/specials/specials.component";
+import { DropdownComponent } from "./custom-components/dropdown/dropdown.component";
+import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
+import { ScrollFramerComponent } from "./custom-components/scroll-framer/scroll-framer.component";
+import { FulArchRehabilitationComponent } from "./pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component";
+import { ImplantDenturesComponent } from "./pages/implants/implant-dentures/implant-dentures.component";
+import { GridToFullScreenComponent } from "./custom-components/grid-to-full-screen/grid-to-full-screen.component";
+import { PorcelainVeneersComponent } from './pages/aesthetics/porcelain-veneers/porcelain-veneers.component';
+import { UltraThinVeneersComponent } from './pages/aesthetics/ultra-thin-veneers/ultra-thin-veneers.component';
+import { SameDayVeneersComponent } from './pages/aesthetics/same-day-veneers/same-day-veneers.component';
+import { InvisalignVeneerComponent } from './pages/aesthetics/invisalign-veneer/invisalign-veneer.component';
+import { ZoomWhiteningComponent } from './pages/aesthetics/zoom-whitening/zoom-whitening.component';
+import { FacespaFacialComponent } from './pages/aesthetics/facespa-facial/facespa-facial.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +100,13 @@ import { GridToFullScreenComponent } from './custom-components/grid-to-full-scre
     ScrollFramerComponent,
     FulArchRehabilitationComponent,
     ImplantDenturesComponent,
-    GridToFullScreenComponent
+    GridToFullScreenComponent,
+    PorcelainVeneersComponent,
+    UltraThinVeneersComponent,
+    SameDayVeneersComponent,
+    InvisalignVeneerComponent,
+    ZoomWhiteningComponent,
+    FacespaFacialComponent
   ],
   imports: [
     BrowserModule,

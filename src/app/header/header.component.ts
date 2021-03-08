@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
   isWhyProudSmile: boolean = false;
   isHealth: boolean = false;
   isImplants: boolean = false;
+  isAesthetics: boolean = false;
   horizontalPosition: MatSnackBarHorizontalPosition = "center";
   verticalPosition: MatSnackBarVerticalPosition = "top";
   scheduleText: string;
@@ -37,6 +38,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild("implants") implantsSubheader: ElementRef;
   @ViewChild("health1Subheader") health1Subheader: ElementRef;
   @ViewChild("health2Subheader") health2Subheader: ElementRef;
+  @ViewChild("aesthetics") aestheticsSubheader: ElementRef;
   @ViewChild("WhyProudSmileText") whyProudSmileText: ElementRef;
   @ViewChild("HealthText") healthText: ElementRef;
   @ViewChild("AestheticsText") aestheticsText: ElementRef;
@@ -82,6 +84,14 @@ export class HeaderComponent implements OnInit {
           val.url === "/SingleTooth" ||
           val.url === "/FullArchRehabilitation" ||
           val.url === "/ImplantDentures";
+
+        this.isAesthetics =
+          val.url === "/PorcelainVeneers" ||
+          val.url === "/UltraThinVeneers" ||
+          val.url === "/SameDayVeneers" ||
+          val.url === "/InvisalignVeneer" ||
+          val.url === "/ZoomWhitening" ||
+          val.url === "/FaceSpaFacialAesthetics";
 
         this.isHealth =
           val.url === "/AnxiousPatients" ||
@@ -129,6 +139,31 @@ export class HeaderComponent implements OnInit {
         }
         if (val.url === "/ImplantDentures") {
           this.setActiveSubheader4(2);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+
+        if (val.url === "/PorcelainVeneers") {
+          this.setActiveSubheader5(0);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/UltraThinVeneers") {
+          this.setActiveSubheader5(1);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/SameDayVeneers") {
+          this.setActiveSubheader5(2);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/InvisalignVeneer") {
+          this.setActiveSubheader5(3);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/ZoomWhitening") {
+          this.setActiveSubheader5(4);
+          this.implantsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/FaceSpaFacialAesthetics") {
+          this.setActiveSubheader5(5);
           this.implantsText.nativeElement.classList.add("active-text");
         }
 
@@ -297,6 +332,21 @@ export class HeaderComponent implements OnInit {
     ].classList.add("active");
   }
 
+  setActiveSubheader5(index: number) {
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[7].children[0].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[7].children[0].children[
+        i
+      ].classList.remove("active");
+    }
+    this.elRef.nativeElement.children[7].children[0].children[
+      index
+    ].classList.add("active");
+  }
+
   ngOnInit(): void {
     var today = new Date();
     var day = today.getDay();
@@ -352,6 +402,9 @@ export class HeaderComponent implements OnInit {
     this.implantsSubheader.nativeElement.children[0].classList.add(
       "fixed-position"
     );
+    this.aestheticsSubheader.nativeElement.children[0].classList.add(
+      "fixed-position"
+    );
     this.health1Subheader.nativeElement.classList.add("fixed-health-position");
     this.health2Subheader.nativeElement.classList.add("fixed-health-position");
     this.health2Subheader.nativeElement.classList.add("health2-fixed-position");
@@ -370,6 +423,9 @@ export class HeaderComponent implements OnInit {
       "fixed-position"
     );
     this.implantsSubheader.nativeElement.children[0].classList.remove(
+      "fixed-position"
+    );
+    this.aestheticsSubheader.nativeElement.children[0].classList.remove(
       "fixed-position"
     );
     this.health1Subheader.nativeElement.classList.remove(

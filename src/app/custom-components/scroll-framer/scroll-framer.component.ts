@@ -1,9 +1,11 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   Input,
   OnInit,
+  Output,
   ViewChild
 } from "@angular/core";
 
@@ -16,8 +18,12 @@ export class ScrollFramerComponent implements OnInit {
   @Input() urlPattern: string;
   @Input() animationFactor: number;
   @Input() numberOfFrames: number;
+  @Input() padding: number;
+  @Input() specialView: boolean;
+  @Output() onFramesLoaded: EventEmitter<any> = new EventEmitter();
   @ViewChild("scrollFramer") scrollFramer: ElementRef;
   @ViewChild("scrollFramerContainer") scrollFramerContainer: ElementRef;
+  @ViewChild("animation") animation: ElementRef;
 
   observable: any;
   observer: any;
@@ -41,23 +47,32 @@ export class ScrollFramerComponent implements OnInit {
   };
 
   async start() {
-    const videoContainer = document.querySelector("#ScrollFramerContainer");
+    const videoContainer = document.querySelector(
+      "#ScrollFramerContainer"
+    ) as HTMLElement;
+    if (this.specialView) {
+      videoContainer.style.position = "fixed";
+      videoContainer.style.zIndex = "100";
+    } else {
+      videoContainer.style.position = "relative";
+    }
     const animationContainer = document.querySelector(
       "#AnimationContainer"
     ) as HTMLElement;
 
-    const frames = await this.FrameUnpacker.unpack({
+    let frames = await this.FrameUnpacker.unpack({
       urlPattern: this.urlPattern,
       start: 1,
       end: this.numberOfFrames,
-      padding: 0
+      padding: this.padding
     });
 
     const canvas = document.createElement("canvas");
     canvas.classList.add("scroll-framer-canvas");
     canvas.height = frames[0].height;
     canvas.width = frames[0].width;
-    canvas.style.maxWidth = "100vw";
+    //canvas.style.maxWidth = "100vw";
+    canvas.style.width = "100vw";
     const context = canvas.getContext("2d");
     context.drawImage(frames[0], 0, 0);
 
@@ -66,9 +81,25 @@ export class ScrollFramerComponent implements OnInit {
 
     this.observer = this.CanvasFrameScrubber.create(context, frames);
 
-    this.observable = new ScrollObservable();
+    this.observable = new ScrollObservable(this.specialView);
 
     this.observable.subscribe(this.observer);
+    this.onFramesLoaded.emit();
+
+    // while (frames.length < this.numberOfFrames) {
+    //   let end = frames.length + this.magicNumber;
+    //   if (end > this.numberOfFrames) {
+    //     end = this.numberOfFrames;
+    //   }
+    //   const f = await this.FrameUnpacker.unpack({
+    //     urlPattern: this.urlPattern,
+    //     start: frames.length + 1,
+    //     end: end,
+    //     padding: this.padding
+    //   });
+    //   frames = frames.concat(f);
+    //   this.CanvasFrameScrubber.update(f);
+    // }
   }
 
   FrameUnpacker = (() => {
@@ -126,24 +157,26 @@ export class ScrollFramerComponent implements OnInit {
   })();
 
   CanvasFrameScrubber = (() => {
+    let scrubberFrames;
     const create = (context, frames) => {
+      scrubberFrames = frames;
       let currentFrame = 0;
 
       const observer = {
         next: (percentage) => {
           const frameIndex = Math.floor(
-            (percentage * (frames.length - 1)) / 100
+            (percentage * (scrubberFrames.length - 1)) / 100
           );
 
           if (
             currentFrame === frameIndex ||
-            frameIndex >= frames.length ||
+            frameIndex >= scrubberFrames.length ||
             frameIndex < 0
           )
             return;
 
           window.requestAnimationFrame(() => {
-            context.drawImage(frames[frameIndex], 0, 0);
+            context.drawImage(scrubberFrames[frameIndex], 0, 0);
           });
         }
       };
@@ -151,13 +184,17 @@ export class ScrollFramerComponent implements OnInit {
       return observer;
     };
 
+    const update = (f) => {
+      scrubberFrames = scrubberFrames.concat(f);
+    };
     return {
-      create: create
+      create: create,
+      update: update
     };
   })();
 }
 
-function ScrollObservable() {
+function ScrollObservable(specialView) {
   this._observers = [];
   const videoContainer = document.querySelector("#ScrollFramerContainer");
 
@@ -168,7 +205,7 @@ function ScrollObservable() {
     inProgress = true;
 
     window.requestAnimationFrame(() => {
-      this._process(videoContainer);
+      this._process(videoContainer, specialView);
 
       inProgress = false;
     });
@@ -177,7 +214,7 @@ function ScrollObservable() {
   window.addEventListener("scroll", handler);
 }
 
-ScrollObservable.prototype._process = function (videoContainer) {
+ScrollObservable.prototype._process = function (videoContainer, specialView) {
   const viewportHeight = document.documentElement.clientHeight;
   const documentHeight = document.body.clientHeight;
   let scrolled = Math.max(
@@ -192,7 +229,12 @@ ScrollObservable.prototype._process = function (videoContainer) {
   let videoRect = videoContainer.getBoundingClientRect();
 
   if (parentRect.bottom < viewportHeight) {
-    videoContainer.style.position = "absolute";
+    //videoContainer.style.position = "absolute";
+    if (specialView) {
+      videoContainer.style.position = "fixed";
+    } else {
+      videoContainer.style.position = "relative";
+    }
     videoContainer.style.bottom = 0;
     videoContainer.style.top = "unset";
     scrolled = 0;
@@ -200,7 +242,12 @@ ScrollObservable.prototype._process = function (videoContainer) {
     parentRect.bottom - animationRect.height + videoRect.height >
     viewportHeight
   ) {
-    videoContainer.style.position = "absolute";
+    //videoContainer.style.position = "absolute";
+    if (specialView) {
+      videoContainer.style.position = "fixed";
+    } else {
+      videoContainer.style.position = "relative";
+    }
     videoContainer.style.bottom = "unset";
     videoContainer.style.top = 0;
     scrolled = 0;
