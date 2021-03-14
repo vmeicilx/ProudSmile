@@ -13,7 +13,6 @@ import {
 })
 export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("LoadingText") loadingText: ElementRef;
-  @ViewChild("ExploreButton") exploreButton: ElementRef;
   @ViewChild("PorcelainVeneers") porcelainVeneers: ElementRef;
   @ViewChild("VeneersContent") veneersContent: ElementRef;
 
@@ -21,17 +20,9 @@ export class PorcelainVeneersComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  explore() {
-    this.porcelainVeneers.nativeElement.style.display = "block";
-  }
-
   showExploreButton() {
     this.loadingText.nativeElement.style.display = "none";
-    this.exploreButton.nativeElement.style.display = "block";
-  }
-
-  onPresentationCancel() {
-    this.porcelainVeneers.nativeElement.style.display = "none";
+    this.porcelainVeneers.nativeElement.style.display = "block";
   }
 
   goToLink(url: string) {

@@ -19,14 +19,15 @@ export class ScrollFramerComponent implements OnInit {
   @Input() animationFactor: number;
   @Input() numberOfFrames: number;
   @Input() padding: number;
-  @Input() specialView: boolean;
+  @Input() topScroll: boolean;
   @Output() onFramesLoaded: EventEmitter<any> = new EventEmitter();
   @ViewChild("scrollFramer") scrollFramer: ElementRef;
   @ViewChild("scrollFramerContainer") scrollFramerContainer: ElementRef;
   @ViewChild("animation") animation: ElementRef;
 
-  observable: any;
   observer: any;
+
+  _observers;
 
   constructor() {}
 
@@ -34,6 +35,11 @@ export class ScrollFramerComponent implements OnInit {
 
   ngAfterViewInit() {
     this.start();
+  }
+
+  ngOnDestroy(): void {
+    this._observers = [];
+    this.observer = null;
   }
 
   createImageBitmap2 = async function (blob) {
@@ -47,18 +53,15 @@ export class ScrollFramerComponent implements OnInit {
   };
 
   async start() {
-    const videoContainer = document.querySelector(
-      "#ScrollFramerContainer"
-    ) as HTMLElement;
-    if (this.specialView) {
-      videoContainer.style.position = "fixed";
-      videoContainer.style.zIndex = "100";
-    } else {
-      videoContainer.style.position = "relative";
-    }
-    const animationContainer = document.querySelector(
-      "#AnimationContainer"
-    ) as HTMLElement;
+    // const videoContainer = document.querySelector(
+    //   "#ScrollFramerContainer"
+    // ) as HTMLElement;
+    const videoContainer = this.scrollFramerContainer.nativeElement;
+
+    // const animationContainer = document.querySelector(
+    //   "#AnimationContainer"
+    // ) as HTMLElement;
+    const animationContainer = this.animation.nativeElement;
 
     let frames = await this.FrameUnpacker.unpack({
       urlPattern: this.urlPattern,
@@ -71,8 +74,15 @@ export class ScrollFramerComponent implements OnInit {
     canvas.classList.add("scroll-framer-canvas");
     canvas.height = frames[0].height;
     canvas.width = frames[0].width;
-    //canvas.style.maxWidth = "100vw";
-    canvas.style.width = "100vw";
+    canvas.style.maxWidth = "100vw";
+    if (this.topScroll) {
+      canvas.style.width = "52vw";
+    }
+    if (this.topScroll) {
+      videoContainer.style.background = "black";
+      videoContainer.style.paddingTop = "20px";
+      videoContainer.style.paddingBottom = "20px";
+    }
     const context = canvas.getContext("2d");
     context.drawImage(frames[0], 0, 0);
 
@@ -81,9 +91,9 @@ export class ScrollFramerComponent implements OnInit {
 
     this.observer = this.CanvasFrameScrubber.create(context, frames);
 
-    this.observable = new ScrollObservable(this.specialView);
+    this.ScrollObservable(this.topScroll);
 
-    this.observable.subscribe(this.observer);
+    this.subscribe(this.observer);
     this.onFramesLoaded.emit();
 
     // while (frames.length < this.numberOfFrames) {
@@ -157,131 +167,241 @@ export class ScrollFramerComponent implements OnInit {
   })();
 
   CanvasFrameScrubber = (() => {
-    let scrubberFrames;
     const create = (context, frames) => {
-      scrubberFrames = frames;
       let currentFrame = 0;
 
       const observer = {
         next: (percentage) => {
           const frameIndex = Math.floor(
-            (percentage * (scrubberFrames.length - 1)) / 100
+            (percentage * (frames.length - 1)) / 100
           );
 
           if (
             currentFrame === frameIndex ||
-            frameIndex >= scrubberFrames.length ||
+            frameIndex >= frames.length ||
             frameIndex < 0
           )
             return;
 
           window.requestAnimationFrame(() => {
-            context.drawImage(scrubberFrames[frameIndex], 0, 0);
+            context.drawImage(frames[frameIndex], 0, 0);
           });
         }
       };
 
       return observer;
     };
-
-    const update = (f) => {
-      scrubberFrames = scrubberFrames.concat(f);
-    };
     return {
-      create: create,
-      update: update
+      create: create
     };
   })();
-}
 
-function ScrollObservable(specialView) {
-  this._observers = [];
-  const videoContainer = document.querySelector("#ScrollFramerContainer");
+  ScrollObservable(topScroll) {
+    this._observers = [];
+    //const videoContainer = document.querySelector("#ScrollFramerContainer");
+    const videoContainer = this.scrollFramerContainer.nativeElement;
 
-  // using RAF as a petty debounce
-  let inProgress = false;
-  const handler = () => {
-    if (inProgress) return;
-    inProgress = true;
+    // using RAF as a petty debounce
+    let inProgress = false;
+    const handler = () => {
+      if (inProgress) return;
+      inProgress = true;
 
-    window.requestAnimationFrame(() => {
-      this._process(videoContainer, specialView);
+      window.requestAnimationFrame(() => {
+        this._process(videoContainer, topScroll);
 
-      inProgress = false;
-    });
+        inProgress = false;
+      });
+    };
+
+    window.addEventListener("scroll", handler);
+  }
+
+  _process = function (videoContainer, topScroll) {
+    const viewportHeight = document.documentElement.clientHeight;
+    const documentHeight = document.body.clientHeight;
+    let scrolled = Math.max(
+      window.scrollY,
+      window.pageYOffset,
+      document.documentElement.scrollTop,
+      document.body.scrollTop
+    );
+
+    let parentRect = videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
+    let animationRect = videoContainer.parentElement.getBoundingClientRect();
+    let videoRect = videoContainer.getBoundingClientRect();
+
+    if (topScroll) {
+      if (parentRect.top > 0) {
+        videoContainer.style.position = "absolute";
+        videoContainer.style.top = 0;
+        videoContainer.style.bottom = "unset";
+        scrolled = 0;
+      } else if (parentRect.top + animationRect.height - videoRect.height < 0) {
+        videoContainer.style.position = "absolute";
+        videoContainer.style.top = "unset";
+        videoContainer.style.bottom = 0;
+        scrolled = 0;
+      } else {
+        videoContainer.style.position = "fixed";
+        videoContainer.style.top = 0;
+        videoContainer.style.bottom = "unset";
+        if (!this.initialScrollPosition) {
+          this.initialScrollPosition = scrolled;
+        }
+        scrolled = scrolled - this.initialScrollPosition;
+      }
+    } else {
+      if (parentRect.bottom < viewportHeight) {
+        videoContainer.style.position = "absolute";
+        videoContainer.style.bottom = 0;
+        videoContainer.style.top = "unset";
+        scrolled = 0;
+      } else if (
+        parentRect.bottom - animationRect.height + videoRect.height >
+        viewportHeight
+      ) {
+        videoContainer.style.position = "absolute";
+        videoContainer.style.bottom = "unset";
+        videoContainer.style.top = 0;
+        scrolled = 0;
+      } else {
+        videoContainer.style.position = "fixed";
+        videoContainer.style.bottom = 0;
+        videoContainer.style.top = "unset";
+        if (!this.initialScrollPosition) {
+          this.initialScrollPosition = scrolled;
+        }
+        scrolled = scrolled - this.initialScrollPosition;
+      }
+    }
+
+    const scrolledPercentage =
+      Math.round(
+        (100 * (100 * scrolled)) / (animationRect.height - viewportHeight)
+      ) / 100;
+
+    this.publish(scrolledPercentage);
   };
 
-  window.addEventListener("scroll", handler);
+  subscribe = function (observer) {
+    if (!this._observers.includes(observer)) {
+      this._observers.push(observer);
+    }
+  };
+  unsubscribe = function (observer) {
+    if (this._observers.includes(observer)) {
+      this._observers.splice(observer);
+    }
+  };
+
+  publish = function (value) {
+    this._observers.forEach((observer) => {
+      observer.next(value);
+    });
+  };
 }
 
-ScrollObservable.prototype._process = function (videoContainer, specialView) {
-  const viewportHeight = document.documentElement.clientHeight;
-  const documentHeight = document.body.clientHeight;
-  let scrolled = Math.max(
-    window.scrollY,
-    window.pageYOffset,
-    document.documentElement.scrollTop,
-    document.body.scrollTop
-  );
+// function ScrollObservable(topScroll) {
+//   this._observers = [];
+//   const videoContainer = document.querySelector("#ScrollFramerContainer");
 
-  let parentRect = videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
-  let animationRect = videoContainer.parentElement.getBoundingClientRect();
-  let videoRect = videoContainer.getBoundingClientRect();
+//   // using RAF as a petty debounce
+//   let inProgress = false;
+//   const handler = () => {
+//     if (inProgress) return;
+//     inProgress = true;
 
-  if (parentRect.bottom < viewportHeight) {
-    //videoContainer.style.position = "absolute";
-    if (specialView) {
-      videoContainer.style.position = "fixed";
-    } else {
-      videoContainer.style.position = "relative";
-    }
-    videoContainer.style.bottom = 0;
-    videoContainer.style.top = "unset";
-    scrolled = 0;
-  } else if (
-    parentRect.bottom - animationRect.height + videoRect.height >
-    viewportHeight
-  ) {
-    //videoContainer.style.position = "absolute";
-    if (specialView) {
-      videoContainer.style.position = "fixed";
-    } else {
-      videoContainer.style.position = "relative";
-    }
-    videoContainer.style.bottom = "unset";
-    videoContainer.style.top = 0;
-    scrolled = 0;
-  } else {
-    videoContainer.style.position = "fixed";
-    videoContainer.style.bottom = 0;
-    videoContainer.style.top = "unset";
-    if (!this.initialScrollPosition) {
-      this.initialScrollPosition = scrolled;
-    }
-    scrolled = scrolled - this.initialScrollPosition;
-  }
+//     window.requestAnimationFrame(() => {
+//       this._process(videoContainer, topScroll);
 
-  const scrolledPercentage =
-    Math.round(
-      (100 * (100 * scrolled)) / (animationRect.height - viewportHeight)
-    ) / 100;
+//       inProgress = false;
+//     });
+//   };
 
-  this.publish(scrolledPercentage);
-};
+//   window.addEventListener("scroll", handler);
+// }
 
-ScrollObservable.prototype.subscribe = function (observer) {
-  if (!this._observers.includes(observer)) {
-    this._observers.push(observer);
-  }
-};
-ScrollObservable.prototype.unsubscribe = function (observer) {
-  if (this._observers.includes(observer)) {
-    this._observers.splice(observer);
-  }
-};
+// ScrollObservable.prototype._process = function (videoContainer, topScroll) {
+//   const viewportHeight = document.documentElement.clientHeight;
+//   const documentHeight = document.body.clientHeight;
+//   let scrolled = Math.max(
+//     window.scrollY,
+//     window.pageYOffset,
+//     document.documentElement.scrollTop,
+//     document.body.scrollTop
+//   );
 
-ScrollObservable.prototype.publish = function (value) {
-  this._observers.forEach((observer) => {
-    observer.next(value);
-  });
-};
+//   let parentRect = videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
+//   let animationRect = videoContainer.parentElement.getBoundingClientRect();
+//   let videoRect = videoContainer.getBoundingClientRect();
+
+//   if (topScroll) {
+//     if (parentRect.top > 0) {
+//       videoContainer.style.position = "absolute";
+//       videoContainer.style.top = 0;
+//       videoContainer.style.bottom = "unset";
+//       scrolled = 0;
+//     } else if (parentRect.top + animationRect.height - videoRect.height < 0) {
+//       videoContainer.style.position = "absolute";
+//       videoContainer.style.top = "unset";
+//       videoContainer.style.bottom = 0;
+//       scrolled = 0;
+//     } else {
+//       videoContainer.style.position = "fixed";
+//       videoContainer.style.top = 0;
+//       videoContainer.style.bottom = "unset";
+//       if (!this.initialScrollPosition) {
+//         this.initialScrollPosition = scrolled;
+//       }
+//       scrolled = scrolled - this.initialScrollPosition;
+//     }
+//   } else {
+//     if (parentRect.bottom < viewportHeight) {
+//       videoContainer.style.position = "absolute";
+//       videoContainer.style.bottom = 0;
+//       videoContainer.style.top = "unset";
+//       scrolled = 0;
+//     } else if (
+//       parentRect.bottom - animationRect.height + videoRect.height >
+//       viewportHeight
+//     ) {
+//       videoContainer.style.position = "absolute";
+//       videoContainer.style.bottom = "unset";
+//       videoContainer.style.top = 0;
+//       scrolled = 0;
+//     } else {
+//       videoContainer.style.position = "fixed";
+//       videoContainer.style.bottom = 0;
+//       videoContainer.style.top = "unset";
+//       if (!this.initialScrollPosition) {
+//         this.initialScrollPosition = scrolled;
+//       }
+//       scrolled = scrolled - this.initialScrollPosition;
+//     }
+//   }
+
+//   const scrolledPercentage =
+//     Math.round(
+//       (100 * (100 * scrolled)) / (animationRect.height - viewportHeight)
+//     ) / 100;
+
+//   this.publish(scrolledPercentage);
+// };
+
+// ScrollObservable.prototype.subscribe = function (observer) {
+//   if (!this._observers.includes(observer)) {
+//     this._observers.push(observer);
+//   }
+// };
+// ScrollObservable.prototype.unsubscribe = function (observer) {
+//   if (this._observers.includes(observer)) {
+//     this._observers.splice(observer);
+//   }
+// };
+
+// ScrollObservable.prototype.publish = function (value) {
+//   this._observers.forEach((observer) => {
+//     observer.next(value);
+//   });
+// };

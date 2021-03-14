@@ -1,317 +1,313 @@
 <div
-  class="color-brown background-1 padding-chef padding-top-5"
-  style="height: 100vh"
+  class="color-white padding-chef"
+  style="background-color: black; margin-top: 217px; padding-top: 2vw"
   fxLayout="column"
   fxLayoutAlign="center center"
 >
-  <div class="" style="width: 100vw; z-index: 1; margin-bottom: 10vw">
+  <div
+    #LoadingText
+    class=""
+    style="width: 100vw; z-index: 1; margin-bottom: 10vw; display: block"
+  >
     <div
       class="flexy-column cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container"
     >
       <div class="width-1 margin-bottom-10">
-        <img src="../../../assets/Shape.svg" />
+        <img src="../../../../assets/WhiteShape.svg" />
       </div>
-      <p #LoadingText style="display: block" class="margin-bottom-10">
-        Loading Porcelain Veneers presentation...
-      </p>
-
-      <div #ExploreButton style="display: none">
-        <app-button
-          class="margin-bottom-10"
-          (click)="explore()"
-          text="EXPLORE PORCELAIN VENEERS"
-        ></app-button>
-      </div>
+      <p class="margin-bottom-10">Loading Porcelain Veneers presentation...</p>
     </div>
   </div>
-</div>
 
-<div #PorcelainVeneers style="display: none">
-  <div
-    class=""
-    style="
-      position: fixed;
-      top: 20px;
-      right: 40px;
-      width: 20px;
-      cursor: pointer;
-      z-index: 104;
-    "
-    (click)="onPresentationCancel()"
-  >
-    <img src="../../../assets/header/cancelWhite.svg" />
-  </div>
-  <app-scroll-framer
-    class="hide-on-phone"
-    urlPattern="../../../../assets/aesthetics/2/Porcelain ##id##.jpg"
-    numberOfFrames="500"
-    animationFactor="20000"
-    padding="3"
-    specialView="true"
-    (onFramesLoaded)="showExploreButton()"
-  >
-  </app-scroll-framer>
+  <div #PorcelainVeneers style="display: none">
+    <app-scroll-framer
+      class="hide-on-phone"
+      urlPattern="../../../../assets/aesthetics/2/Porcelain ##id##.jpg"
+      numberOfFrames="500"
+      animationFactor="20000"
+      padding="3"
+      topScroll="true"
+      (onFramesLoaded)="showExploreButton()"
+    >
+    </app-scroll-framer>
 
-  <div
-    #VeneersContent
-    style="
-      position: absolute;
-      top: 0;
-      width: 100vw;
-      height: 20000px;
-      z-index: 101;
-    "
-  >
     <div
-      style="position: absolute; top: 2200px; z-index: 102"
-      class="padding-chef color-white"
+      #VeneersContent
+      style="position: absolute; top: 0; left: 0; width: 100vw; z-index: 1"
     >
       <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
+        style="position: absolute; top: 870px; z-index: 2"
+        class="padding-chef color-white"
       >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>Be Proud of yourself!</p>
-        </div>
-        <div class="font-medium padding-chef roboto-regular margin-bottom-1">
-          <p>
-            A stunning smile is no longer only for the genetically blessed
-            individuals. With porcelain veneers anyone(*) can now have a smile
-            to be proud of. Veneers are thin porcelain “shells” that are
-            “bonded” to the front of your teeth and can permanently change the
-            shape and colour of your teeth to your exact requirements. Veneers
-            can give you the smile that you always dreamed of and one that you
-            deserve.
-          </p>
-        </div>
-        <button
-          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
-          (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
-            )
-          "
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
         >
-          BOOK YOUR FREE SMILE ASSESSMENT
-        </button>
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>Be Proud of yourself!</p>
+          </div>
+          <div class="font-medium padding-chef roboto-regular margin-bottom-1">
+            <p>
+              A stunning smile is no longer only for the genetically blessed
+              individuals. With porcelain veneers anyone(*) can now have a smile
+              to be proud of. Veneers are thin porcelain “shells” that are
+              “bonded” to the front of your teeth and can permanently change the
+              shape and colour of your teeth to your exact requirements. Veneers
+              can give you the smile that you always dreamed of and one that you
+              deserve.
+            </p>
+          </div>
+          <button
+            class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+            (click)="
+              goToLink(
+                'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+              )
+            "
+          >
+            BOOK YOUR FREE SMILE ASSESSMENT
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div
-      style="position: absolute; top: 6000px; z-index: 102"
-      class="padding-chef color-white"
-    >
       <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
+        style="position: absolute; top: 6000px; z-index: 102"
+        class="padding-chef color-white"
       >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>Science mimiks Nature!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            Ceramics are the material of choice when it comes to mimicking teeth
-            enamel due to its similarities of light properties and a variety of
-            beautiful colours and translucencies. We also imitate the shape and
-            texture of natural teeth onto the veneers for either that perfectly
-            imperfect natural smile or just pure perfection, whatever you
-            decide.
-          </p>
-        </div>
-        <div class="font-small padding-captain roboto-regular margin-bottom-1">
-          <p>
-            * this treatment is not suitable for all patients and we as health
-            professionals have an ethic to let you know whether you are a
-            candidate, a comprehensive examination must be performed to check
-            eligibility and to assess the health of your teeth prior to
-            receiving this treatment.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="position: absolute; top: 9500px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>Delicate yet Strong!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            Even though veneers can be as thin as 0.3mm(Ultra Thin Veneers) once
-            bonded to teeth enamel they become extremely strong. We only use
-            premium ceramics with strengths ranging from 250mpa up to 850Mpa,
-            depending on indication and budget. In other words, you’d need at
-            least a 250 pound force inflicted on them before they’d break.
-            Veneers are made to survive the harsh mouth environment which has
-            large variances of temperature, acidity, bacterial attach and the
-            tough forces of the bite. It’s important that your bite is properly
-            assessed, as well as your diet, habits and lifestyle so we can
-            increase the longevity of these types of restorations.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="position: absolute; top: 11000px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>Digital Veneers: Art meets Maths (measured)!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            3D Digital Technology has revolutionised Dentistry forever. Goopy
-            moulds, stone models and manual porcelain layering are replaced with
-            digital impressions, 3D printed models and milled ceramics using
-            robotic technology. Porcelain veneers can now be produced in-house
-            with near 100% precision and in just hours instead of weeks.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="position: absolute; top: 13000px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>The end of Goopy Moulds!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            Hate the gaging feel of taking rubber impressions? Fear no more!
-            Your teeth can now be scanned using a camera that creates a 3D image
-            of your teeth. No mess, no gaging, no repeats. Images can then be 3D
-            printed or used to create a myriad of restorations and appliances.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="position: absolute; top: 14000px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>Smile Design!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            Once your teeth are scanned, it’s time to design your veneers. Wax
-            and manual brushers are replaced with state-of-the-art design
-            software. But don’t worry, the principles of teeth design are still
-            very human. At Proud Smile all our designs are done in house by our
-            dentists so you get a personalised smile made exclusively for you
-            and to the minimal details and specifications.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      style="position: absolute; top: 15000px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>The make of a veneer!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            It’s milling time! Based on the 3D design the Veneers are cut out of
-            a porcelain block using robotic technology which clones the
-            design.<br /><br />
-            They’re then polished and coated with a glaze material before being
-            fired at a temperature of 700c. Veneers then come out strong and
-            glossy ready to be cemented.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div
-      style="position: absolute; top: 17500px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>We do take it personal!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            At Proud Smile we pride on individuality. We understand that there’s
-            no one smile like another and we all have different perceptions of
-            what beauty should look like. That is why ALL our cosmetic work is
-            done in house and designed by our own dentists, based on your
-            requirements and our recommendations. The result is a beautiful
-            bespoke smile and one that fits your face and personality.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div
-      style="position: absolute; top: 19000px; z-index: 102"
-      class="padding-chef color-white"
-    >
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>It’s time to be Proud of yourself!</p>
-        </div>
-        <div class="font-medium padding-captain roboto-regular margin-bottom-1">
-          <p>
-            You too can have YOUR smile back, whether you have a gap between
-            your teeth, discoloured fillings, teeth are that too short or too
-            long, chipped or broken or very yellow teeth, chances are we have a
-            solution for you. please take a look at our gallery below to see
-            some of our Proud patients.
-          </p>
-        </div>
-        <button
-          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
-          (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
-            )
-          "
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
         >
-          BOOK YOUR FREE SMILE ASSESSMENT
-        </button>
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>Science mimiks Nature!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              Ceramics are the material of choice when it comes to mimicking
+              teeth enamel due to its similarities of light properties and a
+              variety of beautiful colours and translucencies. We also imitate
+              the shape and texture of natural teeth onto the veneers for either
+              that perfectly imperfect natural smile or just pure perfection,
+              whatever you decide.
+            </p>
+          </div>
+          <div
+            class="font-small padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              * this treatment is not suitable for all patients and we as health
+              professionals have an ethic to let you know whether you are a
+              candidate, a comprehensive examination must be performed to check
+              eligibility and to assess the health of your teeth prior to
+              receiving this treatment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="position: absolute; top: 9500px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>Delicate yet Strong!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              Even though veneers can be as thin as 0.3mm(Ultra Thin Veneers)
+              once bonded to teeth enamel they become extremely strong. We only
+              use premium ceramics with strengths ranging from 250mpa up to
+              850Mpa, depending on indication and budget. In other words, you’d
+              need at least a 250 pound force inflicted on them before they’d
+              break. Veneers are made to survive the harsh mouth environment
+              which has large variances of temperature, acidity, bacterial
+              attach and the tough forces of the bite. It’s important that your
+              bite is properly assessed, as well as your diet, habits and
+              lifestyle so we can increase the longevity of these types of
+              restorations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="position: absolute; top: 11000px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>Digital Veneers: Art meets Maths (measured)!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              3D Digital Technology has revolutionised Dentistry forever. Goopy
+              moulds, stone models and manual porcelain layering are replaced
+              with digital impressions, 3D printed models and milled ceramics
+              using robotic technology. Porcelain veneers can now be produced
+              in-house with near 100% precision and in just hours instead of
+              weeks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="position: absolute; top: 13000px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>The end of Goopy Moulds!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              Hate the gaging feel of taking rubber impressions? Fear no more!
+              Your teeth can now be scanned using a camera that creates a 3D
+              image of your teeth. No mess, no gaging, no repeats. Images can
+              then be 3D printed or used to create a myriad of restorations and
+              appliances.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="position: absolute; top: 14000px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>Smile Design!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              Once your teeth are scanned, it’s time to design your veneers. Wax
+              and manual brushers are replaced with state-of-the-art design
+              software. But don’t worry, the principles of teeth design are
+              still very human. At Proud Smile all our designs are done in house
+              by our dentists so you get a personalised smile made exclusively
+              for you and to the minimal details and specifications.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="position: absolute; top: 15000px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>The make of a veneer!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              It’s milling time! Based on the 3D design the Veneers are cut out
+              of a porcelain block using robotic technology which clones the
+              design.<br /><br />
+              They’re then polished and coated with a glaze material before
+              being fired at a temperature of 700c. Veneers then come out strong
+              and glossy ready to be cemented.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="position: absolute; top: 17500px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>We do take it personal!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              At Proud Smile we pride on individuality. We understand that
+              there’s no one smile like another and we all have different
+              perceptions of what beauty should look like. That is why ALL our
+              cosmetic work is done in house and designed by our own dentists,
+              based on your requirements and our recommendations. The result is
+              a beautiful bespoke smile and one that fits your face and
+              personality.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        style="position: absolute; top: 19000px; z-index: 102"
+        class="padding-chef color-white"
+      >
+        <div
+          class="center-text margin-bottom-2"
+          fxLayout="column"
+          fxLayoutAlign="center center"
+        >
+          <div class="font-dog libre-regular margin-bottom-4">
+            <p>It’s time to be Proud of yourself!</p>
+          </div>
+          <div
+            class="font-medium padding-captain roboto-regular margin-bottom-1"
+          >
+            <p>
+              You too can have YOUR smile back, whether you have a gap between
+              your teeth, discoloured fillings, teeth are that too short or too
+              long, chipped or broken or very yellow teeth, chances are we have
+              a solution for you. please take a look at our gallery below to see
+              some of our Proud patients.
+            </p>
+          </div>
+          <button
+            class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+            (click)="
+              goToLink(
+                'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+              )
+            "
+          >
+            BOOK YOUR FREE SMILE ASSESSMENT
+          </button>
+        </div>
       </div>
     </div>
   </div>

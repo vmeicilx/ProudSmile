@@ -13,6 +13,7 @@ import {
   MatSnackBarVerticalPosition
 } from "@angular/material/snack-bar";
 import { NavigationEnd, Router } from "@angular/router";
+import { DataService } from "../shared/data-service";
 
 @Component({
   selector: "app-header",
@@ -47,6 +48,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild("SpecialsText") specialsText: ElementRef;
   @ViewChild("ContactText") contactText: ElementRef;
   @ViewChild("CalculatorOverlay") calculatorOverlay: ElementRef;
+  @ViewChild("hItem") hItem: ElementRef;
 
   @ViewChild("input1Mini") input1: ElementRef;
   @ViewChild("input2Mini") input2: ElementRef;
@@ -65,7 +67,8 @@ export class HeaderComponent implements OnInit {
     el: ElementRef,
     renderer: Renderer2,
     private clipboard: Clipboard,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private data: DataService
   ) {
     this.elRef = el;
     this.renderer = renderer;
@@ -142,29 +145,44 @@ export class HeaderComponent implements OnInit {
           this.implantsText.nativeElement.classList.add("active-text");
         }
 
+        if (
+          val.url === "/PorcelainVeneers" ||
+          val.url === "/UltraThinVeneers"
+        ) {
+          this.hItem.nativeElement.style.position = "relative";
+          this.aestheticsSubheader.nativeElement.children[0].classList.add(
+            "no-top"
+          );
+        } else {
+          this.aestheticsSubheader.nativeElement.children[0].classList.remove(
+            "no-top"
+          );
+          this.hItem.nativeElement.style.position = "fixed";
+        }
+
         if (val.url === "/PorcelainVeneers") {
           this.setActiveSubheader5(0);
-          this.implantsText.nativeElement.classList.add("active-text");
+          this.aestheticsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/UltraThinVeneers") {
           this.setActiveSubheader5(1);
-          this.implantsText.nativeElement.classList.add("active-text");
+          this.aestheticsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/SameDayVeneers") {
           this.setActiveSubheader5(2);
-          this.implantsText.nativeElement.classList.add("active-text");
+          this.aestheticsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/InvisalignVeneer") {
           this.setActiveSubheader5(3);
-          this.implantsText.nativeElement.classList.add("active-text");
+          this.aestheticsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/ZoomWhitening") {
           this.setActiveSubheader5(4);
-          this.implantsText.nativeElement.classList.add("active-text");
+          this.aestheticsText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/FaceSpaFacialAesthetics") {
           this.setActiveSubheader5(5);
-          this.implantsText.nativeElement.classList.add("active-text");
+          this.aestheticsText.nativeElement.classList.add("active-text");
         }
 
         if (val.url === "/Extractions") {
@@ -245,6 +263,21 @@ export class HeaderComponent implements OnInit {
     this.oninput1Mini();
     window.addEventListener("touchmove", this.preventBehavior.bind(this), {
       passive: false
+    });
+
+    this.data.currentMessage.subscribe((message) => {
+      if (!this.health1Subheader) {
+        return;
+      }
+      if (message === "true") {
+        this.hItem.nativeElement.style.position = "relative";
+        this.health1Subheader.nativeElement.classList.add("no-top");
+        this.health2Subheader.nativeElement.classList.add("no-top");
+      } else {
+        this.health1Subheader.nativeElement.classList.remove("no-top");
+        this.health2Subheader.nativeElement.classList.remove("no-top");
+        this.hItem.nativeElement.style.position = "fixed";
+      }
     });
   }
 

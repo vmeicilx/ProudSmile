@@ -54,12 +54,13 @@ import { ScrollFramerComponent } from "./custom-components/scroll-framer/scroll-
 import { FulArchRehabilitationComponent } from "./pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component";
 import { ImplantDenturesComponent } from "./pages/implants/implant-dentures/implant-dentures.component";
 import { GridToFullScreenComponent } from "./custom-components/grid-to-full-screen/grid-to-full-screen.component";
-import { PorcelainVeneersComponent } from './pages/aesthetics/porcelain-veneers/porcelain-veneers.component';
-import { UltraThinVeneersComponent } from './pages/aesthetics/ultra-thin-veneers/ultra-thin-veneers.component';
-import { SameDayVeneersComponent } from './pages/aesthetics/same-day-veneers/same-day-veneers.component';
-import { InvisalignVeneerComponent } from './pages/aesthetics/invisalign-veneer/invisalign-veneer.component';
-import { ZoomWhiteningComponent } from './pages/aesthetics/zoom-whitening/zoom-whitening.component';
-import { FacespaFacialComponent } from './pages/aesthetics/facespa-facial/facespa-facial.component';
+import { PorcelainVeneersComponent } from "./pages/aesthetics/porcelain-veneers/porcelain-veneers.component";
+import { UltraThinVeneersComponent } from "./pages/aesthetics/ultra-thin-veneers/ultra-thin-veneers.component";
+import { SameDayVeneersComponent } from "./pages/aesthetics/same-day-veneers/same-day-veneers.component";
+import { InvisalignVeneerComponent } from "./pages/aesthetics/invisalign-veneer/invisalign-veneer.component";
+import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-whitening.component";
+import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
+import { DataService } from "./shared/data-service";
 
 @NgModule({
   declarations: [
@@ -126,7 +127,7 @@ import { FacespaFacialComponent } from './pages/aesthetics/facespa-facial/facesp
     VgOverlayPlayModule,
     VgBufferingModule
   ],
-  providers: [NG_EVENT_PLUGINS],
+  providers: [NG_EVENT_PLUGINS, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

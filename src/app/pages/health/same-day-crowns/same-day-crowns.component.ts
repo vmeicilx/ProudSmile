@@ -1,11 +1,14 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   OnInit,
+  Output,
   ViewChild
 } from "@angular/core";
 import { Router } from "@angular/router";
+import { DataService } from "src/app/shared/data-service";
 
 @Component({
   selector: "app-same-day-crowns",
@@ -17,8 +20,12 @@ export class SameDayCrownsComponent implements OnInit {
   @ViewChild("bridgeVideo") bridgeVideo: ElementRef;
   @ViewChild("marylandVideo") marylandVideo: ElementRef;
   @ViewChild("bridgeMask") bridgeMask: ElementRef;
+  @ViewChild("Vulcan") vulcan: ElementRef;
+  @Output() onVulcanPresent: EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router) {}
+  vulcanOn: boolean;
+
+  constructor(private router: Router, private data: DataService) {}
 
   ngOnInit(): void {}
 
@@ -41,6 +48,20 @@ export class SameDayCrownsComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
+    if (this.inTheViewport(this.vulcan.nativeElement)) {
+      if (!this.vulcanOn) {
+        this.onVulcanPresent.emit(true);
+        this.vulcanOn = true;
+        this.data.changeMessage("true");
+      }
+    } else {
+      if (this.vulcanOn) {
+        this.onVulcanPresent.emit(false);
+        this.vulcanOn = false;
+        this.data.changeMessage("false");
+      }
+    }
+
     if (this.inTheViewport(this.bridgeVideo.nativeElement)) {
       if (this.bridgeVideo.nativeElement.paused) {
         this.bridgeVideo.nativeElement.play();
