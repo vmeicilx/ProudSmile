@@ -23,7 +23,7 @@
     <app-scroll-framer
       class="hide-on-phone"
       urlPattern="../../../../assets/aesthetics/2/Porcelain ##id##.jpg"
-      numberOfFrames="500"
+      numberOfFrames="460"
       animationFactor="20000"
       padding="3"
       topScroll="true"
@@ -44,10 +44,10 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>Be Proud of yourself!</p>
           </div>
-          <div class="font-medium padding-chef roboto-regular margin-bottom-1">
+          <div class="font-small-3 padding-chef roboto-regular margin-bottom-1">
             <p>
               A stunning smile is no longer only for the genetically blessed
               individuals. With porcelain veneers anyone(*) can now have a smile
@@ -80,11 +80,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>Science mimiks Nature!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               Ceramics are the material of choice when it comes to mimicking
@@ -96,7 +96,7 @@
             </p>
           </div>
           <div
-            class="font-small padding-captain roboto-regular margin-bottom-1"
+            class="font-small-4 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               * this treatment is not suitable for all patients and we as health
@@ -118,11 +118,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>Delicate yet Strong!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               Even though veneers can be as thin as 0.3mm(Ultra Thin Veneers)
@@ -150,11 +150,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>Digital Veneers: Art meets Maths (measured)!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               3D Digital Technology has revolutionised Dentistry forever. Goopy
@@ -177,11 +177,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>The end of Goopy Moulds!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               Hate the gaging feel of taking rubber impressions? Fear no more!
@@ -203,11 +203,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>Smile Design!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               Once your teeth are scanned, it’s time to design your veneers. Wax
@@ -229,11 +229,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>The make of a veneer!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               It’s milling time! Based on the 3D design the Veneers are cut out
@@ -256,11 +256,11 @@
           fxLayout="column"
           fxLayoutAlign="center center"
         >
-          <div class="font-dog libre-regular margin-bottom-4">
+          <div class="font-lion libre-regular margin-bottom-4">
             <p>We do take it personal!</p>
           </div>
           <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
+            class="font-small-3 padding-captain roboto-regular margin-bottom-1"
           >
             <p>
               At Proud Smile we pride on individuality. We understand that
@@ -274,41 +274,36 @@
           </div>
         </div>
       </div>
-      <div
-        style="position: absolute; top: 19000px; z-index: 102"
-        class="padding-chef color-white"
-      >
-        <div
-          class="center-text margin-bottom-2"
-          fxLayout="column"
-          fxLayoutAlign="center center"
-        >
-          <div class="font-dog libre-regular margin-bottom-4">
-            <p>It’s time to be Proud of yourself!</p>
-          </div>
-          <div
-            class="font-medium padding-captain roboto-regular margin-bottom-1"
-          >
-            <p>
-              You too can have YOUR smile back, whether you have a gap between
-              your teeth, discoloured fillings, teeth are that too short or too
-              long, chipped or broken or very yellow teeth, chances are we have
-              a solution for you. please take a look at our gallery below to see
-              some of our Proud patients.
-            </p>
-          </div>
-          <button
-            class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
-            (click)="
-              goToLink(
-                'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
-              )
-            "
-          >
-            BOOK YOUR FREE SMILE ASSESSMENT
-          </button>
-        </div>
-      </div>
     </div>
+  </div>
+</div>
+<div
+  #lastBlock
+  style="background-color: black; padding: 5vw; display: none"
+  class="padding-chef color-white"
+>
+  <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
+    <div class="font-lion libre-regular margin-bottom-4">
+      <p>It’s time to be Proud of yourself!</p>
+    </div>
+    <div class="font-small-3 padding-captain roboto-regular margin-bottom-1">
+      <p>
+        You too can have YOUR smile back, whether you have a gap between your
+        teeth, discoloured fillings, teeth are that too short or too long,
+        chipped or broken or very yellow teeth, chances are we have a solution
+        for you. please take a look at our gallery below to see some of our
+        Proud patients.
+      </p>
+    </div>
+    <button
+      class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+      (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+        )
+      "
+    >
+      BOOK YOUR FREE SMILE ASSESSMENT
+    </button>
   </div>
 </div>

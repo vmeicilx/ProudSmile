@@ -42,6 +42,10 @@ export class ScrollFramerComponent implements OnInit {
     this.observer = null;
   }
 
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
+
   createImageBitmap2 = async function (blob) {
     return new Promise((resolve, reject) => {
       let img = document.createElement("img");
@@ -53,14 +57,7 @@ export class ScrollFramerComponent implements OnInit {
   };
 
   async start() {
-    // const videoContainer = document.querySelector(
-    //   "#ScrollFramerContainer"
-    // ) as HTMLElement;
     const videoContainer = this.scrollFramerContainer.nativeElement;
-
-    // const animationContainer = document.querySelector(
-    //   "#AnimationContainer"
-    // ) as HTMLElement;
     const animationContainer = this.animation.nativeElement;
 
     let frames = await this.FrameUnpacker.unpack({
@@ -81,12 +78,21 @@ export class ScrollFramerComponent implements OnInit {
     if (this.topScroll) {
       videoContainer.style.background = "black";
       videoContainer.style.paddingTop = "20px";
-      videoContainer.style.paddingBottom = "20px";
     }
     const context = canvas.getContext("2d");
     context.drawImage(frames[0], 0, 0);
 
     videoContainer.appendChild(canvas);
+    if (this.topScroll) {
+      const fadeDiv = document.createElement("div");
+      fadeDiv.style.width = "100vw";
+      fadeDiv.style.height = "200px";
+      fadeDiv.style.position = "absolute";
+      fadeDiv.style.bottom = "-200px";
+      fadeDiv.classList.add("background-48");
+      videoContainer.appendChild(fadeDiv);
+    }
+
     animationContainer.style.height = this.animationFactor + "px";
 
     this.observer = this.CanvasFrameScrubber.create(context, frames);
@@ -236,16 +242,19 @@ export class ScrollFramerComponent implements OnInit {
         videoContainer.style.position = "absolute";
         videoContainer.style.top = 0;
         videoContainer.style.bottom = "unset";
+        videoContainer.children[1].style.display = "none";
         scrolled = 0;
       } else if (parentRect.top + animationRect.height - videoRect.height < 0) {
         videoContainer.style.position = "absolute";
         videoContainer.style.top = "unset";
         videoContainer.style.bottom = 0;
+        videoContainer.children[1].style.display = "none";
         scrolled = 0;
       } else {
         videoContainer.style.position = "fixed";
         videoContainer.style.top = 0;
         videoContainer.style.bottom = "unset";
+        videoContainer.children[1].style.display = "block";
         if (!this.initialScrollPosition) {
           this.initialScrollPosition = scrolled;
         }
@@ -301,107 +310,3 @@ export class ScrollFramerComponent implements OnInit {
     });
   };
 }
-
-// function ScrollObservable(topScroll) {
-//   this._observers = [];
-//   const videoContainer = document.querySelector("#ScrollFramerContainer");
-
-//   // using RAF as a petty debounce
-//   let inProgress = false;
-//   const handler = () => {
-//     if (inProgress) return;
-//     inProgress = true;
-
-//     window.requestAnimationFrame(() => {
-//       this._process(videoContainer, topScroll);
-
-//       inProgress = false;
-//     });
-//   };
-
-//   window.addEventListener("scroll", handler);
-// }
-
-// ScrollObservable.prototype._process = function (videoContainer, topScroll) {
-//   const viewportHeight = document.documentElement.clientHeight;
-//   const documentHeight = document.body.clientHeight;
-//   let scrolled = Math.max(
-//     window.scrollY,
-//     window.pageYOffset,
-//     document.documentElement.scrollTop,
-//     document.body.scrollTop
-//   );
-
-//   let parentRect = videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
-//   let animationRect = videoContainer.parentElement.getBoundingClientRect();
-//   let videoRect = videoContainer.getBoundingClientRect();
-
-//   if (topScroll) {
-//     if (parentRect.top > 0) {
-//       videoContainer.style.position = "absolute";
-//       videoContainer.style.top = 0;
-//       videoContainer.style.bottom = "unset";
-//       scrolled = 0;
-//     } else if (parentRect.top + animationRect.height - videoRect.height < 0) {
-//       videoContainer.style.position = "absolute";
-//       videoContainer.style.top = "unset";
-//       videoContainer.style.bottom = 0;
-//       scrolled = 0;
-//     } else {
-//       videoContainer.style.position = "fixed";
-//       videoContainer.style.top = 0;
-//       videoContainer.style.bottom = "unset";
-//       if (!this.initialScrollPosition) {
-//         this.initialScrollPosition = scrolled;
-//       }
-//       scrolled = scrolled - this.initialScrollPosition;
-//     }
-//   } else {
-//     if (parentRect.bottom < viewportHeight) {
-//       videoContainer.style.position = "absolute";
-//       videoContainer.style.bottom = 0;
-//       videoContainer.style.top = "unset";
-//       scrolled = 0;
-//     } else if (
-//       parentRect.bottom - animationRect.height + videoRect.height >
-//       viewportHeight
-//     ) {
-//       videoContainer.style.position = "absolute";
-//       videoContainer.style.bottom = "unset";
-//       videoContainer.style.top = 0;
-//       scrolled = 0;
-//     } else {
-//       videoContainer.style.position = "fixed";
-//       videoContainer.style.bottom = 0;
-//       videoContainer.style.top = "unset";
-//       if (!this.initialScrollPosition) {
-//         this.initialScrollPosition = scrolled;
-//       }
-//       scrolled = scrolled - this.initialScrollPosition;
-//     }
-//   }
-
-//   const scrolledPercentage =
-//     Math.round(
-//       (100 * (100 * scrolled)) / (animationRect.height - viewportHeight)
-//     ) / 100;
-
-//   this.publish(scrolledPercentage);
-// };
-
-// ScrollObservable.prototype.subscribe = function (observer) {
-//   if (!this._observers.includes(observer)) {
-//     this._observers.push(observer);
-//   }
-// };
-// ScrollObservable.prototype.unsubscribe = function (observer) {
-//   if (this._observers.includes(observer)) {
-//     this._observers.splice(observer);
-//   }
-// };
-
-// ScrollObservable.prototype.publish = function (value) {
-//   this._observers.forEach((observer) => {
-//     observer.next(value);
-//   });
-// };
