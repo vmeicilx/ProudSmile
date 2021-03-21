@@ -16,6 +16,8 @@ export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("PorcelainVeneers") porcelainVeneers: ElementRef;
   @ViewChild("VeneersContent") veneersContent: ElementRef;
   @ViewChild("lastBlock") lastBlock: ElementRef;
+  @ViewChild("FirstFrame") firstFrame: ElementRef;
+  @ViewChild("AnimContainer") animContainer: ElementRef;
 
   constructor() {}
 
@@ -23,8 +25,9 @@ export class PorcelainVeneersComponent implements OnInit {
 
   showExploreButton() {
     this.loadingText.nativeElement.style.display = "none";
+    this.firstFrame.nativeElement.style.display = "block";
     this.porcelainVeneers.nativeElement.style.display = "block";
-    this.lastBlock.nativeElement.style.display = "block";
+    //this.lastBlock.nativeElement.style.display = "block";
   }
 
   goToLink(url: string) {
