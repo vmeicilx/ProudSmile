@@ -61,6 +61,7 @@ import { InvisalignVeneerComponent } from "./pages/aesthetics/invisalign-veneer/
 import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-whitening.component";
 import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
 import { DataService } from "./shared/data-service";
+import { ScrollFramerSectionComponent } from './custom-components/scroll-framer-section/scroll-framer-section.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { DataService } from "./shared/data-service";
     SameDayVeneersComponent,
     InvisalignVeneerComponent,
     ZoomWhiteningComponent,
-    FacespaFacialComponent
+    FacespaFacialComponent,
+    ScrollFramerSectionComponent
   ],
   imports: [
     BrowserModule,
