@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="377px" height="224px" viewBox="0 0 377 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 7</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.188235 0 0 0 0 0.490196 0 0 0 0 0.737255 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="39.0877067%" x2="50%" y2="85.4546774%" id="linearGradient-2">
+            <stop stop-color="#5FAFC8" offset="0%"></stop>
+            <stop stop-color="#2B5383" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="39.0877067%" x2="50%" y2="85.4546774%" id="linearGradient-3">
+            <stop stop-color="#E3027C" offset="0%"></stop>
+            <stop stop-color="#F0134D" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="39.0877067%" x2="50%" y2="85.4546774%" id="linearGradient-4">
+            <stop stop-color="#55BC44" offset="0%"></stop>
+            <stop stop-color="#428B36" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="39.0877067%" x2="50%" y2="85.4546774%" id="linearGradient-5">
+            <stop stop-color="#FEBD21" offset="0%"></stop>
+            <stop stop-color="#FA8042" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Specials" transform="translate(-1050.000000, -696.000000)">
+            <g id="Group-7" transform="translate(1053.000000, 699.220000)">
+                <g filter="url(#filter-1)" id="Group-13">
+                    <g transform="translate(0.000000, 0.000000)">
+                        <text id="P" stroke="url(#linearGradient-2)" stroke-width="4.53376015" font-family="Bungee-Outline, Bungee" font-size="146.728965" font-weight="bold" fill="#307DBC">
+                            <tspan x="0" y="126">P</tspan>
+                        </text>
+                        <text id="A" stroke="url(#linearGradient-3)" stroke-width="4.53376015" font-family="Bungee-Outline, Bungee" font-size="146.728965" font-weight="bold" fill="#307DBC">
+                            <tspan x="87.7900829" y="126">A</tspan>
+                        </text>
+                        <text id="Y" stroke="url(#linearGradient-4)" stroke-width="4.53376015" font-family="Bungee-Outline, Bungee" font-size="146.728965" font-weight="bold" fill="#307DBC">
+                            <tspan x="177.228806" y="126">Y</tspan>
+                        </text>
+                        <text id="G" stroke="url(#linearGradient-5)" stroke-width="4.53376015" font-family="Bungee-Outline, Bungee" font-size="146.728965" font-weight="bold" fill="#307DBC">
+                            <tspan x="267.079689" y="126">G</tspan>
+                        </text>
+                        <rect id="Rectangle" stroke="#4B8CAD" stroke-width="4.53376015" fill="#FFFFFF" x="19.6268801" y="76.7468801" width="15.2499205" height="15.2499205" rx="3.29728011"></rect>
+                        <rect id="Rectangle" stroke="#E90A64" stroke-width="4.53376015" fill="#FFFFFF" x="132.74688" y="78.9868801" width="15.2499205" height="15.2499205" rx="3.29728011"></rect>
+                        <rect id="Rectangle" stroke="#4EA93F" stroke-width="4.53376015" fill="#FFFFFF" x="221.22688" y="78.9868801" width="15.2499205" height="15.2499205" rx="3.29728011"></rect>
+                        <rect id="Rectangle" stroke="#FB9537" stroke-width="4.53376015" fill="#FFFFFF" x="338.82688" y="78.9868801" width="15.2499205" height="15.2499205" rx="3.29728011"></rect>
+                    </g>
+                </g>
+                <text id="BRACES" font-family="SinhalaMN-Bold, Sinhala MN" font-size="70.56" font-weight="bold" letter-spacing="-5.04000015" fill="#307DBC">
+                    <tspan x="55.5" y="200.56">BRACES</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

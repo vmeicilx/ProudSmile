@@ -35,8 +35,6 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @ViewChild("LoadingText") loadingText: ElementRef;
   @ViewChild("PorcelainVeneers") porcelainVeneers: ElementRef;
-  @ViewChild("VeneersContent") veneersContent: ElementRef;
-  @ViewChild("lastBlock") lastBlock: ElementRef;
   @ViewChild("AnimContainer") animContainer: ElementRef;
   @ViewChild("TopFade") topFade: ElementRef;
   @ViewChild("BottomFade") bottomFade: ElementRef;
@@ -151,8 +149,6 @@ export class PorcelainVeneersComponent implements OnInit {
       this.topBackground.nativeElement.style.top = "unset";
       this.bottomBackground.nativeElement.style.top = "unset";
     }
-
-    console.log(parent.top);
 
     if(parent.top < 0 && parent.top > -1700)
     {

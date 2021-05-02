@@ -1,1 +1,51 @@
-<p>zoom-whitening works!</p>
+<div>
+    <div #LoadingText style="height: calc(100vh - 217px); margin-top: 217px; background: black">
+      <div class="" style="width: 100vw; z-index: 1; margin-bottom: 10vw; display: block">
+        <div class="flexy-column color-white cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container">
+          <div class="width-1 margin-bottom-10">
+            <img src="../../../../assets/WhiteShape.svg" />
+          </div>
+          <p class="margin-bottom-10">Loading Zoom Whitening presentation...</p>
+        </div>
+      </div>
+    </div>
+  
+    <div #AnimContainer style="margin-top: 217px">
+  
+      <div #Zoom style="display: none; height:10969px; background-color: black; position: relative;">
+  
+        <div #PresentationView style="position: relative; z-index:3;">
+  
+          <div #FirstFrame style="width:100vw; position: relative;">
+            <img #FirstFrameImg (load)="imgLoaded(FirstFrameImg)" class="horizontal-size" style="max-width: unset; margin:auto;"
+              src="../../../../assets/aesthetics/Zoom/Zoom 001.jpg" />
+          </div>
+  
+          <div #SecondFrame style="width:100vw; position:relative; display:none">
+            <app-scroll-framer-section #SecondFrameVideo [startAnimation]="frameStartAnimation.asObservable()"
+              [stopAnimation]="frameStopAnimation.asObservable()" class="hide-on-phone"
+              urlPattern="../../../../assets/aesthetics/Zoom/Zoom ##id##.jpg" numberOfFrames="495" animationFactor="10000"
+              padding="3" (onFramesLoaded)="showExploreButton()">
+            </app-scroll-framer-section>
+          </div>
+  
+        </div>
+  
+        <div #LastFrame style="display:none; width:100vw; position: absolute; top:10000px; z-index:3;">
+          <img #LastFrameImg (load)="imgLoaded(LastFrameImg)" style="max-width: unset; margin:auto;" src="../../../../assets/aesthetics/Zoom/Zoom 495.jpg" />
+        </div>
+  
+        <!-- <div #BookButton
+          style="width:30%; margin-left:60%; position: relative; z-index:4; display:flex; justify-content: flex-start; top:23270px;">
+          <button class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer " (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
+            )
+          ">
+            BOOK YOUR FREE SMILE ASSESSMENT
+          </button>
+        </div> -->
+  
+      </div>
+    </div>
+  </div>
