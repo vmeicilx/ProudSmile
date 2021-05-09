@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ScrollFramerSectionComponent } from 'src/app/custom-components/scroll-framer-section/scroll-framer-section.component';
 
@@ -33,7 +34,7 @@ export class ZoomWhiteningComponent implements OnInit {
   frames = [];
   framesContent = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -56,6 +57,11 @@ export class ZoomWhiteningComponent implements OnInit {
         window.scrollTo(0, 0)
       }.bind(this), 20);
     }
+  }
+
+  seeUltraThin() {
+    this.router.navigate(["/", "UltraThinVeneers"]);
+    window.scrollTo(0, 0);
   }
 
   goToLink(url: string) {
@@ -95,6 +101,16 @@ export class ZoomWhiteningComponent implements OnInit {
 
       this.setFramesDisplay(-1);
       this.frameStopAnimation.next();
+    }
+
+    if(parent.top <= -7000 && parent.top > -10000)
+    {
+      this.bookButton.nativeElement.style.position = "fixed";
+      this.bookButton.nativeElement.style.display = "block";
+    }
+    else
+    {
+      this.bookButton.nativeElement.style.position = "absolute";
     }
 
     if(parent.top <= -10000)

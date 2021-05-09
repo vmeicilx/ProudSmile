@@ -172,16 +172,12 @@ export class HeaderComponent implements OnInit {
           this.setActiveSubheader5(2);
           this.aestheticsText.nativeElement.classList.add("active-text");
         }
-        if (val.url === "/InvisalignVeneer") {
+        if (val.url === "/ZoomWhitening") {
           this.setActiveSubheader5(3);
           this.aestheticsText.nativeElement.classList.add("active-text");
         }
-        if (val.url === "/ZoomWhitening") {
-          this.setActiveSubheader5(4);
-          this.aestheticsText.nativeElement.classList.add("active-text");
-        }
         if (val.url === "/FaceSpaFacialAesthetics") {
-          this.setActiveSubheader5(5);
+          this.setActiveSubheader5(4);
           this.aestheticsText.nativeElement.classList.add("active-text");
         }
 

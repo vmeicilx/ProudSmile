@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-same-day-veneers',
@@ -12,4 +12,7 @@ export class SameDayVeneersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }
