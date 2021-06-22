@@ -17,6 +17,16 @@
   }
 }
 :host {
+  .book3 {
+    border-radius: 37px;
+    background: $color-orange;
+    padding: 12px 12px;
+    border: 0;
+    outline: none;
+    align-self: center;
+    margin-top: auto;
+  }
+  
   .noMargin {
     margin-left: 0;
   }
@@ -119,7 +129,7 @@
     }
     .title {
       position: relative;
-      margin-top: 20vh;
+      margin-top: 10vh;
       .year {
         position: absolute;
         top: -16vh;

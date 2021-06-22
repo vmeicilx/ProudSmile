@@ -69,7 +69,7 @@ export class FooterComponent implements OnInit {
   }
 
   onContactPage() {
-    this.router.navigate(["/", "contact-page-component"]);
+    this.router.navigate(["/", "contact-page-component", true]);
     window.scrollTo(0, 0);
   }
 }

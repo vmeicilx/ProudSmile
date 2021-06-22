@@ -140,4 +140,9 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(["/", item]);
     window.scrollTo(0, 0);
   }
+
+  onContactPage() {
+    this.router.navigate(["/contact-page-component/true"]);
+    window.scrollTo(0, 0);
+  }
 }

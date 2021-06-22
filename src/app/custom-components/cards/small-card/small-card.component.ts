@@ -12,4 +12,8 @@ export class SmallCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }

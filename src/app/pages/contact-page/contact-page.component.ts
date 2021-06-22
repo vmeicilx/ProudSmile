@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-contact-page",
@@ -19,7 +19,10 @@ export class ContactPageComponent implements OnInit {
   @ViewChild("phoneSmall") phoneSmall: ElementRef;
   @ViewChild("messageSmall") messageSmall: ElementRef;
 
-  constructor(private router: Router) {}
+  public scrollToContactForm: string;
+
+  constructor(private router: Router, private _activatedRoute: ActivatedRoute) {
+  }
 
   imageObject: Array<object> = [
     {
@@ -76,7 +79,18 @@ export class ContactPageComponent implements OnInit {
     }
   ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._activatedRoute.params.subscribe(parameter => {
+      this.scrollToContactForm = parameter.parameter
+    })
+  }
+
+  ngAfterViewInit(): void {
+    if(this.scrollToContactForm)
+    {
+      this.scrollToContactFormAction()
+    }
+  }
 
   goToLink(url: string) {
     window.open(url, "_blank");
@@ -130,5 +144,11 @@ export class ContactPageComponent implements OnInit {
   onContactPage() {
     this.router.navigate(["/", "contact-page-component"]);
     window.scrollTo(0, 0);
+  }
+
+  scrollToContactFormAction() {
+    setTimeout(() => {
+      document.getElementById("contact-form").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }, 500)
   }
 }

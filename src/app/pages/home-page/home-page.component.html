@@ -8,17 +8,8 @@
     </div>
   </div>
 
-  <div
-    fxLayout="column"
-    fxLayoutAlign=" center"
-    [ngClass]="'firstSectionBottom'"
-  >
-    <div
-      class="lineText color-white full-width"
-      fxLayout
-      fxLayoutAlign="center center"
-      fxLayoutGap="1vw"
-    >
+  <div fxLayout="column" fxLayoutAlign=" center" [ngClass]="'firstSectionBottom'">
+    <div class="lineText color-white full-width" fxLayout fxLayoutAlign="center center" fxLayoutGap="1vw">
       <div fxFlex="4 1 auto" class="line opacity-5"></div>
       <div fxFlex="0 1 auto" class="font-small-2">
         <p>Today I'm looking for</p>
@@ -26,25 +17,13 @@
       <div fxFlex="4 1 auto" class="line opacity-5"></div>
     </div>
     <div class="smallCardsContainer flexy-row">
-      <app-small-card
-        text="Free Mini Consultation"
-        imageUrl="../../assets/homePage/smallCard1.png"
-      >
+      <app-small-card text="Free Mini Consultation" imageUrl="../../assets/homePage/smallCard1.png">
       </app-small-card>
-      <app-small-card
-        text="$99 or Gap Free Comprehensive Examination"
-        imageUrl="../../assets/homePage/smallCard2.png"
-      >
+      <app-small-card text="$99 or Gap Free Comprehensive Examination" imageUrl="../../assets/homePage/smallCard2.png">
       </app-small-card>
-      <app-small-card
-        text="Free Smile Assessment"
-        imageUrl="../../assets/homePage/smallCard3.png"
-      >
+      <app-small-card text="Free Smile Assessment" imageUrl="../../assets/homePage/smallCard3.png">
       </app-small-card>
-      <app-small-card
-        text="Emergency Appointment"
-        imageUrl="../../assets/homePage/smallCard4.png"
-      >
+      <app-small-card text="Emergency Appointment" imageUrl="../../assets/homePage/smallCard4.png">
       </app-small-card>
     </div>
   </div>
@@ -52,10 +31,7 @@
 
 <div class="full-width" fxLayout fxLayoutAlign="center center">
   <video class="full-width" preload="auto" muted #relaxVideo loop>
-    <source
-      src="../../../assets/dentalClinic/DentalPracticeBut.mp4"
-      type="video/mp4"
-    />
+    <source src="../../../assets/dentalClinic/DentalPracticeBut.mp4" type="video/mp4" />
   </video>
 </div>
 
@@ -64,21 +40,14 @@
   text="Watch one of Our Clinic Videos"
 ></app-video-player> -->
 
-<div
-  fxLayout="column"
-  fxLayoutAlign="center"
-  class="padding-chef color-brown background-10 padding-bottom-1"
->
-  <div
-    fxLayout="column"
-    fxLayoutAlign="center center"
-    class="font-large libre-regular center-text padding-top-bottom-1 margin-bottom-2"
-  >
+<div fxLayout="column" fxLayoutAlign="center" class="padding-chef color-brown background-10 padding-bottom-1">
+  <div fxLayout="column" fxLayoutAlign="center center"
+    class="font-large libre-regular center-text padding-top-bottom-1 margin-bottom-2">
     <div class="width-1">
       <img loading="lazy" src="../../../assets/Shape.svg" />
     </div>
     <p>
-      The dentist you'll<br />
+      The dentist you will<br />
       actually
       <span class="libre-italic">Want to Visit</span>
     </p>
@@ -89,10 +58,7 @@
       <div class="margin-right-1 flex-1 no-margin-on-sm">
         <img loading="lazy" src="../../assets/homePage/couch.png" />
       </div>
-      <div
-        fxLayout="column"
-        class="flex-1 sscc margin-bottom-on-sm relative-container top1"
-      >
+      <div fxLayout="column" class="flex-1 sscc margin-bottom-on-sm relative-container top1">
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img loading="lazy" src="../../assets/homePage/1.png" />
         </div>
@@ -104,16 +70,13 @@
         </div>
         <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
           <p class="center-text-on-sm">
-            We’re all different and so are our needs. That’s why our treatment
+            We are all different and so are our needs. That is why our treatment
             plans are made just for you.
           </p>
         </div>
-        <div
-          fxLayout
-          fxLayoutAlign=" center"
+        <div fxLayout fxLayoutAlign=" center"
           class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-          (click)="seeProudSmileExperience()"
-        >
+          (click)="seeProudSmileExperience()">
           <p fxLayout fxLayoutAlign="center center">READ MORE</p>
           <div style="padding-left: 8px">
             <img loading="lazy" src="../../assets/orangeArrow.svg" />
@@ -125,35 +88,26 @@
 
   <div class="margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w sscc margin-bottom-2">
-      <div
-        fxLayout="column"
-        class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm"
-      >
+      <div fxLayout="column" class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm">
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img loading="lazy" src="../../assets/homePage/2.png" />
         </div>
         <div class="font-dog libre-regular margin-bottom-1">
           <p>
             You can
-            <span class="libre-italic"
-              >easily<br />
-              afoord it</span
-            >
+            <span class="libre-italic">easily<br />
+              afford it</span>
           </p>
         </div>
         <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
           <p class="center-text-on-sm" style="max-width: 540px">
             No it's not an arm and a leg, just your teeth. With our super
-            lexibile payment methods, no credit checks and transparent prices
-            chances are we a solution for anyone.
+            flexible payment methods, no credit checks and transparent prices
+            chances are we have a solution for anyone.
           </p>
         </div>
-        <div
-          fxLayout
-          fxLayoutAlign=" center"
-          (click)="onInternalLink('payment-page-component')"
-          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-        >
+        <div fxLayout fxLayoutAlign=" center" (click)="onInternalLink('payment-page-component')"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer">
           <p fxLayout fxLayoutAlign="center center">READ MORE</p>
           <div style="padding-left: 8px">
             <img loading="lazy" src="../../assets/orangeArrow.svg" />
@@ -172,10 +126,7 @@
       <div class="margin-right-1 flex-1 no-margin-on-sm">
         <img loading="lazy" src="../../assets/homePage/media.png" />
       </div>
-      <div
-        fxLayout="column"
-        class="flex-1 sscc margin-bottom-on-sm relative-container top1"
-      >
+      <div fxLayout="column" class="flex-1 sscc margin-bottom-on-sm relative-container top1">
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img loading="lazy" src="../../assets/homePage/3.png" />
         </div>
@@ -187,20 +138,12 @@
         </div>
         <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
           <p class="center-text-on-sm">
-            We all have a story to tell and we're here to listen, judgement
-            free. Then we'll give you the smile you'll be proud of.
+            We all have a story to tell and we are here to listen, judgement
+            free. Then we will give you the smile you will be proud of.
           </p>
         </div>
-        <div
-          (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
-            )
-          "
-          fxLayout
-          fxLayoutAlign=" center"
-          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-        >
+        <div (click)="onContactPage()" fxLayout fxLayoutAlign=" center"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer">
           <p fxLayout fxLayoutAlign="center center">TELL US YOUR STORY</p>
           <div style="padding-left: 8px">
             <img loading="lazy" src="../../assets/orangeArrow.svg" />
@@ -212,10 +155,7 @@
 
   <div fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w sscc">
-      <div
-        fxLayout="column"
-        class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm"
-      >
+      <div fxLayout="column" class="flex-1 sscc margin-bottom-on-sm relative-container top1 no-margin-on-sm">
         <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
           <img loading="lazy" src="../../assets/homePage/4.png" />
         </div>
@@ -224,15 +164,11 @@
         </div>
         <div class="roboto-regular font-lion margin-bottom-1 color-brown-light">
           <p class="center-text-on-sm" style="max-width: 540px">
-            Yes, we're high tech, but all that to make forget where you are.
+            Yes, we are high tech, but that is to so you can relax and forget where you are.
           </p>
         </div>
-        <div
-          (click)="seeOurClinic()"
-          fxLayout
-          fxLayoutAlign=" center"
-          class="link color-orange-light roboto-medium font-extra-small cursor-pointer"
-        >
+        <div (click)="seeOurClinic()" fxLayout fxLayoutAlign=" center"
+          class="link color-orange-light roboto-medium font-extra-small cursor-pointer">
           <p fxLayout fxLayoutAlign="center center">READ MORE</p>
           <div style="padding-left: 8px">
             <img loading="lazy" src="../../assets/orangeArrow.svg" />
@@ -247,21 +183,16 @@
   </div>
 </div>
 
-<div
-  fxLayout="column"
-  fxLayoutAlign="center"
-  fxLayoutGap="9vh"
-  class="background-2 padding-top-3"
->
+<div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="9vh" class="background-2 padding-top-3">
   <div fxLayout="column" fxLayoutAlign="center center">
     <div class="libre-regular font-large color-brown margin-bottom-1">
       <p class="center-text">
-        A top Team,<br />that just <span class="libre-italic">Cares More</span>
+        A Top Team,<br />that just <span class="libre-italic">Cares More</span>
       </p>
     </div>
     <div class="roboto-regular color-brown-light font-tiger">
       <p class="center-text">
-        We're honest, experienced, spontaneous,<br />
+        We are honest, experienced, spontaneous,<br />
         compassionate, funny, and not at all modest.
       </p>
     </div>
@@ -273,21 +204,15 @@
   </div>
 </div>
 
-<div
-  class="padding-chef color-brown background-11 padding-bottom-1"
-  fxLayout="column"
-  fxLayoutAlign="center center"
->
+<div class="padding-chef color-brown background-11 padding-bottom-1" fxLayout="column" fxLayoutAlign="center center">
   <div fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w sscc">
-      <div
-        class="flex-1 sscc margin-right-1 no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1"
-        fxLayout="column"
-      >
+      <div class="flex-1 sscc margin-right-1 no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1"
+        fxLayout="column">
         <div class="font-dog libre-regular margin-bottom-1">
           <p class="center-text-on-sm">
-            A dental <br />practice, <span class="libre-italic">but not</span
-            ><br /><span class="libre-italic">how you know it</span>.
+            A dental <br />practice, <span class="libre-italic">but not</span><br /><span class="libre-italic">as you
+              know it</span>.
           </p>
         </div>
         <div class="roboto-regular font-tiger margin-bottom-1">
@@ -307,52 +232,30 @@
 </div>
 
 <div class="aestheticsAndHealthSection" fxLayout>
-  <div
-    class="aesthetics padding-top-bottom-1 relative-container"
-    fxLayout="column"
-    fxLayoutAlign="start end"
-  >
-    <div
-      class="absolute-container"
-      style="top: 1%; left: 78%; filter: blur(10px)"
-    >
+  <div class="aesthetics padding-top-bottom-1 relative-container" fxLayout="column" fxLayoutAlign="start end">
+    <div class="absolute-container" style="top: 1%; left: 78%; filter: blur(10px)">
       <img loading="lazy" src="../../../assets/homePage/Oval1.svg" />
     </div>
-    <div
-      class="absolute-container"
-      style="top: 82%; left: 20%; filter: blur(10px)"
-    >
+    <div class="absolute-container" style="top: 82%; left: 20%; filter: blur(10px)">
       <img loading="lazy" src="../../../assets/homePage/Oval2.svg" />
     </div>
-    <div
-      class="absolute-container"
-      style="top: 72%; left: 56%; filter: blur(6px)"
-    >
+    <div class="absolute-container" style="top: 72%; left: 56%; filter: blur(6px)">
       <img loading="lazy" src="../../../assets/homePage/Oval3.svg" />
     </div>
-    <div
-      class="absolute-container"
-      style="top: 14%; left: 14%; filter: blur(5px)"
-    >
+    <div class="absolute-container" style="top: 14%; left: 14%; filter: blur(5px)">
       <img loading="lazy" src="../../../assets/homePage/Oval4.svg" />
     </div>
-    <div
-      class="absolute-container"
-      style="top: 68%; left: 22%; filter: blur(28px)"
-    >
+    <div class="absolute-container" style="top: 68%; left: 22%; filter: blur(28px)">
       <img loading="lazy" src="../../../assets/homePage/Oval5.svg" />
     </div>
-    <div
-      class="absolute-container"
-      style="top: 6%; left: 12%; filter: blur(10px)"
-    >
+    <div class="absolute-container" style="top: 6%; left: 12%; filter: blur(10px)">
       <img loading="lazy" src="../../../assets/homePage/Oval6.svg" />
     </div>
     <div fxLayout="column" fxLayoutAlign="start start">
       <div class="title color-white font-small-3">
         <p class="roboto-regular">
-          AESTHETICS<span class="middleSlash roboto-thin opacity-3"> / </span
-          ><span class="roboto-thin opacity-3"> Become more confident</span>
+          AESTHETICS<span class="middleSlash roboto-thin opacity-8"> / </span><span class="roboto-thin opacity-8">
+            Become more confident</span>
         </p>
       </div>
       <div class="horizontalLine"></div>
@@ -372,13 +275,8 @@
         <p>Invisalign</p>
       </div>
       <div class="element horizontalLine"></div>
-      <div
-        class="link roboto-regular color-white font-extra-small-3 cursor-pointer relative-container"
-        style="z-index: 1"
-        fxLayout
-        fxLayoutAlign="center center"
-        (click)="seeAllAesthetic()"
-      >
+      <div class="link roboto-regular color-white font-extra-small-3 cursor-pointer relative-container"
+        style="z-index: 1" fxLayout fxLayoutAlign="center center" (click)="seeAllAesthetic()">
         <div class="hide-on-sm">
           <img loading="lazy" src="../../../assets/homePage/Dots.png" />
         </div>
@@ -386,24 +284,16 @@
           <p>See all aesthetic services</p>
         </div>
         <div class="margin-left-1">
-          <img
-            loading="lazy"
-            style="max-width: unset"
-            src="../../../assets/homePage/WhiteArrow.svg"
-          />
+          <img loading="lazy" style="max-width: unset" src="../../../assets/homePage/WhiteArrow.svg" />
         </div>
       </div>
     </div>
   </div>
-  <div
-    class="health padding-top-bottom-1"
-    fxLayout="column"
-    fxLayoutAlign="start start"
-  >
+  <div class="health padding-top-bottom-1" fxLayout="column" fxLayoutAlign="start start">
     <div class="title color-white font-small-3">
       <p>
-        HEALTH<span class="middleSlash roboto-thin opacity-3"> / </span
-        ><span class="roboto-thin opacity-3"> Fell your best</span>
+        HEALTH<span class="middleSlash roboto-thin opacity-8"> / </span><span class="roboto-thin opacity-8"> Feel your
+          best</span>
       </p>
     </div>
     <div class="horizontalLine"></div>
@@ -419,18 +309,15 @@
     <div class="element libre-regular color-white font-fish">
       <p>Root Canals</p>
     </div>
-    <div class="element libre-regular color-white font-fish"><p>Braces</p></div>
+    <div class="element libre-regular color-white font-fish">
+      <p>Braces</p>
+    </div>
     <div class="element libre-regular color-white font-fish">
       <p>Extractions</p>
     </div>
     <div class="element horizontalLine"></div>
-    <div
-      class="link roboto-regular color-white font-extra-small-3 cursor-pointer relative-container"
-      style="z-index: 1"
-      fxLayout
-      fxLayoutAlign="center center"
-      (click)="seeAllHealth()"
-    >
+    <div class="link roboto-regular color-white font-extra-small-3 cursor-pointer relative-container" style="z-index: 1"
+      fxLayout fxLayoutAlign="center center" (click)="seeAllHealth()">
       <div class="hide-on-sm">
         <img loading="lazy" src="../../../assets/homePage/Dots.png" />
       </div>
@@ -438,33 +325,21 @@
         <p>See all health services</p>
       </div>
       <div class="margin-left-1">
-        <img
-          loading="lazy"
-          style="max-width: unset"
-          src="../../../assets/homePage/WhiteArrow.svg"
-        />
+        <img loading="lazy" style="max-width: unset" src="../../../assets/homePage/WhiteArrow.svg" />
       </div>
     </div>
   </div>
 </div>
 
-<div
-  class="instaSection background-17 color-white padding-top-bottom-1 relative-container"
-  fxLayout="column"
-  fxLayoutAlign="center center"
->
+<div class="instaSection background-17 color-white padding-top-bottom-1 relative-container" fxLayout="column"
+  fxLayoutAlign="center center">
   <div class="instaFeed">
     <div class="text margin-bottom-1 padding-chef">
       <div class="leftText roboto-medium font-extra-small">
-        <p>OUR INSTAGRAM FEED</p>
+        <p>Proud Smile Social</p>
       </div>
-      <div
-        class="rightText roboto-medium font-extra-small"
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="1vw"
-        (click)="goToLink('https://www.instagram.com/proud.smile.dental/')"
-      >
+      <div class="rightText roboto-medium font-extra-small" fxLayout fxLayoutAlign="center center" fxLayoutGap="1vw"
+        (click)="goToLink('https://www.instagram.com/proud.smile.dental/')">
         <div>
           <img loading="lazy" src="../../../assets/homePage/instagram.svg" />
         </div>
@@ -472,30 +347,20 @@
       </div>
     </div>
 
-    <ng-image-slider
-      [infinite]="true"
-      [autoSlide]="3"
-      [showArrow]="false"
-      [images]="imageObject"
-      #nav
-    ></ng-image-slider>
+    <ng-image-slider [infinite]="true" [autoSlide]="3" [showArrow]="false" [images]="imageObject" #nav>
+    </ng-image-slider>
   </div>
   <div class="title" fxLayout="column" fxLayoutAlign="start center">
-    <div class="year">
-      <img loading="lazy" src="../../../assets/homePage/2019.svg" />
-    </div>
     <div class="text roboto-regular font-wolf margin-bottom-1">
       <p>
-        We take pride in our work. Until now<br />
-        we have
-        <span class="roboto-bold"
-          >578 Completed Cases, 26<br />
-          Dedicated Partners and 789 Clients</span
-        >
-        all<br />
-        Over The Worldwide
+        Become part of our family
       </p>
     </div>
-    <app-button text="Let’s tell your story next"></app-button>
+
+    <app-button (click)="
+    goToLink(
+      'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+    )
+  " text="BOOK NOW"></app-button>
   </div>
 </div>
