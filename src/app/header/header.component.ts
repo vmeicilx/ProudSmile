@@ -94,6 +94,7 @@ export class HeaderComponent implements OnInit {
           val.url === "/SameDayVeneers" ||
           val.url === "/InvisalignVeneer" ||
           val.url === "/ZoomWhitening" ||
+          val.url === "/BeforeAndAfter" ||
           val.url === "/FaceSpaFacialAesthetics";
 
         this.isHealth =
@@ -176,8 +177,12 @@ export class HeaderComponent implements OnInit {
           this.setActiveSubheader5(3);
           this.aestheticsText.nativeElement.classList.add("active-text");
         }
-        if (val.url === "/FaceSpaFacialAesthetics") {
+        if (val.url === "/BeforeAndAfter") {
           this.setActiveSubheader5(4);
+          this.aestheticsText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/FaceSpaFacialAesthetics") {
+          this.setActiveSubheader5(5);
           this.aestheticsText.nativeElement.classList.add("active-text");
         }
 
@@ -286,34 +291,10 @@ export class HeaderComponent implements OnInit {
   setActiveSubheader1(index: number) {
     for (
       var i = 0;
-      i < this.elRef.nativeElement.children[4].children[0].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[4].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    this.elRef.nativeElement.children[4].children[0].children[
-      index
-    ].classList.add("active");
-  }
-
-  setActiveSubheader2(index: number) {
-    for (
-      var i = 0;
       i < this.elRef.nativeElement.children[5].children[0].children.length;
       i++
     ) {
       this.elRef.nativeElement.children[5].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[5].children[1].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[5].children[1].children[
         i
       ].classList.remove("active");
     }
@@ -322,31 +303,7 @@ export class HeaderComponent implements OnInit {
     ].classList.add("active");
   }
 
-  setActiveSubheader3(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[5].children[0].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[5].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[5].children[1].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[5].children[1].children[
-        i
-      ].classList.remove("active");
-    }
-    this.elRef.nativeElement.children[5].children[1].children[
-      index
-    ].classList.add("active");
-  }
-
-  setActiveSubheader4(index: number) {
+  setActiveSubheader2(index: number) {
     for (
       var i = 0;
       i < this.elRef.nativeElement.children[6].children[0].children.length;
@@ -356,12 +313,45 @@ export class HeaderComponent implements OnInit {
         i
       ].classList.remove("active");
     }
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[6].children[1].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[6].children[1].children[
+        i
+      ].classList.remove("active");
+    }
     this.elRef.nativeElement.children[6].children[0].children[
       index
     ].classList.add("active");
   }
 
-  setActiveSubheader5(index: number) {
+  setActiveSubheader3(index: number) {
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[6].children[0].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[6].children[0].children[
+        i
+      ].classList.remove("active");
+    }
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[6].children[1].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[6].children[1].children[
+        i
+      ].classList.remove("active");
+    }
+    this.elRef.nativeElement.children[6].children[1].children[
+      index
+    ].classList.add("active");
+  }
+
+  setActiveSubheader4(index: number) {
     for (
       var i = 0;
       i < this.elRef.nativeElement.children[7].children[0].children.length;
@@ -372,6 +362,21 @@ export class HeaderComponent implements OnInit {
       ].classList.remove("active");
     }
     this.elRef.nativeElement.children[7].children[0].children[
+      index
+    ].classList.add("active");
+  }
+
+  setActiveSubheader5(index: number) {
+    for (
+      var i = 0;
+      i < this.elRef.nativeElement.children[8].children[0].children.length;
+      i++
+    ) {
+      this.elRef.nativeElement.children[8].children[0].children[
+        i
+      ].classList.remove("active");
+    }
+    this.elRef.nativeElement.children[8].children[0].children[
       index
     ].classList.add("active");
   }

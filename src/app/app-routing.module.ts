@@ -31,6 +31,7 @@ import { UltraThinVeneersComponent } from "./pages/aesthetics/ultra-thin-veneers
 import { SameDayVeneersComponent } from "./pages/aesthetics/same-day-veneers/same-day-veneers.component";
 import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-whitening.component";
 import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
+import { BeforeAfterComponent } from "./pages/aesthetics/before-after/before-after.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -66,6 +67,7 @@ const routes: Routes = [
   { path: "SameDayVeneers", component: SameDayVeneersComponent },
   { path: "ZoomWhitening", component: ZoomWhiteningComponent },
   { path: "FaceSpaFacialAesthetics", component: FacespaFacialComponent },
+  { path: "BeforeAndAfter", component: BeforeAfterComponent },
   { path: "Specials", component: SpecialsComponent },
   { path: "coming-soon-component", component: ComingSoonComponent },
   { path: "payment-page-component", component: PaymentPageComponent },

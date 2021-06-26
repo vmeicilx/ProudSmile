@@ -144,9 +144,9 @@
         class="button-1 color-orange"
         fxFlexAlign="center"
         (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
-          )
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
         "
       >
         <img src="../../../assets/contactPage/calendar.svg" />
@@ -231,9 +231,9 @@
         class="button-1 color-orange"
         fxFlexAlign="center"
         (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490'
-          )
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
         "
       >
         <img loading="lazy" src="../../../assets/contactPage/calendar.svg" />
@@ -258,18 +258,19 @@
         Have a question<br />
         for ProudSmile?<br />
         <span class="libre-italic"
-          >Just chat to us, in<br />
-          your own time.</span
+          >Talk to us.</span
         >
       </p>
     </div>
     <div class="mainText max-width-1 font-small roboto-regular">
-      <p>Chat to us in real time and in your own time.</p>
+      <p>
+        Any questions? Our team will respond to any questions you may have
+        about the practice or your dento - facial needs.</p>
     </div>
     <app-button (click)="onContactPage()" text="GET IN TOUCH"></app-button>
   </div>
   <div>
-    <img loading="lazy" src="../../assets/footer/chat.svg" />
+    <img loading="lazy" src="../../assets/footer/chat.png" />
   </div>
 </div>
 
@@ -507,23 +508,21 @@
   </div>
 </div>
 
-<div
-  class="instaSection background-17 color-white padding-top-bottom-1 relative-container"
-  fxLayout="column"
-  fxLayoutAlign="center center"
->
-  <div class="instaFeed">
+
+<div class="instaSection background-17 color-white padding-top-bottom-1 relative-container" fxLayout="column"
+  fxLayoutAlign="center center">
+  <div class="libre-regular font-large margin-bottom-1">
+    <p class="center-text">
+      Proud Smile Social
+    </p>
+  </div>
+  <div class="instaFeed"  style="margin-top:4vw;">
     <div class="text margin-bottom-1 padding-chef">
       <div class="leftText roboto-medium font-extra-small">
-        <p>Proud Smile Social</p>
+        <p></p>
       </div>
-      <div
-        class="rightText roboto-medium font-extra-small"
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="1vw"
-        (click)="goToLink('https://www.instagram.com/proud.smile.dental/')"
-      >
+      <div class="rightText roboto-medium font-extra-small" fxLayout fxLayoutAlign="center center" fxLayoutGap="1vw"
+        (click)="goToLink('https://www.instagram.com/proud.smile.dental/')">
         <div>
           <img loading="lazy" src="../../../assets/homePage/instagram.svg" />
         </div>
@@ -531,20 +530,19 @@
       </div>
     </div>
 
-    <ng-image-slider
-      [infinite]="true"
-      [autoSlide]="3"
-      [showArrow]="false"
-      [images]="imageObject"
-      #nav
-    ></ng-image-slider>
+    <ng-image-slider [infinite]="true" [autoSlide]="3" [showArrow]="false" [images]="imageObject" #nav>
+    </ng-image-slider>
   </div>
-  <div class="instaTitle" fxLayout="column" fxLayoutAlign="start center">
+  <div style="margin-top:4vw;" fxLayout="column" fxLayoutAlign="start center">
     <div class="text roboto-regular font-wolf margin-bottom-1">
       <p>
         Become part of our family
       </p>
     </div>
-    <app-button text="Let’s tell your story next"></app-button>
+    <app-button (click)="
+    goToLink(
+      'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+    )
+  " text="BOOK NOW"></app-button>
   </div>
 </div>

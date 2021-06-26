@@ -2,7 +2,14 @@
   <div #item1 class="firstSection section full-width flexy-row-w">
     <div class="color-gray-dark flexy-column text-container">
       <div
-        class="lineAndText flexy-row cscc font-extra-small opacity-5 roboto-medium"
+        class="
+          lineAndText
+          flexy-row
+          cscc
+          font-extra-small
+          opacity-5
+          roboto-medium
+        "
       >
         <div class="line width-1"></div>
         <p>EASY TO TALK TO</p>
@@ -23,7 +30,7 @@
       <app-button (click)="onContactPage()" text="GET IN TOUCH"></app-button>
     </div>
     <div>
-      <img loading="lazy" src="../../assets/footer/chat.svg" />
+      <img loading="lazy" src="../../assets/footer/chat.png" />
     </div>
   </div>
 
@@ -31,7 +38,7 @@
 
   <div
     #item3
-    class="locationSection full-width"
+    class="locationSection full-width color-white background-52"
     fxLayout
     fxLayoutAlign="center center"
     fxLayoutGap="8.4vw"
@@ -41,18 +48,32 @@
         <img loading="lazy" src="../../assets/footer/Cangur.png" />
       </div>
       <div
-        class="locationCardTitle margin-bottom-3 font-small roboto-bold color-gray-dark"
+        class="
+          locationCardTitle
+          margin-bottom-3
+          font-small
+          roboto-bold
+        "
         style="margin-bottom: 2.5vw"
       >
         <p>Come over for coffee and a friendly chat.</p>
       </div>
 
       <div
-        class="locationCardText roboto-regular color-gray-dark font-extra-small flexy-column sscc"
+        class="
+          locationCardText
+          roboto-regular
+          font-extra-small
+          flexy-column
+          sscc
+        "
         style="margin-bottom: 2.5vw"
       >
+      <div class="roboto-medium" style="margin-bottom:8px;">
+        <p>1. Proud Smile - Bundall</p>
+      </div>
         <div
-          class="color-orange directionLink cursor-pointer roboto-medium"
+          class="directionLink cursor-pointer roboto-medium"
           (click)="
             goToLink(
               'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
@@ -60,7 +81,7 @@
           "
         >
           <p>
-            <span class="color-gray-dark roboto-regular opacity-5"
+            <span class="roboto-thin color-gray-light opacity-9"
               >122 Bundall Road, Bundall QLD 4217<br />
               Australia</span
             >
@@ -68,18 +89,27 @@
             <img
               style="display: inline; vertical-align: middle"
               loading="lazy"
-              src="../../assets/orangeArrow.svg"
+              src="../../assets/whiteArrow.svg"
             />
           </p>
         </div>
       </div>
 
       <div
-        class="locationCardText roboto-regular color-gray-dark font-extra-small flexy-column sscc"
+        class="
+          locationCardText
+          roboto-regular
+          font-extra-small
+          flexy-column
+          sscc
+        "
         style="margin-bottom: 2.5vw"
       >
+      <div class="roboto-medium" style="margin-bottom:8px;">
+        <p>2. Proud Smile - Pacific Fair Mall</p>
+      </div>
         <div
-          class="color-orange directionLink cursor-pointer roboto-medium"
+          class="directionLink cursor-pointer roboto-medium"
           (click)="
             goToLink(
               'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
@@ -87,7 +117,7 @@
           "
         >
           <p>
-            <span class="color-gray-dark roboto-regular opacity-5"
+            <span class="roboto-thin color-gray-light opacity-9"
               >Shop 82, 2 Hooker Boulevard Broadbeach<br />
               Waters, QLD 4218</span
             >
@@ -95,7 +125,7 @@
             <img
               style="display: inline; vertical-align: middle"
               loading="lazy"
-              src="../../assets/orangeArrow.svg"
+              src="../../assets/whiteArrow.svg"
             />
           </p>
         </div>
@@ -118,7 +148,9 @@
         <img loading="lazy" src="../../assets/footer/Bumerang.png" />
       </div>
       <div class="subscribeCardTitle font-small">
-        <p class="roboto-bold">We will make the first move, what`s your email?</p>
+        <p class="roboto-bold">
+          We will make the first move, what`s your email?
+        </p>
         <p class="roboto-regular">No commitments, unsubscribe anytime.</p>
       </div>
       <div class="subscribeCardInput full-width">
@@ -129,7 +161,7 @@
               matInput
               [formControl]="emailFormControl"
               [errorStateMatcher]="matcher"
-              placeholder="Ex. firstname.lastname@gmail.com"
+              placeholder="firstname.lastname@gmail.com"
             />
             <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
             <mat-error
@@ -164,12 +196,15 @@
         <div
           fxLayout
           fxLayoutAlign=" center"
-          class="color-orange directionLink cursor-pointer roboto-medium font-extra-small"
-          (click)="
-            goToLink(
-              'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
-            )
+          class="
+            color-orange
+            directionLink
+            cursor-pointer
+            roboto-medium
+            font-extra-small
           "
+          
+          (click)="onNewsletterClick()"
         >
           <p>See A Newsletter Sample</p>
           <div class="link-image">
@@ -270,4 +305,20 @@
       </div>
     </div>
   </div>
+</div>
+
+<div #Newsletter style="visibility:hidden; position: fixed; top: 0; left: 0; display:flex;align-items: center; justify-content: center; overflow-y: scroll; background-color: black; z-index:10; width: 100%; height:100vh">
+  
+  <button
+    class="fullview__close"
+    (click)="onNewsletterClose()"
+  >
+    <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+      <path
+        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+      />
+    </svg>
+  </button>
+
+  <div style="height: 4625px; position: absolute; top: 0"><img src="../../assets/footer/news.jpg" /></div>
 </div>

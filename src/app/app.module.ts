@@ -61,6 +61,7 @@ import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-w
 import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
 import { DataService } from "./shared/data-service";
 import { ScrollFramerSectionComponent } from './custom-components/scroll-framer-section/scroll-framer-section.component';
+import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-after.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { ScrollFramerSectionComponent } from './custom-components/scroll-framer-
     SameDayVeneersComponent,
     ZoomWhiteningComponent,
     FacespaFacialComponent,
-    ScrollFramerSectionComponent
+    ScrollFramerSectionComponent,
+    BeforeAfterComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,15 @@
   background: white;
 }
 
+::ng-deep #mat-menu-panel-0 {
+  min-width: unset;
+  max-width: unset;
+}
+::ng-deep #mat-menu-panel-1 {
+  min-width: unset;
+  max-width: unset;
+}
+
 ::ng-deep snack-bar-container span {
   margin: auto;
   text-align: center;
@@ -28,9 +37,27 @@
   }
 }
 
-#Schedule {
-  p {
-    margin: 2vh 1vw;
+#BundallSch {
+
+  .scheduler-container {
+    top: -200px;
+    padding: 0 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      align-items: start;
+      justify-content: center;
+    }
+  }
+  .scheduler {
+    padding-left: 40px;
+  }
+
+  .scheduler-icon {
+    top: 0px;
+    left: -40px;
   }
 }
 #Schedule2 {
@@ -40,6 +67,8 @@
 }
 
 :host {
+
+
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -140,12 +169,22 @@
   .whiteStyle .icons {
     fill: white;
     transition: fill 1000ms linear;
-    opacity: 0.8;
+    opacity: 1;
   }
   .blackStyle .icons {
     fill: black;
     transition: fill 1000ms linear;
     opacity: 0.8;
+  }
+  .whiteStyle .inclined {
+    stroke: white;
+    transition: stroke 1000ms linear;
+    opacity: 0.4;
+  }
+  .blackStyle .inclined {
+    stroke: black;
+    transition: stroke 1000ms linear;
+    opacity: 0.4;
   }
   .header.whiteStyle {
     background-color: transparent;

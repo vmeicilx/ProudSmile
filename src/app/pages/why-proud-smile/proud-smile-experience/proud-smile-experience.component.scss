@@ -148,6 +148,13 @@
       max-width: 560px;
       max-height: 1070px;
     }
+
+    .no-judgment-image {
+      max-width: 140%;
+    }
+    .no-judgment-text {
+      max-width: 560px;
+    }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
@@ -174,9 +181,23 @@
         }
       }
     }
+    
+    .no-judgment-image {
+      max-width: 200%;
+    }
+    .no-judgment-text {
+      max-width: 500px;
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    
+    .no-judgment-image {
+      max-width: 400%;
+    }
+    .no-judgment-text {
+      max-width: 500px;
+    }
     .textContainer.margin-bottom {
       margin-bottom: 3vh;
     }

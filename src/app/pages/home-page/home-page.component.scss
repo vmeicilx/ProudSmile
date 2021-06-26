@@ -127,18 +127,6 @@
         }
       }
     }
-    .title {
-      position: relative;
-      margin-top: 10vh;
-      .year {
-        position: absolute;
-        top: -16vh;
-      }
-      .text {
-        z-index: 1;
-        text-align: center;
-      }
-    }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {

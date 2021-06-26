@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icons/clock</title>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Hours-Dental" transform="translate(-687.000000, -229.000000)" fill="#565960">
+            <g id="Group-4" transform="translate(645.500000, 53.000000)">
+                <g id="Group-6" transform="translate(40.000000, 170.500000)">
+                    <g id="Icons/clock" transform="translate(0.000000, 4.000000)">
+                        <path d="M12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 C17.5228475,22 22,17.5228475 22,12 C22,9.3478351 20.9464316,6.80429597 19.0710678,4.92893219 C17.195704,3.0535684 14.6521649,2 12,2 Z M13,12 C12.9991326,12.3570809 12.8087744,12.6868614 12.5,12.86621 L9.90234,14.36621 C9.42397724,14.642008 8.81261535,14.4779661 8.53657277,13.9997444 C8.26053019,13.5215227 8.42425951,12.9100771 8.90234,12.63379 L11,11.42249 L11,7 C11,6.44771525 11.4477153,6 12,6 C12.5522847,6 13,6.44771525 13,7 L13,12 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

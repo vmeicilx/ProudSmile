@@ -40,6 +40,7 @@ export class FooterComponent implements OnInit {
   @ViewChild("item2") it2: ElementRef;
   @ViewChild("item3") it3: ElementRef;
   @ViewChild("item4") it4: ElementRef;
+  @ViewChild("Newsletter") newsletter: ElementRef;
 
   matcher = new MyErrorStateMatcher();
   constructor(private router: Router) {
@@ -71,5 +72,15 @@ export class FooterComponent implements OnInit {
   onContactPage() {
     this.router.navigate(["/", "contact-page-component", true]);
     window.scrollTo(0, 0);
+  }
+
+  onNewsletterClick() {
+    this.newsletter.nativeElement.style.visibility = "visible";
+    document.documentElement.style.overflowY = "hidden";
+  }
+
+  onNewsletterClose() {
+    this.newsletter.nativeElement.style.visibility = "hidden";
+    document.documentElement.style.overflowY = "scroll";
   }
 }
