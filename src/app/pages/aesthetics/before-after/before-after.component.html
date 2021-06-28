@@ -1,10 +1,240 @@
-<div style="padding-top:217px;position: relative; background-color: black;" fxLayout="column" fxLayoutAlign="center center">
-    <div style="margin-top:8vw; position: relative">
-
-        <div>
-            <img #art1 src="../../../../assets/aesthetics/BeforeAndAfter/Art_1.svg"/>
-            <img #art2 src="../../../../assets/aesthetics/BeforeAndAfter/Art_2.svg"/>
-        </div>
+<div
+  style="padding-top: 217px; position: relative; background-color: black"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div style="margin-top: 8vw; position: relative">
+    <div>
+      <img #art1 src="../../../../assets/aesthetics/BeforeAndAfter/Art_1.svg" />
+      <img #art2 src="../../../../assets/aesthetics/BeforeAndAfter/Art_2.svg" />
     </div>
+  </div>
 
+  <div class="padding-chef color-white">
+    <div
+      style="max-width: 48vw"
+      class="center-text margin-bottom-2 flexy-column cccc"
+    >
+      <div class="font-lion roboto-regular">
+        <p>
+          Take a look at these Proud Smiles, then hover or click to see the
+          before photo and you'll also get the full case information such as
+          procedures done, timeframe, patient concerns and more.
+        </p>
+      </div>
+      <div
+        class="line-10 margin-top-bottom-3 opacity-5"
+        style="width: 26vw"
+      ></div>
+      <div
+        class="font-small-3 roboto-regular opacity-5"
+        style="color: #acacac; max-width: 38vw"
+      >
+        <p>
+          *these patients have consented to have their images used on this
+          website. Some patients asked for their eyes not to be shown, hence the
+          sunglasses on some of them. Copying or using these images is strictly
+          prohibited.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="padding-chef"
+  style="
+    display: grid;
+    background-color: black;
+    grid-template-columns: auto auto;
+    grid-auto-rows: auto;
+    column-gap: 2vw;
+    row-gap: 2vw;
+    padding-bottom:8vw;
+  "
+>
+  <div
+  style="position: relative;"
+  (mouseover)="toAfter('1_zoom_after.jpg', 0)"
+  (mouseout)="toBefore('1_zoom_before.jpg', 0)"
+  >
+    <div>
+      <img #case0
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/1_zoom_before.jpg"
+      />
+    </div>
+    <div #btn0 style="position: absolute; width:70px;height:25px;top:75%;left:24px;cursor: pointer; visibility: hidden; transition: all 0.3s">
+        <svg  width="100%" height="100%">
+            <rect fill="gray" width="100%" height="100%"></rect>
+        </svg>
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_zoom_after.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/8_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/9_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/10_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/12_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/18_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/20_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/23_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/24_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/26_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/31_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/34_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_zoom_before.jpg"
+      />
+    </div>
+  </div>
+  <div>
+    <div>
+      <img
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/36_zoom_before.jpg"
+      />
+    </div>
+  </div>
 </div>

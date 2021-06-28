@@ -113,6 +113,15 @@
   .cosmetic-hero {
     right: calc(68.83vw - 1376px);
   }
+  
+  .NoJudgmentFullDesktop {
+    display: block;
+  }
+
+  .NoJudgmentFullMobile {
+    display: none;
+  }
+
   @media only screen and (min-width: 2001px) {
     .title-on-big {
       font-size: 56px;
@@ -191,9 +200,17 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+
+    .NoJudgmentFullDesktop {
+      display: none;
+    }
+
+    .NoJudgmentFullMobile {
+      display: block;
+    }
     
     .no-judgment-image {
-      max-width: 400%;
+      max-width: 100%;
     }
     .no-judgment-text {
       max-width: 500px;

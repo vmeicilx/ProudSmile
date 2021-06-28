@@ -11,6 +11,13 @@ export class BeforeAfterComponent implements OnInit {
   
   @ViewChild("art1") art1: ElementRef;
   @ViewChild("art2") art2: ElementRef;
+  
+  @ViewChild("case0") case0: ElementRef;
+
+  @ViewChild("btn0") btn0: ElementRef;
+
+  cases = [];
+  buttons = [];
 
   constructor() { }
 
@@ -43,6 +50,32 @@ export class BeforeAfterComponent implements OnInit {
       }
       art1 = !art1;
     }.bind(this), 800);
+
+    this.cases.push(this.case0.nativeElement);
+    this.buttons.push(this.btn0.nativeElement);
   }
 
+  toAfter(src: string, c: number) {
+    const currentCase = this.cases[c];
+    currentCase.src = "../../../../assets/aesthetics/BeforeAndAfter/Gallery/" +  src;
+
+    const currentButton = this.buttons[c];
+    currentButton.style.visibility = "visible";
+    currentButton.style.width = "150px";
+    currentButton.style.height = "50px";
+    setTimeout(() => {
+    currentButton.style.transition = "unset";
+    }, 300);
+  }
+
+  toBefore(src: string, c: number) {
+    const currentCase = this.cases[c];
+    currentCase.src = "../../../../assets/aesthetics/BeforeAndAfter/Gallery/" +  src;
+
+    const currentButton = this.buttons[c];
+    currentButton.style.transition = "all 0.3s";
+    currentButton.style.visibility = "hidden";
+    currentButton.style.width = "70px";
+    currentButton.style.height = "25px";
+  }
 }

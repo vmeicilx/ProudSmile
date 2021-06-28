@@ -38,14 +38,12 @@
 
   <div
     #item3
-    class="locationSection full-width color-white background-52"
-    fxLayout
-    fxLayoutAlign="center center"
-    fxLayoutGap="8.4vw"
+    class="locationSection locationSectionDesktop full-width color-white background-52 flexy-row"
+    style="align-items:center; justify-content: flex-end;"
   >
-    <div class="locationCard flexy-column sscc" style="margin-top: 2.5vw">
+    <div class="locationCard flexy-column ssss" style="margin-top: 2.5vw">
       <div class="locationCardIcon margin-bottom-5">
-        <img loading="lazy" src="../../assets/footer/Cangur.png" />
+        <img loading="lazy" src="../../assets/footer/cangour.svg" />
       </div>
       <div
         class="
@@ -65,7 +63,7 @@
           roboto-regular
           font-extra-small
           flexy-column
-          sscc
+          ssss
         "
         style="margin-bottom: 2.5vw"
       >
@@ -101,7 +99,7 @@
           roboto-regular
           font-extra-small
           flexy-column
-          sscc
+          ssss
         "
         style="margin-bottom: 2.5vw"
       >
@@ -133,9 +131,107 @@
     </div>
 
     <div class="locationSectionImage">
-      <img loading="lazy" src="../../assets/footer/footerMap.png" />
+      <img style="max-width: unset;" loading="lazy" src="../../assets/footer/map.png" />
     </div>
   </div>
+
+  <div
+  #item3
+  class="locationSection locationSectionMobile full-width color-white background-52 flexy-column cccc"
+>
+  <div class="locationCard flexy-column sscc">
+    <div class="locationCardIcon margin-bottom-5">
+      <img loading="lazy" src="../../assets/footer/cangour.svg" />
+    </div>
+    <div
+      class="
+        locationCardTitle
+        margin-bottom-3
+        font-small
+        roboto-bold
+      "
+      style="margin-bottom: 2.5vw"
+    >
+      <p>Come over for coffee and a friendly chat.</p>
+    </div>
+
+    <div
+      class="
+        locationCardText
+        roboto-regular
+        font-extra-small
+        flexy-column
+        sscc
+      "
+      style="margin-bottom: 2.5vw"
+    >
+    <div class="roboto-medium" style="margin-bottom:8px;">
+      <p>1. Proud Smile - Bundall</p>
+    </div>
+      <div
+        class="directionLink cursor-pointer roboto-medium"
+        (click)="
+          goToLink(
+            'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+          )
+        "
+      >
+        <p>
+          <span class="roboto-thin color-gray-light opacity-9"
+            >122 Bundall Road, Bundall QLD 4217<br />
+            Australia</span
+          >
+          Get directions to our clinic
+          <img
+            style="display: inline; vertical-align: middle"
+            loading="lazy"
+            src="../../assets/whiteArrow.svg"
+          />
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="
+        locationCardText
+        roboto-regular
+        font-extra-small
+        flexy-column
+        sscc
+      "
+      style="margin-bottom: 2.5vw"
+    >
+    <div class="roboto-medium" style="margin-bottom:8px;">
+      <p>2. Proud Smile - Pacific Fair Mall</p>
+    </div>
+      <div
+        class="directionLink cursor-pointer roboto-medium"
+        (click)="
+          goToLink(
+            'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
+          )
+        "
+      >
+        <p>
+          <span class="roboto-thin color-gray-light opacity-9"
+            >Shop 82, 2 Hooker Boulevard Broadbeach<br />
+            Waters, QLD 4218</span
+          >
+          Get directions to our clinic
+          <img
+            style="display: inline; vertical-align: middle"
+            loading="lazy"
+            src="../../assets/whiteArrow.svg"
+          />
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="locationSectionImage">
+    <img style="width: 100%;" loading="lazy" src="../../assets/footer/mapMobile.png" />
+  </div>
+</div>
 
   <div #item4 class="horizontalLine"></div>
 
