@@ -12,11 +12,16 @@ export class BeforeAfterComponent implements OnInit {
   @ViewChild("art1") art1: ElementRef;
   @ViewChild("art2") art2: ElementRef;
   
-  @ViewChild("case0") case0: ElementRef;
+  @ViewChild("case0Before") case0Before: ElementRef;
+  @ViewChild("case0After") case0After: ElementRef;
+  @ViewChild("case1Before") case1Before: ElementRef;
+  @ViewChild("case1After") case1After: ElementRef;
 
   @ViewChild("btn0") btn0: ElementRef;
+  @ViewChild("btn1") btn1: ElementRef;
 
-  cases = [];
+  before = [];
+  after = [];
   buttons = [];
 
   constructor() { }
@@ -26,56 +31,57 @@ export class BeforeAfterComponent implements OnInit {
 
   
   ngAfterViewInit(): void {
-    this.art1.nativeElement.style.display = "block";
     this.art1.nativeElement.style.opacity = "1";
-    this.art2.nativeElement.style.display = "none";
     this.art2.nativeElement.style.opacity = "0";
-    this.art1.nativeElement.style.transition = "opacity 1s ease-out";
-    this.art2.nativeElement.style.transition = "opacity 1s ease-out";
     let art1 = true;
     setInterval(function()
     {     
       if(art1)
       {
-        this.art1.nativeElement.style.display = "none";
         this.art1.nativeElement.style.opacity = "0";
-        this.art2.nativeElement.style.display = "block"; 
         this.art2.nativeElement.style.opacity = "1";
       }
       else{
-        this.art1.nativeElement.style.display = "block";
         this.art1.nativeElement.style.opacity = "1";
-        this.art2.nativeElement.style.display = "none"; 
         this.art2.nativeElement.style.opacity = "0";
       }
       art1 = !art1;
     }.bind(this), 800);
 
-    this.cases.push(this.case0.nativeElement);
+    this.before.push(this.case0Before.nativeElement);
+    this.before.push(this.case1Before.nativeElement);
+    this.after.push(this.case0After.nativeElement);
+    this.after.push(this.case1After.nativeElement);
     this.buttons.push(this.btn0.nativeElement);
+    this.buttons.push(this.btn1.nativeElement);
   }
 
-  toAfter(src: string, c: number) {
-    const currentCase = this.cases[c];
-    currentCase.src = "../../../../assets/aesthetics/BeforeAndAfter/Gallery/" +  src;
+  toAfter(c: number) {
+    const currentCaseBefore = this.before[c];
+    const currentCaseAfter = this.after[c];
+    currentCaseBefore.style.opacity = "0";
+    currentCaseAfter.style.opacity = "1";
 
     const currentButton = this.buttons[c];
     currentButton.style.visibility = "visible";
-    currentButton.style.width = "150px";
-    currentButton.style.height = "50px";
+    currentButton.classList.remove("gallery-btn-small");
+    currentButton.classList.add("gallery-btn-big");
     setTimeout(() => {
     currentButton.style.transition = "unset";
     }, 300);
   }
 
-  toBefore(src: string, c: number) {
-    const currentCase = this.cases[c];
-    currentCase.src = "../../../../assets/aesthetics/BeforeAndAfter/Gallery/" +  src;
+  toBefore(c: number) {
+    const currentCaseBefore = this.before[c];
+    const currentCaseAfter = this.after[c];
+    currentCaseBefore.style.opacity = "1";
+    currentCaseAfter.style.opacity = "0";
 
     const currentButton = this.buttons[c];
     currentButton.style.transition = "all 0.3s";
     currentButton.style.visibility = "hidden";
-    currentButton.style.width = "70px";
-    currentButton.style.height = "25px";
+  
+    currentButton.classList.remove("gallery-btn-big");
+    currentButton.classList.add("gallery-btn-small");
   }
 }
