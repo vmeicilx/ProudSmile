@@ -31,6 +31,14 @@ export class ProudSmileExperienceComponent implements OnInit {
     this.router.navigate(["/", "payment-page-component"]);
   }
 
+  seeUltraThin() {
+    this.router.navigate(["/", "UltraThinVeneers"]);
+  }
+
+  seeFacespaPage() {
+    window.open("https://www.facespa.com.au", "_blank");
+  }
+
   onWhoWeAre() {
     this.router.navigate(["/", "who-we-are-component"]);
   }

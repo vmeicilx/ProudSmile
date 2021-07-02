@@ -135,10 +135,19 @@
     background-color: #030303;
   }
 
+  .afford-section {
+    background-image: url(../../../assets/homePage/afford-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .women {
+      left:50%;
+    }
+  }
+
   @media only screen and (min-width: 1201px) {
     .technology-section-responsive {
-      padding-top:300px;
-      padding-bottom:300px;
+      padding-top:250px;
+      padding-bottom:250px;
       background-position-x: 12vw;
       p {
         text-align: left;
@@ -147,6 +156,42 @@
         align-items: start;
         justify-content: start;
         width: 500px;
+      }
+    }
+    
+  .you-first-section {
+    background-image: url(../../../assets/homePage/YouFirst.png);
+    background-repeat: no-repeat;
+    background-color: #030303;
+  }
+    .you-first-section-responsive {
+      padding-top:250px;
+      padding-bottom:250px;
+      background-position-x: -650px;
+      p {
+        text-align: left;
+      }
+      .you-first-text {
+        align-items: start;
+        justify-content: start;
+        width: 500px;
+        float:right;
+      }
+    }
+
+    .afford-section-responsive {
+      padding-top:250px;
+      padding-bottom:250px;
+      p {
+        text-align: left;
+      }
+      .afford-section-text {
+        align-items: start;
+        justify-content: start;
+        width: 550px;
+      }
+      img {
+        max-width: unset;
       }
     }
   }
@@ -176,6 +221,41 @@
         width: 300px;
       }
     }
+    .you-first-section {
+      background-image: url(../../../assets/homePage/YouFirst.png);
+      background-repeat: no-repeat;
+      background-color: #030303;
+    }
+    .you-first-section-responsive {
+      padding-top:150px;
+      padding-bottom:150px;
+      background-size: 1200px;
+      background-position-x: -550px;
+      p {
+        text-align: left;
+      }
+      .you-first-text {
+        align-items: start;
+        justify-content: start;
+        width: 400px;
+        float:right;
+      }
+    }
+    .afford-section-responsive {
+      padding-top:150px;
+      padding-bottom:150px;
+      p {
+        text-align: left;
+      }
+      .afford-section-text {
+        align-items: start;
+        justify-content: start;
+        width: 400px;
+      }
+      img {
+        max-width: 75vw;
+      }
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
@@ -193,6 +273,40 @@
         justify-content: center;
       }
     }
+    .you-first-section {
+      background-image: url(../../../assets/homePage/YouFirstMobile.png);
+      background-repeat: no-repeat;
+      background-color: #030303;
+    }
+    .you-first-section-responsive {
+      padding-top:20vw;
+      padding-bottom:70vw;
+      background-size: 100%;
+      background-position-y: bottom;
+      p {
+        text-align: center;
+      }
+      .you-first-text {
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    
+    .afford-section-responsive {
+      padding-top:150px;
+      padding-bottom:150px;
+      p {
+        text-align: center;
+      }
+      .afford-section-text {
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        max-width: 75vw;
+      }
+    }
+
     .firstSection {
       .homePageImageContainer {
         .homePageText {
