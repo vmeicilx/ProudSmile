@@ -4,3 +4,16 @@
 @import "styles/elements.scss";
 @import "styles/opacity.scss";
 @import "styles/size.scss";
+
+.concern-item {
+    align-items: center;
+    justify-content: start;
+    margin-bottom:10px;
+  }
+  .concern-arrow {
+    margin-right: 10px;
+    width: 9px;
+    height: 12px;
+    background-color: #1A1A1A;
+    clip-path: polygon(0px 0px,9px 6px,0px 12px);
+  }

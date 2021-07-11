@@ -1,12 +1,12 @@
 <mat-menu id="Bundall" #bundallMenu="matMenu">
-  <div id="BundallSch" style="width: 416px" fxLayout="column" >
+  <div id="BundallSch" style="width: 416px" fxLayout="column">
     <div
       class="fix-text-1 scheduler"
       fxLayout="column"
       fxLayoutAlign="center start"
-      style="padding: 32px 40px;"
+      style="padding: 32px 40px"
     >
-      <div class="relative-container" style="margin-left:32px">
+      <div class="relative-container" style="margin-left: 32px">
         <div>
           <p>122 Bundall Road (opposite to HOTA)<br />Bundall, QLD 4217</p>
         </div>
@@ -26,18 +26,17 @@
           <img src="../../assets/header/marker.svg" />
         </div>
       </div>
-
     </div>
-    
-    <div class="line-3" style="width:416px;"></div>
+
+    <div class="line-3" style="width: 416px"></div>
 
     <div
       class="fix-text-1 scheduler"
       fxLayout="column"
       fxLayoutAlign="center start"
-      style="padding: 32px 40px;"
+      style="padding: 32px 40px"
     >
-      <div class="relative-container" fxLayout  style="margin-left:32px">
+      <div class="relative-container" fxLayout style="margin-left: 32px">
         <div fxLayout="column" fxLayoutGap="1vh" style="margin-right: 60px">
           <p>Monday</p>
           <p>Tuesday</p>
@@ -63,7 +62,7 @@
     </div>
     <button
       class="button-1 color-orange"
-      style="margin-bottom:32px;"
+      style="margin-bottom: 32px"
       fxFlexAlign="center"
       (click)="
         goToLink(
@@ -77,14 +76,14 @@
   </div>
 </mat-menu>
 <mat-menu id="Pacific" #pacificMenu="matMenu">
-  <div id="BundallSch" style="width: 416px" fxLayout="column" >
+  <div id="BundallSch" style="width: 416px" fxLayout="column">
     <div
       class="fix-text-1 scheduler"
       fxLayout="column"
       fxLayoutAlign="center start"
-      style="padding: 32px 40px;"
+      style="padding: 32px 40px"
     >
-      <div class="relative-container" style="margin-left:32px">
+      <div class="relative-container" style="margin-left: 32px">
         <div>
           <p>Shop 82, 2 Hooker Boulevard<br />Broadbeach Waters, QLD 4218</p>
         </div>
@@ -92,9 +91,9 @@
           class="color-orange roboto-bold link-1 cursor-pointer"
           fxLayout
           (click)="
-          goToLink(
-            'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
-          )
+            goToLink(
+              'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
+            )
           "
         >
           <p>Get Google Directions</p>
@@ -104,18 +103,17 @@
           <img src="../../assets/header/marker.svg" />
         </div>
       </div>
-
     </div>
-    
-    <div class="line-3" style="width:416px;"></div>
+
+    <div class="line-3" style="width: 416px"></div>
 
     <div
       class="fix-text-1 scheduler"
       fxLayout="column"
       fxLayoutAlign="center start"
-      style="padding: 32px 40px;"
+      style="padding: 32px 40px"
     >
-      <div class="relative-container" fxLayout  style="margin-left:32px">
+      <div class="relative-container" fxLayout style="margin-left: 32px">
         <div fxLayout="column" fxLayoutGap="1vh" style="margin-right: 60px">
           <p>Monday</p>
           <p>Tuesday</p>
@@ -141,7 +139,7 @@
     </div>
     <button
       class="button-1 color-orange"
-      style="margin-bottom:32px;"
+      style="margin-bottom: 32px"
       fxFlexAlign="center"
       (click)="
         goToLink(
@@ -156,6 +154,12 @@
 </mat-menu>
 <mat-menu #menu="matMenu">
   <div id="MobileMenu" fxLayout="column" fxLayoutGap="1vh">
+    <button
+      class="fix-text-1 roboto-medium"
+      (click)="onMenuItemClick('HomePage')"
+    >
+      <p #WhyProudSmileText>Home</p>
+    </button>
     <button
       class="fix-text-1 roboto-medium"
       (click)="onMenuItemClick('proud-smile-experience-component')"
@@ -557,6 +561,12 @@
         fxLayoutGap="2vw"
       >
         <div id="BigMenuItems" class="bigMenuItems" fxLayout fxLayoutGap="2vw">
+          <button
+            class="font-extra-small roboto-medium"
+            (click)="onMenuItemClick('HomePage')"
+          >
+            <p #WhyProudSmileText>Home</p>
+          </button>
           <button
             class="font-extra-small roboto-medium"
             (click)="onMenuItemClick('proud-smile-experience-component')"
@@ -1151,7 +1161,7 @@
         </p>
       </div>
     </div>
-    
+
     <div
       class="full-height"
       fxLayout

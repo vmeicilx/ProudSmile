@@ -1,5 +1,63 @@
 :host {
+
+  .book3 {
+    border-radius: 37px;
+    background: #f05024;
+    padding: 24px 36px;
+    border: 0;
+    outline: none;
+    margin-top: auto;
+  }
+  .fullview__close {
+    position: fixed;
+    top: 20px;
+    right: 36px;
+    z-index: 1000;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+  .fullview__close svg {
+    fill: currentColor;
+  }
+  
   @media only screen and (min-width: 1201px) {
+    
+    .story-next {
+      margin:4vw 0;
+    }
+    .bottom-buttons {
+      grid-template-columns: 50% 50%;
+    }
+    .legends-line {
+      margin-top:4vw;
+      grid-template-columns: 40% 60%;
+    }
+    .specifics-line {
+      margin-top:4vw;
+      grid-template-columns: 20% 80%;
+    }
+    .in-betweens-line {
+      margin-top:4vw;
+      grid-template-columns: 30% 70%;
+    }
+    .legend-items {
+      grid-template-columns: 33% 33% 34%; 
+      grid-gap:2vw;
+    }
+    .same-day-text {
+      max-width: 6vw;
+    }
+    .specifics {
+      display: grid; 
+      grid-template-columns: 25% 25% 25% 25%
+    }
     .art-anim {
       min-height: 700px;
     }
@@ -70,6 +128,40 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    
+    .story-next {
+      margin:6vw 0;
+    }
+    .bottom-buttons {
+      grid-template-columns: 50% 50%;
+      grid-gap: 8vw;
+    }
+
+    .legends-line {
+      margin-top:4vw;
+      grid-template-columns: 50% 50%;
+    }
+    .specifics-line {
+      margin-top:4vw;
+      grid-template-columns: 30% 70%;
+    }
+    .in-betweens-line {
+      margin-top:4vw;
+      grid-template-columns: 40% 60%;
+    }
+    .legend-items{
+      grid-template-columns: 33% 33% 34%; 
+      grid-gap:2vw;
+      .legend-text p {
+        text-align: left;
+      }
+    }
+    .specifics {
+      display: grid; 
+      grid-template-columns: 50% 50%;
+      grid-gap:6vw;
+    }
+
     .art-anim {
       min-height: 60vw;
     }
@@ -139,6 +231,38 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .story-next {
+      margin:10vw 0;
+    }
+    .bottom-buttons {
+      grid-template-columns: 100%;
+      grid-gap: 4vw;
+    }
+    .legends-line {
+      margin-top:10vw;
+      grid-template-columns: 100% 0%;
+    }
+    .specifics-line {
+      margin-top:10vw;
+      grid-template-columns: 60% 40%;
+    }
+    .in-betweens-line {
+      margin-top:10vw;
+      grid-template-columns: 70% 30%;
+    }
+    .legend-items {
+      grid-template-columns: 100%; 
+      grid-gap:2vw;
+      .legend-icon {
+        justify-content: center;
+      }
+    }
+    .specifics {
+      display: grid; 
+      grid-template-columns: 100%;
+      grid-gap:6vw;
+    }
+
     .art-anim {
       min-height: 60vw;
     }
@@ -159,12 +283,12 @@
       .gallery-btn-big {
         top: 70%;
         left: 8px;
-        width: 50%;
+        width: 25%;
       }
       .gallery-btn-small {
         top: 70%;
         left: 8px;
-        width: 50%;
+        width: 25%;
       }
     }
     .big-right {

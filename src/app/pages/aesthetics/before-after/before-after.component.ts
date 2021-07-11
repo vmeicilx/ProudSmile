@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 
 @Component({
@@ -87,11 +88,16 @@ export class BeforeAfterComponent implements OnInit {
   @ViewChild("btn23") btn23: ElementRef;
   @ViewChild("btn24") btn24: ElementRef;
 
+  
+  @ViewChild("CaseView") caseView: ElementRef;
+  @ViewChild("Concern") concern: ElementRef;
+  @ViewChild("Procedures") procedures: ElementRef;
+
   before = [];
   after = [];
   buttons = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -188,6 +194,22 @@ export class BeforeAfterComponent implements OnInit {
     this.buttons.push(this.btn22.nativeElement);
     this.buttons.push(this.btn23.nativeElement);
     this.buttons.push(this.btn24.nativeElement);
+
+    this.renderItem(this.concern.nativeElement, "Gummy smile");
+    this.renderItem(this.concern.nativeElement, "Discoloured teeth and fillings");
+    this.renderItem(this.concern.nativeElement, "Inflamed gums");
+    this.renderItem(this.concern.nativeElement, "Disproportioned teeth");
+    this.renderItem(this.concern.nativeElement, "Worn enamel");
+
+    
+    this.renderItem(this.procedures.nativeElement, "Traditional Braces");
+    this.renderItem(this.procedures.nativeElement, "Invisalign");
+    this.renderItem(this.procedures.nativeElement, "Full Mouth Porcelain Crowns");
+    this.renderItem(this.procedures.nativeElement, "Porcelain Bridge");
+    this.renderItem(this.procedures.nativeElement, "Gum Surgery");
+    this.renderItem(this.procedures.nativeElement, "Fillings");
+    this.renderItem(this.procedures.nativeElement, "Root Canal Therapy");
+    
   }
 
   toAfter(c: number) {
@@ -217,5 +239,37 @@ export class BeforeAfterComponent implements OnInit {
     setTimeout(() => {
       currentButton.style.transition = "unset";
     }, 300);
+  }
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
+
+  onCaseClick(c: number) {
+    this.caseView.nativeElement.style.visibility = "visible";
+    document.documentElement.style.overflowY = "hidden";
+  }
+
+  onCaseClose() {
+    this.caseView.nativeElement.style.visibility = "hidden";
+    document.documentElement.style.overflowY = "scroll";
+  }
+
+  renderItem(parent, text) {
+    const item = document.createElement("div");
+    const arrow = document.createElement("div");
+    arrow.classList.add("concern-arrow");
+    const textDiv = document.createElement("div");
+    textDiv.innerHTML = text;
+
+    item.classList.add("flexy-row", "concern-item");
+    item.append(arrow);
+    item.append(textDiv);
+    parent.append(item)
+  }
+
+  onContactPage() {
+    this.router.navigate(["/", "contact-page-component", true]);
+    window.scrollTo(0, 0);
   }
 }

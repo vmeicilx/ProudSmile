@@ -520,16 +520,6 @@ export class HeaderComponent implements OnInit {
     });
   }
   onPaymentPlan() {
-    // const promise1 = new Promise((resolve, reject) => {
-    //   this.router.navigate(["/", "payment-page-component"]);
-    //   resolve("Success!");
-    // });
-
-    // promise1.then((value) => {
-    //   var clientForm = document.getElementById("OnlineCalculator");
-    //   clientForm.scrollIntoView(true);
-    // });
-
     this.calculatorOverlay.nativeElement.style.display = "block";
   }
 

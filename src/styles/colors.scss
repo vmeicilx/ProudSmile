@@ -16,7 +16,15 @@ $color-green-pale: #015c50;
 $color-blue: #16a0d5;
 $color-violet: #353695;
 $color-blue-dark: #0067ac;
+$color-gallery: #333333;
+$color-gallery-2: #808080;
 
+.color-gallery {
+  color: $color-gallery;
+}
+.color-gallery-2 {
+  color: $color-gallery-2;
+}
 .color-blue-dark {
   color: $color-blue-dark;
 }
