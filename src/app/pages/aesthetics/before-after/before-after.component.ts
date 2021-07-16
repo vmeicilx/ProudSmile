@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
@@ -92,12 +93,59 @@ export class BeforeAfterComponent implements OnInit {
   @ViewChild("CaseView") caseView: ElementRef;
   @ViewChild("Concern") concern: ElementRef;
   @ViewChild("Procedures") procedures: ElementRef;
+  
+  @ViewChild("secondMember") secondMember: ElementRef;
+  @ViewChild("thirdMember") thirdMember: ElementRef;
+  @ViewChild("fourthMember") fourthMember: ElementRef;
+  
+  @ViewChild("logo1") logo1: ElementRef;
+  @ViewChild("logo2") logo2: ElementRef;
+  @ViewChild("logo3") logo3: ElementRef;
+  
+  @ViewChild("inBetweensText") inBetweensText: ElementRef;
+  @ViewChild("inBetweensContainer") inBetweensContainer: ElementRef;
+  @ViewChild("inBet1Img") inBet1Img: ElementRef;
+  @ViewChild("inBet2Img") inBet2Img: ElementRef;
+  
+  @ViewChild("beforeImgC") beforeImgC: ElementRef;
+  @ViewChild("beforeC") beforeC: ElementRef;
+  @ViewChild("afImg") afImg: ElementRef;
 
   before = [];
   after = [];
   buttons = [];
 
-  constructor(private router: Router) {}
+  private _jsonURL = 'assets/cases.json';
+  private cases;
+  public firstTeamMember;
+public firstTeamRole;
+public firstTeamImg;
+public secondTeamMember;
+public secondTeamRole;
+public secondTeamImg;
+public thirdTeamMember;
+public thirdTeamRole;
+public thirdTeamImg;
+public fourthTeamMember;
+public fourthTeamRole;
+public fourthTeamImg;
+
+public beforeImg;
+public afterImg;
+
+public inBet1;
+public inBet2;
+
+  constructor(private router: Router, private http: HttpClient) {
+    this.getJSON().subscribe(data => {
+      this.cases = data["cases"];
+     });
+     
+  }
+
+  public getJSON(): Observable<any> {
+    return this.http.get(this._jsonURL);
+  }
 
   ngOnInit(): void {}
 
@@ -194,22 +242,7 @@ export class BeforeAfterComponent implements OnInit {
     this.buttons.push(this.btn22.nativeElement);
     this.buttons.push(this.btn23.nativeElement);
     this.buttons.push(this.btn24.nativeElement);
-
-    this.renderItem(this.concern.nativeElement, "Gummy smile");
-    this.renderItem(this.concern.nativeElement, "Discoloured teeth and fillings");
-    this.renderItem(this.concern.nativeElement, "Inflamed gums");
-    this.renderItem(this.concern.nativeElement, "Disproportioned teeth");
-    this.renderItem(this.concern.nativeElement, "Worn enamel");
-
-    
-    this.renderItem(this.procedures.nativeElement, "Traditional Braces");
-    this.renderItem(this.procedures.nativeElement, "Invisalign");
-    this.renderItem(this.procedures.nativeElement, "Full Mouth Porcelain Crowns");
-    this.renderItem(this.procedures.nativeElement, "Porcelain Bridge");
-    this.renderItem(this.procedures.nativeElement, "Gum Surgery");
-    this.renderItem(this.procedures.nativeElement, "Fillings");
-    this.renderItem(this.procedures.nativeElement, "Root Canal Therapy");
-    
+   
   }
 
   toAfter(c: number) {
@@ -246,6 +279,125 @@ export class BeforeAfterComponent implements OnInit {
   }
 
   onCaseClick(c: number) {
+
+    const cas = this.cases[c];
+    const team = cas["team"];
+    const concerns = cas["concerns"];
+    const procedures = cas["procedures"];
+    const logos = cas["logo"];
+    const inBet = cas["inBetweens"];
+
+    if(cas["index"] === 2) {
+      this.beforeImgC.nativeElement.style.display = "none";
+      this.beforeC.nativeElement.style.gridTemplateColumns = "100%";
+      this.afImg.nativeElement.style.maxWidth = "50%";
+      this.afImg.nativeElement.style.margin = "auto";
+    } else {
+      
+      this.beforeImgC.nativeElement.style.display = "block";
+      this.beforeC.nativeElement.style.gridTemplateColumns = "50% 50%";
+      this.afImg.nativeElement.style.maxWidth = "100%";
+      this.afImg.nativeElement.style.margin = "unset";
+    }
+
+    this.beforeImg = cas["beforeImg"];
+    this.afterImg = cas["afterImg"];
+
+    this.concern.nativeElement.innerHTML = "";
+    this.procedures.nativeElement.innerHTML = "";
+
+    for(let i=0;i<concerns.length;i++) {
+      this.renderItem(this.concern.nativeElement, concerns[i]);
+    }
+    for(let i=0;i<procedures.length;i++) {
+      this.renderItem(this.procedures.nativeElement, procedures[i]);
+    }
+
+    this.firstTeamMember = team[0].name;
+    this.firstTeamImg = team[0].img;
+    this.firstTeamRole = team[0].role;
+    
+    if(team.length>1)
+    {
+      this.secondMember.nativeElement.style.display = "flex";   
+    this.secondTeamMember = team[1].name;
+    this.secondTeamImg = team[1].img;
+    this.secondTeamRole = team[1].role;
+    }
+    else {
+      this.secondMember.nativeElement.style.display = "none";
+    }
+    
+    if(team.length>2)
+    {
+      this.thirdMember.nativeElement.style.display = "flex";
+      this.thirdTeamMember = team[2].name;
+      this.thirdTeamImg = team[2].img;
+      this.thirdTeamRole = team[2].role;
+    }
+    else {
+      this.thirdMember.nativeElement.style.display = "none";
+    }
+
+    if(team.length>3)
+    {
+      this.fourthMember.nativeElement.style.display = "flex";
+      this.fourthTeamMember = team[3].name;
+      this.fourthTeamImg = team[3].img;
+      this.fourthTeamRole = team[3].role;
+    }
+    else {
+      this.fourthMember.nativeElement.style.display = "none";
+    }
+
+    if(logos[0]) {
+      this.logo1.nativeElement.style.display = "flex";
+    }
+    else {
+      this.logo1.nativeElement.style.display = "none";
+    }
+    if(logos[1]) {
+      this.logo2.nativeElement.style.display = "flex";
+    }
+    else {
+      this.logo2.nativeElement.style.display = "none";
+    }
+    if(logos[2]) {
+      this.logo3.nativeElement.style.display = "flex";
+    }
+    else {
+      this.logo3.nativeElement.style.display = "none";
+    }
+
+    if(inBet === "") {
+      this.inBetweensContainer.nativeElement.style.display = "none";
+      this.inBetweensText.nativeElement.style.display = "none";
+    } else {
+      if(inBet.length === 1) {
+        
+        this.inBet1 = inBet[0];
+        this.inBetweensText.nativeElement.style.display = "grid";
+        this.inBetweensContainer.nativeElement.style.display = "grid";
+        this.inBet2Img.nativeElement.style.display = "none";
+        
+        this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "100%";
+        this.inBet1Img.nativeElement.style.maxWidth = "50%";
+        this.inBet1Img.nativeElement.style.margin = "auto";
+      } else {
+
+        this.inBet1 = inBet[0];
+        this.inBet2 = inBet[1];
+        this.inBet2Img.nativeElement.style.display = "block";
+        this.inBetweensText.nativeElement.style.display = "grid";
+        this.inBetweensContainer.nativeElement.style.display = "grid";
+        
+        this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "50% 50%";
+        this.inBet1Img.nativeElement.style.maxWidth = "100%";
+        this.inBet1Img.nativeElement.style.margin = "unset";
+      }
+    }
+
+    
     this.caseView.nativeElement.style.visibility = "visible";
     document.documentElement.style.overflowY = "hidden";
   }
@@ -256,6 +408,19 @@ export class BeforeAfterComponent implements OnInit {
   }
 
   renderItem(parent, text) {
+    const item = document.createElement("div");
+    const arrow = document.createElement("div");
+    arrow.classList.add("concern-arrow");
+    const textDiv = document.createElement("div");
+    textDiv.innerHTML = text;
+
+    item.classList.add("flexy-row", "concern-item");
+    item.append(arrow);
+    item.append(textDiv);
+    parent.append(item)
+  }
+
+  renderTeamMember(parent, text) {
     const item = document.createElement("div");
     const arrow = document.createElement("div");
     arrow.classList.add("concern-arrow");

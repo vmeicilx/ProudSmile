@@ -147,6 +147,7 @@
     </div>
     <div
       #btn1
+      (click)="onCaseClick(1)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -194,6 +195,7 @@
     </div>
     <div
       #btn2
+      (click)="onCaseClick(2)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -241,6 +243,7 @@
     </div>
     <div
       #btn3
+      (click)="onCaseClick(3)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -288,6 +291,7 @@
     </div>
     <div
       #btn4
+      (click)="onCaseClick(4)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -338,6 +342,7 @@
     </div>
     <div
       #btn5
+      (click)="onCaseClick(5)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -386,6 +391,7 @@
     </div>
     <div
       #btn6
+      (click)="onCaseClick(6)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -433,6 +439,7 @@
     </div>
     <div
       #btn7
+      (click)="onCaseClick(7)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -480,6 +487,7 @@
     </div>
     <div
       #btn8
+      (click)="onCaseClick(8)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -533,6 +541,7 @@
     </div>
     <div
       #btn9
+      (click)="onCaseClick(9)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -580,6 +589,7 @@
     </div>
     <div
       #btn10
+      (click)="onCaseClick(10)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -627,6 +637,7 @@
     </div>
     <div
       #btn11
+      (click)="onCaseClick(11)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -674,6 +685,7 @@
     </div>
     <div
       #btn12
+      (click)="onCaseClick(12)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -724,6 +736,7 @@
     </div>
     <div
       #btn13
+      (click)="onCaseClick(13)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -772,6 +785,7 @@
     </div>
     <div
       #btn14
+      (click)="onCaseClick(14)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -825,6 +839,7 @@
     </div>
     <div
       #btn15
+      (click)="onCaseClick(15)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -872,6 +887,7 @@
     </div>
     <div
       #btn16
+      (click)="onCaseClick(16)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -919,6 +935,7 @@
     </div>
     <div
       #btn17
+      (click)="onCaseClick(17)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -966,6 +983,7 @@
     </div>
     <div
       #btn18
+      (click)="onCaseClick(18)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1013,6 +1031,7 @@
     </div>
     <div
       #btn19
+      (click)="onCaseClick(19)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1060,6 +1079,7 @@
     </div>
     <div
       #btn20
+      (click)="onCaseClick(20)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1110,6 +1130,7 @@
     </div>
     <div
       #btn21
+      (click)="onCaseClick(21)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1158,6 +1179,7 @@
     </div>
     <div
       #btn22
+      (click)="onCaseClick(22)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1205,6 +1227,7 @@
     </div>
     <div
       #btn23
+      (click)="onCaseClick(23)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1252,6 +1275,7 @@
     </div>
     <div
       #btn24
+      (click)="onCaseClick(24)"
       class="gallery-btn-small"
       style="
         position: absolute;
@@ -1314,11 +1338,6 @@
   "
 >
   <button class="fullview__close" (click)="onCaseClose()">
-    <!-- <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
-      <path
-        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
-      />
-    </svg> -->
     <img src="../../../../assets/aesthetics/BeforeAndAfter/Close.svg" />
   </button>
 
@@ -1326,31 +1345,30 @@
     class="flexy-column sscc padding-chef"
     style="position: absolute; top: 4vw"
   >
-    <div
-      style="display: grid; grid-template-columns: 50% 50%"
+    <div #beforeC
+      style="display: grid; grid-template-columns: 50% 50%; grid-gap:2vw"
       class="margin-bottom-10"
     >
-      <div>
+      <div #beforeImgC>
         <img
-          src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_before.jpg"
+          [src]="beforeImg"
         />
       </div>
       <div>
-        <img
-          src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_after.jpg"
+        <img #afImg
+          [src]="afterImg"
         />
       </div>
     </div>
 
     <div
-    class="specifics-line"
-      style="
-        display: grid;
-        width: 100%;
-        align-items: center;
-      "
+      class="specifics-line"
+      style="display: grid; width: 100%; align-items: center"
     >
-      <div style="justify-self: start;" class="margin-bottom-4 color-gallery font-lion roboto-regular">
+      <div
+        style="justify-self: start"
+        class="margin-bottom-4 color-gallery font-lion roboto-regular"
+      >
         <p>The Specifics:</p>
       </div>
       <div class="line-8 margin-bottom-4"></div>
@@ -1371,51 +1389,98 @@
         <div class="color-gallery roboto-regular" style="padding-bottom: 20px">
           <p style="text-align: left">TEAM</p>
         </div>
-        <div
-          class="flexy-row color-gallery-2 roboto-regular font-small-4"
-          style="align-items: center; justify-content: start"
-        >
-          <div style="width: 60px; clip-path: circle(46%); margin-right: 20px">
-            <img
-              src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_after.jpg"
-            />
+        <div #Team>
+          <div
+            class="
+              team-memeber-container
+              flexy-row
+              color-gallery-2
+              roboto-regular
+              font-small-4
+            "
+            style="align-items: center; justify-content: start"
+          >
+            <div
+              class="team-member-image"
+              style="width: 60px; clip-path: circle(46%); margin-right: 20px"
+            >
+              <img [src]="firstTeamImg" />
+            </div>
+            <div class="team-member-text">
+              <p style="text-align: left">
+                {{ firstTeamMember }}<br /><span class="font-extra-small-4">{{
+                  firstTeamRole
+                }}</span>
+              </p>
+            </div>
           </div>
-          <div>
-            <p style="text-align: left">Dr. Erwin Vasconcelos</p>
+          <div
+          #secondMember
+            class="flexy-row color-gallery-2 roboto-regular font-small-4"
+            style="
+              align-items: center;
+              justify-content: start;
+              padding-top: 20px;
+            "
+          >
+            <div
+              style="width: 60px; clip-path: circle(46%); margin-right: 20px"
+            >
+              <img [src]="secondTeamImg" />
+            </div>
+            <div style="display: grid; grid-template-rows: 25% 50%">
+              <p style="grid-row-start: 2; text-align: left">
+                {{ secondTeamMember }}<br /><span class="font-extra-small-4">{{
+                  secondTeamRole
+                }}</span>
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="flexy-row color-gallery-2 roboto-regular font-small-4"
-          style="align-items: center; justify-content: start; padding-top: 20px"
-        >
-          <div style="width: 60px; clip-path: circle(46%); margin-right: 20px">
-            <img
-              src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_after.jpg"
-            />
+          <div
+            #thirdMember
+            class="flexy-row color-gallery-2 roboto-regular font-small-4"
+            style="
+            display: none;
+              align-items: center;
+              justify-content: start;
+              padding-top: 20px;
+            "
+          >
+            <div
+              style="width: 60px; clip-path: circle(46%); margin-right: 20px"
+            >
+              <img [src]="thirdTeamImg" />
+            </div>
+            <div style="display: grid; grid-template-rows: 25% 50%">
+              <p style="grid-row-start: 2; text-align: left">
+                {{ thirdTeamMember }}<br /><span class="font-extra-small-4">{{
+                  thirdTeamRole
+                }}</span>
+              </p>
+            </div>
           </div>
-          <div style="display: grid; grid-template-rows: 25% 50%">
-            <p style="grid-row-start: 2; text-align: left">
-              Giormania Richards<br /><span class="font-extra-small-4"
-                >(Patient Care)</span
-              >
-            </p>
-          </div>
-        </div>
-        <div
-          class="flexy-row color-gallery-2 roboto-regular font-small-4"
-          style="align-items: center; justify-content: start; padding-top: 20px"
-        >
-          <div style="width: 60px; clip-path: circle(46%); margin-right: 20px">
-            <img
-              src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_after.jpg"
-            />
-          </div>
-          <div style="display: grid; grid-template-rows: 25% 50%">
-            <p style="grid-row-start: 2; text-align: left">
-              Cristine Hierro<br /><span class="font-extra-small-4"
-                >(Dental Hygienist)</span
-              >
-            </p>
+          <div
+            #fourthMember
+            class="flexy-row color-gallery-2 roboto-regular font-small-4"
+            style="
+            display: none;
+              align-items: center;
+              justify-content: start;
+              padding-top: 20px;
+            "
+          >
+            <div
+              style="width: 60px; clip-path: circle(46%); margin-right: 20px"
+            >
+              <img [src]="fourthTeamImg" />
+            </div>
+            <div style="display: grid; grid-template-rows: 25% 50%">
+              <p style="grid-row-start: 2; text-align: left">
+                {{ fourthTeamMember }}<br /><span class="font-extra-small-4">{{
+                  fourthTeamRole
+                }}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1441,7 +1506,7 @@
         <div class="color-gallery roboto-regular" style="padding-bottom: 20px">
           <p style="text-align: left"></p>
         </div>
-        <div
+        <div #logo1
           class="flexy-row color-gallery-2 roboto-regular font-small-4"
           style="align-items: center; justify-content: start"
         >
@@ -1450,11 +1515,11 @@
               src="../../../../assets/aesthetics/BeforeAndAfter/sameday.svg"
             />
           </div>
-          <div class="same-day-text" style="color: #F5701D">
+          <div class="same-day-text" style="color: #f5701d">
             <p style="text-align: left">Same Day<br />Veneers/Crowns</p>
           </div>
         </div>
-        <div
+        <div #logo2
           class="flexy-row color-gallery-2 roboto-regular font-small-4"
           style="align-items: center; justify-content: start; padding-top: 20px"
         >
@@ -1464,7 +1529,7 @@
             />
           </div>
         </div>
-        <div
+        <div #logo3
           class="flexy-row color-gallery-2 roboto-regular font-small-4"
           style="align-items: center; justify-content: start; padding-top: 20px"
         >
@@ -1473,124 +1538,180 @@
               src="../../../../assets/aesthetics/BeforeAndAfter/digital_dentistry.png"
             />
           </div>
-          <div style="color: #B3C50E">
+          <div style="color: #b3c50e">
             <p style="grid-row-start: 2; text-align: left">
               Digital<br />Dentistry
             </p>
           </div>
         </div>
-        <div
-          class="flexy-row color-gallery-2 roboto-regular font-small-4"
-          style="align-items: center; justify-content: start; padding-top: 20px"
-        >
-          <div>
-            <img src="../../../../assets/aesthetics/BeforeAndAfter/4.svg" />
-          </div>
-        </div>
       </div>
     </div>
 
-    <div
-    class="in-betweens-line"
-      style="
-        display: grid;
-        width: 100%;
-        align-items: center;
-      "
+    <div #inBetweensText
+      class="in-betweens-line"
+      style="display: grid; width: 100%; align-items: center"
     >
-      <div  style="justify-self: start;" class="margin-bottom-4 color-gallery font-lion roboto-regular">
+      <div
+        style="justify-self: start"
+        class="margin-bottom-4 color-gallery font-lion roboto-regular"
+      >
         <p>The In-betweens:</p>
       </div>
       <div class="line-8 margin-bottom-4"></div>
     </div>
 
-    <div
-      style="display: grid; grid-template-columns: 50% 50%"
+    <div #inBetweensContainer
+      style="display: grid; grid-template-columns: 50% 50%; grid-gap:2vw"
       class="margin-bottom-10"
     >
       <div>
-        <img
-          src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_before.jpg"
+        <img #inBet1Img
+          [src]="inBet1"
         />
       </div>
       <div>
-        <img
-          src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_after.jpg"
+        <img #inBet2Img
+          [src]="inBet2"
         />
       </div>
     </div>
 
     <div
-    class="legends-line"
-      style="
-        display: grid;
-        width: 100%;
-        align-items: center;
-      "
+      class="legends-line"
+      style="display: grid; width: 100%; align-items: center"
     >
-      <div  style="justify-self: start;" class="margin-bottom-4 color-gallery font-lion roboto-regular">
+      <div
+        style="justify-self: start"
+        class="margin-bottom-4 color-gallery font-lion roboto-regular"
+      >
         <p>Legends used on our cases:</p>
       </div>
       <div class="line-8 margin-bottom-4"></div>
     </div>
 
-    <div class="legend-items margin-bottom-10" style="display: grid;width: 100%;">
+    <div
+      class="legend-items margin-bottom-10"
+      style="display: grid; width: 100%"
+    >
       <div class="flexy-column">
-        <div class="legend-icon" style="display: grid; align-items: end; height: 94px; margin-bottom: 1vw;">
-          <img style="width: 80px;" src="../../../../assets/aesthetics/BeforeAndAfter/sameday.svg"/>
+        <div
+          class="legend-icon"
+          style="
+            display: grid;
+            align-items: end;
+            height: 94px;
+            margin-bottom: 1vw;
+          "
+        >
+          <img
+            style="width: 80px"
+            src="../../../../assets/aesthetics/BeforeAndAfter/sameday.svg"
+          />
         </div>
         <div class="roboto-thin color-white font-small-3 legend-text">
           <p>
-            <span class="roboto-regular" style="color:#F5701D">Same Day Veneers/Crowns</span> – Some or all the components of the treatments have been delivered either on the same day or over a couple of days from start to finish. 
+            <span class="roboto-regular" style="color: #f5701d"
+              >Same Day Veneers/Crowns</span
+            >
+            – Some or all the components of the treatments have been delivered
+            either on the same day or over a couple of days from start to
+            finish.
           </p>
         </div>
       </div>
       <div class="flexy-column">
-        <div class="legend-icon" style="display: grid; align-items: end; height: 94px; margin-bottom: 1vw;">
-          <img src="../../../../assets/aesthetics/BeforeAndAfter/smileasy.svg"/>
-        </div>
-        <div  class="roboto-regular color-white font-small-3 legend-text">
-          <p>
-            <span class="roboto-regular" style="color:#00B2A9">The Smileasy Payment Plan</span> is available to use for these treatments. 24 months to pay, No interest, No credit check, instant approval. 
-          </p>
-        </div>
-      </div>
-      <div class="flexy-column">
-        <div class="legend-icon" style="display: grid; align-items: end; height: 94px; margin-bottom: 1vw;">
-          <img src="../../../../assets/aesthetics/BeforeAndAfter/digital_dentistry.png"/>
+        <div
+          class="legend-icon"
+          style="
+            display: grid;
+            align-items: end;
+            height: 94px;
+            margin-bottom: 1vw;
+          "
+        >
+          <img
+            src="../../../../assets/aesthetics/BeforeAndAfter/smileasy.svg"
+          />
         </div>
         <div class="roboto-regular color-white font-small-3 legend-text">
           <p>
-            <span class="roboto-regular" style="color:#B3C50E">Digital Dentistry</span> – All or some of the treatment was performed using digital scanners instead of rubber moulds, digital design and robotic milling of restorations, this means less things happening inside your mouth and near 100% accuracy. 1 to 5 clocks, being 1 very fast treatments and 5 longest treatments
+            <span class="roboto-regular" style="color: #00b2a9"
+              >The Smileasy Payment Plan</span
+            >
+            is available to use for these treatments. 24 months to pay, No
+            interest, No credit check, instant approval.
+          </p>
+        </div>
+      </div>
+      <div class="flexy-column">
+        <div
+          class="legend-icon"
+          style="
+            display: grid;
+            align-items: end;
+            height: 94px;
+            margin-bottom: 1vw;
+          "
+        >
+          <img
+            src="../../../../assets/aesthetics/BeforeAndAfter/digital_dentistry.png"
+          />
+        </div>
+        <div class="roboto-regular color-white font-small-3 legend-text">
+          <p>
+            <span class="roboto-regular" style="color: #b3c50e"
+              >Digital Dentistry</span
+            >
+            – All or some of the treatment was performed using digital scanners
+            instead of rubber moulds, digital design and robotic milling of
+            restorations, this means less things happening inside your mouth and
+            near 100% accuracy.
           </p>
         </div>
       </div>
     </div>
 
-    <div style="color: #f05024; width: 100%; text-align: center;" class="libre-regular font-dog story-next">
+    <div
+      style="color: #f05024; width: 100%; text-align: center"
+      class="libre-regular font-dog story-next"
+    >
       <p>Is your story next?</p>
     </div>
 
-    <div class="margin-bottom-2 bottom-buttons" style="display: grid;  width: 100%;">
-        <button
-        style="justify-self: center;"
-          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
-          (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-            )
-          "
-        >
-          BOOK YOUR FREE SMILE ASSESSMENT
-        </button>
-        <button
-        style="justify-self: center;"
-        class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+    <div
+      class="margin-bottom-2 bottom-buttons"
+      style="display: grid; width: 100%"
+    >
+      <button
+        style="justify-self: center"
+        class="
+          book3
+          color-white
+          roboto-medium
+          font-extra-small-2
+          cursor-pointer
+        "
+        (click)="
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+          )
+        "
+      >
+        BOOK YOUR FREE SMILE ASSESSMENT
+      </button>
+      <button
+        style="justify-self: center"
+        class="
+          book3
+          color-white
+          roboto-medium
+          font-extra-small-2
+          cursor-pointer
+        "
         (click)="onContactPage()"
       >
         CONTACT US
       </button>
     </div>
-
   </div>
 </div>

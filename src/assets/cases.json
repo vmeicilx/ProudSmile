@@ -1,0 +1,674 @@
+{
+  "cases": [
+    {
+      "index": 0,
+      "realCase": 2,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/2_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Crowded teeth", "Discoloured teeth"],
+      "procedures": ["Invisalign Lite", "Porcelain Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 1,
+      "realCase": 1,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/1_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/1_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": ["Discoloured teeth"],
+      "procedures": ["2 Ultra Thin Veneers", "Permanent Whitening"],
+      "logo": [true, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 2,
+      "realCase": 3,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_zoom_after.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": [
+        "Crowding",
+        "Gaps",
+        "Left Crossbite (lower teeth in front of upper teeth"
+      ],
+      "procedures": [
+        "Invisalign Lite",
+        "Porcelain Veneers",
+        "Porcelain Crowns",
+        "Root Canal Therapy",
+        "Fillings"
+      ],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_before_teeth.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_teeth.jpg"
+      ]
+    },
+    {
+      "index": 3,
+      "realCase": 4,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Itala Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/ItalaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Small teeth", "Discoloured teeth"],
+      "procedures": ["Invisalign Lite", "Porcelain Veneers", "Zoom Whitening"],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_Invisalign.jpg"
+      ]
+    },
+    {
+      "index": 4,
+      "realCase": 7,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": ["2 small lateral teeth"],
+      "procedures": ["2 Ultra Thin Porcelain Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_digital_1.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_digital_2.jpg"
+      ]
+    },
+    {
+      "index": 5,
+      "realCase": 12,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/12_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/12_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": ["Discoloured fillings and teeth", "Missing teeth"],
+      "procedures": ["Invisalign Lite", "Porcelain Veneers"],
+      "logo": [false, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 6,
+      "realCase": 8,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/8_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/8_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": [
+        "Discoloured teeth",
+        "Pain",
+        "Broken teeth",
+        "Missing teeth"
+      ],
+      "procedures": [
+        "Fillings",
+        "Extractions",
+        "Root Canal Therapy",
+        "Scale and Clean",
+        "Upper and lower Porcelain Crowns"
+      ],
+      "logo": [false, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 7,
+      "realCase": 9,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/9_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/9_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Broken front tooth"],
+      "procedures": ["1 Porcelain Crown"],
+      "logo": [false, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 8,
+      "realCase": 10,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/10_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/10_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        }
+      ],
+
+      "concerns": ["Crowding", "Discoloured teeth", "Disproportioned smile"],
+      "procedures": ["Porcelain Veneers"],
+      "logo": [false, true, false],
+      "inBetweens": ""
+    },
+    {
+      "index": 9,
+      "realCase": 32,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        },
+        {
+          "name": "Cristina Hierro",
+          "role": "(Dental hygienist)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/CristinaHierro.jpg"
+        }
+      ],
+
+      "concerns": [
+        "Gummy Smile",
+        "Discoloured teeth and fillings",
+        "Inflamed gums",
+        "Disproportioned teeth",
+        "Worn enamel"
+      ],
+      "procedures": [
+        "Traditional Braces",
+        "Invisalign",
+        "Full Mouth Porcelain Crowns",
+        "Porcelain Bridge",
+        "Gum Surgery",
+        "Fillings",
+        "Root Canal Therapy"
+      ],
+      "logo": [false, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 10,
+      "realCase": 11,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        },
+        {
+          "name": "Dr. Cristine Volpato",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/CristineVolpato.jpg"
+        }
+      ],
+
+      "concerns": [ "Severe decay", "Gaps", "Pain", "Disproportioned teeth", "Gum disease"],
+      "procedures": [ "Traditional Orthodontics", "Zirconia Bridges", "Fillings", "Extractions", "Root Canal Therapy"],
+      "logo": [false, true, true],
+      "inBetweens":  [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_braces.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_after_bracers.jpg"
+      ]
+    },
+    {
+      "index": 11,
+      "realCase": 13,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        },
+        {
+          "name": "Lais Siqueira",
+          "role": "(FaceSpa)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Blank.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Smile not wide enough", "Discoloured teeth", "Crowding"],
+      "procedures": ["Invisalign Lite", "Upper and lower Porcelain Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_Invisalign.jpg"
+      ]
+    },
+    {
+      "index": 12,
+      "realCase": 16,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        },
+        {
+          "name": "Cristina Hierro",
+          "role": "(Dental hygienist)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/CristinaHierro.jpg"
+        }
+      ],
+
+      "concerns": ["Crowding", "Discoloured teeth", "Smile not bold enough"],
+      "procedures": ["Invisalign Lite", "Zoom Whitening", "Porcelain Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_Invisalign.jpg"
+      ]
+    },
+    {
+      "index": 13,
+      "realCase": 33,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Cristina Hierro",
+          "role": "(Dental hygienist)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/CristinaHierro.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Crowding", "Narrow smile", "Discoloured front tooth"],
+      "procedures": ["Traditional Orthodontics", "Zoom Whitening", "1 porcelain crown"],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_bracers.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_after_bracers.jpg"
+      ]
+    },
+    {
+      "index": 14,
+      "realCase": 17,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        },
+        {
+          "name": "Cristina Hierro",
+          "role": "(Dental hygienist)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/CristinaHierro.jpg"
+        }
+      ],
+
+      "concerns": [ "Not enough teeth display", "Front teeth small and short", "Discoloured teeth"],
+      "procedures": ["Traditional Clear Orthodontics", "Porcelain Veneers", "Zoom Whitening"],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_bracers.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_after_bracers.jpg"
+      ]
+    },
+    {
+      "index": 15,
+      "realCase": 35,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Severe enamel wear", "Broken teeth", "Discoloured teeth", "TMJ pain",
+        "Teeth sensitivity", "Bruxism (Grinding)", "Minimal teeth visibility"],
+      "procedures": ["Full Mouth Rehabilitation", "Composite Veneers", "Composite Crowns",
+        "Zirconia Crowns", "Bite Splint", "Occlusal Therapy" ],
+      "logo": [true, true, true],
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_before_teeth.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_after_teeth.jpg"
+      ]
+    },
+    {
+      "index": 16,
+      "realCase": 18,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/18_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/18_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": ["2 small lateral teeth"],
+      "procedures": ["2 Ultra Thin Porcelain Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 17,
+      "realCase": 20,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/20_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/20_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Gaps", "Discoloured teeth"],
+      "procedures": ["Ultra Thin Porcelain Veneers"],
+      "logo": [false, true, false],
+      "inBetweens": ""
+    },
+    {
+      "index": 18,
+      "realCase": 22,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/23_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/23_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Broken teeth"],
+      "procedures": ["Fillings", "Porcelain Crowns"],
+      "logo": [false, true, false],
+      "inBetweens": ""
+    },
+    {
+      "index": 19,
+      "realCase": 24,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/24_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/24_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+      "concerns": ["Discoloured fillings on 2 front teeth", "Previous trauma"],
+      "procedures": ["1 porcelain veneer", "1 porcelain crown"],
+      "logo": [true, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 20,
+      "realCase": 25,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        }
+      ],
+
+      "concerns": ["Severe enamel wear", "Discolouration", "Functional problems"],
+      "procedures": ["Porcelain crowns", "Oral Rehabilitation", "Fillings"],
+      "logo": [false, true, false],
+      "inBetweens": ""
+    },
+    {
+      "index": 21,
+      "realCase": 36,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/36_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/36_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Crowding", "Chipped teeth", "Discoloured teeth", "Crossbite"],
+      "procedures": ["Invisalign Lite", "Porcelain Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 22,
+      "realCase": 26,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/26_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/26_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Samanta Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/SamantaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Discoloured teeth", "Missing teeth", "Crowding", "Wrong coloured existing crown"],
+      "procedures": [ "Porcelain Crowns", "Porcelain Bridge", "Analogue Design"],
+      "logo": [false, true, false],
+      "inBetweens": ""
+    },
+    {
+      "index": 23,
+      "realCase": 31,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/31_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/31_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Itala Vasconcelos",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/ItalaVasconcelos.jpg"
+        }
+      ],
+
+      "concerns": ["Gap between 2 front teeth"],
+      "procedures": ["2 Ultra Thin Veneers"],
+      "logo": [true, true, true],
+      "inBetweens": ""
+    },
+    {
+      "index": 24,
+      "realCase": 34,
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/34_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/34_zoom_after.jpg",
+      "team": [
+        {
+          "name": "Dr. Erwin Vasconcelos",
+          "role": "",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Erwin.jpg"
+        },
+        {
+          "name": "Giormania Richards",
+          "role": "(Patient care)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/Giormania.jpg"
+        },
+        {
+          "name": "Cristina Hierro",
+          "role": "(Dental hygienist)",
+          "img": "../../../../assets/aesthetics/BeforeAndAfter/CristinaHierro.jpg"
+        }
+      ],
+
+      "concerns": ["Crowding", "“buck” teeth", "Discoloured teeth"],
+      "procedures": ["Traditional Orthodontics", "Zoom Whitening"],
+      "logo": [false, true, false],
+      "inBetweens": ""
+    }
+  ]
+}
