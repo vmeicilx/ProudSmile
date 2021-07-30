@@ -276,8 +276,10 @@
     {
       "index": 10,
       "realCase": 11,
-      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg",
-      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_after.jpg",
+      "beforeZoomImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg",
+      "afterZoomImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_after.jpg",
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_after.jpg",
       "team": [
         {
           "name": "Dr. Erwin Vasconcelos",
@@ -302,6 +304,10 @@
       "inBetweens":  [
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_braces.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_after_bracers.jpg"
+      ],
+      "inBetweensText":  [
+        "Braces",
+        "After Braces"
       ]
     },
     {

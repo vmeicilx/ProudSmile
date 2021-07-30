@@ -1342,11 +1342,11 @@
   </button>
 
   <div
-    class="flexy-column sscc padding-chef"
-    style="position: absolute; top: 4vw"
+    class="flexy-column sscc"
+    style="position: absolute; top: 0"
   >
     <div #beforeC
-      style="display: grid; grid-template-columns: 50% 50%; grid-gap:2vw"
+      style="display: grid; grid-template-columns: 50% 50%;"
       class="margin-bottom-10"
     >
       <div #beforeImgC>
@@ -1362,21 +1362,22 @@
     </div>
 
     <div
-      class="specifics-line"
-      style="display: grid; width: 100%; align-items: center"
+      class="specifics-line padding-chef"
+      style="display: grid; align-items: center; align-self: stretch;"
     >
       <div
         style="justify-self: start"
-        class="margin-bottom-4 color-gallery font-lion roboto-regular"
+        class="margin-bottom-4 color-gray-light font-lion roboto-regular"
       >
         <p>The Specifics:</p>
       </div>
-      <div class="line-8 margin-bottom-4"></div>
+      <div class="line-11 margin-bottom-4"></div>
     </div>
 
     <div
-      style="width: 100%"
+      style="align-self: stretch;"
       class="
+      padding-chef
         specifics
         margin-bottom-10
         color-gallery
@@ -1386,7 +1387,7 @@
       "
     >
       <div class="flexy-column">
-        <div class="color-gallery roboto-regular" style="padding-bottom: 20px">
+        <div class="color-gray-light roboto-regular" style="padding-bottom: 20px">
           <p style="text-align: left">TEAM</p>
         </div>
         <div #Team>
@@ -1485,7 +1486,7 @@
         </div>
       </div>
       <div class="flexy-column">
-        <div class="color-gallery roboto-regular" style="padding-bottom: 20px">
+        <div class="color-gray-light roboto-regular" style="padding-bottom: 20px">
           <p style="text-align: left">PATIENT CONCERNS</p>
         </div>
         <div
@@ -1494,7 +1495,7 @@
         ></div>
       </div>
       <div>
-        <div class="color-gallery roboto-regular" style="padding-bottom: 20px">
+        <div class="color-gray-light roboto-regular" style="padding-bottom: 20px">
           <p style="text-align: left">PROCEDURES</p>
         </div>
         <div
@@ -1512,6 +1513,7 @@
         >
           <div style="width: 60px; margin-right: 20px">
             <img
+            style="width: 50px"
               src="../../../../assets/aesthetics/BeforeAndAfter/sameday.svg"
             />
           </div>
@@ -1524,7 +1526,7 @@
           style="align-items: center; justify-content: start; padding-top: 20px"
         >
           <div>
-            <img
+            <img style="width: 200px;"
               src="../../../../assets/aesthetics/BeforeAndAfter/smileasy.svg"
             />
           </div>
@@ -1548,50 +1550,65 @@
     </div>
 
     <div #inBetweensText
-      class="in-betweens-line"
-      style="display: grid; width: 100%; align-items: center"
+      class="in-betweens-line padding-chef"
+      style="display: grid; align-self: stretch; align-items: center"
     >
       <div
         style="justify-self: start"
-        class="margin-bottom-4 color-gallery font-lion roboto-regular"
+        class="margin-bottom-4 color-gray-light font-lion roboto-regular"
       >
-        <p>The In-betweens:</p>
+        <p>The Journey:</p>
       </div>
-      <div class="line-8 margin-bottom-4"></div>
+      <div class="line-11 margin-bottom-4"></div>
     </div>
 
     <div #inBetweensContainer
-      style="display: grid; grid-template-columns: 50% 50%; grid-gap:2vw"
+      style="display: grid; margin-top:2vw;"
       class="margin-bottom-10"
     >
-      <div>
+    
+    <div style="grid-row: 1;">
+      <img
+        [src]="beforeImg"
+      />
+      <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">Before</p>
+    </div>
+      <div style="grid-row: 1;">
         <img #inBet1Img
           [src]="inBet1"
         />
+        <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">{{ inBet1Text }}</p>
       </div>
-      <div>
+      <div style="grid-row: 1;">
         <img #inBet2Img
           [src]="inBet2"
         />
+        <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">{{ inBet2Text }}</p>
+      </div>
+      <div style="grid-row: 1;">
+        <img
+          [src]="afterImg"
+        />
+        <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">After</p>
       </div>
     </div>
 
     <div
-      class="legends-line"
-      style="display: grid; width: 100%; align-items: center"
+      class="legends-line padding-chef"
+      style="display: grid; align-self: stretch; align-items: center"
     >
       <div
         style="justify-self: start"
-        class="margin-bottom-4 color-gallery font-lion roboto-regular"
+        class="margin-bottom-4 color-gray-light font-lion roboto-regular"
       >
         <p>Legends used on our cases:</p>
       </div>
-      <div class="line-8 margin-bottom-4"></div>
+      <div class="line-11 margin-bottom-4"></div>
     </div>
 
     <div
-      class="legend-items margin-bottom-10"
-      style="display: grid; width: 100%"
+      class="legend-items margin-bottom-10 padding-chef"
+      style="display: grid; align-self: stretch;"
     >
       <div class="flexy-column">
         <div
@@ -1599,16 +1616,16 @@
           style="
             display: grid;
             align-items: end;
-            height: 94px;
+            height: 65px;
             margin-bottom: 1vw;
           "
         >
           <img
-            style="width: 80px"
+            style="width: 50px"
             src="../../../../assets/aesthetics/BeforeAndAfter/sameday.svg"
           />
         </div>
-        <div class="roboto-thin color-white font-small-3 legend-text">
+        <div class="roboto-thin color-white font-small-4 legend-text">
           <p>
             <span class="roboto-regular" style="color: #f5701d"
               >Same Day Veneers/Crowns</span
@@ -1625,15 +1642,15 @@
           style="
             display: grid;
             align-items: end;
-            height: 94px;
+            height: 65px;
             margin-bottom: 1vw;
           "
         >
-          <img
+          <img style="width:200px;"
             src="../../../../assets/aesthetics/BeforeAndAfter/smileasy.svg"
           />
         </div>
-        <div class="roboto-regular color-white font-small-3 legend-text">
+        <div class="roboto-thin color-white font-small-4 legend-text">
           <p>
             <span class="roboto-regular" style="color: #00b2a9"
               >The Smileasy Payment Plan</span
@@ -1649,7 +1666,7 @@
           style="
             display: grid;
             align-items: end;
-            height: 94px;
+            height: 65px;
             margin-bottom: 1vw;
           "
         >
@@ -1657,7 +1674,7 @@
             src="../../../../assets/aesthetics/BeforeAndAfter/digital_dentistry.png"
           />
         </div>
-        <div class="roboto-regular color-white font-small-3 legend-text">
+        <div class="roboto-thin color-white font-small-4 legend-text">
           <p>
             <span class="roboto-regular" style="color: #b3c50e"
               >Digital Dentistry</span
@@ -1672,15 +1689,15 @@
     </div>
 
     <div
-      style="color: #f05024; width: 100%; text-align: center"
-      class="libre-regular font-dog story-next"
+      style="color: #f05024; align-self: stretch; text-align: center"
+      class="libre-regular font-dog story-next padding-chef"
     >
       <p>Is your story next?</p>
     </div>
 
     <div
-      class="margin-bottom-2 bottom-buttons"
-      style="display: grid; width: 100%"
+      class="margin-bottom-2 bottom-buttons padding-chef"
+      style="display: grid; align-self: stretch;"
     >
       <button
         style="justify-self: center"

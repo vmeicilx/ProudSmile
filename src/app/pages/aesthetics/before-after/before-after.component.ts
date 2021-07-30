@@ -130,6 +130,11 @@ public fourthTeamMember;
 public fourthTeamRole;
 public fourthTeamImg;
 
+public inBet1Text;
+public inBet2Text;
+
+public beforeZoomImg;
+public afterZoomImg;
 public beforeImg;
 public afterImg;
 
@@ -286,6 +291,7 @@ public inBet2;
     const procedures = cas["procedures"];
     const logos = cas["logo"];
     const inBet = cas["inBetweens"];
+    const inBetText = cas["inBetweensText"];
 
     if(cas["index"] === 2) {
       this.beforeImgC.nativeElement.style.display = "none";
@@ -299,6 +305,9 @@ public inBet2;
       this.afImg.nativeElement.style.maxWidth = "100%";
       this.afImg.nativeElement.style.margin = "unset";
     }
+
+    this.beforeZoomImg = cas["beforeZoomImg"];
+    this.afterZoomImg = cas["afterZoomImg"];
 
     this.beforeImg = cas["beforeImg"];
     this.afterImg = cas["afterImg"];
@@ -376,24 +385,20 @@ public inBet2;
       if(inBet.length === 1) {
         
         this.inBet1 = inBet[0];
+        this.inBet1Text = inBetText[0];
         this.inBetweensText.nativeElement.style.display = "grid";
         this.inBetweensContainer.nativeElement.style.display = "grid";
         this.inBet2Img.nativeElement.style.display = "none";
         
-        this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "100%";
-        this.inBet1Img.nativeElement.style.maxWidth = "50%";
-        this.inBet1Img.nativeElement.style.margin = "auto";
       } else {
 
         this.inBet1 = inBet[0];
+        this.inBet1Text = inBetText[0];
         this.inBet2 = inBet[1];
+        this.inBet2Text = inBetText[1];
         this.inBet2Img.nativeElement.style.display = "block";
         this.inBetweensText.nativeElement.style.display = "grid";
         this.inBetweensContainer.nativeElement.style.display = "grid";
-        
-        this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "50% 50%";
-        this.inBet1Img.nativeElement.style.maxWidth = "100%";
-        this.inBet1Img.nativeElement.style.margin = "unset";
       }
     }
 
