@@ -78,8 +78,14 @@
       ],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_j.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_before_teeth.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_teeth.jpg"
+      ],
+      "inBetweensText":  [
+        "Before teeth",
+        "After teeth"
       ]
     },
     {
@@ -104,7 +110,12 @@
       "procedures": ["Invisalign Lite", "Porcelain Veneers", "Zoom Whitening"],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_before.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_after.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/4_Invisalign.jpg"
+      ],
+      "inBetweensText":  [
+        "Invisalign"
       ]
     },
     {
@@ -129,8 +140,14 @@
       "procedures": ["2 Ultra Thin Porcelain Veneers"],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_before.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_after.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_digital_1.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/7_digital_2.jpg"
+      ],
+      "inBetweensText":  [
+        "Digital 1",
+        "Digital 2"
       ]
     },
     {
@@ -278,8 +295,6 @@
       "realCase": 11,
       "beforeZoomImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg",
       "afterZoomImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_after.jpg",
-      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_before.jpg",
-      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_after.jpg",
       "team": [
         {
           "name": "Dr. Erwin Vasconcelos",
@@ -302,6 +317,8 @@
       "procedures": [ "Traditional Orthodontics", "Zirconia Bridges", "Fillings", "Extractions", "Root Canal Therapy"],
       "logo": [false, true, true],
       "inBetweens":  [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_before_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_after_j.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_braces.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_after_bracers.jpg"
       ],
@@ -342,7 +359,12 @@
       "procedures": ["Invisalign Lite", "Upper and lower Porcelain Veneers"],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_before.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_after.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/13_Invisalign.jpg"
+      ],
+      "inBetweensText":  [
+        "Invisalign"
       ]
     },
     {
@@ -372,7 +394,12 @@
       "procedures": ["Invisalign Lite", "Zoom Whitening", "Porcelain Veneers"],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_before.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_after.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/16_Invisalign.jpg"
+      ],
+      "inBetweensText":  [
+        "Invisalign"
       ]
     },
     {
@@ -402,8 +429,14 @@
       "procedures": ["Traditional Orthodontics", "Zoom Whitening", "1 porcelain crown"],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_before_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_after_j.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_bracers.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/33_after_bracers.jpg"
+      ],
+      "inBetweensText":  [
+        "Braces",
+        "After Braces"
       ]
     },
     {
@@ -433,8 +466,14 @@
       "procedures": ["Traditional Clear Orthodontics", "Porcelain Veneers", "Zoom Whitening"],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_before_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_after_j.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_bracers.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/17_after_bracers.jpg"
+      ],
+      "inBetweensText":  [
+        "Braces",
+        "After Braces"
       ]
     },
     {
@@ -461,8 +500,14 @@
         "Zirconia Crowns", "Bite Splint", "Occlusal Therapy" ],
       "logo": [true, true, true],
       "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_before.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_after.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_before_teeth.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_after_teeth.jpg"
+      ],
+      "inBetweensText":  [
+        "Before teeth",
+        "After teeth"
       ]
     },
     {

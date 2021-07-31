@@ -110,6 +110,9 @@ export class BeforeAfterComponent implements OnInit {
   @ViewChild("beforeImgC") beforeImgC: ElementRef;
   @ViewChild("beforeC") beforeC: ElementRef;
   @ViewChild("afImg") afImg: ElementRef;
+  
+  @ViewChild("JBefore") jBefore: ElementRef;
+  @ViewChild("JBet2") jBet2: ElementRef;
 
   before = [];
   after = [];
@@ -137,6 +140,8 @@ public beforeZoomImg;
 public afterZoomImg;
 public beforeImg;
 public afterImg;
+public beforeImgJ;
+public afterImgJ;
 
 public inBet1;
 public inBet2;
@@ -295,12 +300,14 @@ public inBet2;
 
     if(cas["index"] === 2) {
       this.beforeImgC.nativeElement.style.display = "none";
+      this.jBefore.nativeElement.style.display = "none";
       this.beforeC.nativeElement.style.gridTemplateColumns = "100%";
       this.afImg.nativeElement.style.maxWidth = "50%";
       this.afImg.nativeElement.style.margin = "auto";
     } else {
       
       this.beforeImgC.nativeElement.style.display = "block";
+      this.jBefore.nativeElement.style.display = "block";
       this.beforeC.nativeElement.style.gridTemplateColumns = "50% 50%";
       this.afImg.nativeElement.style.maxWidth = "100%";
       this.afImg.nativeElement.style.margin = "unset";
@@ -311,6 +318,8 @@ public inBet2;
 
     this.beforeImg = cas["beforeImg"];
     this.afterImg = cas["afterImg"];
+    this.beforeImgJ = inBet[0];
+    this.afterImgJ = inBet[1];
 
     this.concern.nativeElement.innerHTML = "";
     this.procedures.nativeElement.innerHTML = "";
@@ -382,22 +391,31 @@ public inBet2;
       this.inBetweensContainer.nativeElement.style.display = "none";
       this.inBetweensText.nativeElement.style.display = "none";
     } else {
-      if(inBet.length === 1) {
+      if(inBet.length === 3) {
         
-        this.inBet1 = inBet[0];
+        this.inBet1 = inBet[2];
         this.inBet1Text = inBetText[0];
         this.inBetweensText.nativeElement.style.display = "grid";
         this.inBetweensContainer.nativeElement.style.display = "grid";
+        this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "33% 33% 33%";
         this.inBet2Img.nativeElement.style.display = "none";
+        this.jBet2.nativeElement.style.display = "none";
         
-      } else {
+      } else if(inBet.length === 4) {
 
-        this.inBet1 = inBet[0];
+        this.inBet1 = inBet[2];
         this.inBet1Text = inBetText[0];
-        this.inBet2 = inBet[1];
+        this.inBet2 = inBet[3];
         this.inBet2Text = inBetText[1];
         this.inBet2Img.nativeElement.style.display = "block";
+        this.jBet2.nativeElement.style.display = "block";
         this.inBetweensText.nativeElement.style.display = "grid";
+        
+        if(cas["index"] === 2) {
+          this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "33% 33% 33%";
+        } else {
+          this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "25% 25% 25% 25%";
+        }
         this.inBetweensContainer.nativeElement.style.display = "grid";
       }
     }
@@ -408,6 +426,11 @@ public inBet2;
   }
 
   onCaseClose() {
+    
+    this.beforeImg = "";
+    this.afterImg = "";
+    this.beforeZoomImg = "";
+    this.afterZoomImg = "";
     this.caseView.nativeElement.style.visibility = "hidden";
     document.documentElement.style.overflowY = "scroll";
   }

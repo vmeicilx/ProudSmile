@@ -1064,7 +1064,7 @@
           transition: opacity 0.3s linear;
           opacity: 1;
         "
-        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_before.jpg"
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_after.jpg"
       />
       <img
         #case20Before
@@ -1074,7 +1074,7 @@
           transition: opacity 0.3s linear;
           opacity: 0;
         "
-        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_after.jpg"
+        src="../../../../assets/aesthetics/BeforeAndAfter/Gallery/25_before.jpg"
       />
     </div>
     <div
@@ -1563,13 +1563,13 @@
     </div>
 
     <div #inBetweensContainer
-      style="display: grid; margin-top:2vw;"
+      style="display: grid; margin-top:2vw; justify-content: center; align-items: center;"
       class="margin-bottom-10"
     >
     
-    <div style="grid-row: 1;">
+    <div #JBefore style="grid-row: 1;">
       <img
-        [src]="beforeImg"
+        [src]="beforeImgJ"
       />
       <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">Before</p>
     </div>
@@ -1579,7 +1579,7 @@
         />
         <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">{{ inBet1Text }}</p>
       </div>
-      <div style="grid-row: 1;">
+      <div #JBet2 style="grid-row: 1;">
         <img #inBet2Img
           [src]="inBet2"
         />
@@ -1587,7 +1587,7 @@
       </div>
       <div style="grid-row: 1;">
         <img
-          [src]="afterImg"
+          [src]="afterImgJ"
         />
         <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">After</p>
       </div>
