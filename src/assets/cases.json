@@ -42,7 +42,7 @@
       ],
 
       "concerns": ["Discoloured teeth"],
-      "procedures": ["2 Ultra Thin Veneers", "Permanent Whitening"],
+      "procedures": ["Ultra Thin Veneers", "Permanent Whitening"],
       "logo": [true, true, true],
       "inBetweens": ""
     },
@@ -79,12 +79,13 @@
       "logo": [true, true, true],
       "inBetweens": [
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_j.jpg",
-        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_teeth.jpg",
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_before_teeth.jpg",
-        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_after_teeth.jpg"
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/3_invisalign.jpg"
       ],
       "inBetweensText":  [
         "Before teeth",
+        "Invisalign",
         "After teeth"
       ]
     },
@@ -169,7 +170,7 @@
       ],
 
       "concerns": ["Discoloured fillings and teeth", "Missing teeth"],
-      "procedures": ["Invisalign Lite", "Porcelain Veneers"],
+      "procedures": ["Fillings", "Porcelain Crowns", "Porcelain Bridge"],
       "logo": [false, true, true],
       "inBetweens": ""
     },
@@ -288,13 +289,22 @@
         "Root Canal Therapy"
       ],
       "logo": [false, true, true],
-      "inBetweens": ""
+      "inBetweens": [
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_before_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_after_j.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_braces.jpg",
+        "../../../../assets/aesthetics/BeforeAndAfter/Gallery/32_after_braces.jpg"
+      ],
+      "inBetweensText":  [
+        "Braces",
+        "After Braces"
+      ]
     },
     {
       "index": 10,
       "realCase": 11,
-      "beforeZoomImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg",
-      "afterZoomImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_after.jpg",
+      "beforeImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_before.jpg",
+      "afterImg": "../../../../assets/aesthetics/BeforeAndAfter/Gallery/11_zoom_after.jpg",
       "team": [
         {
           "name": "Dr. Erwin Vasconcelos",
@@ -506,8 +516,8 @@
         "../../../../assets/aesthetics/BeforeAndAfter/Gallery/35_after_teeth.jpg"
       ],
       "inBetweensText":  [
-        "Before teeth",
-        "After teeth"
+        "Teeth before",
+        "Teeth after"
       ]
     },
     {
