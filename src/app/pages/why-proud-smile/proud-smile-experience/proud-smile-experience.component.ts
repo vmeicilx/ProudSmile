@@ -11,6 +11,8 @@ export class ProudSmileExperienceComponent implements OnInit {
   @ViewChild("soundButton1") soundButton1: ElementRef;
   @ViewChild("sound2") sound2: ElementRef;
   @ViewChild("soundButton2") soundButton2: ElementRef;
+  
+  @ViewChild("vennerShortText") vennerShortText: ElementRef;
 
   constructor(private router: Router) {}
 
@@ -30,6 +32,10 @@ export class ProudSmileExperienceComponent implements OnInit {
   seeAllFinancial() {
     this.router.navigate(["/", "payment-page-component"]);
   }
+  seeAllAesthetic() {
+    this.router.navigate(["/", "PorcelainVeneers"]);
+    window.scrollTo(0, 0);
+  }
 
   seeUltraThin() {
     this.router.navigate(["/", "UltraThinVeneers"]);
@@ -41,5 +47,27 @@ export class ProudSmileExperienceComponent implements OnInit {
 
   onWhoWeAre() {
     this.router.navigate(["/", "who-we-are-component"]);
+  }
+
+  showTextPre() {
+
+    this.vennerShortText.nativeElement.style.position = "absolute";
+    this.vennerShortText.nativeElement.style.bottom = "unset";
+    this.vennerShortText.nativeElement.style.top = "0px";
+  }
+
+
+  showText() {
+
+    this.vennerShortText.nativeElement.style.position = "fixed";
+    this.vennerShortText.nativeElement.style.bottom = "unset";
+    this.vennerShortText.nativeElement.style.top = "0px";
+  }
+
+  hideText() {
+
+    this.vennerShortText.nativeElement.style.position = "absolute";
+    this.vennerShortText.nativeElement.style.top = "unset";
+    this.vennerShortText.nativeElement.style.bottom = "0px";
   }
 }

@@ -38,10 +38,6 @@
     margin-top: 0px;
   }
 
-  app-button {
-    margin-top: 4.1vh;
-  }
-
   .secondSection {
     .content {
       .videoContent {
@@ -123,6 +119,11 @@
   }
 
   @media only screen and (min-width: 2001px) {
+    
+    .venText {
+      max-width: 25vw;
+      padding-top:9vw;
+    }
     .title-on-big {
       font-size: 56px;
       line-height: 72px;
@@ -146,6 +147,11 @@
   }
 
   @media only screen and (min-width: 1201px) {
+    
+    .venText {
+      max-width: 25vw;
+      padding-top:9vw;
+    }
     .secondSection .title .mainText {
       max-width: 31vw;
     }
@@ -167,6 +173,11 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    
+    .venText {
+      max-width: 65vw;
+      padding-top:20vw;
+    }
     .textContainer {
       max-width: 70vw;
     }

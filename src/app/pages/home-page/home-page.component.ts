@@ -19,6 +19,7 @@ export class HomePageComponent implements OnInit {
   private renderer: Renderer2;
 
   @ViewChild("relaxVideo") relaxVideo: ElementRef;
+  @ViewChild("vennerShortText") vennerShortText: ElementRef;
 
   imageObject: Array<object> = [
     {
@@ -99,6 +100,27 @@ export class HomePageComponent implements OnInit {
       }
     }
   }
+  showTextPre() {
+
+    this.vennerShortText.nativeElement.style.position = "absolute";
+    this.vennerShortText.nativeElement.style.bottom = "unset";
+    this.vennerShortText.nativeElement.style.top = "0px";
+  }
+
+
+  showText() {
+
+    this.vennerShortText.nativeElement.style.position = "fixed";
+    this.vennerShortText.nativeElement.style.bottom = "unset";
+    this.vennerShortText.nativeElement.style.top = "0px";
+  }
+
+  hideText() {
+
+    this.vennerShortText.nativeElement.style.position = "absolute";
+    this.vennerShortText.nativeElement.style.top = "unset";
+    this.vennerShortText.nativeElement.style.bottom = "0px";
+  }
 
   inTheViewport(elem): boolean {
     var bounding = elem.getBoundingClientRect();
@@ -120,7 +142,7 @@ export class HomePageComponent implements OnInit {
   }
 
   seeAllAesthetic() {
-    this.router.navigate(["/", "aesthetics-component"]);
+    this.router.navigate(["/", "PorcelainVeneers"]);
     window.scrollTo(0, 0);
   }
   seeOurClinic() {
