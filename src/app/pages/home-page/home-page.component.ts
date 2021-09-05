@@ -153,6 +153,10 @@ export class HomePageComponent implements OnInit {
     this.router.navigate(["/", "proud-smile-experience-component"]);
     window.scrollTo(0, 0);
   }
+  
+  seeAllFinancial() {
+    this.router.navigate(["/", "payment-page-component"]);
+  }
 
   goToLink(url: string) {
     window.open(url, "_blank");
