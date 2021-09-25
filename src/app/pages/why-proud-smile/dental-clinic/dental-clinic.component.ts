@@ -14,28 +14,18 @@ import {
 export class DentalClinicComponent implements OnInit {
   constructor() {}
 
-  @ViewChild("roomVideo") roomVideo: ElementRef;
   @ViewChild("practiceButVideo") practiceButVideo: ElementRef;
+  @ViewChild("lightRoomVideo") lightRoomVideo: ElementRef;
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.roomVideo.nativeElement.muted = true;
     this.practiceButVideo.nativeElement.muted = true;
-    this.roomVideo.nativeElement.style.display = "block";
+    this.lightRoomVideo.nativeElement.muted = true;
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.roomVideo.nativeElement)) {
-      if (this.roomVideo.nativeElement.paused) {
-        this.roomVideo.nativeElement.play();
-      }
-    } else {
-      if (!this.roomVideo.nativeElement.paused) {
-        this.roomVideo.nativeElement.pause();
-      }
-    }
 
     if (this.inTheViewport(this.practiceButVideo.nativeElement)) {
       if (this.practiceButVideo.nativeElement.paused) {
@@ -44,6 +34,16 @@ export class DentalClinicComponent implements OnInit {
     } else {
       if (!this.practiceButVideo.nativeElement.paused) {
         this.practiceButVideo.nativeElement.pause();
+      }
+    }
+    
+    if (this.inTheViewport(this.lightRoomVideo.nativeElement)) {
+      if (this.lightRoomVideo.nativeElement.paused) {
+        this.lightRoomVideo.nativeElement.play();
+      }
+    } else {
+      if (!this.lightRoomVideo.nativeElement.paused) {
+        this.lightRoomVideo.nativeElement.pause();
       }
     }
   }

@@ -4,11 +4,34 @@
   .dpb {
     width: calc(25vw + 1520px);
   }
+
+  .guest-section {
+    background-image: url(../../../../assets/dentalClinic/coffe.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   @media only screen and (min-width: 1201px) {
     .coffe {
       width: 100%;
       img {
         width: 100%;
+      }
+    }
+
+    .guest-section-responsive {
+      padding-top: 250px;
+      padding-bottom: 250px;
+      p {
+        text-align: left;
+      }
+      .guest-section-text {
+        align-items: start;
+        justify-content: start;
+        width: 550px;
+      }
+      img {
+        max-width: unset;
       }
     }
   }
@@ -19,12 +42,45 @@
         max-width: 1234px !important;
       }
     }
+
+    .guest-section-responsive {
+      padding-top: 150px;
+      padding-bottom: 150px;
+      p {
+        text-align: left;
+      }
+      .guest-section-text {
+        align-items: start;
+        justify-content: start;
+        width: 400px;
+      }
+      img {
+        max-width: 75vw;
+      }
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
     .coffe {
       img {
         max-width: 1234px !important;
+      }
+    }
+
+    .guest-section-responsive {
+      padding-top: 20vw;
+      padding-bottom: 70vw;
+      background-size: 100%;
+      background-position-y: bottom;
+      p {
+        text-align: center;
+      }
+      .guest-section-text {
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        max-width: 75vw;
       }
     }
   }

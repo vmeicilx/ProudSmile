@@ -34,7 +34,7 @@
             been associated with pain, anxiety, bad smells, cold, too expensive
             and judgmental. We decided it was time to change. Using proven
             elements from other types of businesses we transformed our practice
-            in a place where you’ll actually want to visit.
+            into a place where you’ll actually want to visit.
           </p>
         </div>
       </div>
@@ -71,9 +71,9 @@
       </div>
       <div class="roboto-regular font-medium center-text-on-sm">
         <p>
-          We all live busy lives and so it’s easy to put our health in second
-          place. Whether you may be feeling embarrassed, afraid or overwhelmed,
-          we’re here to listen. Our staff is super friendly and our dentists are
+          We all live busy lives so it’s easy to put our health in second place.
+          Whether you may be feeling embarrassed, afraid or overwhelmed, we’re
+          here to listen. Our staff are super friendly and our dentists are
           great listeners and they just care more. If you take the first step to
           come and see us we will help you with the next ones and you’ll just
           feel so Proud of Yourself.
@@ -154,7 +154,7 @@
     </div>
     <div class="font-medium padding-chef no-padding-on-sm">
       <p>
-        A lot of patients complain of the sound and feel of our rotary
+        A lot of patients complain about of the sound and feel of our rotary
         instruments. That is why we’ve recently invested in quieter and smoother
         hand pieces. These are electric rather than air driven so you don’t get
         that high pitch sound and there’s less vibration too.
@@ -284,7 +284,7 @@
         <p>
           We also have noise canceling headphones so you can focus on your
           favourite TV show while we work. Just the little things that make a
-          whole heap of difference.
+          whole lot of difference.
         </p>
       </div>
     </div>
@@ -318,7 +318,7 @@
         <div class="roboto-regular font-medium center-text-on-sm">
           <p>
             There’s no doubt that pain is one of our biggest fears and
-            unfortunately a lot of our patients carry traumas from past old
+            unfortunately a lot of our patients carry trauma from past
             experiences. However, with modern techniques and advancements in
             local anaesthetics we can comfortably say treatments are now
             virtually pain free. Depending on the procedure and the location in
@@ -330,8 +330,8 @@
         <div class="roboto-regular font-medium center-text-on-sm">
           <p>
             Plus, with the introduction of digital dentistry we can now perform
-            some procedures with no need for anaesthetics, such as our Ultra
-            Thin Veneers.
+            some procedures with no anaesthetics, such as our Ultra Thin
+            Veneers.
           </p>
         </div>
         <app-button
@@ -534,35 +534,20 @@
       </div>
       <div class="flex-1 relative-container">
         <img loading="lazy" src="../../../assets/whyProudSmilePage/99.png" />
-        <div
-          class="
-            cursor-pointer
-            roboto-regular
-            color-white
-            font-small-3
-            absolute-container
-          "
-          style="bottom: 4%; left: 14%"
-          fxLayout
-          fxLayoutAlign="center center"
-          (click)="seeAllFinancial()"
-        >
-          <div>
-            <img
-              loading="lazy"
-              src="../../../../assets/healthPage/RootCanal/credit_card.svg"
-            />
-          </div>
-          <div class="margin-left-1">
-            <p>See all our Financial Plans</p>
-          </div>
-          <div class="margin-left-1 opacity-5">
-            <img
-              loading="lazy"
-              src="../../../../assets/homePage/WhiteArrow.svg"
-            />
-          </div>
-        </div>
+        <button
+        class="button-3 color-orange 
+        absolute-container"
+        style="bottom: 4%; left: 14%"
+        fxFlexAlign="center"
+        (click)="
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+          )
+        "
+      >
+        <img src="../../../assets/contactPage/calendarOrange.svg" />
+        <p>Instant Online Booking</p>
+      </button>
       </div>
     </div>
   </div>
@@ -590,21 +575,22 @@
         <div class="font-dog libre-regular margin-bottom-1">
           <p>You Can Afford It</p>
         </div>
-        <div class="roboto-regular font-medium center-text-on-sm">
+        <div class="roboto-regular font-medium center-text-on-sm margin-bottom-1">
           <p>
             We believe that good quality dentistry, whether for health or
             aesthetics, should be accessible to all. Our prices are quite
             transparent and you will always know the cost before any procedure
             so there’s no nasty surprises.<br /><br />
             We offer a comprehensive range of payment plans, including our own
-            <span class="roboto-bold">Smileasy Payment plan</span>(*) which has
-            no credit checks and no need to prove your earnings. We also accept
-            all health funds and we are preferred providers for
-            <span class="roboto-bold">HCF, Bupa, Medibank Private and CBHS</span
-            >.<br /><br />
+            <span class="roboto-bold">Smileasy Payment plan</span>. No deposit,
+            no credit assessment and no interest. We also accept all health
+            funds and we are preferred providers for
+            <span class="roboto-bold"
+              >HCF, Bupa, Medibank Private and CBHS(*)</span
+            >. Medibank Private members choice available at Pacific Fair onle
+            and CBHS available at Bundall only.<br /><br />
             Our treatment plans are personalised and we can tailor them to your
-            budget so chances are we will have a solution for you and we will
-            work with your budget.
+            budget so chances are we will have a solution for you.
           </p>
         </div>
         <app-button
@@ -640,10 +626,8 @@
             We know Dentistry is not an exact science and as much as we follow
             strict protocols sometimes things can go wrong. Fortunately these
             are rare and we understand the impact it can have on our patients,
-            which is why we, offer a warranty on a number of procedures to make
-            those unlikely events less stressful to our clients. For example, if
-            we place an implant and it gets rejected you’ll get a new one at no
-            extra cost.
+            which is why we offer a warranty on a number of procedures to make
+            those unlikely events less stressful to our clients.
           </p>
         </div>
         <div class="line-2 opacity-2 full-width margin-top-bottom-2"></div>
@@ -660,7 +644,7 @@
 </div>
 
 <div
-class="hide-on-phone flexy-column cccc"
+  class="hide-on-phone flexy-column cccc"
   style="background-color: black; position: relative"
 >
   <div fxLayout fxLayoutAlign="center center">
@@ -676,7 +660,11 @@ class="hide-on-phone flexy-column cccc"
     >
     </app-scroll-framer-full>
   </div>
-  <div #vennerShortText class="venText" style="position: absolute; top: 0; color: white; z-index:2; right:15vw;">
+  <div
+    #vennerShortText
+    class="venText"
+    style="position: absolute; top: 0; color: white; z-index: 2; right: 15vw"
+  >
     <div
       class="
         flex-1
@@ -687,7 +675,7 @@ class="hide-on-phone flexy-column cccc"
         margin-bottom-on-sm
       "
       fxLayout="column"
-      style="padding-bottom:2vw;"
+      style="padding-bottom: 2vw"
     >
       <div class="font-wolf libre-regular margin-bottom-1">
         <p class="title-on-big center-text-on-sm">
@@ -714,7 +702,10 @@ class="hide-on-phone flexy-column cccc"
           that perfect smile?<br />
         </p>
       </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom:2vw;">
+      <div
+        class="roboto-thin font-small-3 center-text-on-sm"
+        style="margin-bottom: 2vw"
+      >
         <br />
         <p>
           Plus, with the introduction of digital dentistry we can now perform
@@ -722,8 +713,10 @@ class="hide-on-phone flexy-column cccc"
           Veneers.
         </p>
       </div>
-      <app-button text="SEE AESTHETICS PAGE" 
-      (click)="seeAllAesthetic()"></app-button>
+      <app-button
+        text="SEE AESTHETICS PAGE"
+        (click)="seeAllAesthetic()"
+      ></app-button>
     </div>
   </div>
 </div>
@@ -735,7 +728,6 @@ class="hide-on-phone flexy-column cccc"
     relative-container
     background-18
     height-2
-    face-spa-section
   "
   fxLayout="column"
   fxLayoutAlign="center end"
@@ -763,7 +755,7 @@ class="hide-on-phone flexy-column cccc"
         </div>
         <div
           class="
-            roboto-thin
+            roboto-regular
             font-medium
             center-text-on-sm
             margin-bottom-1 margin-bottom-on-sm
@@ -784,8 +776,10 @@ class="hide-on-phone flexy-column cccc"
           </p>
         </div>
 
-        <app-button text="SEE FACESPA PAGE" 
-        (click)="seeFacespaPage()"></app-button>
+        <app-button
+          text="SEE FACESPA PAGE"
+          (click)="seeFacespaPage()"
+        ></app-button>
       </div>
     </div>
   </div>

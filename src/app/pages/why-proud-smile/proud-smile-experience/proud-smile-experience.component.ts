@@ -70,4 +70,11 @@ export class ProudSmileExperienceComponent implements OnInit {
     this.vennerShortText.nativeElement.style.top = "unset";
     this.vennerShortText.nativeElement.style.bottom = "0px";
   }
+  
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
+  goToLinkWithotNewTab(url: string) {
+    window.open(url, "_self");
+  }
 }
