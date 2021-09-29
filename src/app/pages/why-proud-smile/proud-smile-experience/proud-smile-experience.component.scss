@@ -27,6 +27,12 @@
       box-shadow: 0 0 0 0 rgba(#f05024, 0);
     }
   }
+  
+  .dentistry-section {
+    background-image: url(/assets/whyProudSmilePage/mainImage.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
   .imageText {
     .horizontalLine {
@@ -118,6 +124,11 @@
     display: none;
   }
 
+  
+  .face-spa-section {
+    padding-left:25vw;
+  }
+
   @media only screen and (min-width: 2001px) {
     
     .venText {
@@ -147,7 +158,12 @@
   }
 
   @media only screen and (min-width: 1201px) {
-    
+    .dentistry-section {
+      height: 1600px;
+      .dentistry-text {
+        max-width: 55vw;;
+      }
+    }
     .venText {
       max-width: 25vw;
       padding-top:9vw;
@@ -174,6 +190,12 @@
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
     
+    .dentistry-section {
+      height: 1600px;
+      .dentistry-text {
+        max-width: 55vw;;
+      }
+    }
     .venText {
       max-width: 65vw;
       padding-top:20vw;
@@ -212,6 +234,15 @@
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
 
+    .dentistry-section {
+      height: 800px;
+      .dentistry-text {
+        max-width: 90vw;
+      }
+    }
+    .no-jud-text {
+      padding-top:10vw;
+    }
     .NoJudgmentFullDesktop {
       display: none;
     }
@@ -270,7 +301,8 @@
     }
 
     .face-spa-section {
-      height: 900px;
+      height: 1300px;
+      padding:2vw;
     }
   }
 }

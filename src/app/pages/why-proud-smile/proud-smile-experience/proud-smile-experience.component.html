@@ -1,7 +1,7 @@
-<div
-  class="padding-chef color-brown background-1 padding-bottom-1 padding-top-1"
-  fxLayout="column"
-  fxLayoutAlign="center center"
+<!-- <div style="position: relative; height:1600px">
+
+  <div
+  class="dentistry-section flexy-column cccc padding-chef color-white background-1 padding-bottom-1 padding-top-1"
 >
   <div
     fxLayout="column"
@@ -9,7 +9,7 @@
     class="font-large libre-regular center-text padding-top-bottom-1"
   >
     <div class="width-1">
-      <img src="../../../assets/Shape.svg" />
+      <img src="../../../assets/WhiteShape.svg" />
     </div>
     <p>
       The dentist you will<br />
@@ -20,22 +20,77 @@
 
   <div fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w-r sscc margin-bottom-2">
-      <div class="margin-right-1 flex-1 no-margin-on-sm">
-        <img src="../../../assets/whyProudSmilePage/surf.png" />
-      </div>
-      <div class="flex-1 sscc margin-bottom-on-sm" fxLayout="column">
+      <div class="flex-1 flexy-column cccc margin-bottom-on-sm" style="max-width: 55vw;">
         <div class="font-dog libre-regular margin-bottom-1">
           <p>Dentistry Reinvented</p>
         </div>
-        <div class="roboto-regular font-medium center-text-on-sm">
-          <p>
+        <div class="roboto-regular font-medium">
+          <p style="text-align: center;">
             Proud Smile is a purposely built dental practice with one idea in
             mind: to change the face of dentistry. For decades dentistry has
             been associated with pain, anxiety, bad smells, cold, too expensive
             and judgmental. We decided it was time to change. Using proven
             elements from other types of businesses we transformed our practice
-            into a place where you’ll actually want to visit.
+            into <span style="font-weight: bold;">a place where you’ll actually want to visit.</span>
           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+<div class="dentistry-section" style="position: relative; margin-top:213px; background: black;">
+  <div style="position: absolute; bottom:-53px; z-index:1">
+    <img src="../../../../assets/whyProudSmilePage/mainImage.png" />
+  </div>
+
+  <div
+    class="
+      flexy-column
+      cccc
+      padding-chef
+      color-white
+      padding-bottom-1 padding-top-1
+    "
+    style="position: absolute; top:0; z-index:5; margin:auto; left:0;right:0;padding:0;"
+  >
+    <div
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      class="font-large libre-regular center-text padding-top-bottom-1"
+    >
+      <div class="width-1">
+        <img src="../../../assets/WhiteShape.svg" />
+      </div>
+      <p>
+        The dentist you will<br />
+        actually
+        <span class="libre-italic">Want to Visit</span>
+      </p>
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div class="flexy-row-w-r sscc margin-bottom-2" style="margin-top:16vw;">
+        <div
+          class="flex-1 dentistry-text flexy-column cccc margin-bottom-on-sm"
+        >
+          <div class="font-dog libre-regular margin-bottom-1">
+            <p>Dentistry Reinvented</p>
+          </div>
+          <div class="roboto-regular font-medium">
+            <p style="text-align: center">
+              Proud Smile is a purposely built dental practice with one idea in
+              mind: to change the face of dentistry. For decades dentistry has
+              been associated with pain, anxiety, bad smells, cold, too
+              expensive and judgmental. We decided it was time to change. Using
+              proven elements from other types of businesses we transformed our
+              practice into
+              <span style="font-weight: bold"
+                >a place where you’ll actually want to visit.</span
+              >
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +102,7 @@
     <img
       class="no-judgment-image"
       loading="lazy"
-      src="../../../assets/whyProudSmilePage/NoJudgmentFull.jpg"
+      src="../../../assets/whyProudSmilePage/NoJudgmentFull.png"
     />
   </div>
 
@@ -97,7 +152,7 @@
     "
   >
     <div
-      class="flex-1 sscc margin-bottom-on-sm no-margin-right-on-sm"
+      class="flex-1 no-jud-text sscc margin-bottom-on-sm no-margin-right-on-sm"
       fxLayout="column"
     >
       <div class="font-dog libre-regular margin-bottom-1">
@@ -124,7 +179,7 @@
     <img
       class="no-judgment-image"
       loading="lazy"
-      src="../../../assets/whyProudSmilePage/NoJudgmentFull.jpg"
+      src="../../../assets/whyProudSmilePage/NoJudgmentFull.png"
     />
   </div>
 </div>
@@ -327,7 +382,9 @@
           </p>
         </div>
         <div class="line-2 opacity-2 full-width margin-top-bottom-2"></div>
-        <div class="roboto-regular font-medium center-text-on-sm margin-bottom-1">
+        <div
+          class="roboto-regular font-medium center-text-on-sm margin-bottom-1"
+        >
           <p>
             Plus, with the introduction of digital dentistry we can now perform
             some procedures with no anaesthetics, such as our Ultra Thin
@@ -535,19 +592,18 @@
       <div class="flex-1 relative-container">
         <img loading="lazy" src="../../../assets/whyProudSmilePage/99.png" />
         <button
-        class="button-3 color-orange 
-        absolute-container"
-        style="bottom: 4%; left: 14%"
-        fxFlexAlign="center"
-        (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-          )
-        "
-      >
-        <img src="../../../assets/contactPage/calendarOrange.svg" />
-        <p>Instant Online Booking</p>
-      </button>
+          class="button-3 color-orange absolute-container"
+          style="bottom: 4%; left: 14%"
+          fxFlexAlign="center"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
+          "
+        >
+          <img src="../../../assets/contactPage/calendarOrange.svg" />
+          <p>Instant Online Booking</p>
+        </button>
       </div>
     </div>
   </div>
@@ -575,7 +631,9 @@
         <div class="font-dog libre-regular margin-bottom-1">
           <p>You Can Afford It</p>
         </div>
-        <div class="roboto-regular font-medium center-text-on-sm margin-bottom-1">
+        <div
+          class="roboto-regular font-medium center-text-on-sm margin-bottom-1"
+        >
           <p>
             We believe that good quality dentistry, whether for health or
             aesthetics, should be accessible to all. Our prices are quite
@@ -723,25 +781,25 @@
 
 <div
   class="
+    flexy-column
+    cccc
     face-spa-section
     color-white
     relative-container
     background-18
-    height-2
+    height-7
   "
-  fxLayout="column"
-  fxLayoutAlign="center end"
 >
-  <div class="height-2 absolute-container hide-on-phone" style="right: 40%">
+  <div class="height-7 absolute-container hide-on-phone" style="right: 40%">
     <img
       loading="lazy"
-      class="height-2"
+      class="height-7"
       style="max-width: unset"
       src="../../../assets/whyProudSmilePage/facespa_woman.jpg"
     />
   </div>
   <div
-    class="absolute-container height-2 padding-chef"
+    class="absolute-container height-7"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -776,10 +834,34 @@
           </p>
         </div>
 
-        <app-button
-          text="SEE FACESPA PAGE"
-          (click)="seeFacespaPage()"
-        ></app-button>
+        <div
+          class="flex-1 margin-bottom-on-sm"
+          style="margin-top: 2vw; display: flex; align-items: flex-start"
+        >
+          <div>
+            <img
+              loading="lazy"
+              src="../../../../assets/aesthetics/FaceSpa/pc.png"
+            />
+          </div>
+          <div
+            style="margin-top: 20px"
+            class="link color-orange roboto-bold font-small-4 cursor-pointer"
+            (click)="seeFacespaPage()"
+          >
+            <p fxLayout fxLayoutAlign="center center">
+              For more information about<br />
+              FaceSpa please visit our dedicated<br />
+            </p>
+            <p>
+              website on this link.
+              <img
+                style="display: inline; vertical-align: middle; width: 20px"
+                src="../../assets/orangeArrow.svg"
+              />
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
