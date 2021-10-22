@@ -160,56 +160,7 @@
   width: 100%;
   z-index: 10;
   position: absolute;
-  .whiteStyle button.onlineBooking p,
-  .blackStyle button.onlineBooking p {
-    color: white;
-    transition: color 1000ms linear;
-    margin: 0;
-  }
-  .whiteStyle .icons {
-    fill: white;
-    transition: fill 1000ms linear;
-    opacity: 1;
-  }
-  .blackStyle .icons {
-    fill: black;
-    transition: fill 1000ms linear;
-    opacity: 0.8;
-  }
-  .whiteStyle .inclined {
-    stroke: white;
-    transition: stroke 1000ms linear;
-    opacity: 0.4;
-  }
-  .blackStyle .inclined {
-    stroke: black;
-    transition: stroke 1000ms linear;
-    opacity: 0.4;
-  }
-  .header.whiteStyle {
-    background-color: transparent;
-    transition: background-color 1000ms linear;
-  }
-  .header.blackStyle {
-    background-color: white;
-    transition: background-color 1000ms linear;
-  }
-  .whiteStyle button p {
-    color: white;
-    transition: color 1000ms linear;
-  }
-  .whiteStyle svg .svgFill {
-    fill: white;
-    transition: fill 1000ms linear;
-  }
-  .blackStyle svg .svgFill {
-    fill: black;
-    transition: fill 1000ms linear;
-  }
-  .blackStyle p {
-    color: #565960;
-    transition: color 1000ms linear;
-  }
+  
   button {
     border: 0;
     padding: 0;
@@ -272,7 +223,6 @@
 
     .menu2 {
       width: 100%;
-      padding: 0 20px;
     }
 
     .logo svg .black {
@@ -435,16 +385,128 @@
   #Schedule2 {
     display: none !important;
   }
+
+  
+  .header.whiteStyle {
+    background-color: transparent;
+    transition: background-color 1000ms linear;
+  }
+  .header.blackStyle {
+    background-color: white;
+    transition: background-color 1000ms linear;
+  }
+
+  .whiteStyle button.onlineBooking p,
+  .blackStyle button.onlineBooking p {
+    color: white;
+    transition: color 1000ms linear;
+    margin: 0;
+  }
+  .whiteStyle .icons {
+    fill: white;
+    transition: fill 1000ms linear;
+    opacity: 1;
+  }
+  .blackStyle .icons {
+    fill: black;
+    transition: fill 1000ms linear;
+    opacity: 0.8;
+  }
+  .whiteStyle .inclined {
+    stroke: white;
+    transition: stroke 1000ms linear;
+    opacity: 0.4;
+  }
+  .blackStyle .inclined {
+    stroke: black;
+    transition: stroke 1000ms linear;
+    opacity: 0.4;
+  }
+
+  .whiteStyle button p {
+    color: white;
+    transition: color 1000ms linear;
+  }
+  .whiteStyle svg .svgFill {
+    fill: white;
+    transition: fill 1000ms linear;
+  }
+  .blackStyle svg .svgFill {
+    fill: black;
+    transition: fill 1000ms linear;
+  }
+  .blackStyle p {
+    color: #565960;
+    transition: color 1000ms linear;
+  }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
   #Schedule2 {
     display: none !important;
   }
+  
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
   #Schedule {
     display: none !important;
+  }
+  
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1200px) {
+  
+  .header.whiteStyle {
+    background-color: black;
+    transition: background-color 1000ms linear;
+  }
+  .header.blackStyle {
+    background-color: black;
+    transition: background-color 1000ms linear;
+  }
+
+  .whiteStyle button.onlineBooking p,
+  .blackStyle button.onlineBooking p {
+    color: white;
+    transition: color 1000ms linear;
+    margin: 0;
+  }
+  .whiteStyle .icons {
+    fill: white;
+    transition: fill 1000ms linear;
+    opacity: 1;
+  }
+  .blackStyle .icons {
+    fill: white;
+    transition: fill 1000ms linear;
+    opacity: 0.8;
+  }
+  .whiteStyle .inclined {
+    stroke: white;
+    transition: stroke 1000ms linear;
+    opacity: 0.4;
+  }
+  .blackStyle .inclined {
+    stroke: white;
+    transition: stroke 1000ms linear;
+    opacity: 0.4;
+  }
+
+  .whiteStyle button p {
+    color: white;
+    transition: color 1000ms linear;
+  }
+  .whiteStyle svg .svgFill {
+    fill: white;
+    transition: fill 1000ms linear;
+  }
+  .blackStyle svg .svgFill {
+    fill: white;
+    transition: fill 1000ms linear;
+  }
+  .blackStyle p {
+    color: #565960;
+    transition: color 1000ms linear;
   }
 }

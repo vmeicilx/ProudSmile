@@ -1,8 +1,10 @@
 import { Clipboard } from "@angular/cdk/clipboard";
 import {
+  ApplicationRef,
   Component,
   ElementRef,
   HostListener,
+  Injector,
   OnInit,
   Renderer2,
   ViewChild
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = "center";
   verticalPosition: MatSnackBarVerticalPosition = "top";
   scheduleText: string;
+  appElementRef: ElementRef;
 
   @ViewChild("whyProudSmile") whyProudSmileSubheader: ElementRef;
   @ViewChild("implants") implantsSubheader: ElementRef;
@@ -54,6 +57,11 @@ export class HeaderComponent implements OnInit {
   @ViewChild("input2Mini") input2: ElementRef;
   @ViewChild("input3Mini") input3: ElementRef;
   @ViewChild("pointerMini") pointer: ElementRef;
+  @ViewChild("ThreeDots") threeDots: ElementRef;
+  @ViewChild("CloseThreeDots") closeThreeDots: ElementRef;
+
+  
+  @ViewChild("MobileOverlay") mobileOverlay: ElementRef;
 
   pointerGrabbed: boolean = false;
   mousePosition: number;
@@ -68,8 +76,9 @@ export class HeaderComponent implements OnInit {
     renderer: Renderer2,
     private clipboard: Clipboard,
     private _snackBar: MatSnackBar,
-    private data: DataService
+    private data: DataService,
   ) {
+  
     this.elRef = el;
     this.renderer = renderer;
 
@@ -478,6 +487,19 @@ export class HeaderComponent implements OnInit {
   }
   goToLinkWithotNewTab(url: string) {
     window.open(url, "_self");
+  }
+
+  showOverlay() {
+    this.mobileOverlay.nativeElement.style.display="flex";
+    this.threeDots.nativeElement.style.display="none";
+    this.closeThreeDots.nativeElement.style.display="block";
+    //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "hidden";
+  }
+  hideOverlay() {
+    this.mobileOverlay.nativeElement.style.display="none";
+    this.threeDots.nativeElement.style.display="block";
+    this.closeThreeDots.nativeElement.style.display="none";
+    //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "scroll";
   }
 
   copyNumber() {

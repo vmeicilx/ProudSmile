@@ -24,6 +24,7 @@ export class RootCanalTherapyComponent implements OnInit {
     this.video.nativeElement.muted = true;
     this.teeth.nativeElement.muted = true;
     this.video.nativeElement.style.display = "block";
+    this.video.nativeElement.playbackRate = 0.4;
   }
 
   seeAllFinancial() {

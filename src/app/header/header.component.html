@@ -61,7 +61,7 @@
       </div>
     </div>
     <button
-      class="button-1 color-orange"
+      class="button-1 color-fuscia"
       style="margin-bottom: 32px"
       fxFlexAlign="center"
       (click)="
@@ -138,7 +138,7 @@
       </div>
     </div>
     <button
-      class="button-1 color-orange"
+      class="button-1 color-fuscia"
       style="margin-bottom: 32px"
       fxFlexAlign="center"
       (click)="
@@ -221,7 +221,7 @@
 </mat-menu>
 <div>
   <div
-    class="header"
+    class="header relative-container"
     id="HeaderItem"
     #hItem
     (mouseenter)="mouseEnter()"
@@ -627,74 +627,11 @@
       </div>
     </div>
 
-    <div class="menu2" fxLayout fxLayoutAlign="space-around center">
-      <button
-        class="fix-text-0 roboto-medium"
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="0.5vw"
-        (click)="
-          goToLink(
-            'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
-          )
-        "
-      >
-        <svg
-          data-name="Icons/marker"
-          viewBox="0 0 16 16"
-          width="27px"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            class="icons"
-            transform="translate(3.333 1.333)"
-            d="M5,13.333a.679.679,0,0,1-.556-.282C3.7,12.148,0,7.513,0,5.052A5.032,5.032,0,0,1,5,0a5.032,5.032,0,0,1,5,5.052c0,2.463-3.7,7.1-4.445,8A.678.678,0,0,1,5,13.333ZM5,2.947A2.176,2.176,0,1,0,5,7.3,2.123,2.123,0,0,0,7.084,5.192,2.171,2.171,0,0,0,5,2.947Z"
-          />
-        </svg>
-        <p class="loc">122 Bundall Road Bundall QLD 4217</p>
-      </button>
-      <button
-        class="fix-text-0 roboto-medium"
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="0.5vw"
-        [matMenuTriggerFor]="bundallMenu"
-        (menuOpened)="menuOpened()"
-        (menuClosed)="menuClosed()"
-      >
-        <svg
-          class="icons"
-          width="27px"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-          />
-          <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
-        </svg>
-      </button>
-      <button
-        class="fix-text-0 roboto-medium"
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="0.5vw"
-        (click)="goToLinkWithotNewTab('tel:0755703311')"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          class="icons"
-          width="27px"
-        >
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path
-            d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"
-          />
-        </svg>
-      </button>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+    <div
+      class="menu2 three-dots flexy-row"
+      style="justify-content: end; align-items: flex-end"
+    >
+      <button #ThreeDots (click)="showOverlay()" style="display: block">
         <svg
           class="icons"
           width="33px"
@@ -705,6 +642,69 @@
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
         </svg>
       </button>
+      <button #CloseThreeDots (click)="hideOverlay()" style="display: none">
+        <img style="width: 24px; opacity: 0.4;" src="../../assets/header/cancelWhite.svg"/>
+      </button>
+      <div
+        #MobileOverlay
+        class="overlay-mobile"
+        style="
+          position: absolute;
+          top: 80px;
+          background: black;
+          height: 100vh;
+          width: 100%;
+          display: none;
+          left: 0;
+          overflow-y: auto;
+        "
+      >
+      <div class="flexy-column full-width mobile-menu-items">
+
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Home</p>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item flexy-row" style="padding: 6vw;">
+          <div class="flexy-row full-width">
+            <p style="color:white; text-align: left;">Why ProudSmile</p>
+
+          </div>
+          <div class="flexy-row full-width" style="justify-content: end;">
+
+            <p style="color:white; text-align: left; margin:0 6vw; opacity: 0.4;">3</p>
+            <div>
+              <img style="width: 16px; opacity: 0.4;" src="../../assets/header/cancelWhite.svg"/>
+            </div>
+          </div>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Health</p>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Aesthetics</p>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Implants</p>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Smileasy Payment Plan</p>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Specials</p>
+        </div>
+        <div class="line-13"></div>
+        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
+          <p style="color:white; text-align: left;">Contact</p>
+        </div>
+      </div>
+
+    </div>
     </div>
   </div>
 </div>
