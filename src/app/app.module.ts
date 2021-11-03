@@ -63,6 +63,7 @@ import { DataService } from "./shared/data-service";
 import { ScrollFramerSectionComponent } from './custom-components/scroll-framer-section/scroll-framer-section.component';
 import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-after.component';
 import { ScrollFramerFullComponent } from './custom-components/scroll-framer-full/scroll-framer-full.component';
+import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { ScrollFramerFullComponent } from './custom-components/scroll-framer-ful
     FacespaFacialComponent,
     ScrollFramerSectionComponent,
     BeforeAfterComponent,
-    ScrollFramerFullComponent
+    ScrollFramerFullComponent,
+    MobileHeaderComponent
   ],
   imports: [
     BrowserModule,

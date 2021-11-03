@@ -61,4 +61,8 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
   maximize(ev) {
     this.sharedService.sendClickEvent(ev);
   }
+  
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }

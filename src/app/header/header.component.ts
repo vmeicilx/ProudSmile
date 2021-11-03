@@ -493,12 +493,14 @@ export class HeaderComponent implements OnInit {
     this.mobileOverlay.nativeElement.style.display="flex";
     this.threeDots.nativeElement.style.display="none";
     this.closeThreeDots.nativeElement.style.display="block";
+    document.documentElement.style.overflowY = "hidden";
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "hidden";
   }
   hideOverlay() {
     this.mobileOverlay.nativeElement.style.display="none";
     this.threeDots.nativeElement.style.display="block";
     this.closeThreeDots.nativeElement.style.display="none";
+    document.documentElement.style.overflowY = "scroll";
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "scroll";
   }
 

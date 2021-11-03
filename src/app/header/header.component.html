@@ -643,68 +643,175 @@
         </svg>
       </button>
       <button #CloseThreeDots (click)="hideOverlay()" style="display: none">
-        <img style="width: 24px; opacity: 0.4;" src="../../assets/header/cancelWhite.svg"/>
+        <img style="width: 36px" src="../../assets/header/x.svg" />
       </button>
+    </div>
+    <div
+      #MobileOverlay
+      class="overlay-mobile"
+      style="
+        background: black;
+        width: 100%;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 80px;
+      "
+    >
       <div
-        #MobileOverlay
-        class="overlay-mobile"
-        style="
-          position: absolute;
-          top: 80px;
-          background: black;
-          height: 100vh;
-          width: 100%;
-          display: none;
-          left: 0;
-          overflow-y: auto;
-        "
+        class="flexy-column full-width mobile-menu-items"
+        style="height: calc(100vh - 80px)"
       >
-      <div class="flexy-column full-width mobile-menu-items">
-
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Home</p>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item flexy-row" style="padding: 6vw;">
-          <div class="flexy-row full-width">
-            <p style="color:white; text-align: left;">Why ProudSmile</p>
-
+        <div style="overflow-y: auto">
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item"
+            style="padding: 6vw; cursor: pointer"
+          >
+            <p style="color: white; text-align: left">Home</p>
           </div>
-          <div class="flexy-row full-width" style="justify-content: end;">
-
-            <p style="color:white; text-align: left; margin:0 6vw; opacity: 0.4;">3</p>
-            <div>
-              <img style="width: 16px; opacity: 0.4;" src="../../assets/header/cancelWhite.svg"/>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+            style="padding: 6vw; cursor: pointer"
+          >
+            <div class="flexy-row full-width">
+              <p style="color: white; text-align: left">Why ProudSmile</p>
+            </div>
+            <div
+              class="flexy-row full-width"
+              style="justify-content: end; align-items: center"
+            >
+              <p
+                style="
+                  color: white;
+                  text-align: left;
+                  margin: 0 4vw;
+                  opacity: 0.4;
+                "
+              >
+                3
+              </p>
+              <div>
+                <img
+                  style="width: 24px; transform: rotate(180deg)"
+                  src="../../assets/header/arrow.svg"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Health</p>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Aesthetics</p>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Implants</p>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Smileasy Payment Plan</p>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Specials</p>
-        </div>
-        <div class="line-13"></div>
-        <div class="font-extra-small roboto-medium mobile-menu-item" style="padding: 6vw; width:100%">
-          <p style="color:white; text-align: left;">Contact</p>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+            style="padding: 6vw; cursor: pointer"
+          >
+            <div class="flexy-row full-width">
+              <p style="color: white; text-align: left">Health</p>
+            </div>
+            <div
+              class="flexy-row full-width"
+              style="justify-content: end; align-items: center"
+            >
+              <p
+                style="
+                  color: white;
+                  text-align: left;
+                  margin: 0 4vw;
+                  opacity: 0.4;
+                "
+              >
+                11
+              </p>
+              <div>
+                <img
+                  style="width: 24px; transform: rotate(180deg)"
+                  src="../../assets/header/arrow.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+            style="padding: 6vw; cursor: pointer"
+          >
+          <div class="flexy-row full-width">
+            <p style="color: white; text-align: left">Aesthetics</p>
+          </div>
+          <div
+            class="flexy-row full-width"
+            style="justify-content: end; align-items: center"
+          >
+            <p
+              style="
+                color: white;
+                text-align: left;
+                margin: 0 4vw;
+                opacity: 0.4;
+              "
+            >
+              7
+            </p>
+            <div>
+              <img
+                style="width: 24px; transform: rotate(180deg)"
+                src="../../assets/header/arrow.svg"
+              />
+            </div>
+          </div>
+          </div>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+            style="padding: 6vw; cursor: pointer"
+          >
+          <div class="flexy-row full-width">
+            <p style="color: white; text-align: left">Implants</p>
+          </div>
+          <div
+            class="flexy-row full-width"
+            style="justify-content: end; align-items: center"
+          >
+            <p
+              style="
+                color: white;
+                text-align: left;
+                margin: 0 4vw;
+                opacity: 0.4;
+              "
+            >
+              3
+            </p>
+            <div>
+              <img
+                style="width: 24px; transform: rotate(180deg)"
+                src="../../assets/header/arrow.svg"
+              />
+            </div>
+          </div>
+          </div>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item"
+            style="padding: 6vw; cursor: pointer"
+          >
+            <p style="color: white; text-align: left">Smileasy Payment Plan</p>
+          </div>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item"
+            style="padding: 6vw; cursor: pointer"
+          >
+            <p style="color: white; text-align: left">Specials</p>
+          </div>
+          <div class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item"
+            style="padding: 6vw; cursor: pointer"
+          >
+            <p style="color: white; text-align: left">Contact</p>
+          </div>
         </div>
       </div>
-
-    </div>
     </div>
   </div>
 </div>
