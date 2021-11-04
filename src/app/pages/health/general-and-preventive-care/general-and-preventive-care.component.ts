@@ -15,6 +15,9 @@ import { SharedService } from "src/app/shared/shared-service";
 })
 export class GeneralAndPreventiveCareComponent implements OnInit {
   @ViewChild("firstVideo") video: ElementRef;
+  @ViewChild("PerfectTeeths") PerfectTeeths: ElementRef;
+  @ViewChild("Maximize") mazimizeEl: ElementRef;
+  @ViewChild("backToGrid") backToGrid: ElementRef;
 
   id: number;
 
@@ -59,7 +62,23 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
   }
 
   maximize(ev) {
-    this.sharedService.sendClickEvent(ev);
+    //this.sharedService.sendClickEvent(ev);
+    this.PerfectTeeths.nativeElement.style.transform = "translate(10vw, -40vh)";
+    setTimeout(() => {
+      this.PerfectTeeths.nativeElement.style.width = "50vw";
+      this.PerfectTeeths.nativeElement.src="../../../../assets/healthPage/GeneralAndPreventive/WhiteFillingsFull.png"
+      this.backToGrid.nativeElement.style.display = "block";
+    }, 1500)
+    //this.PerfectTeeths.nativeElement.style.animation= "specialOne 5s";
+  }
+
+  onBackToGridClick() {
+    this.backToGrid.nativeElement.style.display = "none";
+    this.PerfectTeeths.nativeElement.src="../../../../assets/healthPage/GeneralAndPreventive/teeth.png"
+    this.PerfectTeeths.nativeElement.style.width = "20vw";
+    setTimeout(() => {
+      this.PerfectTeeths.nativeElement.style.transform = "translate(0, 0)";
+    }, 1000)
   }
   
   goToLink(url: string) {

@@ -1,9 +1,8 @@
 .shader-effect {
-  top: 0;
-  left: 0;
+  top: 25%;
+  left: 25%;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 50vw;
   overflow: hidden;
   pointer-events: none;
 }
@@ -17,8 +16,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 50%;
   display: grid;
   padding: 2rem;
   z-index: 10;

@@ -736,8 +736,9 @@ float quadraticBezier (float x, float a, float b){
       alpha: true,
       antialias: true
     });
-    this.renderer.setPixelRatio(window.devicePixelRatio);
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    //this.renderer.setPixelRatio(window.devicePixelRatio);
+    //this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.domElement.style.width = "50vw";
     this.container.appendChild(this.renderer.domElement);
 
     this.scene = new THREE.Scene();

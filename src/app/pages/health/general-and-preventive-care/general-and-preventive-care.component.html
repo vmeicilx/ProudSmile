@@ -388,13 +388,11 @@
             when doing simple fillings.
           </p>
         </div>
-        <div class="margin-bottom-1">
-          <app-grid-to-full-screen></app-grid-to-full-screen>
-        </div>
 
-        <div (click)="maximize($event)" class="flexy-row cursor-pointer">
+
+        <div #Maximize  style="position: relative;" class="flexy-row cursor-pointer">
           <div>
-            <img
+            <img (click)="maximize($event)"
               loading="lazy"
               src="../../../../assets/healthPage/GeneralAndPreventive/maximize.svg"
             />
@@ -407,7 +405,26 @@
               the bigger version.
             </p>
           </div>
+          <div class="margin-bottom-1" style="position: absolute; top:60px;">
+
+            <!-- <app-grid-to-full-screen></app-grid-to-full-screen> -->
+            <img class="perfectTeeth" #PerfectTeeths style="width:20vw; transition: width 1s, transform 2s; max-width: unset;"
+           
+            src="../../../../assets/healthPage/GeneralAndPreventive/teeth.png"
+          />
+          <button style="position: absolute; top:0; right:0; transform:translate(7vw, -35vh); display:none;"
+          #backToGrid
+          (click)="onBackToGridClick()"
+        >
+          <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+            <path fill="white"
+              d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+            />
+          </svg>
+        </button>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
