@@ -60,7 +60,30 @@ export class HeaderComponent implements OnInit {
   @ViewChild("ThreeDots") threeDots: ElementRef;
   @ViewChild("CloseThreeDots") closeThreeDots: ElementRef;
 
+  @ViewChild("WhyProudSmileMenus") WhyProudSmileMenus: ElementRef;
+  @ViewChild("WhyProudSmileMenusWrapper") WhyProudSmileMenusWrapper: ElementRef;
+  @ViewChild("WhyProudSmileMenusLine") WhyProudSmileMenusLine: ElementRef;
+  @ViewChild("WhyProudSmileMenusArrow") WhyProudSmileMenusArrow: ElementRef;
+  @ViewChild("WhyProudSmileParentText") WhyProudSmileParentText: ElementRef;
+
+  @ViewChild("HealthMenus") HealthMenus: ElementRef;
+  @ViewChild("HealthMenusWrapper") HealthMenusWrapper: ElementRef;
+  @ViewChild("HealthMenusLine") HealthMenusLine: ElementRef;
+  @ViewChild("HealthMenusArrow") HealthMenusArrow: ElementRef;
+  @ViewChild("HealthParentText") HealthParentText: ElementRef;
   
+  @ViewChild("AestheticsMenus") AestheticsMenus: ElementRef;
+  @ViewChild("AestheticsMenusWrapper") AestheticsMenusWrapper: ElementRef;
+  @ViewChild("AestheticsMenusLine") AestheticsMenusLine: ElementRef;
+  @ViewChild("AestheticsMenusArrow") AestheticsMenusArrow: ElementRef;
+  @ViewChild("AestheticsParentText") AestheticsParentText: ElementRef;
+  
+  @ViewChild("ImplantsMenus") ImplantsMenus: ElementRef;
+  @ViewChild("ImplantsMenusWrapper") ImplantsMenusWrapper: ElementRef;
+  @ViewChild("ImplantsMenusLine") ImplantsMenusLine: ElementRef;
+  @ViewChild("ImplantsMenusArrow") ImplantsMenusArrow: ElementRef;
+  @ViewChild("ImplantsParentText") ImplantsParentText: ElementRef;
+
   @ViewChild("MobileOverlay") mobileOverlay: ElementRef;
 
   pointerGrabbed: boolean = false;
@@ -428,6 +451,13 @@ export class HeaderComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
+  onMenuItemClickMobile(item: string) {
+    this.router.navigate(["/", item]);
+    this.styleStatus = window.pageYOffset <= 5 && item === "HomePage";
+    window.scrollTo(0, 0);
+    this.hideOverlay();
+  }
+
   @HostListener("window:scroll", ["$event"])
   onScroll(event) {
     this.styleStatus =
@@ -502,6 +532,63 @@ export class HeaderComponent implements OnInit {
     this.closeThreeDots.nativeElement.style.display="none";
     document.documentElement.style.overflowY = "scroll";
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "scroll";
+  }
+
+  toggleWhyProudSmile() {
+
+    if (this.WhyProudSmileMenus.nativeElement.clientHeight) {
+      this.WhyProudSmileMenus.nativeElement.style.height = 0;
+      this.WhyProudSmileMenusLine.nativeElement.style.display = "block";
+      this.WhyProudSmileMenusArrow.nativeElement.style.transform = "rotate(180deg)";
+      this.WhyProudSmileParentText.nativeElement.style.color = "white";
+    } else {
+      this.WhyProudSmileMenus.nativeElement.style.height = this.WhyProudSmileMenusWrapper.nativeElement.clientHeight + "px";
+      this.WhyProudSmileMenusLine.nativeElement.style.display = "none";
+      this.WhyProudSmileMenusArrow.nativeElement.style.transform = "rotate(0deg)";
+      this.WhyProudSmileParentText.nativeElement.style.color = "#A7958A";
+    }
+  }
+  toggleHealth() {
+
+    if (this.HealthMenus.nativeElement.clientHeight) {
+      this.HealthMenus.nativeElement.style.height = 0;
+      this.HealthMenusLine.nativeElement.style.display = "block";
+      this.HealthMenusArrow.nativeElement.style.transform = "rotate(180deg)";
+      this.HealthParentText.nativeElement.style.color = "white";
+    } else {
+      this.HealthMenus.nativeElement.style.height = this.HealthMenusWrapper.nativeElement.clientHeight + "px";
+      this.HealthMenusLine.nativeElement.style.display = "none";
+      this.HealthMenusArrow.nativeElement.style.transform = "rotate(0deg)";
+      this.HealthParentText.nativeElement.style.color = "#A7958A";
+    }
+  }
+  toggleAesthetics() {
+
+    if (this.AestheticsMenus.nativeElement.clientHeight) {
+      this.AestheticsMenus.nativeElement.style.height = 0;
+      this.AestheticsMenusLine.nativeElement.style.display = "block";
+      this.AestheticsMenusArrow.nativeElement.style.transform = "rotate(180deg)";
+      this.AestheticsParentText.nativeElement.style.color = "white";
+    } else {
+      this.AestheticsMenus.nativeElement.style.height = this.AestheticsMenusWrapper.nativeElement.clientHeight + "px";
+      this.AestheticsMenusLine.nativeElement.style.display = "none";
+      this.AestheticsMenusArrow.nativeElement.style.transform = "rotate(0deg)";
+      this.AestheticsParentText.nativeElement.style.color = "#A7958A";
+    }
+  }
+  toggleImplants() {
+
+    if (this.ImplantsMenus.nativeElement.clientHeight) {
+      this.ImplantsMenus.nativeElement.style.height = 0;
+      this.ImplantsMenusLine.nativeElement.style.display = "block";
+      this.ImplantsMenusArrow.nativeElement.style.transform = "rotate(180deg)";
+      this.ImplantsParentText.nativeElement.style.color = "white";
+    } else {
+      this.ImplantsMenus.nativeElement.style.height = this.ImplantsMenusWrapper.nativeElement.clientHeight + "px";
+      this.ImplantsMenusLine.nativeElement.style.display = "none";
+      this.ImplantsMenusArrow.nativeElement.style.transform = "rotate(0deg)";
+      this.ImplantsParentText.nativeElement.style.color = "#A7958A";
+    }
   }
 
   copyNumber() {

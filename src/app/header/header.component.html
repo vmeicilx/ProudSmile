@@ -666,6 +666,7 @@
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
             style="padding: 6vw; cursor: pointer"
+            (click)="onMenuItemClickMobile('HomePage')"
           >
             <p style="color: white; text-align: left">Home</p>
           </div>
@@ -673,9 +674,10 @@
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
             style="padding: 6vw; cursor: pointer"
+            (click)="toggleWhyProudSmile()"
           >
             <div class="flexy-row full-width">
-              <p style="color: white; text-align: left">Why ProudSmile</p>
+              <p #WhyProudSmileParentText style="color: white; text-align: left">Why ProudSmile</p>
             </div>
             <div
               class="flexy-row full-width"
@@ -692,20 +694,71 @@
                 3
               </p>
               <div>
-                <img
-                  style="width: 24px; transform: rotate(180deg)"
+                <img #WhyProudSmileMenusArrow
+                  style="width: 24px; transform: rotate(180deg); transition: transform 0.5s;"
                   src="../../assets/header/arrow.svg"
                 />
               </div>
             </div>
           </div>
-          <div class="line-13"></div>
+          <div
+            #WhyProudSmileMenus
+            style="
+              background: linear-gradient(0deg, #1e1e1e, transparent);
+              border: 0px;
+              transition: height 0.5s;
+              overflow: hidden;
+              height: 0;
+            "
+          >
+            <div #WhyProudSmileMenusWrapper style="padding: 3vw 6vw">
+              <div
+                class="flexy-row cursor-pointer"
+                style="align-items: center; min-height: 88px"
+                (click)="onMenuItemClickMobile('proud-smile-experience-component')"
+              >
+                <div style="width: 200px">
+                  <img style="margin: auto" src="../../assets/GrayShape.svg" />
+                </div>
+                <div style="color: white">The Proud Smile Experience</div>
+              </div>
+              <div
+                class="flexy-row cursor-pointer"
+                style="align-items: center; min-height: 88px"
+                (click)="onMenuItemClickMobile('who-we-are-component')"
+              >
+                <div style="width: 200px">
+                  <img
+                    style="margin: auto"
+                    src="../../assets/header/Team.png"
+                  />
+                </div>
+                <div style="color: white">Who We Are</div>
+              </div>
+              <div
+                class="flexy-row cursor-pointer"
+                style="align-items: center; min-height: 88px"
+                (click)="onMenuItemClickMobile('dental-clinic-component')"
+              >
+                <div style="width: 200px">
+                  <img
+                    style="margin: auto"
+                    src="../../assets/header/Chair.png"
+                  />
+                </div>
+                <div style="color: white">Our Dental Clinic</div>
+              </div>
+            </div>
+          </div>
+
+          <div #WhyProudSmileMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
             style="padding: 6vw; cursor: pointer"
+            (click)="toggleHealth()"
           >
             <div class="flexy-row full-width">
-              <p style="color: white; text-align: left">Health</p>
+              <p #HealthParentText style="color: white; text-align: left">Health</p>
             </div>
             <div
               class="flexy-row full-width"
@@ -722,77 +775,370 @@
                 11
               </p>
               <div>
-                <img
-                  style="width: 24px; transform: rotate(180deg)"
+                <img #HealthMenusArrow
+                  style="width: 24px; transform: rotate(180deg); transition: transform 0.5s;"
                   src="../../assets/header/arrow.svg"
                 />
               </div>
             </div>
           </div>
-          <div class="line-13"></div>
           <div
-            class="font-extra-small roboto-medium mobile-menu-item flexy-row"
-            style="padding: 6vw; cursor: pointer"
-          >
-          <div class="flexy-row full-width">
-            <p style="color: white; text-align: left">Aesthetics</p>
-          </div>
-          <div
-            class="flexy-row full-width"
-            style="justify-content: end; align-items: center"
-          >
-            <p
-              style="
-                color: white;
-                text-align: left;
-                margin: 0 4vw;
-                opacity: 0.4;
-              "
+          #HealthMenus
+          style="
+            background: linear-gradient(0deg, #1e1e1e, transparent);
+            border: 0px;
+            transition: height 0.5s;
+            overflow: hidden;
+            height: 0;
+          "
+        >
+          <div #HealthMenusWrapper style="padding: 3vw 6vw">
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('Extractions')"
             >
-              7
-            </p>
-            <div>
-              <img
-                style="width: 24px; transform: rotate(180deg)"
-                src="../../assets/header/arrow.svg"
-              />
+              <div style="width: 200px">
+                <img style="margin: auto" src="../../assets/healthPage/extraction.svg" />
+              </div>
+              <div style="color: white">Extractions</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('RootCanalTherapy')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/rootcanal.png"
+                />
+              </div>
+              <div style="color: white">Root Canal Therapy</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('ClearBraces')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/clearbraces.svg"
+                />
+              </div>
+              <div style="color: white">Clear Braces</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('Invisalign')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/invisalign.png"
+                />
+              </div>
+              <div style="color: white">Invisalign</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('AnxiousPatients')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/anxios.png"
+                />
+              </div>
+              <div style="color: white">Anxious Patients</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('SameDayCrowns')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/sameday.svg"
+                />
+              </div>
+              <div style="color: white">Same Day Crowns</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('GeneralAndPreventiveCare')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/general.svg"
+                />
+              </div>
+              <div style="color: white">General and Preventive Care</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('DVA')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/dva.svg"
+                />
+              </div>
+              <div style="color: white">DVA (Department of Veteran Affairs)</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('MedicareChildBenefitScheme')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/medicare.png"
+                />
+              </div>
+              <div style="color: white">Medicare Child Benefit Scheme</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('MouthguardsAndSplints')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/mouthguards.png"
+                />
+              </div>
+              <div style="color: white">Mouthguards and Splints</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('DentalEmergency')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/emergency.png"
+                />
+              </div>
+              <div style="color: white">Dental Emergency</div>
             </div>
           </div>
           </div>
-          <div class="line-13"></div>
+          <div #HealthMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
             style="padding: 6vw; cursor: pointer"
+            (click)="toggleAesthetics()"
           >
-          <div class="flexy-row full-width">
-            <p style="color: white; text-align: left">Implants</p>
+            <div class="flexy-row full-width">
+              <p #AestheticsParentText style="color: white; text-align: left">Aesthetics</p>
+            </div>
+            <div
+              class="flexy-row full-width"
+              style="justify-content: end; align-items: center"
+            >
+              <p
+                style="
+                  color: white;
+                  text-align: left;
+                  margin: 0 4vw;
+                  opacity: 0.4;
+                "
+              >
+                7
+              </p>
+              <div>
+                <img #AestheticsMenusArrow
+                  style="width: 24px; transform: rotate(180deg); transition: transform 0.5s;"
+                  src="../../assets/header/arrow.svg"
+                />
+              </div>
+            </div>
           </div>
           <div
-            class="flexy-row full-width"
-            style="justify-content: end; align-items: center"
-          >
-            <p
-              style="
-                color: white;
-                text-align: left;
-                margin: 0 4vw;
-                opacity: 0.4;
-              "
+          #AestheticsMenus
+          style="
+            background: linear-gradient(0deg, #1e1e1e, transparent);
+            border: 0px;
+            transition: height 0.5s;
+            overflow: hidden;
+            height: 0;
+          "
+        >
+          <div #AestheticsMenusWrapper style="padding: 3vw 6vw">
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('PorcelainVeneers')"
             >
-              3
-            </p>
-            <div>
-              <img
-                style="width: 24px; transform: rotate(180deg)"
-                src="../../assets/header/arrow.svg"
-              />
+              <div style="width: 200px">
+                <img style="margin: auto" src="../../assets/aesthetics/veneers.png" />
+              </div>
+              <div style="color: white">Porcelain Veneers</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('UltraThinVeneers')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/aesthetics/ultrathin.svg"
+                />
+              </div>
+              <div style="color: white">Ultra Thin Veneers</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('SameDayVeneers')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/aesthetics/sameday.svg"
+                />
+              </div>
+              <div style="color: white">Same Day Veneers</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('ZoomWhitening')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/aesthetics/zoom.png"
+                />
+              </div>
+              <div style="color: white">Zoom Whitening</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('BeforeAndAfter')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/aesthetics/camera.png"
+                />
+              </div>
+              <div style="color: white">Before and After</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('FaceSpaFacialAesthetics')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/aesthetics/facespa.svg"
+                />
+              </div>
+              <div style="color: white">FaceSpa Facial Aesthetics</div>
             </div>
           </div>
           </div>
-          <div class="line-13"></div>
+          <div #AestheticsMenusLine class="line-13"></div>
+          <div
+            class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+            style="padding: 6vw; cursor: pointer"
+            (click)="toggleImplants()"
+          >
+            <div class="flexy-row full-width">
+              <p #ImplantsParentText style="color: white; text-align: left">Implants</p>
+            </div>
+            <div
+              class="flexy-row full-width"
+              style="justify-content: end; align-items: center"
+            >
+              <p
+                style="
+                  color: white;
+                  text-align: left;
+                  margin: 0 4vw;
+                  opacity: 0.4;
+                "
+              >
+                3
+              </p>
+              <div>
+                <img #ImplantsMenusArrow
+                  style="width: 24px; transform: rotate(180deg); transition: transform 0.5s;"
+                  src="../../assets/header/arrow.svg"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+          #ImplantsMenus
+          style="
+            background: linear-gradient(0deg, #1e1e1e, transparent);
+            border: 0px;
+            transition: height 0.5s;
+            overflow: hidden;
+            height: 0;
+          "
+        >
+          <div #ImplantsMenusWrapper style="padding: 3vw 6vw">
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('SingleTooth')"
+            >
+              <div style="width: 200px">
+                <img style="margin: auto" src="../../assets/implants/single_tooth_mobile.png" />
+              </div>
+              <div style="color: white">Single Tooth</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('FullArchRehabilitation')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/implants/Fullarch.png"
+                />
+              </div>
+              <div style="color: white">Full Arch Rehabilitation</div>
+            </div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('ImplantDentures')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/implants/implant.png"
+                />
+              </div>
+              <div style="color: white">Implant Dentures</div>
+            </div>
+          </div>
+          </div>
+          <div #ImplantsMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
             style="padding: 6vw; cursor: pointer"
+            (click)="onMenuItemClickMobile('payment-page-component')"
           >
             <p style="color: white; text-align: left">Smileasy Payment Plan</p>
           </div>
@@ -800,6 +1146,7 @@
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
             style="padding: 6vw; cursor: pointer"
+            (click)="onMenuItemClickMobile('Specials')"
           >
             <p style="color: white; text-align: left">Specials</p>
           </div>
@@ -807,6 +1154,7 @@
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
             style="padding: 6vw; cursor: pointer"
+            (click)="onMenuItemClickMobile('contact-page-component')"
           >
             <p style="color: white; text-align: left">Contact</p>
           </div>
@@ -1312,7 +1660,7 @@
 </div>
 
 <div
-  class="cursor-pointer"
+  class="floating-menus cursor-pointer"
   style="position: fixed; bottom: 8%; right: 1%; z-index: 5"
 >
   <div class="relative-container" style="z-index: 6">

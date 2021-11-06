@@ -382,6 +382,10 @@
 }
 
 @media only screen and (min-width: 1201px) {
+  .floating-menus {
+    display: block;
+  }
+  
   #Schedule2 {
     display: none !important;
   }
@@ -451,11 +455,13 @@
 @media only screen and (min-width: 300px) and (max-width: 600px) {
   #Schedule {
     display: none !important;
-  }
-  
+  }  
 }
 
 @media only screen and (min-width: 300px) and (max-width: 1200px) {
+  .floating-menus {
+    display: none;
+  }
   
   .header.whiteStyle {
     background-color: black;
