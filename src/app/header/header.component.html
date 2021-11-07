@@ -658,14 +658,13 @@
         top: 80px;
       "
     >
-      <div
+      <div #MobileMiddlePart
         class="flexy-column full-width mobile-menu-items"
-        style="height: calc(100vh - 80px)"
+        style="height: calc(100vh - 80px - 128px); background-color: black;"
       >
-        <div style="overflow-y: auto">
+        <div style="overflow-y: auto; overflow-x: hidden;">
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
-            style="padding: 6vw; cursor: pointer"
             (click)="onMenuItemClickMobile('HomePage')"
           >
             <p style="color: white; text-align: left">Home</p>
@@ -673,7 +672,6 @@
           <div class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
-            style="padding: 6vw; cursor: pointer"
             (click)="toggleWhyProudSmile()"
           >
             <div class="flexy-row full-width">
@@ -750,11 +748,9 @@
               </div>
             </div>
           </div>
-
           <div #WhyProudSmileMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
-            style="padding: 6vw; cursor: pointer"
             (click)="toggleHealth()"
           >
             <div class="flexy-row full-width">
@@ -938,7 +934,6 @@
           <div #HealthMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
-            style="padding: 6vw; cursor: pointer"
             (click)="toggleAesthetics()"
           >
             <div class="flexy-row full-width">
@@ -1057,7 +1052,6 @@
           <div #AestheticsMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item flexy-row"
-            style="padding: 6vw; cursor: pointer"
             (click)="toggleImplants()"
           >
             <div class="flexy-row full-width">
@@ -1137,7 +1131,6 @@
           <div #ImplantsMenusLine class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
-            style="padding: 6vw; cursor: pointer"
             (click)="onMenuItemClickMobile('payment-page-component')"
           >
             <p style="color: white; text-align: left">Smileasy Payment Plan</p>
@@ -1145,7 +1138,6 @@
           <div class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
-            style="padding: 6vw; cursor: pointer"
             (click)="onMenuItemClickMobile('Specials')"
           >
             <p style="color: white; text-align: left">Specials</p>
@@ -1153,10 +1145,54 @@
           <div class="line-13"></div>
           <div
             class="font-extra-small roboto-medium mobile-menu-item"
-            style="padding: 6vw; cursor: pointer"
             (click)="onMenuItemClickMobile('contact-page-component')"
           >
             <p style="color: white; text-align: left">Contact</p>
+          </div>
+        </div>
+      </div>
+      <div #MobileBottomPartTransition style="position: fixed; bottom:128px; width: 100%; background: linear-gradient(0deg, black, transparent); height:80px;">
+      </div>
+      <div #MobileBottomPart style="position: fixed; bottom:0; width: 100%; background: linear-gradient(180deg, #17856A, #235C50);">
+        <div
+        class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+        (click)="onMenuItemClickMobile('payment-page-component')"
+        >
+          <div class="flexy-row full-width">
+            <p style="color: white; text-align: left">Payment Plans</p>
+          </div>
+          <div
+            class="flexy-row full-width"
+            style="justify-content: end; align-items: center"
+          >
+            <div>
+              <img #AestheticsMenusArrow
+                style="width: 24px; transform: rotate(90deg); transition: transform 0.5s;"
+                src="../../assets/header/arrow.svg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="line-13"></div>
+        <div
+        class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+        (click)="goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )"
+        >
+          <div class="flexy-row full-width">
+            <p style="color: white; text-align: left">Instant Online Booking</p>
+          </div>
+          <div
+            class="flexy-row full-width"
+            style="justify-content: end; align-items: center"
+          >
+            <div>
+              <img #AestheticsMenusArrow
+                style="width: 24px; transform: rotate(90deg); transition: transform 0.5s;"
+                src="../../assets/header/arrow.svg"
+              />
+            </div>
           </div>
         </div>
       </div>
