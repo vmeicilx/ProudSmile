@@ -86,12 +86,25 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild("MobileOverlay") mobileOverlay: ElementRef;
 
+  
+  @ViewChild("MobileWhyProudSmileOverlay") MobileWhyProudSmileOverlay: ElementRef;
+  @ViewChild("MobileWhyProudSmileMiddlePart") MobileWhyProudSmileMiddlePart: ElementRef;
+  @ViewChild("WhyProudSmileSecondParentText") WhyProudSmileSecondParentText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusArrow") WhyProudSmileSecondMenusArrow: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenus") WhyProudSmileSecondMenus: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusWrapper") WhyProudSmileSecondMenusWrapper: ElementRef;
+  @ViewChild("WhyProudSmileSecondParentLine") WhyProudSmileSecondParentLine: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusFirstText") WhyProudSmileSecondMenusFirstText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusSecondText") WhyProudSmileSecondMenusSecondText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusThirdText") WhyProudSmileSecondMenusThirdText: ElementRef;
+
   pointerGrabbed: boolean = false;
   mousePosition: number;
   initialPointerPosition: number;
   depositNumber: number;
   monthly: number = 62.5;
   weekly: number = 15.63;
+  whyProudSmileActiveText: string = "The Proud Smile Experience";
 
   constructor(
     private router: Router,
@@ -321,18 +334,39 @@ export class HeaderComponent implements OnInit {
   }
 
   setActiveSubheader1(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[5].children[0].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[5].children[0].children[
-        i
-      ].classList.remove("active");
+    // for (
+    //   var i = 0;
+    //   i < this.elRef.nativeElement.children[5].children[0].children.length;
+    //   i++
+    // ) {
+    //   this.elRef.nativeElement.children[5].children[0].children[
+    //     i
+    //   ].classList.remove("active");
+    // }
+    // this.elRef.nativeElement.children[5].children[0].children[
+    //   index
+    // ].classList.add("active");
+
+    
+    this.WhyProudSmileSecondMenus.nativeElement.style.height = 0;
+    this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform = "rotate(90deg)";
+    this.WhyProudSmileSecondParentLine.nativeElement.style.display = "none";
+    
+    this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color = "#55311b";
+    this.WhyProudSmileSecondMenusSecondText.nativeElement.style.color = "#55311b";
+    this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color = "#55311b";
+    if(index === 0) {
+      this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color = "#565960";
+      this.whyProudSmileActiveText = "The Proud Smile Experience";
+    } else if(index === 1) {
+      
+      this.WhyProudSmileSecondMenusSecondText.nativeElement.style.color = "#565960";
+      this.whyProudSmileActiveText = "Who We Are";
+    } else if(index === 2) {
+      
+      this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color = "#565960";
+      this.whyProudSmileActiveText = "Our Dental Clinic";
     }
-    this.elRef.nativeElement.children[5].children[0].children[
-      index
-    ].classList.add("active");
   }
 
   setActiveSubheader2(index: number) {
@@ -591,6 +625,18 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  toggleWhyProudSmileSecond() {
+
+    if (this.WhyProudSmileSecondMenus.nativeElement.clientHeight) {
+      this.WhyProudSmileSecondMenus.nativeElement.style.height = 0;
+      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform = "rotate(90deg)";
+      this.WhyProudSmileSecondParentLine.nativeElement.style.display = "none";
+    } else {
+      this.WhyProudSmileSecondMenus.nativeElement.style.height = this.WhyProudSmileSecondMenusWrapper.nativeElement.clientHeight + "px";
+      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform = "rotate(270deg)";
+      this.WhyProudSmileSecondParentLine.nativeElement.style.display = "block";
+    }
+  }
   copyNumber() {
     this.clipboard.copy("0755703311");
 

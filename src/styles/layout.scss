@@ -494,6 +494,9 @@
   .no-absolute-on-sm {
     position: relative;
   }
+  .padding-top-5 {
+    padding-top: 144px;
+  }
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
@@ -571,7 +574,7 @@
     padding-top: 160px;
   }
   .padding-top-5 {
-    padding-top: 160px;
+    padding-top: 144px;
   }
 
   .margin-top-6 {
