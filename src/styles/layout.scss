@@ -142,9 +142,6 @@
 .margin-top-6 {
   margin-top: 305px;
 }
-.margin-top-7 {
-  margin-top: 217px;
-}
 
 .margin-top-bottom-2 {
   margin-top: 2vw;
@@ -316,6 +313,10 @@
 }
 
 @media only screen and (min-width: 1201px) {
+  
+.margin-top-7 {
+  margin-top: 217px;
+}
   .section {
     padding: 24vh 15vw;
   }
@@ -378,10 +379,16 @@
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
+  
+.margin-top-7 {
+  margin-top: 145px;
+}
   .section {
     padding: 18vh 9vw;
   }
-
+  .margin-top-6 {
+    margin-top: 144px;
+  }
   .large-padding-top {
     padding-top: 20vh;
   }
@@ -500,6 +507,10 @@
 }
 
 @media only screen and (min-width: 300px) and (max-width: 600px) {
+  
+.margin-top-7 {
+  margin-top: 145px;
+}
   .section {
     padding: 12vh 3vw;
   }
@@ -578,7 +589,7 @@
   }
 
   .margin-top-6 {
-    margin-top: 240px;
+    margin-top: 144px;
   }
 
   .top-1 {

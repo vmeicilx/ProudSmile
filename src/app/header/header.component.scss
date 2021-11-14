@@ -278,6 +278,12 @@
   }
 
   @media only screen and (min-width: 1201px) {
+    .overlayDesktop {
+      display: flex;
+    }
+    .overlay-mobile {
+      display: none;
+    }
     .menu2 {
       display: none !important;
     }
@@ -296,6 +302,13 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    
+    .overlayDesktop {
+      display: none;
+    }
+    .overlay-mobile {
+      display: block;
+    }
     .menu {
       display: none !important;
     }
@@ -330,6 +343,13 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    
+    .overlayDesktop {
+      display: none;
+    }
+    .overlay-mobile {
+      display: block;
+    }
     #MiniCalculate {
       padding: 12px 24px;
     }

@@ -978,7 +978,7 @@
                   opacity: 0.4;
                 "
               >
-                7
+                6
               </p>
               <div>
                 <img
@@ -1275,19 +1275,88 @@
 
 <div [hidden]="!isWhyProudSmile" #whyProudSmile>
   <div
+    class="
+      overlayDesktop
+      subHeader
+      font-extra-small
+      roboto-medium
+      color-brown
+      cccc
+      flexy-row
+    "
+    (mouseleave)="subheadermouseLeave()"
+  >
+    <div
+      class="full-height flexy-row"
+      style="
+        flex: 3 3 auto;
+        place-content: center flex-end;
+        align-items: center;
+      "
+      (click)="onClick($event, 'proud-smile-experience-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/Shape.svg" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          The Proud<br />
+          Smile Experience
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="full-height cccc flexy-row"
+      style="flex: 1 1 auto"
+      (click)="onClick($event, 'who-we-are-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img loading="lazy" src="../../assets/header/Team.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Who We<br />
+          Are
+        </p>
+      </div>
+    </div>
+
+    <div
+      style="
+        flex: 3 3 auto;
+        align-items: center;
+        place-content: center flex-start;
+      "
+      class="full-height flexy-row"
+      (click)="onClick($event, 'dental-clinic-component')"
+    >
+      <div class="imageTextCard flexy">
+        <div class="image-container">
+          <img src="../../assets/header/Chair.png" />
+        </div>
+      </div>
+      <div class="text-container">
+        <p>
+          Our Dental<br />
+          Clinic
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
     #MobileWhyProudSmileOverlay
     class="overlay-mobile"
-    style="
-      width: 100%;
-      position: fixed;
-      left: 0;
-      top: 80px;
-    "
+    style="width: 100%; position: fixed; left: 0; top: 80px"
   >
     <div
       #MobileWhyProudSmileMiddlePart
       class="flexy-column full-width mobile-menu-items"
-      style="background-color: #EEEAE8"
+      style="background-color: #eeeae8;max-height: calc(100vh - 80px);"
     >
       <div style="overflow-y: auto; overflow-x: hidden">
         <div
@@ -1296,10 +1365,10 @@
         >
           <div class="flexy-row full-width color-brown">
             <p #WhyProudSmileSecondParentText style="text-align: left">
-              {{whyProudSmileActiveText}}
+              {{ whyProudSmileActiveText }}
             </p>
           </div>
-          
+
           <div
             class="flexy-row full-width"
             style="justify-content: end; align-items: center"
@@ -1309,21 +1378,25 @@
                 #WhyProudSmileSecondMenusArrow
                 style="
                   width: 24px;
-                  transform: rotate(90deg);
+                  transform: rotate(180deg);
                   transition: transform 0.5s;
                 "
-                src="../../assets/header/arrow_down_brown.svg"
+                src="../../assets/header/arrow-brown.svg"
               />
             </div>
           </div>
         </div>
-        
-        <div #WhyProudSmileSecondParentLine style="display: none;" class="line-14"></div>
+
+        <div
+          #WhyProudSmileSecondParentLine
+          style="opacity: 0;transition: opacity 0.5s;"
+          class="line-14"
+        ></div>
         <div
           #WhyProudSmileSecondMenus
           class="color-brown"
           style="
-            background: #EEEAE8;
+            background: #eeeae8;
             border: 0px;
             transition: height 0.5s;
             overflow: hidden;
@@ -1341,7 +1414,9 @@
               <div style="width: 200px">
                 <img style="margin: auto" src="../../assets/GrayShape.svg" />
               </div>
-              <div #WhyProudSmileSecondMenusFirstText>The Proud Smile Experience</div>
+              <div #WhyProudSmileSecondMenusFirstText>
+                The Proud Smile Experience
+              </div>
             </div>
             <div #WhyProudSmileSecondParentLine class="line-15"></div>
             <div
@@ -1370,86 +1445,18 @@
       </div>
     </div>
   </div>
-  <!-- <div
-    class="subHeader font-extra-small roboto-medium color-brown"
-    (mouseleave)="subheadermouseLeave()"
-    fxFlexLayout
-    fxLayoutAlign="center center"
-  >
-    <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="end center"
-      (click)="onClick($event, 'proud-smile-experience-component')"
-    >
-      <div class="imageTextCard flexy">
-        <div class="image-container">
-          <img src="../../assets/Shape.svg" />
-        </div>
-      </div>
-      <div class="text-container">
-        <p>
-          The Proud<br />
-          Smile Experience
-        </p>
-      </div>
-    </div>
-
-    <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
-      (click)="onClick($event, 'who-we-are-component')"
-    >
-      <div class="imageTextCard flexy">
-        <div class="image-container">
-          <img loading="lazy" src="../../assets/header/Team.png" />
-        </div>
-      </div>
-      <div class="text-container">
-        <p>
-          Who We<br />
-          Are
-        </p>
-      </div>
-    </div>
-
-    <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="start center"
-      (click)="onClick($event, 'dental-clinic-component')"
-    >
-      <div class="imageTextCard flexy">
-        <div class="image-container">
-          <img src="../../assets/header/Chair.png" />
-        </div>
-      </div>
-      <div class="text-container">
-        <p>
-          Our Dental<br />
-          Clinic
-        </p>
-      </div>
-    </div>
-  </div> -->
 </div>
 
 <div [hidden]="!isHealth" (mouseleave)="subheadermouseLeave()">
   <div
-    class="subHeader font-extra-small-4 roboto-medium color-brown"
+    class="subHeader overlayDesktop font-extra-small-4 roboto-medium color-brown flexy-row cccc"
     #health1Subheader
-    fxFlexLayout
-    fxLayoutAlign="center center"
   >
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="end center"
+      class="full-height flexy-row"
+      style="flex:3 3 auto;
+      place-content: center flex-end;
+      align-items: center;"
       (click)="onClick($event, 'Extractions')"
     >
       <div class="imageTextCard flexy">
@@ -1463,10 +1470,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+      class="full-height flexy-row cccc"
+      style="flex:1 1 auto"
       (click)="onClick($event, 'RootCanalTherapy')"
     >
       <div class="imageTextCard flexy">
@@ -1483,10 +1488,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'ClearBraces')"
     >
       <div class="imageTextCard flexy">
@@ -1500,10 +1503,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'Invisalign')"
     >
       <div class="imageTextCard flexy">
@@ -1517,10 +1518,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'AnxiousPatients')"
     >
       <div class="imageTextCard flexy">
@@ -1537,11 +1536,8 @@
     </div>
 
     <div
-      class="full-height"
-      style="padding-left: 2vw"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="start center"
+      class="full-height flexy-row"
+      style="padding-left: 2vw; flex:3 3 auto; align-items: center; place-content: center flex-start;"
       (click)="onClick($event, 'SameDayCrowns')"
     >
       <div class="imageTextCard flexy">
@@ -1557,26 +1553,24 @@
       </div>
     </div>
   </div>
-
   <div
     class="
       subHeader
+      overlayDesktop
       font-extra-small-4
       roboto-medium
       color-brown
       line-1
       relative-container
+      flexy-row
+      cccc
     "
     style="z-index: 1"
     #health2Subheader
-    fxFlexLayout
-    fxLayoutAlign="center center"
   >
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="end center"
+      class="full-height flexy-row"
+      style="flex:3 3 auto; align-items: center; place-content: center flex-end;"
       (click)="onClick($event, 'GeneralAndPreventiveCare')"
     >
       <div class="imageTextCard flexy">
@@ -1590,10 +1584,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+      class="full-height flexy-row cccc"
+      style="flex:1 1 auto"
       (click)="onClick($event, 'DVA')"
     >
       <div class="imageTextCard flexy">
@@ -1610,10 +1602,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'MedicareChildBenefitScheme')"
     >
       <div class="imageTextCard flexy">
@@ -1627,10 +1617,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'MouthguardsAndSplints')"
     >
       <div class="imageTextCard flexy">
@@ -1644,11 +1632,8 @@
     </div>
 
     <div
-      class="full-height"
-      style="padding-left: 2vw"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="start center"
+      class="full-height flexy-row"
+      style="padding-left: 2vw; flex:3 3 auto; align-items: center; place-content: center flex-start;"
       (click)="onClick($event, 'DentalEmergency')"
     >
       <div class="imageTextCard flexy">
@@ -1664,20 +1649,236 @@
       </div>
     </div>
   </div>
+  <div
+    #MobileHealthOverlay
+    class="overlay-mobile"
+    style="width: 100%; position: fixed; left: 0; top: 80px"
+  >
+    <div
+      #MobileHealthMiddlePart
+      class="flexy-column full-width mobile-menu-items"
+      style="background-color: #eeeae8;max-height: calc(100vh - 80px);"
+    >
+      <div style="overflow-y: auto; overflow-x: hidden">
+        <div
+          class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+          (click)="toggleHealthSecond()"
+        >
+          <div class="flexy-row full-width color-brown">
+            <p #HealthSecondParentText style="text-align: left">
+              {{ healthActiveText }}
+            </p>
+          </div>
+
+          <div
+            class="flexy-row full-width"
+            style="justify-content: end; align-items: center"
+          >
+            <div>
+              <img
+                #HealthSecondMenusArrow
+                style="
+                  width: 24px;
+                  transform: rotate(180deg);
+                  transition: transform 0.5s;
+                "
+                src="../../assets/header/arrow-brown.svg"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          #HealthSecondParentLine
+          style="opacity: 0;transition: opacity 0.5s;"
+          class="line-14"
+        ></div>
+        <div
+          #HealthSecondMenus
+          class="color-brown"
+          style="
+            background: #eeeae8;
+            border: 0px;
+            transition: height 0.5s;
+            overflow: hidden;
+            height: 0;
+          "
+        >
+          <div #HealthSecondMenusWrapper style="padding: 3vw 6vw">
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('Extractions')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/extraction.svg"
+                />
+              </div>
+              <div #HealthSecondMenusFirstText>Extractions</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('RootCanalTherapy')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/rootcanal.png"
+                />
+              </div>
+              <div #HealthSecondMenusSecondText>Root Canal Therapy</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('ClearBraces')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/clearbraces.svg"
+                />
+              </div>
+              <div #HealthSecondMenusThirdText>Clear Braces</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('Invisalign')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/invisalign.png"
+                />
+              </div>
+              <div #HealthSecondMenusFourthText>Invisalign</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('AnxiousPatients')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/anxios.png"
+                />
+              </div>
+              <div #HealthSecondMenusFifthText>Anxious Patients</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('SameDayCrowns')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/sameday.svg"
+                />
+              </div>
+              <div #HealthSecondMenusSixthText>Same Day Crowns</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('GeneralAndPreventiveCare')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/general.svg"
+                />
+              </div>
+              <div #HealthSecondMenusSeventhText>
+                General and Preventive Care
+              </div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('DVA')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/dva.svg"
+                />
+              </div>
+              <div #HealthSecondMenusEightText>
+                DVA (Department of Veteran Affairs)
+              </div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('MedicareChildBenefitScheme')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/medicare.png"
+                />
+              </div>
+              <div #HealthSecondMenusNineText>
+                Medicare Child Benefit Scheme
+              </div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('MouthguardsAndSplints')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/mouthguards.png"
+                />
+              </div>
+              <div #HealthSecondMenusTenText>Mouthguards and Splints</div>
+            </div>
+            <div #HealthSecondParentLine class="line-15"></div>
+            <div
+              class="flexy-row cursor-pointer"
+              style="align-items: center; min-height: 88px"
+              (click)="onMenuItemClickMobile('DentalEmergency')"
+            >
+              <div style="width: 200px">
+                <img
+                  style="margin: auto"
+                  src="../../assets/healthPage/emergency.png"
+                />
+              </div>
+              <div #HealthSecondMenusElevenText>Dental Emergency</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div [hidden]="!isImplants" #implants>
   <div
-    class="subHeader font-extra-small roboto-medium color-brown"
+    class="subHeader overlayDesktop font-extra-small roboto-medium color-brown flexy-row cccc"
     (mouseleave)="subheadermouseLeave()"
-    fxFlexLayout
-    fxLayoutAlign="center center"
   >
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="end center"
+      class="full-height flexy-row"
+      style="flex:3 3 auto; align-items:center; place-content:center flex-end;"
       (click)="onClick($event, 'SingleTooth')"
     >
       <div class="imageTextCard flexy">
@@ -1694,10 +1895,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'FullArchRehabilitation')"
     >
       <div class="imageTextCard flexy">
@@ -1714,10 +1913,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="start center"
+      class="full-height flexy-row"
+      style="flex:3 3 auto; align-items:center; place-content:center flex-start;"
       (click)="onClick($event, 'ImplantDentures')"
     >
       <div class="imageTextCard flexy">
@@ -1733,20 +1930,113 @@
       </div>
     </div>
   </div>
+  <div
+  #MobileImplantsOverlay
+  class="overlay-mobile"
+  style="width: 100%; position: fixed; left: 0; top: 80px"
+>
+  <div
+    #MobileImplantsMiddlePart
+    class="flexy-column full-width mobile-menu-items"
+    style="background-color: #eeeae8;max-height: calc(100vh - 80px);"
+  >
+    <div style="overflow-y: auto; overflow-x: hidden">
+      <div
+        class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+        (click)="toggleImplantsSecond()"
+      >
+        <div class="flexy-row full-width color-brown">
+          <p #ImplantsSecondParentText style="text-align: left">
+            {{ implantsActiveText }}
+          </p>
+        </div>
+
+        <div
+          class="flexy-row full-width"
+          style="justify-content: end; align-items: center"
+        >
+          <div>
+            <img
+              #ImplantsSecondMenusArrow
+              style="
+                width: 24px;
+                transform: rotate(180deg);
+                transition: transform 0.5s;
+              "
+              src="../../assets/header/arrow-brown.svg"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        #ImplantsSecondParentLine
+        style="opacity: 0;transition: opacity 0.5s;"
+        class="line-14"
+      ></div>
+      <div
+        #ImplantsSecondMenus
+        class="color-brown"
+        style="
+          background: #eeeae8;
+          border: 0px;
+          transition: height 0.5s;
+          overflow: hidden;
+          height: 0;
+        "
+      >
+        <div #ImplantsSecondMenusWrapper style="padding: 3vw 6vw">
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="
+              onMenuItemClickMobile('SingleTooth')
+            "
+          >
+            <div style="width: 200px">
+              <img style="margin: auto" src="../../assets/implants/single_tooth.png" />
+            </div>
+            <div #ImplantsSecondMenusFirstText>
+              Single Tooth
+            </div>
+          </div>
+          <div #ImplantsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('FullArchRehabilitation')"
+          >
+            <div style="width: 200px">
+              <img style="margin: auto" src="../../assets/implants/Fullarch.png" />
+            </div>
+            <div #ImplantsSecondMenusSecondText>Full Arch Rehabilitation</div>
+          </div>
+          <div #ImplantsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('ImplantDentures')"
+          >
+            <div style="width: 200px">
+              <img style="margin: auto" src="../../assets/implants/implant.png" />
+            </div>
+            <div #ImplantsSecondMenusThirdText>Implant Dentures</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <div [hidden]="!isAesthetics" #aesthetics>
   <div
-    class="subHeader font-extra-small roboto-medium color-brown"
+    class="subHeader overlayDesktop font-extra-small roboto-medium color-brown flexy-row cccc"
     (mouseleave)="subheadermouseLeave()"
-    fxFlexLayout
-    fxLayoutAlign="center center"
   >
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="end center"
+      class="full-height flexy-row"
+      style="flex:3 3 auto; align-items:center; place-content:center flex-end;"
       (click)="onClick($event, 'PorcelainVeneers')"
     >
       <div class="imageTextCard flexy">
@@ -1763,10 +2053,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="center center"
+    class="full-height flexy-row cccc"
+    style="flex:1 1 auto"
       (click)="onClick($event, 'UltraThinVeneers')"
     >
       <div class="imageTextCard flexy">
@@ -1783,10 +2071,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      class="full-height flexy-row"
+      style="flex:1 1 auto; align-items:center; place-content:center flex-start;"
       (click)="onClick($event, 'SameDayVeneers')"
     >
       <div class="imageTextCard flexy">
@@ -1803,10 +2089,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+      class="full-height flexy-row"
+      style="flex:1 1 auto; align-items:center; place-content:center flex-start;"
       (click)="onClick($event, 'ZoomWhitening')"
     >
       <div class="imageTextCard flexy">
@@ -1823,10 +2107,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="1 1 auto"
-      fxLayoutAlign="start center"
+    class="full-height flexy-row"
+    style="flex:1 1 auto; align-items:center; place-content:center flex-start;"
       (click)="onClick($event, 'BeforeAndAfter')"
     >
       <div class="imageTextCard flexy">
@@ -1843,10 +2125,8 @@
     </div>
 
     <div
-      class="full-height"
-      fxLayout
-      fxFlex="3 3 auto"
-      fxLayoutAlign="start center"
+    class="full-height flexy-row"
+    style="flex:3 3 auto; align-items:center; place-content:center flex-start;"
       (click)="onClick($event, 'FaceSpaFacialAesthetics')"
     >
       <div class="imageTextCard flexy">
@@ -1862,6 +2142,151 @@
       </div>
     </div>
   </div>
+
+  <div
+  #MobileAestheticsOverlay
+  class="overlay-mobile"
+  style="width: 100%; position: fixed; left: 0; top: 80px"
+>
+  <div
+    #MobileAestheticsMiddlePart
+    class="flexy-column full-width mobile-menu-items"
+    style="background-color: #eeeae8;max-height: calc(100vh - 80px);"
+  >
+    <div style="overflow-y: auto; overflow-x: hidden">
+      <div
+        class="font-extra-small roboto-medium mobile-menu-item flexy-row"
+        (click)="toggleAestheticsSecond()"
+      >
+        <div class="flexy-row full-width color-brown">
+          <p #AestheticsSecondParentText style="text-align: left">
+            {{ aestheticsActiveText }}
+          </p>
+        </div>
+
+        <div
+          class="flexy-row full-width"
+          style="justify-content: end; align-items: center"
+        >
+          <div>
+            <img
+              #AestheticsSecondMenusArrow
+              style="
+                width: 24px;
+                transform: rotate(180deg);
+                transition: transform 0.5s;
+              "
+              src="../../assets/header/arrow-brown.svg"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        #AestheticsSecondParentLine
+        style="opacity: 0;transition: opacity 0.5s;"
+        class="line-14"
+      ></div>
+      <div
+        #AestheticsSecondMenus
+        class="color-brown"
+        style="
+          background: #eeeae8;
+          border: 0px;
+          transition: height 0.5s;
+          overflow: hidden;
+          height: 0;
+        "
+      >
+        <div #AestheticsSecondMenusWrapper style="padding: 3vw 6vw">
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('PorcelainVeneers')"
+          >
+            <div style="width: 200px">
+              <img
+                style="margin: auto"
+                src="../../assets/aesthetics/veneers.png"
+              />
+            </div>
+            <div #AestheticsSecondMenusFirstText>Porcelain Veneers</div>
+          </div>
+          <div #AestheticsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('UltraThinVeneers')"
+          >
+            <div style="width: 200px">
+              <img
+                style="margin: auto"
+                src="../../assets/aesthetics/ultrathin.svg"
+              />
+            </div>
+            <div #AestheticsSecondMenusSecondText>Ultra Thin Veneers</div>
+          </div>
+          <div #AestheticsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('SameDayVeneers')"
+          >
+            <div style="width: 200px">
+              <img
+                style="margin: auto"
+                src="../../assets/aesthetics/sameday.svg"
+              />
+            </div>
+            <div #AestheticsSecondMenusThirdText>Same Day Veneers</div>
+          </div>
+          <div #AestheticsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('ZoomWhitening')"
+          >
+            <div style="width: 200px">
+              <img
+                style="margin: auto"
+                src="../../assets/aesthetics/zoom.png"
+              />
+            </div>
+            <div #AestheticsSecondMenusFourthText>Zoom Whitening</div>
+          </div>
+          <div #AestheticsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('BeforeAndAfter')"
+          >
+            <div style="width: 200px">
+              <img
+                style="margin: auto"
+                src="../../assets/aesthetics/camera.png"
+              />
+            </div>
+            <div #AestheticsSecondMenusFifthText>Before and After</div>
+          </div>
+          <div #AestheticsSecondParentLine class="line-15"></div>
+          <div
+            class="flexy-row cursor-pointer"
+            style="align-items: center; min-height: 88px"
+            (click)="onMenuItemClickMobile('FaceSpaFacialAesthetics')"
+          >
+            <div style="width: 200px">
+              <img
+                style="margin: auto"
+                src="../../assets/aesthetics/facespa.svg"
+              />
+            </div>
+            <div #AestheticsSecondMenusSixthText>FaceSpa Facial Aesthetics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <div

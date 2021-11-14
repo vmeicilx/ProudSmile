@@ -7,12 +7,12 @@ import {
   Injector,
   OnInit,
   Renderer2,
-  ViewChild
+  ViewChild,
 } from "@angular/core";
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition
+  MatSnackBarVerticalPosition,
 } from "@angular/material/snack-bar";
 import { NavigationEnd, Router } from "@angular/router";
 import { DataService } from "../shared/data-service";
@@ -20,7 +20,7 @@ import { DataService } from "../shared/data-service";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"]
+  styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
   private elRef: ElementRef;
@@ -71,13 +71,13 @@ export class HeaderComponent implements OnInit {
   @ViewChild("HealthMenusLine") HealthMenusLine: ElementRef;
   @ViewChild("HealthMenusArrow") HealthMenusArrow: ElementRef;
   @ViewChild("HealthParentText") HealthParentText: ElementRef;
-  
+
   @ViewChild("AestheticsMenus") AestheticsMenus: ElementRef;
   @ViewChild("AestheticsMenusWrapper") AestheticsMenusWrapper: ElementRef;
   @ViewChild("AestheticsMenusLine") AestheticsMenusLine: ElementRef;
   @ViewChild("AestheticsMenusArrow") AestheticsMenusArrow: ElementRef;
   @ViewChild("AestheticsParentText") AestheticsParentText: ElementRef;
-  
+
   @ViewChild("ImplantsMenus") ImplantsMenus: ElementRef;
   @ViewChild("ImplantsMenusWrapper") ImplantsMenusWrapper: ElementRef;
   @ViewChild("ImplantsMenusLine") ImplantsMenusLine: ElementRef;
@@ -86,17 +86,98 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild("MobileOverlay") mobileOverlay: ElementRef;
 
-  
-  @ViewChild("MobileWhyProudSmileOverlay") MobileWhyProudSmileOverlay: ElementRef;
-  @ViewChild("MobileWhyProudSmileMiddlePart") MobileWhyProudSmileMiddlePart: ElementRef;
-  @ViewChild("WhyProudSmileSecondParentText") WhyProudSmileSecondParentText: ElementRef;
-  @ViewChild("WhyProudSmileSecondMenusArrow") WhyProudSmileSecondMenusArrow: ElementRef;
+  @ViewChild("MobileWhyProudSmileOverlay")
+  MobileWhyProudSmileOverlay: ElementRef;
+  @ViewChild("MobileWhyProudSmileMiddlePart")
+  MobileWhyProudSmileMiddlePart: ElementRef;
+  @ViewChild("WhyProudSmileSecondParentText")
+  WhyProudSmileSecondParentText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusArrow")
+  WhyProudSmileSecondMenusArrow: ElementRef;
   @ViewChild("WhyProudSmileSecondMenus") WhyProudSmileSecondMenus: ElementRef;
-  @ViewChild("WhyProudSmileSecondMenusWrapper") WhyProudSmileSecondMenusWrapper: ElementRef;
-  @ViewChild("WhyProudSmileSecondParentLine") WhyProudSmileSecondParentLine: ElementRef;
-  @ViewChild("WhyProudSmileSecondMenusFirstText") WhyProudSmileSecondMenusFirstText: ElementRef;
-  @ViewChild("WhyProudSmileSecondMenusSecondText") WhyProudSmileSecondMenusSecondText: ElementRef;
-  @ViewChild("WhyProudSmileSecondMenusThirdText") WhyProudSmileSecondMenusThirdText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusWrapper")
+  WhyProudSmileSecondMenusWrapper: ElementRef;
+  @ViewChild("WhyProudSmileSecondParentLine")
+  WhyProudSmileSecondParentLine: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusFirstText")
+  WhyProudSmileSecondMenusFirstText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusSecondText")
+  WhyProudSmileSecondMenusSecondText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusThirdText")
+  WhyProudSmileSecondMenusThirdText: ElementRef;
+
+  @ViewChild("MobileHealthOverlay") MobileHealthOverlay: ElementRef;
+  @ViewChild("MobileHealthMiddlePart") MobileHealthMiddlePart: ElementRef;
+  @ViewChild("HealthSecondParentText") HealthSecondParentText: ElementRef;
+  @ViewChild("HealthSecondMenusArrow") HealthSecondMenusArrow: ElementRef;
+  @ViewChild("HealthSecondMenus") HealthSecondMenus: ElementRef;
+  @ViewChild("HealthSecondMenusWrapper") HealthSecondMenusWrapper: ElementRef;
+  @ViewChild("HealthSecondParentLine") HealthSecondParentLine: ElementRef;
+  @ViewChild("HealthSecondMenusFirstText")
+  HealthSecondMenusFirstText: ElementRef;
+  @ViewChild("HealthSecondMenusSecondText")
+  HealthSecondMenusSecondText: ElementRef;
+  @ViewChild("HealthSecondMenusThirdText")
+  HealthSecondMenusThirdText: ElementRef;
+  @ViewChild("HealthSecondMenusFourthText")
+  HealthSecondMenusFourthText: ElementRef;
+  @ViewChild("HealthSecondMenusFifthText")
+  HealthSecondMenusFifthText: ElementRef;
+  @ViewChild("HealthSecondMenusSixthText")
+  HealthSecondMenusSixthText: ElementRef;
+  @ViewChild("HealthSecondMenusSeventhText")
+  HealthSecondMenusSeventhText: ElementRef;
+  @ViewChild("HealthSecondMenusEightText")
+  HealthSecondMenusEightText: ElementRef;
+  @ViewChild("HealthSecondMenusNineText") HealthSecondMenusNineText: ElementRef;
+  @ViewChild("HealthSecondMenusTenText") HealthSecondMenusTenText: ElementRef;
+  @ViewChild("HealthSecondMenusElevenText")
+  HealthSecondMenusElevenText: ElementRef;
+
+  @ViewChild("MobileAestheticsOverlay") MobileAestheticsOverlay: ElementRef;
+  @ViewChild("MobileAestheticsMiddlePart")
+  MobileAestheticsMiddlePart: ElementRef;
+  @ViewChild("AestheticsSecondParentText")
+  AestheticsSecondParentText: ElementRef;
+  @ViewChild("AestheticsSecondMenusArrow")
+  AestheticsSecondMenusArrow: ElementRef;
+  @ViewChild("AestheticsSecondMenus") AestheticsSecondMenus: ElementRef;
+  @ViewChild("AestheticsSecondMenusWrapper")
+  AestheticsSecondMenusWrapper: ElementRef;
+  @ViewChild("AestheticsSecondParentLine")
+  AestheticsSecondParentLine: ElementRef;
+  @ViewChild("AestheticsSecondMenusFirstText")
+  AestheticsSecondMenusFirstText: ElementRef;
+  @ViewChild("AestheticsSecondMenusSecondText")
+  AestheticsSecondMenusSecondText: ElementRef;
+  @ViewChild("AestheticsSecondMenusThirdText")
+  AestheticsSecondMenusThirdText: ElementRef;
+  @ViewChild("AestheticsSecondMenusFourthText")
+  AestheticsSecondMenusFourthText: ElementRef;
+  @ViewChild("AestheticsSecondMenusFifthText")
+  AestheticsSecondMenusFifthText: ElementRef;
+  @ViewChild("AestheticsSecondMenusSixthText")
+  AestheticsSecondMenusSixthText: ElementRef;
+
+  @ViewChild("MobileImplantsOverlay")
+  MobileImplantsOverlay: ElementRef;
+  @ViewChild("MobileImplantsMiddlePart")
+  MobileImplantsMiddlePart: ElementRef;
+  @ViewChild("ImplantsSecondParentText")
+  ImplantsSecondParentText: ElementRef;
+  @ViewChild("ImplantsSecondMenusArrow")
+  ImplantsSecondMenusArrow: ElementRef;
+  @ViewChild("ImplantsSecondMenus") ImplantsSecondMenus: ElementRef;
+  @ViewChild("ImplantsSecondMenusWrapper")
+  ImplantsSecondMenusWrapper: ElementRef;
+  @ViewChild("ImplantsSecondParentLine")
+  ImplantsSecondParentLine: ElementRef;
+  @ViewChild("ImplantsSecondMenusFirstText")
+  ImplantsSecondMenusFirstText: ElementRef;
+  @ViewChild("ImplantsSecondMenusSecondText")
+  ImplantsSecondMenusSecondText: ElementRef;
+  @ViewChild("ImplantsSecondMenusThirdText")
+  ImplantsSecondMenusThirdText: ElementRef;
 
   pointerGrabbed: boolean = false;
   mousePosition: number;
@@ -105,6 +186,9 @@ export class HeaderComponent implements OnInit {
   monthly: number = 62.5;
   weekly: number = 15.63;
   whyProudSmileActiveText: string = "The Proud Smile Experience";
+  healthActiveText: string = "Extractions";
+  aestheticsActiveText: string = "Porcelain Veneers";
+  implantsActiveText: string = "Single Tooth";
 
   constructor(
     private router: Router,
@@ -112,9 +196,8 @@ export class HeaderComponent implements OnInit {
     renderer: Renderer2,
     private clipboard: Clipboard,
     private _snackBar: MatSnackBar,
-    private data: DataService,
+    private data: DataService
   ) {
-  
     this.elRef = el;
     this.renderer = renderer;
 
@@ -199,10 +282,20 @@ export class HeaderComponent implements OnInit {
           this.aestheticsSubheader.nativeElement.children[0].classList.add(
             "no-top"
           );
+
+          if (document.documentElement.clientWidth >= 1200) {
+            this.MobileAestheticsOverlay.nativeElement.classList.add("no-top");
+          }
         } else {
           this.aestheticsSubheader.nativeElement.children[0].classList.remove(
             "no-top"
           );
+
+          if (document.documentElement.clientWidth >= 1200) {
+            this.MobileAestheticsOverlay.nativeElement.classList.remove(
+              "no-top"
+            );
+          }
           this.hItem.nativeElement.style.position = "fixed";
         }
 
@@ -258,22 +351,27 @@ export class HeaderComponent implements OnInit {
 
         if (val.url === "/GeneralAndPreventiveCare") {
           this.setActiveSubheader3(0);
+          this.setActiveSubheader2(6);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/DVA") {
           this.setActiveSubheader3(1);
+          this.setActiveSubheader2(7);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/MedicareChildBenefitScheme") {
           this.setActiveSubheader3(2);
+          this.setActiveSubheader2(8);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/MouthguardsAndSplints") {
           this.setActiveSubheader3(3);
+          this.setActiveSubheader2(9);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/DentalEmergency") {
           this.setActiveSubheader3(4);
+          this.setActiveSubheader2(10);
           this.healthText.nativeElement.classList.add("active-text");
         }
 
@@ -308,7 +406,7 @@ export class HeaderComponent implements OnInit {
     this.input2.nativeElement.value = "25%";
     this.oninput1Mini();
     window.addEventListener("touchmove", this.preventBehavior.bind(this), {
-      passive: false
+      passive: false,
     });
 
     this.data.currentMessage.subscribe((message) => {
@@ -334,117 +432,234 @@ export class HeaderComponent implements OnInit {
   }
 
   setActiveSubheader1(index: number) {
-    // for (
-    //   var i = 0;
-    //   i < this.elRef.nativeElement.children[5].children[0].children.length;
-    //   i++
-    // ) {
-    //   this.elRef.nativeElement.children[5].children[0].children[
-    //     i
-    //   ].classList.remove("active");
-    // }
-    // this.elRef.nativeElement.children[5].children[0].children[
-    //   index
-    // ].classList.add("active");
+    if (document.documentElement.clientWidth >= 1200) {
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[5].children[0].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[5].children[0].children[
+          i
+        ].classList.remove("active");
+      }
+      this.elRef.nativeElement.children[5].children[0].children[
+        index
+      ].classList.add("active");
+    } else {
+      this.WhyProudSmileSecondMenus.nativeElement.style.height = 0;
+      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.WhyProudSmileSecondParentLine.nativeElement.style.opacity = "0";
 
-    
-    this.WhyProudSmileSecondMenus.nativeElement.style.height = 0;
-    this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform = "rotate(90deg)";
-    this.WhyProudSmileSecondParentLine.nativeElement.style.display = "none";
-    
-    this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color = "#55311b";
-    this.WhyProudSmileSecondMenusSecondText.nativeElement.style.color = "#55311b";
-    this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color = "#55311b";
-    if(index === 0) {
-      this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color = "#565960";
-      this.whyProudSmileActiveText = "The Proud Smile Experience";
-    } else if(index === 1) {
-      
-      this.WhyProudSmileSecondMenusSecondText.nativeElement.style.color = "#565960";
-      this.whyProudSmileActiveText = "Who We Are";
-    } else if(index === 2) {
-      
-      this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color = "#565960";
-      this.whyProudSmileActiveText = "Our Dental Clinic";
+      this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color =
+        "#55311b";
+      this.WhyProudSmileSecondMenusSecondText.nativeElement.style.color =
+        "#55311b";
+      this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color =
+        "#55311b";
+      if (index === 0) {
+        this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color =
+          "#565960";
+        this.whyProudSmileActiveText = "The Proud Smile Experience";
+      } else if (index === 1) {
+        this.WhyProudSmileSecondMenusSecondText.nativeElement.style.color =
+          "#565960";
+        this.whyProudSmileActiveText = "Who We Are";
+      } else if (index === 2) {
+        this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color =
+          "#565960";
+        this.whyProudSmileActiveText = "Our Dental Clinic";
+      }
     }
   }
 
   setActiveSubheader2(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[6].children[0].children.length;
-      i++
-    ) {
+    if (document.documentElement.clientWidth >= 1200) {
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[6].children[0].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[6].children[0].children[
+          i
+        ].classList.remove("active");
+      }
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[6].children[1].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[6].children[1].children[
+          i
+        ].classList.remove("active");
+      }
       this.elRef.nativeElement.children[6].children[0].children[
-        i
-      ].classList.remove("active");
+        index
+      ].classList.add("active");
+    } else {
+      this.HealthSecondMenus.nativeElement.style.height = 0;
+      this.HealthSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.HealthSecondParentLine.nativeElement.style.opacity = "0";
+
+      this.HealthSecondMenusFirstText.nativeElement.style.color = "#55311b";
+      this.HealthSecondMenusSecondText.nativeElement.style.color = "#55311b";
+      this.HealthSecondMenusThirdText.nativeElement.style.color = "#55311b";
+      if (index === 0) {
+        this.HealthSecondMenusFirstText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Extractions";
+      } else if (index === 1) {
+        this.HealthSecondMenusSecondText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Root Canal Therapy";
+      } else if (index === 2) {
+        this.HealthSecondMenusThirdText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Clear Braces";
+      } else if (index === 3) {
+        this.HealthSecondMenusFourthText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Invisalign";
+      } else if (index === 4) {
+        this.HealthSecondMenusFifthText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Anxious Patients";
+      } else if (index === 5) {
+        this.HealthSecondMenusSixthText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Same Day Crowns";
+      } else if (index === 6) {
+        this.HealthSecondMenusSeventhText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "General and Preventive Care";
+      } else if (index === 7) {
+        this.HealthSecondMenusEightText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "DVA (Department of Veteren Affairs)";
+      } else if (index === 8) {
+        this.HealthSecondMenusNineText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Medicare Childs Benefit Scheme";
+      } else if (index === 9) {
+        this.HealthSecondMenusTenText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Mouthguards and Splints";
+      } else if (index === 10) {
+        this.HealthSecondMenusElevenText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "DentalEmergency";
+      }
     }
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[6].children[1].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[6].children[1].children[
-        i
-      ].classList.remove("active");
-    }
-    this.elRef.nativeElement.children[6].children[0].children[
-      index
-    ].classList.add("active");
   }
 
   setActiveSubheader3(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[6].children[0].children.length;
-      i++
-    ) {
-      this.elRef.nativeElement.children[6].children[0].children[
-        i
-      ].classList.remove("active");
-    }
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[6].children[1].children.length;
-      i++
-    ) {
+    if (document.documentElement.clientWidth >= 1200) {
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[6].children[0].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[6].children[0].children[
+          i
+        ].classList.remove("active");
+      }
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[6].children[1].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[6].children[1].children[
+          i
+        ].classList.remove("active");
+      }
       this.elRef.nativeElement.children[6].children[1].children[
-        i
-      ].classList.remove("active");
+        index
+      ].classList.add("active");
     }
-    this.elRef.nativeElement.children[6].children[1].children[
-      index
-    ].classList.add("active");
   }
 
   setActiveSubheader4(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[7].children[0].children.length;
-      i++
-    ) {
+    if (document.documentElement.clientWidth >= 1200) {
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[7].children[0].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[7].children[0].children[
+          i
+        ].classList.remove("active");
+      }
       this.elRef.nativeElement.children[7].children[0].children[
-        i
-      ].classList.remove("active");
+        index
+      ].classList.add("active");
+    } else {
+      this.ImplantsSecondMenus.nativeElement.style.height = 0;
+      this.ImplantsSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.ImplantsSecondParentLine.nativeElement.style.opacity = "0";
+
+      this.ImplantsSecondMenusFirstText.nativeElement.style.color =
+        "#55311b";
+      this.ImplantsSecondMenusSecondText.nativeElement.style.color =
+        "#55311b";
+      this.ImplantsSecondMenusThirdText.nativeElement.style.color =
+        "#55311b";
+      if (index === 0) {
+        this.ImplantsSecondMenusFirstText.nativeElement.style.color =
+          "#565960";
+        this.implantsActiveText = "Single Tooth";
+      } else if (index === 1) {
+        this.ImplantsSecondMenusSecondText.nativeElement.style.color =
+          "#565960";
+        this.implantsActiveText = "Full Arch Rehabilitation";
+      } else if (index === 2) {
+        this.ImplantsSecondMenusThirdText.nativeElement.style.color =
+          "#565960";
+        this.implantsActiveText = "Implant Dentures";
+      }
     }
-    this.elRef.nativeElement.children[7].children[0].children[
-      index
-    ].classList.add("active");
   }
 
   setActiveSubheader5(index: number) {
-    for (
-      var i = 0;
-      i < this.elRef.nativeElement.children[8].children[0].children.length;
-      i++
-    ) {
+    if (document.documentElement.clientWidth >= 1200) {
+      for (
+        var i = 0;
+        i < this.elRef.nativeElement.children[8].children[0].children.length;
+        i++
+      ) {
+        this.elRef.nativeElement.children[8].children[0].children[
+          i
+        ].classList.remove("active");
+      }
       this.elRef.nativeElement.children[8].children[0].children[
-        i
-      ].classList.remove("active");
+        index
+      ].classList.add("active");
+    } else {
+      this.AestheticsSecondMenus.nativeElement.style.height = 0;
+      this.AestheticsSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.AestheticsSecondParentLine.nativeElement.style.opacity = "0";
+
+      this.AestheticsSecondMenusFirstText.nativeElement.style.color = "#55311b";
+      this.AestheticsSecondMenusSecondText.nativeElement.style.color =
+        "#55311b";
+      this.AestheticsSecondMenusThirdText.nativeElement.style.color = "#55311b";
+      if (index === 0) {
+        this.AestheticsSecondMenusFirstText.nativeElement.style.color =
+          "#565960";
+        this.aestheticsActiveText = "Porcelain Veneers";
+      } else if (index === 1) {
+        this.AestheticsSecondMenusSecondText.nativeElement.style.color =
+          "#565960";
+        this.aestheticsActiveText = "Ultra Thin Veneers";
+      } else if (index === 2) {
+        this.AestheticsSecondMenusThirdText.nativeElement.style.color =
+          "#565960";
+        this.aestheticsActiveText = "Same Day Veneers";
+      } else if (index === 3) {
+        this.AestheticsSecondMenusFourthText.nativeElement.style.color =
+          "#565960";
+        this.aestheticsActiveText = "Zoom Whitening";
+      } else if (index === 4) {
+        this.AestheticsSecondMenusFifthText.nativeElement.style.color =
+          "#565960";
+        this.aestheticsActiveText = "Before and After";
+      } else if (index === 5) {
+        this.AestheticsSecondMenusSixthText.nativeElement.style.color =
+          "#565960";
+        this.aestheticsActiveText = "FaceSpa Facial Aesthetics";
+      }
     }
-    this.elRef.nativeElement.children[8].children[0].children[
-      index
-    ].classList.add("active");
   }
 
   ngOnInit(): void {
@@ -554,71 +769,74 @@ export class HeaderComponent implements OnInit {
   }
 
   showOverlay() {
-    this.mobileOverlay.nativeElement.style.display="flex";
-    this.threeDots.nativeElement.style.display="none";
-    this.closeThreeDots.nativeElement.style.display="block";
+    this.mobileOverlay.nativeElement.style.display = "flex";
+    this.threeDots.nativeElement.style.display = "none";
+    this.closeThreeDots.nativeElement.style.display = "block";
     document.documentElement.style.overflowY = "hidden";
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "hidden";
   }
   hideOverlay() {
-    this.mobileOverlay.nativeElement.style.display="none";
-    this.threeDots.nativeElement.style.display="block";
-    this.closeThreeDots.nativeElement.style.display="none";
+    this.mobileOverlay.nativeElement.style.display = "none";
+    this.threeDots.nativeElement.style.display = "block";
+    this.closeThreeDots.nativeElement.style.display = "none";
     document.documentElement.style.overflowY = "scroll";
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "scroll";
   }
 
   toggleWhyProudSmile() {
-
     if (this.WhyProudSmileMenus.nativeElement.clientHeight) {
       this.WhyProudSmileMenus.nativeElement.style.height = 0;
       this.WhyProudSmileMenusLine.nativeElement.style.display = "block";
-      this.WhyProudSmileMenusArrow.nativeElement.style.transform = "rotate(180deg)";
+      this.WhyProudSmileMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
       this.WhyProudSmileParentText.nativeElement.style.color = "white";
     } else {
-      this.WhyProudSmileMenus.nativeElement.style.height = this.WhyProudSmileMenusWrapper.nativeElement.clientHeight + "px";
+      this.WhyProudSmileMenus.nativeElement.style.height =
+        this.WhyProudSmileMenusWrapper.nativeElement.clientHeight + "px";
       this.WhyProudSmileMenusLine.nativeElement.style.display = "none";
-      this.WhyProudSmileMenusArrow.nativeElement.style.transform = "rotate(0deg)";
+      this.WhyProudSmileMenusArrow.nativeElement.style.transform =
+        "rotate(0deg)";
       this.WhyProudSmileParentText.nativeElement.style.color = "#A7958A";
     }
   }
   toggleHealth() {
-
     if (this.HealthMenus.nativeElement.clientHeight) {
       this.HealthMenus.nativeElement.style.height = 0;
       this.HealthMenusLine.nativeElement.style.display = "block";
       this.HealthMenusArrow.nativeElement.style.transform = "rotate(180deg)";
       this.HealthParentText.nativeElement.style.color = "white";
     } else {
-      this.HealthMenus.nativeElement.style.height = this.HealthMenusWrapper.nativeElement.clientHeight + "px";
+      this.HealthMenus.nativeElement.style.height =
+        this.HealthMenusWrapper.nativeElement.clientHeight + "px";
       this.HealthMenusLine.nativeElement.style.display = "none";
       this.HealthMenusArrow.nativeElement.style.transform = "rotate(0deg)";
       this.HealthParentText.nativeElement.style.color = "#A7958A";
     }
   }
   toggleAesthetics() {
-
     if (this.AestheticsMenus.nativeElement.clientHeight) {
       this.AestheticsMenus.nativeElement.style.height = 0;
       this.AestheticsMenusLine.nativeElement.style.display = "block";
-      this.AestheticsMenusArrow.nativeElement.style.transform = "rotate(180deg)";
+      this.AestheticsMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
       this.AestheticsParentText.nativeElement.style.color = "white";
     } else {
-      this.AestheticsMenus.nativeElement.style.height = this.AestheticsMenusWrapper.nativeElement.clientHeight + "px";
+      this.AestheticsMenus.nativeElement.style.height =
+        this.AestheticsMenusWrapper.nativeElement.clientHeight + "px";
       this.AestheticsMenusLine.nativeElement.style.display = "none";
       this.AestheticsMenusArrow.nativeElement.style.transform = "rotate(0deg)";
       this.AestheticsParentText.nativeElement.style.color = "#A7958A";
     }
   }
   toggleImplants() {
-
     if (this.ImplantsMenus.nativeElement.clientHeight) {
       this.ImplantsMenus.nativeElement.style.height = 0;
       this.ImplantsMenusLine.nativeElement.style.display = "block";
       this.ImplantsMenusArrow.nativeElement.style.transform = "rotate(180deg)";
       this.ImplantsParentText.nativeElement.style.color = "white";
     } else {
-      this.ImplantsMenus.nativeElement.style.height = this.ImplantsMenusWrapper.nativeElement.clientHeight + "px";
+      this.ImplantsMenus.nativeElement.style.height =
+        this.ImplantsMenusWrapper.nativeElement.clientHeight + "px";
       this.ImplantsMenusLine.nativeElement.style.display = "none";
       this.ImplantsMenusArrow.nativeElement.style.transform = "rotate(0deg)";
       this.ImplantsParentText.nativeElement.style.color = "#A7958A";
@@ -626,15 +844,69 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleWhyProudSmileSecond() {
-
     if (this.WhyProudSmileSecondMenus.nativeElement.clientHeight) {
       this.WhyProudSmileSecondMenus.nativeElement.style.height = 0;
-      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform = "rotate(90deg)";
-      this.WhyProudSmileSecondParentLine.nativeElement.style.display = "none";
+      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.WhyProudSmileSecondParentLine.nativeElement.style.opacity = "0";
+      document.documentElement.style.overflowY = "scroll";
     } else {
-      this.WhyProudSmileSecondMenus.nativeElement.style.height = this.WhyProudSmileSecondMenusWrapper.nativeElement.clientHeight + "px";
-      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform = "rotate(270deg)";
-      this.WhyProudSmileSecondParentLine.nativeElement.style.display = "block";
+      this.WhyProudSmileSecondMenus.nativeElement.style.height =
+        this.WhyProudSmileSecondMenusWrapper.nativeElement.clientHeight + "px";
+      this.WhyProudSmileSecondMenusArrow.nativeElement.style.transform =
+        "rotate(0deg)";
+      this.WhyProudSmileSecondParentLine.nativeElement.style.opacity = "1";
+      document.documentElement.style.overflowY = "hidden";
+    }
+  }
+
+  toggleHealthSecond() {
+    if (this.HealthSecondMenus.nativeElement.clientHeight) {
+      this.HealthSecondMenus.nativeElement.style.height = 0;
+      this.HealthSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.HealthSecondParentLine.nativeElement.style.opacity = "0";
+      document.documentElement.style.overflowY = "scroll";
+    } else {
+      this.HealthSecondMenus.nativeElement.style.height =
+        this.HealthSecondMenusWrapper.nativeElement.clientHeight + "px";
+      this.HealthSecondMenusArrow.nativeElement.style.transform =
+        "rotate(0deg)";
+      this.HealthSecondParentLine.nativeElement.style.opacity = "1";
+      document.documentElement.style.overflowY = "hidden";
+    }
+  }
+
+  toggleAestheticsSecond() {
+    if (this.AestheticsSecondMenus.nativeElement.clientHeight) {
+      this.AestheticsSecondMenus.nativeElement.style.height = 0;
+      this.AestheticsSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.AestheticsSecondParentLine.nativeElement.style.opacity = "0";
+      document.documentElement.style.overflowY = "scroll";
+    } else {
+      this.AestheticsSecondMenus.nativeElement.style.height =
+        this.AestheticsSecondMenusWrapper.nativeElement.clientHeight + "px";
+      this.AestheticsSecondMenusArrow.nativeElement.style.transform =
+        "rotate(0deg)";
+      this.AestheticsSecondParentLine.nativeElement.style.opacity = "1";
+      document.documentElement.style.overflowY = "hidden";
+    }
+  }
+  toggleImplantsSecond() {
+    if (this.ImplantsSecondMenus.nativeElement.clientHeight) {
+      this.ImplantsSecondMenus.nativeElement.style.height = 0;
+      this.ImplantsSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.ImplantsSecondParentLine.nativeElement.style.opacity = "0";
+      document.documentElement.style.overflowY = "scroll";
+    } else {
+      this.ImplantsSecondMenus.nativeElement.style.height =
+        this.ImplantsSecondMenusWrapper.nativeElement.clientHeight + "px";
+      this.ImplantsSecondMenusArrow.nativeElement.style.transform =
+        "rotate(0deg)";
+      this.ImplantsSecondParentLine.nativeElement.style.opacity = "1";
+      document.documentElement.style.overflowY = "hidden";
     }
   }
   copyNumber() {
@@ -643,7 +915,7 @@ export class HeaderComponent implements OnInit {
     this._snackBar.open("07 5570 3311 copied to clipboard!", "", {
       duration: 1000,
       horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition
+      verticalPosition: this.verticalPosition,
     });
   }
 
