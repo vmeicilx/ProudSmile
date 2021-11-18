@@ -29,6 +29,9 @@ export class ScrollFramerFullComponent implements OnInit {
   @ViewChild("scrollFramerContainer") scrollFramerContainer: ElementRef;
   @ViewChild("animation") animation: ElementRef;
   @ViewChild("ScrollCanvas") scrollCanvas: ElementRef;
+  @ViewChild("FrameAround") FrameAround: ElementRef;
+  @ViewChild("CanvasClone") CanvasClone: ElementRef;
+
 
   observer: any;
 
@@ -72,21 +75,44 @@ export class ScrollFramerFullComponent implements OnInit {
       padding: this.padding
     });
 
-    //const canvas = document.createElement("canvas");
-    //canvas.classList.add("scroll-framer-canvas");
     this.scrollCanvas.nativeElement.height = frames[0].height;
     this.scrollCanvas.nativeElement.width = frames[0].width;
 
+    
     if(frames[0].width >= window.innerWidth)
     {
       this.scrollCanvas.nativeElement.classList.remove("vertical-size");
       this.scrollCanvas.nativeElement.classList.add("horizontal-size");
+      this.CanvasClone.nativeElement.classList.remove("vertical-size");
+      this.CanvasClone.nativeElement.classList.add("horizontal-size");
+      this.CanvasClone.nativeElement.style.height = (window.innerWidth / frames[0].width * frames[0].height) + "px";
     }
-    else if(frames[0].height > window.innerHeight)
+    //else if(frames[0].height > window.innerHeight)
+    else
     {
       this.scrollCanvas.nativeElement.classList.remove("horizontal-size");
       this.scrollCanvas.nativeElement.classList.add("vertical-size");
+      this.CanvasClone.nativeElement.classList.remove("horizontal-size");
+      this.CanvasClone.nativeElement.classList.add("vertical-size");
+      this.CanvasClone.nativeElement.style.width = (window.innerHeight / frames[0].height * frames[0].width) + "px";
     }
+
+    // if(frames[0].width >= document.documentElement.clientWidth)
+    // {
+    //   this.scrollCanvas.nativeElement.classList.remove("vertical-size");
+    //   this.scrollCanvas.nativeElement.classList.add("horizontal-size");
+    //   this.CanvasClone.nativeElement.classList.remove("vertical-size");
+    //   this.CanvasClone.nativeElement.classList.add("horizontal-size");
+    //   this.CanvasClone.nativeElement.style.height = (document.documentElement.clientWidth / frames[0].width * frames[0].height) + "px";
+    // }
+    // else if(frames[0].height > document.documentElement.clientWidth)
+    // {
+    //   this.scrollCanvas.nativeElement.classList.remove("horizontal-size");
+    //   this.scrollCanvas.nativeElement.classList.add("vertical-size");
+    //   this.CanvasClone.nativeElement.classList.remove("horizontal-size");
+    //   this.CanvasClone.nativeElement.classList.add("vertical-size");
+    //   this.CanvasClone.nativeElement.style.width = this.scrollCanvas.nativeElement.style.width + "px";
+    // }
 
     if (this.topScroll) {
       videoContainer.style.background = "black";
@@ -113,21 +139,6 @@ export class ScrollFramerFullComponent implements OnInit {
 
     this.subscribe(this.observer);
     this.onFramesLoaded.emit();
-
-    // while (frames.length < this.numberOfFrames) {
-    //   let end = frames.length + this.magicNumber;
-    //   if (end > this.numberOfFrames) {
-    //     end = this.numberOfFrames;
-    //   }
-    //   const f = await this.FrameUnpacker.unpack({
-    //     urlPattern: this.urlPattern,
-    //     start: frames.length + 1,
-    //     end: end,
-    //     padding: this.padding
-    //   });
-    //   frames = frames.concat(f);
-    //   this.CanvasFrameScrubber.update(f);
-    // }
   }
 
   FrameUnpacker = (() => {
@@ -237,7 +248,6 @@ export class ScrollFramerFullComponent implements OnInit {
 
   _process = function (videoContainer, topScroll, onVideoStart: EventEmitter<any>, onVideoEnd: EventEmitter<any>, onVideoPrestart: EventEmitter<any>) {
     const viewportHeight = document.documentElement.clientHeight;
-    const documentHeight = document.body.clientHeight;
     let scrolled = Math.max(
       window.scrollY,
       window.pageYOffset,
@@ -248,6 +258,10 @@ export class ScrollFramerFullComponent implements OnInit {
     let parentRect = videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
     let animationRect = videoContainer.parentElement.getBoundingClientRect();
     let videoRect = videoContainer.getBoundingClientRect();
+
+    if(parentRect.bottom === 0 && parentRect.top === 0) {
+      return;
+    }
 
     if (topScroll) {
       if (parentRect.top > 0) {
@@ -277,22 +291,23 @@ export class ScrollFramerFullComponent implements OnInit {
       }
     } else {
       if (parentRect.bottom < viewportHeight) {
-        onVideoEnd.emit();
+        onVideoEnd.emit({height: this.CanvasClone.nativeElement.style.height});
         videoContainer.style.position = "absolute";
         videoContainer.style.bottom = 0;
         videoContainer.style.top = "unset";
         scrolled = 0;
+        (document.documentElement.getElementsByTagName("app-header")[0] as HTMLElement).style.display="block";
       } else if (
-        parentRect.bottom - animationRect.height + videoRect.height >
-        viewportHeight
+        parentRect.bottom - animationRect.height + videoRect.height > viewportHeight
       ) {
-        onVideoPrestart.emit();
+        onVideoPrestart.emit({height: this.CanvasClone.nativeElement.style.height});
         videoContainer.style.position = "absolute";
         videoContainer.style.bottom = "unset";
         videoContainer.style.top = 0;
         scrolled = 0;
+        (document.documentElement.getElementsByTagName("app-header")[0] as HTMLElement).style.display="block";
       } else {
-        onVideoStart.emit();
+        onVideoStart.emit({height: this.CanvasClone.nativeElement.style.height});
         videoContainer.style.position = "fixed";
         videoContainer.style.bottom = 0;
         videoContainer.style.top = "unset";
@@ -300,6 +315,7 @@ export class ScrollFramerFullComponent implements OnInit {
           this.initialScrollPosition = scrolled;
         }
         scrolled = scrolled - this.initialScrollPosition;
+        (document.documentElement.getElementsByTagName("app-header")[0] as HTMLElement).style.display="none";
       }
     }
 

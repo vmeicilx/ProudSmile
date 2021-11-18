@@ -277,12 +277,12 @@
 </div>
 
 <div
-class="hide-on-phone flexy-column cccc"
+class="flexy-column cccc hide-on-phone hide-on-tablet"
   style="background-color: black; position: relative"
 >
   <div fxLayout fxLayoutAlign="center center">
     <app-scroll-framer-full
-      class="hide-on-phone"
+      class=""
       urlPattern="../../assets/homePage/short/Porcelain Veneers Short ##id##.jpg"
       numberOfFrames="200"
       animationFactor="4000"
@@ -343,6 +343,75 @@ class="hide-on-phone flexy-column cccc"
       (click)="seeAllAesthetic()"></app-button>
     </div>
   </div>
+</div>
+
+<div #vennerShortTextMobile class="venText hide-on-big" style=" color: white; padding-top:4vw; background-color: black; z-index:2; ">
+  <div
+    class="
+      flex-1
+      sscc
+      gmargin-right-1
+      no-margin-on-sm
+    "
+    fxLayout="column"
+    style="padding-bottom:2vw;padding-left:2vw; padding-right:2vw;"
+  >
+    <div class="font-wolf libre-regular margin-bottom-1">
+      <p class="title-on-big center-text-on-sm">
+        We’d love to give <br />
+        you a Proud Smile
+      </p>
+    </div>
+    <div class="roboto-thin font-small-3 center-text-on-sm">
+      <p>
+        Our Cosmetic department is second to none and it’s the jewel of our
+        practice. We offer a comprehensive range of treatments to fit any
+        desire and any budget.<br /><br />
+        Our aesthetic treatments are always personalised and completely done
+        in house by our dentists so you are guaranteed to get a predictable
+        result and one that fits your face and personality.
+      </p>
+    </div>
+    <div
+      class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"
+    ></div>
+    <div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
+      <p>
+        Don’t want to wait weeks for<br />
+        that perfect smile?<br />
+      </p>
+    </div>
+    <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom:2vw;">
+      <br />
+      <p>
+        Plus, with the introduction of digital dentistry we can now perform
+        some procedures with no need for anaesthetics, such as our Ultra Thin
+        Veneers.
+      </p>
+    </div>
+    <app-button text="SEE AESTHETICS PAGE" 
+    (click)="seeAllAesthetic()"></app-button>
+  </div>
+</div>
+
+<div
+class="flexy-column cccc hide-on-big"
+  style="background-color: black; position: relative"
+>
+  <div fxLayout fxLayoutAlign="center center">
+    <app-scroll-framer-full
+      class=""
+      urlPattern="../../assets/homePage/short/Porcelain Veneers Short ##id##.jpg"
+      numberOfFrames="200"
+      animationFactor="4000"
+      padding="3"
+      (onVideoPreStart)="showTextPre($event)"
+      (onVideoStart)="showText($event)"
+      (onVideoEnd)="hideText($event)"
+    >
+    </app-scroll-framer-full>
+  </div>
+
 </div>
 
 <div class="aestheticsAndHealthSection" fxLayout>
@@ -515,7 +584,7 @@ class="hide-on-phone flexy-column cccc"
   fxLayoutAlign="center center"
 >
 <div>
-  <img loading="lazy" src="../../../assets/homePage/Social.svg" />
+  <img class="mobile-size" loading="lazy" src="../../../assets/homePage/Social.svg" />
 </div>
   <div class="instaFeed" style="margin-top: 4vw">
     <div class="text margin-bottom-1 padding-chef">
@@ -548,7 +617,7 @@ class="hide-on-phone flexy-column cccc"
   <div fxLayout="column" fxLayoutAlign="start center">
     
 <div style="margin-top:2vw; margin-bottom:2vw;">
-  <img loading="lazy" src="../../../assets/homePage/Becomepartofourfamily.svg" />
+  <img class="mobile-size" loading="lazy" src="../../../assets/homePage/Becomepartofourfamily.svg" />
 </div>
     <app-button
       (click)="

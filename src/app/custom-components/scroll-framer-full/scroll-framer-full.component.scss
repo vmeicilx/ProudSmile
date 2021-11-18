@@ -1,4 +1,13 @@
+@import "../../../proud-smile-style.scss";
+
 :host {
+  .vertical-size {
+    height: 100vh;
+  }
+
+  .horizontal-size {
+    width: 100vw;
+  }
   .scroll-framer-canvas-container {
     position: absolute;
     right: 0;
@@ -10,11 +19,17 @@
     z-index: 2;
   }
 
-  .vertical-size {
-    height: 100vh;
-  }
+  @media only screen and (min-width: 1201px) {
 
-  .horizontal-size {
-    width: 100vw;
   }
+  
+  @media only screen and (min-width: 300) and (max-width: 1200px) {
+  
+    .mobile-rules {
+      top: 80px !important;
+      bottom: 0px !important;
+    }
+  }
+  
 }
+

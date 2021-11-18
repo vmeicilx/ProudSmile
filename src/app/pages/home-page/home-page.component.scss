@@ -224,7 +224,10 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
-    
+    .mobile-size {
+      max-width: 70%;
+      margin: auto;
+    }
     .venText {
       max-width: 65vw;
       padding-top:20vw;
@@ -309,7 +312,10 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
-    
+    .mobile-size {
+      max-width: 70%;
+      margin: auto;
+    }
     .technology-section-responsive {
       padding-top:20vw;
       padding-bottom:70vw;

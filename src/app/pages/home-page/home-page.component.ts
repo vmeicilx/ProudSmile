@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit {
 
   @ViewChild("relaxVideo") relaxVideo: ElementRef;
   @ViewChild("vennerShortText") vennerShortText: ElementRef;
+  @ViewChild("vennerShortTextMobile") vennerShortTextMobile: ElementRef;
 
   imageObject: Array<object> = [
     {
@@ -100,26 +101,33 @@ export class HomePageComponent implements OnInit {
       }
     }
   }
-  showTextPre() {
+  showTextPre($event) {
 
     this.vennerShortText.nativeElement.style.position = "absolute";
     this.vennerShortText.nativeElement.style.bottom = "unset";
     this.vennerShortText.nativeElement.style.top = "0px";
+
+    this.vennerShortTextMobile.nativeElement.style.position = "relative";
   }
 
 
-  showText() {
+  showText($event) {
 
     this.vennerShortText.nativeElement.style.position = "fixed";
     this.vennerShortText.nativeElement.style.bottom = "unset";
     this.vennerShortText.nativeElement.style.top = "0px";
+
+    this.vennerShortTextMobile.nativeElement.style.position = "fixed";
+    this.vennerShortTextMobile.nativeElement.style.bottom = $event.height;
   }
 
-  hideText() {
+  hideText($event) {
 
     this.vennerShortText.nativeElement.style.position = "absolute";
     this.vennerShortText.nativeElement.style.top = "unset";
     this.vennerShortText.nativeElement.style.bottom = "0px";
+    
+    this.vennerShortTextMobile.nativeElement.style.position = "relative";
   }
 
   inTheViewport(elem): boolean {
