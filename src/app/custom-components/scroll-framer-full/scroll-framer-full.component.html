@@ -3,6 +3,7 @@
     <section
       id="ScrollFramerContainer"
       class="scroll-framer-canvas-container mobile-rules"
+      style="height: 100vh;"
       #scrollFramerContainer
     >
       <canvas #ScrollCanvas class="vertical-size">
@@ -13,7 +14,7 @@
           <div
             style="
               position: absolute;
-              top: 0;
+              top: -5px;
               left:0;
               height: 4vw;
               background: linear-gradient(black, transparent);
@@ -26,7 +27,7 @@
               position: absolute;
               top: 0;
               left: 0;
-              height: 100vh;
+              height: 100%;
               background: linear-gradient(90deg, black, transparent);
               z-index: 6;
               width: 4vw;
@@ -38,7 +39,7 @@
               position: absolute;
               top: 0;
               right: 0;
-              height: 100vh;
+              height: 100%;
               background: linear-gradient(270deg, black, transparent);
               z-index: 6;
               width: 4vw;
@@ -49,7 +50,7 @@
             style="
               position: absolute;
               left:0;
-              bottom: 0;
+              bottom: -5px;
               height: 4vw;
               background: linear-gradient(0deg, black, transparent);
               z-index: 6;

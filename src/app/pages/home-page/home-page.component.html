@@ -68,13 +68,8 @@
   <div
     fxLayout="column"
     fxLayoutAlign="center center"
-    style="text-align: center;"
-    class="
-    background-53
-      font-large
-      libre-regular
-      padding-top-bottom-1
-    "
+    style="text-align: center"
+    class="background-53 font-large libre-regular padding-top-bottom-1"
   >
     <div class="width-1">
       <img loading="lazy" src="../../../assets/Shape.svg" />
@@ -86,31 +81,45 @@
     </p>
   </div>
 
-  <div class="people-section people-section-responsive relative-container padding-chef  background-53">
-      <div class="mPeople" style="position: absolute; bottom: 0;">
-        <img loading="lazy" src="../../assets/homePage/manyPeople.png" />
+  <div
+    class="
+      people-section people-section-responsive
+      relative-container
+      padding-chef
+      background-53
+    "
+  >
+    <div class="mPeople" style="position: absolute; bottom: 0">
+      <img loading="lazy" src="../../assets/homePage/manyPeople.png" />
+    </div>
+    <div
+      fxLayout="column"
+      style="float: right"
+      class="
+        flex-1
+        sscc
+        margin-bottom-on-sm
+        relative-container
+        top1
+        people-section-text
+      "
+    >
+      <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
+        <img loading="lazy" src="../../assets/homePage/1.png" />
       </div>
-      <div
-        fxLayout="column"
-        style="float:right;"
-        class="flex-1 sscc margin-bottom-on-sm relative-container top1 people-section-text"
-      >
-        <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-          <img loading="lazy" src="../../assets/homePage/1.png" />
-        </div>
-        <div class="font-dog libre-regular margin-bottom-1">
-          <p>
-            <span class="libre-italic">Unique</span> as <br />
-            you are
-          </p>
-        </div>
-        <div class="roboto-regular font-lion margin-bottom-1">
-          <p class="center-text-on-sm">
-            We are all different and so are our needs. That is why our treatment
-            plans are made just for you.
-          </p>
-        </div>
+      <div class="font-dog libre-regular margin-bottom-1">
+        <p>
+          <span class="libre-italic">Unique</span> as <br />
+          you are
+        </p>
       </div>
+      <div class="roboto-regular font-lion margin-bottom-1">
+        <p class="center-text-on-sm">
+          We are all different and so are our needs. That is why our treatment
+          plans are made just for you.
+        </p>
+      </div>
+    </div>
   </div>
 
   <div
@@ -144,28 +153,27 @@
         </p>
       </div>
       <div
-      fxLayout
-      fxLayoutAlign=" center"
-      class="
-        link
-        roboto-medium
-        font-extra-small
-        cursor-pointer
-      "
-      (click)="seeAllFinancial()"
-    >
-      <p fxLayout fxLayoutAlign="center center">READ MORE</p>
-      <div style="padding-left: 8px">
-        <img loading="lazy" src="../../assets/brownArrow.svg" />
+        fxLayout
+        fxLayoutAlign=" center"
+        class="link roboto-medium font-extra-small cursor-pointer"
+        (click)="seeAllFinancial()"
+      >
+        <p fxLayout fxLayoutAlign="center center">READ MORE</p>
+        <div style="padding-left: 8px">
+          <img loading="lazy" src="../../assets/brownArrow.svg" />
+        </div>
       </div>
-    </div>
     </div>
   </div>
 
-  <div class="you-first-section you-first-section-responsive padding-chef color-brown-light">
-    <div
-      class="flex-1 flexy-column relative-container you-first-text"
-    >
+  <div
+    class="
+      you-first-section you-first-section-responsive
+      padding-chef
+      color-brown-light
+    "
+  >
+    <div class="flex-1 flexy-column relative-container you-first-text">
       <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
         <img loading="lazy" src="../../assets/homePage/3.svg" />
       </div>
@@ -184,7 +192,13 @@
     </div>
   </div>
 
-  <div class="technology-section technology-section-responsive padding-chef color-brown-light">
+  <div
+    class="
+      technology-section technology-section-responsive
+      padding-chef
+      color-brown-light
+    "
+  >
     <div
       class="
         flexy-column
@@ -277,7 +291,7 @@
 </div>
 
 <div
-class="flexy-column cccc hide-on-phone hide-on-tablet"
+  class="flexy-column cccc hide-on-phone hide-on-tablet"
   style="background-color: black; position: relative"
 >
   <div fxLayout fxLayoutAlign="center center">
@@ -287,13 +301,17 @@ class="flexy-column cccc hide-on-phone hide-on-tablet"
       numberOfFrames="200"
       animationFactor="4000"
       padding="3"
-      (onVideoPreStart)="showTextPre()"
-      (onVideoStart)="showText()"
-      (onVideoEnd)="hideText()"
+      (onVideoPreStart)="showTextPre($event)"
+      (onVideoStart)="showText($event)"
+      (onVideoEnd)="hideText($event)"
     >
     </app-scroll-framer-full>
   </div>
-  <div #vennerShortText class="venText" style="position: absolute; top: 0; color: white; z-index:2; right:15vw;">
+  <div
+    #vennerShortText
+    class="venTextDesktop"
+    style="position: absolute; top: 0; color: white; z-index: 2; right: 15vw"
+  >
     <div
       class="
         flex-1
@@ -304,7 +322,7 @@ class="flexy-column cccc hide-on-phone hide-on-tablet"
         margin-bottom-on-sm
       "
       fxLayout="column"
-      style="padding-bottom:2vw;"
+      style="padding-bottom: 2vw"
     >
       <div class="font-wolf libre-regular margin-bottom-1">
         <p class="title-on-big center-text-on-sm">
@@ -331,7 +349,10 @@ class="flexy-column cccc hide-on-phone hide-on-tablet"
           that perfect smile?<br />
         </p>
       </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom:2vw;">
+      <div
+        class="roboto-thin font-small-3 center-text-on-sm"
+        style="margin-bottom: 2vw"
+      >
         <br />
         <p>
           Plus, with the introduction of digital dentistry we can now perform
@@ -339,63 +360,16 @@ class="flexy-column cccc hide-on-phone hide-on-tablet"
           Veneers.
         </p>
       </div>
-      <app-button text="SEE AESTHETICS PAGE" 
-      (click)="seeAllAesthetic()"></app-button>
+      <app-button
+        text="SEE AESTHETICS PAGE"
+        (click)="seeAllAesthetic()"
+      ></app-button>
     </div>
-  </div>
-</div>
-
-<div #vennerShortTextMobile class="venText hide-on-big" style=" color: white; padding-top:4vw; background-color: black; z-index:2; ">
-  <div
-    class="
-      flex-1
-      sscc
-      gmargin-right-1
-      no-margin-on-sm
-    "
-    fxLayout="column"
-    style="padding-bottom:2vw;padding-left:2vw; padding-right:2vw;"
-  >
-    <div class="font-wolf libre-regular margin-bottom-1">
-      <p class="title-on-big center-text-on-sm">
-        We’d love to give <br />
-        you a Proud Smile
-      </p>
-    </div>
-    <div class="roboto-thin font-small-3 center-text-on-sm">
-      <p>
-        Our Cosmetic department is second to none and it’s the jewel of our
-        practice. We offer a comprehensive range of treatments to fit any
-        desire and any budget.<br /><br />
-        Our aesthetic treatments are always personalised and completely done
-        in house by our dentists so you are guaranteed to get a predictable
-        result and one that fits your face and personality.
-      </p>
-    </div>
-    <div
-      class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"
-    ></div>
-    <div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
-      <p>
-        Don’t want to wait weeks for<br />
-        that perfect smile?<br />
-      </p>
-    </div>
-    <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom:2vw;">
-      <br />
-      <p>
-        Plus, with the introduction of digital dentistry we can now perform
-        some procedures with no need for anaesthetics, such as our Ultra Thin
-        Veneers.
-      </p>
-    </div>
-    <app-button text="SEE AESTHETICS PAGE" 
-    (click)="seeAllAesthetic()"></app-button>
   </div>
 </div>
 
 <div
-class="flexy-column cccc hide-on-big"
+  class="flexy-column cccc hide-on-big"
   style="background-color: black; position: relative"
 >
   <div fxLayout fxLayoutAlign="center center">
@@ -410,8 +384,71 @@ class="flexy-column cccc hide-on-big"
       (onVideoEnd)="hideText($event)"
     >
     </app-scroll-framer-full>
+    <div
+      class="venText hide-on-big"
+      style="
+        color: white;
+        padding-top: 4vw;
+        z-index: 2;
+        position: absolute;
+        top: 2000px;
+      "
+    >
+      <div
+        class="flex-1 sscc gmargin-right-1 no-margin-on-sm venText2"
+        fxLayout="column"
+        style="
+          padding-bottom: 2vw;
+          padding-left: 2vw;
+          padding-right: 2vw;
+          margin: auto;
+        "
+      >
+        <div class="font-wolf libre-regular margin-bottom-1">
+          <p class="title-on-big center-text-on-sm">
+            We’d love to give <br />
+            you a Proud Smile
+          </p>
+        </div>
+        <div class="roboto-thin font-small-3 center-text-on-sm">
+          <p>
+            Our Cosmetic department is second to none and it’s the jewel of our
+            practice. We offer a comprehensive range of treatments to fit any
+            desire and any budget.<br /><br />
+            Our aesthetic treatments are always personalised and completely done
+            in house by our dentists so you are guaranteed to get a predictable
+            result and one that fits your face and personality.
+          </p>
+        </div>
+        <div
+          class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"
+        ></div>
+        <div
+          class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm"
+        >
+          <p>
+            Don’t want to wait weeks for<br />
+            that perfect smile?<br />
+          </p>
+        </div>
+        <div
+          class="roboto-thin font-small-3 center-text-on-sm"
+          style="margin-bottom: 2vw"
+        >
+          <br />
+          <p>
+            Plus, with the introduction of digital dentistry we can now perform
+            some procedures with no need for anaesthetics, such as our Ultra
+            Thin Veneers.
+          </p>
+        </div>
+        <app-button
+          text="SEE AESTHETICS PAGE"
+          (click)="seeAllAesthetic()"
+        ></app-button>
+      </div>
+    </div>
   </div>
-
 </div>
 
 <div class="aestheticsAndHealthSection" fxLayout>
@@ -583,9 +620,13 @@ class="flexy-column cccc hide-on-big"
   fxLayout="column"
   fxLayoutAlign="center center"
 >
-<div>
-  <img class="mobile-size" loading="lazy" src="../../../assets/homePage/Social.svg" />
-</div>
+  <div>
+    <img
+      class="mobile-size"
+      loading="lazy"
+      src="../../../assets/homePage/Social.svg"
+    />
+  </div>
   <div class="instaFeed" style="margin-top: 4vw">
     <div class="text margin-bottom-1 padding-chef">
       <div class="leftText roboto-medium font-extra-small">
@@ -615,10 +656,13 @@ class="flexy-column cccc hide-on-big"
     </ng-image-slider>
   </div>
   <div fxLayout="column" fxLayoutAlign="start center">
-    
-<div style="margin-top:2vw; margin-bottom:2vw;">
-  <img class="mobile-size" loading="lazy" src="../../../assets/homePage/Becomepartofourfamily.svg" />
-</div>
+    <div style="margin-top: 2vw; margin-bottom: 2vw">
+      <img
+        class="mobile-size"
+        loading="lazy"
+        src="../../../assets/homePage/Becomepartofourfamily.svg"
+      />
+    </div>
     <app-button
       (click)="
         goToLink(

@@ -150,8 +150,17 @@
   @media only screen and (min-width: 1201px) {
 
     .venText {
-      max-width: 25vw;
       padding-top:9vw;
+      
+      .venText2 {
+        max-width: 25vw;
+      }
+    }
+    .venTextDesktop {
+      padding-top:9vw;
+      
+      max-width: 25vw;
+      
     }
     .technology-section-responsive {
       padding-top:250px;
@@ -229,8 +238,10 @@
       margin: auto;
     }
     .venText {
-      max-width: 65vw;
       padding-top:20vw;
+      .venText2 {
+        max-width: 65vw;
+      }
     }
     .firstSection {
       .homePageImageContainer {

@@ -6,16 +6,15 @@ import {
   Input,
   OnInit,
   Output,
-  ViewChild
+  ViewChild,
 } from "@angular/core";
 
 @Component({
-  selector: 'app-scroll-framer-full',
-  templateUrl: './scroll-framer-full.component.html',
-  styleUrls: ['./scroll-framer-full.component.scss']
+  selector: "app-scroll-framer-full",
+  templateUrl: "./scroll-framer-full.component.html",
+  styleUrls: ["./scroll-framer-full.component.scss"],
 })
 export class ScrollFramerFullComponent implements OnInit {
-
   @Input() urlPattern: string;
   @Input() animationFactor: number;
   @Input() numberOfFrames: number;
@@ -31,7 +30,6 @@ export class ScrollFramerFullComponent implements OnInit {
   @ViewChild("ScrollCanvas") scrollCanvas: ElementRef;
   @ViewChild("FrameAround") FrameAround: ElementRef;
   @ViewChild("CanvasClone") CanvasClone: ElementRef;
-
 
   observer: any;
 
@@ -72,29 +70,28 @@ export class ScrollFramerFullComponent implements OnInit {
       urlPattern: this.urlPattern,
       start: 1,
       end: this.numberOfFrames,
-      padding: this.padding
+      padding: this.padding,
     });
 
     this.scrollCanvas.nativeElement.height = frames[0].height;
     this.scrollCanvas.nativeElement.width = frames[0].width;
 
-    
-    if(frames[0].width >= window.innerWidth)
-    {
+    if (frames[0].width >= window.innerWidth) {
       this.scrollCanvas.nativeElement.classList.remove("vertical-size");
       this.scrollCanvas.nativeElement.classList.add("horizontal-size");
       this.CanvasClone.nativeElement.classList.remove("vertical-size");
       this.CanvasClone.nativeElement.classList.add("horizontal-size");
-      this.CanvasClone.nativeElement.style.height = (window.innerWidth / frames[0].width * frames[0].height) + "px";
+      this.CanvasClone.nativeElement.style.height =
+        (window.innerWidth / frames[0].width) * frames[0].height + "px";
     }
     //else if(frames[0].height > window.innerHeight)
-    else
-    {
+    else {
       this.scrollCanvas.nativeElement.classList.remove("horizontal-size");
       this.scrollCanvas.nativeElement.classList.add("vertical-size");
       this.CanvasClone.nativeElement.classList.remove("horizontal-size");
       this.CanvasClone.nativeElement.classList.add("vertical-size");
-      this.CanvasClone.nativeElement.style.width = (window.innerHeight / frames[0].height * frames[0].width) + "px";
+      this.CanvasClone.nativeElement.style.width =
+        (window.innerHeight / frames[0].height) * frames[0].width + "px";
     }
 
     // if(frames[0].width >= document.documentElement.clientWidth)
@@ -191,7 +188,7 @@ export class ScrollFramerFullComponent implements OnInit {
     };
 
     return {
-      unpack: unpack
+      unpack: unpack,
     };
   })();
 
@@ -215,13 +212,13 @@ export class ScrollFramerFullComponent implements OnInit {
           window.requestAnimationFrame(() => {
             context.drawImage(frames[frameIndex], 0, 0);
           });
-        }
+        },
       };
 
       return observer;
     };
     return {
-      create: create
+      create: create,
     };
   })();
 
@@ -237,7 +234,13 @@ export class ScrollFramerFullComponent implements OnInit {
       inProgress = true;
 
       window.requestAnimationFrame(() => {
-        this._process(videoContainer, topScroll, this.onVideoStart, this.onVideoEnd, this.onVideoPreStart);
+        this._process(
+          videoContainer,
+          topScroll,
+          this.onVideoStart,
+          this.onVideoEnd,
+          this.onVideoPreStart
+        );
 
         inProgress = false;
       });
@@ -246,7 +249,13 @@ export class ScrollFramerFullComponent implements OnInit {
     window.addEventListener("scroll", handler);
   }
 
-  _process = function (videoContainer, topScroll, onVideoStart: EventEmitter<any>, onVideoEnd: EventEmitter<any>, onVideoPrestart: EventEmitter<any>) {
+  _process = function (
+    videoContainer,
+    topScroll,
+    onVideoStart: EventEmitter<any>,
+    onVideoEnd: EventEmitter<any>,
+    onVideoPrestart: EventEmitter<any>
+  ) {
     const viewportHeight = document.documentElement.clientHeight;
     let scrolled = Math.max(
       window.scrollY,
@@ -255,11 +264,12 @@ export class ScrollFramerFullComponent implements OnInit {
       document.body.scrollTop
     );
 
-    let parentRect = videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
+    let parentRect =
+      videoContainer.parentElement.parentElement.parentElement.parentElement.getBoundingClientRect();
     let animationRect = videoContainer.parentElement.getBoundingClientRect();
     let videoRect = videoContainer.getBoundingClientRect();
 
-    if(parentRect.bottom === 0 && parentRect.top === 0) {
+    if (parentRect.bottom === 0 && parentRect.top === 0) {
       return;
     }
 
@@ -291,31 +301,51 @@ export class ScrollFramerFullComponent implements OnInit {
       }
     } else {
       if (parentRect.bottom < viewportHeight) {
-        onVideoEnd.emit({height: this.CanvasClone.nativeElement.style.height});
+        onVideoEnd.emit({
+          height: this.CanvasClone.nativeElement.style.height,
+        });
         videoContainer.style.position = "absolute";
         videoContainer.style.bottom = 0;
         videoContainer.style.top = "unset";
         scrolled = 0;
-        (document.documentElement.getElementsByTagName("app-header")[0] as HTMLElement).style.display="block";
+        (
+          document.documentElement.getElementsByTagName(
+            "app-header"
+          )[0] as HTMLElement
+        ).style.display = "block";
       } else if (
-        parentRect.bottom - animationRect.height + videoRect.height > viewportHeight
+        parentRect.bottom - animationRect.height + videoRect.height >
+        viewportHeight
       ) {
-        onVideoPrestart.emit({height: this.CanvasClone.nativeElement.style.height});
+        onVideoPrestart.emit({
+          height: this.CanvasClone.nativeElement.style.height,
+        });
         videoContainer.style.position = "absolute";
         videoContainer.style.bottom = "unset";
         videoContainer.style.top = 0;
         scrolled = 0;
-        (document.documentElement.getElementsByTagName("app-header")[0] as HTMLElement).style.display="block";
+        (
+          document.documentElement.getElementsByTagName(
+            "app-header"
+          )[0] as HTMLElement
+        ).style.display = "block";
       } else {
-        onVideoStart.emit({height: this.CanvasClone.nativeElement.style.height});
-        videoContainer.style.position = "fixed";
-        videoContainer.style.bottom = 0;
-        videoContainer.style.top = "unset";
+          onVideoStart.emit({
+            height: this.CanvasClone.nativeElement.style.height,
+          });
+          videoContainer.style.position = "fixed";
+          videoContainer.style.bottom = 0;
+          videoContainer.style.top = "unset";
+          (
+            document.documentElement.getElementsByTagName(
+              "app-header"
+            )[0] as HTMLElement
+          ).style.display = "none";
+
         if (!this.initialScrollPosition) {
           this.initialScrollPosition = scrolled;
         }
         scrolled = scrolled - this.initialScrollPosition;
-        (document.documentElement.getElementsByTagName("app-header")[0] as HTMLElement).style.display="none";
       }
     }
 

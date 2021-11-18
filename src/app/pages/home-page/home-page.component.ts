@@ -108,6 +108,7 @@ export class HomePageComponent implements OnInit {
     this.vennerShortText.nativeElement.style.top = "0px";
 
     this.vennerShortTextMobile.nativeElement.style.position = "relative";
+    this.vennerShortTextMobile.nativeElement.style.bottom = "unset";
   }
 
 
@@ -128,6 +129,7 @@ export class HomePageComponent implements OnInit {
     this.vennerShortText.nativeElement.style.bottom = "0px";
     
     this.vennerShortTextMobile.nativeElement.style.position = "relative";
+    this.vennerShortTextMobile.nativeElement.style.bottom = "unset";
   }
 
   inTheViewport(elem): boolean {
