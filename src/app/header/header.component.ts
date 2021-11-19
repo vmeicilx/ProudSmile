@@ -351,27 +351,22 @@ export class HeaderComponent implements OnInit {
 
         if (val.url === "/GeneralAndPreventiveCare") {
           this.setActiveSubheader3(0);
-          this.setActiveSubheader2(6);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/DVA") {
           this.setActiveSubheader3(1);
-          this.setActiveSubheader2(7);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/MedicareChildBenefitScheme") {
           this.setActiveSubheader3(2);
-          this.setActiveSubheader2(8);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/MouthguardsAndSplints") {
           this.setActiveSubheader3(3);
-          this.setActiveSubheader2(9);
           this.healthText.nativeElement.classList.add("active-text");
         }
         if (val.url === "/DentalEmergency") {
           this.setActiveSubheader3(4);
-          this.setActiveSubheader2(10);
           this.healthText.nativeElement.classList.add("active-text");
         }
 
@@ -565,6 +560,31 @@ export class HeaderComponent implements OnInit {
       this.elRef.nativeElement.children[6].children[1].children[
         index
       ].classList.add("active");
+    } else {
+      this.HealthSecondMenus.nativeElement.style.height = 0;
+      this.HealthSecondMenusArrow.nativeElement.style.transform =
+        "rotate(180deg)";
+      this.HealthSecondParentLine.nativeElement.style.opacity = "0";
+
+      this.HealthSecondMenusFirstText.nativeElement.style.color = "#55311b";
+      this.HealthSecondMenusSecondText.nativeElement.style.color = "#55311b";
+      this.HealthSecondMenusThirdText.nativeElement.style.color = "#55311b";
+      if (index === 0) {
+        this.HealthSecondMenusSeventhText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "General and Preventive Care";
+      } else if (index === 1) {
+        this.HealthSecondMenusEightText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "DVA (Department of Veteren Affairs)";
+      } else if (index === 2) {
+        this.HealthSecondMenusNineText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Medicare Childs Benefit Scheme";
+      } else if (index === 3) {
+        this.HealthSecondMenusTenText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "Mouthguards and Splints";
+      } else if (index === 4) {
+        this.HealthSecondMenusElevenText.nativeElement.style.color = "#565960";
+        this.healthActiveText = "DentalEmergency";
+      }
     }
   }
 

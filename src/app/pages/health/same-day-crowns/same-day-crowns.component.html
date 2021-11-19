@@ -1,5 +1,11 @@
 <div
-  class="padding-chef color-brown background-6 padding-top-bottom-1 margin-top-6"
+  class="
+    padding-chef
+    color-brown
+    background-6
+    padding-top-bottom-1
+    margin-top-6
+  "
 >
   <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
     <div class="width-1">
@@ -15,7 +21,7 @@
   </div>
 </div>
 
-<div
+<!-- <div
   class="color-white padding-chef"
   style="background-color: black; padding-top: 2vw"
   fxLayout="column"
@@ -71,13 +77,45 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div
   class="color-white background-34 padding-top-3 padding-chef"
   fxLayout="column"
   fxLayoutAlign="center center"
 >
+  <div style="width: 100vw">
+    <div class="padding-chef color-white">
+      <div
+        class="center-text margin-bottom-2"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <div class="font-dog libre-regular margin-bottom-4">
+          <p>Beauty made strong</p>
+        </div>
+        <div class="font-medium padding-chef roboto-regular">
+          <p>
+            A dental crown is a “cap” made of porcelain or zirconia that mimics
+            the same shape and colour of a natural tooth. Crowns are recommended
+            when damage or extensive dental work makes a traditional resin
+            filling unusable or too weak and the tooth then needs to be covered
+            with a cap.<br /><br />
+            Crowns are custom-made from high-grade dental ceramic or zirconia
+            which makes them a strong, long-lasting restoration that offer great
+            aesthetic and long-term protection. Because these types of
+            restorations are made outside the mouth they’re subject to stricter
+            quality control since they’re not exposed to variables such as
+            saliva, blood, neighbouring teeth, compared to a normal composite
+            filling.<br /><br />
+            That also means you won’t need to be with your mouth opened for too
+            long as the majority of the work is being handled in our lab while
+            you wait.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
   <div
     class="center-text margin-bottom-2"
     fxLayout="column"
@@ -143,7 +181,12 @@
           <p class="center-text-on-sm">Digital Design</p>
         </div>
         <div
-          class="roboto-regular font-medium center-text-on-sm margin-bottom-1 margin-bottom-on-sm"
+          class="
+            roboto-regular
+            font-medium
+            center-text-on-sm
+            margin-bottom-1 margin-bottom-on-sm
+          "
         >
           <p>
             Once image has been acquired we then begin the process of designing
@@ -176,7 +219,12 @@
           <p class="center-text-on-sm">Robotic Milling</p>
         </div>
         <div
-          class="roboto-regular font-medium center-text-on-sm margin-bottom-1 margin-bottom-on-sm"
+          class="
+            roboto-regular
+            font-medium
+            center-text-on-sm
+            margin-bottom-1 margin-bottom-on-sm
+          "
         >
           <p>
             It’s showtime! Using precision robotic technology a crown is milled
@@ -205,7 +253,12 @@
       <p class="center-text-on-sm">Firing</p>
     </div>
     <div
-      class="roboto-regular font-medium center-text-on-sm margin-bottom-1 margin-bottom-on-sm"
+      class="
+        roboto-regular
+        font-medium
+        center-text-on-sm
+        margin-bottom-1 margin-bottom-on-sm
+      "
     >
       <p>
         The crown now goes through a firing process with temperatures up to 800
@@ -223,6 +276,22 @@
       type="video/mp4"
     />
   </video>
+  <div
+    style="
+      position: absolute;
+      bottom: 4vw;
+      left: 4vw;
+      z-index: 4;
+      cursor: pointer;
+    "
+    (click)="playVideo()"
+  >
+    <img
+      #PlayButton
+      style="width: 128px"
+      src="../../../../assets/healthPage/SameDayCrowns/playVideo.svg"
+    />
+  </div>
   <div class="relative-container" (click)="playVideo()">
     <div>
       <img
@@ -231,7 +300,16 @@
       />
     </div>
     <div
-      class="cursor-pointer absolute-container flexy-row center-text color-white font-large roboto-regular cccc"
+      class="
+        cursor-pointer
+        absolute-container
+        flexy-row
+        center-text
+        color-white
+        font-large
+        roboto-regular
+        cccc
+      "
       style="top: 0; bottom: 0; left: 0; right: 0; margin: auto"
     >
       <p>
@@ -243,7 +321,12 @@
 </div>
 
 <div
-  class="padding-chef color-brown background-15 padding-bottom-1 padding-top-bottom-1"
+  class="
+    padding-chef
+    color-brown
+    background-15
+    padding-bottom-1 padding-top-bottom-1
+  "
   fxLayout="column"
   fxLayoutAlign="center center"
 >
@@ -267,7 +350,13 @@
       <div class="flexy-column margin-right-2 margin-bottom-on-sm cccc">
         <div class="flexy-row">
           <div
-            class="roboto-medium font-medium color-brown opacity-4 margin-bottom-7"
+            class="
+              roboto-medium
+              font-medium
+              color-brown
+              opacity-4
+              margin-bottom-7
+            "
           >
             <p>PRICES START AT ONLY</p>
           </div>
@@ -280,7 +369,13 @@
       <div class="flexy-column margin-right-2 cccc hide-on-sm">
         <div class="vertical-line-1" style="margin-bottom: 8px"></div>
         <div
-          class="roboto-bold font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+          class="
+            roboto-bold
+            font-extra-small
+            color-gray-dark
+            opacity-5
+            margin-bottom-7
+          "
         >
           <p>OR</p>
         </div>
@@ -289,7 +384,13 @@
       <div class="flexy-column cccc margin-bottom-on-sm">
         <div class="flexy-row">
           <div
-            class="roboto-medium font-medium color-brown opacity-4 margin-bottom-7"
+            class="
+              roboto-medium
+              font-medium
+              color-brown
+              opacity-4
+              margin-bottom-7
+            "
           >
             <p>FOR AS LITTLE AS</p>
           </div>
@@ -301,24 +402,28 @@
       </div>
     </div>
     <div
-      class="cursor-pointer roboto-bold font-small-3 margin-bottom-1 relative-container"
+      class="
+        cursor-pointer
+        roboto-bold
+        font-small-3
+        margin-bottom-1
+        relative-container
+      "
       style="z-index: 1"
       fxLayout
       fxLayoutAlign="center center"
       (click)="seeAllFinancial()"
     >
-      <div class="opacity-7">
+      <div class="opacity-8">
         <img
           loading="lazy"
-          src="../../../../assets/healthPage/ClearBraces/CardBrown.svg"
+          src="../../../../assets/healthPage/Invisalign/Smileasy.svg"
         />
       </div>
-      <div class="margin-left-1 opacity-7">
-        <p>On the Smileasy Plan</p>
-      </div>
-      <div class="margin-left-1 opacity-7">
+      <div class="opacity-5" style="margin-left: 16px">
         <img
           loading="lazy"
+          width="24px"
           src="../../../../assets/healthPage/ClearBraces/BrownArrow.svg"
         />
       </div>
@@ -327,16 +432,23 @@
       <img src="../../../../assets/healthPage/Invisalign/wave_1.svg" />
     </div>
   </div>
-  <div class="flexy-row-w cccc" style="max-width: 60vw">
+  <div class="flexy-row-w cccc" style="width: 50vw;">
     <div
-      class="flexy-column flex-1 sscc roboto-regular color-gray-dark margin-bottom-1"
+      class="
+        flexy-column
+        flex-1
+        sscc
+        roboto-regular
+        color-gray-dark
+        margin-bottom-1
+      "
     >
       <div
         class="font-tiger padding-left-4 padding-top-bottom-2 padding-right-4"
       >
         <p>Budget</p>
       </div>
-      <div class="flexy-column background-35 sscc font-small-3">
+      <div class="flexy-column background-35 sscc font-small-3" style="width: 100%;">
         <div class="padding-top-bottom-2 padding-left-4 padding-right-4">
           <p>Available in Porcelain or hybrid porcelain</p>
         </div>
@@ -367,7 +479,14 @@
         >
           <img src="../../../../assets/healthPage/SameDayCrowns/green.svg" />
           <div
-            class="ticket absolute-container color-white roboto-regular flexy-row cccc"
+            class="
+              ticket
+              absolute-container
+              color-white
+              roboto-regular
+              flexy-row
+              cccc
+            "
             style="top: 0; bottom: 0; left: 0; right: 0; margin: auto"
           >
             <p>Up to 100% rebate from Private Health</p>
@@ -376,14 +495,21 @@
       </div>
     </div>
     <div
-      class="flexy-column flex-1 sscc roboto-regular color-gray-dark margin-bottom-1"
+      class="
+        flexy-column
+        flex-1
+        sscc
+        roboto-regular
+        color-gray-dark
+        margin-bottom-1
+      "
     >
       <div
         class="font-tiger padding-left-4 padding-top-bottom-2 padding-right-4"
       >
         <p>Premium</p>
       </div>
-      <div class="flexy-column color-orange background-36 sscc font-small-3">
+      <div class="flexy-column color-orange background-36 sscc font-small-3" style="width: 100%;">
         <div class="padding-top-bottom-2 padding-left-4 padding-right-4">
           <p>Available in Porcelain or Zirconia</p>
         </div>
@@ -415,7 +541,14 @@
         >
           <img src="../../../../assets/healthPage/SameDayCrowns/orange.svg" />
           <div
-            class="ticket absolute-container color-white roboto-regular flexy-row cccc"
+            class="
+              ticket
+              absolute-container
+              color-white
+              roboto-regular
+              flexy-row
+              cccc
+            "
             style="top: 0; bottom: 0; left: 0; right: 0; margin: auto"
           >
             <p>Large rebate from Private Health</p>
@@ -435,7 +568,12 @@
 </div>
 
 <div
-  class="padding-chef color-brown background-1 padding-bottom-1 padding-top-bottom-1"
+  class="
+    padding-chef
+    color-brown
+    background-1
+    padding-bottom-1 padding-top-bottom-1
+  "
   fxLayout="column"
   fxLayoutAlign="center center"
 >
@@ -599,7 +737,13 @@
 </div>
 
 <div
-  class="padding-chef color-white background-12 padding-top-3 relative-container"
+  class="
+    padding-chef
+    color-white
+    background-12
+    padding-top-3
+    relative-container
+  "
 >
   <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
     <div class="libre-regular font-dog margin-bottom-10">
@@ -633,8 +777,8 @@
         class="absolute-container"
         style="
           width: 100vw;
-          border-top: 11px solid black;
-          border-bottom: 11px solid black;
+          border-top: 12px solid black;
+          border-bottom: 12px solid black;
           display: none;
         "
       ></div>
@@ -660,7 +804,7 @@
 </div>
 
 <div class="padding-chef color-brown background-24 padding-top-bottom-1">
-  <div
+  <!-- <div
     class="center-text margin-bottom-2"
     fxLayout="column"
     fxLayoutAlign="center center"
@@ -677,8 +821,8 @@
         solution for certain “gaps”.
       </p>
     </div>
-  </div>
-  <div class="flexy-row margin-bottom-10" style="border: 4px solid #55311b66">
+  </div> -->
+  <!-- <div class="flexy-row margin-bottom-10" style="border: 4px solid #55311b66">
     <div class="flexy-column cccc">
       <div>
         <img
@@ -701,14 +845,14 @@
         <p>INLAY</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <div
     class="center-text margin-bottom-10"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
     <div class="font-dog libre-regular margin-bottom-1">
-      <p>Why Porcelain?</p>
+      <p>What is great about porcelain??</p>
     </div>
   </div>
   <div class="flexy-column margin-bottom-10">
@@ -804,8 +948,15 @@
     <div class="line-3 margin-bottom-1"></div>
   </div>
 
-  <div
-    class="box margin-bottom-2 flexy-column cccc relative-container margin-bottom-10"
+  <!-- <div
+    class="
+      box
+      margin-bottom-2
+      flexy-column
+      cccc
+      relative-container
+      margin-bottom-10
+    "
     style="margin: auto"
   >
     <div class="roboto-bold font-medium margin-bottom-1 margin-top-5">
@@ -815,7 +966,13 @@
       <div class="flexy-column margin-right-2 margin-bottom-on-sm cccc">
         <div class="flexy-row">
           <div
-            class="roboto-medium font-medium color-brown opacity-4 margin-bottom-7"
+            class="
+              roboto-medium
+              font-medium
+              color-brown
+              opacity-4
+              margin-bottom-7
+            "
           >
             <p>FROM</p>
           </div>
@@ -828,7 +985,13 @@
       <div class="flexy-column margin-right-2 cccc hide-on-sm">
         <div class="vertical-line-1" style="margin-bottom: 8px"></div>
         <div
-          class="roboto-bold font-extra-small color-gray-dark opacity-5 margin-bottom-7"
+          class="
+            roboto-bold
+            font-extra-small
+            color-gray-dark
+            opacity-5
+            margin-bottom-7
+          "
         >
           <p>OR</p>
         </div>
@@ -837,7 +1000,13 @@
       <div class="flexy-column cccc margin-bottom-on-sm">
         <div class="flexy-row">
           <div
-            class="roboto-medium font-medium color-brown opacity-4 margin-bottom-7"
+            class="
+              roboto-medium
+              font-medium
+              color-brown
+              opacity-4
+              margin-bottom-7
+            "
           >
             <p>WEEKLY PAYMENT</p>
           </div>
@@ -849,24 +1018,28 @@
       </div>
     </div>
     <div
-      class="cursor-pointer roboto-bold font-small-3 margin-bottom-1 relative-container"
+      class="
+        cursor-pointer
+        roboto-bold
+        font-small-3
+        margin-bottom-1
+        relative-container
+      "
       style="z-index: 1"
       fxLayout
       fxLayoutAlign="center center"
       (click)="seeAllFinancial()"
     >
-      <div class="opacity-7">
+      <div class="opacity-8">
         <img
           loading="lazy"
-          src="../../../../assets/healthPage/ClearBraces/CardBrown.svg"
+          src="../../../../assets/healthPage/Invisalign/Smileasy.svg"
         />
       </div>
-      <div class="margin-left-1 opacity-7">
-        <p>On the Smileasy Plan</p>
-      </div>
-      <div class="margin-left-1 opacity-7">
+      <div class="opacity-5" style="margin-left: 16px">
         <img
           loading="lazy"
+          width="24px"
           src="../../../../assets/healthPage/ClearBraces/BrownArrow.svg"
         />
       </div>
@@ -874,7 +1047,7 @@
     <div class="absolute-container" style="bottom: -10px">
       <img src="../../../../assets/healthPage/Invisalign/wave_1.svg" />
     </div>
-  </div>
+  </div> -->
 
   <div class="flexy-row-w margin-top-bottom-3 sscc full-width">
     <div
@@ -883,8 +1056,8 @@
     <div class="font-wolf color-brown roboto-regular">
       <p class="center-text">
         Not sure a porcelain restoration is right for you?
-        <span class="roboto-bold">Book a Free Mini Consultation</span> and we will
-        assess your case and give you an obligation free quote.
+        <span class="roboto-bold">Book a Free Mini Consultation</span> and we
+        will assess your case and give you an obligation free quote.
       </p>
     </div>
   </div>
@@ -895,9 +1068,9 @@
     <button
       class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
       (click)="
-      goToLink(
-        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-      )
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
       "
     >
       INSTANT ONLINE BOOKING

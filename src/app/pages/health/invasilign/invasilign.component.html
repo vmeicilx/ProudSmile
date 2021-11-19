@@ -1,18 +1,15 @@
 <div
-  class="
-    padding-chef
-    color-brown
-    background-6
-    padding-top-bottom-1
-    margin-top-6
-  "
+  class="padding-chef color-brown padding-top-bottom-1 margin-top-6"
+  style="background-color: #f3fcff"
 >
   <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
     <div class="width-1">
       <img src="../../../assets/Shape.svg" />
     </div>
-    <div class="libre-regular font-large">
-      <p>Invisalign</p>
+    <div>
+      <img
+        src="../../../../assets/healthPage/Invisalign/Invisalign_title.svg"
+      />
     </div>
     <div class="line-7 width-5 margin-top-bottom-3"></div>
     <div class="font-dog libre-regular margin-bottom-4">
@@ -165,6 +162,92 @@
       type="video/mp4"
     />
   </video>
+</div>
+
+<div
+  class="
+    padding-chef
+    color-brown
+    padding-top-bottom-1
+    relative-container
+    flexy-column
+    cccc
+  "
+  style="background: linear-gradient(#ffffff4d, #cad1d64d); padding-bottom:2.6vw;"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w sscc">
+      <div
+        class="sscc margin-right-1 margin-bottom-on-sm lookLike"
+        style="flex: 0 0 560px"
+        fxLayout="column"
+      >
+        <div class="font-dog libre-regular" style="margin-bottom:3vw;">
+          <p class="center-text-on-sm">
+            What could your<br />
+            smile look like with<br />
+            <span class="libre-bold">straighter teeth?</span>
+          </p>
+        </div>
+        <div class="flexy-row" style="margin-bottom:3vw;">
+          <div style="margin-right: 1.5vw;">
+            <img src="../../../../assets/healthPage/Invisalign/phone_qr.svg" />
+          </div>
+          <div class="flexy-column color-orange roboto-bold font-small ssss">
+            <div style="margin-bottom:1vw;">
+              <p>Take a SmileView selfie today</p>
+            </div>
+            <button
+              class="button-11 color-white"
+              (click)="
+                goToLink(
+                  'https://providerbio-apac.invisalign.com/sv/1251234'
+                )
+              "
+            >
+              <img src="../../../assets/contactPage/calendar.svg" />
+              <p>Launch the SmileView Selfie</p>
+            </button>
+          </div>
+        </div>
+        <div class="flexy-column"  style="margin-bottom:6vw;margin-left:2vw;">
+          <div>
+            <img src="../../../../assets/healthPage/Invisalign/qr.svg" />
+          </div>
+          <div style="max-width: 280px;color:#A7958A;" class="roboto-medium font-small-4">
+            <p>
+              Scan the QR code with your phone if you're browsing from your
+              desktop.
+            </p>
+          </div>
+        </div>
+        <div class="flexy-column">
+          <div style="margin-bottom:16px;">
+            <img style="max-width: 180px;"
+              src="../../../../assets/healthPage/Invisalign/Invisalign_provider_logo.png"
+            />
+          </div>
+          <div class="color-brown opacity-7 roboto-medium" style="font-size: 12px;">
+            <p>
+              SmileVlew outcome simulator is a computer-generated simulation of
+              how your smile might look after teeth-straightening treatment. Not
+              avallable for use for people with chipped and/or missing teeth. ©
+              2020 Invisalign Australla Pty Limited.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="gel flex-1 absolute-container"
+        style="width: 62vw; z-index: 1"
+      >
+        <img
+          loading="lazy"
+          src="../../../../assets/healthPage/Invisalign/Invisalign_mobile_ad.png"
+        />
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="padding-chef color-brown background-38 padding-top-bottom-1">
@@ -538,7 +621,10 @@
   </div>
 </div>
 
-<div class="padding-chef color-brown background-24 padding-top-bottom-1">
+<div
+  class="padding-chef color-brown padding-top-bottom-1"
+  style="background-color: rgba(23, 134, 107, 0.1)"
+>
   <div
     class="center-text margin-bottom-2"
     fxLayout="column"
@@ -836,15 +922,13 @@
       <div class="opacity-8">
         <img
           loading="lazy"
-          src="../../../../assets/healthPage/ClearBraces/CardBrown.svg"
+          src="../../../../assets/healthPage/Invisalign/Smileasy.svg"
         />
       </div>
-      <div class="margin-left-1 opacity-8">
-        <p>On the Smileasy Plan</p>
-      </div>
-      <div class="margin-left-1 opacity-5">
+      <div class="opacity-5" style="margin-left: 16px">
         <img
           loading="lazy"
+          width="24px"
           src="../../../../assets/healthPage/ClearBraces/BrownArrow.svg"
         />
       </div>
@@ -860,7 +944,7 @@
       >
         <img
           class="max-width-unset-on-big max-width-unset-on-sm"
-          src="../../../../assets/healthPage/Invisalign/InvisalignGoLogo.png"
+          src="../../../../assets/healthPage/Invisalign/Invis_express.svg"
         />
       </div>
       <div class="font-small-3 color-brown roboto-regular">
@@ -879,7 +963,7 @@
       >
         <img
           class="max-width-unset-on-big max-width-unset-on-sm"
-          src="../../../../assets/healthPage/Invisalign/InvisalignFullLogo.png"
+          src="../../../../assets/healthPage/Invisalign/Invis_lite.svg"
         />
       </div>
       <div class="font-small-3 color-brown roboto-regular">
@@ -905,7 +989,7 @@
       >
         <img
           class="max-width-unset-on-big max-width-unset-on-sm"
-          src="../../../../assets/healthPage/Invisalign/InvisalignTeenLogo.png"
+          src="../../../../assets/healthPage/Invisalign/Invis_moderate.svg"
         />
       </div>
       <div class="font-small-3 color-brown roboto-regular">
@@ -925,7 +1009,7 @@
       >
         <img
           class="max-width-unset-on-big max-width-unset-on-sm"
-          src="../../../../assets/healthPage/Invisalign/InvisalignTeenLogo.png"
+          src="../../../../assets/healthPage/Invisalign/Invis_comprehensive.svg"
         />
       </div>
       <div class="font-small-3 color-brown roboto-regular">

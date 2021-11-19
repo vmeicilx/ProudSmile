@@ -21,6 +21,7 @@ export class SameDayCrownsComponent implements OnInit {
   @ViewChild("marylandVideo") marylandVideo: ElementRef;
   @ViewChild("bridgeMask") bridgeMask: ElementRef;
   @ViewChild("Vulcan") vulcan: ElementRef;
+  @ViewChild("PlayButton") PlayButton: ElementRef;
   @Output() onVulcanPresent: EventEmitter<any> = new EventEmitter();
 
   vulcanOn: boolean;
@@ -48,19 +49,19 @@ export class SameDayCrownsComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.vulcan.nativeElement)) {
-      if (!this.vulcanOn) {
-        this.onVulcanPresent.emit(true);
-        this.vulcanOn = true;
-        this.data.changeMessage("true");
-      }
-    } else {
-      if (this.vulcanOn) {
-        this.onVulcanPresent.emit(false);
-        this.vulcanOn = false;
-        this.data.changeMessage("false");
-      }
-    }
+    // if (this.inTheViewport(this.vulcan.nativeElement)) {
+    //   if (!this.vulcanOn) {
+    //     this.onVulcanPresent.emit(true);
+    //     this.vulcanOn = true;
+    //     this.data.changeMessage("true");
+    //   }
+    // } else {
+    //   if (this.vulcanOn) {
+    //     this.onVulcanPresent.emit(false);
+    //     this.vulcanOn = false;
+    //     this.data.changeMessage("false");
+    //   }
+    // }
 
     if (this.inTheViewport(this.bridgeVideo.nativeElement)) {
       if (this.bridgeVideo.nativeElement.paused) {
@@ -87,8 +88,7 @@ export class SameDayCrownsComponent implements OnInit {
   onResize(event) {
     if (this.bridgeVideo) {
       this.bridgeMask.nativeElement.style.height =
-        this.bridgeVideo.nativeElement.getBoundingClientRect().height -
-        22 +
+        this.bridgeVideo.nativeElement.getBoundingClientRect().height +
         "px";
     }
   }
@@ -141,6 +141,6 @@ export class SameDayCrownsComponent implements OnInit {
   bridgeLoaded() {
     this.bridgeMask.nativeElement.style.display = "block";
     this.bridgeMask.nativeElement.style.height =
-      this.bridgeVideo.nativeElement.getBoundingClientRect().height - 22 + "px";
+      this.bridgeVideo.nativeElement.getBoundingClientRect().height + "px";
   }
 }

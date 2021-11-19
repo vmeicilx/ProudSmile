@@ -26,6 +26,11 @@
     margin-top: auto;
   }
   @media only screen and (min-width: 1201px) {
+    
+    .gel {
+      bottom: 0;
+      right: 0;
+    }
     .steps {
       max-width: 300px;
       p {
@@ -44,9 +49,20 @@
     .box {
       width: 80vw;
     }
+    .gel {
+      bottom: 0;
+      right: -5%;
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .lookLike {
+      margin-bottom:50vw;
+    }
+    .gel {
+      bottom: 0;
+      right: -5%;
+    }
     .box {
       width: 90vw;
     }
