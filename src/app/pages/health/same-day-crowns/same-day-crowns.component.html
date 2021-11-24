@@ -1,13 +1,10 @@
 <div
   class="
-    padding-chef
     color-brown
     background-6
-    padding-top-bottom-1
-    margin-top-6
   "
 >
-  <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
+  <div class="center-text padding-chef padding-top-3 margin-top-6" fxLayout="column" fxLayoutAlign="center center">
     <div class="width-1">
       <img src="../../../assets/Shape.svg" />
     </div>
@@ -18,6 +15,41 @@
       </p>
     </div>
     <div class="line-7 width-5 margin-top-bottom-3"></div>
+  </div>
+  <div style="width: 100vw">
+    <div class="padding-chef">
+      <div
+        class="center-text margin-bottom-2"
+        fxLayout="column"
+        fxLayoutAlign="center center"
+      >
+        <div class="font-dog libre-regular margin-bottom-4">
+          <p>Beauty made strong</p>
+        </div>
+        <div class="font-medium padding-chef roboto-regular">
+          <p>
+            A dental crown is a “cap” made of porcelain or zirconia that mimics
+            the same shape and colour of a natural tooth. Crowns are recommended
+            when damage or extensive dental work makes a traditional resin
+            filling unusable or too weak and the tooth then needs to be covered
+            with a cap.<br /><br />
+            Crowns are custom-made from high-grade dental ceramic or zirconia
+            which makes them a strong, long-lasting restoration that offer great
+            aesthetic and long-term protection. Because these types of
+            restorations are made outside the mouth they’re subject to stricter
+            quality control since they’re not exposed to variables such as
+            saliva, blood, neighbouring teeth, compared to a normal composite
+            filling.<br /><br />
+            That also means you won’t need to be with your mouth opened for too
+            long as the majority of the work is being handled in our lab while
+            you wait.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img src="../../../../assets/healthPage/SameDayCrowns/dinte.png"/>
   </div>
 </div>
 
@@ -84,38 +116,6 @@
   fxLayout="column"
   fxLayoutAlign="center center"
 >
-  <div style="width: 100vw">
-    <div class="padding-chef color-white">
-      <div
-        class="center-text margin-bottom-2"
-        fxLayout="column"
-        fxLayoutAlign="center center"
-      >
-        <div class="font-dog libre-regular margin-bottom-4">
-          <p>Beauty made strong</p>
-        </div>
-        <div class="font-medium padding-chef roboto-regular">
-          <p>
-            A dental crown is a “cap” made of porcelain or zirconia that mimics
-            the same shape and colour of a natural tooth. Crowns are recommended
-            when damage or extensive dental work makes a traditional resin
-            filling unusable or too weak and the tooth then needs to be covered
-            with a cap.<br /><br />
-            Crowns are custom-made from high-grade dental ceramic or zirconia
-            which makes them a strong, long-lasting restoration that offer great
-            aesthetic and long-term protection. Because these types of
-            restorations are made outside the mouth they’re subject to stricter
-            quality control since they’re not exposed to variables such as
-            saliva, blood, neighbouring teeth, compared to a normal composite
-            filling.<br /><br />
-            That also means you won’t need to be with your mouth opened for too
-            long as the majority of the work is being handled in our lab while
-            you wait.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
   <div
     class="center-text margin-bottom-2"
     fxLayout="column"
@@ -276,22 +276,6 @@
       type="video/mp4"
     />
   </video>
-  <div
-    style="
-      position: absolute;
-      bottom: 4vw;
-      left: 4vw;
-      z-index: 4;
-      cursor: pointer;
-    "
-    (click)="playVideo()"
-  >
-    <img
-      #PlayButton
-      style="width: 128px"
-      src="../../../../assets/healthPage/SameDayCrowns/playVideo.svg"
-    />
-  </div>
   <div class="relative-container" (click)="playVideo()">
     <div>
       <img
@@ -312,10 +296,35 @@
       "
       style="top: 0; bottom: 0; left: 0; right: 0; margin: auto"
     >
-      <p>
-        Curious?<br />
-        <span class="roboto-bold">See it for yourself.</span>
-      </p>
+      <div class="relative-container">
+        <p>
+          Curious?<br />
+          <span class="roboto-bold">See it for yourself.</span>
+        </p>
+        <div
+          style="
+            position: absolute;
+            bottom: -35%;
+            left: 40%;
+            z-index: 4;
+            cursor: pointer;
+          "
+          class="flexy-row cccc"
+          (click)="playVideo()"
+        >
+          <div>
+            <img
+              #PlayButton
+              style="width: 48px"
+              src="../../../../assets/homePage/videoPlay.png"
+            />
+          </div>
+          <p style="padding-left:16px; text-align: start;" class="roboto-bold font-extra-small">
+            Watch<br />
+            the video
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -432,7 +441,7 @@
       <img src="../../../../assets/healthPage/Invisalign/wave_1.svg" />
     </div>
   </div>
-  <div class="flexy-row-w cccc" style="width: 50vw;">
+  <div class="flexy-row-w cccc" style="width: 50vw">
     <div
       class="
         flexy-column
@@ -448,7 +457,10 @@
       >
         <p>Budget</p>
       </div>
-      <div class="flexy-column background-35 sscc font-small-3" style="width: 100%;">
+      <div
+        class="flexy-column background-35 sscc font-small-3"
+        style="width: 100%"
+      >
         <div class="padding-top-bottom-2 padding-left-4 padding-right-4">
           <p>Available in Porcelain or hybrid porcelain</p>
         </div>
@@ -509,7 +521,10 @@
       >
         <p>Premium</p>
       </div>
-      <div class="flexy-column color-orange background-36 sscc font-small-3" style="width: 100%;">
+      <div
+        class="flexy-column color-orange background-36 sscc font-small-3"
+        style="width: 100%"
+      >
         <div class="padding-top-bottom-2 padding-left-4 padding-right-4">
           <p>Available in Porcelain or Zirconia</p>
         </div>
