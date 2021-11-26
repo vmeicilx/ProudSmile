@@ -89,13 +89,28 @@
   }
   .calculate {
     border-radius: 37px;
-    background: $color-orange;
+    background: #CCCCCC;
     border: 0;
     outline: none;
   }
   .book1 {
     border-radius: 37px;
-    background: $color-orange;
+    background:#E6437B;
+    padding: 24px 48px;
+    border: 0;
+    outline: none;
+  }
+  
+  .book-green {
+    border-radius: 37px;
+    background:#03AFAA;
+    padding: 24px 24px;
+    border: 0;
+    outline: none;
+  }
+  .book-blue {
+    border-radius: 37px;
+    background:#0299D8;
     padding: 24px 24px;
     border: 0;
     outline: none;
@@ -167,9 +182,6 @@
   @media only screen and (min-width: 1900px) {
     .lady-container {
       width: 100%;
-      img {
-        width: 100%;
-      }
     }
   }
 

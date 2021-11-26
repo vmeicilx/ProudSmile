@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="300px" height="122px" viewBox="0 0 300 122" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>57D5EA92-93EA-4E4B-9984-3515DD9C6708</title>
+<svg width="332px" height="122px" viewBox="0 0 332 122" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>9E8BFB28-AAE0-4D7E-B0E3-3144D288B287</title>
     <defs>
-        <path d="M39.1709153,86 C30.7623957,86 26.7126695,70.9852233 25.0309655,77.538354 C23.3492616,84.0914847 -10.284817,87.3680501 3.16881444,84.0914847 C12.1379021,81.9071078 16.6528888,70.5258045 16.7137747,49.9475748 C16.585073,41.2213817 16.5164321,34.3661611 16.5078519,29.381913 L16.5070348,28.6826052 C16.5068986,28.4537452 16.5068986,28.2291278 16.5070348,28.0087529 L16.5078519,27.360356 C16.5164321,22.9106715 16.585073,20.3319594 16.7137747,19.6242199 C16.7380889,19.4905146 16.8333228,19.3782886 16.9994765,19.287542 L17,17.9400006 C17,8.03201186 25.0320119,-1.82006801e-15 34.9400006,0 L34.9400006,0 L250.059999,0 C259.967988,1.82006801e-15 268,8.03201186 268,17.9400006 L268,17.9400006 L268,68.0599994 C268,77.9679881 259.967988,86 250.059999,86 L250.059999,86 Z" id="path-1"></path>
-        <filter x="-10.3%" y="-30.8%" width="120.5%" height="164.0%" filterUnits="objectBoundingBox" id="filter-2">
+        <path d="M39.1709153,86 C30.7623957,86 26.7126695,70.9852233 25.0309655,77.538354 C23.3492616,84.0914847 -10.284817,87.3680501 3.16881444,84.0914847 C12.1379021,81.9071078 16.6528888,70.5258045 16.7137747,49.9475748 C16.585073,41.2213817 16.5164321,34.3661611 16.5078519,29.381913 L16.5070348,28.6826052 C16.5068986,28.4537452 16.5068986,28.2291278 16.5070348,28.0087529 L16.5078519,27.360356 C16.5164321,22.9106715 16.585073,20.3319594 16.7137747,19.6242199 C16.7380889,19.4905146 16.8333228,19.3782886 16.9994765,19.287542 L17,17.9400006 C17,8.03201186 25.0320119,-3.70203152e-14 34.9400006,0 L34.9400006,0 L282.059999,0 C291.967988,1.82006801e-15 300,8.03201186 300,17.9400006 L300,17.9400006 L300,68.0599994 C300,77.9679881 291.967988,86 282.059999,86 L282.059999,86 Z" id="path-1"></path>
+        <filter x="-9.2%" y="-30.8%" width="118.3%" height="164.0%" filterUnits="objectBoundingBox" id="filter-2">
             <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
             <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
             <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.141176471 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
@@ -22,14 +22,14 @@
         </filter>
     </defs>
     <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.900000036">
-        <g id="Smileeasy-Payment-Plan" transform="translate(-370.000000, -6100.000000)">
+        <g id="Smileeasy-Payment-Plan" transform="translate(-403.000000, -5754.000000)">
             <g id="Online-Calculator-2" transform="translate(0.000000, 5503.000000)">
                 <g id="Group-24" transform="translate(295.000000, 248.000000)">
                     <g id="Group-15" transform="translate(93.000000, 20.000000)">
-                        <g id="ballon_1" transform="translate(0.000000, 346.000000)">
-                            <g id="bubble_orange" transform="translate(134.000000, 43.000000) scale(-1, 1) translate(-134.000000, -43.000000) translate(0.000000, 0.000000)">
+                        <g id="ballon_1" transform="translate(33.000000, 0.000000)">
+                            <g id="bubble_green" transform="translate(150.000000, 43.000000) scale(-1, 1) translate(-150.000000, -43.000000) ">
                                 <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                                <use fill="#03AFAA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                <use fill="#0299D8" fill-rule="evenodd" xlink:href="#path-1"></use>
                             </g>
                         </g>
                     </g>

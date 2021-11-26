@@ -1,1 +1,19 @@
-<svg height="121.866" viewBox="0 0 929 121.866" width="929" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a" gradientUnits="objectBoundingBox" x2="1" y1=".589" y2=".589"><stop offset="0" stop-color="#f05362"/><stop offset="1" stop-color="#fc8f14"/></linearGradient><path d="m-736.763 121.866h676.763a60 60 0 0 0 60-60 60.132 60.132 0 0 0 -60-60.132l-789-1.734a60.866 60.866 0 0 0 -61 60.866 60.761 60.761 0 0 0 5.568 25.5c-1.377 14.335-5.923 29.383-18.6 32.211-22.8 5.085 26.185 1.022 38.557-8.076a60.681 60.681 0 0 0 23.483 10.191 15.044 15.044 0 0 0 5.778 1.178z" fill="url(#a)" opacity=".7" transform="translate(929)"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="929px" height="160px" viewBox="0 0 929 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Combined Shape</title>
+    <defs>
+        <linearGradient x1="100%" y1="58.8770578%" x2="0%" y2="58.8770578%" id="linearGradient-1">
+            <stop stop-color="#03AFAA" offset="0%"></stop>
+            <stop stop-color="#1AFBF4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.699999988">
+        <g id="Smileeasy-Payment-Plan" transform="translate(-466.000000, -4828.000000)" fill="url(#linearGradient-1)">
+            <g id="How-it-works-2" transform="translate(3.000000, 3960.000000)">
+                <g id="calculation" transform="translate(463.000000, 868.184858)">
+                    <path d="M78.3024863,158.987058 C35.0572173,158.987058 5.29601803e-15,123.929841 0,80.6845716 C-5.30046129e-15,37.4030206 35.0207913,2.28163784 78.3021642,2.15749721 L830.3928,0.000333597478 C874.232719,-0.125409066 909.873931,35.3119332 909.999673,79.1518529 C909.999891,79.2277451 910,79.3036376 910,79.3795302 C910,90.687066 907.642468,101.443971 903.392117,111.185531 C904.345209,136.654877 910.892024,151.156318 923.030814,154.689931 C948.285679,162.041645 885.455879,154.741059 881.883679,140.088847 C878.30953,143.12892 874.458083,145.857059 870.376141,148.232605 C866.449486,153.707247 861.472225,158.987058 855.212628,158.987058 L78.3024863,158.987058 Z" id="Combined-Shape" transform="translate(464.500000, 79.493529) scale(-1, 1) translate(-464.500000, -79.493529) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
