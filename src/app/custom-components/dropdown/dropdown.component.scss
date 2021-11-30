@@ -4,7 +4,8 @@
   .plus-style {
     transition: color 200ms linear, background-color 200ms linear;
     color: $color-gray-dark;
-    background-color: #f2f6f6;
+    // background-color: #f2f6f6;
+    background-color: #015C500D;
     margin-bottom: 4vh;
     .expander .minus {
       display: none;
@@ -13,7 +14,8 @@
   .minus-style {
     transition: color 200ms linear, background-color 200ms linear;
     color: white;
-    background-color: #337c72;
+    background-color: #015C50CC;
+    //background-color: #337c72;
     .expander .plus {
       display: none;
     }
