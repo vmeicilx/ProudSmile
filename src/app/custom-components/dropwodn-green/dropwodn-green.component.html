@@ -1,0 +1,30 @@
+<div
+  class="flexy-row cursor-pointer cccc height-3 roboto-medium font-small-3"
+  [ngClass]="status ? 'minus-style' : 'plus-style'"
+  (click)="onDropDownClick()"
+>
+  <div class="flexy-row cccc padding-subchef">
+    <p>{{ index }}</p>
+  </div>
+  <div class="flexy-row ssss full-width">
+    <p class="left-text">
+      {{ question }}
+    </p>
+  </div>
+  <div class="flexy-row cccc padding-subchef expander">
+    <img
+      class="plus"
+      src="../../../../assets/healthPage/ClearBraces/Plus.svg"
+    />
+    <img
+      class="minus"
+      src="../../../../assets/healthPage/ClearBraces/Minus.svg"
+    />
+  </div>
+</div>
+<div
+  class="flexy-row ssss full-width padding-top-bottom-2 padding-left-1 color-gray-dark roboto-medium font-small-4 response"
+  [ngClass]="status ? 'response-visible' : 'response-hidden'"
+>
+  <ng-content></ng-content>
+</div>

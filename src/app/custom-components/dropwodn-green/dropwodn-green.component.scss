@@ -1,0 +1,31 @@
+@import "../../../proud-smile-style.scss";
+
+:host {
+  .plus-style {
+    transition: color 200ms linear, background-color 200ms linear;
+    color: $color-gray-dark;
+    background-color: #015C500D;
+    margin-bottom: 4vh;
+    .expander .minus {
+      display: none;
+    }
+  }
+  .minus-style {
+    transition: color 200ms linear, background-color 200ms linear;
+    color: white;
+    background-color: #015C50CC;
+    .expander .plus {
+      display: none;
+    }
+  }
+
+  .response {
+    box-sizing: border-box;
+    &.response-hidden {
+      display: none;
+    }
+    &.response-visible {
+      display: block;
+    }
+  }
+}
