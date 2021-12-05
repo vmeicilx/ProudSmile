@@ -100,18 +100,23 @@
     border: 0;
     outline: none;
   }
+  button.onlineBooking {
+    background: white;
+    border-radius: 38px;
+    padding: 12px 32px;
+  }
   
   .book-green {
     border-radius: 37px;
     background:#03AFAA;
-    padding: 24px 24px;
+    padding: 24px 48px;
     border: 0;
     outline: none;
   }
   .book-blue {
     border-radius: 37px;
     background:#0299D8;
-    padding: 24px 24px;
+    padding: 24px 48px;
     border: 0;
     outline: none;
   }

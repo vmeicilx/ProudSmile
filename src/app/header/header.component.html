@@ -215,6 +215,7 @@
   </div>
 </mat-menu>
 <mat-menu class="deposit-menu" #depositMini="matMenu">
+  <button (click)="onDepositClick(0)" mat-menu-item>0$</button>
   <button (click)="onDepositClick(20)" mat-menu-item>20%</button>
   <button (click)="onDepositClick(25)" mat-menu-item>25%</button>
   <button (click)="onDepositClick(30)" mat-menu-item>30%</button>

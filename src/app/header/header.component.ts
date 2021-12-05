@@ -1038,10 +1038,16 @@ export class HeaderComponent implements OnInit {
       ) / 100;
   }
 
-  onDepositClick(value) {
-    this.depositNumber = value;
-    this.input2.nativeElement.value = value + "%";
-    this.doCalculation(this.input1.nativeElement.value);
+  onDepositClick(value) {  
+    if(value === 0) {
+      this.depositNumber = value;
+      this.input2.nativeElement.value = "0$";
+      this.input3.nativeElement.value = this.input1.nativeElement.value;
+    } else {
+      this.depositNumber = value;
+      this.input2.nativeElement.value = value + "%";
+      this.doCalculation(this.input1.nativeElement.value);
+    }
   }
 
   @HostListener("document:mousemove", ["$event"])

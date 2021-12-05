@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-framer-section/scroll-framer-section.component";
 
@@ -90,7 +91,7 @@ export class PorcelainVeneersComponent implements OnInit {
   frames = [];
   framesContent = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -439,6 +440,11 @@ export class PorcelainVeneersComponent implements OnInit {
     let imgHeight = element.height;
     let factor = imgWidth / imgHeight;
     return (width / 100) * window.innerWidth / factor;
+  }
+
+  
+  seeGallery() {
+    this.router.navigate(["/", "BeforeAndAfter"]);
   }
 
 }

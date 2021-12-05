@@ -1,4 +1,5 @@
 <mat-menu class="deposit-menu" #deposit="matMenu">
+  <button (click)="onDepositClick(0)" mat-menu-item>0$</button>
   <button (click)="onDepositClick(20)" mat-menu-item>20%</button>
   <button (click)="onDepositClick(25)" mat-menu-item>25%</button>
   <button (click)="onDepositClick(30)" mat-menu-item>30%</button>
@@ -40,7 +41,10 @@
 </div>
 <div
   class="padding-chef font-dog padding-top-bottom-1"
-  style="background: linear-gradient(0deg, #ffffff91 0%, #E2DDCB91 100%); color:black;"
+  style="
+    background: linear-gradient(0deg, #ffffff91 0%, #e2ddcb91 100%);
+    color: black;
+  "
 >
   <div class="margin-bottom-1">
     <p class="libre-italic">You can Afford it</p>
@@ -77,58 +81,50 @@
           needs, whether it is a no deposit or low deposit plan, short or long
           term, minimal or no paperwork, you’re guaranteed to find a solution
           that best fits your situation, we do all the work for you.
-          <br /><br /> Once the
-          payment plan is in place treatment starts immediately and there’s no
-          more financial transactions to make, we can just concentrate on
-          getting your oral health or aesthetics to its best shape.
+          <br /><br />
+          Once the payment plan is in place treatment starts immediately and
+          there’s no more financial transactions to make, we can just
+          concentrate on getting your oral health or aesthetics to its best
+          shape.
         </p>
       </div>
     </div>
   </div>
-  <div class="flexy-row" style="padding-top:4vw;">
-    <div style="padding:0 4vw;">
-      <img src="../../../assets/SmileasyPaymentPlan/humm.png"/>
+  <div class="flexy-row" style="padding-top: 4vw">
+    <div style="padding: 0 4vw">
+      <img src="../../../assets/SmileasyPaymentPlan/humm.png" />
     </div>
-    <div style="padding:0 4vw;">
-      <img src="../../../assets/SmileasyPaymentPlan/denticare.png"/>
+    <div style="padding: 0 4vw">
+      <img src="../../../assets/SmileasyPaymentPlan/denticare.png" />
     </div>
-    <div style="padding:0 4vw;">
-      <img src="../../../assets/SmileasyPaymentPlan/zipBlack.png"/>
+    <div style="padding: 0 4vw">
+      <img src="../../../assets/SmileasyPaymentPlan/zipBlack.png" />
     </div>
-    <div style="padding:0 4vw;">
-      <img src="../../../assets/SmileasyPaymentPlan/afterPayBlack.png"/>
+    <div style="padding: 0 4vw">
+      <img src="../../../assets/SmileasyPaymentPlan/afterPayBlack.png" />
     </div>
   </div>
-
 </div>
 
-<div class="color-brown flexy-row" style="background:  linear-gradient(0deg, #ffffff1A 0%, #0299D81A 100%);">
+<div
+  class="color-brown flexy-row"
+  style="background: linear-gradient(0deg, #ffffff1a 0%, #0299d81a 100%)"
+>
   <div
-    class="
-      spp
-      sscc
-      no-margin-on-sm
-      margin-bottom-on-sm
-      padding-top-bottom-1
-    "
-    style="margin-left: 13vw; margin-right: 4vw;"
+    class="spp sscc no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1"
+    style="margin-left: 13vw; margin-right: 4vw"
     fxLayout="column"
   >
     <div class="font-dog libre-regular margin-bottom-1">
-      <p class="center-text-on-sm" style="color:black;">
+      <p class="center-text-on-sm" style="color: black">
         Smileasy<br /><span class="libre-italic">Payment Plan</span>
       </p>
     </div>
     <div
-      class="
-        roboto-regular
-        font-regular
-        color-gray-dark
-        font-lion
-      "
-      style="margin-bottom:3vw;"
+      class="roboto-regular font-regular color-gray-dark font-lion"
+      style="margin-bottom: 3vw"
     >
-      <p class="center-text-on-sm"style="color:#03AFAA;">Why is it so easy?</p>
+      <p class="center-text-on-sm" style="color: #03afaa">Why is it so easy?</p>
     </div>
     <div
       class="
@@ -146,7 +142,7 @@
         <p class="left-text">Options from no deposit or small deposit</p>
       </div>
     </div>
-    <div class="line-3 full-width" style="margin:1.25vw 0px"></div>
+    <div class="line-3 full-width" style="margin: 1.25vw 0px"></div>
     <div
       class="
         align-self-start
@@ -163,7 +159,7 @@
         <p class="left-text">No minimum amount</p>
       </div>
     </div>
-    <div class="line-3 full-width" style="margin:1.25vw 0px"></div>
+    <div class="line-3 full-width" style="margin: 1.25vw 0px"></div>
     <div
       class="
         align-self-start
@@ -180,7 +176,7 @@
         <p class="left-text">Terms up to 24 months</p>
       </div>
     </div>
-    <div class="line-3 full-width" style="margin:1.25vw 0px"></div>
+    <div class="line-3 full-width" style="margin: 1.25vw 0px"></div>
     <div
       class="
         align-self-start
@@ -197,7 +193,7 @@
         <p class="left-text">Minimal or no paperwork</p>
       </div>
     </div>
-    <div class="line-3 full-width" style="margin:1.25vw 0px"></div>
+    <div class="line-3 full-width" style="margin: 1.25vw 0px"></div>
     <div
       class="
         align-self-start
@@ -214,7 +210,7 @@
         <p class="left-text">Simplified or No assessment</p>
       </div>
     </div>
-    <div class="line-3 full-width" style="margin:1.25vw 0px"></div>
+    <div class="line-3 full-width" style="margin: 1.25vw 0px"></div>
     <div
       class="
         align-self-start
@@ -242,14 +238,17 @@
   </div>
 </div>
 
-<div class="flexy-column padding-chef padding-top-bottom-1" style="background:  linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%);">
+<div
+  class="flexy-column padding-chef padding-top-bottom-1"
+  style="background: linear-gradient(0deg, #ffffff1a 0%, #03afaa1a 100%)"
+>
   <div
     fxLayout="column"
     fxLayoutAlign="center center"
     class="font-large libre-regular center-text color-brown margin-bottom-10"
     style="top: 0"
   >
-    <p style="color:black">
+    <p style="color: black">
       How does <br />
       <span class="libre-italic">Smileasy Work?</span>
     </p>
@@ -376,7 +375,7 @@
         <p class="roboto-bold">Calculation</p>
         <p class="roboto-regular left-text hide-on-sm">
           Treatment plan is provided, we find the best payment
-        <br/>
+          <br />
           plan structure for you.
         </p>
       </div>
@@ -413,7 +412,7 @@
         <p class="roboto-bold">Calculation</p>
         <p class="roboto-regular left-text hide-on-sm">
           Treatment plan is provided, we find the best payment
-        <br/>
+          <br />
           plan structure for you.
         </p>
       </div>
@@ -489,18 +488,16 @@
 
 <div
   class="padding-chef color-brown padding-top-bottom-1 flexy-column cccc"
-  style="background: linear-gradient(0deg, #ffffff33 0%, #0299D833 100%); color:black;"
+  style="
+    background: linear-gradient(0deg, #ffffff33 0%, #0299d833 100%);
+    color: black;
+  "
 >
   <div fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w sscc">
       <div
-        class="
-          margin-right-1
-          flex-1
-          margin-bottom-on-sm
-          no-margin-right-on-sm
-          relative-container
-        "
+        class="margin-bottom-on-sm no-margin-right-on-sm relative-container"
+        style="margin-right: 6vw"
       >
         <img
           loading="lazy"
@@ -556,7 +553,8 @@
         </div>
         <div class="roboto-regular font-medium margin-bottom-6">
           <p class="center-text-on-sm">
-            Dentistry is not an exact science but numbers are. Please use our calculator below to find out how easy you can afford your treatment.
+            Dentistry is not an exact science but numbers are. Please use our
+            calculator below to find out how easy you can afford your treatment.
           </p>
         </div>
         <div
@@ -1065,7 +1063,7 @@
             </div>
 
             <div class="margin-bottom-8 roboto-regular color-orange font-small">
-              <p class="center-text-on-sm" style="color:#03AFAA;">
+              <p class="center-text-on-sm" style="color: #03afaa">
                 <span class="roboto-bold">20</span> monthly payments<br />
                 of
                 <span class="roboto-bold">${{ monthly }}</span>
@@ -1127,7 +1125,7 @@
             <div
               class="margin-bottom-8 roboto-regular color-green-pale font-small"
             >
-              <p class="center-text-on-sm" style="color:#0299D8">
+              <p class="center-text-on-sm" style="color: #0299d8">
                 <span class="roboto-bold">80</span> weekly payments<br />
                 of
                 <span class="roboto-bold">${{ weekly }}</span>
@@ -1156,8 +1154,14 @@
   </div>
 </div>
 
-<div class="flexy-column padding-captain padding-top-bottom-1" 
-style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:black;">
+<div
+  class="flexy-column padding-chef padding-top-bottom-1"
+  style="
+    background: linear-gradient(0deg, #ffffff1a 0%, #03afaa1a 100%);
+    color: black;
+    padding-bottom: 0;
+  "
+>
   <div
     fxLayout="column"
     fxLayoutAlign="center center"
@@ -1169,77 +1173,81 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
       <span class="libre-italic">Solutions</span>
     </p>
   </div>
-  <div
-    class="flexy-row-w margin-bottom-2"
-    style="justify-content: space-around"
-  >
+  <div class="flexy-row-w" style="justify-content: space-around">
     <div
       class="flexy-column margin-right-2 margin-bottom-on-sm payment-solution"
     >
       <div
-        class="margin-bottom-9 flexy-row"
-        style="align-self: center; height: 89px; align-items: center"
+        class="flexy-row"
+        style="
+          align-self: center;
+          height: 89px;
+          align-items: center;
+          margin-bottom: 3vw;
+        "
       >
         <div>
           <img
             loading="lazy"
-            src="../../../assets/SmileasyPaymentPlan/AfterPay.png"
+            src="../../../assets/healthPage/DentalEmergency/zip.png"
           />
         </div>
       </div>
       <div>
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/PurpleCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
             <p>
-              <span class="roboto-medium color-blue">4 Easy Payments.</span> Pay
-              for your treatment in four interest-free installments (due every
-              two weeks).
+              <span class="roboto-medium" style="color: #aa8fff"
+                >4 Easy Payments.</span
+              >
+              Pay for your treatment in four interest-free installments (due
+              every two weeks).
             </p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/PurpleCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
             <p>
-              <span class="roboto-medium color-blue"
+              <span class="roboto-medium" style="color: #aa8fff"
                 >Nothing Extra to Pay.</span
               >
               Always zero interest, never additional fees when you pay on time.
             </p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
-        <div class="flexy-row margin-bottom-1">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row" style="margin-bottom: 1.25vw">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/PurpleCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 6vw"
           >
             <p>
-              <span class="roboto-medium color-blue"
+              <span class="roboto-medium" style="color: #aa8fff"
                 >Instant Approval Decision.</span
               >
               No long forms. You’ll know if you are approved instantly and your
@@ -1265,88 +1273,98 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
       class="flexy-column margin-right-2 margin-bottom-on-sm payment-solution"
     >
       <div
-        class="margin-bottom-9 flexy-row"
-        style="align-self: center; height: 89px; align-items: center"
+        class="flexy-row"
+        style="
+          align-self: center;
+          height: 89px;
+          align-items: center;
+          margin-bottom: 3vw;
+        "
       >
         <div>
           <img
             loading="lazy"
-            src="../../../assets/SmileasyPaymentPlan/ZIP.png"
+            style="max-width: 188px"
+            src="../../../assets/healthPage/DentalEmergency/afterpay.png"
           />
         </div>
       </div>
       <div>
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/LightGreenCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
             <p>
-              <span class="roboto-medium color-orange-red">Account limit.</span>
+              <span class="roboto-medium" style="color: #21a5a8"
+                >Account limit.</span
+              >
               Under or over $1000
             </p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/LightGreenCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
             <p>
-              <span class="roboto-medium color-orange-red"
+              <span class="roboto-medium" style="color: #21a5a8"
                 >Interest free period.
               </span>
               From 0% interest for 3 months Promotional offers 6-48 months.
             </p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/LightGreenCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
             <p>
-              <span class="roboto-medium color-orange-red"
+              <span class="roboto-medium" style="color: #21a5a8"
                 >Establishment fee.</span
               >
               $0 - $99
             </p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
-        <div class="flexy-row margin-bottom-1">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row" style="margin-bottom: 6vw">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/OrangeCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/LightGreenCheck.svg"
             />
           </div>
           <div
-            class="roboto-regular font-small-3 color-gray-dark margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-regular font-small-3 color-gray-dark"
+            style="line-height: 3.75vh; margin-bottom: 6vw"
           >
             <p>
-              <span class="roboto-medium color-orange-red">Account fee.</span>
+              <span class="roboto-medium" style="color: #21a5a8"
+                >Account fee.</span
+              >
               $6/month waived if you have no balance.
             </p>
           </div>
@@ -1373,18 +1391,19 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
       class="flexy-column margin-right-2 margin-bottom-on-sm payment-solution"
     >
       <div
-        class="margin-bottom-9 flexy-row"
-        style="align-self: center; height: 89px"
+        class="flexy-row"
+        style="align-self: center; height: 89px; margin-bottom: 3vw"
       >
         <div>
           <img
             loading="lazy"
-            src="../../../assets/SmileasyPaymentPlan/HCFCBHS.png"
+            style="max-width: 108px"
+            src="../../../assets/healthPage/DentalEmergency/humm.png"
           />
         </div>
       </div>
       <div>
-        <div
+        <!-- <div
           class="roboto-regular color-gray-dark font-small-3 margin-bottom-1"
           style="line-height: 3.75vh"
         >
@@ -1398,49 +1417,66 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
             for you. We’re preferred providers for <span>HCF</span> and
             <span class="roboto-medium">CBHS</span> which means you’ll receive:
           </p>
-        </div>
+        </div> -->
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/VioletCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/DirtyOrangeCheck.svg"
             />
           </div>
           <div
-            class="roboto-medium font-small-3 color-violet margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-medium font-small-3"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
-            <p>Twice a year Free Dental Check ups</p>
+            <p style="color: #e05741">Options from $0 deposit</p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
         <div class="flexy-row">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/VioletCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/DirtyOrangeCheck.svg"
             />
           </div>
           <div
-            class="roboto-medium font-small-3 color-violet margin-bottom-1"
-            style="line-height: 3.75vh"
+            class="roboto-medium font-small-3"
+            style="line-height: 3.75vh; margin-bottom: 1.25vw"
           >
-            <p>X-rays and Scale and Cleans</p>
+            <p style="color: #e05741">No interest ever</p>
           </div>
         </div>
-        <div class="line-1 opacity-5 margin-bottom-1"></div>
-        <div class="flexy-row margin-bottom-1">
-          <div class="margin-right-3" style="flex: 0 0 28px">
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row" style="margin-bottom: 1.25vw">
+          <div class="margin-right-3" style="flex: 0 0 32px">
             <img
               loading="lazy"
-              src="../../../assets/SmileasyPaymentPlan/VioletCheck.svg"
+              src="../../../assets/SmileasyPaymentPlan/DirtyOrangeCheck.svg"
             />
           </div>
           <div
-            class="roboto-medium font-small-3 color-violet margin-bottom-1"
+            class="roboto-medium font-small-3"
+            style="color: #e05741"
             style="line-height: 3.75vh"
           >
-            <p>An fluoride treatment</p>
+            <p style="color: #e05741">For ‘Little things’ and ‘Big Things’</p>
+          </div>
+        </div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row" style="margin-bottom: 1.25vw">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/DirtyOrangeCheck.svg"
+            />
+          </div>
+          <div
+            class="roboto-medium font-small-3"
+            style="color: #e05741"
+            style="line-height: 3.75vh"
+          >
+            <p style="color: #e05741">Fast and Easy approvals</p>
           </div>
         </div>
       </div>
@@ -1458,13 +1494,128 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
           )
         "
       >
-        INSTANT ONLINE BOOKING
+        APPLY NOW
       </button>
     </div>
   </div>
 
+  <div class="line-16" style="margin-bottom: 6vw; margin-top: 6vw"></div>
+
+  <div class="flexy-row">
+    <div style="margin-right: 4vw">
+      <img
+        style="width: 104vw"
+        src="../../../assets/SmileasyPaymentPlan/CBHS.png"
+      />
+    </div>
+    <div class="flexy-column relative-container">
+      <div
+        class="roboto-regular font-small"
+        style="color: #0299d8; margin-bottom: 2vw"
+      >
+        <p>
+          <span class="roboto-medium"
+            >We accept all major Health Insurances.</span
+          ><br />
+          Claims are maid on the spot using our
+          <span class="roboto-bold">HICAPS</span> machine which means you’ll
+          only need to pay us the gap, all the claiming process will be done for
+          you. We’re preferred participating branches providers for
+          <span class="roboto-bold">HCF, Bupa, Medibank Private</span> and
+          <span class="roboto-bold">CBHS</span> at which means you’ll receive:
+        </p>
+      </div>
+      <div style="color: #0299d8">
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+            />
+          </div>
+          <div class="roboto-medium font-small-3" style="margin-bottom: 1.25vw">
+            <p>Twice a year Free Dental Check ups</p>
+          </div>
+        </div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+            />
+          </div>
+          <div class="roboto-medium font-small-3" style="margin-bottom: 1.25vw">
+            <p>X-rays and Scale and Cleans</p>
+          </div>
+        </div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row" style="margin-bottom: 1.25vw">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img
+              loading="lazy"
+              src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg"
+            />
+          </div>
+          <div class="roboto-medium font-small-3">
+            <p>An fluoride treatment</p>
+          </div>
+        </div>
+      </div>
+      <div style="position: relative; top: -10vw">
+        <div>
+          <img src="../../../assets/SmileasyPaymentPlan/blueLady.png" />
+        </div>
+        <div class="flexy-column color-white" style="position: absolute; bottom:3vw;left:2vw">
+          <div class="roboto-bold font-medium">
+            <p>New Patient?</p>
+          </div>
+          <div class="roboto-medium font-small-3" style="margin-bottom:1vw;">
+            <p>No Gap for all health insurances</p>
+          </div>
+          <div>
+            <button
+              class="onlineBooking fix-text-0"
+              fxLayout
+              fxLayoutAlign="center center"
+              fxLayoutGap="0.5vw"
+              (click)="
+                goToLink(
+                  'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+                )
+              "
+            >
+              <img src="../../../assets/SmileasyPaymentPlan/calendar.svg" />
+              <p class="roboto-medium" style="color:#0299D8">Instant Online Booking</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="flexy-column padding-chef padding-top-bottom-1"
+  style="
+    background: linear-gradient(0deg, #ffffff1a 0%, #03afaa1a 100%);
+    color: black;
+  "
+>
+  <div class="flexy-row cccc" style="margin-bottom: 1.6vw">
+    <div style="margin-right: 1.25vw">
+      <img
+        style="width: 32px"
+        src="../../../assets/SmileasyPaymentPlan/FAQ.svg"
+      />
+    </div>
+    <div class="roboto-regular font-wolf" style="color: #337c72; flex: 1">
+      <p>Frequently Asked Questions</p>
+    </div>
+    <div style="border-top: 1px solid #337c724d; flex: 1.2"></div>
+  </div>
   <div class="flexy-col full-width">
-    <app-dropdown
+    <app-dropwodn-green
       question="What treatments can I use the payment plan?"
       index="01"
     >
@@ -1473,9 +1624,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         and there’s no minimum amount. Our front office coordinators will help
         you find the best product depending on your needs.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="Can I use my Health Insurance and still get a payment plan?"
       index="02"
     >
@@ -1484,9 +1635,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         balance of your plan. You only finance the gap which means lower
         payments and possibly no need for deposits.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="What if I’m an Australian Resident but not a Citizen?"
       index="03"
     >
@@ -1497,9 +1648,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         citizen you’ll be able to apply and get approved even without a credit
         check.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="I am a student or a temporary resident, am I eligible for the payment plan?"
       index="04"
     >
@@ -1507,9 +1658,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         You may be eligible, particularly with Zip or Afterpay. Our front office
         coordinators will be happy to assist.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="My credit rating is not great, can I still apply?"
       index="05"
     >
@@ -1519,9 +1670,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         have a specific lender who’s happy to finance with very low credit
         criteria provided you’re an Australian Citizen.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="I have an emergency, what options are available for me?"
       index="06"
     >
@@ -1534,9 +1685,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         application in our office and we have other options we can offer which
         are not available for online application.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="Are there options with no deposits and longer than 24 months for
       payment?"
       index="07"
@@ -1550,9 +1701,9 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
         for a longer term and then pay us in full, in which case you can take
         advantage of discounts for full payment.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
 
-    <app-dropdown
+    <app-dropwodn-green
       question="I’m thinking about using my Super to pay for dental treatment, what are my options?"
       index="08"
     >
@@ -1570,7 +1721,7 @@ style="background: linear-gradient(0deg, #ffffff1A 0%, #03AFAA1A 100%); color:bl
           >mysupercare.com.au</span
         >.
       </p>
-    </app-dropdown>
+    </app-dropwodn-green>
   </div>
 </div>
 

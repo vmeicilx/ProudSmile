@@ -64,6 +64,7 @@ import { ScrollFramerSectionComponent } from './custom-components/scroll-framer-
 import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-after.component';
 import { ScrollFramerFullComponent } from './custom-components/scroll-framer-full/scroll-framer-full.component';
 import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
+import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropwodn-green.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
     ScrollFramerSectionComponent,
     BeforeAfterComponent,
     ScrollFramerFullComponent,
-    MobileHeaderComponent
+    MobileHeaderComponent,
+    DropwodnGreenComponent
   ],
   imports: [
     BrowserModule,

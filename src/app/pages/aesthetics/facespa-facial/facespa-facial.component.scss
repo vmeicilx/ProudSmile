@@ -1,7 +1,32 @@
 :host {
+  .book3 {
+    border-radius: 37px;
+    background: #E6437B;
+    padding: 24px 36px;
+    border: 0;
+    outline: none;
+    margin-top: auto;
+  }
     @media only screen and (min-width: 1201px) {
         .margin-top-porcelain {
           margin-top:217px;
+        }
+        .lady-text {
+          left: 10%;
+          max-width: 800px;
+        }
+        .lady-image {
+          right: -40%;
+        }
+        .man-text {
+          right: 0%;
+          max-width: 900px;
+        }
+        .man-image {
+          left: -32%;
+          img {
+            max-width: 125%;
+          }
         }
       }
     
@@ -10,12 +35,47 @@
         .margin-top-porcelain {
           margin-top:144px;
         }
+        .lady-text {
+          left: 0;
+        }
+        .lady-image {
+          left: 50vw;
+        }
+        .man-text {
+          right: 0%;
+          top:unset;
+        }
+        .man-image {
+          left: -60%;
+          img {
+            max-width: 220%;
+          }
+        }
+        .pc {
+          max-width:70%;
+          margin: auto;
+        }
       }
     
       @media only screen and (min-width: 300px) and (max-width: 600px) {
     
         .margin-top-porcelain {
           margin-top:144px;
+        }
+        .lady-text {
+          left: 0;
+        }
+        .lady-image {
+          left: 100vw;
+        }
+        .man-text {
+          left: 0;
+        }
+        .man-image {
+          left: -600px;
+          img {
+            max-width: 400%;
+          }
         }
       }
     }

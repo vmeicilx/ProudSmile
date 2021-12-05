@@ -173,7 +173,10 @@
     flexy-column
     cccc
   "
-  style="background: linear-gradient(#ffffff4d, #cad1d64d); padding-bottom:2.6vw;"
+  style="
+    background: linear-gradient(#ffffff4d, #cad1d64d);
+    padding-bottom: 2.6vw;
+  "
 >
   <div fxLayout="column" fxLayoutAlign="center center">
     <div class="flexy-row-w sscc">
@@ -182,27 +185,25 @@
         style="flex: 0 0 560px"
         fxLayout="column"
       >
-        <div class="font-dog libre-regular" style="margin-bottom:3vw;">
+        <div class="font-dog libre-regular" style="margin-bottom: 3vw">
           <p class="center-text-on-sm">
             What could your<br />
             smile look like with<br />
             <span class="libre-bold">straighter teeth?</span>
           </p>
         </div>
-        <div class="flexy-row" style="margin-bottom:3vw;">
-          <div style="margin-right: 1.5vw;">
+        <div class="flexy-row" style="margin-bottom: 3vw">
+          <div style="margin-right: 1.5vw">
             <img src="../../../../assets/healthPage/Invisalign/phone_qr.svg" />
           </div>
           <div class="flexy-column color-orange roboto-bold font-small ssss">
-            <div style="margin-bottom:1vw;">
+            <div style="margin-bottom: 1vw">
               <p>Take a SmileView selfie today</p>
             </div>
             <button
               class="button-11 color-white"
               (click)="
-                goToLink(
-                  'https://providerbio-apac.invisalign.com/sv/1251234'
-                )
+                goToLink('https://providerbio-apac.invisalign.com/sv/1251234')
               "
             >
               <img src="../../../assets/contactPage/calendar.svg" />
@@ -210,11 +211,14 @@
             </button>
           </div>
         </div>
-        <div class="flexy-column"  style="margin-bottom:6vw;margin-left:2vw;">
+        <div class="flexy-column" style="margin-bottom: 6vw; margin-left: 2vw">
           <div>
             <img src="../../../../assets/healthPage/Invisalign/qr.svg" />
           </div>
-          <div style="max-width: 280px;color:#A7958A;" class="roboto-medium font-small-4">
+          <div
+            style="max-width: 280px; color: #a7958a"
+            class="roboto-medium font-small-4"
+          >
             <p>
               Scan the QR code with your phone if you're browsing from your
               desktop.
@@ -222,12 +226,16 @@
           </div>
         </div>
         <div class="flexy-column">
-          <div style="margin-bottom:16px;">
-            <img style="max-width: 180px;"
+          <div style="margin-bottom: 16px">
+            <img
+              style="max-width: 180px"
               src="../../../../assets/healthPage/Invisalign/Invisalign_provider_logo.png"
             />
           </div>
-          <div class="color-brown opacity-7 roboto-medium" style="font-size: 12px;">
+          <div
+            class="color-brown opacity-7 roboto-medium"
+            style="font-size: 12px"
+          >
             <p>
               SmileVlew outcome simulator is a computer-generated simulation of
               how your smile might look after teeth-straightening treatment. Not
@@ -1036,7 +1044,7 @@
         </p>
       </div>
     </div>
-    <div class="flexy-row-w margin-bottom-2 sscc full-width">
+    <div class="flexy-row-w sscc full-width">
       <div
         class="logos margin-right-1 no-margin-right-on-sm margin-bottom-on-sm"
       ></div>
@@ -1058,128 +1066,132 @@
       </button>
     </div>
   </div>
-  <div fxLayout="column" fxLayoutAlign="center center" class="full-width">
-    <div class="flexy-col full-width">
-      <app-dropdown
-        question="What do Invisalign aligners look like?"
-        index="01"
-      >
-        <p class="left-text">
-          Invisalign aligners look similar to clear retainers, teeth-whitening
-          trays, or gum shields. A series of Invisalign aligners are custom-made
-          for you and each aligner will contain the patient identification
-          number (PID number) and the Invisalign logo.
-        </p>
-      </app-dropdown>
+</div>
 
-      <app-dropdown question="How long will treatment take?" index="02">
-        <p class="left-text">
-          The length of your treatment will depend on your specific needs and
-          will be determined by your doctor. The average treatment for
-          Invisalign Full or Invisalign Teen is about 12 to 18 months and for
-          Invisalign Go it’s between 2 to 5 months, treatment length may vary
-          depending on each individual case and will need to be determined by
-          the doctor.
-        </p>
-      </app-dropdown>
-
-      <app-dropdown question="Do I need to wear my aligner all day?" index="03">
-        <p class="left-text">
-          You should wear each aligner for 20 to 22 hours a day during your
-          treatment for best results and a timely outcome.
-        </p>
-      </app-dropdown>
-
-      <app-dropdown
-        question="How often do I need to see my doctor during my Invisalign Treatment?"
-        index="04"
-      >
-        <p class="left-text">
-          You will visit your doctor for a check approximately every 6-8 weeks
-          to see how your treatment is progressing. During your check-ups, your
-          Invisalign-trained doctor will check that the aligners are fitting
-          well and make any adjustments if necessary, more aligners are then
-          provided.
-        </p>
-      </app-dropdown>
-
-      <app-dropdown
-        question="How often should I change my aligners?"
-        index="05"
-      >
-        <p class="left-text">
-          You will usually change your aligners every week. However, please
-          follow your Invisalign-trained doctor’s specific instructions
-          regarding when you need to change your aligners as this may vary
-          between patients.
-        </p>
-      </app-dropdown>
-      <app-dropdown
-        question="How long before I start seeing results?"
-        index="06"
-      >
-        <p class="left-text">
-          Results with Invisalign Full usually start showing a few months after
-          starting treatment and for Invisalign Go usually after 4 weeks. You
-          can now download the Invisalign App from the Apple store or Google
-          Play and you can monitor results on your phone.
-        </p>
-      </app-dropdown>
-      <app-dropdown
-        question="Does my health insurance cover INvisalign?"
-        index="07"
-      >
-        <p class="left-text">
-          Yes, most insurances will cover Aligner Therapy if you have
-          orthodontics on your package. Claims are usually made over 2 years.
-          Depending on your rebate we can use that towards a payment plan if you
-          choose to use that to pay for your treatment.
-        </p>
-      </app-dropdown>
-      <app-dropdown
-        question="Will wearing aligners affect my speech?"
-        index="08"
-      >
-        <p class="left-text">
-          Similar to other orthodontic treatments, the Invisalign aligners may
-          temporarily affect the speech of some people for a day or two.
-          However, as your tongue gets used to having aligners in your mouth,
-          any misarticulation or minor speech impediment caused by the aligners
-          should disappear.
-        </p>
-      </app-dropdown>
-      <app-dropdown question="Is Invisalign Treatment painful?" index="09">
-        <p class="left-text">
-          While Invisalign treatment may move your teeth without the pain and
-          anxiety of other straightening methods, some people might experience
-          temporary, minor discomfort for a few days at the beginning of each
-          new stage of treatment. This is normal and is typically described as a
-          feeling of pressure. It's a sign that the Invisalign aligners are
-          sequentially moving your teeth to their final positions. This
-          discomfort usually goes away a couple of days after you insert the new
-          aligner in the series.
-        </p>
-      </app-dropdown>
-      <app-dropdown question="Can I wear aligners if I’m pregnant?" index="10">
-        <p class="left-text">
-          The aligners are made of non-toxic, medical-grade plastic and can be
-          worn during pregnancy. If you are concerned, please consult your
-          healthcare professional.
-        </p>
-      </app-dropdown>
-      <app-dropdown
-        question="Are there any restrictions on what I can eat during treatment?"
-        index="11"
-      >
-        <p class="left-text">
-          No, you can usually eat what you want while in treatment because the
-          Invisalign aligners are removed when eating or drinking. Thus, there’s
-          no need to refrain from your favourite foods and drinks unless
-          instructed by your doctor. However, it’s recommended that you floss
-          and brush your teeth after each meal and prior to re-inserting your
-          aligners to maintain proper oral hygiene.
-        </p>
-      </app-dropdown>
+<div
+  class="flexy-column padding-chef padding-top-bottom-1"
+  style="
+    background: linear-gradient(0deg, #ffffff1a 0%, #03afaa1a 100%);
+    color: black;
+  "
+>
+  <div class="flexy-row cccc" style="margin-bottom: 1.6vw">
+    <div style="margin-right: 1.25vw">
+      <img
+        style="width: 32px"
+        src="../../../../assets/SmileasyPaymentPlan/FAQ.svg"
+      />
     </div>
+    <div class="roboto-regular font-wolf" style="color: #337c72; flex: 1">
+      <p>Frequently Asked Questions</p>
+    </div>
+    <div style="border-top: 1px solid #337c724d; flex: 1.2"></div>
+  </div>
+  <div class="flexy-col full-width">
+    <app-dropdown question="What do Invisalign aligners look like?" index="01">
+      <p class="left-text">
+        Invisalign aligners look similar to clear retainers, teeth-whitening
+        trays, or gum shields. A series of Invisalign aligners are custom-made
+        for you and each aligner will contain the patient identification number
+        (PID number) and the Invisalign logo.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown question="How long will treatment take?" index="02">
+      <p class="left-text">
+        The length of your treatment will depend on your specific needs and will
+        be determined by your doctor. The average treatment for Invisalign Full
+        or Invisalign Teen is about 12 to 18 months and for Invisalign Go it’s
+        between 2 to 5 months, treatment length may vary depending on each
+        individual case and will need to be determined by the doctor.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown question="Do I need to wear my aligner all day?" index="03">
+      <p class="left-text">
+        You should wear each aligner for 20 to 22 hours a day during your
+        treatment for best results and a timely outcome.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown
+      question="How often do I need to see my doctor during my Invisalign Treatment?"
+      index="04"
+    >
+      <p class="left-text">
+        You will visit your doctor for a check approximately every 6-8 weeks to
+        see how your treatment is progressing. During your check-ups, your
+        Invisalign-trained doctor will check that the aligners are fitting well
+        and make any adjustments if necessary, more aligners are then provided.
+      </p>
+    </app-dropdown>
+
+    <app-dropdown question="How often should I change my aligners?" index="05">
+      <p class="left-text">
+        You will usually change your aligners every week. However, please follow
+        your Invisalign-trained doctor’s specific instructions regarding when
+        you need to change your aligners as this may vary between patients.
+      </p>
+    </app-dropdown>
+    <app-dropdown question="How long before I start seeing results?" index="06">
+      <p class="left-text">
+        Results with Invisalign Full usually start showing a few months after
+        starting treatment and for Invisalign Go usually after 4 weeks. You can
+        now download the Invisalign App from the Apple store or Google Play and
+        you can monitor results on your phone.
+      </p>
+    </app-dropdown>
+    <app-dropdown
+      question="Does my health insurance cover INvisalign?"
+      index="07"
+    >
+      <p class="left-text">
+        Yes, most insurances will cover Aligner Therapy if you have orthodontics
+        on your package. Claims are usually made over 2 years. Depending on your
+        rebate we can use that towards a payment plan if you choose to use that
+        to pay for your treatment.
+      </p>
+    </app-dropdown>
+    <app-dropdown question="Will wearing aligners affect my speech?" index="08">
+      <p class="left-text">
+        Similar to other orthodontic treatments, the Invisalign aligners may
+        temporarily affect the speech of some people for a day or two. However,
+        as your tongue gets used to having aligners in your mouth, any
+        misarticulation or minor speech impediment caused by the aligners should
+        disappear.
+      </p>
+    </app-dropdown>
+    <app-dropdown question="Is Invisalign Treatment painful?" index="09">
+      <p class="left-text">
+        While Invisalign treatment may move your teeth without the pain and
+        anxiety of other straightening methods, some people might experience
+        temporary, minor discomfort for a few days at the beginning of each new
+        stage of treatment. This is normal and is typically described as a
+        feeling of pressure. It's a sign that the Invisalign aligners are
+        sequentially moving your teeth to their final positions. This discomfort
+        usually goes away a couple of days after you insert the new aligner in
+        the series.
+      </p>
+    </app-dropdown>
+    <app-dropdown question="Can I wear aligners if I’m pregnant?" index="10">
+      <p class="left-text">
+        The aligners are made of non-toxic, medical-grade plastic and can be
+        worn during pregnancy. If you are concerned, please consult your
+        healthcare professional.
+      </p>
+    </app-dropdown>
+    <app-dropdown
+      question="Are there any restrictions on what I can eat during treatment?"
+      index="11"
+    >
+      <p class="left-text">
+        No, you can usually eat what you want while in treatment because the
+        Invisalign aligners are removed when eating or drinking. Thus, there’s
+        no need to refrain from your favourite foods and drinks unless
+        instructed by your doctor. However, it’s recommended that you floss and
+        brush your teeth after each meal and prior to re-inserting your aligners
+        to maintain proper oral hygiene.
+      </p>
+    </app-dropdown>
   </div>
 </div>
