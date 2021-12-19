@@ -17,6 +17,10 @@
 
     <div #PorcelainVeneers style="display: none; height:23969px; background-color: black; position: relative;">
 
+      <div #SuggestionButton style="position: fixed; top:80%;left:10%; z-index: 5;">
+        <button (click)="onNextClick()" style="color:white;">Click to move to the next block or scroll down.</button>
+      </div>
+
       <div #TopBackground style="background-color: black; position: relative; z-index:5; width:100vw;">
         <div #TopFade class="background-48" style="position: absolute; bottom:-10vh; height: 11vh; width: 100vw;"></div>
       </div>

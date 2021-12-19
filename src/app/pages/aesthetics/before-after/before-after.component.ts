@@ -462,7 +462,14 @@ public inBet2;
   }
 
   onContactPage() {
-    this.router.navigate(["/", "contact-page-component", true]);
-    window.scrollTo(0, 0);
+    const promise1 = new Promise((resolve, reject) => {
+      this.router.navigate(["/", "contact-page-component"]);
+      resolve("Success!");
+    });
+
+    promise1.then((value) => {
+      var clientForm = document.getElementById("ClientForm");
+      clientForm.scrollIntoView(true);
+    });
   }
 }

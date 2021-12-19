@@ -27,6 +27,11 @@ export class ZoomWhiteningComponent implements OnInit {
   frameStartAnimation: Subject<void> = new Subject<void>();
   frameStopAnimation: Subject<void> = new Subject<void>();
 
+  @ViewChild("SuggestionButton") suggestionButton: ElementRef;
+
+  currentFrame = 0;
+  framePositions = [2000, 3300, 5500, 7100, 9100];
+
   sections = 0;
 
   activeFrameIndex = 0;
@@ -76,7 +81,6 @@ export class ZoomWhiteningComponent implements OnInit {
   renderPresentation()
   {
     let parent = this.presentationView.nativeElement.parentElement.getBoundingClientRect();
-    console.log(parent.top)
     if(parent.top < 0 && parent.top >= -10000)
     {
       this.presentationView.nativeElement.style.position = "fixed";
@@ -103,7 +107,7 @@ export class ZoomWhiteningComponent implements OnInit {
       this.frameStopAnimation.next();
     }
 
-    if(parent.top <= -7000 && parent.top > -10000)
+    if(parent.top <= -8000 && parent.top > -10000)
     {
       this.bookButton.nativeElement.style.position = "fixed";
       this.bookButton.nativeElement.style.display = "block";
@@ -120,6 +124,31 @@ export class ZoomWhiteningComponent implements OnInit {
     else
     {
       this.lastFrame.nativeElement.style.display = "none";
+    }
+    
+    if(window.scrollY < this.framePositions[this.framePositions.length-1]) {
+      this.suggestionButton.nativeElement.style.display = "block";
+    }
+    else {
+      this.suggestionButton.nativeElement.style.display = "none";
+    }
+  }
+
+  setCurrentFrame() {
+    for(var i = 0; i < this.framePositions.length-1; i++)
+    {
+      if(window.scrollY < this.framePositions[0]) {
+        this.currentFrame = 0;
+        break;
+      }
+      if(window.scrollY>=this.framePositions[i] && window.scrollY < this.framePositions[i+1]) {
+        this.currentFrame = i+1;
+        break;
+      }
+      if(window.scrollY >= this.framePositions[this.framePositions.length-1]) {
+        this.currentFrame = this.framePositions.length-1;
+        break;
+      }
     }
   }
   
@@ -182,6 +211,14 @@ export class ZoomWhiteningComponent implements OnInit {
     let imgHeight = element.height;
     let factor = imgWidth / imgHeight;
     return (width / 100) * window.innerWidth / factor;
+  }
+  onNextClick() {
+    this.setCurrentFrame();
+    window.scrollTo({
+      top: this.framePositions[this.currentFrame],
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

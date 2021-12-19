@@ -13,6 +13,9 @@
     <div #AnimContainer style="margin-top: 217px">
   
       <div #Zoom style="display: none; height:10969px; background-color: black; position: relative;">
+        <div #SuggestionButton style="position: fixed; top:20%;left:10%; z-index: 5;">
+          <button (click)="onNextClick()" style="color:white;">Click to move to the next block or scroll down.</button>
+        </div>
   
         <div #PresentationView style="position: relative; z-index:3;">
   
@@ -24,7 +27,7 @@
           <div #SecondFrame style="width:100vw; position:relative; display:none">
             <app-scroll-framer-section #SecondFrameVideo [startAnimation]="frameStartAnimation.asObservable()"
               [stopAnimation]="frameStopAnimation.asObservable()" class="hide-on-phone"
-              urlPattern="../../../../assets/aesthetics/Zoom/Zoom ##id##.jpg" numberOfFrames="495" animationFactor="10000"
+              urlPattern="../../../../assets/aesthetics/Zoom/Zoom ##id##.jpg" numberOfFrames="300" animationFactor="10000"
               padding="3" (onFramesLoaded)="showExploreButton()">
             </app-scroll-framer-section>
           </div>
@@ -32,7 +35,7 @@
         </div>
   
         <div #LastFrame style="display:none; width:100vw; position: absolute; top:10000px; z-index:3;">
-          <img #LastFrameImg (load)="imgLoaded(LastFrameImg)" style="max-width: unset; margin:auto;" src="../../../../assets/aesthetics/Zoom/Zoom 495.jpg" />
+          <img #LastFrameImg (load)="imgLoaded(LastFrameImg)" style="max-width: unset; margin:auto;" src="../../../../assets/aesthetics/Zoom/Zoom 300.jpg" />
         </div>
   
         <div #BookButton

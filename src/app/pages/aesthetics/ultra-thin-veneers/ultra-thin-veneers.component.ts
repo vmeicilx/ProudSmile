@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from "@angular/core";
+import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-framer-section/scroll-framer-section.component";
 
@@ -21,18 +22,22 @@ export class UltraThinVeneersComponent implements OnInit {
   @ViewChild("FirstFrameImg") firstFrameImg: ElementRef;
   @ViewChild("SecondFrameVideo") secondFrameVideo: ScrollFramerSectionComponent;
   @ViewChild("LastFrameImg") lastFrameImg: ScrollFramerSectionComponent;
+  @ViewChild("SuggestionButton") suggestionButton: ElementRef;
 
   frameStartAnimation: Subject<void> = new Subject<void>();
   frameStopAnimation: Subject<void> = new Subject<void>();
 
   sections = 0;
 
+  currentFrame = 0;
+  framePositions = [1400, 3000, 3900, 5200, 5800, 7500, 8900];
+
   activeFrameIndex = 0;
 
   frames = [];
   framesContent = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -104,6 +109,31 @@ export class UltraThinVeneersComponent implements OnInit {
     {
       this.lastFrame.nativeElement.style.display = "none";
     }
+    
+    if(window.scrollY < this.framePositions[this.framePositions.length-1]) {
+      this.suggestionButton.nativeElement.style.display = "block";
+    }
+    else {
+      this.suggestionButton.nativeElement.style.display = "none";
+    }
+  }
+  
+  setCurrentFrame() {
+    for(var i = 0; i < this.framePositions.length-1; i++)
+    {
+      if(window.scrollY < this.framePositions[0]) {
+        this.currentFrame = 0;
+        break;
+      }
+      if(window.scrollY>=this.framePositions[i] && window.scrollY < this.framePositions[i+1]) {
+        this.currentFrame = i+1;
+        break;
+      }
+      if(window.scrollY >= this.framePositions[this.framePositions.length-1]) {
+        this.currentFrame = this.framePositions.length-1;
+        break;
+      }
+    }
   }
   
   setFramesDisplay(blockIndex)
@@ -165,6 +195,18 @@ export class UltraThinVeneersComponent implements OnInit {
     let imgHeight = element.height;
     let factor = imgWidth / imgHeight;
     return (width / 100) * window.innerWidth / factor;
+  }
+
+  seeGallery() {
+    this.router.navigate(["/", "BeforeAndAfter"]);
+  }
+  onNextClick() {
+    this.setCurrentFrame();
+    window.scrollTo({
+      top: this.framePositions[this.currentFrame],
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 }

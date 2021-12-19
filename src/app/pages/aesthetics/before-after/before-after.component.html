@@ -1303,8 +1303,20 @@
     <p style="text-align: center">
       If you are suffering with any dental problem and you are lost,
       embarrassed, or think you can’t afford it come talk to us. First we
-      listen, then we will make you Proud of yourself.
+      listen, then we will make you Proud of yourself.<br><br> We offer a free,
+      obligation free consultation if you want us to assess your smile and give
+      you options of treatments, including payment options. Not ready to make an
+      appointment? Contact us on the link below with your concerns, attach your
+      photos if you want, and we’ll get back to you with some answers.
     </p>
+  </div>
+  <div class="margin-bottom-4">
+    <button
+      class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+      (click)="onContactPage()"
+    >
+      Contact us, attach your pictures
+    </button>
   </div>
   <div class="margin-bottom-2">
     <button
@@ -1341,29 +1353,23 @@
     <img src="../../../../assets/aesthetics/BeforeAndAfter/Close.svg" />
   </button>
 
-  <div
-    class="flexy-column sscc"
-    style="position: absolute; top: 0"
-  >
-    <div #beforeC
-      style="display: grid; grid-template-columns: 50% 50%;"
+  <div class="flexy-column sscc" style="position: absolute; top: 0">
+    <div
+      #beforeC
+      style="display: grid; grid-template-columns: 50% 50%"
       class="margin-bottom-10"
     >
       <div #beforeImgC>
-        <img
-          [src]="beforeImg"
-        />
+        <img [src]="beforeImg" />
       </div>
       <div>
-        <img #afImg
-          [src]="afterImg"
-        />
+        <img #afImg [src]="afterImg" />
       </div>
     </div>
 
     <div
       class="specifics-line padding-chef"
-      style="display: grid; align-items: center; align-self: stretch;"
+      style="display: grid; align-items: center; align-self: stretch"
     >
       <div
         style="justify-self: start"
@@ -1375,9 +1381,9 @@
     </div>
 
     <div
-      style="align-self: stretch;"
+      style="align-self: stretch"
       class="
-      padding-chef
+        padding-chef
         specifics
         margin-bottom-10
         color-gallery
@@ -1387,7 +1393,10 @@
       "
     >
       <div class="flexy-column">
-        <div class="color-gray-light roboto-regular" style="padding-bottom: 20px">
+        <div
+          class="color-gray-light roboto-regular"
+          style="padding-bottom: 20px"
+        >
           <p style="text-align: left">TEAM</p>
         </div>
         <div #Team>
@@ -1416,7 +1425,7 @@
             </div>
           </div>
           <div
-          #secondMember
+            #secondMember
             class="flexy-row color-gallery-2 roboto-regular font-small-4"
             style="
               align-items: center;
@@ -1441,7 +1450,7 @@
             #thirdMember
             class="flexy-row color-gallery-2 roboto-regular font-small-4"
             style="
-            display: none;
+              display: none;
               align-items: center;
               justify-content: start;
               padding-top: 20px;
@@ -1464,7 +1473,7 @@
             #fourthMember
             class="flexy-row color-gallery-2 roboto-regular font-small-4"
             style="
-            display: none;
+              display: none;
               align-items: center;
               justify-content: start;
               padding-top: 20px;
@@ -1486,7 +1495,10 @@
         </div>
       </div>
       <div class="flexy-column">
-        <div class="color-gray-light roboto-regular" style="padding-bottom: 20px">
+        <div
+          class="color-gray-light roboto-regular"
+          style="padding-bottom: 20px"
+        >
           <p style="text-align: left">PATIENT CONCERNS</p>
         </div>
         <div
@@ -1495,7 +1507,10 @@
         ></div>
       </div>
       <div>
-        <div class="color-gray-light roboto-regular" style="padding-bottom: 20px">
+        <div
+          class="color-gray-light roboto-regular"
+          style="padding-bottom: 20px"
+        >
           <p style="text-align: left">PROCEDURES</p>
         </div>
         <div
@@ -1507,13 +1522,14 @@
         <div class="color-gallery roboto-regular" style="padding-bottom: 20px">
           <p style="text-align: left"></p>
         </div>
-        <div #logo1
+        <div
+          #logo1
           class="flexy-row color-gallery-2 roboto-regular font-small-4"
           style="align-items: center; justify-content: start"
         >
           <div style="width: 60px; margin-right: 20px">
             <img
-            style="width: 50px"
+              style="width: 50px"
               src="../../../../assets/aesthetics/BeforeAndAfter/sameday.svg"
             />
           </div>
@@ -1521,17 +1537,20 @@
             <p style="text-align: left">Same Day<br />Veneers/Crowns</p>
           </div>
         </div>
-        <div #logo2
+        <div
+          #logo2
           class="flexy-row color-gallery-2 roboto-regular font-small-4"
           style="align-items: center; justify-content: start; padding-top: 20px"
         >
           <div>
-            <img style="width: 200px;"
+            <img
+              style="width: 200px"
               src="../../../../assets/aesthetics/BeforeAndAfter/smileasy.svg"
             />
           </div>
         </div>
-        <div #logo3
+        <div
+          #logo3
           class="flexy-row color-gallery-2 roboto-regular font-small-4"
           style="align-items: center; justify-content: start; padding-top: 20px"
         >
@@ -1549,7 +1568,8 @@
       </div>
     </div>
 
-    <div #inBetweensText
+    <div
+      #inBetweensText
       class="in-betweens-line padding-chef"
       style="display: grid; align-self: stretch; align-items: center"
     >
@@ -1562,34 +1582,51 @@
       <div class="line-11 margin-bottom-4"></div>
     </div>
 
-    <div #inBetweensContainer
-      style="display: grid; margin-top:2vw; justify-content: center; align-items: center;"
+    <div
+      #inBetweensContainer
+      style="
+        display: grid;
+        margin-top: 2vw;
+        justify-content: center;
+        align-items: center;
+      "
       class="margin-bottom-10"
     >
-    
-    <div #JBefore style="grid-row: 1;">
-      <img
-        [src]="beforeImgJ"
-      />
-      <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">Before</p>
-    </div>
-      <div style="grid-row: 1;">
-        <img #inBet1Img
-          [src]="inBet1"
-        />
-        <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">{{ inBet1Text }}</p>
+      <div #JBefore style="grid-row: 1">
+        <img [src]="beforeImgJ" />
+        <p
+          class="color-gray-light font-extra-small roboto-regular"
+          style="padding: 20px; text-align: center"
+        >
+          Before
+        </p>
       </div>
-      <div #JBet2 style="grid-row: 1;">
-        <img #inBet2Img
-          [src]="inBet2"
-        />
-        <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">{{ inBet2Text }}</p>
+      <div style="grid-row: 1">
+        <img #inBet1Img [src]="inBet1" />
+        <p
+          class="color-gray-light font-extra-small roboto-regular"
+          style="padding: 20px; text-align: center"
+        >
+          {{ inBet1Text }}
+        </p>
       </div>
-      <div style="grid-row: 1;">
-        <img
-          [src]="afterImgJ"
-        />
-        <p class="color-gray-light font-extra-small roboto-regular" style="padding:20px; text-align: center;">Final</p>
+      <div #JBet2 style="grid-row: 1">
+        <img #inBet2Img [src]="inBet2" />
+        <p
+          class="color-gray-light font-extra-small roboto-regular"
+          style="padding: 20px; text-align: center"
+        >
+          {{ inBet2Text }}
+        </p>
+      </div>
+      <div style="grid-row: 1">
+        <img [src]="afterImgJ" />
+        <p
+          class="color-gray-light font-extra-small roboto-regular"
+          style="padding: 20px; text-align: center"
+        >
+          Final
+        </p>
       </div>
     </div>
 
@@ -1608,7 +1645,7 @@
 
     <div
       class="legend-items margin-bottom-10 padding-chef"
-      style="display: grid; align-self: stretch;"
+      style="display: grid; align-self: stretch"
     >
       <div class="flexy-column">
         <div
@@ -1646,7 +1683,8 @@
             margin-bottom: 1vw;
           "
         >
-          <img style="width:200px;"
+          <img
+            style="width: 200px"
             src="../../../../assets/aesthetics/BeforeAndAfter/smileasy.svg"
           />
         </div>
@@ -1697,7 +1735,7 @@
 
     <div
       class="margin-bottom-2 bottom-buttons padding-chef"
-      style="display: grid; align-self: stretch;"
+      style="display: grid; align-self: stretch"
     >
       <button
         style="justify-self: center"

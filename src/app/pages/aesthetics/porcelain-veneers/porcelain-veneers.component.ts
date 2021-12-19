@@ -81,6 +81,11 @@ export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("TenFrameVideo") tenFrameVideo: ScrollFramerSectionComponent;
   @ViewChild("LastFrameImg") lastFrameImg: ScrollFramerSectionComponent;
 
+  @ViewChild("SuggestionButton") suggestionButton: ElementRef;
+
+  currentFrame = 0;
+  framePositions = [1000, 8100, 9500, 11500, 13443, 16143, 20143, 21043, 22043, 23179];
+
   sections = 0;
 
   firstTextImgWidth = 40;
@@ -340,6 +345,31 @@ export class PorcelainVeneersComponent implements OnInit {
     {
       this.lastFrame.nativeElement.style.display = "none";
     }
+
+    if(window.scrollY < this.framePositions[this.framePositions.length-1]) {
+      this.suggestionButton.nativeElement.style.display = "block";
+    }
+    else {
+      this.suggestionButton.nativeElement.style.display = "none";
+    }
+  }
+
+  setCurrentFrame() {
+    for(var i = 0; i < this.framePositions.length-1; i++)
+    {
+      if(window.scrollY < this.framePositions[0]) {
+        this.currentFrame = 0;
+        break;
+      }
+      if(window.scrollY>=this.framePositions[i] && window.scrollY < this.framePositions[i+1]) {
+        this.currentFrame = i+1;
+        break;
+      }
+      if(window.scrollY >= this.framePositions[this.framePositions.length-1]) {
+        this.currentFrame = this.framePositions.length-1;
+        break;
+      }
+    }
   }
   
   setFramesDisplay(blockIndex)
@@ -445,6 +475,15 @@ export class PorcelainVeneersComponent implements OnInit {
   
   seeGallery() {
     this.router.navigate(["/", "BeforeAndAfter"]);
+  }
+
+  onNextClick() {
+    this.setCurrentFrame();
+    window.scrollTo({
+      top: this.framePositions[this.currentFrame],
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 }
