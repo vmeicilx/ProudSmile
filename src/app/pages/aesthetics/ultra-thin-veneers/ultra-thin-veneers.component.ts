@@ -23,6 +23,9 @@ export class UltraThinVeneersComponent implements OnInit {
   @ViewChild("SecondFrameVideo") secondFrameVideo: ScrollFramerSectionComponent;
   @ViewChild("LastFrameImg") lastFrameImg: ScrollFramerSectionComponent;
   @ViewChild("SuggestionButton") suggestionButton: ElementRef;
+  @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
+  @ViewChild("HelperText") HelperText: ElementRef;
+  @ViewChild("DownArrow") DownArrow: ElementRef;
 
   frameStartAnimation: Subject<void> = new Subject<void>();
   frameStopAnimation: Subject<void> = new Subject<void>();
@@ -31,6 +34,7 @@ export class UltraThinVeneersComponent implements OnInit {
 
   currentFrame = 0;
   framePositions = [1400, 3000, 3900, 5200, 5800, 7500, 8900];
+  firstFramePosition = 500;
 
   activeFrameIndex = 0;
 
@@ -73,8 +77,8 @@ export class UltraThinVeneersComponent implements OnInit {
 
   renderPresentation()
   {
+    console.log(window.scrollY);
     let parent = this.presentationView.nativeElement.parentElement.getBoundingClientRect();
-    console.log(parent.top)
     if(parent.top < 0 && parent.top >= -10000)
     {
       this.presentationView.nativeElement.style.position = "fixed";
@@ -115,6 +119,22 @@ export class UltraThinVeneersComponent implements OnInit {
     }
     else {
       this.suggestionButton.nativeElement.style.display = "none";
+    }
+
+    if (window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+      this.suggestionButton.nativeElement.style.display = "block";
+    } else {
+      this.suggestionButton.nativeElement.style.display = "none";
+    }
+    
+    if (window.scrollY > this.firstFramePosition + 300 && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+      this.suggestionButtonUp.nativeElement.style.display = "block";
+    } else {
+      if (this.currentFrame === this.framePositions.length - 1 && window.scrollY === this.framePositions[this.framePositions.length - 1]) {
+        this.suggestionButtonUp.nativeElement.style.display = "block";
+      } else {
+        this.suggestionButtonUp.nativeElement.style.display = "none";
+      }
     }
   }
   
@@ -206,6 +226,14 @@ export class UltraThinVeneersComponent implements OnInit {
       top: this.framePositions[this.currentFrame],
       left: 0,
       behavior: 'smooth'
+    });
+  }
+
+  onRevertClick() {
+    window.scrollTo({
+      top: this.firstFramePosition,
+      left: 0,
+      behavior: "smooth",
     });
   }
 

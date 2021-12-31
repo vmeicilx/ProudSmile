@@ -19,6 +19,8 @@ export class ContactPageComponent implements OnInit {
   @ViewChild("phoneSmall") phoneSmall: ElementRef;
   @ViewChild("messageSmall") messageSmall: ElementRef;
 
+  @ViewChild("ContactForm") contactForm: ElementRef;
+
   public scrollToContactForm: string;
 
   constructor(private router: Router, private _activatedRoute: ActivatedRoute) {
@@ -150,6 +152,7 @@ export class ContactPageComponent implements OnInit {
       return;
     }
 
+    this.contactForm.nativeElement.submit();
     alert("Message sent successfully!");
   }
 

@@ -141,6 +141,6 @@ export class SameDayCrownsComponent implements OnInit {
   bridgeLoaded() {
     this.bridgeMask.nativeElement.style.display = "block";
     this.bridgeMask.nativeElement.style.height =
-      this.bridgeVideo.nativeElement.getBoundingClientRect().height + "px";
+      this.bridgeVideo.nativeElement.getBoundingClientRect().height - 24 + "px";
   }
 }

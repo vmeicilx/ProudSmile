@@ -13,9 +13,52 @@
     <div #AnimContainer style="margin-top: 217px">
   
       <div #Zoom style="display: none; height:10969px; background-color: black; position: relative;">
-        <div #SuggestionButton style="position: fixed; top:20%;left:10%; z-index: 5;">
-          <button (click)="onNextClick()" style="color:white;">Click to move to the next block or scroll down.</button>
+        <div
+        #SuggestionButton
+        style="
+          position: fixed;
+          bottom: 2%;
+          right: 3%;
+          z-index: 10;
+          cursor: pointer;
+        "
+      >
+        <div (click)="onNextClick()" style="display: flex; align-items: center;" class="roboto-medium font-extra-small-2">
+          <p #HelperText style="color: #ADAEB1; margin-right: 8px">
+            Skip to next chapter<br />
+            or keep scrolling.
+          </p>
+          <div>
+            <img
+            #DownArrow
+              style="transform: rotate(0deg); transition: transform 0.5s"
+              src="../../../../assets/down.svg"
+            />
+          </div>
         </div>
+      </div>
+      <div
+      #SuggestionButtonUp
+      style="
+        position: fixed;
+        bottom: 7%;
+        right: 3%;
+        z-index: 10;
+        cursor: pointer;
+      "
+    >
+      <div (click)="onRevertClick()" style="display: flex; align-items: center;" class="roboto-medium font-extra-small-2">
+        <p style="color: #ADAEB1; margin-right: 8px">
+          Revert to first chapter.
+        </p>
+        <div>
+          <img
+            style="transform: rotate(180deg);"
+            src="../../../../assets/down.svg"
+          />
+        </div>
+      </div>
+      </div>
   
         <div #PresentationView style="position: relative; z-index:3;">
   

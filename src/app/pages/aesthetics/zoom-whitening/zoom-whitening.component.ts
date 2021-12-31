@@ -28,9 +28,14 @@ export class ZoomWhiteningComponent implements OnInit {
   frameStopAnimation: Subject<void> = new Subject<void>();
 
   @ViewChild("SuggestionButton") suggestionButton: ElementRef;
+  @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
+  
+  @ViewChild("HelperText") HelperText: ElementRef;
+  @ViewChild("DownArrow") DownArrow: ElementRef;
 
   currentFrame = 0;
   framePositions = [2000, 3300, 5500, 7100, 9100];
+  firstFramePosition = 900;
 
   sections = 0;
 
@@ -126,11 +131,21 @@ export class ZoomWhiteningComponent implements OnInit {
       this.lastFrame.nativeElement.style.display = "none";
     }
     
-    if(window.scrollY < this.framePositions[this.framePositions.length-1]) {
+    
+    if (window.scrollY < this.framePositions[this.framePositions.length - 1]) {
       this.suggestionButton.nativeElement.style.display = "block";
-    }
-    else {
+    } else {
       this.suggestionButton.nativeElement.style.display = "none";
+    }
+    
+    if (window.scrollY > this.firstFramePosition + 500 && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+      this.suggestionButtonUp.nativeElement.style.display = "block";
+    } else {
+      if (this.currentFrame === this.framePositions.length - 1 && window.scrollY === this.framePositions[this.framePositions.length - 1]) {
+        this.suggestionButtonUp.nativeElement.style.display = "block";
+      } else {
+        this.suggestionButtonUp.nativeElement.style.display = "none";
+      }
     }
   }
 
@@ -218,6 +233,14 @@ export class ZoomWhiteningComponent implements OnInit {
       top: this.framePositions[this.currentFrame],
       left: 0,
       behavior: 'smooth'
+    });
+  }
+
+  onRevertClick() {
+    window.scrollTo({
+      top: this.firstFramePosition,
+      left: 0,
+      behavior: "smooth",
     });
   }
 
