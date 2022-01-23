@@ -286,6 +286,10 @@ export class HeaderComponent implements OnInit {
           if (document.documentElement.clientWidth >= 1200) {
             this.MobileAestheticsOverlay.nativeElement.classList.add("no-top");
           }
+          else {
+            this.MobileAestheticsOverlay.nativeElement.style.position = "relative";
+            this.MobileAestheticsOverlay.nativeElement.style.top = "0px";
+          }
         } else {
           this.aestheticsSubheader.nativeElement.children[0].classList.remove(
             "no-top"

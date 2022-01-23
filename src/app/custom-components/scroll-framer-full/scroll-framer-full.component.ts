@@ -30,6 +30,7 @@ export class ScrollFramerFullComponent implements OnInit {
   @ViewChild("ScrollCanvas") scrollCanvas: ElementRef;
   @ViewChild("FrameAround") FrameAround: ElementRef;
   @ViewChild("CanvasClone") CanvasClone: ElementRef;
+  @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   observer: any;
 
@@ -41,11 +42,26 @@ export class ScrollFramerFullComponent implements OnInit {
 
   ngAfterViewInit() {
     this.start();
+    this.showorHideMobileSuggestion();
   }
 
   ngOnDestroy(): void {
     this._observers = [];
     this.observer = null;
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    this.showorHideMobileSuggestion();
+  }
+
+  showorHideMobileSuggestion(): void {
+    if(this.scrollFramerContainer.nativeElement.style.position === "fixed" && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+        this.MobileSuggestion.nativeElement.style.display = "block";
+    }
+    else {
+      this.MobileSuggestion.nativeElement.style.display = "none";
+    }
   }
 
   goToLink(url: string) {
@@ -94,22 +110,6 @@ export class ScrollFramerFullComponent implements OnInit {
         (window.innerHeight / frames[0].height) * frames[0].width + "px";
     }
 
-    // if(frames[0].width >= document.documentElement.clientWidth)
-    // {
-    //   this.scrollCanvas.nativeElement.classList.remove("vertical-size");
-    //   this.scrollCanvas.nativeElement.classList.add("horizontal-size");
-    //   this.CanvasClone.nativeElement.classList.remove("vertical-size");
-    //   this.CanvasClone.nativeElement.classList.add("horizontal-size");
-    //   this.CanvasClone.nativeElement.style.height = (document.documentElement.clientWidth / frames[0].width * frames[0].height) + "px";
-    // }
-    // else if(frames[0].height > document.documentElement.clientWidth)
-    // {
-    //   this.scrollCanvas.nativeElement.classList.remove("horizontal-size");
-    //   this.scrollCanvas.nativeElement.classList.add("vertical-size");
-    //   this.CanvasClone.nativeElement.classList.remove("horizontal-size");
-    //   this.CanvasClone.nativeElement.classList.add("vertical-size");
-    //   this.CanvasClone.nativeElement.style.width = this.scrollCanvas.nativeElement.style.width + "px";
-    // }
 
     if (this.topScroll) {
       videoContainer.style.background = "black";
@@ -353,6 +353,8 @@ export class ScrollFramerFullComponent implements OnInit {
       Math.round(
         (100 * (100 * scrolled)) / (animationRect.height - viewportHeight)
       ) / 100;
+
+      this.showorHideMobileSuggestion();
 
     this.publish(scrolledPercentage);
   };

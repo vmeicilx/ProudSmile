@@ -73,6 +73,8 @@ const routes: Routes = [
   { path: "payment-page-component", component: PaymentPageComponent },
   { path: "contact-page-component", component: ContactPageComponent },
   { path: "contact-page-component/:parameter", component: ContactPageComponent },
+  { path: "attachment", redirectTo: "/attachment" },
+  { path: "send", redirectTo: "/send" },
   { path: "**", redirectTo: "/HomePage" }
 ];
 

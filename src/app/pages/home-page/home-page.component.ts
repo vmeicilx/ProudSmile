@@ -99,19 +99,24 @@ export class HomePageComponent implements OnInit {
   ngAfterViewInit(): void {
     this.relaxVideo.nativeElement.muted = true;
     this.relaxVideo.nativeElement.style.display = "block";
+    
+    if(window.innerWidth <= 600) {
+      this.relaxVideo.nativeElement.play();
+    }
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.relaxVideo.nativeElement)) {
-      if (this.relaxVideo.nativeElement.paused) {
-        this.relaxVideo.nativeElement.play();
+
+      if (this.inTheViewport(this.relaxVideo.nativeElement)) {
+        if (this.relaxVideo.nativeElement.paused) {
+          this.relaxVideo.nativeElement.play();
+        }
+      } else {
+        if (!this.relaxVideo.nativeElement.paused) {
+          this.relaxVideo.nativeElement.pause();
+        }
       }
-    } else {
-      if (!this.relaxVideo.nativeElement.paused) {
-        this.relaxVideo.nativeElement.pause();
-      }
-    }
   }
   showTextPre($event) {
     if (this.vennerShortText) {

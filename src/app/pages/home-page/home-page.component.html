@@ -51,7 +51,7 @@
 </div>
 
 <div class="full-width" fxLayout fxLayoutAlign="center center">
-  <video class="full-width" preload="auto" muted #relaxVideo loop>
+  <video class="full-width" preload="auto" muted #relaxVideo loop playsinline style="background: white;">
     <source
       src="../../../assets/dentalClinic/DentalPracticeBut.mp4"
       type="video/mp4"
@@ -290,7 +290,7 @@
 </div>
 
 <div
-  class="flexy-column cccc hide-on-phone hide-on-tablet"
+  class="flexy-column cccc"
   style="background-color: black; position: relative"
 >
   <div fxLayout fxLayoutAlign="center center">
@@ -308,7 +308,7 @@
   </div>
   <div
     #vennerShortText
-    class="venTextDesktop"
+    class="venTextDesktop hide-on-sm"
     style="position: absolute; top: 0; color: white; z-index: 2; right: 15vw"
   >
     <div
@@ -365,89 +365,70 @@
       ></app-button>
     </div>
   </div>
-</div>
-
-<div
-  class="flexy-column cccc hide-on-big"
-  style="background-color: black; position: relative"
+  <div
+  class="venText hide-on-big"
+  style="
+    color: white;
+    padding-top: 4vw;
+    z-index: 2;
+    position: absolute;
+    top: 2000px;
+  "
 >
-  <div fxLayout fxLayoutAlign="center center">
-    <app-scroll-framer-full
-      class=""
-      urlPattern="../../assets/homePage/short/Porcelain Veneers Short ##id##.jpg"
-      numberOfFrames="200"
-      animationFactor="4000"
-      padding="3"
-      (onVideoPreStart)="showTextPre($event)"
-      (onVideoStart)="showText($event)"
-      (onVideoEnd)="hideText($event)"
-    >
-    </app-scroll-framer-full>
-    <div
-      class="venText hide-on-big"
-      style="
-        color: white;
-        padding-top: 4vw;
-        z-index: 2;
-        position: absolute;
-        top: 2000px;
-      "
-    >
-      <div
-        class="flex-1 sscc gmargin-right-1 no-margin-on-sm venText2"
-        fxLayout="column"
-        style="
-          padding-bottom: 2vw;
-          padding-left: 2vw;
-          padding-right: 2vw;
-          margin: auto;
-        "
-      >
-        <div class="font-wolf libre-regular margin-bottom-1">
-          <p class="title-on-big center-text-on-sm">
-            We’d love to give <br />
-            you a Proud Smile
-          </p>
-        </div>
-        <div class="roboto-thin font-small-3 center-text-on-sm">
-          <p>
-            Our Cosmetic department is second to none and it’s the jewel of our
-            practice. We offer a comprehensive range of treatments to fit any
-            desire and any budget.<br /><br />
-            Our aesthetic treatments are always personalised and completely done
-            in house by our dentists so you are guaranteed to get a predictable
-            result and one that fits your face and personality.
-          </p>
-        </div>
-        <div
-          class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"
-        ></div>
-        <div
-          class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm"
-        >
-          <p>
-            Don’t want to wait weeks for<br />
-            that perfect smile?<br />
-          </p>
-        </div>
-        <div
-          class="roboto-thin font-small-3 center-text-on-sm"
-          style="margin-bottom: 2vw"
-        >
-          <br />
-          <p>
-            Plus, with the introduction of digital dentistry we can now perform
-            some procedures with no need for anaesthetics, such as our Ultra
-            Thin Veneers.
-          </p>
-        </div>
-        <app-button
-          text="SEE AESTHETICS PAGE"
-          (click)="seeAllAesthetic()"
-        ></app-button>
-      </div>
+  <div
+    class="flex-1 sscc gmargin-right-1 no-margin-on-sm venText2"
+    fxLayout="column"
+    style="
+      padding-bottom: 2vw;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      margin: auto;
+    "
+  >
+    <div class="font-wolf libre-regular margin-bottom-1">
+      <p class="title-on-big center-text-on-sm">
+        We’d love to give <br />
+        you a Proud Smile
+      </p>
     </div>
+    <div class="roboto-thin font-small-3 center-text-on-sm">
+      <p>
+        Our Cosmetic department is second to none and it’s the jewel of our
+        practice. We offer a comprehensive range of treatments to fit any
+        desire and any budget.<br /><br />
+        Our aesthetic treatments are always personalised and completely done
+        in house by our dentists so you are guaranteed to get a predictable
+        result and one that fits your face and personality.
+      </p>
+    </div>
+    <div
+      class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"
+    ></div>
+    <div
+      class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm"
+    >
+      <p>
+        Don’t want to wait weeks for<br />
+        that perfect smile?<br />
+      </p>
+    </div>
+    <div
+      class="roboto-thin font-small-3 center-text-on-sm"
+      style="margin-bottom: 2vw"
+    >
+      <br />
+      <p>
+        Plus, with the introduction of digital dentistry we can now perform
+        some procedures with no need for anaesthetics, such as our Ultra
+        Thin Veneers.
+      </p>
+    </div>
+    <app-button
+      text="SEE AESTHETICS PAGE"
+      (click)="seeAllAesthetic()"
+    ></app-button>
   </div>
+</div>
 </div>
 
 <div class="aestheticsAndHealthSection" fxLayout>

@@ -1,21 +1,12 @@
 <div>
-  <div class="margin-top-porcelain" #LoadingText style="background: black">
-    <div
-      class=""
-      style="width: 100vw; z-index: 1; margin-bottom: 10vw; display: block"
-    >
+  <div
+    class="margin-top-porcelain height-porcelain"
+    #LoadingText
+    style="background: black"
+  >
+    <div style="width: 100vw; z-index: 1; margin-bottom: 10vw; display: block">
       <div
-        class="
-          flexy-column
-          color-white
-          cccc
-          font-dog
-          libre-regular
-          center-text
-          padding-top-3
-          margin-bottom-10
-          relative-container
-        "
+        class="flexy-column color-white cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container"
       >
         <div class="width-1 margin-bottom-10">
           <img src="../../../../assets/WhiteShape.svg" />
@@ -27,7 +18,7 @@
     </div>
   </div>
 
-  <div #AnimContainer style="margin-top: 217px">
+  <div #AnimContainer class="margin-top-porcelain">
     <div
       #PorcelainVeneers
       style="
@@ -37,24 +28,60 @@
         position: relative;
       "
     >
+    <div
+    #MobileSuggestion
+      style="
+        position: fixed; left:5%; bottom:20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 45vw;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      "
+      class="roboto-regular"
+    >
+      <div style="width: 80px; margin:auto; margin-bottom: 4vw;">
+        <img
+          src="../../../assets/rotate.gif"
+          width="100%"
+          height="100%"
+        />
+      </div>
+      <div  style="color:white; margin-bottom:2vw;" >
+        <p>
+          Please rotate the phone
+        </p>
+      </div>
+      <div style="color: #ADAEB1;">
+        <p>
+          This video is better experienced in a horizontal view.
+        </p>
+      </div>
+    </div>
+
       <div
         #SuggestionButton
         style="
           position: fixed;
-          bottom: 2%;
+          bottom: 20px;
           right: 3%;
           z-index: 10;
           cursor: pointer;
         "
       >
-        <div (click)="onNextClick()" style="display: flex; align-items: center;" class="roboto-medium font-extra-small-2">
-          <p #HelperText style="color: #ADAEB1; margin-right: 8px">
+        <div
+          (click)="onNextClick()"
+          style="display: flex; align-items: center"
+          class="roboto-medium font-extra-small-2"
+        >
+          <p #HelperText style="color: #adaeb1; margin-right: 8px">
             Skip to next chapter<br />
             or keep scrolling.
           </p>
           <div>
             <img
-            #DownArrow
+              #DownArrow
               style="transform: rotate(0deg); transition: transform 0.5s"
               src="../../../../assets/down.svg"
             />
@@ -62,26 +89,30 @@
         </div>
       </div>
       <div
-      #SuggestionButtonUp
-      style="
-        position: fixed;
-        bottom: 7%;
-        right: 3%;
-        z-index: 10;
-        cursor: pointer;
-      "
-    >
-      <div (click)="onRevertClick()" style="display: flex; align-items: center;" class="roboto-medium font-extra-small-2">
-        <p style="color: #ADAEB1; margin-right: 8px">
-          Revert to first chapter.
-        </p>
-        <div>
-          <img
-            style="transform: rotate(180deg);"
-            src="../../../../assets/down.svg"
-          />
+        #SuggestionButtonUp
+        style="
+          position: fixed;
+          bottom: 60px;
+          right: 3%;
+          z-index: 10;
+          cursor: pointer;
+        "
+      >
+        <div
+          (click)="onRevertClick()"
+          style="display: flex; align-items: center"
+          class="roboto-medium font-extra-small-2"
+        >
+          <p style="color: #adaeb1; margin-right: 8px">
+            Revert to first chapter.
+          </p>
+          <div>
+            <img
+              style="transform: rotate(180deg)"
+              src="../../../../assets/down.svg"
+            />
+          </div>
         </div>
-      </div>
       </div>
 
       <div
@@ -119,7 +150,6 @@
             #SecondFrameVideo
             [startAnimation]="secondFrameStartAnimation.asObservable()"
             [stopAnimation]="secondFrameStopAnimation.asObservable()"
-            class="hide-on-phone"
             urlPattern="../../../../assets/aesthetics/PV/PV1/PV ##id##.jpg"
             numberOfFrames="193"
             animationFactor="7000"
@@ -150,7 +180,6 @@
         >
           <app-scroll-framer-section
             #FourthFrameVideo
-            class="hide-on-phone"
             [startAnimation]="fourthFrameStartAnimation.asObservable()"
             [stopAnimation]="fourthFrameStopAnimation.asObservable()"
             urlPattern="../../../../assets/aesthetics/PV/PV2/PV2 ##id##.jpg"
@@ -184,7 +213,6 @@
         >
           <app-scroll-framer-section
             #SixthFrameVideo
-            class="hide-on-phone"
             [startAnimation]="sixthFrameStartAnimation.asObservable()"
             [stopAnimation]="sixthFrameStopAnimation.asObservable()"
             urlPattern="../../../../assets/aesthetics/PV/PV3/PV3 ##id##.jpg"
@@ -240,7 +268,6 @@
         >
           <app-scroll-framer-section
             #EightFrameVideo
-            class="hide-on-phone"
             [startAnimation]="eightFrameStartAnimation.asObservable()"
             [stopAnimation]="eightFrameStopAnimation.asObservable()"
             urlPattern="../../../../assets/aesthetics/PV/PV4/PV4 ##id##.jpg"
@@ -318,7 +345,6 @@
         >
           <app-scroll-framer-section
             #NineFrameVideo
-            class="hide-on-phone"
             [startAnimation]="nineFrameStartAnimation.asObservable()"
             [stopAnimation]="nineFrameStopAnimation.asObservable()"
             urlPattern="../../../../assets/aesthetics/PV/PV5/PV5 ##id##.jpg"
@@ -343,7 +369,6 @@
         >
           <app-scroll-framer-section
             #TenFrameVideo
-            class="hide-on-phone"
             [startAnimation]="tenFrameStartAnimation.asObservable()"
             [stopAnimation]="tenFrameStopAnimation.asObservable()"
             urlPattern="../../../../assets/aesthetics/PV/PV6/PV6 ##id##.jpg"
@@ -393,23 +418,12 @@
 
       <div
         #ThirdText
-        style="
-          width: 40%;
-          margin: auto;
-          position: relative;
-          z-index: 4;
-          display: flex;
-          justify-content: flex-start;
-        "
+        class="buttons-container"
+        style="margin: auto; position: relative; z-index: 4; display: flex"
       >
         <button
-          class="
-            book3
-            color-white
-            roboto-medium
-            font-extra-small-2
-            cursor-pointer
-          "
+          class="book3 book3-specials color-white roboto-medium font-extra-small-2 cursor-pointer"
+          style="margin-right: 2vw"
           (click)="
             goToLink(
               'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
@@ -419,14 +433,8 @@
           BOOK YOUR FREE SMILE ASSESSMENT
         </button>
         <button
-          class="
-            book3
-            color-white
-            roboto-medium
-            font-extra-small-2
-            cursor-pointer
-          "
-          style="margin-left: 2vw"
+          class="book3 book3-specials color-white roboto-medium font-extra-small-2 cursor-pointer"
+          style="margin-top: 2vw"
           (click)="seeGallery()"
         >
           SEE BEFORE AND AFTER GALLERY
@@ -474,24 +482,19 @@
       </div>
 
       <div
+        class="buttons-container-2"
         #LastButton
         style="
-          margin-left: 60%;
-          position: relative;
+          position: absolute;
           z-index: 4;
           display: flex;
-          justify-content: flex-start;
-          top: 23170px;
+          top: 23250px;
+          margin: 2vw;
         "
       >
         <button
-          class="
-            book3
-            color-white
-            roboto-medium
-            font-extra-small-2
-            cursor-pointer
-          "
+          class="book3 book3-specials color-white roboto-medium font-extra-small-2 cursor-pointer"
+          style="margin-right: 2vw"
           (click)="
             goToLink(
               'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
@@ -501,14 +504,8 @@
           BOOK YOUR FREE SMILE ASSESSMENT
         </button>
         <button
-          class="
-            book3
-            color-white
-            roboto-medium
-            font-extra-small-2
-            cursor-pointer
-          "
-          style="margin-left: 2vw"
+          class="book3 book3-specials color-white roboto-medium font-extra-small-2 cursor-pointer"
+          style="margin-top: 2vw"
           (click)="seeGallery()"
         >
           SEE BEFORE AND AFTER GALLERY
@@ -520,17 +517,43 @@
         style="
           display: none;
           width: 100vw;
+          height: 100vh;
           position: absolute;
           top: 23000px;
-          z-index: 3;
+          z-index: 4;
+          align-items: center;
+          flex-direction: column;
         "
       >
-        <img
-          #LastFrameImg
-          (load)="imgLoaded(LastFrameImg)"
-          style="max-width: unset; margin: auto"
-          src="../../../../assets/aesthetics/PV/LastFrame.jpg"
-        />
+        <div
+          style="width: 100vw; flex: 1; background: black; position: relative"
+        >
+          <div
+            #TopFade
+            class="background-48"
+            style="
+              position: absolute;
+              bottom: -10vh;
+              height: 11vh;
+              width: 100vw;
+            "
+          ></div>
+        </div>
+        <div>
+          <img
+            #LastFrameImg
+            (load)="imgLoaded(LastFrameImg)"
+            style="max-width: unset; margin: auto"
+            src="../../../../assets/aesthetics/PV/LastFrame.jpg"
+          />
+        </div>
+        <div style="width: 100vw; flex: 1; background: black; position: relative;">
+          <div
+            #BottomFade
+            class="background-49"
+            style="position: absolute; top: -10vh; height: 11vh; width: 100vw"
+          ></div>
+        </div>
       </div>
     </div>
   </div>

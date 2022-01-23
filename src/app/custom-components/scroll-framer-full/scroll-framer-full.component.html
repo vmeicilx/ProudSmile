@@ -2,20 +2,22 @@
   <div id="AnimationContainer" #animation>
     <section
       id="ScrollFramerContainer"
-      class="scroll-framer-canvas-container mobile-rules"
-      style="height: 100vh;"
+      class="scroll-framer-canvas-container mobile-rules relative-container"
+      style="height: 100vh"
       #scrollFramerContainer
     >
-      <canvas #ScrollCanvas class="vertical-size">
-
-      </canvas>
-      <div #CanvasClone class="relative-container" style="background-color: transparent;position: absolute;">
+      <canvas #ScrollCanvas class="vertical-size"> </canvas>
+      <div
+        #CanvasClone
+        class="relative-container"
+        style="background-color: transparent; position: absolute"
+      >
         <div #FrameAround>
           <div
             style="
               position: absolute;
-              top: -5px;
-              left:0;
+              top: 0px;
+              left: 0;
               height: 4vw;
               background: linear-gradient(black, transparent);
               z-index: 6;
@@ -33,7 +35,7 @@
               width: 4vw;
             "
           ></div>
-  
+
           <div
             style="
               position: absolute;
@@ -45,22 +47,55 @@
               width: 4vw;
             "
           ></div>
-  
+
           <div
             style="
               position: absolute;
-              left:0;
-              bottom: -5px;
+              left: 0;
+              bottom: 0px;
               height: 4vw;
               background: linear-gradient(0deg, black, transparent);
               z-index: 6;
               width: 100vw;
             "
           ></div>
+
+
         </div>
       </div>
 
-
+      
+      <div
+      #MobileSuggestion
+        style="
+          position: absolute; left:5%; bottom:5%;
+          display: flex;
+          flex-direction: column;
+          max-width: 60vw;
+          justify-content: center;
+          align-items: center;
+          z-index: 10;
+        "
+        class="roboto-regular"
+      >
+        <div style="width: 80px; margin:auto; margin-bottom: 4vw;">
+          <img
+            src="../../../assets/rotate.gif"
+            width="100%"
+            height="100%"
+          />
+        </div>
+        <div  style="color:white; margin-bottom:2vw;" >
+          <p>
+            Please rotate the phone
+          </p>
+        </div>
+        <div style="color: #ADAEB1;">
+          <p>
+            This video is better experienced in a horizontal view.
+          </p>
+        </div>
+      </div>
 
     </section>
   </div>

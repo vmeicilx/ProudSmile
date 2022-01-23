@@ -85,6 +85,7 @@ export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("HelperText") HelperText: ElementRef;
 
   @ViewChild("DownArrow") DownArrow: ElementRef;
+  @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   currentFrame = 0;
   framePositions = [
@@ -133,6 +134,7 @@ export class PorcelainVeneersComponent implements OnInit {
       this.nineFrameVideo.scrollCanvas.nativeElement,
       this.tenFrameVideo.scrollCanvas.nativeElement,
     ];
+    this.showorHideMobileSuggestion();
   }
 
   showExploreButton() {
@@ -150,6 +152,15 @@ export class PorcelainVeneersComponent implements OnInit {
         }.bind(this),
         20
       );
+    }
+  }
+
+  showorHideMobileSuggestion(): void {
+    if(window.scrollY < this.framePositions[this.framePositions.length - 1] && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+        this.MobileSuggestion.nativeElement.style.display = "block";
+    }
+    else {
+      this.MobileSuggestion.nativeElement.style.display = "none";
     }
   }
 
@@ -364,15 +375,19 @@ export class PorcelainVeneersComponent implements OnInit {
     }
 
     if (parent.top <= -23000) {
-      this.lastFrame.nativeElement.style.display = "block";
+      this.lastFrame.nativeElement.style.display = "flex";
     } else {
       this.lastFrame.nativeElement.style.display = "none";
     }
 
     if (window.scrollY < this.framePositions[this.framePositions.length - 1]) {
       this.suggestionButton.nativeElement.style.display = "block";
+      if(window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+        this.MobileSuggestion.nativeElement.style.display = "block";
+      }
     } else {
       this.suggestionButton.nativeElement.style.display = "none";
+      this.MobileSuggestion.nativeElement.style.display = "none";
     }
     
     if (window.scrollY > this.firstFramePosition + 100 && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
@@ -427,6 +442,7 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @HostListener("window:resize", ["$event"])
   onResize(event) {
+    this.showorHideMobileSuggestion();
     var activeContent = this.framesContent[this.activeFrameIndex];
     var activeContentRect = activeContent.getBoundingClientRect();
 

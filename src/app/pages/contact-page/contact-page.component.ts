@@ -1,5 +1,8 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { EmailData } from "src/EmailData";
+import { emailService } from "src/emailService";
 
 @Component({
   selector: "app-contact-page",
@@ -23,7 +26,9 @@ export class ContactPageComponent implements OnInit {
 
   public scrollToContactForm: string;
 
-  constructor(private router: Router, private _activatedRoute: ActivatedRoute) {
+  emailData : EmailData;
+
+  constructor(private router: Router, private _activatedRoute: ActivatedRoute, private emailServ: emailService, private http: HttpClient) {
   }
 
   imageObject: Array<object> = [
@@ -130,9 +135,13 @@ export class ContactPageComponent implements OnInit {
       return;
     }
 
+    this.emailData =  {name:name, email:email , company:company, phone:phone, message:message};
+    this.emailServ.sendEmail(this.emailData).subscribe();
+
     alert("Message sent successfully!");
   }
   onSendMessageSmall() {
+
     var name = this.nameSmall.nativeElement.value;
     var email = this.emailSmall.nativeElement.value;
     var company = this.companySmall.nativeElement.value;
@@ -152,7 +161,11 @@ export class ContactPageComponent implements OnInit {
       return;
     }
 
-    this.contactForm.nativeElement.submit();
+    //this.contactForm.nativeElement.submit();
+
+    this.emailData =  {name:name, email:email , company:company, phone:phone, message:message};
+    this.emailServ.sendEmail(this.emailData).subscribe();
+
     alert("Message sent successfully!");
   }
 
@@ -165,5 +178,9 @@ export class ContactPageComponent implements OnInit {
     setTimeout(() => {
       document.getElementById("contact-form").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }, 500)
+  }
+
+  onSubmit() {
+    
   }
 }

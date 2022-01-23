@@ -292,220 +292,228 @@
       <p>*This fields are required.</p>
     </div>
   </div>
-  <div>
-    <table id="ClientForm" class="hide-on-sm contact-form">
-      <tr>
-        <td>
-          <div class="flexy-column">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p>NAME AND SURNAME*</p>
+    <div>
+      <table id="ClientForm" class="hide-on-sm contact-form">
+        <tr>
+          <td>
+            <div class="flexy-column">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p>NAME AND SURNAME*</p>
+              </div>
+              <div>
+                <input
+                  #name
+                  class="color-brown"
+                  type="text"
+                  placeholder="Write your Name"
+                />
+              </div>
             </div>
-            <div>
-              <input
-                #name
-                class="color-brown"
-                type="text"
-                placeholder="Write your Name"
-              />
+          </td>
+          <td>
+            <div class="flexy-column">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p>YOUR EMAIL*</p>
+              </div>
+              <div>
+                <input
+                  #email
+                  class="color-brown"
+                  type="text"
+                  placeholder="Write your email"
+                />
+              </div>
             </div>
-          </div>
-        </td>
-        <td>
-          <div class="flexy-column">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p>YOUR EMAIL*</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flexy-column">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p>COMPANY</p>
+              </div>
+              <div>
+                <input
+                  #company
+                  class="color-brown"
+                  type="text"
+                  placeholder="Your company name"
+                />
+              </div>
             </div>
-            <div>
-              <input
-                #email
-                class="color-brown"
-                type="text"
-                placeholder="Write your email"
-              />
+          </td>
+          <td>
+            <div class="flexy-column">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p>PHONE*</p>
+              </div>
+              <div>
+                <input
+                  #phone
+                  class="color-brown"
+                  type="text"
+                  placeholder="Write your phone number"
+                />
+              </div>
             </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="flexy-column">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p>COMPANY</p>
-            </div>
-            <div>
-              <input
-                #company
-                class="color-brown"
-                type="text"
-                placeholder="Your company name"
-              />
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="flexy-column">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p>PHONE*</p>
-            </div>
-            <div>
-              <input
-                #phone
-                class="color-brown"
-                type="text"
-                placeholder="Write your phone number"
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <div class="flexy-column">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p>MESAGE</p>
-            </div>
-            <div>
-              <textarea
-                #message
-                class="color-brown"
-                rows="10"
-                placeholder="Write your message"
-              ></textarea>
-            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="flexy-column">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p>MESAGE</p>
+              </div>
+              <div>
+                <textarea
+                  #message
+                  class="color-brown"
+                  rows="10"
+                  placeholder="Write your message"
+                ></textarea>
+              </div>
 
-            <app-button
-              style="align-self: flex-end; margin-top: 24px"
-              text="SEND MESSAGE"
-              (click)="onSendMessage()"
-            ></app-button>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <table id="ClientFormSmall" class="hide-on-big contact-form">
-      <tr>
-        <td>
-          <div class="flexy-column" style="max-width: 75vw">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p class="left-text">NAME AND SURNAME*</p>
-            </div>
-            <div>
-              <input
-                #nameSmall
-                class="color-brown"
-                type="text"
-                placeholder="Write your Name"
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="flexy-column" style="max-width: 75vw">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p class="left-text">YOUR EMAIL*</p>
-            </div>
-            <div>
-              <input
-                #emailSmall
-                class="color-brown"
-                type="text"
-                placeholder="Write your email"
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="flexy-column" style="max-width: 75vw">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p class="left-text">COMPANY</p>
-            </div>
-            <div>
-              <input
-                #companySmall
-                class="color-brown"
-                type="text"
-                placeholder="Your company name"
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="flexy-column" style="max-width: 75vw">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p class="left-text">PHONE*</p>
-            </div>
-            <div>
-              <input
-                #phoneSmall
-                class="color-brown"
-                type="text"
-                placeholder="Write your phone number"
-              />
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <div class="flexy-column" style="max-width: 75vw">
-            <div
-              class="color-brown roboto-bold font-extra-small-2"
-              style="padding-top: 8px; padding-bottom: 8px"
-            >
-              <p class="left-text">MESAGE</p>
-            </div>
-            <div>
-              <textarea
-                #messageSmall
-                class="color-brown"
-                rows="10"
-                placeholder="Write your message"
-              ></textarea>
-            </div>
+              <!-- <input type="submit" name="send" value="Submit" class="color-white roboto-medium font-extra-small-2 cursor-pointer" style="align-self: center; margin-top: 24px"/> -->
 
-            <app-button
-              style="align-self: center; margin-top: 24px"
-              text="SEND MESSAGE"
-              (click)="onSendMessageSmall()"
-            ></app-button>
-          </div>
-        </td>
-      </tr>
-    </table>
-  </div>
+              <!-- <button type="submit" name="send" class="color-white roboto-medium font-extra-small-2 cursor-pointer" style="align-self: flex-end; margin-top: 24px">
+                SEND MESSAGE</button> -->
+  
+              <app-button
+                style="align-self: flex-end; margin-top: 24px"
+                text="SEND MESSAGE"
+                (click)="onSendMessage()"
+              ></app-button>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table id="ClientFormSmall" class="hide-on-big contact-form">
+        <tr>
+          <td>
+            <div class="flexy-column" style="max-width: 75vw">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p class="left-text">NAME AND SURNAME*</p>
+              </div>
+              <div>
+                <input
+                  #nameSmall
+                  class="color-brown"
+                  type="text"
+                  placeholder="Write your Name"
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flexy-column" style="max-width: 75vw">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p class="left-text">YOUR EMAIL*</p>
+              </div>
+              <div>
+                <input
+                  #emailSmall
+                  class="color-brown"
+                  type="text"
+                  placeholder="Write your email"
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flexy-column" style="max-width: 75vw">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p class="left-text">COMPANY</p>
+              </div>
+              <div>
+                <input
+                  #companySmall
+                  class="color-brown"
+                  type="text"
+                  placeholder="Your company name"
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flexy-column" style="max-width: 75vw">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p class="left-text">PHONE*</p>
+              </div>
+              <div>
+                <input
+                  #phoneSmall
+                  class="color-brown"
+                  type="text"
+                  placeholder="Write your phone number"
+                />
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div class="flexy-column" style="max-width: 75vw">
+              <div
+                class="color-brown roboto-bold font-extra-small-2"
+                style="padding-top: 8px; padding-bottom: 8px"
+              >
+                <p class="left-text">MESAGE</p>
+              </div>
+              <div>
+                <textarea
+                  #messageSmall
+                  class="color-brown"
+                  rows="10"
+                  placeholder="Write your message"
+                ></textarea>
+              </div>
+
+              <!-- <input type="submit" name="send" value="Submit" class="color-white roboto-medium font-extra-small-2 cursor-pointer" style="align-self: center; margin-top: 24px"/> -->
+  
+              <app-button
+                style="align-self: center; margin-top: 24px"
+                text="SEND MESSAGE"
+                (click)="onSendMessageSmall()"
+              ></app-button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
 </div>
 
 

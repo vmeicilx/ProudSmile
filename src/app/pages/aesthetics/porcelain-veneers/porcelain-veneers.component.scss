@@ -1,8 +1,6 @@
 :host {
   .book3 {
-    border-radius: 37px;
     background: #E6437B;
-    padding: 24px 36px;
     border: 0;
     outline: none;
     margin-top: auto;
@@ -15,26 +13,70 @@
   .horizontal-size {
     width: 100vw;
   }
+  .buttons-container {
+    flex-wrap:wrap;
+  }
   @media only screen and (min-width: 1201px) {
+    .book3-specials {
+      padding: 24px 36px;
+      border-radius: 37px;
+    }
+    .buttons-container {
+      justify-content: flex-start;
+      width: 40%;
+    }
+    .buttons-container-2 {
+      justify-content: flex-start;
+      margin-left: 60%;
+    }
     .margin-top-porcelain {
       margin-top:217px;
+    }
+    .height-porcelain {
       height: calc(100vh - 217px);
     }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .book3-specials {
+      padding: 12px 18px;
+      border-radius: 37px;
+    }
 
+    .buttons-container {
+      justify-content: center;
+      width: unset;
+    }
+    .buttons-container-2 {
+      justify-content: center;
+      margin-left: unset;
+    }
     .margin-top-porcelain {
-      margin-top:144px;
-      height: calc(100vh - 144px);
+      margin-top:146px;
+    }
+    .height-porcelain {
+      height: calc(100vh - 146px);
     }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
-
+    .buttons-container {
+      justify-content: center;
+      width: unset;
+    }
+    .buttons-container-2 {
+      justify-content: center;
+      margin-left: unset;
+    }
+    .book3-specials {
+      padding: 12px 18px;
+      border-radius: 37px;
+    }
     .margin-top-porcelain {
-      margin-top:144px;
-      height: calc(100vh - 144px);
+      margin-top:146px;
+    }
+    .height-porcelain {
+      height: calc(100vh - 146px);
     }
   }
 }
