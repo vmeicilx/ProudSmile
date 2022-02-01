@@ -116,7 +116,12 @@ export class ScrollFramerFullComponent implements OnInit {
       videoContainer.style.paddingTop = "20px";
     }
     const context = this.scrollCanvas.nativeElement.getContext("2d");
-    context.drawImage(frames[0], 0, 0);
+    try {
+      context.drawImage(frames[0], 0, 0)
+    } catch (error) {
+      console.log("Could not draw image at index 0");
+    }
+    
 
     if (this.topScroll) {
       const fadeDiv = document.createElement("div");
@@ -210,7 +215,11 @@ export class ScrollFramerFullComponent implements OnInit {
             return;
 
           window.requestAnimationFrame(() => {
-            context.drawImage(frames[frameIndex], 0, 0);
+            try {
+              context.drawImage(frames[frameIndex], 0, 0);
+            } catch (error) {
+              console.log("Could not draw image at index " + frameIndex);
+            }
           });
         },
       };

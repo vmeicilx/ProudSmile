@@ -48,24 +48,36 @@ export class ScrollFramerComponent implements OnInit {
 
   createImageBitmap2 = async function (blob) {
     return new Promise((resolve, reject) => {
-      let img = document.createElement("img");
-      img.addEventListener("load", function () {
-        resolve(this);
-      });
-      img.src = URL.createObjectURL(blob);
+      try
+      {
+        let img = document.createElement("img");
+        img.addEventListener("load", function () {
+          resolve(this);
+        });
+        img.src = URL.createObjectURL(blob);
+      }
+      catch(error) {
+        console.log(error);
+      }
     });
   };
 
   async start() {
     const videoContainer = this.scrollFramerContainer.nativeElement;
     const animationContainer = this.animation.nativeElement;
+    let frames;
+    try {
+        frames = await this.FrameUnpacker.unpack({
+        urlPattern: this.urlPattern,
+        start: 1,
+        end: this.numberOfFrames,
+        padding: this.padding
+      });
+    } catch (error) {
+      console.log(error);
+    }
 
-    let frames = await this.FrameUnpacker.unpack({
-      urlPattern: this.urlPattern,
-      start: 1,
-      end: this.numberOfFrames,
-      padding: this.padding
-    });
+
 
     const canvas = document.createElement("canvas");
     canvas.classList.add("scroll-framer-canvas");
@@ -80,7 +92,11 @@ export class ScrollFramerComponent implements OnInit {
       videoContainer.style.paddingTop = "20px";
     }
     const context = canvas.getContext("2d");
-    context.drawImage(frames[0], 0, 0);
+    try {
+      context.drawImage(frames[0], 0, 0);
+    } catch (error) {
+      console.log("Could not draw image at index 0");
+    }
 
     videoContainer.appendChild(canvas);
     if (this.topScroll) {
@@ -120,7 +136,9 @@ export class ScrollFramerComponent implements OnInit {
 
   FrameUnpacker = (() => {
     const unpack = async (options) => {
-      const urlPattern = options.urlPattern,
+      try
+      {
+        const urlPattern = options.urlPattern,
         start = options.start,
         end = options.end,
         padding = options.padding;
@@ -135,17 +153,34 @@ export class ScrollFramerComponent implements OnInit {
 
         calls.push(
           fetch(url).then((res) =>
-            res
+          {
+            try{
+              res
               .blob()
               .then((blob) =>
-                "createImageBitmap" in window
+              {
+                try
+                {
+                  "createImageBitmap" in window
                   ? createImageBitmap(blob).then((bitmap) =>
                       bitmaps.push({ id: index, bitmap: bitmap })
                     )
                   : this.createImageBitmap2(blob).then((bitmap) =>
                       bitmaps.push({ id: index, bitmap: bitmap })
                     )
+                }
+                catch(error) {
+                  console.log(error);
+                }
+              }
+                
               )
+            }
+            catch(error) {
+              console.log(error)
+            }
+          }
+            
           )
         );
       }
@@ -165,6 +200,11 @@ export class ScrollFramerComponent implements OnInit {
       bitmaps.map((bitmap) => frames.push(bitmap.bitmap));
 
       return frames;
+      }
+      catch(error) {
+        console.log(error);
+      }
+      
     };
 
     return {
@@ -190,7 +230,11 @@ export class ScrollFramerComponent implements OnInit {
             return;
 
           window.requestAnimationFrame(() => {
-            context.drawImage(frames[frameIndex], 0, 0);
+            try {
+              context.drawImage(frames[frameIndex], 0, 0);
+            } catch (error) {
+              console.log("Could not draw image at index " + frameIndex);
+            }
           });
         }
       };

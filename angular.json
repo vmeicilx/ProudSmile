@@ -30,7 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": ["./node_modules/jquery/dist/jquery.min.js", "src/assets/js/GridToFullscreenEffect.js"]
+            "scripts": ["./node_modules/jquery/dist/jquery.min.js", "src/assets/js/GridToFullscreenEffect.js", "src/assets/js/animation.js"]
           },
           "configurations": {
             "production": {
