@@ -276,7 +276,8 @@ export class HeaderComponent implements OnInit {
 
         if (
           val.url === "/PorcelainVeneers" ||
-          val.url === "/UltraThinVeneers"
+          val.url === "/UltraThinVeneers" ||
+          val.url === "/ZoomWhitening"
         ) {
           this.hItem.nativeElement.style.position = "relative";
           this.aestheticsSubheader.nativeElement.children[0].classList.add(

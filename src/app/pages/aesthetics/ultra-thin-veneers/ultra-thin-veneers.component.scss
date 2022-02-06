@@ -47,14 +47,6 @@
     margin-top: auto;
   }
   
-  .vertical-size {
-    height: 100vh;
-  }
-
-  .horizontal-size {
-    width: 100vw;
-  }
-  
   @media only screen and (min-width: 1201px) {
     .margin-top-porcelain {
       margin-top:217px;
@@ -62,15 +54,7 @@
     }
   }
 
-  @media only screen and (min-width: 601px) and (max-width: 1200px) {
-
-    .margin-top-porcelain {
-      margin-top:144px;
-      height: calc(100vh - 144px);
-    }
-  }
-
-  @media only screen and (min-width: 300px) and (max-width: 600px) {
+  @media only screen and (min-width: 300px) and (max-width: 1200px) {
 
     .margin-top-porcelain {
       margin-top:144px;

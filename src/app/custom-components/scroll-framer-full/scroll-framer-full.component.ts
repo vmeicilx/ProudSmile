@@ -30,7 +30,7 @@ export class ScrollFramerFullComponent implements OnInit {
   @ViewChild("ScrollCanvas") scrollCanvas: ElementRef;
   @ViewChild("FrameAround") FrameAround: ElementRef;
   @ViewChild("CanvasClone") CanvasClone: ElementRef;
-  @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
+  //@ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   observer: any;
 
@@ -42,7 +42,7 @@ export class ScrollFramerFullComponent implements OnInit {
 
   ngAfterViewInit() {
     this.start();
-    this.showorHideMobileSuggestion();
+    //this.showorHideMobileSuggestion();
   }
 
   ngOnDestroy(): void {
@@ -52,15 +52,15 @@ export class ScrollFramerFullComponent implements OnInit {
 
   @HostListener("window:resize", ["$event"])
   onResize(event) {
-    this.showorHideMobileSuggestion();
+    //this.showorHideMobileSuggestion();
   }
 
   showorHideMobileSuggestion(): void {
     if(this.scrollFramerContainer.nativeElement.style.position === "fixed" && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-        this.MobileSuggestion.nativeElement.style.display = "block";
+        //this.MobileSuggestion.nativeElement.style.display = "block";
     }
     else {
-      this.MobileSuggestion.nativeElement.style.display = "none";
+      //this.MobileSuggestion.nativeElement.style.display = "none";
     }
   }
 
@@ -363,7 +363,7 @@ export class ScrollFramerFullComponent implements OnInit {
         (100 * (100 * scrolled)) / (animationRect.height - viewportHeight)
       ) / 100;
 
-      this.showorHideMobileSuggestion();
+      //this.showorHideMobileSuggestion();
 
     this.publish(scrolledPercentage);
   };

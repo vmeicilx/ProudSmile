@@ -6,22 +6,21 @@ import {
   ViewChild,
 } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
-import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-framer-section/scroll-framer-section.component";
-
 
 function resize() {
   const canvas: any = document.getElementById("hero-lightpass");
   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
   const mobileSuggestion = document.getElementById("MobileSuggestion");
 
-  canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
-  canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
-
-  if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-    mobileSuggestion.style.display = "flex";
-  } else {
-    mobileSuggestion.style.display = "none";
+  if(canvas && canvasFramer) {
+    canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
+    canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+  
+    if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+      mobileSuggestion.style.display = "flex";
+    } else {
+      mobileSuggestion.style.display = "none";
+    }
   }
 }
 
@@ -44,15 +43,24 @@ function startAnimation() {
     topValue = 144;
   }
 
-  canvas.width = 1364;
-  canvas.height = 700;
+  let framesPath = "UltraThinVeneers";
+  if(window.innerWidth < 1200) {
+    framesPath = "UltraThinVeneers mobile";
+    canvas.width = 682;
+    canvas.height = 350;
+  }
+  else
+  {
+    canvas.width = 1364;
+    canvas.height = 700;
+  }
 
   canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
   canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
 
   const frameCount = 460;
   const currentFrame = (index) =>
-    `../../../../assets/aesthetics/UltraThinVeneers/Ultra Thin Veneers ${(
+    `../../../../assets/aesthetics/${framesPath}/Ultra Thin Veneers ${(
       index + 1
     )
       .toString()
@@ -84,21 +92,21 @@ function startAnimation() {
       trigger: "#UltraThinAnimationContainer",
       onEnter: () => {
         canvas.classList.add("canvas-in-viewport");
-        canvasFramer.classList.add("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
       },
       onEnterBack: () => {
         canvas.classList.add("canvas-in-viewport");
-        canvasFramer.classList.add("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
         canvas.parentElement.classList.remove("canvas-container-end");
       },
       onLeave: () => {
         canvas.classList.remove("canvas-in-viewport");
-        canvasFramer.classList.remove("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
         canvas.parentElement.classList.add("canvas-container-end");
       },
       onLeaveBack: () => {
         canvas.classList.remove("canvas-in-viewport");
-        canvasFramer.classList.remove("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
       },
       start: topValue + "px top",
       end: "bottom bottom",
@@ -122,6 +130,7 @@ function startAnimation() {
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[frames.frame], 0, 0);
+    resize();
   }
 
 }
@@ -206,7 +215,7 @@ export class UltraThinVeneersComponent implements OnInit {
   seeGallery() {
     this.router.navigate(["/", "BeforeAndAfter"]);
   }
-  
+
   onNextClick() {
     this.setCurrentFrame();
     window.scrollTo({

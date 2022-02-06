@@ -72,14 +72,19 @@
         </div>
 
         <div class="background-43" fxLayout fxLayoutAlign="center center" style="margin-bottom:4vw;">
-            <app-scroll-framer
-              class="hide-on-phone"
+
+            <div id="SameDayAnimationContainer" class="animation-container">
+                <div class="canvas-container">
+                  <canvas id="hero-lightpass-same-day"></canvas>
+                </div>
+              </div>
+            <!-- <app-scroll-framer
               urlPattern="../../../../assets/aesthetics/SameDay/video/SameDay ##id##.jpg"
               numberOfFrames="182"
               animationFactor="4000"
               padding="3"
             >
-            </app-scroll-framer>
+            </app-scroll-framer> -->
           </div>
 
         <button class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4" (click)="

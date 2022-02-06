@@ -9,6 +9,144 @@ import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-framer-section/scroll-framer-section.component";
 
+function resize() {
+  const canvas: any = document.getElementById("hero-lightpass");
+  const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+  const mobileSuggestion = document.getElementById("MobileSuggestion");
+
+  canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+  canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+
+  if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+    mobileSuggestion.style.display = "flex";
+  } else {
+    mobileSuggestion.style.display = "none";
+  }
+}
+
+window.onresize = resize;
+
+function startAnimation() {
+  const canvas: any = document.getElementById("hero-lightpass");
+  const context = canvas.getContext("2d");
+  const loadingText: any = document.getElementById("LoadingTextPorcelainVeneers");
+  const animationContainer: any = document.getElementById(
+    "PorcelainVeneersAnimationContainer"
+  );
+  const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+  document.body.style.overflow = "hidden";
+
+  let topValue = 217;
+
+  if (window.innerWidth < 1200) {
+    topValue = 144;
+  }
+
+  canvas.width = 1362;
+  canvas.height = 700;
+
+  canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+  canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+
+  const frameCount = 828;
+  const currentFrame = (index) =>
+    `../../../../assets/aesthetics/PV/PV final/PV ${(
+      index + 1
+    )
+      .toString()
+      .padStart(3, "0")}.jpg`;
+
+  const images = [];
+  const frames = {
+    frame: 0,
+  };
+
+  let loadedImages = 0;
+
+  loadingText.style.display = "block";
+  animationContainer.style.display = "none";
+
+  let firstFrameRepeat = 70;
+  let secondFrameRepeat = 70;
+  let thirdFrameRepeat = 60;
+  let fourthFrameRepeat = 20;
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    img.onload = countImages;
+    images.push(img);
+
+    if(i === 0 && firstFrameRepeat !== 0) {
+      i = i - 1;
+      firstFrameRepeat = firstFrameRepeat - 1;
+    }
+
+    
+    if(i === 194 && secondFrameRepeat !== 0) {
+      i = i - 1;
+      secondFrameRepeat = secondFrameRepeat - 1;
+    }
+    if(i === 280 && thirdFrameRepeat !== 0) {
+      i = i - 1;
+      thirdFrameRepeat = thirdFrameRepeat - 1;
+    }
+
+    if(i === 414 && fourthFrameRepeat !== 0) {
+      i = i - 1;
+      fourthFrameRepeat = fourthFrameRepeat - 1;
+    }
+  }
+
+  gsap.to(frames, {
+    frame: frameCount - 1,
+    snap: "frame",
+    scrollTrigger: {
+      id: "ScrollTriggerPV",
+      trigger: "#PorcelainVeneersAnimationContainer",
+      onEnter: () => {
+        canvas.classList.add("canvas-in-viewport");
+        canvasFramer.classList.add("canvas-in-viewport");
+      },
+      onEnterBack: () => {
+        canvas.classList.add("canvas-in-viewport");
+        canvasFramer.classList.add("canvas-in-viewport");
+        canvas.parentElement.classList.remove("canvas-container-end");
+      },
+      onLeave: () => {
+        canvas.classList.remove("canvas-in-viewport");
+        canvasFramer.classList.remove("canvas-in-viewport");
+        canvas.parentElement.classList.add("canvas-container-end");
+      },
+      onLeaveBack: () => {
+        canvas.classList.remove("canvas-in-viewport");
+        canvasFramer.classList.remove("canvas-in-viewport");
+      },
+      start: topValue + "px top",
+      end: "bottom bottom",
+      markers: false,
+      scrub: 1,
+    },
+    onUpdate: render,
+  });
+
+  function countImages() {
+    loadedImages = loadedImages + 1;
+    if (loadedImages === frameCount) {
+      loadingText.style.display = "none";
+      animationContainer.style.display = "block";
+      render();
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function render() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[frames.frame], 0, 0);
+  }
+
+}
+
 @Component({
   selector: "app-porcelain-veneers",
   templateUrl: "./porcelain-veneers.component.html",
@@ -93,6 +231,7 @@ export class PorcelainVeneersComponent implements OnInit {
   ];
 
   firstFramePosition = 250;
+  lastFramePosition = 23179;
 
   sections = 0;
 
@@ -109,32 +248,39 @@ export class PorcelainVeneersComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.frames = [
-      this.firstFrame.nativeElement,
-      this.secondFrame.nativeElement,
-      this.thirdFrame.nativeElement,
-      this.fourthFrame.nativeElement,
-      this.fifthFrame.nativeElement,
-      this.sixthFrame.nativeElement,
-      this.seventhFrame.nativeElement,
-      this.eightFrame.nativeElement,
-      this.nineFrame.nativeElement,
-      this.tenFrame.nativeElement,
-    ];
+    // this.frames = [
+    //   this.firstFrame.nativeElement,
+    //   this.secondFrame.nativeElement,
+    //   this.thirdFrame.nativeElement,
+    //   this.fourthFrame.nativeElement,
+    //   this.fifthFrame.nativeElement,
+    //   this.sixthFrame.nativeElement,
+    //   this.seventhFrame.nativeElement,
+    //   this.eightFrame.nativeElement,
+    //   this.nineFrame.nativeElement,
+    //   this.tenFrame.nativeElement,
+    // ];
 
-    this.framesContent = [
-      this.firstFrameImg.nativeElement,
-      this.secondFrameVideo.scrollCanvas.nativeElement,
-      this.thirdFrameImg.nativeElement,
-      this.fourthFrameVideo.scrollCanvas.nativeElement,
-      this.fifthFrameImg.nativeElement,
-      this.sixthFrameVideo.scrollCanvas.nativeElement,
-      this.seventhFrameImg.nativeElement,
-      this.eightFrameVideo.scrollCanvas.nativeElement,
-      this.nineFrameVideo.scrollCanvas.nativeElement,
-      this.tenFrameVideo.scrollCanvas.nativeElement,
-    ];
-    this.showorHideMobileSuggestion();
+    // this.framesContent = [
+    //   this.firstFrameImg.nativeElement,
+    //   this.secondFrameVideo.scrollCanvas.nativeElement,
+    //   this.thirdFrameImg.nativeElement,
+    //   this.fourthFrameVideo.scrollCanvas.nativeElement,
+    //   this.fifthFrameImg.nativeElement,
+    //   this.sixthFrameVideo.scrollCanvas.nativeElement,
+    //   this.seventhFrameImg.nativeElement,
+    //   this.eightFrameVideo.scrollCanvas.nativeElement,
+    //   this.nineFrameVideo.scrollCanvas.nativeElement,
+    //   this.tenFrameVideo.scrollCanvas.nativeElement,
+    // ];
+    // this.showorHideMobileSuggestion();
+
+
+
+    //startAnimation();
+    //this.suggestionButton.nativeElement.style.display = "none";
+    //this.suggestionButtonUp.nativeElement.style.display = "none";
+    //this.MobileSuggestion.nativeElement.style.display = "none";
   }
 
   showExploreButton() {
@@ -170,7 +316,42 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    this.renderPresentation();
+    //this.renderPresentation();
+
+    if(window.scrollY > 12500 && window.scrollY < 13500) {
+      this.sixthText.nativeElement.style.opacity = "1";
+    }
+    else {
+      this.sixthText.nativeElement.style.opacity = "0";
+
+    }
+
+    // if(window.scrollY >300 && window.scrollY < 1000) {
+    //   ScrollTrigger.getById("ScrollTriggerPV").disable(false);
+    // }
+    // else {
+    //   ScrollTrigger.getById("ScrollTriggerPV").enable();
+    // }
+
+    if(window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+      this.MobileSuggestion.nativeElement.style.display = "flex";
+    }
+    else {
+      this.MobileSuggestion.nativeElement.style.display = "none";
+    }
+
+    if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+      this.suggestionButton.nativeElement.style.display = "block";
+    } else {
+      this.suggestionButton.nativeElement.style.display = "none";
+    }
+
+    if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
+      this.suggestionButtonUp.nativeElement.style.display = "block";
+    }
+    else {
+      this.suggestionButtonUp.nativeElement.style.display = "none";
+    }
   }
 
   renderPresentation() {
@@ -440,35 +621,35 @@ export class PorcelainVeneersComponent implements OnInit {
     }
   }
 
-  @HostListener("window:resize", ["$event"])
-  onResize(event) {
-    this.showorHideMobileSuggestion();
-    var activeContent = this.framesContent[this.activeFrameIndex];
-    var activeContentRect = activeContent.getBoundingClientRect();
+  // @HostListener("window:resize", ["$event"])
+  // onResize(event) {
+  //   this.showorHideMobileSuggestion();
+  //   var activeContent = this.framesContent[this.activeFrameIndex];
+  //   var activeContentRect = activeContent.getBoundingClientRect();
 
-    if (activeContentRect.width >= window.innerWidth) {
-      activeContent.classList.remove("vertical-size");
-      activeContent.classList.add("horizontal-size");
-    } else if (activeContentRect.height > window.innerHeight) {
-      activeContent.classList.remove("horizontal-size");
-      activeContent.classList.add("vertical-size");
-    }
+  //   if (activeContentRect.width >= window.innerWidth) {
+  //     activeContent.classList.remove("vertical-size");
+  //     activeContent.classList.add("horizontal-size");
+  //   } else if (activeContentRect.height > window.innerHeight) {
+  //     activeContent.classList.remove("horizontal-size");
+  //     activeContent.classList.add("vertical-size");
+  //   }
 
-    if (activeContent.classList.contains("horizontal-size")) {
-      var remainingSpaceHeight =
-        (window.innerHeight - activeContentRect.height) / 2;
-      this.topBackground.nativeElement.style.height =
-        remainingSpaceHeight + "px";
-      this.bottomBackground.nativeElement.style.height =
-        remainingSpaceHeight + "px";
-    } else if (activeContent.classList.contains("vertical-size")) {
-      this.topBackground.nativeElement.style.height = "0px";
-      this.bottomBackground.nativeElement.style.height = "0px";
-    }
-    this.presentationHeight = activeContentRect.height;
-    this.calculateTextsTop();
-    this.renderPresentation();
-  }
+  //   if (activeContent.classList.contains("horizontal-size")) {
+  //     var remainingSpaceHeight =
+  //       (window.innerHeight - activeContentRect.height) / 2;
+  //     this.topBackground.nativeElement.style.height =
+  //       remainingSpaceHeight + "px";
+  //     this.bottomBackground.nativeElement.style.height =
+  //       remainingSpaceHeight + "px";
+  //   } else if (activeContent.classList.contains("vertical-size")) {
+  //     this.topBackground.nativeElement.style.height = "0px";
+  //     this.bottomBackground.nativeElement.style.height = "0px";
+  //   }
+  //   this.presentationHeight = activeContentRect.height;
+  //   this.calculateTextsTop();
+  //   this.renderPresentation();
+  // }
 
   imgLoaded(imageRef) {
     let imgWidth = imageRef.width;
@@ -497,19 +678,20 @@ export class PorcelainVeneersComponent implements OnInit {
   }
 
   calculateTextsTop() {
-    let firstImageHeight = this.getImageHeight(
-      this.firstTextImg.nativeElement,
-      this.firstTextImgWidth
-    );
+    //let firstImageHeight = this.getImageHeight(
+      //this.firstTextImg.nativeElement,
+      //this.firstTextImgWidth
+    //);
 
-    var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
-    this.firstText.nativeElement.style.top = firstTextTop + "px";
+    //var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
+    //this.firstText.nativeElement.style.top = firstTextTop + "px";
 
-    var secondTextTop = firstTextTop + this.presentationHeight;
-    this.secondText.nativeElement.style.top = secondTextTop + "px";
+    //var secondTextTop = firstTextTop + this.presentationHeight;
+    //var secondTextTop = firstTextTop + 600;
+    //this.secondText.nativeElement.style.top = secondTextTop + "px";
 
-    var thirdTextTop = secondTextTop + 40;
-    this.thirdText.nativeElement.style.top = thirdTextTop + "px";
+    //var thirdTextTop = secondTextTop + 40;
+    //this.thirdText.nativeElement.style.top = thirdTextTop + "px";
 
     // var elevenTextTop = this.elevenText.nativeElement.getBoundingClientRect().top;
     // var lastButtonTop = elevenTextTop + 40;

@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div class="margin-top-porcelain" #LoadingText style="background: black">
       <div class="" style="width: 100vw; z-index: 1; margin-bottom: 10vw; display: block">
         <div class="flexy-column color-white cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container">
@@ -92,4 +92,185 @@
   
       </div>
     </div>
+  </div> -->
+
+
+  <div
+  id="LoadingTextZoom"
+  #LoadingText
+  class="margin-top-porcelain"
+  style="background: black"
+>
+  <div
+    class=""
+    style="
+      height: 100vh;
+      width: 100vw;
+      z-index: 1;
+      margin-bottom: 10vw;
+      display: block;
+    "
+  >
+    <div
+      class="flexy-column color-white cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container"
+    >
+      <div class="width-1 margin-bottom-10">
+        <img src="../../../../assets/WhiteShape.svg" />
+      </div>
+      <p class="margin-bottom-10">Loading Zoom Whitening presentation...</p>
+    </div>
   </div>
+</div>
+
+<div id="ZoomAnimationContainer" class="animation-container">
+  <div
+    id="MobileSuggestion"
+    #MobileSuggestion
+    style="
+      position: fixed;
+      left: 5%;
+      bottom: 20px;
+      display: none;
+      flex-direction: column;
+      max-width: 45vw;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    "
+    class="roboto-regular"
+  >
+    <div style="width: 80px; margin: auto; margin-bottom: 4vw">
+      <img src="../../../assets/rotate.gif" width="100%" height="100%" />
+    </div>
+    <div style="color: white; margin-bottom: 2vw">
+      <p>Please rotate the phone</p>
+    </div>
+    <div style="color: #adaeb1">
+      <p>This page is better experienced in a horizontal view.</p>
+    </div>
+  </div>
+  <div
+    #SuggestionButton
+    style="
+      position: fixed;
+      bottom: 10px;
+      right: 3%;
+      z-index: 10;
+      cursor: pointer;
+    "
+  >
+    <div
+      (click)="onNextClick()"
+      style="display: flex; align-items: center"
+      class="roboto-medium font-extra-small-2"
+    >
+      <p #HelperText style="color: #adaeb1; margin-right: 8px">
+        Skip to next chapter<br />
+        or keep scrolling.
+      </p>
+      <div>
+        <img
+          #DownArrow
+          style="transform: rotate(0deg); transition: transform 0.5s"
+          src="../../../../assets/down.svg"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    #SuggestionButtonUp
+    style="
+      position: fixed;
+      bottom: 50px;
+      right: 3%;
+      z-index: 10;
+      cursor: pointer;
+    "
+  >
+    <div
+      (click)="onRevertClick()"
+      style="display: flex; align-items: center"
+      class="roboto-medium font-extra-small-2"
+    >
+      <p style="color: #adaeb1; margin-right: 8px">Revert to first chapter.</p>
+      <div>
+        <img
+          style="transform: rotate(180deg)"
+          src="../../../../assets/down.svg"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="hero-lightpass-zoom"></canvas>
+    <div class="canvas-framer">
+      <div
+        style="
+          position: absolute;
+          top: 0px;
+          left: 0;
+          height: 2vw;
+          background: linear-gradient(black, transparent);
+          z-index: 6;
+          width: 100vw;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: linear-gradient(90deg, black, transparent);
+          z-index: 6;
+          width: 2vw;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          background: linear-gradient(270deg, black, transparent);
+          z-index: 6;
+          width: 2vw;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          left: 0;
+          bottom: 0px;
+          height: 2vw;
+          background: linear-gradient(0deg, black, transparent);
+          z-index: 6;
+          width: 100vw;
+        "
+      ></div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="ZoomBottomButtons"
+  class="padding-chef flexy-row cccc"
+  style="
+    background: black;
+    justify-content: space-around;
+    position: relative;
+    top: -5px;
+    z-index: 4;
+    padding-bottom: 4vw;
+    flex-wrap: wrap;
+  "
+>
+  <button
+    style="margin-top: 2vw"
+    class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4"
+    (click)="seeUltraThin()"
+  >
+    ULTRA THIN VENEERS
+  </button>
+</div>
