@@ -248,32 +248,32 @@ export class PorcelainVeneersComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    // this.frames = [
-    //   this.firstFrame.nativeElement,
-    //   this.secondFrame.nativeElement,
-    //   this.thirdFrame.nativeElement,
-    //   this.fourthFrame.nativeElement,
-    //   this.fifthFrame.nativeElement,
-    //   this.sixthFrame.nativeElement,
-    //   this.seventhFrame.nativeElement,
-    //   this.eightFrame.nativeElement,
-    //   this.nineFrame.nativeElement,
-    //   this.tenFrame.nativeElement,
-    // ];
+    this.frames = [
+      this.firstFrame.nativeElement,
+      this.secondFrame.nativeElement,
+      this.thirdFrame.nativeElement,
+      this.fourthFrame.nativeElement,
+      this.fifthFrame.nativeElement,
+      this.sixthFrame.nativeElement,
+      this.seventhFrame.nativeElement,
+      this.eightFrame.nativeElement,
+      this.nineFrame.nativeElement,
+      this.tenFrame.nativeElement,
+    ];
 
-    // this.framesContent = [
-    //   this.firstFrameImg.nativeElement,
-    //   this.secondFrameVideo.scrollCanvas.nativeElement,
-    //   this.thirdFrameImg.nativeElement,
-    //   this.fourthFrameVideo.scrollCanvas.nativeElement,
-    //   this.fifthFrameImg.nativeElement,
-    //   this.sixthFrameVideo.scrollCanvas.nativeElement,
-    //   this.seventhFrameImg.nativeElement,
-    //   this.eightFrameVideo.scrollCanvas.nativeElement,
-    //   this.nineFrameVideo.scrollCanvas.nativeElement,
-    //   this.tenFrameVideo.scrollCanvas.nativeElement,
-    // ];
-    // this.showorHideMobileSuggestion();
+    this.framesContent = [
+      this.firstFrameImg.nativeElement,
+      this.secondFrameVideo.scrollCanvas.nativeElement,
+      this.thirdFrameImg.nativeElement,
+      this.fourthFrameVideo.scrollCanvas.nativeElement,
+      this.fifthFrameImg.nativeElement,
+      this.sixthFrameVideo.scrollCanvas.nativeElement,
+      this.seventhFrameImg.nativeElement,
+      this.eightFrameVideo.scrollCanvas.nativeElement,
+      this.nineFrameVideo.scrollCanvas.nativeElement,
+      this.tenFrameVideo.scrollCanvas.nativeElement,
+    ];
+    this.showorHideMobileSuggestion();
 
 
 
@@ -316,7 +316,7 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    //this.renderPresentation();
+    this.renderPresentation();
 
     if(window.scrollY > 12500 && window.scrollY < 13500) {
       this.sixthText.nativeElement.style.opacity = "1";
@@ -621,35 +621,35 @@ export class PorcelainVeneersComponent implements OnInit {
     }
   }
 
-  // @HostListener("window:resize", ["$event"])
-  // onResize(event) {
-  //   this.showorHideMobileSuggestion();
-  //   var activeContent = this.framesContent[this.activeFrameIndex];
-  //   var activeContentRect = activeContent.getBoundingClientRect();
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    this.showorHideMobileSuggestion();
+    var activeContent = this.framesContent[this.activeFrameIndex];
+    var activeContentRect = activeContent.getBoundingClientRect();
 
-  //   if (activeContentRect.width >= window.innerWidth) {
-  //     activeContent.classList.remove("vertical-size");
-  //     activeContent.classList.add("horizontal-size");
-  //   } else if (activeContentRect.height > window.innerHeight) {
-  //     activeContent.classList.remove("horizontal-size");
-  //     activeContent.classList.add("vertical-size");
-  //   }
+    if (activeContentRect.width >= window.innerWidth) {
+      activeContent.classList.remove("vertical-size");
+      activeContent.classList.add("horizontal-size");
+    } else if (activeContentRect.height > window.innerHeight) {
+      activeContent.classList.remove("horizontal-size");
+      activeContent.classList.add("vertical-size");
+    }
 
-  //   if (activeContent.classList.contains("horizontal-size")) {
-  //     var remainingSpaceHeight =
-  //       (window.innerHeight - activeContentRect.height) / 2;
-  //     this.topBackground.nativeElement.style.height =
-  //       remainingSpaceHeight + "px";
-  //     this.bottomBackground.nativeElement.style.height =
-  //       remainingSpaceHeight + "px";
-  //   } else if (activeContent.classList.contains("vertical-size")) {
-  //     this.topBackground.nativeElement.style.height = "0px";
-  //     this.bottomBackground.nativeElement.style.height = "0px";
-  //   }
-  //   this.presentationHeight = activeContentRect.height;
-  //   this.calculateTextsTop();
-  //   this.renderPresentation();
-  // }
+    if (activeContent.classList.contains("horizontal-size")) {
+      var remainingSpaceHeight =
+        (window.innerHeight - activeContentRect.height) / 2;
+      this.topBackground.nativeElement.style.height =
+        remainingSpaceHeight + "px";
+      this.bottomBackground.nativeElement.style.height =
+        remainingSpaceHeight + "px";
+    } else if (activeContent.classList.contains("vertical-size")) {
+      this.topBackground.nativeElement.style.height = "0px";
+      this.bottomBackground.nativeElement.style.height = "0px";
+    }
+    this.presentationHeight = activeContentRect.height;
+    this.calculateTextsTop();
+    this.renderPresentation();
+  }
 
   imgLoaded(imageRef) {
     let imgWidth = imageRef.width;
@@ -678,24 +678,24 @@ export class PorcelainVeneersComponent implements OnInit {
   }
 
   calculateTextsTop() {
-    //let firstImageHeight = this.getImageHeight(
-      //this.firstTextImg.nativeElement,
-      //this.firstTextImgWidth
-    //);
+    let firstImageHeight = this.getImageHeight(
+      this.firstTextImg.nativeElement,
+      this.firstTextImgWidth
+    );
 
-    //var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
-    //this.firstText.nativeElement.style.top = firstTextTop + "px";
+    var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
+    this.firstText.nativeElement.style.top = firstTextTop + "px";
 
-    //var secondTextTop = firstTextTop + this.presentationHeight;
-    //var secondTextTop = firstTextTop + 600;
-    //this.secondText.nativeElement.style.top = secondTextTop + "px";
+    var secondTextTop = firstTextTop + this.presentationHeight;
+    var secondTextTop = firstTextTop + 600;
+    this.secondText.nativeElement.style.top = secondTextTop + "px";
 
-    //var thirdTextTop = secondTextTop + 40;
-    //this.thirdText.nativeElement.style.top = thirdTextTop + "px";
+    var thirdTextTop = secondTextTop + 40;
+    this.thirdText.nativeElement.style.top = thirdTextTop + "px";
 
-    // var elevenTextTop = this.elevenText.nativeElement.getBoundingClientRect().top;
-    // var lastButtonTop = elevenTextTop + 40;
-    // this.lastButton.nativeElement.style.top = lastButtonTop + "px";
+    var elevenTextTop = this.elevenText.nativeElement.getBoundingClientRect().top;
+    var lastButtonTop = elevenTextTop + 40;
+    this.lastButton.nativeElement.style.top = lastButtonTop + "px";
   }
 
   getImageHeight(element, width) {

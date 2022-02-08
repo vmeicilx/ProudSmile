@@ -1,7 +1,12 @@
-<div class="padding-chef color-brown background-1 padding-bottom-1 padding-top-1" fxLayout="column"
-  fxLayoutAlign="center center">
-  <div fxLayout="column" fxLayoutAlign="center center" class="font-large libre-regular center-text"
-    style="padding-top:2vw;padding-bottom:10vw;">
+<div
+  class="flexy-column cccc padding-chef color-brown background-1 padding-bottom-1 padding-top-1 hide-on-sm"
+>
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="font-large libre-regular center-text"
+    style="padding-top: 2vw; padding-bottom: 10vw"
+  >
     <p>
       <span class="libre-italic">Specials</span>
     </p>
@@ -11,114 +16,571 @@
     <div class="flexy-row-w">
       <div class="flexy-column">
         <div
-          style="width:598px; height:780px; border-radius: 16px; background-color: #FEECF2; box-shadow: 0 1px 11px 0 rgba(0,0,0,0.17); margin:23px; position: relative;">
-          <div class="flexy-column cccc" style="position: absolute; top:-130px;">
+          id="FirstAddCard"
+          style="
+            cursor: pointer;
+            width: 598px;
+            height: 780px;
+            border-radius: 16px;
+            background-color: #feecf2;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            margin: 23px;
+            position: relative;
+          "
+          (click)="onAddClick()"
+        >
+          <div
+            class="flexy-column cccc"
+            style="position: absolute; top: -130px"
+          >
             <div>
               <img src="../../../assets/specials/Lady1.png" />
             </div>
             <div class="roboto-regular color-brown font-fish">
               <p class="center-text">
-                Zoom Whitening –<br><span class="roboto-bold"> Only $495</span>
+                Zoom Whitening –<br /><span class="roboto-bold">
+                  Only $495</span
+                >
               </p>
             </div>
-            <div class="roboto-medium color-brown font-lion opacity-6" style="padding:41px;">
+            <div
+              class="roboto-medium color-brown font-lion opacity-6"
+              style="padding: 41px"
+            >
               <p class="center-text">
-                Get Whiter Teeth in just 1 hour with the most trusted Whitening System Worldwide. Plus add …
+                Get Whiter Teeth in just 1 hour with the most trusted Whitening
+                System Worldwide. Plus add …
               </p>
             </div>
 
-            <div class="color-orange cursor-pointer font-extra-small roboto-bold" (click)="onInternalLink('ZoomWhitening')">
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+            >
               <p>
                 Click to view the offer
-                <img style="display: inline; vertical-align: middle;padding-left:10px;" src="../../assets/orangeArrow.svg" />
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
               </p>
             </div>
-
           </div>
         </div>
         <div
-          style="width:598px; height:874px; border-radius: 16px; background-color: #F7FFFD; box-shadow: 0 1px 11px 0 rgba(0,0,0,0.17); margin:23px; position: relative;">
-        
-          <div class="flexy-column cccc" style="position: absolute; top:-30px;">
+        id="SecondAddCard"
+          style="
+          cursor: pointer;
+            width: 598px;
+            height: 874px;
+            border-radius: 16px;
+            background-color: #f7fffd;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            margin: 23px;
+            position: relative;
+          "
+          (click)="onAddClick()"
+        >
+          <div class="flexy-column cccc" style="position: absolute; top: -30px">
             <div>
               <img src="../../../assets/specials/Dent1.png" />
             </div>
             <div class="roboto-regular color-brown font-fish">
               <p class="center-text">
-                <span class="roboto-bold">Invisalign –</span> now with<br> more options starting<br> from <span class="roboto-bold">$2900</span>
+                <span class="roboto-bold">Invisalign –</span> now with<br />
+                more options starting<br />
+                from <span class="roboto-bold">$2900</span>
               </p>
             </div>
-            <div class="roboto-medium color-brown font-lion opacity-6" style="padding:41px; padding-left:60px;">
+            <div
+              class="roboto-medium color-brown font-lion opacity-6"
+              style="padding: 41px; padding-left: 60px"
+            >
               <p class="center-text">
-                Change your smile, not your lifestyle and in as little as 2 months. Invisalign is the …
+                Change your smile, not your lifestyle and in as little as 2
+                months. Invisalign is the …
               </p>
             </div>
 
-            <div class="color-orange cursor-pointer font-extra-small roboto-bold" (click)="onInternalLink('Invisalign')">
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+              (click)="onInternalLink('Invisalign')"
+            >
               <p>
                 Click to view the offer
-                <img style="display: inline; vertical-align: middle;padding-left:10px;" src="../../assets/orangeArrow.svg" />
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
               </p>
             </div>
-
           </div>
-        
         </div>
       </div>
       <div class="flexy-column">
         <div
-          style="width:590px; height:827px; border-radius: 16px; background-color: #F5F9FC; box-shadow: 0 1px 11px 0 rgba(0,0,0,0.17); margin:23px; position: relative;">
-        
-          <div class="flexy-column cccc" style="position: absolute; bottom:0px;">
+          style="
+            width: 590px;
+            height: 827px;
+            border-radius: 16px;
+            background-color: #f5f9fc;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            margin: 23px;
+            position: relative;
+          "
+        >
+          <div
+            class="flexy-column cccc"
+            style="position: absolute; bottom: 0px"
+          >
             <div>
               <img src="../../../assets/specials/PayG.png" />
             </div>
-            <div class="roboto-medium color-brown font-lion opacity-6" style="padding:41px;">
+            <div
+              class="roboto-medium color-brown font-lion opacity-6"
+              style="padding: 41px"
+            >
               <p class="center-text">
-                No Deposit, pay as you go on each maintenance visit. Exclusively to Proud Smile Braces …
+                No Deposit, pay as you go on each maintenance visit. Exclusively
+                to Proud Smile Braces …
               </p>
             </div>
 
-            <div class="color-orange cursor-pointer font-extra-small roboto-bold" (click)="onInternalLink('payment-page-component')">
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+              (click)="onInternalLink('payment-page-component')"
+            >
               <p>
                 Click to view the offer
-                <img style="display: inline; vertical-align: middle;padding-left:10px;" src="../../assets/orangeArrow.svg" />
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
               </p>
             </div>
 
             <div>
               <img src="../../../assets/specials/Dent2.png" />
             </div>
-
           </div>
-        
         </div>
         <div
-          style="width:598px; height:860px; border-radius: 16px; background-color: #FEE2DB; box-shadow: 0 1px 11px 0 rgba(0,0,0,0.17); margin:23px; position: relative;">
-          <div class="flexy-column cccc" style="position: absolute; top:-30px;">
+          style="
+            width: 598px;
+            height: 860px;
+            border-radius: 16px;
+            background-color: #fee2db;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            margin: 23px;
+            position: relative;
+          "
+        >
+          <div class="flexy-column cccc" style="position: absolute; top: -30px">
             <div>
               <img src="../../../assets/specials/Lady2.png" />
             </div>
             <div class="roboto-regular color-brown font-fish">
               <p class="center-text">
-                Our<span class="roboto-bold"> New<br>Patient Special</span>
+                Our<span class="roboto-bold"> New<br />Patient Special</span>
               </p>
             </div>
-            <div class="roboto-medium color-brown font-lion opacity-6" style="padding:41px;">
+            <div
+              class="roboto-medium color-brown font-lion opacity-6"
+              style="padding: 41px"
+            >
               <p class="center-text">
-                Heck up and x-rays for only <span class="roboto-bold" style="text-decoration: underline">$99 or Gap Free</span> with all health insurances. We’d love you to join …
+                Heck up and x-rays for only
+                <span class="roboto-bold" style="text-decoration: underline"
+                  >$99 or Gap Free</span
+                >
+                with all health insurances. We’d love you to join …
               </p>
             </div>
 
-            <div class="color-orange cursor-pointer font-extra-small roboto-bold">
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+            >
               <p>
                 Click to view the offer
-                <img style="display: inline; vertical-align: middle;padding-left:10px;" src="../../assets/orangeArrow.svg" />
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="padding-chef color-brown background-1 padding-bottom-1 hide-on-big"
+  style="padding-top: 150px"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="font-large libre-regular center-text"
+    style="padding-top: 2vw; padding-bottom: 10vw"
+  >
+    <p>
+      <span class="libre-italic">Specials</span>
+    </p>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div class="flexy-row-w">
+      <div class="flexy-column">
+        <div
+          id="FirstAddCardMobile"
+          style="
+            cursor: pointer;
+            border-radius: 16px;
+            background-color: #feecf2;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            position: relative;
+            margin-bottom: 6vw;
+          "
+          (click)="onAddClick()"
+        >
+          <div class="flexy-column cccc" style="padding: 4vw">
+            <div>
+              <img src="../../../assets/specials/Lady1.png" />
+            </div>
+            <div class="roboto-regular color-brown font-fish margin-bottom-4">
+              <p class="center-text">
+                Zoom Whitening –<br /><span class="roboto-bold">
+                  Only $495</span
+                >
+              </p>
+            </div>
+            <div
+              class="roboto-medium color-brown font-fish opacity-6 margin-bottom-4"
+            >
+              <p class="center-text">
+                Get Whiter Teeth in just 1 hour with the most trusted Whitening
+                System Worldwide. Plus add …
               </p>
             </div>
 
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+            >
+              <p>
+                Click to view the offer
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
+              </p>
+            </div>
           </div>
         </div>
+        <div
+        id="SecondAddCardMobile"
+          style="
+            border-radius: 16px;
+            background-color: #f7fffd;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            position: relative;
+            margin-bottom: 6vw;
+          "
+          (click)="onAddClick()"
+        >
+          <div style="padding: 4vw" class="flexy-column cccc">
+            <div>
+              <img src="../../../assets/specials/Dent1.png" />
+            </div>
+            <div class="roboto-regular color-brown font-fish margin-bottom-4">
+              <p class="center-text">
+                <span class="roboto-bold">Invisalign –</span> now with<br />
+                more options starting<br />
+                from <span class="roboto-bold">$2900</span>
+              </p>
+            </div>
+            <div
+              class="roboto-medium color-brown font-fish opacity-6 margin-bottom-4"
+            >
+              <p class="center-text">
+                Change your smile, not your lifestyle and in as little as 2
+                months. Invisalign is the …
+              </p>
+            </div>
+
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+            >
+              <p>
+                Click to view the offer
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flexy-column">
+        <div
+          style="
+            border-radius: 16px;
+            background-color: #f5f9fc;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            position: relative;
+            margin-bottom: 6vw;
+          "
+        >
+          <div class="flexy-column cccc">
+            <div style="padding: 4vw">
+              <img src="../../../assets/specials/PayG.png" />
+            </div>
+            <div
+              class="roboto-medium color-brown font-fish opacity-6 margin-bottom-4"
+            >
+              <p class="center-text">
+                No Deposit, pay as you go on each maintenance visit. Exclusively
+                to Proud Smile Braces …
+              </p>
+            </div>
+
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+              (click)="onInternalLink('payment-page-component')"
+            >
+              <p>
+                Click to view the offer
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
+              </p>
+            </div>
+
+            <div>
+              <img src="../../../assets/specials/Dent2.png" />
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            border-radius: 16px;
+            background-color: #fee2db;
+            box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
+            position: relative;
+            margin-bottom: 6vw;
+          "
+        >
+          <div style="padding: 4vw" class="flexy-column cccc">
+            <div>
+              <img src="../../../assets/specials/Lady2.png" />
+            </div>
+            <div class="roboto-regular color-brown font-fish margin-bottom-4">
+              <p class="center-text">
+                Our<span class="roboto-bold"> New<br />Patient Special</span>
+              </p>
+            </div>
+            <div
+              class="roboto-medium color-brown font-fish opacity-6 margin-bottom-4"
+            >
+              <p class="center-text">
+                Heck up and x-rays for only
+                <span class="roboto-bold" style="text-decoration: underline"
+                  >$99 or Gap Free</span
+                >
+                with all health insurances. We’d love you to join …
+              </p>
+            </div>
+
+            <div
+              class="color-orange cursor-pointer font-extra-small roboto-bold"
+            >
+              <p>
+                Click to view the offer
+                <img
+                  style="
+                    display: inline;
+                    vertical-align: middle;
+                    padding-left: 10px;
+                  "
+                  src="../../assets/orangeArrow.svg"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="FirstAddExpanded"
+  style="
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    background-color: black;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+  "
+>
+  <button class="fullview__close" id="first-close-btn" (click)="onAddClose()">
+    <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+      <path
+        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+      />
+    </svg>
+  </button>
+
+  <div style="position: absolute; top: 0">
+    <div
+    class="card-full-parent"
+      style="
+        background-color: #feecf2;
+        position: relative;
+        min-height: 100vh;
+      "
+    >
+      <div class="flexy-column cccc">
+        <div>
+          <img class="lady1-special" src="../../../assets/specials/Lady1.png" />
+        </div>
+        <div class="roboto-regular color-brown font-fish">
+          <p class="center-text">
+            Zoom Whitening –<br /><span class="roboto-bold"> Only $495</span>
+          </p>
+        </div>
+        <div
+          class="roboto-medium color-brown font-medium opacity-6 first-card-text-full"
+        >
+          <p class="center-text">
+            Get Whiter Teeth in just 1 hour with the most trusted Whitening
+            System Worldwide. Plus add a Pola Light LED Home Kit for only $99
+            (usually $189) and get a basic teeth cleaning for $75 or Gap Free
+            (usually $145) if done all together with the Zoom. You can also use
+            Zip or Afterpay for this package and pay it later. Book Now, share
+            offer.
+          </p>
+        </div>
+
+        <button
+          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
+          "
+        >
+          INSTANT ONLINE BOOKING
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="SecondAddExpanded"
+  style="
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    background-color: black;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+  "
+>
+  <button class="fullview__close" id="second-close-btn" (click)="onAddClose()">
+    <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+      <path
+        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+      />
+    </svg>
+  </button>
+
+  <div style="position: absolute; top: 0">
+    <div
+    class="card-full-parent"
+      style="
+        background-color: #f7fffd;
+        position: relative;
+        min-height: 100vh;
+      "
+    >
+      <div class="flexy-column cccc">
+        <div>
+          <img class='second-card-img-special' src="../../../assets/specials/Dent1.png" />
+        </div>
+        <div class="roboto-regular color-brown font-fish">
+          <p class="center-text">
+            <span class="roboto-bold">Invisalign –</span> now with<br />
+            more options starting<br />
+            from <span class="roboto-bold">$2900</span>
+          </p>
+        </div>
+        <div
+          class="roboto-medium color-brown font-lion opacity-6 second-card-text-full"
+        >
+          <p class="center-text">
+            Change your smile, not your lifestyle and in as little as 2 months. Invisalign is the number 1 aligner system in the world with more than 6 million people treated. Whether it’s a small gap you don’t like or a more severe problem we’ll have a tailored solution for you and the choice of 4 levels of treatments each with a different price backet. Book your Free Invisalign Assessment and get an instant before and after photo of how you can look like with straighter teeth. Plus, use our Smileasy Payment Plan and pay it off in up to 24 months. Book Now, share offer.
+          </p>
+        </div>
+
+        <button
+          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
+          "
+        >
+          INSTANT ONLINE BOOKING
+        </button>
       </div>
     </div>
   </div>

@@ -100,7 +100,7 @@ export class HomePageComponent implements OnInit {
     this.relaxVideo.nativeElement.muted = true;
     this.relaxVideo.nativeElement.style.display = "block";
     
-    if(window.innerWidth <= 600) {
+    if(window.innerWidth <= 1200) {
       this.relaxVideo.nativeElement.play();
     }
   }

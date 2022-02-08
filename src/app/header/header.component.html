@@ -15,7 +15,7 @@
           fxLayout
           (click)="
             goToLink(
-              'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
+              'https://goo.gl/maps/QVq3uhoXnVFc3K7f7'
             )
           "
         >
@@ -92,7 +92,7 @@
           fxLayout
           (click)="
             goToLink(
-              'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
+              'https://goo.gl/maps/AidkYdrsa85eDDtH9'
             )
           "
         >
@@ -120,7 +120,7 @@
           <p>Wednesday</p>
           <p>Thursday</p>
           <p>Friday</p>
-          <p class="opacity-5">Saturday</p>
+          <p>Saturday</p>
           <p class="opacity-5">Sunday</p>
         </div>
         <div fxLayout="column" fxLayoutGap="1vh">
@@ -129,7 +129,7 @@
           <p>8:30 AM - 6:30 PM</p>
           <p>8:30 AM - 5:30 PM</p>
           <p>8:30 AM - 5:30 PM</p>
-          <p class="opacity-5">Closed</p>
+          <p>9:00 AM - 2:30 PM</p>
           <p class="opacity-5">Closed</p>
         </div>
         <div class="absolute-container scheduler-icon">
@@ -265,17 +265,14 @@
         fxLayoutAlign="end center"
         fxLayoutGap="20px"
       >
-        <div class="flexy-row" fxLayoutGap="0.5vw">
+        <div class="flexy-row">
           <button
-            class="fix-text-0 roboto-regular"
-            fxLayout
-            fxLayoutAlign="center center"
+            class="fix-text-0 roboto-regular flexy-row cccc"
+            style="margin-right: 0.5vw;"
             fxLayoutGap="0.5vw"
-            (click)="
-              goToLink(
-                'https://www.google.com/maps/place/122+Bundall+Rd,+Bundall+QLD+4217,+Australia/@-28.0028123,153.4112304,17z/data=!3m1!4b1!4m5!3m4!1s0x6b91053e4cd19727:0xb387e4414c1befe!8m2!3d-28.0028123!4d153.4134191'
-              )
-            "
+            [matMenuTriggerFor]="bundallMenu"
+            (menuOpened)="menuOpened()"
+            (menuClosed)="menuClosed()"
           >
             <svg
               width="16px"
@@ -317,10 +314,8 @@
             <p>Proud Smile - <span class="roboto-bold">Bundall</span></p>
           </button>
           <button
-            class="fix-text-0 roboto-regular"
-            fxLayout
-            fxLayoutAlign="center center"
-            fxLayoutGap="0.5vw"
+          style="margin-right: 20px;"
+            class="fix-text-0 roboto-regular flexy-row cccc"
             [matMenuTriggerFor]="bundallMenu"
             (menuOpened)="menuOpened()"
             (menuClosed)="menuClosed()"
@@ -365,135 +360,7 @@
               </g>
             </svg>
           </button>
-        </div>
-
-        <svg height="26" width="11">
-          <line
-            class="inclined"
-            x1="0"
-            y1="26"
-            x2="11"
-            y2="0"
-            style="stroke-width: 1"
-          />
-        </svg>
-
-        <div class="flexy-row" fxLayoutGap="0.5vw">
           <button
-            class="fix-text-0 roboto-regular"
-            fxLayout
-            fxLayoutAlign="center center"
-            fxLayoutGap="0.5vw"
-            (click)="
-              goToLink(
-                'https://www.google.com/maps/place/Shop+82%2F2+Hooker+Blvd,+Broadbeach+Waters+QLD+4218,+Australia/@-28.0361695,153.4248096,17z/data=!3m1!4b1!4m5!3m4!1s0x6b9104f01a388917:0xc25aec7b86498089!8m2!3d-28.0361743!4d153.4269983'
-              )
-            "
-          >
-            <svg
-              width="16px"
-              height="21px"
-              viewBox="0 0 16 21"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <title>Icons/marker</title>
-              <g
-                id="Design"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fill-rule="evenodd"
-                opacity="0.5"
-              >
-                <g
-                  id="Hours-Dental"
-                  transform="translate(-690.000000, -87.000000)"
-                  fill="#565960"
-                >
-                  <g id="Group-4" transform="translate(645.500000, 53.000000)">
-                    <g
-                      id="Icons/marker"
-                      transform="translate(40.000000, 32.500000)"
-                    >
-                      <path
-                        class="icons"
-                        d="M12.5,2 C8.35635359,2 5,5.41298206 5,9.57841688 C5,12.9341833 9.62016575,19.0859781 11.6666667,21.5775769 C12.0649171,22.1408077 12.9350829,22.1408077 13.3333333,21.5775769 C15.3798343,19.0859781 20,12.9341833 20,9.57841688 C20,5.41298206 16.6436464,2 12.5,2 Z M12.5,12.9466022 C10.6064225,12.9466022 9.16666667,11.4917928 9.16666667,9.78892846 C9.16666667,7.87555251 10.6064225,6.42074318 12.5,6.42074318 C14.1852442,6.42074318 15.625,7.87555251 15.625,9.78892846 C15.625,11.4917928 14.1852442,12.9466022 12.5,12.9466022 Z"
-                        id="Shape"
-                      ></path>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <p>
-              Proud Smile - <span class="roboto-bold">Pacific Fair Mall</span>
-            </p>
-          </button>
-          <button
-            class="fix-text-0 roboto-regular"
-            fxLayout
-            fxLayoutAlign="center center"
-            fxLayoutGap="0.5vw"
-            [matMenuTriggerFor]="pacificMenu"
-            (menuOpened)="menuOpened()"
-            (menuClosed)="menuClosed()"
-          >
-            <svg
-              width="10px"
-              height="6px"
-              viewBox="0 0 10 6"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <title>Icons/arrow_1 Copy</title>
-              <g
-                id="Design"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fill-rule="evenodd"
-                opacity="0.699999988"
-              >
-                <g
-                  id="Hours-Dental"
-                  transform="translate(-1150.000000, -28.000000)"
-                  fill="#565960"
-                >
-                  <g id="Group-5" transform="translate(689.000000, 18.000000)">
-                    <g id="Group" transform="translate(460.000000, 7.000000)">
-                      <g
-                        id="Icons/arrow_1-Copy"
-                        transform="translate(6.000000, 6.000000) rotate(-90.000000) translate(-6.000000, -6.000000) "
-                      >
-                        <path
-                          class="icons"
-                          d="M3.50338064,6.06334382 C3.51816178,6.18790432 3.57454909,6.30362029 3.66305344,6.39151283 L8.04283286,10.8137791 C8.24319942,11.0422628 8.58937006,11.0634528 8.81564923,10.8609499 C9.04192841,10.658447 9.06273149,10.3090879 8.86236493,10.0806042 C8.84685386,10.0629151 8.83006541,10.0461473 8.81254702,10.0306694 L4.8207269,5.99995801 L8.81254702,1.9692466 C9.04028606,1.76840201 9.06364391,1.41922724 8.86473722,1.1892694 C8.66619549,0.959311555 8.32020733,0.935541874 8.09246829,1.13638647 C8.07476742,1.1518644 8.05816145,1.16863216 8.04283286,1.18613696 L3.66305344,5.60840319 C3.54370943,5.72743585 3.48476735,5.89492918 3.50338064,6.06334382"
-                          id="Fill-1"
-                        ></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </button>
-        </div>
-
-        <svg height="26" width="11">
-          <line
-            class="inclined"
-            x1="0"
-            y1="26"
-            x2="11"
-            y2="0"
-            style="stroke-width: 1"
-          />
-        </svg>
-
-        <button
           class="fix-text-0 roboto-medium"
           fxLayout
           fxLayoutAlign="center center"
@@ -554,6 +421,180 @@
           </svg>
           <p>07 5570 3311</p>
         </button>
+        </div>
+
+        <svg height="26" width="11">
+          <line
+            class="inclined"
+            x1="0"
+            y1="26"
+            x2="11"
+            y2="0"
+            style="stroke-width: 1"
+          />
+        </svg>
+
+        <div class="flexy-row">
+          <button
+            class="fix-text-0 roboto-regular flexy-row cccc"
+            style="margin-right: 0.5vw;"
+            fxLayoutGap="0.5vw"
+            
+            [matMenuTriggerFor]="pacificMenu"
+            (menuOpened)="menuOpened()"
+            (menuClosed)="menuClosed()"
+          >
+            <svg
+              width="16px"
+              height="21px"
+              viewBox="0 0 16 21"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <title>Icons/marker</title>
+              <g
+                id="Design"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+                opacity="0.5"
+              >
+                <g
+                  id="Hours-Dental"
+                  transform="translate(-690.000000, -87.000000)"
+                  fill="#565960"
+                >
+                  <g id="Group-4" transform="translate(645.500000, 53.000000)">
+                    <g
+                      id="Icons/marker"
+                      transform="translate(40.000000, 32.500000)"
+                    >
+                      <path
+                        class="icons"
+                        d="M12.5,2 C8.35635359,2 5,5.41298206 5,9.57841688 C5,12.9341833 9.62016575,19.0859781 11.6666667,21.5775769 C12.0649171,22.1408077 12.9350829,22.1408077 13.3333333,21.5775769 C15.3798343,19.0859781 20,12.9341833 20,9.57841688 C20,5.41298206 16.6436464,2 12.5,2 Z M12.5,12.9466022 C10.6064225,12.9466022 9.16666667,11.4917928 9.16666667,9.78892846 C9.16666667,7.87555251 10.6064225,6.42074318 12.5,6.42074318 C14.1852442,6.42074318 15.625,7.87555251 15.625,9.78892846 C15.625,11.4917928 14.1852442,12.9466022 12.5,12.9466022 Z"
+                        id="Shape"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <p>
+              Proud Smile - <span class="roboto-bold">Pacific Fair Mall</span>
+            </p>
+          </button>
+          <button
+            class="fix-text-0 roboto-regular flexy-row cccc"
+            style="margin-right: 20px;"
+            [matMenuTriggerFor]="pacificMenu"
+            (menuOpened)="menuOpened()"
+            (menuClosed)="menuClosed()"
+          >
+            <svg
+              width="10px"
+              height="6px"
+              viewBox="0 0 10 6"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <title>Icons/arrow_1 Copy</title>
+              <g
+                id="Design"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+                opacity="0.699999988"
+              >
+                <g
+                  id="Hours-Dental"
+                  transform="translate(-1150.000000, -28.000000)"
+                  fill="#565960"
+                >
+                  <g id="Group-5" transform="translate(689.000000, 18.000000)">
+                    <g id="Group" transform="translate(460.000000, 7.000000)">
+                      <g
+                        id="Icons/arrow_1-Copy"
+                        transform="translate(6.000000, 6.000000) rotate(-90.000000) translate(-6.000000, -6.000000) "
+                      >
+                        <path
+                          class="icons"
+                          d="M3.50338064,6.06334382 C3.51816178,6.18790432 3.57454909,6.30362029 3.66305344,6.39151283 L8.04283286,10.8137791 C8.24319942,11.0422628 8.58937006,11.0634528 8.81564923,10.8609499 C9.04192841,10.658447 9.06273149,10.3090879 8.86236493,10.0806042 C8.84685386,10.0629151 8.83006541,10.0461473 8.81254702,10.0306694 L4.8207269,5.99995801 L8.81254702,1.9692466 C9.04028606,1.76840201 9.06364391,1.41922724 8.86473722,1.1892694 C8.66619549,0.959311555 8.32020733,0.935541874 8.09246829,1.13638647 C8.07476742,1.1518644 8.05816145,1.16863216 8.04283286,1.18613696 L3.66305344,5.60840319 C3.54370943,5.72743585 3.48476735,5.89492918 3.50338064,6.06334382"
+                          id="Fill-1"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </button>
+          <button
+          class="fix-text-0 roboto-medium"
+          fxLayout
+          fxLayoutAlign="center center"
+          fxLayoutGap="0.5vw"
+          (click)="goToLinkWithotNewTab('tel:0755703311')"
+        >
+          <svg
+            width="16px"
+            height="16px"
+            viewBox="0 0 16 16"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <title>Icons/marker</title>
+            <defs>
+              <polygon
+                id="path-1"
+                points="0 0 15.9999407 0 15.9999407 16 0 16"
+              ></polygon>
+            </defs>
+            <g
+              id="Design"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+              opacity="0.5"
+            >
+              <g
+                id="Hours-Dental"
+                transform="translate(-1205.000000, -23.000000)"
+              >
+                <g id="Group-5" transform="translate(689.000000, 18.000000)">
+                  <g id="Group" transform="translate(516.000000, 3.000000)">
+                    <g
+                      transform="translate(0.000000, 2.000000)"
+                      id="Icons/marker"
+                    >
+                      <g id="Group-3" transform="translate(0.000059, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                          <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path
+                          class="icons"
+                          d="M5.86173624,3.93281778 L3.79080291,0.319484444 C3.65515846,0.0828622222 3.38351402,-0.0408711111 3.11578069,0.0121066667 L1.35542513,0.36144 C0.99062513,0.430951111 0.686802908,0.682506667 0.550447353,1.02810667 C-0.780930425,4.49228444 0.324669575,9.02739556 3.63044735,12.3431289 C3.63471402,12.3473956 3.6524918,12.3653511 3.65693624,12.3696178 C6.9724918,15.6753956 11.5076029,16.7809956 14.9717807,15.4496178 C15.3173807,15.3132622 15.5689362,15.00944 15.6386251,14.6444622 L15.9877807,12.8842844 C16.0409362,12.6165511 15.9172029,12.3447289 15.6804029,12.2092622 L12.0670696,10.1381511 C11.818714,9.99557333 11.5054696,10.0368178 11.3026251,10.2393067 C10.6240474,10.91664 9.17551402,12.3628622 9.17480291,12.3626844 C7.87595846,11.9513067 6.69693624,11.2295289 5.73978069,10.2601067 C4.77035846,9.30295111 4.04875846,8.12392889 3.63738069,6.82526222 C3.63702513,6.82455111 5.08324735,5.37584 5.76075846,4.69726222 C5.96306957,4.49441778 6.0044918,4.18117333 5.86173624,3.93281778"
+                          id="Fill-1"
+                          fill="#565960"
+                          mask="url(#mask-2)"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <p>07 5538 6277</p>
+        </button>
+        </div>
+
       </div>
 
       <div

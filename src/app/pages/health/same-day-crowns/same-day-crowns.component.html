@@ -270,7 +270,7 @@
 </div>
 
 <div class="relative-container">
-  <video preload="auto" #cerec style="width: 100%">
+  <video preload="auto" #cerec style="width: 100%; background: white;" playsinline>
     <source
       src="../../../../assets/healthPage/SameDayCrowns/Cerec.mp4"
       type="video/mp4"
@@ -801,14 +801,15 @@
         (loadeddata)="bridgeLoaded()"
         preload="auto"
         #bridgeVideo
-        style="width: 50vw"
+        style="width: 50vw; background:white"
+        playsinline
       >
         <source
           src="../../../../assets/healthPage/SameDayCrowns/bridge_video.mp4"
           type="video/mp4"
         />
       </video>
-      <video preload="auto" #marylandVideo style="width: 50vw">
+      <video preload="auto" #marylandVideo style="width: 50vw; background:white" playsinline>
         <source
           src="../../../../assets/healthPage/SameDayCrowns/maryland_bridge.mp4"
           type="video/mp4"

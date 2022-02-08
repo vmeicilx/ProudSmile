@@ -1,0 +1,77 @@
+@import "../../../proud-smile-style.scss";
+
+:host {
+
+      
+      .fullview__close svg {
+        fill: currentColor;
+      }
+
+      .book3 {
+        border-radius: 37px;
+        background: #E6437B;
+        padding: 24px 36px;
+        border: 0;
+        outline: none;
+        align-self: center;
+        margin-top: auto;
+      }
+
+      @media only screen and (min-width: 1201px) {
+        .lady1-special, .second-card-img-special {
+          max-width: 500px;
+        }
+
+        .first-card-text-full, .second-card-text-full {
+          padding:41px;
+          font-size: calc(0.24vw + 19.25px);
+          line-height: $line-height-factor4;
+        }
+
+        .card-full-parent {
+          max-width: 60vw;
+        }
+
+        .fullview__close {
+          position: fixed;
+          top: 20px;
+          right: 36px;
+          z-index: 1000;
+          background: none;
+          border: 0;
+          margin: 0;
+          padding: 0;
+          color: #fff;
+          cursor: pointer;
+          pointer-events: auto;
+          opacity: 1;
+        }
+      }
+    
+      @media only screen and (min-width: 300px) and (max-width: 1200px) {
+        .fullview__close {
+          position: fixed;
+          top: 20px;
+          right: 10px;
+          z-index: 1000;
+          background: none;
+          border: 0;
+          margin: 0;
+          padding: 0;
+          color: #fff;
+          cursor: pointer;
+          pointer-events: auto;
+          opacity: 1;
+        }
+        
+        .card-full-parent {
+          max-width: 80vw;
+        }
+
+        .first-card-text-full, .second-card-text-full {
+          padding:4vw;
+          font-size: calc(1.97vw + 10.07px);
+          line-height: $line-height-factor4;
+        }
+      }
+}

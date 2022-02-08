@@ -1,6 +1,6 @@
-<div class="color-brown background-43 padding-top-3 margin-top-6">
+<div id="ChairFirstSection" class="color-brown background-43 padding-top-3 margin-top-6">
   <div
-    class="center-text margin-bottom-1 padding-chef"
+    class="center-text margin-bottom-6 padding-chef"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -26,14 +26,12 @@
       </p>
     </div>
   </div>
-  <div class="background-43" fxLayout fxLayoutAlign="center center">
-    <app-scroll-framer
-      class="hide-on-phone"
-      urlPattern="../../../../assets/healthPage/GeneralAndPreventive/chair/Layer ##id##.jpg"
-      numberOfFrames="57"
-      animationFactor="2000"
-    >
-    </app-scroll-framer>
+  <div id="ChairParent" class="background-43" fxLayout fxLayoutAlign="center center">
+    <div id="ChairAnimationContainer">
+      <div id="ChairCanvasContainer">
+        <canvas id="hero-lightpass-chair"></canvas>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -443,6 +441,7 @@
     #firstVideo
     loop
     style="display: none"
+    playsinline style="background: white;"
   >
     <source
       src="../../../../assets/healthPage/GeneralAndPreventive/General_Preventative_Care.mp4"

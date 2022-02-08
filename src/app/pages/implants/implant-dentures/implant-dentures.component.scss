@@ -12,6 +12,15 @@
     background-color: #a7958a;
   }
   @media only screen and (min-width: 1201px) {
+
+    .carrot-image {
+      min-width: 1000px; 
+      padding-top: 11vw
+    }
+    .carrot-text {
+      position: absolute;
+      margin-bottom:9vw;
+    }
     .box {
       width: 60vw;
     }
