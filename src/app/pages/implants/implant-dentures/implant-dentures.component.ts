@@ -25,15 +25,33 @@ export class ImplantDenturesComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.overdentureVideo.nativeElement)) {
-      if (this.overdentureVideo.nativeElement.paused) {
-        this.overdentureVideo.nativeElement.play();
-      }
-    } else {
-      if (!this.overdentureVideo.nativeElement.paused) {
-        this.overdentureVideo.nativeElement.pause();
+
+    let playPromise;
+    if (ScrollTrigger.isInViewport(this.overdentureVideo.nativeElement)) {
+      playPromise = this.overdentureVideo.nativeElement.play();
+    }
+    else {
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          this.overdentureVideo.nativeElement.pause();
+        })
+        .catch(error => {
+        });
       }
     }
+ 
+
+
+
+    // if (this.inTheViewport(this.overdentureVideo.nativeElement)) {
+    //   if (this.overdentureVideo.nativeElement.paused) {
+    //     this.overdentureVideo.nativeElement.play();
+    //   }
+    // } else {
+    //   if (!this.overdentureVideo.nativeElement.paused) {
+    //     this.overdentureVideo.nativeElement.pause();
+    //   }
+    // }
   }
 
   inTheViewport(elem): boolean {

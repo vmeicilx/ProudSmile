@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { map } from 'rxjs/operators';
 import { EmailData } from './EmailData';
 
 @Injectable({
@@ -14,10 +13,5 @@ export class emailService {
 
   sendEmail(emailData: EmailData) {
     return this.http.post(`${this.baseUrl}`, { data: emailData }, {responseType: "text"});
-    // return this.http.post(`${this.baseUrl}`, { data: emailData }).pipe(
-    //   map((res: any) => {
-    //     return res['data'];
-    //   })
-    // );
   }
 }
