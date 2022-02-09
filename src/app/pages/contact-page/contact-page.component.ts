@@ -7,7 +7,7 @@ import { emailService } from "src/emailService";
 @Component({
   selector: "app-contact-page",
   templateUrl: "./contact-page.component.html",
-  styleUrls: ["./contact-page.component.scss"]
+  styleUrls: ["./contact-page.component.scss"],
 })
 export class ContactPageComponent implements OnInit {
   @ViewChild("name") name: ElementRef;
@@ -26,88 +26,96 @@ export class ContactPageComponent implements OnInit {
 
   public scrollToContactForm: string;
 
-  emailData : EmailData;
+  // Variable to store shortLink from api response
+  shortLink: string = "";
+  loading: boolean = false; // Flag variable
+  files: File[] = null; // Variable to store file
 
-  constructor(private router: Router, private _activatedRoute: ActivatedRoute, private emailServ: emailService, private http: HttpClient) {
-  }
+  emailData: EmailData;
+
+  constructor(
+    private router: Router,
+    private _activatedRoute: ActivatedRoute,
+    private emailServ: emailService,
+    private http: HttpClient
+  ) {}
 
   imageObject: Array<object> = [
     {
       image: "../../../assets/homePage/instaFeed/1.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/1.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/1.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/2.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/2.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/2.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/3.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/3.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/3.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/4.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/4.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/4.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/5.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/5.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/5.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/6.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/6.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/6.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/7.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/7.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/7.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/8.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/8.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/8.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/9.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/9.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/9.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/10.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/10.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/10.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/11.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/11.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/11.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/12.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/12.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/12.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/13.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/13.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/13.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/14.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/14.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/14.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/15.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/15.jpg"
+      thumbImage: "../../../assets/homePage/instaFeed/15.jpg",
     },
     {
       image: "../../../assets/homePage/instaFeed/16.jpg",
-      thumbImage: "../../../assets/homePage/instaFeed/16.jpg"
-    }
+      thumbImage: "../../../assets/homePage/instaFeed/16.jpg",
+    },
   ];
 
   ngOnInit(): void {
-    this._activatedRoute.params.subscribe(parameter => {
-      this.scrollToContactForm = parameter.parameter
-    })
+    this._activatedRoute.params.subscribe((parameter) => {
+      this.scrollToContactForm = parameter.parameter;
+    });
   }
 
   ngAfterViewInit(): void {
-    if(this.scrollToContactForm)
-    {
-      this.scrollToContactFormAction()
+    if (this.scrollToContactForm) {
+      this.scrollToContactFormAction();
     }
   }
 
@@ -135,13 +143,18 @@ export class ContactPageComponent implements OnInit {
       return;
     }
 
-    this.emailData =  {name:name, email:email , company:company, phone:phone, message:message};
-    this.emailServ.sendEmail(this.emailData).subscribe();
+    this.emailData = {
+      name: name,
+      email: email,
+      company: company,
+      phone: phone,
+      message: message,
+    };
+    this.emailServ.sendEmail(this.emailData, this.files).subscribe();
 
     alert("Message sent successfully!");
   }
   onSendMessageSmall() {
-
     var name = this.nameSmall.nativeElement.value;
     var email = this.emailSmall.nativeElement.value;
     var company = this.companySmall.nativeElement.value;
@@ -163,8 +176,14 @@ export class ContactPageComponent implements OnInit {
 
     //this.contactForm.nativeElement.submit();
 
-    this.emailData =  {name:name, email:email , company:company, phone:phone, message:message};
-    this.emailServ.sendEmail(this.emailData).subscribe();
+    this.emailData = {
+      name: name,
+      email: email,
+      company: company,
+      phone: phone,
+      message: message,
+    };
+    this.emailServ.sendEmail(this.emailData, this.files).subscribe();
 
     alert("Message sent successfully!");
   }
@@ -176,11 +195,20 @@ export class ContactPageComponent implements OnInit {
 
   scrollToContactFormAction() {
     setTimeout(() => {
-      document.getElementById("contact-form").scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }, 500)
+      document
+        .getElementById("contact-form")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+    }, 500);
   }
 
-  onSubmit() {
-    
+  onSubmit() {}
+
+  // On file Select
+  onChange(event) {
+    this.files = event.target.files;
   }
 }

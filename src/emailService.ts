@@ -7,11 +7,31 @@ import { EmailData } from './EmailData';
   providedIn: 'root',
 })
 export class emailService {
-  baseUrl = 'send.php';
-
   constructor(private http: HttpClient) {}
 
-  sendEmail(emailData: EmailData) {
-    return this.http.post(`${this.baseUrl}`, { data: emailData }, {responseType: "text"});
+  sendEmail(emailData: EmailData, files) {
+
+    const formData = new FormData(); 
+    
+    formData.append("name", emailData.name);
+    formData.append("email", emailData.email);
+    formData.append("company", emailData.company);
+    formData.append("phone", emailData.phone);
+    formData.append("message", emailData.message);
+
+    if(files) {
+      for(var i=0;i<files.length;i++) {
+        formData.append("file[]", files[i], files[i].name);
+  
+      }
+    }
+    return this.http.post(`send.php`, formData, {responseType: "text"});
+  }
+
+  subscribeEmail(email: string) {
+    const formData = new FormData(); 
+    formData.append("email", email);
+
+    return this.http.post(`subscribe.php`, formData, {responseType: "text"});
   }
 }

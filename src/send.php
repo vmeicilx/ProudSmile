@@ -1,55 +1,52 @@
 <?php
+
 require 'PHPMailer/class.phpmailer.php';
 
-if(isset($_POST['send']))
-{
-      $file_name = $_FILES['file']['name'];
-      $file_tmp =$_FILES['file']['tmp_name'];
-      
-        $abc=microtime();
-        $path="upload/$abc".$file_name;
-        move_uploaded_file($file_tmp,$path);
-         
-         
-            $name=$_POST['name'];
-            $email=$_POST['email'];
-            $msg=$_POST['message'];
-            $subject="Email from $name";
-    
-            $mail = new PHPMailer(true); 
+$name=$_POST['name'];
+$email=$_POST['email'];
+$msg=$_POST['message'];
+$company=$_POST['company'];
+$phone=$_POST['phone'];
+$subject="Mail from $name";
+   
+$mail = new PHPMailer(true); 
 
-        	$mail->IsSMTP();                           
-        	$mail->SMTPAuth   = false;                 
-        	$mail->Port       = 25;                    
-        	$mail->Host       = "localhost"; 
-        	$mail->Username   = "vlad.meici@mymed.online";   
-        	$mail->Password   = "proudsmile";            
+$mail->IsSMTP();                           
+$mail->SMTPAuth   = false;                 
+$mail->Port       = 25;                    
+$mail->Host       = "localhost"; 
+$mail->Username   = "proudsmile.server@mymed.online";   
+$mail->Password   = "proudsmile";            
         
-        	$mail->IsSendmail();  
+$mail->IsSendmail();  
         
-        	$mail->From       = $email;
-        	$mail->FromName   = $name;
+$mail->From       = "proudsmile.server@mymed.online";
+$mail->FromName   = "ProudSmile website";
+       
+$mail->AddAddress("bundall@proudsmile.com.au");
+$mail->Subject  = $subject;
+$mail->WordWrap   = 80; 
         
-        	$mail->AddAddress("vlad.meici@mymed.online");
-            $mail->Subject  = $subject;
-        	$mail->WordWrap   = 80; 
-        
-            $mail->MsgHTML($msg);
-        	$mail->IsHTML(true); 
-            $mail->AddAttachment($path,$file_name);
+$mail->MsgHTML("Company: $company, phone: $phone, message: $msg");
+$mail->IsHTML(true); 
+
+$countfiles = count($_FILES['file']['name']);
+$abc = microtime();
+for($i=0;$i<$countfiles;$i++){
+    $filename = $_FILES['file']['name'][$i];
+    $tempfilename = $_FILES['file']['tmp_name'][$i];
+    $path = "upload/$abc".$filename;
+    move_uploaded_file($tempfilename,$path);
+    $mail->AddAttachment($path,$filename);
+}
+
+if(!$mail->Send())
+{
+    echo "Mail Not Sent";
+}
+else
+{
+    echo "Mail Sent";
          
-         
-            if(!$mail->Send())
-            {
-                   echo "Mail Not Sent";
-            }
-            else
-            {
-               	echo '<script language="javascript">';
-    	        echo 'alert("Thank You Contacting Us We Will Response You As Early Possible")';
-    	        echo '</script>';
-         
-            } 
-        	
-}        	    
-        
+} 
+?>

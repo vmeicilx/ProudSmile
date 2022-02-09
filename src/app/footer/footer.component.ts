@@ -7,6 +7,8 @@ import {
 } from "@angular/forms";
 import { ErrorStateMatcher } from "@angular/material/core";
 import { NavigationEnd, Router } from "@angular/router";
+import { EmailData } from "src/EmailData";
+import { emailService } from "src/emailService";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -41,9 +43,12 @@ export class FooterComponent implements OnInit {
   @ViewChild("item3") it3: ElementRef;
   @ViewChild("item4") it4: ElementRef;
   @ViewChild("Newsletter") newsletter: ElementRef;
+  @ViewChild("subscribeEmail") subscribeEmail: ElementRef;
+  
+  emailData : EmailData;
 
   matcher = new MyErrorStateMatcher();
-  constructor(private router: Router) {
+  constructor(private router: Router, private emailServ: emailService) {
     router.events.subscribe((val) => {
       // see also
       if (val instanceof NavigationEnd) {
@@ -82,5 +87,20 @@ export class FooterComponent implements OnInit {
   onNewsletterClose() {
     this.newsletter.nativeElement.style.visibility = "hidden";
     document.documentElement.style.overflowY = "scroll";
+  }
+
+  onSubscribeButtonClikc() {
+    var email = this.subscribeEmail.nativeElement.value;
+
+    if (email === "") {
+      alert("Email is a required field.");
+      return;
+    }
+
+    console.log(email);
+
+    this.emailServ.subscribeEmail(email).subscribe();
+
+    alert("Successfully subscribed " + email + "!");
   }
 }

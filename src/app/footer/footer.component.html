@@ -267,6 +267,7 @@
           <mat-form-field class="full-width">
             <mat-label>Email</mat-label>
             <input
+              #subscribeEmail
               matInput
               [formControl]="emailFormControl"
               [errorStateMatcher]="matcher"
@@ -287,7 +288,7 @@
           </mat-form-field>
         </form>
       </div>
-      <div fxLayout class="subscribeCardText opacity-5 font-extra-small">
+      <!-- <div fxLayout class="subscribeCardText opacity-5 font-extra-small">
         <mat-checkbox color="primary" class="subscribeCheckBox"> </mat-checkbox>
         <p>
           I give my consent that my personal information can be collected and
@@ -298,9 +299,9 @@
             ></span
           >
         </p>
-      </div>
+      </div> -->
       <div class="subscribeCardButtons full-width">
-        <app-button text="SUBSCRIBE"></app-button>
+        <button class="color-white roboto-medium font-extra-small-2 cursor-pointer" (click)="onSubscribeButtonClikc()">SUBSCRIBE</button>
 
         <div
           fxLayout
