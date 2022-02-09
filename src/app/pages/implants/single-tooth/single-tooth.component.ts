@@ -29,52 +29,54 @@ export class SingleToothComponent implements OnInit {
     this.rightVideo.nativeElement.style.display = "block";
     this.implantVideo.nativeElement.style.display = "block";
     this.implantVideoSmall.nativeElement.style.display = "block";
+    if(window.innerWidth <= 1200) {
+      this.implantVideoSmall.nativeElement.play();
+    }
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.rightVideo.nativeElement)) {
-      if (this.rightVideo.nativeElement.paused) {
-        this.rightVideo.nativeElement.play();
-      }
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.rightVideo.nativeElement)) {
+      playPromise1 = this.rightVideo.nativeElement.play();
     } else {
-      if (!this.rightVideo.nativeElement.paused) {
-        this.rightVideo.nativeElement.pause();
+      if (playPromise1 !== undefined) {
+        playPromise1
+          .then((_) => {
+            this.rightVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
       }
     }
-    if (this.inTheViewport(this.implantVideo.nativeElement)) {
-      if (this.implantVideo.nativeElement.paused) {
-        this.implantVideo.nativeElement.play();
-      }
+
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.implantVideo.nativeElement)) {
+      playPromise2 = this.implantVideo.nativeElement.play();
     } else {
-      if (!this.implantVideo.nativeElement.paused) {
-        this.implantVideo.nativeElement.pause();
+      if (playPromise2 !== undefined) {
+        playPromise2
+          .then((_) => {
+            this.implantVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
       }
     }
-    if (this.inTheViewport(this.implantVideoSmall.nativeElement)) {
-      if (this.implantVideoSmall.nativeElement.paused) {
-        this.implantVideoSmall.nativeElement.play();
-      }
+
+    let playPromise3;
+    if (ScrollTrigger.isInViewport(this.implantVideoSmall.nativeElement)) {
+      playPromise3 = this.implantVideoSmall.nativeElement.play();
     } else {
-      if (!this.implantVideoSmall.nativeElement.paused) {
-        this.implantVideoSmall.nativeElement.pause();
+      if (playPromise3 !== undefined) {
+        playPromise3
+          .then((_) => {
+            this.implantVideoSmall.nativeElement.pause();
+          })
+          .catch((error) => {});
       }
     }
+
   }
 
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   goToLink(url: string) {
     window.open(url, "_blank");

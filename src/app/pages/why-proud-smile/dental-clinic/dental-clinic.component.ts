@@ -22,43 +22,39 @@ export class DentalClinicComponent implements OnInit {
   ngAfterViewInit(): void {
     this.practiceButVideo.nativeElement.muted = true;
     this.lightRoomVideo.nativeElement.muted = true;
+    this.practiceButVideo.nativeElement.play();
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
 
-    if (this.inTheViewport(this.practiceButVideo.nativeElement)) {
-      if (this.practiceButVideo.nativeElement.paused) {
-        this.practiceButVideo.nativeElement.play();
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.practiceButVideo.nativeElement)) {
+      playPromise1 = this.practiceButVideo.nativeElement.play();
+    }
+    else {
+      if (playPromise1 !== undefined) {
+        playPromise1.then(_ => {
+          this.practiceButVideo.nativeElement.pause();
+        })
+        .catch(error => {
+        });
       }
-    } else {
-      if (!this.practiceButVideo.nativeElement.paused) {
-        this.practiceButVideo.nativeElement.pause();
+    }
+
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.lightRoomVideo.nativeElement)) {
+      playPromise2 = this.lightRoomVideo.nativeElement.play();
+    }
+    else {
+      if (playPromise2 !== undefined) {
+        playPromise2.then(_ => {
+          this.lightRoomVideo.nativeElement.pause();
+        })
+        .catch(error => {
+        });
       }
     }
     
-    if (this.inTheViewport(this.lightRoomVideo.nativeElement)) {
-      if (this.lightRoomVideo.nativeElement.paused) {
-        this.lightRoomVideo.nativeElement.play();
-      }
-    } else {
-      if (!this.lightRoomVideo.nativeElement.paused) {
-        this.lightRoomVideo.nativeElement.pause();
-      }
-    }
-  }
-
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
-    }
   }
 }

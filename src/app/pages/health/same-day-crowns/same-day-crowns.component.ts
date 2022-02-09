@@ -5,7 +5,7 @@ import {
   HostListener,
   OnInit,
   Output,
-  ViewChild
+  ViewChild,
 } from "@angular/core";
 import { Router } from "@angular/router";
 import { DataService } from "src/app/shared/data-service";
@@ -13,7 +13,7 @@ import { DataService } from "src/app/shared/data-service";
 @Component({
   selector: "app-same-day-crowns",
   templateUrl: "./same-day-crowns.component.html",
-  styleUrls: ["./same-day-crowns.component.scss"]
+  styleUrls: ["./same-day-crowns.component.scss"],
 })
 export class SameDayCrownsComponent implements OnInit {
   @ViewChild("cerec") cerecVideo: ElementRef;
@@ -22,6 +22,7 @@ export class SameDayCrownsComponent implements OnInit {
   @ViewChild("bridgeMask") bridgeMask: ElementRef;
   @ViewChild("Vulcan") vulcan: ElementRef;
   @ViewChild("PlayButton") PlayButton: ElementRef;
+  @ViewChild("CerecPreview") CerecPreview: ElementRef;
   @Output() onVulcanPresent: EventEmitter<any> = new EventEmitter();
 
   vulcanOn: boolean;
@@ -38,17 +39,26 @@ export class SameDayCrownsComponent implements OnInit {
     this.cerecVideo.nativeElement.muted = true;
     this.cerecVideo.nativeElement.style.display = "none";
 
-    if (
-      typeof this.cerecVideo.nativeElement.onfullscreenchange != "undefined"
-    ) {
-      this.cerecVideo.nativeElement.onfullscreenchange = this.fullscreenChangeHandler;
-    } else {
-      this.cerecVideo.nativeElement.onwebkitfullscreenchange = this.fullscreenChangeHandler;
+    if (window.innerWidth > 1200) {
+      if (
+        typeof this.cerecVideo.nativeElement.onfullscreenchange != "undefined"
+      ) {
+        this.cerecVideo.nativeElement.onfullscreenchange =
+          this.fullscreenChangeHandler;
+      } else {
+        this.cerecVideo.nativeElement.onwebkitfullscreenchange =
+          this.fullscreenChangeHandler;
+      }
     }
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
+    if (this.bridgeVideo) {
+      
+    this.setMaskHeight();
+    }
+
     // if (this.inTheViewport(this.vulcan.nativeElement)) {
     //   if (!this.vulcanOn) {
     //     this.onVulcanPresent.emit(true);
@@ -63,23 +73,29 @@ export class SameDayCrownsComponent implements OnInit {
     //   }
     // }
 
-    if (this.inTheViewport(this.bridgeVideo.nativeElement)) {
-      if (this.bridgeVideo.nativeElement.paused) {
-        this.bridgeVideo.nativeElement.play();
-      }
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.bridgeVideo.nativeElement)) {
+      playPromise1 = this.bridgeVideo.nativeElement.play();
     } else {
-      if (!this.bridgeVideo.nativeElement.paused) {
-        this.bridgeVideo.nativeElement.pause();
+      if (playPromise1 !== undefined) {
+        playPromise1
+          .then((_) => {
+            this.bridgeVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
       }
     }
 
-    if (this.inTheViewport(this.marylandVideo.nativeElement)) {
-      if (this.marylandVideo.nativeElement.paused) {
-        this.marylandVideo.nativeElement.play();
-      }
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.marylandVideo.nativeElement)) {
+      playPromise2 = this.marylandVideo.nativeElement.play();
     } else {
-      if (!this.marylandVideo.nativeElement.paused) {
-        this.marylandVideo.nativeElement.pause();
+      if (playPromise2 !== undefined) {
+        playPromise2
+          .then((_) => {
+            this.marylandVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
       }
     }
   }
@@ -87,23 +103,8 @@ export class SameDayCrownsComponent implements OnInit {
   @HostListener("window:resize", ["$event"])
   onResize(event) {
     if (this.bridgeVideo) {
-      this.bridgeMask.nativeElement.style.height =
-        this.bridgeVideo.nativeElement.getBoundingClientRect().height +
-        "px";
-    }
-  }
-
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
+      
+    this.setMaskHeight();
     }
   }
 
@@ -118,16 +119,20 @@ export class SameDayCrownsComponent implements OnInit {
   playVideo() {
     let video = this.cerecVideo.nativeElement;
     video.style.display = "block";
-    video.setAttribute("controls", "controls");
 
-    if (
-      typeof document.exitFullscreen != "undefined" &&
-      document.fullscreenEnabled === true
-    ) {
-      video.requestFullscreen();
-    } else {
-      video.webkitRequestFullScreen();
+    if (window.innerWidth > 1200) {
+      video.setAttribute("controls", "controls");
+      if (
+        typeof document.exitFullscreen != "undefined" &&
+        document.fullscreenEnabled === true
+      ) {
+        video.requestFullscreen();
+      } else {
+        video.webkitRequestFullScreen();
+      }
     }
+
+    this.CerecPreview.nativeElement.style.display = "none";
     video.play();
   }
 
@@ -140,7 +145,11 @@ export class SameDayCrownsComponent implements OnInit {
 
   bridgeLoaded() {
     this.bridgeMask.nativeElement.style.display = "block";
+    this.setMaskHeight();
+  }
+
+  setMaskHeight() {
     this.bridgeMask.nativeElement.style.height =
-      this.bridgeVideo.nativeElement.getBoundingClientRect().height - 24 + "px";
+    this.bridgeVideo.nativeElement.getBoundingClientRect().height - 24 + "px";
   }
 }

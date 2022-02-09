@@ -105,13 +105,12 @@
   fxLayoutAlign="center center"
 >
   <div
-    class="padding-chef-left-right-on-sm full-width padding-chef padding-top-3"
-    style="padding-bottom: 20vw"
+    class="padding-chef-left-right-on-sm full-width padding-chef padding-top-3 erw-container-2"
     fxLayout="column"
   >
     <div class="no-padding-on-sm flexy-row-w sscc padding-top-3">
       <div
-        class="flex-1 no-margin-on-sm absolute-container hide-on-phone"
+        class="flex-1 no-margin-on-sm absolute-container hide-on-sm"
         style="left: 0; top: 0"
       >
         <img
@@ -122,6 +121,7 @@
           (load)="erwImgLoad()"
         />
       </div>
+
       <div
         class="margin-right-1 flex-1 sscc relative-container"
         fxLayout="column"
@@ -148,13 +148,22 @@
         <button
           class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
           (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-          )
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
           "
         >
           BOOK YOUR FREE IMPLANT ASSESSMENT
         </button>
+      </div>
+
+      <div class="flex-1 no-margin-on-sm hide-on-big" style="width: 100vw; margin-top:6vw;">
+        <img
+          #ErwImg
+          loading="lazy"
+          src="../../../../assets/implants/FullArch/erwin.png"
+          (load)="erwImgLoad()"
+        />
       </div>
     </div>
   </div>

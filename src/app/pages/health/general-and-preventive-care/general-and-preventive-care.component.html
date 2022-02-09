@@ -196,7 +196,7 @@
   </div>
 </div>
 
-<div class="relative-container" style="z-index: 1">
+<div class="relative-container hide-on-sm" style="z-index: 1">
   <img
     loading="lazy"
     src="../../../../assets/healthPage/GeneralAndPreventive/Ticket.png"
@@ -233,6 +233,48 @@
         <p>See all our Financial Plans</p>
       </div>
       <div class="margin-left-1 opacity-5 hide-on-phone">
+        <img loading="lazy" src="../../../../assets/homePage/WhiteArrow.svg" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="relative-container hide-on-big" style="z-index: 1">
+  <img
+    loading="lazy"
+    src="../../../../assets/healthPage/GeneralAndPreventive/Ticket-mobile-1-down.png"
+  />
+  <div
+    class="flexy-column absolute-container"
+    style="top: 70%; left: 10%; max-width: 390px"
+  >
+    <div class="color-white roboto-regular font-small-2">
+      <p>
+        For all this (<span class="roboto-bold">incl X-rays</span>) or
+        <span class="roboto-bold">Gap Free</span><br />
+        with <span class="roboto-bold">Any Health Insurance*</span>
+      </p>
+    </div>
+    <div
+      class="line-3 full-widthopacity-3"
+      style="margin-top: 8px; margin-bottom: 8px"
+    ></div>
+    <div
+      class="cursor-pointer roboto-regular color-white font-small-3"
+      fxLayout
+      fxLayoutAlign="start center"
+      (click)="seeAllFinancial()"
+    >
+      <div>
+        <img
+          class="card"
+          loading="lazy"
+          src="../../../../assets/healthPage/RootCanal/credit_card.svg"
+        />
+      </div>
+      <div class="margin-left-1 font-small-5">
+        <p>See all our Financial Plans</p>
+      </div>
+      <div class="margin-left-1 opacity-5">
         <img loading="lazy" src="../../../../assets/homePage/WhiteArrow.svg" />
       </div>
     </div>
@@ -346,8 +388,8 @@
   </div>
 </div>
 
-<div class="color-white flexy-column sscc relative-container">
-  <div style="align-self: stretch">
+<div class="color-white flexy-column sscc relative-container white-fillings-parent">
+  <div class="hide-on-sm" style="align-self: stretch">
     <img
       class="full-width"
       style="min-width: 1500px"
@@ -356,7 +398,7 @@
     />
   </div>
   <div
-    class="absolute-container padding-chef padding-top-bottom-1"
+    class="padding-chef padding-top-bottom-1 white-fillings-text"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -425,6 +467,12 @@
 
       </div>
     </div>
+  </div>
+  <div class="hide-on-big">
+    <img
+      loading="lazy"
+      src="../../../assets/healthPage/GeneralAndPreventive/WhiteFillings.png"
+    />
   </div>
 </div>
 

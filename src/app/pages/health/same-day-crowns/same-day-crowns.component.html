@@ -164,14 +164,9 @@
     background-color: #d8d8d8;
   "
 >
-  <div class="tech-2 relative-container" style="align-self: stretch">
-    <img
-      class="max-width-unset-on-big max-width-unset-on-sm"
-      src="../../../../assets/healthPage/SameDayCrowns/Tech2.png"
-    />
-  </div>
   <div
-    class="absolute-container padding-chef"
+    class="padding-chef digital-design-text"
+    style="z-index: 1;"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -197,19 +192,20 @@
       </div>
     </div>
   </div>
+  <div class="tech-2 relative-container digital-design-image-parent">
+
+    <picture>
+      <source media="(max-width: 1200px)" srcset="../../../../assets/healthPage/SameDayCrowns/Tech2-mobile.png">
+      <source media="(min-width: 1201px)" srcset="../../../../assets/healthPage/SameDayCrowns/Tech2.png">
+      <img class="max-width-unset-on-big digital-design-image" src="../../../../assets/healthPage/SameDayCrowns/Tech2.png">
+    </picture>
+  </div>
+
 </div>
 
 <div class="color-brown flexy-column sscc relative-container">
-  <div style="align-self: stretch">
-    <img
-      class="full-width"
-      style="min-width: 1300px"
-      loading="lazy"
-      src="../../../../assets/healthPage/SameDayCrowns/Tech3.png"
-    />
-  </div>
   <div
-    class="absolute-container padding-chef padding-top-bottom-1"
+    class="padding-chef padding-top-bottom-1 tech3-text"
     fxLayout="column"
     fxLayoutAlign="center center"
   >
@@ -234,6 +230,13 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="tech3-image-parent" style="align-self: stretch">
+    <picture>
+      <source media="(max-width: 1200px)" srcset="../../../../assets/healthPage/SameDayCrowns/Tech3-mobile.png">
+      <source media="(min-width: 1201px)" srcset="../../../../assets/healthPage/SameDayCrowns/Tech3.png">
+      <img class="max-width-unset-on-big tech3-image" src="../../../../assets/healthPage/SameDayCrowns/Tech3.png">
+    </picture>
   </div>
 </div>
 
@@ -276,7 +279,7 @@
       type="video/mp4"
     />
   </video>
-  <div class="relative-container" (click)="playVideo()">
+  <div #CerecPreview class="relative-container" (click)="playVideo()">
     <div>
       <img
         class="full-width"
@@ -789,12 +792,13 @@
     <div class="relative-container flexy-row">
       <div
         #bridgeMask
-        class="absolute-container"
+        class="absolute-container bridge-mask"
         style="
           width: 100vw;
           border-top: 12px solid black;
           border-bottom: 12px solid black;
           display: none;
+          top: 0px;
         "
       ></div>
       <video

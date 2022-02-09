@@ -23,7 +23,15 @@
     <div class="absolute-container" style="width: 100vw">
       <img src="../../../../assets/implants/SingleTooth/masca_video.png" />
     </div>
-    <video class="full-width" preload="auto" muted #implantVideo loop playsinline style="background: white;">
+    <video
+      class="full-width"
+      preload="auto"
+      muted
+      #implantVideo
+      loop
+      playsinline
+      style="background: white"
+    >
       <source
         src="../../../../assets/implants/SingleTooth/spiningImplant.mp4"
         type="video/mp4"
@@ -94,7 +102,8 @@
       muted
       #implantVideoSmall
       loop
-      playsinline style="background: white;"
+      playsinline
+      style="background: white"
     >
       <source
         src="../../../../assets/implants/SingleTooth/spiningImplant.mp4"
@@ -157,7 +166,7 @@
     muted
     #rightVideo
     loop
-    style="display: none;background: white;"
+    style="display: none; background: white"
     playsinline
   >
     <source
@@ -195,9 +204,8 @@
 </div>
 
 <div
-  class="color-brown relative-container"
-  fxLayout="column"
-  fxLayoutAlign="center end"
+  class="color-brown flexy-column relative-container hide-on-sm"
+  style="place-content: flex-end center; align-items: flex-end;"
 >
   <div>
     <img
@@ -237,6 +245,46 @@
 </div>
 
 <div
+  class="color-brown flexy-column relative-container hide-on-big"
+  style="place-content: flex-end center; align-items: flex-end;"
+>
+  <div
+    class="padding-chef"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+  >
+    <div class="flexy-row-w sscc" style="max-width: 600px">
+      <div class="flex-1 sscc margin-bottom-on-sm" fxLayout="column" style="margin-top:6vw;">
+        <div class="font-dog libre-regular margin-bottom-1">
+          <p class="center-text-on-sm">
+            From Virtual<br />
+            to Real
+          </p>
+        </div>
+        <div
+          class="roboto-regular font-medium center-text-on-sm margin-bottom-1 margin-bottom-on-sm"
+        >
+          <p>
+            Now the virtual becomes real. That’s done by using a Surgical Guide
+            which is designed in the software and then milled or 3D printed to
+            the exact requirements.<br /><br />
+            This physical guide then becomes our reference for exact placement
+            of the implants in the mouth, there’s no guess work and no
+            surprises.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <img
+      loading="lazy"
+      src="../../../../assets/implants/SingleTooth/virtual-mobile.png"
+    />
+  </div>
+</div>
+
+<div
   class="color-brown background-14 padding-top-3"
   fxLayout="column"
   fxLayoutAlign="center center"
@@ -250,7 +298,7 @@
     <div
       class="padding-chef-right no-padding-on-sm flexy-row-w sscc margin-bottom-2"
     >
-      <div class="margin-right-1 flex-1 no-margin-on-sm margin-bottom-on-sm">
+      <div class="margin-right-1 flex-1 no-margin-on-sm margin-bottom-on-sm hide-on-sm">
         <img
           loading="lazy"
           src="../../../../assets/implants/SingleTooth/Implanted.png"
@@ -271,6 +319,12 @@
             deserve.
           </p>
         </div>
+      </div>
+      <div class="margin-right-1 flex-1 no-margin-on-sm margin-bottom-on-sm hide-on-big">
+        <img
+          loading="lazy"
+          src="../../../../assets/implants/SingleTooth/Implanted.png"
+        />
       </div>
     </div>
     <div class="padding-chef-left no-padding-on-sm flexy-row-w sscc">
@@ -443,9 +497,9 @@
         <app-button
           text="BOOK YOUR FREE IMPLANT ASSESSMENT"
           (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-          )
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
           "
         ></app-button>
       </div>

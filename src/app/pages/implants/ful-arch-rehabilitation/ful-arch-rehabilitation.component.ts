@@ -28,9 +28,12 @@ export class FulArchRehabilitationComponent implements OnInit {
   }
 
   erwImgLoad() {
-    this.erwContainer.nativeElement.style.height =
+    if(window.innerWidth > 1200) {
+      this.erwContainer.nativeElement.style.height =
       this.erwImg.nativeElement.getBoundingClientRect().height + "px";
     this.erwContainer.nativeElement.style.display = "block";
+    }
+    
   }
 
   goToLink(url: string) {
@@ -39,13 +42,17 @@ export class FulArchRehabilitationComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.biocareVideo.nativeElement)) {
-      if (this.biocareVideo.nativeElement.paused) {
-        this.biocareVideo.nativeElement.play();
-      }
+
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.biocareVideo.nativeElement)) {
+      playPromise1 = this.biocareVideo.nativeElement.play();
     } else {
-      if (!this.biocareVideo.nativeElement.paused) {
-        this.biocareVideo.nativeElement.pause();
+      if (playPromise1 !== undefined) {
+        playPromise1
+          .then((_) => {
+            this.biocareVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
       }
     }
   }
@@ -55,20 +62,6 @@ export class FulArchRehabilitationComponent implements OnInit {
     if (this.toothImage) {
       this.toothContainer.nativeElement.style.height =
         this.toothImage.nativeElement.getBoundingClientRect().height + "px";
-    }
-  }
-
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
     }
   }
 

@@ -25,6 +25,7 @@ export class RootCanalTherapyComponent implements OnInit {
     this.teeth.nativeElement.muted = true;
     this.video.nativeElement.style.display = "block";
     this.video.nativeElement.playbackRate = 0.4;
+    this.teeth.nativeElement.play();
   }
 
   seeAllFinancial() {
@@ -37,38 +38,32 @@ export class RootCanalTherapyComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.video.nativeElement)) {
-      if (this.video.nativeElement.paused) {
-        this.video.nativeElement.play();
-      }
-    } else {
-      if (!this.video.nativeElement.paused) {
-        this.video.nativeElement.pause();
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.video.nativeElement)) {
+      playPromise1 = this.video.nativeElement.play();
+    }
+    else {
+      if (playPromise1 !== undefined) {
+        playPromise1.then(_ => {
+          this.video.nativeElement.pause();
+        })
+        .catch(error => {
+        });
       }
     }
 
-    if (this.inTheViewport(this.teeth.nativeElement)) {
-      if (this.teeth.nativeElement.paused) {
-        this.teeth.nativeElement.play();
-      }
-    } else {
-      if (!this.teeth.nativeElement.paused) {
-        this.teeth.nativeElement.pause();
-      }
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.teeth.nativeElement)) {
+      playPromise2 = this.teeth.nativeElement.play();
     }
-  }
-
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
+    else {
+      if (playPromise2 !== undefined) {
+        playPromise2.then(_ => {
+          this.teeth.nativeElement.pause();
+        })
+        .catch(error => {
+        });
+      }
     }
   }
 }

@@ -33,28 +33,18 @@ export class InvasilignComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.openingVideoEl.nativeElement)) {
-      if (this.openingVideoEl.nativeElement.paused) {
-        this.openingVideoEl.nativeElement.play();
-      }
-    } else {
-      if (!this.openingVideoEl.nativeElement.paused) {
-        this.openingVideoEl.nativeElement.pause();
-      }
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.openingVideoEl.nativeElement)) {
+      playPromise1 = this.openingVideoEl.nativeElement.play();
     }
-  }
-
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
+    else {
+      if (playPromise1 !== undefined) {
+        playPromise1.then(_ => {
+          this.openingVideoEl.nativeElement.pause();
+        })
+        .catch(error => {
+        });
+      }
     }
   }
 }

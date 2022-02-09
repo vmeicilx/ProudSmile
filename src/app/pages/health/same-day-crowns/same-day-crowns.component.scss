@@ -46,31 +46,51 @@
       font-size: calc(0.68vw + 7.9px);
       line-height: 1.4em;
     }
+    .digital-design-image-parent {
+      align-self: stretch;
+    }
+    .digital-design-text {
+      position: absolute;
+    }
+    .tech3-text {
+      position: absolute;
+    }
+
+    .tech3-image {
+      width: 100%;
+      min-width: 1300px;
+    }
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
-    .tech-2 {
-      left: calc(77.82vw - 2344px);
-    }
+    // .tech-2 {
+    //   left: calc(77.82vw - 2344px);
+    // }
     .box {
       width: 80vw;
     }
     .ticket {
       font-size: calc(0.3vw + 15.07px);
       line-height: 1.4em;
+    }    
+    .digital-design-text {
+      margin-top: 8vw;
     }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
-    .tech-2 {
-      left: calc(77.82vw - 2344px);
-    }
+    // .tech-2 {
+    //   left: calc(77.82vw - 2344px);
+    // }
     .box {
       width: 90vw;
     }
     .ticket {
       font-size: calc(0.3vw + 15.07px);
       line-height: 1.4em;
+    }   
+    .digital-design-text {
+      margin-top: 12vw;
     }
   }
 }

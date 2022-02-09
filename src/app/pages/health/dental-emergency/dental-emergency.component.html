@@ -377,8 +377,8 @@
       <div class="margin-bottom-1 roboto-regular font-medium">
         <p>
           <span class="roboto-medium"
-            >Book an appointment online now or call us on 5570 3311 if you can’t
-            find availability.</span
+            >Book an appointment online now or call us on the numbers below if
+            you can’t find availability.</span
           >
           We reserve emergency appointments on most days and we will do our best
           to see you straight away. If your emergency relates to a serious
@@ -387,39 +387,74 @@
         </p>
       </div>
       <div
-        (click)="goToLinkWithotNewTab('tel:0755703311')"
-        class="flexy-column cccc"
-        style="width: 240px"
+      (click)="goToLinkWithotNewTab('tel:0755703311')"
+      class="flexy-column cccc"
+      style="width: 370px"
+    >
+      <button
+        class="
+          onlineBooking
+          roboto-medium
+          color-white
+          font-lion
+          margin-bottom-5
+        "
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.5vw"
       >
-        <button
-          class="
-            onlineBooking
-            roboto-medium
-            color-white
-            font-lion
-            margin-bottom-5
-          "
-          fxLayout
-          fxLayoutAlign="center center"
-          fxLayoutGap="0.5vw"
-        >
-          <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
-          <p class="margin-left-1">5570 3311</p>
-        </button>
-        <div
-          class="
-            cursor-pointer
-            opacity-4
-            roboto-medium
-            color-white
-            font-small-4
-            margin-bottom-1
-          "
-          style="align-self: center"
-        >
-          <p>Click to Call Now</p>
-        </div>
+        <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+        <p class="margin-left-1">5570 3311</p>
+      </button>
+      <div
+        class="
+          cursor-pointer
+          opacity-4
+          roboto-medium
+          color-white
+          font-small-4
+          margin-bottom-1
+        "
+        style="align-self: center"
+      >
+        <p>Bundall Location</p>
       </div>
+    </div>
+
+    <div
+      (click)="goToLinkWithotNewTab('tel:0755703311')"
+      class="flexy-column cccc"
+      style="width: 370px"
+    >
+      <button
+        class="
+          onlineBooking
+          roboto-medium
+          color-white
+          font-lion
+          margin-bottom-5
+        "
+        fxLayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="0.5vw"
+      >
+        <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+        <p class="margin-left-1">5538 6277</p>
+      </button>
+      <div
+        class="
+          cursor-pointer
+          opacity-4
+          roboto-medium
+          color-white
+          font-small-4
+          margin-bottom-1
+        "
+        style="align-self: center"
+      >
+        <p>Pacific Fair Mall Location</p>
+      </div>
+    </div>
 
       <div class="line-3 opacity-5 full-width margin-bottom-1"></div>
 
@@ -597,31 +632,57 @@
 
       <div class="margin-bottom-1 roboto-regular font-medium">
         <p>
-          <span class="roboto-medium">Head to our office.</span> We’re located
-          on 122 Bundall Road, Bundall, just opposite to the HOTA (Home of The
-          Arts). You can park either in front of our building or on the rear
-          parking, accessible via Crombie Ave and Frigo Court.
+          <span class="roboto-medium">Head to our office.</span>
         </p>
       </div>
-      <div class="flexy-row">
-        <div class="">
+      <div style="align-self: flex-start;" class="flexy-row margin-bottom-1">
+        <div  style="margin-right: 2vw">
           <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
         </div>
         <div class="flexy-column margin-left-1">
           <div class="roboto-bold font-medium">
-            <p>Google Maps</p>
+            <p style="text-align: left;">Google Maps</p>
           </div>
           <div
+            class="flexy-row cursor-pointer cccc relative-container"
+            style="z-index: 2"
             (click)="
               goToLink(
                 'https://goo.gl/maps/QVq3uhoXnVFc3K7f7'
               )
             "
-            class="flexy-row cursor-pointer cccc relative-container"
-            style="z-index: 2"
           >
             <div class="roboto-regular font-extra-small opacity-5">
-              <p>Get directions to our clinic</p>
+              <p>Get directions to our Bundall clinic</p>
+            </div>
+            <div class="margin-left-1 opacity-5">
+              <img
+                loading="lazy"
+                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="align-self: flex-start;" class="flexy-row">
+        <div style="margin-right: 2vw">
+          <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
+        </div>
+        <div class="flexy-column margin-left-1">
+          <div class="roboto-bold font-medium">
+            <p style="text-align: left;">Google Maps</p>
+          </div>
+          <div
+            class="flexy-row cursor-pointer cccc relative-container"
+            style="z-index: 2"
+            (click)="
+              goToLink(
+                'https://goo.gl/maps/AidkYdrsa85eDDtH9'
+              )
+            "
+          >
+            <div class="roboto-regular font-extra-small opacity-5">
+              <p>Get directions to our Pacific Fair Mall clinic</p>
             </div>
             <div class="margin-left-1 opacity-5">
               <img

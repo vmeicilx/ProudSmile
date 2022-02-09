@@ -107,16 +107,19 @@ export class HomePageComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-
-      if (this.inTheViewport(this.relaxVideo.nativeElement)) {
-        if (this.relaxVideo.nativeElement.paused) {
-          this.relaxVideo.nativeElement.play();
-        }
-      } else {
-        if (!this.relaxVideo.nativeElement.paused) {
+    let playPromise;
+    if (ScrollTrigger.isInViewport(this.relaxVideo.nativeElement)) {
+      playPromise = this.relaxVideo.nativeElement.play();
+    }
+    else {
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
           this.relaxVideo.nativeElement.pause();
-        }
+        })
+        .catch(error => {
+        });
       }
+    }
   }
   showTextPre($event) {
     if (this.vennerShortText) {
@@ -148,20 +151,6 @@ export class HomePageComponent implements OnInit {
     } else if (this.vennerShortTextMobile) {
       this.vennerShortTextMobile.nativeElement.style.position = "relative";
       this.vennerShortTextMobile.nativeElement.style.bottom = "unset";
-    }
-  }
-
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
-    } else {
-      return false;
     }
   }
 
