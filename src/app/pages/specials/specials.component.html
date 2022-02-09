@@ -107,7 +107,6 @@
 
             <div
               class="color-orange cursor-pointer font-extra-small roboto-bold"
-              (click)="onInternalLink('Invisalign')"
             >
               <p>
                 Click to view the offer
@@ -126,7 +125,9 @@
       </div>
       <div class="flexy-column">
         <div
+        id="ThirdAddCard"
           style="
+          cursor: pointer;
             width: 590px;
             height: 827px;
             border-radius: 16px;
@@ -135,6 +136,7 @@
             margin: 23px;
             position: relative;
           "
+          (click)="onAddClick()"
         >
           <div
             class="flexy-column cccc"
@@ -155,7 +157,6 @@
 
             <div
               class="color-orange cursor-pointer font-extra-small roboto-bold"
-              (click)="onInternalLink('payment-page-component')"
             >
               <p>
                 Click to view the offer
@@ -176,7 +177,9 @@
           </div>
         </div>
         <div
+        id="FourthAddCard"
           style="
+          cursor: pointer;
             width: 598px;
             height: 860px;
             border-radius: 16px;
@@ -185,6 +188,7 @@
             margin: 23px;
             position: relative;
           "
+          (click)="onAddClick()"
         >
           <div class="flexy-column cccc" style="position: absolute; top: -30px">
             <div>
@@ -231,10 +235,8 @@
 </div>
 
 <div
-  class="padding-chef color-brown background-1 padding-bottom-1 hide-on-big"
+  class="flexy-column cccc padding-chef color-brown background-1 padding-bottom-1 hide-on-big"
   style="padding-top: 150px"
-  fxLayout="column"
-  fxLayoutAlign="center center"
 >
   <div
     fxLayout="column"
@@ -302,6 +304,7 @@
         <div
         id="SecondAddCardMobile"
           style="
+          cursor: pointer;
             border-radius: 16px;
             background-color: #f7fffd;
             box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
@@ -350,13 +353,16 @@
       </div>
       <div class="flexy-column">
         <div
+        id="ThirdAddCardMobile"
           style="
+          cursor: pointer;
             border-radius: 16px;
             background-color: #f5f9fc;
             box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
             position: relative;
             margin-bottom: 6vw;
           "
+          (click)="onAddClick()"
         >
           <div class="flexy-column cccc">
             <div style="padding: 4vw">
@@ -373,7 +379,6 @@
 
             <div
               class="color-orange cursor-pointer font-extra-small roboto-bold"
-              (click)="onInternalLink('payment-page-component')"
             >
               <p>
                 Click to view the offer
@@ -394,13 +399,16 @@
           </div>
         </div>
         <div
+        id="FourthAddCardMobile"
           style="
+          cursor: pointer;
             border-radius: 16px;
             background-color: #fee2db;
             box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.17);
             position: relative;
             margin-bottom: 6vw;
           "
+          (click)="onAddClick()"
         >
           <div style="padding: 4vw" class="flexy-column cccc">
             <div>
@@ -568,6 +576,144 @@
         >
           <p class="center-text">
             Change your smile, not your lifestyle and in as little as 2 months. Invisalign is the number 1 aligner system in the world with more than 6 million people treated. Whether it’s a small gap you don’t like or a more severe problem we’ll have a tailored solution for you and the choice of 4 levels of treatments each with a different price backet. Book your Free Invisalign Assessment and get an instant before and after photo of how you can look like with straighter teeth. Plus, use our Smileasy Payment Plan and pay it off in up to 24 months. Book Now, share offer.
+          </p>
+        </div>
+
+        <button
+          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
+          "
+        >
+          INSTANT ONLINE BOOKING
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  id="ThirdAddExpanded"
+  style="
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    background-color: black;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+  "
+>
+  <button class="fullview__close" id="third-close-btn" (click)="onAddClose()">
+    <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+      <path
+        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+      />
+    </svg>
+  </button>
+
+  <div style="position: absolute; top: 0">
+    <div
+    class="card-full-parent"
+      style="
+        background-color: #f7fffd;
+        position: relative;
+        min-height: 100vh;
+      "
+    >
+      <div class="flexy-column cccc">
+        <div>
+          <img src="../../../assets/specials/PayG.png" />
+        </div>
+        <div
+          class="roboto-medium color-brown font-lion opacity-6 third-card-text-full"
+        >
+          <p class="center-text">
+            No Deposit, pay as you go on each maintenance visit. Exclusively to Proud Smile Braces are now extremely affordable with our in house PAYG plan. The cost is spread in equal monthly payments for the duration of your proposed treatment, there’s no credit assessment or forms, as simple as that. Book Free Preliminary Assessment, share offer.
+          </p>
+        </div>
+
+        <div style="max-width: 400px;">
+          <img src="../../../assets/specials/indirect bonding.png" />
+        </div>
+
+        <button
+          class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
+          (click)="
+            goToLink(
+              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+            )
+          "
+        >
+          INSTANT ONLINE BOOKING
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div
+  id="FourthAddExpanded"
+  style="
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+    background-color: black;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+  "
+>
+  <button class="fullview__close" id="fourth-close-btn" (click)="onAddClose()">
+    <svg aria-hidden="true" width="24" height="22px" viewBox="0 0 24 22">
+      <path
+        d="M11 9.586L20.192.393l1.415 1.415L12.414 11l9.193 9.192-1.415 1.415L11 12.414l-9.192 9.193-1.415-1.415L9.586 11 .393 1.808 1.808.393 11 9.586z"
+      />
+    </svg>
+  </button>
+
+  <div style="position: absolute; top: 0">
+    <div
+    class="card-full-parent"
+      style="
+        background-color: #fee2db;
+        position: relative;
+        min-height: 100vh;
+      "
+    >
+      <div class="flexy-column cccc">
+        <div>
+          <img src="../../../assets/specials/Lady2.png" />
+        </div>
+        <div class="roboto-regular color-brown font-fish">
+          <p class="center-text">
+            Our<span class="roboto-bold"> New<br />Patient Special</span>
+          </p>
+        </div>
+        <div
+          class="roboto-medium color-brown font-lion opacity-6 fourth-card-text-full"
+        >
+          <p class="center-text">
+            Heck up and x-rays for only
+                <span class="roboto-bold" style="text-decoration: underline"
+                  >$99 or Gap Free</span
+                >
+                with all health insurances. We’d love you to join our family, and we’ve made this first visit very special with this great offer. Join our family and get the Proud Smile experience for yourself. Book Now, share offer.
           </p>
         </div>
 
