@@ -27,7 +27,7 @@ export class SameDayCrownsComponent implements OnInit {
 
   vulcanOn: boolean;
 
-  constructor(private router: Router, private data: DataService) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -58,20 +58,6 @@ export class SameDayCrownsComponent implements OnInit {
       
     this.setMaskHeight();
     }
-
-    // if (this.inTheViewport(this.vulcan.nativeElement)) {
-    //   if (!this.vulcanOn) {
-    //     this.onVulcanPresent.emit(true);
-    //     this.vulcanOn = true;
-    //     this.data.changeMessage("true");
-    //   }
-    // } else {
-    //   if (this.vulcanOn) {
-    //     this.onVulcanPresent.emit(false);
-    //     this.vulcanOn = false;
-    //     this.data.changeMessage("false");
-    //   }
-    // }
 
     let playPromise1;
     if (ScrollTrigger.isInViewport(this.bridgeVideo.nativeElement)) {

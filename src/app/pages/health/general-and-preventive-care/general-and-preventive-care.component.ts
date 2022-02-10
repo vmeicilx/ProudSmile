@@ -6,7 +6,6 @@ import {
   ViewChild
 } from "@angular/core";
 import { Router } from "@angular/router";
-import { SharedService } from "src/app/shared/shared-service";
 
 function resize() {
   const canvas: any = document.getElementById("hero-lightpass-chair");
@@ -119,7 +118,7 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
 
   id: number;
 
-  constructor(private router: Router, private sharedService: SharedService) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -163,14 +162,12 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
   }
 
   maximize(ev) {
-    //this.sharedService.sendClickEvent(ev);
     this.PerfectTeeths.nativeElement.style.transform = "translate(10vw, -40vh)";
     setTimeout(() => {
       this.PerfectTeeths.nativeElement.style.width = "50vw";
       this.PerfectTeeths.nativeElement.src="../../../../assets/healthPage/GeneralAndPreventive/WhiteFillingsFull.png"
       this.backToGrid.nativeElement.style.display = "block";
     }, 1500)
-    //this.PerfectTeeths.nativeElement.style.animation= "specialOne 5s";
   }
 
   onBackToGridClick() {

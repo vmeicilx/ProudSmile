@@ -9,21 +9,13 @@ import { FooterComponent } from "./footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SmallCardComponent } from "./custom-components/cards/small-card/small-card.component";
-import { ScrollbarModule } from "./custom-components/scrollbar/scrollbar.module";
 import { NG_EVENT_PLUGINS } from "@tinkoff/ng-event-plugins";
-import { VideoPlayerComponent } from "./custom-components/video-player/video-player.component";
-import { TextCardComponent } from "./custom-components/cards/text-card/text-card.component";
-import { SmileCardComponent } from "./custom-components/cards/smile-card/smile-card.component";
-import { WhyProudSmileComponent } from "./pages/why-proud-smile/why-proud-smile.component";
 import { ComingSoonComponent } from "./custom-components/coming-soon/coming-soon.component";
 import { DemoMaterialModule } from "./material-module";
 import { MatNativeDateModule } from "@angular/material/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ImageTextComponent } from "./custom-components/cards/image-text/image-text.component";
-import { AestheticsComponent } from "./pages/aesthetics/aesthetics.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ButtonComponent } from "./custom-components/button/button.component";
-import { TitleCardComponent } from "./custom-components/cards/title-card/title-card.component";
 import { NgImageSliderModule } from "ng-image-slider";
 import { ProudSmileExperienceComponent } from "./pages/why-proud-smile/proud-smile-experience/proud-smile-experience.component";
 import { WhoWeAreComponent } from "./pages/why-proud-smile/who-we-are/who-we-are.component";
@@ -46,14 +38,11 @@ import { VgCoreModule } from "@videogular/ngx-videogular/core";
 import { VgControlsModule } from "@videogular/ngx-videogular/controls";
 import { VgOverlayPlayModule } from "@videogular/ngx-videogular/overlay-play";
 import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
-import { ImplantsComponent } from "./pages/implants/implants.component";
 import { SpecialsComponent } from "./pages/specials/specials.component";
 import { DropdownComponent } from "./custom-components/dropdown/dropdown.component";
 import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
-import { ScrollFramerComponent } from "./custom-components/scroll-framer/scroll-framer.component";
 import { FulArchRehabilitationComponent } from "./pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component";
 import { ImplantDenturesComponent } from "./pages/implants/implant-dentures/implant-dentures.component";
-import { GridToFullScreenComponent } from "./custom-components/grid-to-full-screen/grid-to-full-screen.component";
 import { PorcelainVeneersComponent } from "./pages/aesthetics/porcelain-veneers/porcelain-veneers.component";
 import { UltraThinVeneersComponent } from "./pages/aesthetics/ultra-thin-veneers/ultra-thin-veneers.component";
 import { SameDayVeneersComponent } from "./pages/aesthetics/same-day-veneers/same-day-veneers.component";
@@ -65,7 +54,6 @@ import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-aft
 import { ScrollFramerFullComponent } from './custom-components/scroll-framer-full/scroll-framer-full.component';
 import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
 import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropwodn-green.component';
-import { ScrollAnimationComponent } from './custom-components/scroll-animation/scroll-animation.component';
 
 @NgModule({
   declarations: [
@@ -74,15 +62,8 @@ import { ScrollAnimationComponent } from './custom-components/scroll-animation/s
     HeaderComponent,
     FooterComponent,
     SmallCardComponent,
-    VideoPlayerComponent,
-    TextCardComponent,
-    SmileCardComponent,
-    WhyProudSmileComponent,
     ComingSoonComponent,
-    ImageTextComponent,
-    AestheticsComponent,
     ButtonComponent,
-    TitleCardComponent,
     ProudSmileExperienceComponent,
     WhoWeAreComponent,
     DentalClinicComponent,
@@ -99,14 +80,11 @@ import { ScrollAnimationComponent } from './custom-components/scroll-animation/s
     MedicareChildComponent,
     MouthguardsComponent,
     DentalEmergencyComponent,
-    ImplantsComponent,
     SpecialsComponent,
     DropdownComponent,
     SingleToothComponent,
-    ScrollFramerComponent,
     FulArchRehabilitationComponent,
     ImplantDenturesComponent,
-    GridToFullScreenComponent,
     PorcelainVeneersComponent,
     UltraThinVeneersComponent,
     SameDayVeneersComponent,
@@ -116,15 +94,13 @@ import { ScrollAnimationComponent } from './custom-components/scroll-animation/s
     BeforeAfterComponent,
     ScrollFramerFullComponent,
     MobileHeaderComponent,
-    DropwodnGreenComponent,
-    ScrollAnimationComponent
+    DropwodnGreenComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    ScrollbarModule,
     DemoMaterialModule,
     MatNativeDateModule,
     ReactiveFormsModule,

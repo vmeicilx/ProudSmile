@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import { Router } from "@angular/router";
+import { gsap } from 'gsap';
 import { Subject } from "rxjs";
 import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-framer-section/scroll-framer-section.component";
 

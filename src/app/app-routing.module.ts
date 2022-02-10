@@ -3,8 +3,6 @@ import { Routes, RouterModule } from "@angular/router";
 import { ComingSoonComponent } from "./custom-components/coming-soon/coming-soon.component";
 import { HeaderComponent } from "./header/header.component";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
-import { AestheticsComponent } from "./pages/aesthetics/aesthetics.component";
-import { WhyProudSmileComponent } from "./pages/why-proud-smile/why-proud-smile.component";
 import { ProudSmileExperienceComponent } from "./pages/why-proud-smile/proud-smile-experience/proud-smile-experience.component";
 import { WhoWeAreComponent } from "./pages/why-proud-smile/who-we-are/who-we-are.component";
 import { DentalClinicComponent } from "./pages/why-proud-smile/dental-clinic/dental-clinic.component";
@@ -21,7 +19,6 @@ import { MedicareChildComponent } from "./pages/health/medicare-child/medicare-c
 import { MouthguardsComponent } from "./pages/health/mouthguards/mouthguards.component";
 import { RootCanalTherapyComponent } from "./pages/health/root-canal-therapy/root-canal-therapy.component";
 import { SameDayCrownsComponent } from "./pages/health/same-day-crowns/same-day-crowns.component";
-import { ImplantsComponent } from "./pages/implants/implants.component";
 import { SpecialsComponent } from "./pages/specials/specials.component";
 import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
 import { FulArchRehabilitationComponent } from "./pages/implants/ful-arch-rehabilitation/ful-arch-rehabilitation.component";
@@ -43,8 +40,6 @@ const routes: Routes = [
   { path: "who-we-are-component", component: WhoWeAreComponent },
   { path: "dental-clinic-component", component: DentalClinicComponent },
   { path: "header-component", component: HeaderComponent },
-  { path: "why-proud-smile-component", component: WhyProudSmileComponent },
-  { path: "aesthetics-component", component: AestheticsComponent },
   { path: "AnxiousPatients", component: AnxiousPatientsComponent },
   { path: "ClearBraces", component: ClearBracesComponent },
   { path: "DentalEmergency", component: DentalEmergencyComponent },
@@ -73,7 +68,6 @@ const routes: Routes = [
   { path: "payment-page-component", component: PaymentPageComponent },
   { path: "contact-page-component", component: ContactPageComponent },
   { path: "contact-page-component/:parameter", component: ContactPageComponent },
-  { path: "attachment", redirectTo: "/attachment" },
   { path: "send", redirectTo: "/send" },
   { path: "**", redirectTo: "/HomePage" }
 ];
