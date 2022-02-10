@@ -77,11 +77,12 @@
 </div>
 
 <div
+id="WatchFirstSection"
   class="padding-chef color-brown background-1 padding-bottom-1 padding-top-bottom-1"
   fxLayout="column"
   fxLayoutAlign="center center"
 >
-  <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="column" fxLayoutAlign="center center">
     <div class="font-dog libre-regular margin-bottom-4" style="max-width: 50vw">
       <p>
         A better and happier<br />
@@ -101,20 +102,16 @@
       </p>
     </div>
 
-    <div
-      class="background-43"
-      fxLayout
-      fxLayoutAlign="center center"
-      style="margin-bottom: 4vw"
-    >
-      <div id="SameDayAnimationContainer" class="animation-container">
-        <div class="canvas-container">
-          <canvas id="hero-lightpass-same-day"></canvas>
+    <div id="WatchParent" class="background-43" fxLayout fxLayoutAlign="center center">
+      <div id="WatchAnimationContainer">
+        <div id="WatchCanvasContainer">
+          <canvas id="hero-lightpass-watch"></canvas>
         </div>
       </div>
     </div>
 
     <button
+    style="margin-top:6vw;"
       class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4"
       (click)="
         goToLink(

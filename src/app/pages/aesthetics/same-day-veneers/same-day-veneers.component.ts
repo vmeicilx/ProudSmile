@@ -1,34 +1,37 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-
 function resize() {
-  const canvas: any = document.getElementById("hero-lightpass-same-day");
-  const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+  const canvas: any = document.getElementById("hero-lightpass-watch");
+  const canvasContainer: any = document.getElementById("WatchCanvasContainer");
 
-  if(canvas && canvasFramer) {
-    canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
-    canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+  if(canvas && canvasContainer) {
+    canvasContainer.style.width = canvas.getBoundingClientRect().width + "px";
+    canvasContainer.style.height = canvas.getBoundingClientRect().height + "px";
   }
 }
 
 window.onresize = resize;
 
 function startAnimation() {
-  const canvas: any = document.getElementById("hero-lightpass-same-day");
+  const canvas: any = document.getElementById("hero-lightpass-watch");
   const context = canvas.getContext("2d");
   const animationContainer: any = document.getElementById(
-    "SameDayAnimationContainer"
+    "WatchAnimationContainer"
   );
   document.body.style.overflow = "hidden";
 
-  let topValue = 217;
+  let topValue = 129;
 
   if (window.innerWidth < 1200) {
-    topValue = 144;
+    topValue = 80;
   }
 
   let framesPath = "video";
+  let startValue = "bottom bottom";
+  let endValue = "+=4000"
+
+
   if(window.innerWidth < 1200) {
     framesPath = "video mobile";
     canvas.width = 492;
@@ -41,13 +44,13 @@ function startAnimation() {
   }
 
   const frameCount = 182;
-  const currentFrame = (index) =>
+
+    const currentFrame = (index) =>
     `../../../../assets/aesthetics/SameDay/${framesPath}/SameDay ${(
       index + 1
     )
       .toString()
       .padStart(3, "0")}.jpg`;
-
   const images = [];
   const frames = {
     frame: 0,
@@ -68,26 +71,13 @@ function startAnimation() {
     frame: frameCount - 1,
     snap: "frame",
     scrollTrigger: {
-      id: "ScrollTriggerSameDay",
-      trigger: "#SameDayAnimationContainer",
-      onEnter: () => {
-        canvas.classList.add("canvas-in-viewport");
-      },
-      onEnterBack: () => {
-        canvas.classList.add("canvas-in-viewport");
-        canvas.parentElement.classList.remove("canvas-container-end");
-      },
-      onLeave: () => {
-        canvas.classList.remove("canvas-in-viewport");
-        canvas.parentElement.classList.add("canvas-container-end");
-      },
-      onLeaveBack: () => {
-        canvas.classList.remove("canvas-in-viewport");
-      },
-      start: topValue + "px top",
-      end: "bottom bottom",
+      id: "ScrollTriggerWatch",
+      trigger: "#hero-lightpass-watch",
+      start: startValue,
+      end: endValue,
       markers: false,
       scrub: 1,
+      pin: "#WatchFirstSection"
     },
     onUpdate: render,
   });
@@ -104,8 +94,7 @@ function startAnimation() {
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[frames.frame], 0, 0);
-
-    resize();
+    resize()
   }
 
 }

@@ -15,6 +15,7 @@ export class DentalClinicComponent implements OnInit {
   constructor() {}
 
   @ViewChild("practiceButVideo") practiceButVideo: ElementRef;
+  @ViewChild("practiceButVideoMobile") practiceButVideoMobile: ElementRef;
   @ViewChild("lightRoomVideo") lightRoomVideo: ElementRef;
   @ViewChild("lightRoomVideoMobile") lightRoomVideoMobile: ElementRef;
 
@@ -22,29 +23,38 @@ export class DentalClinicComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.practiceButVideo.nativeElement.muted = true;
+    this.practiceButVideoMobile.nativeElement.muted = true;
     this.lightRoomVideo.nativeElement.muted = true;
     this.lightRoomVideoMobile.nativeElement.muted = true;
-    this.practiceButVideo.nativeElement.play();
+
+    if(window.innerWidth > 1200) {
+
+      this.practiceButVideo.nativeElement.play();
+    }
+    else {
+
+      this.lightRoomVideoMobile.nativeElement.play();
+    }
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
 
-    let playPromise1;
-    if (ScrollTrigger.isInViewport(this.practiceButVideo.nativeElement)) {
-      playPromise1 = this.practiceButVideo.nativeElement.play();
-    }
-    else {
-      if (playPromise1 !== undefined) {
-        playPromise1.then(_ => {
-          this.practiceButVideo.nativeElement.pause();
-        })
-        .catch(error => {
-        });
-      }
-    }
-
     if(window.innerWidth > 1200) {
+      let playPromise1;
+      if (ScrollTrigger.isInViewport(this.practiceButVideo.nativeElement)) {
+        playPromise1 = this.practiceButVideo.nativeElement.play();
+      }
+      else {
+        if (playPromise1 !== undefined) {
+          playPromise1.then(_ => {
+            this.practiceButVideo.nativeElement.pause();
+          })
+          .catch(error => {
+          });
+        }
+      }
+
       let playPromise2;
       if (ScrollTrigger.isInViewport(this.lightRoomVideo.nativeElement)) {
         playPromise2 = this.lightRoomVideo.nativeElement.play();
@@ -59,6 +69,20 @@ export class DentalClinicComponent implements OnInit {
         }
       }
     } else {
+      let playPromise4;
+      if (ScrollTrigger.isInViewport(this.practiceButVideoMobile.nativeElement)) {
+        playPromise4 = this.practiceButVideoMobile.nativeElement.play();
+      }
+      else {
+        if (playPromise4 !== undefined) {
+          playPromise4.then(_ => {
+            this.practiceButVideoMobile.nativeElement.pause();
+          })
+          .catch(error => {
+          });
+        }
+      }
+
       let playPromise3;
       if (ScrollTrigger.isInViewport(this.lightRoomVideoMobile.nativeElement)) {
         playPromise3 = this.lightRoomVideoMobile.nativeElement.play();

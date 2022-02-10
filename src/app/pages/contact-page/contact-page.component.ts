@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { stringify } from "querystring";
 import { EmailData } from "src/EmailData";
 import { emailService } from "src/emailService";
 
@@ -32,6 +33,8 @@ export class ContactPageComponent implements OnInit {
   files: File[] = null; // Variable to store file
 
   emailData: EmailData;
+
+  pictures: string = "";
 
   constructor(
     private router: Router,
@@ -195,13 +198,11 @@ export class ContactPageComponent implements OnInit {
 
   scrollToContactFormAction() {
     setTimeout(() => {
-      document
-        .getElementById("contact-form")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-          inline: "nearest",
-        });
+      document.getElementById("contact-form").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
     }, 500);
   }
 
@@ -210,5 +211,15 @@ export class ContactPageComponent implements OnInit {
   // On file Select
   onChange(event) {
     this.files = event.target.files;
+
+    this.pictures = "";
+
+    for (var i = 0; i < this.files.length; i++) {
+      this.pictures = this.pictures + this.files[i].name + ", ";
+
+      if (i === this.files.length - 1) {
+        this.pictures = this.pictures.substring(0, this.pictures.length - 2);
+      }
+    }
   }
 }

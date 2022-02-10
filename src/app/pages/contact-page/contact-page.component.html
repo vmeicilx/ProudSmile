@@ -290,12 +290,12 @@
       style="max-width: 600px"
     >
       <p>
-        Don't be shy, you can ask us anything. Fill in the form below and we
+        Don`t be shy, you can ask us anything, you can attach pictures of your teeth too. Fill in the form below and we
         will get back to you within 1 business day.
       </p>
     </div>
     <div class="roboto-bold font-medium">
-      <p>*This fields are required.</p>
+      <p>*These fields are required.</p>
     </div>
   </div>
   <div>
@@ -394,11 +394,14 @@
               ></textarea>
             </div>
 
-            <div style="margin-top: 24px; display:flex">
+            <div style="margin-top: 24px; display:flex; align-items: center;">
+              <label style="cursor:pointer; border-radius: 37px; background: #E6437B; padding:24px 36px; border:0; outline:none; margin-top:auto; color:white" for="files" class=" roboto-bold font-extra-small-2">Attach pictures</label>
+              <p style="margin-left:16px;">{{pictures}}</p>
               <input
-              style="flex:1"
+                style="flex:1; visibility: hidden;"
                 class="form-control"
                 type="file"
+                id="files"
                 multiple
                 (change)="onChange($event)"
               />

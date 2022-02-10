@@ -132,28 +132,18 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-    if (this.inTheViewport(this.video.nativeElement)) {
-      if (this.video.nativeElement.paused) {
-        this.video.nativeElement.play();
-      }
-    } else {
-      if (!this.video.nativeElement.paused) {
-        this.video.nativeElement.pause();
-      }
-    }
-  }
 
-  inTheViewport(elem): boolean {
-    var bounding = elem.getBoundingClientRect();
-    if (
-      bounding.top >= -elem.offsetHeight &&
-      bounding.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) +
-          elem.offsetHeight
-    ) {
-      return true;
+    let playPromise1;
+    if (ScrollTrigger.isInViewport(this.video.nativeElement)) {
+      playPromise1 = this.video.nativeElement.play();
     } else {
-      return false;
+      if (playPromise1 !== undefined) {
+        playPromise1
+          .then((_) => {
+            this.video.nativeElement.pause();
+          })
+          .catch((error) => {});
+      }
     }
   }
 
