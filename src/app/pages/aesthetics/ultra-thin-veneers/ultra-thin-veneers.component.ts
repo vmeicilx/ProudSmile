@@ -44,7 +44,7 @@ function startAnimation() {
   let endValue = "+=8000"
   let framesPath = "UltraThinVeneers/Ultra Thin Veneers";
   if(window.innerWidth < 1200) {
-    framesPath = "UltraThinVeneers mobile/UltraThinVeneers";
+    framesPath = "UltraThinVeneers mobile/Ultra Thin Veneers";
     canvas.width = 682;
     canvas.height = 350;
   }
