@@ -8,17 +8,18 @@ import {
 import { Router } from "@angular/router";
 
 function resize() {
-  const canvas: any = document.getElementById("hero-lightpass");
+  const canvas: any = document.getElementById("hero-lightpass-ultra");
   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
   const mobileSuggestion = document.getElementById("MobileSuggestion");
 
-  if(canvas && canvasFramer) {
+  if(canvas && canvasFramer && mobileSuggestion) {
     canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
     canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
   
-    if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+    if(window.scrollY >= 217 && window.scrollY <= 8000 && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
       mobileSuggestion.style.display = "flex";
-    } else {
+    }
+    else {
       mobileSuggestion.style.display = "none";
     }
   }
@@ -27,7 +28,8 @@ function resize() {
 window.onresize = resize;
 
 function startAnimation() {
-  const canvas: any = document.getElementById("hero-lightpass");
+  const loadingProgress: any = document.getElementById("LoadingProgressUltra");
+  const canvas: any = document.getElementById("hero-lightpass-ultra");
   const context = canvas.getContext("2d");
   const loadingText: any = document.getElementById("LoadingTextUltraThin");
   const animationContainer: any = document.getElementById(
@@ -35,17 +37,14 @@ function startAnimation() {
   );
   const buttons: any = document.getElementById("UltraThinBottomButtons");
   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+
   document.body.style.overflow = "hidden";
 
-  let topValue = 217;
-
-  if (window.innerWidth < 1200) {
-    topValue = 144;
-  }
-
-  let framesPath = "UltraThinVeneers";
+  let startValue = "top top";
+  let endValue = "+=8000"
+  let framesPath = "UltraThinVeneers/Ultra Thin Veneers";
   if(window.innerWidth < 1200) {
-    framesPath = "UltraThinVeneers mobile";
+    framesPath = "UltraThinVeneers mobile/UltraThinVeneers";
     canvas.width = 682;
     canvas.height = 350;
   }
@@ -60,11 +59,12 @@ function startAnimation() {
 
   const frameCount = 460;
   const currentFrame = (index) =>
-    `../../../../assets/aesthetics/${framesPath}/Ultra Thin Veneers ${(
+    `../../../../assets/aesthetics/${framesPath} ${(
       index + 1
     )
       .toString()
       .padStart(3, "0")}.jpg`;
+
 
   const images = [];
   const frames = {
@@ -73,7 +73,7 @@ function startAnimation() {
 
   let loadedImages = 0;
 
-  loadingText.style.display = "block";
+  loadingText.style.display = "flex";
   animationContainer.style.display = "none";
   buttons.style.display = "none";
 
@@ -90,33 +90,16 @@ function startAnimation() {
     scrollTrigger: {
       id: "ScrollTriggerUltra",
       trigger: "#UltraThinAnimationContainer",
-      onEnter: () => {
-        canvas.classList.add("canvas-in-viewport");
-        document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
-      },
-      onEnterBack: () => {
-        canvas.classList.add("canvas-in-viewport");
-        document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
-        canvas.parentElement.classList.remove("canvas-container-end");
-      },
-      onLeave: () => {
-        canvas.classList.remove("canvas-in-viewport");
-        document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
-        canvas.parentElement.classList.add("canvas-container-end");
-      },
-      onLeaveBack: () => {
-        canvas.classList.remove("canvas-in-viewport");
-        document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
-      },
-      start: topValue + "px top",
-      end: "bottom bottom",
+      start: startValue,
+      end: endValue,
       markers: false,
       scrub: 1,
+      pin: "#UltraParent"
     },
     onUpdate: render,
   });
 
-  // const testButton = document.getElementById("TestButton");
+    // const testButton = document.getElementById("TestButton");
 
   // var tl = gsap.timeline({
     
@@ -136,9 +119,10 @@ function startAnimation() {
 
   function countImages() {
     loadedImages = loadedImages + 1;
+    loadingProgress.innerHTML = loadedImages + `/` + frameCount + " frames loaded...";
     if (loadedImages === frameCount) {
       loadingText.style.display = "none";
-      animationContainer.style.display = "block";
+      animationContainer.style.display = "flex";
       buttons.style.display = "flex";
       render();
       ScrollTrigger.refresh();
@@ -148,10 +132,11 @@ function startAnimation() {
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[frames.frame], 0, 0);
-    resize();
+    resize()
   }
 
 }
+
 
 @Component({
   selector: "app-ultra-thin-veneers",
@@ -165,13 +150,16 @@ export class UltraThinVeneersComponent implements OnInit {
   @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   currentFrame = 0;
-  framePositions = [585, 1385, 1885, 2385, 3085, 4485, 6885];
+  framePositions = [700, 1200, 2300, 2900, 3500, 5000, 8100];
   firstFramePosition = 217;
-  lastFramePosition = 7185;
+  lastFramePosition = 8200;
+
+  framesLoadedText = "";
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.framesLoadedText = "0/460";}
 
   ngAfterViewInit(): void {
     startAnimation();
