@@ -120,7 +120,7 @@ function startAnimation() {
           trigger: "#UltraCanvasContainer",
           start: startValue,
           end: endValue,
-          markers: true,
+          markers: false,
           scrub: 1,
           pin: true
         },
@@ -196,6 +196,11 @@ export class UltraThinVeneersComponent implements OnInit {
     else {
       this.suggestionButtonUp.nativeElement.style.display = "none";
     }
+  }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    resize();
   }
 
   setCurrentFrame() {
