@@ -33,7 +33,7 @@ function startAnimation() {
   const context = canvas.getContext("2d");
   const loadingText: any = document.getElementById("LoadingTextUltraThin");
   const animationContainer: any = document.getElementById(
-    "UltraThinAnimationContainer"
+    "UltraCanvasContainer"
   );
   const buttons: any = document.getElementById("UltraThinBottomButtons");
   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
@@ -55,7 +55,7 @@ function startAnimation() {
   }
 
   canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
-  canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+  canvasFramer.style.height = canvas.getBoundingClientRect().height + "px";
 
   const frameCount = 460;
   const currentFrame = (index) =>
@@ -84,20 +84,7 @@ function startAnimation() {
     images.push(img);
   }
 
-  gsap.to(frames, {
-    frame: frameCount - 1,
-    snap: "frame",
-    scrollTrigger: {
-      id: "ScrollTriggerUltra",
-      trigger: "#UltraThinAnimationContainer",
-      start: startValue,
-      end: endValue,
-      markers: false,
-      scrub: 1,
-      pin: "#UltraParent"
-    },
-    onUpdate: render,
-  });
+
 
     // const testButton = document.getElementById("TestButton");
 
@@ -122,8 +109,23 @@ function startAnimation() {
     loadingProgress.innerHTML = loadedImages + `/` + frameCount + " frames loaded...";
     if (loadedImages === frameCount) {
       loadingText.style.display = "none";
-      animationContainer.style.display = "flex";
+      animationContainer.style.display = "block";
       buttons.style.display = "flex";
+
+      gsap.to(frames, {
+        frame: frameCount - 1,
+        snap: "frame",
+        scrollTrigger: {
+          id: "ScrollTriggerUltra",
+          trigger: "#UltraCanvasContainer",
+          start: startValue,
+          end: endValue,
+          markers: true,
+          scrub: 1,
+          pin: true
+        },
+        onUpdate: render,
+      });
       render();
       ScrollTrigger.refresh();
     }
