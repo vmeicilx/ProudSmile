@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Router } from "@angular/router";
+import { gsap } from 'gsap';
 import { Observable } from "rxjs";
 
 @Component({

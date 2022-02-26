@@ -1,47 +1,14 @@
 :host {
 
-  .animation-container {
-    height: 20000px;
-    position: relative;
-    background:black;
-  }
-  
-  .canvas-container {
-    height: 100vh;
-    top: 217px;
-    position: relative;
-    background: #000;
-  }
-
-  .canvas-container-end {
-    top: 100%;
-    transform: translate(0, -100%);
-  }
-  .canvas-in-viewport {
-    position: fixed !important;
-  }
-  
   canvas {
-    width: 100vw;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     max-width: 100vw;
     max-height: 100vh;
   }
-  .canvas-framer {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 100vw;
-    max-height: 100vh;
-  }
-
 
   .book3 {
+    border-radius: 37px;
     background: #E6437B;
+    padding: 24px 36px;
     border: 0;
     outline: none;
     margin-top: auto;
