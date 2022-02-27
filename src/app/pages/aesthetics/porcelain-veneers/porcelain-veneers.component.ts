@@ -27,32 +27,16 @@ function startAnimation() {
   );
   document.body.style.overflow = "hidden";
 
-  let topValue = 129;
-
-  if (window.innerWidth < 1200) {
-    topValue = 80;
-  }
-
-  let framesPath = "video";
-  let startValue = "bottom bottom";
+  let startValue = "top top";
   let endValue = "+=4000"
 
+    canvas.width = 600;
+    canvas.height = 308;
 
-  if(window.innerWidth < 1200) {
-    framesPath = "video mobile";
-    canvas.width = 492;
-    canvas.height = 399;
-  }
-  else
-  {
-    canvas.width = 984;
-    canvas.height = 798;
-  }
-
-  const frameCount = 182;
+  const frameCount = 156;
 
     const currentFrame = (index) =>
-    `../../../../assets/aesthetics/SameDay/${framesPath}/SameDay ${(
+    `../../../../assets/aesthetics/PV/PV mobile/PV mobile ${(
       index + 1
     )
       .toString()
@@ -102,6 +86,28 @@ function startAnimation() {
     context.drawImage(images[frames.frame], 0, 0);
     resize()
   }
+
+  const imageToFade2 = document.getElementById("ImageToFade2");
+
+  var t2 = gsap.timeline({
+    
+    scrollTrigger: {
+      id: "ImageFade2",
+      trigger: '#ImageToFade2',
+      start: '4000px bottom-=200',
+      end: '+=400',
+      scrub: true,
+      markers: true
+    }
+    
+  })
+  
+  t2
+  .to(imageToFade2, { opacity: 0}, 0)  
+  .to(imageToFade2, { opacity: 0.25}, 0.25)  
+  .to(imageToFade2, { opacity: 0.5}, 0.5)  
+  .to(imageToFade2, { opacity: 0.75}, 0.75)  
+  .to(imageToFade2, { opacity: 1}, 1);
 
 }
 
