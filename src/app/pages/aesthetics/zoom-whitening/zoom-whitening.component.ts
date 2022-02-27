@@ -171,6 +171,8 @@ export class ZoomWhiteningComponent implements OnInit {
 
   // frames = [];
   // framesContent = [];
+  
+  @ViewChild("zoomVideo") zoomVideo: ElementRef;
 
   constructor(private router: Router) {}
 
@@ -178,6 +180,9 @@ export class ZoomWhiteningComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
+    this.zoomVideo.nativeElement.muted = true;
+    this.zoomVideo.nativeElement.style.display = "block";
+    this.zoomVideo.nativeElement.play();
     // startAnimation();
     // this.suggestionButton.nativeElement.style.display = "none";
     // this.suggestionButtonUp.nativeElement.style.display = "none";
@@ -211,6 +216,20 @@ export class ZoomWhiteningComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
+
+    // let playPromise1;
+    // if (ScrollTrigger.isInViewport(this.zoomVideo.nativeElement)) {
+    //   playPromise1 = this.zoomVideo.nativeElement.play();
+    // }
+    // else {
+    //   if (playPromise1 !== undefined) {
+    //     playPromise1.then(_ => {
+    //       this.zoomVideo.nativeElement.pause();
+    //     })
+    //     .catch(error => {
+    //     });
+    //   }
+    // }
 
     // if(window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
     //   this.MobileSuggestion.nativeElement.style.display = "flex";
