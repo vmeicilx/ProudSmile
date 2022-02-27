@@ -97,7 +97,7 @@ function startAnimation() {
       start: '4000px bottom-=200',
       end: '+=400',
       scrub: true,
-      markers: true
+      markers: false
     }
     
   })
