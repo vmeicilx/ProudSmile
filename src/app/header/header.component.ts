@@ -17,6 +17,7 @@ import {
 import { NavigationEnd, Router } from "@angular/router";
 import { DataService } from "../shared/data-service";
 
+
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -275,9 +276,9 @@ export class HeaderComponent implements OnInit {
         }
 
         if (
-          val.url === "/PorcelainVeneers" ||
-          val.url === "/UltraThinVeneers" ||
-          val.url === "/ZoomWhitening"
+          (val.url === "/PorcelainVeneers" && window.innerWidth > 1200) ||
+          (val.url === "/UltraThinVeneers" && window.innerWidth > 1200) ||
+          (val.url === "/ZoomWhitening" && window.innerWidth > 1200)
         ) {
           this.hItem.nativeElement.style.position = "relative";
           this.aestheticsSubheader.nativeElement.children[0].classList.add(
