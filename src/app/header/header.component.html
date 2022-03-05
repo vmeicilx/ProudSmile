@@ -66,7 +66,7 @@
       fxFlexAlign="center"
       (click)="
         goToLink(
-          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
         )
       "
     >
@@ -142,9 +142,9 @@
       style="margin-bottom: 32px"
       fxFlexAlign="center"
       (click)="
-        goToLink(
-          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-        )
+      goToLink(
+        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+      )
       "
     >
       <img src="../../../assets/contactPage/calendar.svg" />
@@ -168,7 +168,7 @@
     </button>
     <button
       class="fix-text-1 roboto-medium"
-      (click)="onMenuItemClick('Extractions')"
+      (click)="onMenuItemClick('GeneralAndPreventiveCare')"
     >
       <p>Health</p>
     </button>
@@ -205,9 +205,9 @@
     <button
       class="fix-text-1 roboto-medium"
       (click)="
-        goToLink(
-          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-        )
+      goToLink(
+        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+      )
       "
     >
       <p>Instant Online Booking</p>
@@ -617,7 +617,7 @@
           </button>
           <button
             class="font-extra-small roboto-medium"
-            (click)="onMenuItemClick('Extractions')"
+            (click)="onMenuItemClick('GeneralAndPreventiveCare')"
           >
             <p #HealthText>Health</p>
           </button>
@@ -658,9 +658,9 @@
           fxLayoutAlign="center center"
           fxLayoutGap="0.5vw"
           (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-            )
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+          )
           "
         >
           <img src="../../assets/header/calendar.png" />
@@ -854,15 +854,15 @@
               <div
                 class="flexy-row cursor-pointer"
                 style="align-items: center; min-height: 88px"
-                (click)="onMenuItemClickMobile('Extractions')"
+                (click)="onMenuItemClickMobile('GeneralAndPreventiveCare')"
               >
                 <div style="width: 200px">
                   <img
                     style="margin: auto"
-                    src="../../assets/healthPage/extraction.svg"
+                    src="../../assets/healthPage/general.svg"
                   />
                 </div>
-                <div style="color: white">Extractions</div>
+                <div style="color: white">General and Preventive Care</div>
               </div>
               <div
                 class="flexy-row cursor-pointer"
@@ -932,15 +932,15 @@
               <div
                 class="flexy-row cursor-pointer"
                 style="align-items: center; min-height: 88px"
-                (click)="onMenuItemClickMobile('GeneralAndPreventiveCare')"
+                (click)="onMenuItemClickMobile('Extractions')"
               >
                 <div style="width: 200px">
                   <img
                     style="margin: auto"
-                    src="../../assets/healthPage/general.svg"
+                    src="../../assets/healthPage/extraction.svg"
                   />
                 </div>
-                <div style="color: white">General and Preventive Care</div>
+                <div style="color: white">Extractions</div>
               </div>
               <div
                 class="flexy-row cursor-pointer"
@@ -1289,9 +1289,9 @@
         <div
           class="font-extra-small roboto-medium mobile-menu-item flexy-row"
           (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-            )
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+          )
           "
         >
           <div class="flexy-row full-width">
@@ -1503,15 +1503,15 @@
       style="flex:3 3 auto;
       place-content: center flex-end;
       align-items: center;"
-      (click)="onClick($event, 'Extractions')"
+      (click)="onClick($event, 'GeneralAndPreventiveCare')"
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/healthPage/extraction.svg" />
+          <img src="../../assets/healthPage/general.svg" />
         </div>
       </div>
       <div class="text-container">
-        <p>Extractions</p>
+        <p>General and<br />Preventive care</p>
       </div>
     </div>
 
@@ -1617,15 +1617,15 @@
     <div
       class="full-height flexy-row"
       style="flex:3 3 auto; align-items: center; place-content: center flex-end;"
-      (click)="onClick($event, 'GeneralAndPreventiveCare')"
+      (click)="onClick($event, 'Extractions')"
     >
       <div class="imageTextCard flexy">
         <div class="image-container">
-          <img src="../../assets/healthPage/general.svg" />
+          <img src="../../assets/healthPage/extraction.svg" />
         </div>
       </div>
       <div class="text-container">
-        <p>General and<br />Preventive care</p>
+        <p>Extractions</p>
       </div>
     </div>
 
@@ -1754,15 +1754,15 @@
             <div
               class="flexy-row cursor-pointer"
               style="align-items: center; min-height: 88px"
-              (click)="onMenuItemClickMobile('Extractions')"
+              (click)="onMenuItemClickMobile('GeneralAndPreventiveCare')"
             >
               <div style="width: 200px">
                 <img
                   style="margin: auto"
-                  src="../../assets/healthPage/extraction.svg"
+                  src="../../assets/healthPage/general.svg"
                 />
               </div>
-              <div #HealthSecondMenusFirstText>Extractions</div>
+              <div #HealthSecondMenusFirstText>General and Preventive Care</div>
             </div>
             <div #HealthSecondParentLine class="line-15"></div>
             <div
@@ -1838,16 +1838,16 @@
             <div
               class="flexy-row cursor-pointer"
               style="align-items: center; min-height: 88px"
-              (click)="onMenuItemClickMobile('GeneralAndPreventiveCare')"
+              (click)="onMenuItemClickMobile('Extractions')"
             >
               <div style="width: 200px">
                 <img
                   style="margin: auto"
-                  src="../../assets/healthPage/general.svg"
+                  src="../../assets/healthPage/extraction.svg"
                 />
               </div>
               <div #HealthSecondMenusSeventhText>
-                General and Preventive Care
+                Extractions
               </div>
             </div>
             <div #HealthSecondParentLine class="line-15"></div>
@@ -2943,9 +2943,9 @@
                         cursor-pointer
                       "
                       (click)="
-                        goToLink(
-                          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-                        )
+                      goToLink(
+                        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+                      )
                       "
                     >
                       INSTANT ONLINE BOOKING
@@ -3011,9 +3011,9 @@
                         cursor-pointer
                       "
                       (click)="
-                        goToLink(
-                          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-                        )
+                      goToLink(
+                        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+                      )
                       "
                     >
                       INSTANT ONLINE BOOKING

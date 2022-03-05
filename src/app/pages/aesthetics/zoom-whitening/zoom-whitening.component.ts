@@ -4,136 +4,139 @@ import { Subject } from 'rxjs';
 import { ScrollFramerSectionComponent } from 'src/app/custom-components/scroll-framer-section/scroll-framer-section.component';
 
 
-// function resize() {
-//   const canvas: any = document.getElementById("hero-lightpass-zoom");
-//   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
-//   const mobileSuggestion = document.getElementById("MobileSuggestion");
+function resize() {
 
-//   if(canvas && canvasFramer) {
-//     canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
-//     canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
-  
-//     if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-//       mobileSuggestion.style.display = "flex";
-//     } else {
-//       mobileSuggestion.style.display = "none";
-//     }
-//   }
-// }
+  if(window.innerWidth > 1200) {
+    const canvas: any = document.getElementById("hero-lightpass-zoom");
+    const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+    const mobileSuggestion = document.getElementById("MobileSuggestion");
 
-// window.onresize = resize;
+    if(canvas && canvasFramer) {
+      canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+      canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+    
+      if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+        mobileSuggestion.style.display = "flex";
+      } else {
+        mobileSuggestion.style.display = "none";
+      }
+    }
+  }
+}
 
-// function startAnimation() {
-//   const canvas: any = document.getElementById("hero-lightpass-zoom");
-//   const context = canvas.getContext("2d");
-//   const loadingText: any = document.getElementById("LoadingTextZoom");
-//   const animationContainer: any = document.getElementById(
-//     "ZoomAnimationContainer"
-//   );
-//   const buttons: any = document.getElementById("ZoomBottomButtons");
-//   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
-//   document.body.style.overflow = "hidden";
+window.onresize = resize;
 
-//   let topValue = 217;
+function startAnimation() {
+  const canvas: any = document.getElementById("hero-lightpass-zoom");
+  const context = canvas.getContext("2d");
+  const loadingText: any = document.getElementById("LoadingTextZoom");
+  const animationContainer: any = document.getElementById(
+    "ZoomAnimationContainer"
+  );
+  const buttons: any = document.getElementById("ZoomBottomButtons");
+  const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+  document.body.style.overflow = "hidden";
 
-//   if (window.innerWidth < 1200) {
-//     topValue = 144;
-//   }
+  let topValue = 217;
 
-//   let framesPath = "Zoom";
-//   if(window.innerWidth < 1200) {
-//     framesPath = "Zoom mobile";
-//     canvas.width = 681;
-//     canvas.height = 350;
-//   }
-//   else
-//   {
-//     canvas.width = 1362;
-//     canvas.height = 700;
-//   }
+  if (window.innerWidth < 1200) {
+    topValue = 144;
+  }
 
-//   canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
-//   canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+  let framesPath = "Zoom";
+  if(window.innerWidth < 1200) {
+    framesPath = "Zoom mobile";
+    canvas.width = 681;
+    canvas.height = 350;
+  }
+  else
+  {
+    canvas.width = 1362;
+    canvas.height = 700;
+  }
+
+  canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+  canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
 
 
 
-//   const frameCount = 410;
-//   const currentFrame = (index) =>
-//     `../../../../assets/aesthetics/${framesPath}/Zoom ${(
-//       index + 1
-//     )
-//       .toString()
-//       .padStart(3, "0")}.jpg`;
+  const frameCount = 410;
+  const currentFrame = (index) =>
+    `../../../../assets/aesthetics/${framesPath}/Zoom ${(
+      index + 1
+    )
+      .toString()
+      .padStart(3, "0")}.jpg`;
 
-//   const images = [];
-//   const frames = {
-//     frame: 0,
-//   };
+  const images = [];
+  const frames = {
+    frame: 0,
+  };
 
-//   let loadedImages = 0;
+  let loadedImages = 0;
 
-//   loadingText.style.display = "block";
-//   animationContainer.style.display = "none";
-//   buttons.style.display = "none";
+  loadingText.style.display = "block";
+  animationContainer.style.display = "none";
+  buttons.style.display = "none";
 
-//   for (let i = 0; i < frameCount; i++) {
-//     const img = new Image();
-//     img.src = currentFrame(i);
-//     img.onload = countImages;
-//     images.push(img);
-//   }
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    img.onload = countImages;
+    images.push(img);
+  }
 
-//   gsap.to(frames, {
-//     frame: frameCount - 1,
-//     snap: "frame",
-//     scrollTrigger: {
-//       id: "ScrollTriggerZoom",
-//       trigger: "#ZoomAnimationContainer",
-//       onEnter: () => {
-//         canvas.classList.add("canvas-in-viewport");
-//         document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
-//       },
-//       onEnterBack: () => {
-//         canvas.classList.add("canvas-in-viewport");
-//         document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
-//         canvas.parentElement.classList.remove("canvas-container-end");
-//       },
-//       onLeave: () => {
-//         canvas.classList.remove("canvas-in-viewport");
-//         document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
-//         canvas.parentElement.classList.add("canvas-container-end");
-//       },
-//       onLeaveBack: () => {
-//         canvas.classList.remove("canvas-in-viewport");
-//         document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
-//       },
-//       start: topValue + "px top",
-//       end: "bottom bottom",
-//       markers: false,
-//       scrub: 1,
-//     },
-//     onUpdate: render,
-//   });
+  gsap.to(frames, {
+    frame: frameCount - 1,
+    snap: "frame",
+    scrollTrigger: {
+      id: "ScrollTriggerZoom",
+      trigger: "#ZoomAnimationContainer",
+      onEnter: () => {
+        canvas.classList.add("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
+      },
+      onEnterBack: () => {
+        canvas.classList.add("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.add("canvas-in-viewport");
+        canvas.parentElement.classList.remove("canvas-container-end");
+      },
+      onLeave: () => {
+        canvas.classList.remove("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
+        canvas.parentElement.classList.add("canvas-container-end");
+      },
+      onLeaveBack: () => {
+        canvas.classList.remove("canvas-in-viewport");
+        document.getElementsByClassName("canvas-framer")[0].classList.remove("canvas-in-viewport");
+      },
+      start: topValue + "px top",
+      end: "bottom bottom",
+      markers: false,
+      scrub: 1,
+    },
+    onUpdate: render,
+  });
 
-//   function countImages() {
-//     loadedImages = loadedImages + 1;
-//     if (loadedImages === frameCount) {
-//       loadingText.style.display = "none";
-//       animationContainer.style.display = "block";
-//       buttons.style.display = "flex";
-//       render();
-//       ScrollTrigger.refresh();
-//     }
-//   }
+  function countImages() {
+    loadedImages = loadedImages + 1;
+    if (loadedImages === frameCount) {
+      loadingText.style.display = "none";
+      animationContainer.style.display = "block";
+      buttons.style.display = "flex";
+      render();
+      ScrollTrigger.refresh();
+    }
+  }
 
-//   function render() {
-//     context.clearRect(0, 0, canvas.width, canvas.height);
-//     context.drawImage(images[frames.frame], 0, 0);
+  function render() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[frames.frame], 0, 0);
 
-//     resize();
-//   }
+    resize();
+  }
 
-// }
+}
 
 
 @Component({
@@ -153,17 +156,17 @@ export class ZoomWhiteningComponent implements OnInit {
   // @ViewChild("SecondFrame") secondFrame: ElementRef;
   // @ViewChild("LastFrame") lastFrame: ElementRef;
 
-  // @ViewChild("SuggestionButton") suggestionButton: ElementRef;
-  // @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
+  @ViewChild("SuggestionButton") suggestionButton: ElementRef;
+  @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
   
   // @ViewChild("HelperText") HelperText: ElementRef;
   // @ViewChild("DownArrow") DownArrow: ElementRef;
   // @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
-  // currentFrame = 0;
-  // framePositions = [1300, 2000, 2900, 4200, 5200, 7000, 10700];
-  // firstFramePosition = 217;
-  // lastFramePosition = 10700;
+  currentFrame = 0;
+  framePositions = [1300, 2000, 2900, 4200, 5200, 7000, 10700];
+  firstFramePosition = 217;
+  lastFramePosition = 10700;
 
   // sections = 0;
 
@@ -180,14 +183,21 @@ export class ZoomWhiteningComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    this.zoomVideo.nativeElement.muted = true;
-    this.zoomVideo.nativeElement.style.display = "block";
-    this.zoomVideo.nativeElement.play();
-    // startAnimation();
-    // this.suggestionButton.nativeElement.style.display = "none";
-    // this.suggestionButtonUp.nativeElement.style.display = "none";
-    // this.MobileSuggestion.nativeElement.style.display = "none";
-    // resize();
+    if(window.innerWidth > 1200) {
+    startAnimation();
+    this.suggestionButton.nativeElement.style.display = "none";
+    this.suggestionButtonUp.nativeElement.style.display = "none";
+    //this.MobileSuggestion.nativeElement.style.display = "none";
+    resize();
+    }
+    else {
+      this.zoomVideo.nativeElement.muted = true;
+      this.zoomVideo.nativeElement.style.display = "block";
+      this.zoomVideo.nativeElement.play();
+    }
+
+
+
   }
 
   // showExploreButton() {
@@ -321,23 +331,23 @@ export class ZoomWhiteningComponent implements OnInit {
   //   }
   // }
 
-  // setCurrentFrame() {
-  //   for(var i = 0; i < this.framePositions.length-1; i++)
-  //   {
-  //     if(window.scrollY < this.framePositions[0]) {
-  //       this.currentFrame = 0;
-  //       break;
-  //     }
-  //     if(window.scrollY>=this.framePositions[i] && window.scrollY < this.framePositions[i+1]) {
-  //       this.currentFrame = i+1;
-  //       break;
-  //     }
-  //     if(window.scrollY >= this.framePositions[this.framePositions.length-1]) {
-  //       this.currentFrame = this.framePositions.length-1;
-  //       break;
-  //     }
-  //   }
-  // }
+  setCurrentFrame() {
+    for(var i = 0; i < this.framePositions.length-1; i++)
+    {
+      if(window.scrollY < this.framePositions[0]) {
+        this.currentFrame = 0;
+        break;
+      }
+      if(window.scrollY>=this.framePositions[i] && window.scrollY < this.framePositions[i+1]) {
+        this.currentFrame = i+1;
+        break;
+      }
+      if(window.scrollY >= this.framePositions[this.framePositions.length-1]) {
+        this.currentFrame = this.framePositions.length-1;
+        break;
+      }
+    }
+  }
   
   // setFramesDisplay(blockIndex)
   // {
@@ -399,21 +409,21 @@ export class ZoomWhiteningComponent implements OnInit {
   //   let factor = imgWidth / imgHeight;
   //   return (width / 100) * window.innerWidth / factor;
   // }
-  // onNextClick() {
-  //   this.setCurrentFrame();
-  //   window.scrollTo({
-  //     top: this.framePositions[this.currentFrame],
-  //     left: 0,
-  //     behavior: 'smooth'
-  //   });
-  // }
+  onNextClick() {
+    this.setCurrentFrame();
+    window.scrollTo({
+      top: this.framePositions[this.currentFrame],
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
 
-  // onRevertClick() {
-  //   window.scrollTo({
-  //     top: this.firstFramePosition,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-  // }
+  onRevertClick() {
+    window.scrollTo({
+      top: this.firstFramePosition,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
 
 }

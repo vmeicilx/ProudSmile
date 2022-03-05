@@ -186,7 +186,7 @@ export class HeaderComponent implements OnInit {
   monthly: number = 62.5;
   weekly: number = 15.63;
   whyProudSmileActiveText: string = "The Proud Smile Experience";
-  healthActiveText: string = "Extractions";
+  healthActiveText = "General and Preventive Care";
   aestheticsActiveText: string = "Porcelain Veneers";
   implantsActiveText: string = "Single Tooth";
 
@@ -329,7 +329,7 @@ export class HeaderComponent implements OnInit {
           this.aestheticsText.nativeElement.classList.add("active-text");
         }
 
-        if (val.url === "/Extractions") {
+        if (val.url === "/GeneralAndPreventiveCare") {
           this.setActiveSubheader2(0);
           this.healthText.nativeElement.classList.add("active-text");
         }
@@ -354,7 +354,7 @@ export class HeaderComponent implements OnInit {
           this.healthText.nativeElement.classList.add("active-text");
         }
 
-        if (val.url === "/GeneralAndPreventiveCare") {
+        if (val.url === "/Extractions") {
           this.setActiveSubheader3(0);
           this.healthText.nativeElement.classList.add("active-text");
         }
@@ -507,7 +507,7 @@ export class HeaderComponent implements OnInit {
       this.HealthSecondMenusThirdText.nativeElement.style.color = "#55311b";
       if (index === 0) {
         this.HealthSecondMenusFirstText.nativeElement.style.color = "#565960";
-        this.healthActiveText = "Extractions";
+        this.healthActiveText = "General and Preventive Care";
       } else if (index === 1) {
         this.HealthSecondMenusSecondText.nativeElement.style.color = "#565960";
         this.healthActiveText = "Root Canal Therapy";
@@ -525,7 +525,7 @@ export class HeaderComponent implements OnInit {
         this.healthActiveText = "Same Day Crowns";
       } else if (index === 6) {
         this.HealthSecondMenusSeventhText.nativeElement.style.color = "#565960";
-        this.healthActiveText = "General and Preventive Care";
+        this.healthActiveText = "Extractions";
       } else if (index === 7) {
         this.HealthSecondMenusEightText.nativeElement.style.color = "#565960";
         this.healthActiveText = "DVA (Department of Veteren Affairs)";
@@ -576,7 +576,7 @@ export class HeaderComponent implements OnInit {
       this.HealthSecondMenusThirdText.nativeElement.style.color = "#55311b";
       if (index === 0) {
         this.HealthSecondMenusSeventhText.nativeElement.style.color = "#565960";
-        this.healthActiveText = "General and Preventive Care";
+        this.healthActiveText = "Extractions";
       } else if (index === 1) {
         this.HealthSecondMenusEightText.nativeElement.style.color = "#565960";
         this.healthActiveText = "DVA (Department of Veteren Affairs)";

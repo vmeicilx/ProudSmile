@@ -1,4 +1,140 @@
-<div id="PVFirstSection" class="margin-top-porcelain flexy-column cccc"
+<div
+  id="LoadingTextPV"
+  #LoadingText
+  class="margin-top-porcelain hide-on-sm"
+  style="background: black"
+>
+  <div
+    class=""
+    style="
+      height: 100vh;
+      width: 100vw;
+      z-index: 1;
+      margin-bottom: 10vw;
+      display: block;
+    "
+  >
+    <div
+      class="flexy-column color-white cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container"
+    >
+      <div class="width-1 margin-bottom-10">
+        <img src="../../../../assets/WhiteShape.svg" />
+      </div>
+      <p class="margin-bottom-10">Loading Porcelain Veneers presentation...</p>
+    </div>
+  </div>
+</div>
+
+<div id="PVAnimationContainer" class="animation-container hide-on-sm">
+  <div
+    #SuggestionButton
+    style="
+      position: fixed;
+      bottom: 10px;
+      right: 3%;
+      z-index: 10;
+      cursor: pointer;
+    "
+  >
+    <div
+      (click)="onNextClick()"
+      style="display: flex; align-items: center"
+      class="roboto-medium font-extra-small-2"
+    >
+      <p #HelperText style="color: #adaeb1; margin-right: 8px">
+        Skip to next chapter<br />
+        or keep scrolling.
+      </p>
+      <div>
+        <img
+          #DownArrow
+          style="transform: rotate(0deg); transition: transform 0.5s"
+          src="../../../../assets/down.svg"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    #SuggestionButtonUp
+    style="
+      position: fixed;
+      bottom: 50px;
+      right: 3%;
+      z-index: 10;
+      cursor: pointer;
+    "
+  >
+    <div
+      (click)="onRevertClick()"
+      style="display: flex; align-items: center"
+      class="roboto-medium font-extra-small-2"
+    >
+      <p style="color: #adaeb1; margin-right: 8px">Revert to first chapter.</p>
+      <div>
+        <img
+          style="transform: rotate(180deg)"
+          src="../../../../assets/down.svg"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="hero-lightpass-PV"></canvas>
+    <div class="canvas-framer">
+      <div
+        style="
+          position: absolute;
+          top: 0px;
+          left: 0;
+          height: 2vw;
+          background: linear-gradient(black, transparent);
+          z-index: 6;
+          width: 100vw;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: linear-gradient(90deg, black, transparent);
+          z-index: 6;
+          width: 2vw;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          background: linear-gradient(270deg, black, transparent);
+          z-index: 6;
+          width: 2vw;
+        "
+      ></div>
+      <div
+        style="
+          position: absolute;
+          left: 0;
+          bottom: 0px;
+          height: 2vw;
+          background: linear-gradient(0deg, black, transparent);
+          z-index: 6;
+          width: 100vw;
+        "
+      ></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div id="PVFirstSection" class="margin-top-porcelain flexy-column cccc hide-on-big"
   style="background: black; color:white; text-align: center;">
 
   <div id="PVParent" class="background-43" fxLayout fxLayoutAlign="center center">
@@ -262,8 +398,8 @@
     <button style="margin-top: 5vw"
       class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4" (click)="
       goToLink(
-        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-      )
+  'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+)
     ">
       BOOK YOUR FREE SMILE ASSESSMENT
     </button>

@@ -208,6 +208,13 @@ export class ContactPageComponent implements OnInit {
 
   onSubmit() {}
 
+  goToLinkWithotNewTab(url: string) {
+    window.open(url, "_self");
+  }
+  goToMail(url: string) {
+    window.open("mailto: " + url, "_self");
+  }
+
   // On file Select
   onChange(event) {
     this.files = event.target.files;
