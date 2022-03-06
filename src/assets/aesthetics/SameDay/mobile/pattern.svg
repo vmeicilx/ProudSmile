@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="34px" viewBox="0 0 25 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>pattern</title>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Same-Day--Mobile" transform="translate(-59.000000, -764.000000)" fill="#55311B" fill-rule="nonzero">
+            <g id="Group-4" transform="translate(59.000000, 618.450000)">
+                <g id="Asset-2" opacity="0.300000012" transform="translate(0.000000, 0.000000)">
+                    <g id="pattern" transform="translate(0.000000, 145.600000)">
+                        <rect id="Rectangle" x="0" y="0" width="24.96" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="3.64" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="7.28" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="10.92" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="14.56" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="18.2" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="21.84" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="25.48" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="29.12" width="13.52" height="1.04"></rect>
+                        <rect id="Rectangle" x="0" y="32.76" width="13.52" height="1.04"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

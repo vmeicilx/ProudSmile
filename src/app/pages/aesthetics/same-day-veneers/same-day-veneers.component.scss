@@ -11,4 +11,18 @@
     outline: none;
     margin-top: auto;
   }
+
+  @media only screen and (min-width: 300px) and (max-width: 1200px) {
+
+    .top-container {
+      margin-top:144px;
+    }
+  }
+  
+  @media only screen and (min-width: 300px) and (max-width: 1200px) {
+
+    .top-container {
+      margin-top:144px;
+    }
+  }
 }

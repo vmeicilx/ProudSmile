@@ -156,19 +156,19 @@ function startAnimationMobile() {
   document.body.style.overflow = "hidden";
 
   let startValue = "top 146px";
-  let endValue = "+=4000"
+  let endValue = "+=2000"
 
   canvas.width = 600;
   canvas.height = 308;
 
-  const frameCount = 156;
+  const frameCount = 23;
 
   const currentFrame = (index) =>
-    `../../../../assets/aesthetics/PV/PV mobile/PV mobile ${(
+    `../../../../assets/aesthetics/Zoom images mobile/Zoom start/Zoom_Mobile ${(
       index + 1
     )
       .toString()
-      .padStart(3, "0")}.jpg`;
+      .padStart(2, "0")}.jpg`;
   const images = [];
   const frames = {
     frame: 0,

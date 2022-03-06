@@ -1,159 +1,231 @@
-<div
-  class="padding-chef color-brown"
-  style="margin-top: 217px; position: relative; padding-top: 9vw"
->
-  <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
-    <div class="width-1">
-      <img src="../../../assets/Shape.svg" />
-    </div>
-    <div class="libre-bold font-large" style="margin-bottom: 4vw">
-      <p>
-        Your Dream Smile<br />
-        in just one day
-      </p>
-    </div>
+<div class="hide-on-sm">
+  <div class="padding-chef color-brown" style="margin-top: 217px; position: relative; padding-top: 9vw">
+    <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
+      <div class="width-1">
+        <img src="../../../assets/Shape.svg" />
+      </div>
+      <div class="libre-bold font-large" style="margin-bottom: 4vw">
+        <p>
+          Your Dream Smile<br />
+          in just one day
+        </p>
+      </div>
 
-    <div class="background-50" style="width: 100vw">
-      <img
-        style="margin: auto"
-        src="../../../../assets/aesthetics/SameDay/sameday.png"
-      />
-    </div>
-  </div>
-</div>
-
-<div
-  class="padding-chef color-brown background-51"
-  style="position: relative; padding-bottom: 9vw"
->
-  <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
-    <div class="line-7 width-5 margin-top-bottom-3"></div>
-    <div
-      class="font-lion roboto-medium margin-bottom-4"
-      style="max-width: 50vw"
-    >
-      <p>
-        Transform your smile with the latest technology in porcelain veneers. No
-        goopy moulds, no needles*, no waiting.
-      </p>
-    </div>
-    <div
-      class="font-lion roboto-regular margin-bottom-4"
-      style="padding: 0px 14vw"
-    >
-      <p>
-        The future of cosmetic dentistry has arrived at
-        <span class="roboto-medium">Proud Smile, exclusively</span>. With 3D
-        technology now a reality we can assess, design and produce porcelain
-        crowns and veneers in a single day procedure** with a totally digital
-        workflow and with near 100% precision.<br /><br />
-
-        And with the cost of veneers now reduced it’s never been a better time
-        to tick this one off your bucket list.
-      </p>
-    </div>
-    <div class="margin-bottom-4" style="padding: 0px 21vw">
-      <img
-        style="margin: auto; width: 50%"
-        src="../../../../assets/Smileasy Master RGB.png"
-      />
-    </div>
-
-    <button
-      class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4"
-      (click)="
-      goToLink(
-        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
-      )
-      "
-    >
-      BOOK YOUR FREE SMILE ASSESSMENT
-    </button>
-
-    <div class="font-small-3 roboto-medium opacity-5">
-      <p>* For Ultra Thin Veneers, ** Case dependant</p>
-    </div>
-  </div>
-</div>
-
-<div
-id="WatchFirstSection"
-  class="padding-chef color-brown background-1 padding-bottom-1 padding-top-bottom-1"
-  fxLayout="column"
-  fxLayoutAlign="center center"
->
-  <div fxLayout="column" fxLayoutAlign="center center">
-    <div class="font-dog libre-regular margin-bottom-4" style="max-width: 50vw">
-      <p>
-        A better and happier<br />
-        you, Today.
-      </p>
-    </div>
-    <div
-      class="font-medium roboto-regular margin-bottom-4"
-      style="padding: 0px 13vw"
-    >
-      <p>
-        With the use of <span class="roboto-medium">Robotic</span> milling we
-        are now able to produce state of the art porcelain restorations right in
-        our office. Production time is cut from weeks to a single day. And don’t
-        think for a moment that the machines took over, the design is still
-        completely human made, only it’s done in the digital world.
-      </p>
-    </div>
-
-    <div id="WatchParent" class="background-43" fxLayout fxLayoutAlign="center center">
-      <div id="WatchAnimationContainer">
-        <div id="WatchCanvasContainer">
-          <canvas id="hero-lightpass-watch"></canvas>
-        </div>
+      <div class="background-50" style="width: 100vw">
+        <img style="margin: auto" src="../../../../assets/aesthetics/SameDay/sameday.png" />
       </div>
     </div>
+  </div>
 
-    <button
-    style="margin-top:6vw;"
-      class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4"
-      (click)="
+  <div class="padding-chef color-brown background-51" style="position: relative; padding-bottom: 9vw">
+    <div class="center-text" fxLayout="column" fxLayoutAlign="center center">
+      <div class="line-7 width-5 margin-top-bottom-3"></div>
+      <div class="font-lion roboto-medium margin-bottom-4" style="max-width: 50vw">
+        <p>
+          Transform your smile with the latest technology in porcelain veneers. No
+          goopy moulds, no needles*, no waiting.
+        </p>
+      </div>
+      <div class="font-lion roboto-regular margin-bottom-4" style="padding: 0px 14vw">
+        <p>
+          The future of cosmetic dentistry has arrived at
+          <span class="roboto-medium">Proud Smile, exclusively</span>. With 3D
+          technology now a reality we can assess, design and produce porcelain
+          crowns and veneers in a single day procedure** with a totally digital
+          workflow and with near 100% precision.<br /><br />
+
+          And with the cost of veneers now reduced it’s never been a better time
+          to tick this one off your bucket list.
+        </p>
+      </div>
+      <div class="margin-bottom-4" style="padding: 0px 21vw">
+        <img style="margin: auto; width: 50%" src="../../../../assets/Smileasy Master RGB.png" />
+      </div>
+
+      <button class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4" (click)="
       goToLink(
         'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
       )
-      "
-    >
-      BOOK APPOINTMENT
-    </button>
+      ">
+        BOOK YOUR FREE SMILE ASSESSMENT
+      </button>
+
+      <div class="font-small-3 roboto-medium opacity-5">
+        <p>* For Ultra Thin Veneers, ** Case dependant</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="WatchFirstSection" class="padding-chef color-brown background-1 padding-bottom-1 padding-top-bottom-1"
+    fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div class="font-dog libre-regular margin-bottom-4" style="max-width: 50vw">
+        <p>
+          A better and happier<br />
+          you, Today.
+        </p>
+      </div>
+      <div class="font-medium roboto-regular margin-bottom-4" style="padding: 0px 13vw">
+        <p>
+          With the use of <span class="roboto-medium">Robotic</span> milling we
+          are now able to produce state of the art porcelain restorations right in
+          our office. Production time is cut from weeks to a single day. And don’t
+          think for a moment that the machines took over, the design is still
+          completely human made, only it’s done in the digital world.
+        </p>
+      </div>
+
+      <div id="WatchParent" class="background-43" fxLayout fxLayoutAlign="center center">
+        <div id="WatchAnimationContainer">
+          <div id="WatchCanvasContainer">
+            <canvas id="hero-lightpass-watch"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <button style="margin-top:6vw;"
+        class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-4" (click)="
+      goToLink(
+        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+      )
+      ">
+        BOOK APPOINTMENT
+      </button>
+    </div>
+  </div>
+
+  <div class="relative-container background-1" style="z-index: 1; height: 900px">
+    <div class="absolute-container" style="bottom: 0; left: 0">
+      <img loading="lazy" src="../../../../assets/aesthetics/SameDay/No-anaesthesia.png" />
+    </div>
+    <div class="flexy-column absolute-container" style="top: 35%; right: 25%">
+      <div class="color-gray-dark libre-regular font-dog margin-bottom-4">
+        <p>
+          Your dream<br />
+          smile, today.
+        </p>
+      </div>
+      <button class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer" (click)="
+      goToLink(
+        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+      )
+      ">
+        BOOK APPOINTMENT
+      </button>
+      <button class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer" style="margin-top: 2vw"
+        (click)="seeGallery()">
+        SEE BEFORE AND AFTER GALLERY
+      </button>
+    </div>
   </div>
 </div>
 
-<div class="relative-container background-1" style="z-index: 1; height: 900px">
-  <div class="absolute-container" style="bottom: 0; left: 0">
-    <img
-      loading="lazy"
-      src="../../../../assets/aesthetics/SameDay/No-anaesthesia.png"
-    />
-  </div>
-  <div class="flexy-column absolute-container" style="top: 35%; right: 25%">
-    <div class="color-gray-dark libre-regular font-dog margin-bottom-4">
+<div class="top-container flexy-column cccc hide-on-big" style="background: #F3F1F1; text-align: center;">
+
+
+  <div style="margin-top:10vw; margin-bottom:10vw;">
+    <div class="font-cat roboto-bold margin-bottom-2 padding-chef" style="color:#55311B">
       <p>
-        Your dream<br />
-        smile, today.
+        Your <br />DreamSmile <br /> in just one day
       </p>
     </div>
-    <button
-      class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
-      (click)="
-      goToLink(
-        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
-      )
-      "
-    >
-      BOOK APPOINTMENT
-    </button>
-    <button
-      class="book3 color-white roboto-medium font-extra-small-2 cursor-pointer"
-      style="margin-top: 2vw"
-      (click)="seeGallery()"
-    >
-      SEE BEFORE AND AFTER GALLERY
-    </button>
+    <div class="font-small-3 roboto-medium padding-chef" style="margin-bottom:10vw; color:#745746">
+      <p>
+        With the use of Robotic milling we’re now able to produce state of the art porcelain restorations right in our
+        office. Production time is cut from weeks to a single day. And don’t think for a moment that the machines took
+        over, the design is still completely human made, only it’s done in the digital world.
+      </p>
+    </div>
+
   </div>
+
+  <div>
+    <div style="position: absolute; top:0; left:0;">
+
+    </div>
+
+    <div>
+      <div style="margin-left:22vw; margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/1.png" />
+      </div>
+      <div style=" margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/Ora 8.svg" />
+      </div>
+      <div class="font-lion roboto-regular margin-bottom-2" style="color:#55311B; margin-left:22vw; padding-right:4vw;">
+        <p style="text-align: left;">
+          <span class="roboto-bold">Photography,</span> Teeth prepatation (unless UltraThin), Digital Scan
+        </p>
+      </div>
+      <div class="font-small-3 roboto-medium" style="margin-bottom:10vw; color:#745746; margin-left:22vw;padding-right:4vw;">
+        <p style="text-align: left;">
+          We start our Same Day Veneer service with professional photography in our studio. Our dentists will discuss your
+          specific requirements and also present you with our recommendation. We’ll explain the whole logistics of the day
+          so you know exactly where you stand. Most of the times you’ll have already attended our Free Smile Assessment
+          preceding this day and at this time we’ll be able to present you with a Digital Smile Proposition for your
+          consideration. At Proud Smile we do things differently, we start with the final outcome in mind and work
+          relentlessly to deliver it. For you it means predictability and being in control of what you’re getting. Your
+          teeth will get “prepped” at this part of the process, unless you’re eligible for our Ultra Thin Veneers, in
+          which case minimal or no prep is required and finally digital scans will be taken, no goopy moulds here.
+        </p>
+      </div>
+      <div style="margin-left:22vw; margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/2.png" />
+      </div>
+      <div style=" margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/Ora 10.svg" />
+      </div>
+      <div class="font-lion roboto-regular margin-bottom-2" style="color:#55311B;margin-left:22vw;padding-right:4vw;">
+        <p style="text-align: left;">
+          <span class="roboto-bold">Design and Manufacturing,</span> while
+          you relax at home
+        </p>
+      </div>
+      <div class="font-small-3 roboto-medium" style="margin-bottom:10vw; color:#745746;margin-left:22vw;padding-right:4vw;">
+        <p style="text-align: left;">
+          While you relax at home for the day our work at the practice intensifies. We will design your veneers 100%
+          digitally using state of the art software and taking into consideration all that was discussed previously with
+          you. We use “golden proportions” tools to get that perfect and natural smile designed. In our in-house lab we
+          then manufacture your veneers using high end robotic milling machines which will cut the veneers out of premium
+          porcelain blocks (or any other material of your choice). The last step needs some human artistic to bring
+          character and brilliance and finally the veneers go into a furnace with temperatures of up to 1500 degrees
+          Celsius.
+        </p>
+      </div>
+      <div style="margin-left:22vw; margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/Smilecloud.png" />
+      </div>
+      <div class="font-small-3 roboto-medium " style="margin-bottom:10vw; color:#745746;margin-left:22vw;padding-right:4vw;">
+        <p style="text-align: left;">
+          And if you just can’t stop thinking about what we’re doing while you’re at home waiting we cater for you too.
+          Simply download our Smilecloud Passport app on your phone and get access to your photos, design propositions and
+          even updates on how we’re going with your case. And no we don’t have a 24 hour camera for you to peek, yet. ☺️
+        </p>
+      </div>
+      <div style="margin-left:22vw; margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/3.png" />
+      </div>
+      <div style=" margin-bottom:10vw;">
+        <img src="../../../../assets/aesthetics/SameDay/mobile/Ora 16.svg" />
+      </div>
+      <div class="font-lion roboto-regular margin-bottom-2 " style="color:#55311B;margin-left:22vw;">
+        <p style="text-align: left;">
+          <span class="roboto-bold">Cementation,</span>
+          Proud Smile Delivered
+        </p>
+      </div>
+      <div class="font-small-3 roboto-medium " style="margin-bottom:10vw; color:#745746;margin-left:22vw;padding-right:4vw;">
+        <p style="text-align: left;">
+          On your return to our practice we’ll place the veneers on your teeth and allow you to get wowed by them before
+          we proceed with cementation. Yes, you will have the chance to look at them in your own mouth before we proceed.
+          You then give us the go ahead and while you dry up your tears and we’ll prepare them for final cementation. It’s
+          a new you in just a day!
+        </p>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+
 </div>
