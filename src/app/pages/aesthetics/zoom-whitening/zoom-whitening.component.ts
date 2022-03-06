@@ -22,6 +22,15 @@ function resize() {
       }
     }
   }
+  else {
+    const canvas: any = document.getElementById("hero-lightpass-Zoom");
+    const canvasContainer: any = document.getElementById("ZoomCanvasContainer");
+
+    if (canvas && canvasContainer) {
+      canvasContainer.style.width = canvas.getBoundingClientRect().width + "px";
+      canvasContainer.style.height = canvas.getBoundingClientRect().height + "px";
+    }
+  }
 }
 
 window.onresize = resize;
@@ -138,6 +147,76 @@ function startAnimation() {
 
 }
 
+function startAnimationMobile() {
+  const canvas: any = document.getElementById("hero-lightpass-Zoom");
+  const context = canvas.getContext("2d");
+  const animationContainer: any = document.getElementById(
+    "ZoomAnimationContainerMobile"
+  );
+  document.body.style.overflow = "hidden";
+
+  let startValue = "top 146px";
+  let endValue = "+=4000"
+
+  canvas.width = 600;
+  canvas.height = 308;
+
+  const frameCount = 156;
+
+  const currentFrame = (index) =>
+    `../../../../assets/aesthetics/PV/PV mobile/PV mobile ${(
+      index + 1
+    )
+      .toString()
+      .padStart(3, "0")}.jpg`;
+  const images = [];
+  const frames = {
+    frame: 0,
+  };
+
+  let loadedImages = 0;
+
+  animationContainer.style.display = "none";
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    img.onload = countImages;
+    images.push(img);
+  }
+
+  gsap.to(frames, {
+    frame: frameCount - 1,
+    snap: "frame",
+    scrollTrigger: {
+      id: "ScrollTriggerZoom",
+      trigger: "#hero-lightpass-Zoom",
+      start: startValue,
+      end: endValue,
+      markers: false,
+      scrub: 1,
+      pin: "#ZoomFirstSection"
+    },
+    onUpdate: render,
+  });
+
+  function countImages() {
+    loadedImages = loadedImages + 1;
+    if (loadedImages === frameCount) {
+      animationContainer.style.display = "block";
+      render();
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function render() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[frames.frame], 0, 0);
+    resize()
+  }
+
+}
+
 
 @Component({
   selector: 'app-zoom-whitening',
@@ -191,9 +270,12 @@ export class ZoomWhiteningComponent implements OnInit {
     resize();
     }
     else {
-      this.zoomVideo.nativeElement.muted = true;
-      this.zoomVideo.nativeElement.style.display = "block";
-      this.zoomVideo.nativeElement.play();
+      
+      startAnimationMobile();
+      resize();
+      // this.zoomVideo.nativeElement.muted = true;
+      // this.zoomVideo.nativeElement.style.display = "block";
+      // this.zoomVideo.nativeElement.play();
     }
 
 
@@ -366,24 +448,24 @@ export class ZoomWhiteningComponent implements OnInit {
   //   }
   // }
 
-  @HostListener("window:resize", ["$event"])
-  onResize(event) {
-    // var activeContent = this.framesContent[this.activeFrameIndex];
-    // var activeContentRect = activeContent.getBoundingClientRect();
+  // @HostListener("window:resize", ["$event"])
+  // onResize(event) {
+  //   // var activeContent = this.framesContent[this.activeFrameIndex];
+  //   // var activeContentRect = activeContent.getBoundingClientRect();
 
-    // if(activeContentRect.width >= window.innerWidth)
-    // {
-    //   activeContent.classList.remove("vertical-size");
-    //   activeContent.classList.add("horizontal-size");
-    // }
-    // else if(activeContentRect.height > window.innerHeight)
-    // {
-    //   activeContent.classList.remove("horizontal-size");
-    //   activeContent.classList.add("vertical-size");
-    // }
+  //   // if(activeContentRect.width >= window.innerWidth)
+  //   // {
+  //   //   activeContent.classList.remove("vertical-size");
+  //   //   activeContent.classList.add("horizontal-size");
+  //   // }
+  //   // else if(activeContentRect.height > window.innerHeight)
+  //   // {
+  //   //   activeContent.classList.remove("horizontal-size");
+  //   //   activeContent.classList.add("vertical-size");
+  //   // }
 
-    // this.renderPresentation();
-  }
+  //   // this.renderPresentation();
+  // }
 
   // imgLoaded(imageRef){
   //   let imgWidth = imageRef.width;

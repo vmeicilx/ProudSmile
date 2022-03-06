@@ -180,15 +180,64 @@
 
 
 
-<div class="top-container flexy-column cccc hide-on-big" style="background: black; color:white; text-align: center;">
+<div id="ZoomFirstSection"  class="margin-top-porcelain flexy-column cccc hide-on-big" style="background: black; color:white; text-align: center;">
 
-  <div class="full-width" fxLayout fxLayoutAlign="center center">
+  <!-- <div class="full-width" fxLayout fxLayoutAlign="center center">
     <video class="full-width" preload="auto" muted #zoomVideo playsinline style="background: white;">
       <source src="../../../../assets/aesthetics/Zoom images mobile/Zoom_Mobile.mp4" type="video/mp4" />
     </video>
+  </div> -->
+
+  
+  <div id="ZoomParent" class="background-43" fxLayout fxLayoutAlign="center center">
+    <div id="ZoomAnimationContainerMobile">
+      <div id="ZoomCanvasContainer" style="position: relative;">
+        <canvas id="hero-lightpass-Zoom"></canvas>
+        <div class="canvas-framer">
+          <div style="
+                position: absolute;
+                top: 0px;
+                left: 0;
+                height: 4vw;
+                background: linear-gradient(black, transparent);
+                z-index: 6;
+                width: 100vw;
+              "></div>
+          <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: linear-gradient(90deg, black, transparent);
+                z-index: 6;
+                width: 4vw;
+              "></div>
+
+          <div style="
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background: linear-gradient(270deg, black, transparent);
+                z-index: 6;
+                width: 4vw;
+              "></div>
+
+          <div style="
+                position: absolute;
+                left: 0;
+                bottom: 0px;
+                height: 4vw;
+                background: linear-gradient(0deg, black, transparent);
+                z-index: 6;
+                width: 100vw;
+              "></div>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="" style="margin-top:10vw; margin-bottom:10vw;">
+  <div style="margin-top:10vw; margin-bottom:10vw;">
     <div class="font-small roboto-regular padding-chef" style="margin-bottom:10vw; color:#FFFFFFCC">
       <p>
         <span class="roboto-bold">Zoom Teeth Whitening</span> is an effective way to brighten your smile, boost your
