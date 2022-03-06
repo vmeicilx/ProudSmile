@@ -11,11 +11,11 @@ import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-f
 
 function resize() {
 
-  if(window.innerWidth > 1200) {
+  if (window.innerWidth > 1200) {
     const canvas: any = document.getElementById("hero-lightpass-PV");
     const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
 
-    if(canvas && canvasFramer) {
+    if (canvas && canvasFramer) {
       canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
       canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
     }
@@ -23,7 +23,7 @@ function resize() {
   else {
     const canvas: any = document.getElementById("hero-lightpass-PV");
     const canvasContainer: any = document.getElementById("PVCanvasContainer");
-  
+
     if (canvas && canvasContainer) {
       canvasContainer.style.width = canvas.getBoundingClientRect().width + "px";
       canvasContainer.style.height = canvas.getBoundingClientRect().height + "px";
@@ -249,7 +249,7 @@ export class PorcelainVeneersComponent implements OnInit {
         this.nineFrame.nativeElement,
         this.tenFrame.nativeElement,
       ];
-  
+
       this.framesContent = [
         this.firstFrameImg.nativeElement,
         this.secondFrameVideo.scrollCanvas.nativeElement,
@@ -334,29 +334,29 @@ export class PorcelainVeneersComponent implements OnInit {
     else {
       this.renderPresentation();
 
-      if(window.scrollY > 12500 && window.scrollY < 13500) {
+      if (window.scrollY > 12500 && window.scrollY < 13500) {
         this.sixthText.nativeElement.style.opacity = "1";
       }
       else {
         this.sixthText.nativeElement.style.opacity = "0";
-  
+
       }
 
-  
-      if(window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+
+      if (window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
         this.MobileSuggestion.nativeElement.style.display = "flex";
       }
       else {
         this.MobileSuggestion.nativeElement.style.display = "none";
       }
-  
+
       if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
         this.suggestionButton.nativeElement.style.display = "block";
       } else {
         this.suggestionButton.nativeElement.style.display = "none";
       }
-  
-      if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
+
+      if (window.scrollY > this.firstFramePosition + 100 && window.scrollY <= this.lastFramePosition) {
         this.suggestionButtonUp.nativeElement.style.display = "block";
       }
       else {
@@ -371,33 +371,33 @@ export class PorcelainVeneersComponent implements OnInit {
 
     if (window.innerWidth > 1200) {
       var activeContent = this.framesContent[this.activeFrameIndex];
-    var activeContentRect = activeContent.getBoundingClientRect();
+      var activeContentRect = activeContent.getBoundingClientRect();
 
-    if (activeContentRect.width >= window.innerWidth) {
-      activeContent.classList.remove("vertical-size");
-      activeContent.classList.add("horizontal-size");
-    } else if (activeContentRect.height > window.innerHeight) {
-      activeContent.classList.remove("horizontal-size");
-      activeContent.classList.add("vertical-size");
+      if (activeContentRect.width >= window.innerWidth) {
+        activeContent.classList.remove("vertical-size");
+        activeContent.classList.add("horizontal-size");
+      } else if (activeContentRect.height > window.innerHeight) {
+        activeContent.classList.remove("horizontal-size");
+        activeContent.classList.add("vertical-size");
+      }
+
+      if (activeContent.classList.contains("horizontal-size")) {
+        var remainingSpaceHeight =
+          (window.innerHeight - activeContentRect.height) / 2;
+        this.topBackground.nativeElement.style.height =
+          remainingSpaceHeight + "px";
+        this.bottomBackground.nativeElement.style.height =
+          remainingSpaceHeight + "px";
+      } else if (activeContent.classList.contains("vertical-size")) {
+        this.topBackground.nativeElement.style.height = "0px";
+        this.bottomBackground.nativeElement.style.height = "0px";
+      }
+      this.presentationHeight = activeContentRect.height;
+      this.calculateTextsTop();
+      this.renderPresentation();
     }
 
-    if (activeContent.classList.contains("horizontal-size")) {
-      var remainingSpaceHeight =
-        (window.innerHeight - activeContentRect.height) / 2;
-      this.topBackground.nativeElement.style.height =
-        remainingSpaceHeight + "px";
-      this.bottomBackground.nativeElement.style.height =
-        remainingSpaceHeight + "px";
-    } else if (activeContent.classList.contains("vertical-size")) {
-      this.topBackground.nativeElement.style.height = "0px";
-      this.bottomBackground.nativeElement.style.height = "0px";
-    }
-    this.presentationHeight = activeContentRect.height;
-    this.calculateTextsTop();
-    this.renderPresentation();
-    }
 
-    
   }
 
   seeGallery() {
@@ -664,14 +664,14 @@ export class PorcelainVeneersComponent implements OnInit {
 
     if (window.scrollY < this.framePositions[this.framePositions.length - 1]) {
       this.suggestionButton.nativeElement.style.display = "block";
-      if(window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+      if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
         this.MobileSuggestion.nativeElement.style.display = "block";
       }
     } else {
       this.suggestionButton.nativeElement.style.display = "none";
       this.MobileSuggestion.nativeElement.style.display = "none";
     }
-    
+
     if (window.scrollY > this.firstFramePosition + 100 && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
       this.suggestionButtonUp.nativeElement.style.display = "block";
     } else {
@@ -683,68 +683,70 @@ export class PorcelainVeneersComponent implements OnInit {
     }
   }
 
-  setFramesDisplay(blockIndex)
-  {
+  setFramesDisplay(blockIndex) {
     let i = 0;
-    for(i = 0; i< this.frames.length;i++)
-    {
-      if(i === blockIndex)
-      {
+    for (i = 0; i < this.frames.length; i++) {
+      if (i === blockIndex) {
         this.frames[i].style.display = "block";
         this.activeFrameIndex = i;
       }
-      else
-      {
+      else {
         this.frames[i].style.display = "none";
       }
     }
   }
 
   imgLoaded(imageRef) {
-    let imgWidth = imageRef.width;
-    let imgHeight = imageRef.height;
-    let factor = imgWidth / imgHeight;
 
-    if (window.innerHeight * factor > window.innerWidth) {
-      imageRef.classList.remove("vertical-size");
-      imageRef.classList.add("horizontal-size");
-      var remainingSpaceHeight =
-        (window.innerHeight - window.innerWidth / factor) / 2;
-      this.topBackground.nativeElement.style.height =
-        remainingSpaceHeight + "px";
-      this.bottomBackground.nativeElement.style.height =
-        remainingSpaceHeight + "px";
-      this.presentationHeight = window.innerWidth / factor;
-    } else {
-      imageRef.classList.remove("horizontal-size");
-      imageRef.classList.add("vertical-size");
-      this.topBackground.nativeElement.style.height = "0px";
-      this.bottomBackground.nativeElement.style.height = "0px";
-      this.presentationHeight = imgHeight;
+    if (window.innerWidth > 1200) {
+      let imgWidth = imageRef.width;
+      let imgHeight = imageRef.height;
+      let factor = imgWidth / imgHeight;
+
+      if (window.innerHeight * factor > window.innerWidth) {
+        imageRef.classList.remove("vertical-size");
+        imageRef.classList.add("horizontal-size");
+        var remainingSpaceHeight =
+          (window.innerHeight - window.innerWidth / factor) / 2;
+        this.topBackground.nativeElement.style.height =
+          remainingSpaceHeight + "px";
+        this.bottomBackground.nativeElement.style.height =
+          remainingSpaceHeight + "px";
+        this.presentationHeight = window.innerWidth / factor;
+      } else {
+        imageRef.classList.remove("horizontal-size");
+        imageRef.classList.add("vertical-size");
+        this.topBackground.nativeElement.style.height = "0px";
+        this.bottomBackground.nativeElement.style.height = "0px";
+        this.presentationHeight = imgHeight;
+      }
+      this.calculateTextsTop();
+      this.renderPresentation();
     }
-    this.calculateTextsTop();
-    this.renderPresentation();
   }
 
   calculateTextsTop() {
-    let firstImageHeight = this.getImageHeight(
-      this.firstTextImg.nativeElement,
-      this.firstTextImgWidth
-    );
+    if (window.innerWidth > 1200) {
+      let firstImageHeight = this.getImageHeight(
+        this.firstTextImg.nativeElement,
+        this.firstTextImgWidth
+      );
 
-    var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
-    this.firstText.nativeElement.style.top = firstTextTop + "px";
+      var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
+      this.firstText.nativeElement.style.top = firstTextTop + "px";
 
-    var secondTextTop = firstTextTop + this.presentationHeight;
-    var secondTextTop = firstTextTop + 600;
-    this.secondText.nativeElement.style.top = secondTextTop + "px";
+      var secondTextTop = firstTextTop + this.presentationHeight;
+      var secondTextTop = firstTextTop + 600;
+      this.secondText.nativeElement.style.top = secondTextTop + "px";
 
-    var thirdTextTop = secondTextTop + 40;
-    this.thirdText.nativeElement.style.top = thirdTextTop + "px";
+      var thirdTextTop = secondTextTop + 40;
+      this.thirdText.nativeElement.style.top = thirdTextTop + "px";
 
-    var elevenTextTop = this.elevenText.nativeElement.getBoundingClientRect().top;
-    var lastButtonTop = elevenTextTop + 40;
-    this.lastButton.nativeElement.style.top = lastButtonTop + "px";
+      var elevenTextTop = this.elevenText.nativeElement.getBoundingClientRect().top;
+      var lastButtonTop = elevenTextTop + 40;
+      this.lastButton.nativeElement.style.top = lastButtonTop + "px";
+    }
+
   }
 
   getImageHeight(element, width) {

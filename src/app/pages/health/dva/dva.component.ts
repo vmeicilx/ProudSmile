@@ -13,4 +13,8 @@ export class DvaComponent implements OnInit {
   seeAllFinancial() {
     this.router.navigate(["/", "payment-page-component"]);
   }
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }

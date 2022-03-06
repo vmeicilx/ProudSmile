@@ -137,6 +137,16 @@
     margin-top: auto;
   }
 
+  .book4 {
+    border-radius: 37px;
+    background: #E6437B;
+    padding: 24px 36px;
+    border: 0;
+    outline: none;
+    align-self: center;
+    margin-top: auto;
+  }
+
   .vertical-line-1 {
     opacity: 0.5;
     height: 24px;
@@ -191,6 +201,11 @@
   }
 
   @media only screen and (min-width: 1201px) {
+
+    .so-easy {
+      display: flex;
+      flex-direction: row;
+    }
     .dialog-with-tooltip {
       display: none;
     }
@@ -206,6 +221,11 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    
+    .so-easy {
+      display: flex;
+      flex-direction: column;
+    }
     .mobile-size {
       max-width: 70%;
       margin: auto;
@@ -233,6 +253,11 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    
+    .so-easy {
+      display: flex;
+      flex-direction: column;
+    }
     .mobile-size {
       max-width: 70%;
       margin: auto;

@@ -90,28 +90,28 @@ export class BeforeAfterComponent implements OnInit {
   @ViewChild("btn23") btn23: ElementRef;
   @ViewChild("btn24") btn24: ElementRef;
 
-  
+
   @ViewChild("CaseView") caseView: ElementRef;
   @ViewChild("Concern") concern: ElementRef;
   @ViewChild("Procedures") procedures: ElementRef;
-  
+
   @ViewChild("secondMember") secondMember: ElementRef;
   @ViewChild("thirdMember") thirdMember: ElementRef;
   @ViewChild("fourthMember") fourthMember: ElementRef;
-  
+
   @ViewChild("logo1") logo1: ElementRef;
   @ViewChild("logo2") logo2: ElementRef;
   @ViewChild("logo3") logo3: ElementRef;
-  
+
   @ViewChild("inBetweensText") inBetweensText: ElementRef;
   @ViewChild("inBetweensContainer") inBetweensContainer: ElementRef;
   @ViewChild("inBet1Img") inBet1Img: ElementRef;
   @ViewChild("inBet2Img") inBet2Img: ElementRef;
-  
+
   @ViewChild("beforeImgC") beforeImgC: ElementRef;
   @ViewChild("beforeC") beforeC: ElementRef;
   @ViewChild("afImg") afImg: ElementRef;
-  
+
   @ViewChild("JBefore") jBefore: ElementRef;
   @ViewChild("JBet2") jBet2: ElementRef;
 
@@ -122,43 +122,43 @@ export class BeforeAfterComponent implements OnInit {
   private _jsonURL = 'assets/cases.json';
   private cases;
   public firstTeamMember;
-public firstTeamRole;
-public firstTeamImg;
-public secondTeamMember;
-public secondTeamRole;
-public secondTeamImg;
-public thirdTeamMember;
-public thirdTeamRole;
-public thirdTeamImg;
-public fourthTeamMember;
-public fourthTeamRole;
-public fourthTeamImg;
+  public firstTeamRole;
+  public firstTeamImg;
+  public secondTeamMember;
+  public secondTeamRole;
+  public secondTeamImg;
+  public thirdTeamMember;
+  public thirdTeamRole;
+  public thirdTeamImg;
+  public fourthTeamMember;
+  public fourthTeamRole;
+  public fourthTeamImg;
 
-public inBet1Text;
-public inBet2Text;
+  public inBet1Text;
+  public inBet2Text;
 
-public beforeZoomImg;
-public afterZoomImg;
-public beforeImg;
-public afterImg;
-public beforeImgJ;
-public afterImgJ;
+  public beforeZoomImg;
+  public afterZoomImg;
+  public beforeImg;
+  public afterImg;
+  public beforeImgJ;
+  public afterImgJ;
 
-public inBet1;
-public inBet2;
+  public inBet1;
+  public inBet2;
 
   constructor(private router: Router, private http: HttpClient) {
     this.getJSON().subscribe(data => {
       this.cases = data["cases"];
-     });
-     
+    });
+
   }
 
   public getJSON(): Observable<any> {
     return this.http.get(this._jsonURL);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     this.art1.nativeElement.style.opacity = "1";
@@ -253,36 +253,73 @@ public inBet2;
     this.buttons.push(this.btn22.nativeElement);
     this.buttons.push(this.btn23.nativeElement);
     this.buttons.push(this.btn24.nativeElement);
-   
+
+  }
+
+  toNext(c: number) {
+    if (window.innerWidth < 1200) {
+
+      const currentCaseBefore = this.before[c];
+      const currentCaseAfter = this.after[c];
+      if (currentCaseBefore.style.opacity === "0") {
+        currentCaseBefore.style.opacity = "1";
+        currentCaseAfter.style.opacity = "0";
+
+        const currentButton = this.buttons[c];
+        currentButton.style.visibility = "visible";
+        currentButton.classList.remove("gallery-btn-small");
+        currentButton.classList.add("gallery-btn-big");
+        setTimeout(() => {
+          currentButton.style.transition = "unset";
+        }, 300);
+      }
+      else {
+        currentCaseBefore.style.opacity = "0";
+        currentCaseAfter.style.opacity = "1";
+
+        const currentButton = this.buttons[c];
+        currentButton.style.transition = "all 0.3s";
+        currentButton.style.visibility = "hidden";
+
+        currentButton.classList.remove("gallery-btn-big");
+        currentButton.classList.add("gallery-btn-small");
+      }
+    }
   }
 
   toAfter(c: number) {
-    const currentCaseBefore = this.before[c];
-    const currentCaseAfter = this.after[c];
-    currentCaseBefore.style.opacity = "0";
-    currentCaseAfter.style.opacity = "1";
+    if (window.innerWidth >= 1200) {
+      const currentCaseBefore = this.before[c];
+      const currentCaseAfter = this.after[c];
+      currentCaseBefore.style.opacity = "0";
+      currentCaseAfter.style.opacity = "1";
 
-    const currentButton = this.buttons[c];
-    currentButton.style.transition = "all 0.3s";
-    currentButton.style.visibility = "hidden";
+      const currentButton = this.buttons[c];
+      currentButton.style.transition = "all 0.3s";
+      currentButton.style.visibility = "hidden";
 
-    currentButton.classList.remove("gallery-btn-big");
-    currentButton.classList.add("gallery-btn-small");
+      currentButton.classList.remove("gallery-btn-big");
+      currentButton.classList.add("gallery-btn-small");
+    }
+
   }
 
   toBefore(c: number) {
-    const currentCaseBefore = this.before[c];
-    const currentCaseAfter = this.after[c];
-    currentCaseBefore.style.opacity = "1";
-    currentCaseAfter.style.opacity = "0";
+    if (window.innerWidth >= 1200) {
+      const currentCaseBefore = this.before[c];
+      const currentCaseAfter = this.after[c];
+      currentCaseBefore.style.opacity = "1";
+      currentCaseAfter.style.opacity = "0";
 
-    const currentButton = this.buttons[c];
-    currentButton.style.visibility = "visible";
-    currentButton.classList.remove("gallery-btn-small");
-    currentButton.classList.add("gallery-btn-big");
-    setTimeout(() => {
-      currentButton.style.transition = "unset";
-    }, 300);
+      const currentButton = this.buttons[c];
+      currentButton.style.visibility = "visible";
+      currentButton.classList.remove("gallery-btn-small");
+      currentButton.classList.add("gallery-btn-big");
+      setTimeout(() => {
+        currentButton.style.transition = "unset";
+      }, 300);
+    }
+
   }
 
   goToLink(url: string) {
@@ -299,14 +336,14 @@ public inBet2;
     const inBet = cas["inBetweens"];
     const inBetText = cas["inBetweensText"];
 
-    if(cas["index"] === 2) {
+    if (cas["index"] === 2) {
       this.beforeImgC.nativeElement.style.display = "none";
       this.jBefore.nativeElement.style.display = "none";
       this.beforeC.nativeElement.style.gridTemplateColumns = "100%";
       this.afImg.nativeElement.style.maxWidth = "50%";
       this.afImg.nativeElement.style.margin = "auto";
     } else {
-      
+
       this.beforeImgC.nativeElement.style.display = "block";
       this.jBefore.nativeElement.style.display = "block";
       this.beforeC.nativeElement.style.gridTemplateColumns = "50% 50%";
@@ -325,30 +362,28 @@ public inBet2;
     this.concern.nativeElement.innerHTML = "";
     this.procedures.nativeElement.innerHTML = "";
 
-    for(let i=0;i<concerns.length;i++) {
+    for (let i = 0; i < concerns.length; i++) {
       this.renderItem(this.concern.nativeElement, concerns[i]);
     }
-    for(let i=0;i<procedures.length;i++) {
+    for (let i = 0; i < procedures.length; i++) {
       this.renderItem(this.procedures.nativeElement, procedures[i]);
     }
 
     this.firstTeamMember = team[0].name;
     this.firstTeamImg = team[0].img;
     this.firstTeamRole = team[0].role;
-    
-    if(team.length>1)
-    {
-      this.secondMember.nativeElement.style.display = "flex";   
-    this.secondTeamMember = team[1].name;
-    this.secondTeamImg = team[1].img;
-    this.secondTeamRole = team[1].role;
+
+    if (team.length > 1) {
+      this.secondMember.nativeElement.style.display = "flex";
+      this.secondTeamMember = team[1].name;
+      this.secondTeamImg = team[1].img;
+      this.secondTeamRole = team[1].role;
     }
     else {
       this.secondMember.nativeElement.style.display = "none";
     }
-    
-    if(team.length>2)
-    {
+
+    if (team.length > 2) {
       this.thirdMember.nativeElement.style.display = "flex";
       this.thirdTeamMember = team[2].name;
       this.thirdTeamImg = team[2].img;
@@ -358,8 +393,7 @@ public inBet2;
       this.thirdMember.nativeElement.style.display = "none";
     }
 
-    if(team.length>3)
-    {
+    if (team.length > 3) {
       this.fourthMember.nativeElement.style.display = "flex";
       this.fourthTeamMember = team[3].name;
       this.fourthTeamImg = team[3].img;
@@ -369,31 +403,31 @@ public inBet2;
       this.fourthMember.nativeElement.style.display = "none";
     }
 
-    if(logos[0]) {
+    if (logos[0]) {
       this.logo1.nativeElement.style.display = "flex";
     }
     else {
       this.logo1.nativeElement.style.display = "none";
     }
-    if(logos[1]) {
+    if (logos[1]) {
       this.logo2.nativeElement.style.display = "flex";
     }
     else {
       this.logo2.nativeElement.style.display = "none";
     }
-    if(logos[2]) {
+    if (logos[2]) {
       this.logo3.nativeElement.style.display = "flex";
     }
     else {
       this.logo3.nativeElement.style.display = "none";
     }
 
-    if(inBet === "") {
+    if (inBet === "") {
       this.inBetweensContainer.nativeElement.style.display = "none";
       this.inBetweensText.nativeElement.style.display = "none";
     } else {
-      if(inBet.length === 3) {
-        
+      if (inBet.length === 3) {
+
         this.inBet1 = inBet[2];
         this.inBet1Text = inBetText[0];
         this.inBetweensText.nativeElement.style.display = "grid";
@@ -401,8 +435,8 @@ public inBet2;
         this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "33% 33% 33%";
         this.inBet2Img.nativeElement.style.display = "none";
         this.jBet2.nativeElement.style.display = "none";
-        
-      } else if(inBet.length === 4) {
+
+      } else if (inBet.length === 4) {
 
         this.inBet1 = inBet[2];
         this.inBet1Text = inBetText[0];
@@ -411,8 +445,8 @@ public inBet2;
         this.inBet2Img.nativeElement.style.display = "block";
         this.jBet2.nativeElement.style.display = "block";
         this.inBetweensText.nativeElement.style.display = "grid";
-        
-        if(cas["index"] === 2) {
+
+        if (cas["index"] === 2) {
           this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "33% 33% 33%";
         } else {
           this.inBetweensContainer.nativeElement.style.gridTemplateColumns = "25% 25% 25% 25%";
@@ -421,13 +455,13 @@ public inBet2;
       }
     }
 
-    
+
     this.caseView.nativeElement.style.visibility = "visible";
     document.documentElement.style.overflowY = "hidden";
   }
 
   onCaseClose() {
-    
+
     this.beforeImg = "";
     this.afterImg = "";
     this.beforeZoomImg = "";

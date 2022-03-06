@@ -11,6 +11,6 @@ export class ExtractionsComponent implements OnInit {
   ngOnInit(): void {}
 
   onImplantClick() {
-    this.router.navigate(["/", "Implants"]);
+    this.router.navigate(["/", "SingleTooth"]);
   }
 }

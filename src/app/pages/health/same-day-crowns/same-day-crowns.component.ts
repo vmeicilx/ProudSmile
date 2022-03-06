@@ -36,7 +36,7 @@ export class SameDayCrownsComponent implements OnInit {
     this.bridgeVideo.nativeElement.style.display = "block";
     this.marylandVideo.nativeElement.muted = true;
     this.marylandVideo.nativeElement.style.display = "block";
-    this.cerecVideo.nativeElement.muted = true;
+    this.cerecVideo.nativeElement.muted = false;
     this.cerecVideo.nativeElement.style.display = "none";
 
     if (window.innerWidth > 1200) {

@@ -91,7 +91,7 @@
   </div>
 </div>
 
-<div class="color-brown flexy-row" style="background: linear-gradient(0deg, #ffffff1a 0%, #0299d81a 100%)">
+<div class="color-brown so-easy" style="background: linear-gradient(0deg, #ffffff1a 0%, #0299d81a 100%)">
   <div class="spp sscc no-margin-on-sm margin-bottom-on-sm padding-top-bottom-1"
     style="margin-left: 13vw; margin-right: 4vw" fxLayout="column">
     <div class="font-dog libre-regular margin-bottom-1">
@@ -280,6 +280,26 @@
     </div>
   </div>
 
+  <div class="hide-on-big flexy-column cccc">
+    <div>
+      <p class="roboto-regular margin-bottom-10">
+        Book a comprehensive new patient examination:
+        <span class="roboto-bold">$99 or $0</span> (Health<br />
+        Insurance Holders) or a
+        <span class="roboto-bold">Free Mini Consultation</span> for a specific
+        problem.
+      </p>
+    </div>
+
+    <button class="book4 color-white roboto-medium font-extra-small-2 cursor-pointer margin-bottom-10" (click)="
+      goToLink(
+        'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+      )
+      ">
+      INSTANT ONLINE BOOKING
+    </button>
+  </div>
+
   <div class="
       margin-bottom-6
       relative-container
@@ -335,6 +355,15 @@
     </div>
   </div>
 
+  <div class="hide-on-big flexy-column cccc  margin-bottom-10">
+    <div>
+      <p class="roboto-regular">
+        Treatment plan is provided, we find the best payment
+        plan structure for you.
+      </p>
+    </div>
+  </div>
+
   <div class="relative-container flexy-row cccc dialog-without-tooltip" style="align-self: flex-end">
     <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape3.svg" />
     <div class="dialog-content flexy-row absolute-container" style="margin: auto">
@@ -354,7 +383,7 @@
       </div>
     </div>
   </div>
-  <div class="relative-container flexy-row cccc dialog-with-tooltip" style="align-self: flex-end"
+  <div class="relative-container flexy-row cccc dialog-with-tooltip margin-bottom-10" style="align-self: flex-end"
     matTooltip="You are ready to start treatment." matTooltipPosition="above">
     <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/Shape3.svg" />
     <div class="dialog-content flexy-row absolute-container" style="margin: auto">
@@ -372,6 +401,15 @@
       <div style="align-self: center" style="max-width: 10vw">
         <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/chair.svg" />
       </div>
+    </div>
+  </div>
+
+  <div class="hide-on-big flexy-column cccc  margin-bottom-10">
+    <div>
+      <p class="roboto-regular">
+        You are ready to
+        <span class="roboto-bold">start treatment.</span>
+      </p>
     </div>
   </div>
 </div>
@@ -949,21 +987,6 @@
         </div>
       </div>
       <div>
-        <!-- <div
-          class="roboto-regular color-gray-dark font-small-3 margin-bottom-1"
-          style="line-height: 3.75vh"
-        >
-          <p>
-            <span class="roboto-medium"
-              >We accept all major Health Insurances.</span
-            >
-            Claims are maid on the spot using our
-            <span class="roboto-medium">HICAPS</span> machine which means you’ll
-            only need to pay us the gap, all the claiming process will be done
-            for you. We’re preferred providers for <span>HCF</span> and
-            <span class="roboto-medium">CBHS</span> which means you’ll receive:
-          </p>
-        </div> -->
         <div class="flexy-row">
           <div class="margin-right-3" style="flex: 0 0 32px">
             <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/DirtyOrangeCheck.svg" />
@@ -1018,7 +1041,7 @@
 
   <div class="line-16" style="margin-bottom: 6vw; margin-top: 6vw"></div>
 
-  <div class="flexy-row">
+  <div class="flexy-row hide-on-sm">
     <div style="margin-right: 4vw">
       <img style="width: 104vw" src="../../../assets/SmileasyPaymentPlan/CBHS.png" />
     </div>
@@ -1085,7 +1108,89 @@
           </div>
         </div>
       </div>
-      <div class="roboto-regular font-small-4" style="color: #0299d8; margin-bottom: 2vw; position: relative; top:-8vw;">
+      <div class="roboto-regular font-small-4"
+        style="color: #0299d8; margin-bottom: 2vw; position: relative; top:-8vw;">
+        <p>
+          (*)Medibank Private only available at Pacific Fair
+          and CBHS and NIB only available at Bundall.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="flexy-column hide-on-big">
+    <div style="margin-right: 4vw">
+      <img style="width: 104vw" src="../../../assets/SmileasyPaymentPlan/CBHS.png" />
+    </div>
+    <div class="flexy-column relative-container">
+      <div class="roboto-regular font-small" style="color: #0299d8; margin-bottom: 2vw">
+        <p>
+          <span class="roboto-medium">We accept all major Health Insurances.</span><br />
+          Claims are maid on the spot using our
+          <span class="roboto-bold">HICAPS</span> machine which means you’ll
+          only need to pay us the gap, all the claiming process will be done for
+          you. We’re preferred providers(*) for
+          <span class="roboto-bold">HCF, Bupa, Medibank Private</span>
+          <span class="roboto-bold">CBHS</span> and <span class="roboto-bold">NIB</span>, which means you’ll receive:
+        </p>
+      </div>
+      <div style="color: #0299d8">
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg" />
+          </div>
+          <div class="roboto-medium font-small-3" style="margin-bottom: 1.25vw">
+            <p>Twice a year Free Dental Check ups</p>
+          </div>
+        </div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg" />
+          </div>
+          <div class="roboto-medium font-small-3" style="margin-bottom: 1.25vw">
+            <p>X-rays and Scale and Cleans</p>
+          </div>
+        </div>
+        <div class="line-16" style="margin-bottom: 1.25vw"></div>
+        <div class="flexy-row" style="margin-bottom: 1.25vw">
+          <div class="margin-right-3" style="flex: 0 0 32px">
+            <img loading="lazy" src="../../../assets/SmileasyPaymentPlan/BlueCheck.svg" />
+          </div>
+          <div class="roboto-medium font-small-3">
+            <p>An fluoride treatment</p>
+          </div>
+        </div>
+      </div>
+      <div class="roboto-regular font-small" style="color: #0299d8; margin-bottom: 5vw">
+        <div class="roboto-bold font-medium">
+          <p>New Patient?</p>
+        </div>
+        <div class="roboto-medium font-small-3" style="margin-bottom:1vw;">
+          <p>No Gap for all health insurances</p>
+        </div>
+      </div>
+      <div style="position: relative; top: -5vw">
+        <div>
+          <img src="../../../assets/SmileasyPaymentPlan/blueLady.png" />
+        </div>
+        <div class="flexy-column color-white" style="position: absolute; bottom:8vw;left:2vw">
+          
+          <div>
+            <button class="onlineBooking fix-text-0" fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="
+              goToLink(
+                'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true%3E'
+              )
+              ">
+              <img src="../../../assets/SmileasyPaymentPlan/calendar.svg" />
+              <p class="roboto-medium" style="color:#0299D8">Instant Online Booking</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="roboto-regular font-small-4"
+        style="color: #0299d8; margin-bottom: 2vw; position: relative; top:-2vw;">
         <p>
           (*)Medibank Private only available at Pacific Fair
           and CBHS and NIB only available at Bundall.
