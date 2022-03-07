@@ -1,18 +1,12 @@
-<div
-  class="
+<div class="
     padding-chef
     color-white
     background-4
     padding-top-bottom-1
     margin-top-6
     relative-container
-  "
->
-  <div
-    class="center-text margin-bottom-2"
-    fxLayout="column"
-    fxLayoutAlign="center center"
-  >
+  ">
+  <div class="center-text margin-bottom-2" fxLayout="column" fxLayoutAlign="center center">
     <div class="width-1">
       <img src="../../../assets/WhiteShape.svg" />
     </div>
@@ -42,10 +36,8 @@
     <img src="../../../../assets/healthPage/DentalEmergency/SmallShape.svg" />
   </div>
   <div class="absolute-container" style="left: -30%; bottom: -10%">
-    <img
-      class="max-width-unset-on-big max-width-unset-on-sm"
-      src="../../../../assets/healthPage/DentalEmergency/ProudSmile.svg"
-    />
+    <img class="max-width-unset-on-big max-width-unset-on-sm"
+      src="../../../../assets/healthPage/DentalEmergency/ProudSmile.svg" />
   </div>
 
   <div class="hide-on-sm color-white flexy-row">
@@ -55,85 +47,87 @@
       </div>
       <div class="margin-bottom-1 roboto-regular font-medium">
         <p>
-          <span class="roboto-medium"
-            >Book an appointment online now or call us on the numbers below if
-            you can’t find availability.</span
-          >
+          <span class="roboto-medium">Book an appointment online now or call us on the numbers below if
+            you can’t find availability.</span>
           We reserve emergency appointments on most days and we will do our best
           to see you straight away. If your emergency relates to a serious
           accident or you are having difficulty in breathing please look for
           your closest hospital or call an ambulance.
         </p>
       </div>
-      <div
-        (click)="goToLinkWithotNewTab('tel:0755703311')"
-        class="flexy-column cccc"
-        style="width: 370px"
-      >
-        <button
-          class="
+      <div (click)="goToLinkWithotNewTab('tel:0755703311')" class="flexy-column cccc" style="width: 370px">
+        <button class="
             onlineBooking
             roboto-medium
             color-white
             font-lion
             margin-bottom-5
-          "
-          fxLayout
-          fxLayoutAlign="center center"
-          fxLayoutGap="0.5vw"
-        >
+          " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw">
           <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
           <p class="margin-left-1">5570 3311</p>
         </button>
-        <div
-          class="
+        <div class="
             cursor-pointer
             opacity-4
             roboto-medium
             color-white
             font-small-4
             margin-bottom-1
-          "
-          style="align-self: center"
-        >
+          " style="align-self: center">
           <p>Bundall Location</p>
         </div>
       </div>
 
-      <div
-        (click)="goToLinkWithotNewTab('tel:0755386277')"
-        class="flexy-column cccc"
-        style="width: 370px"
-      >
-        <button
-          class="
+      <button style="margin-bottom:4vw;" class="
+        onlineBooking
+        roboto-medium
+        color-white
+        font-lion
+        margin-bottom-5
+      " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+          )
+        ">
+        <p>BOOK NOW</p>
+      </button>
+
+      <div (click)="goToLinkWithotNewTab('tel:0755386277')" class="flexy-column cccc" style="width: 370px">
+        <button class="
             onlineBooking
             roboto-medium
             color-white
             font-lion
             margin-bottom-5
-          "
-          fxLayout
-          fxLayoutAlign="center center"
-          fxLayoutGap="0.5vw"
-        >
+          " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw">
           <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
           <p class="margin-left-1">5538 6277</p>
         </button>
-        <div
-          class="
+        <div class="
             cursor-pointer
             opacity-4
             roboto-medium
             color-white
             font-small-4
             margin-bottom-1
-          "
-          style="align-self: center"
-        >
+          " style="align-self: center">
           <p>Pacific Fair Mall Location</p>
         </div>
       </div>
+
+      <button style="margin-bottom:4vw;" class="
+        onlineBooking
+        roboto-medium
+        color-white
+        font-lion
+        margin-bottom-5
+      " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="
+          goToLink(
+            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=3485830&bLocationSelectionDisabled=true'
+          )
+        ">
+        <p>BOOK NOW</p>
+      </button>
 
       <div class="line-3 opacity-5 full-width margin-bottom-1"></div>
       <div class="margin-bottom-1">
@@ -153,23 +147,16 @@
           <div class="roboto-bold font-medium">
             <p>Google Maps</p>
           </div>
-          <div
-            class="flexy-row cursor-pointer cccc relative-container"
-            style="z-index: 2"
-            (click)="
+          <div class="flexy-row cursor-pointer cccc relative-container" style="z-index: 2" (click)="
               goToLink(
                 'https://goo.gl/maps/QVq3uhoXnVFc3K7f7'
               )
-            "
-          >
+            ">
             <div class="roboto-regular font-extra-small opacity-5">
               <p>Get directions to our Bundall clinic</p>
             </div>
             <div class="margin-left-1 opacity-5">
-              <img
-                loading="lazy"
-                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-              />
+              <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
             </div>
           </div>
         </div>
@@ -182,23 +169,16 @@
           <div class="roboto-bold font-medium">
             <p>Google Maps</p>
           </div>
-          <div
-            class="flexy-row cursor-pointer cccc relative-container"
-            style="z-index: 2"
-            (click)="
+          <div class="flexy-row cursor-pointer cccc relative-container" style="z-index: 2" (click)="
               goToLink(
                 'https://goo.gl/maps/AidkYdrsa85eDDtH9'
               )
-            "
-          >
+            ">
             <div class="roboto-regular font-extra-small opacity-5">
               <p>Get directions to our Pacific Fair Mall clinic</p>
             </div>
             <div class="margin-left-1 opacity-5">
-              <img
-                loading="lazy"
-                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-              />
+              <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
             </div>
           </div>
         </div>
@@ -217,20 +197,16 @@
         </p>
       </div>
 
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-      >
+        ">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -246,20 +222,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-      >
+        ">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -274,20 +246,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-      >
+        ">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -299,28 +267,22 @@
               It is important to bring the crown with you to your appointment.
               You can use clove oil to help ease any pain or discomfort to your
               gums.
-              <span style="text-decoration: underline"
-                >DO NOT use super glue or other sticky substances to glue the
-                crown back on.</span
-              >
+              <span style="text-decoration: underline">DO NOT use super glue or other sticky substances to glue the
+                crown back on.</span>
             </p>
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-      >
+        ">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -336,20 +298,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-      >
+        ">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -376,85 +334,84 @@
       </div>
       <div class="margin-bottom-1 roboto-regular font-medium">
         <p>
-          <span class="roboto-medium"
-            >Book an appointment online now or call us on the numbers below if
-            you can’t find availability.</span
-          >
+          <span class="roboto-medium">Book an appointment online now or call us on the numbers below if
+            you can’t find availability.</span>
           We reserve emergency appointments on most days and we will do our best
           to see you straight away. If your emergency relates to a serious
           accident or you are having difficulty in breathing please look for
           your closest hospital or call an ambulance.
         </p>
       </div>
-      <div
-      (click)="goToLinkWithotNewTab('tel:0755703311')"
-      class="flexy-column cccc"
-      style="width: 370px"
-    >
-      <button
-        class="
+      <div (click)="goToLinkWithotNewTab('tel:0755703311')" class="flexy-column cccc" style="width: 370px">
+        <button class="
           onlineBooking
           roboto-medium
           color-white
           font-lion
           margin-bottom-5
-        "
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="0.5vw"
-      >
-        <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
-        <p class="margin-left-1">5570 3311</p>
-      </button>
-      <div
-        class="
+        " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw">
+          <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+          <p class="margin-left-1">5570 3311</p>
+        </button>
+        <div class="
           cursor-pointer
           opacity-4
           roboto-medium
           color-white
           font-small-4
           margin-bottom-1
-        "
-        style="align-self: center"
-      >
-        <p>Bundall Location</p>
+        " style="align-self: center">
+          <p>Bundall Location</p>
+        </div>
       </div>
-    </div>
 
-    <div
-      (click)="goToLinkWithotNewTab('tel:0755386277')"
-      class="flexy-column cccc"
-      style="width: 370px"
-    >
-      <button
-        class="
+      <button style="margin-bottom:10vw;" class="
+      onlineBooking
+      roboto-medium
+      color-white
+      font-lion
+    " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
+      ">
+        <p>BOOK NOW</p>
+      </button>
+
+      <div (click)="goToLinkWithotNewTab('tel:0755386277')" class="flexy-column cccc" style="width: 370px">
+        <button class="
           onlineBooking
           roboto-medium
           color-white
           font-lion
           margin-bottom-5
-        "
-        fxLayout
-        fxLayoutAlign="center center"
-        fxLayoutGap="0.5vw"
-      >
-        <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
-        <p class="margin-left-1">5538 6277</p>
-      </button>
-      <div
-        class="
+        " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw">
+          <img src="../../../../assets/healthPage/DentalEmergency/Phone.svg" />
+          <p class="margin-left-1">5538 6277</p>
+        </button>
+        <div class="
           cursor-pointer
           opacity-4
           roboto-medium
           color-white
           font-small-4
           margin-bottom-1
-        "
-        style="align-self: center"
-      >
-        <p>Pacific Fair Mall Location</p>
+        " style="align-self: center">
+          <p>Pacific Fair Mall Location</p>
+        </div>
       </div>
-    </div>
+      <button style="margin-bottom:10vw;" class="
+      onlineBooking
+      roboto-medium
+      color-white
+      font-lion
+    " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=3485830&bLocationSelectionDisabled=true'
+        )
+      ">
+        <p>BOOK NOW</p>
+      </button>
 
       <div class="line-3 opacity-5 full-width margin-bottom-1"></div>
 
@@ -469,21 +426,16 @@
         </p>
       </div>
 
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-        style="align-self: flex-start"
-      >
+        " style="align-self: flex-start">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -499,21 +451,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-        style="align-self: flex-start"
-      >
+        " style="align-self: flex-start">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -528,21 +475,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-        style="align-self: flex-start"
-      >
+        " style="align-self: flex-start">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -554,29 +496,22 @@
               It is important to bring the crown with you to your appointment.
               You can use clove oil to help ease any pain or discomfort to your
               gums.
-              <span style="text-decoration: underline"
-                >DO NOT use super glue or other sticky substances to glue the
-                crown back on.</span
-              >
+              <span style="text-decoration: underline">DO NOT use super glue or other sticky substances to glue the
+                crown back on.</span>
             </p>
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-        style="align-self: flex-start"
-      >
+        " style="align-self: flex-start">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -592,21 +527,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="
+      <div class="
           flexy-row
           margin-bottom-1
           roboto-medium
           font-medium
           margin-left-3
-        "
-        style="align-self: flex-start"
-      >
+        " style="align-self: flex-start">
         <div class="flexy-column" style="flex: 0 0 50px">
           <div>
-            <img
-              src="../../../../assets/healthPage/DentalEmergency/check.svg"
-            />
+            <img src="../../../../assets/healthPage/DentalEmergency/check.svg" />
           </div>
         </div>
         <div class="flexy-column font-extra-small">
@@ -636,30 +566,23 @@
         </p>
       </div>
       <div style="align-self: flex-start;" class="flexy-row margin-bottom-1">
-        <div  style="margin-right: 2vw">
+        <div style="margin-right: 2vw">
           <img src="../../../../assets/healthPage/DentalEmergency/Pin.svg" />
         </div>
         <div class="flexy-column margin-left-1">
           <div class="roboto-bold font-medium">
             <p style="text-align: left;">Google Maps</p>
           </div>
-          <div
-            class="flexy-row cursor-pointer cccc relative-container"
-            style="z-index: 2"
-            (click)="
+          <div class="flexy-row cursor-pointer cccc relative-container" style="z-index: 2" (click)="
               goToLink(
                 'https://goo.gl/maps/QVq3uhoXnVFc3K7f7'
               )
-            "
-          >
+            ">
             <div class="roboto-regular font-extra-small opacity-5">
               <p>Get directions to our Bundall clinic</p>
             </div>
             <div class="margin-left-1 opacity-5">
-              <img
-                loading="lazy"
-                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-              />
+              <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
             </div>
           </div>
         </div>
@@ -672,23 +595,16 @@
           <div class="roboto-bold font-medium">
             <p style="text-align: left;">Google Maps</p>
           </div>
-          <div
-            class="flexy-row cursor-pointer cccc relative-container"
-            style="z-index: 2"
-            (click)="
+          <div class="flexy-row cursor-pointer cccc relative-container" style="z-index: 2" (click)="
               goToLink(
                 'https://goo.gl/maps/AidkYdrsa85eDDtH9'
               )
-            "
-          >
+            ">
             <div class="roboto-regular font-extra-small opacity-5">
               <p>Get directions to our Pacific Fair Mall clinic</p>
             </div>
             <div class="margin-left-1 opacity-5">
-              <img
-                loading="lazy"
-                src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-              />
+              <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
             </div>
           </div>
         </div>
@@ -698,46 +614,36 @@
 
   <div class="flexy-column sscc margin-bottom-1">
     <div class="instant-credit flexy-row-w margin-bottom-1">
-      <div
-        class="
+      <div class="
           logos
           med
           margin-right-1 margin-left-2
           no-margin-right-on-sm
           margin-bottom-on-sm
-        "
-      >
-        <img
-          class="max-width-unset-on-big max-width-unset-on-sm"
-          src="../../../../assets/healthPage/DentalEmergency/Med.png"
-        />
+        ">
+        <img class="max-width-unset-on-big max-width-unset-on-sm"
+          src="../../../../assets/healthPage/DentalEmergency/Med.png" />
       </div>
       <div class="font-small-3 color-white roboto-regular">
         <p>
           If required we can provide you with Penthrox Sedation, also know as
           “the green whistle”. This will calm you and help relieve the pain
           before and during treatment.
-          <span class="roboto-bolds"
-            >All emergency treatments will be performed using gold graded local
-            anaesthesia.</span
-          >
+          <span class="roboto-bolds">All emergency treatments will be performed using gold graded local
+            anaesthesia.</span>
         </p>
       </div>
     </div>
     <div class="line-3 opacity-5 full-width margin-bottom-6"></div>
     <div class="flexy-row-w margin-bottom-1 sscc">
-      <div
-        class="
+      <div class="
           logos
           margin-right-1 margin-left-2
           no-margin-right-on-sm
           margin-bottom-on-sm
-        "
-      >
-        <img
-          class="max-width-unset-on-big max-width-unset-on-sm"
-          src="../../../../assets/healthPage/DentalEmergency/Card.svg"
-        />
+        ">
+        <img class="max-width-unset-on-big max-width-unset-on-sm"
+          src="../../../../assets/healthPage/DentalEmergency/Card.svg" />
       </div>
       <div class="font-small-3 color-white roboto-regular">
         <p class="margin-bottom-1">
@@ -748,94 +654,67 @@
           Click on the links below to apply.
         </p>
         <div class="flexy-row-w" style="flex-wrap: wrap">
-          <div
-            class="
+          <div class="
               applies
               flexy-column
               sscc
               margin-right-2
               no-margin-right-on-sm
               margin-bottom-1
-            "
-          >
+            ">
             <div class="margin-bottom-3">
-              <img
-                src="../../../../assets/healthPage/DentalEmergency/afterpay.png"
-              />
+              <img src="../../../../assets/healthPage/DentalEmergency/afterpay.png" />
             </div>
-            <div
-              (click)="goToLink('https://www.afterpay.com/how-it-works')"
-              class="flexy-row cursor-pointer cccc relative-container"
-            >
+            <div (click)="goToLink('https://www.afterpay.com/how-it-works')"
+              class="flexy-row cursor-pointer cccc relative-container">
               <div class="roboto-medium font-medium">
                 <p>Apply for a Afterpay Account</p>
               </div>
               <div class="margin-left-1 opacity-5">
-                <img
-                  loading="lazy"
-                  src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-                />
+                <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
               </div>
             </div>
           </div>
           <div class="applies flexy-column sscc">
             <div class="margin-bottom-3">
-              <img
-                src="../../../../assets/healthPage/DentalEmergency/zip.png"
-              />
+              <img src="../../../../assets/healthPage/DentalEmergency/zip.png" />
             </div>
-            <div
-              class="flexy-row cursor-pointer cccc relative-container"
-              (click)="
+            <div class="flexy-row cursor-pointer cccc relative-container" (click)="
                 goToLink(
                   'https://account.zipmoney.com.au/?_ga=2.172903715.1824648551.1512797100-451365438.1512797100#/'
                 )
-              "
-            >
+              ">
               <div class="roboto-medium font-medium">
                 <p>Apply for a Zip Account</p>
               </div>
               <div class="margin-left-1 opacity-5">
-                <img
-                  loading="lazy"
-                  src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-                />
+                <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
               </div>
             </div>
           </div>
         </div>
         <div class="flexy-row-w" style="flex-wrap: wrap">
-          <div
-            class="
+          <div class="
               applies
               flexy-column
               sscc
               margin-right-2
               no-margin-right-on-sm
               margin-bottom-1
-            "
-          >
+            ">
             <div class="margin-bottom-3">
-              <img
-                src="../../../../assets/healthPage/DentalEmergency/humm.png"
-              />
+              <img src="../../../../assets/healthPage/DentalEmergency/humm.png" />
             </div>
-            <div
-              (click)="
+            <div (click)="
                 goToLink(
                   'https://www.shophumm.com/au/'
                 )
-              "
-              class="flexy-row cursor-pointer cccc relative-container"
-            >
+              " class="flexy-row cursor-pointer cccc relative-container">
               <div class="roboto-medium font-medium">
                 <p>Apply for a Humm Account</p>
               </div>
               <div class="margin-left-1 opacity-5">
-                <img
-                  loading="lazy"
-                  src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg"
-                />
+                <img loading="lazy" src="../../../../assets/healthPage/DentalEmergency/WhiteArrow.svg" />
               </div>
             </div>
           </div>

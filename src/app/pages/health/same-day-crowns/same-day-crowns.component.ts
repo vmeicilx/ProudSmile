@@ -97,8 +97,11 @@ export class SameDayCrownsComponent implements OnInit {
   fullscreenChangeHandler(event) {
     let elem = event.target;
     let isFullscreen = document.fullscreenElement === elem;
+    console.log("asa");
     if (!isFullscreen) {
       elem.style.display = "none";
+      document.getElementById("CerPrew").style.display = "block";
+      console.log("nu");
     }
   }
 
