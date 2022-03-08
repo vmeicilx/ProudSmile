@@ -17,6 +17,7 @@ import {
 import { NavigationEnd, Router } from "@angular/router";
 import { DataService } from "../shared/data-service";
 
+
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -429,6 +430,11 @@ export class HeaderComponent implements OnInit {
     if (this.pointerGrabbed) {
       e.preventDefault();
     }
+  }
+
+  onChatClick() {
+    // @ts-ignore: Unreachable code error
+    startLiveChat();
   }
 
   setActiveSubheader1(index: number) {
