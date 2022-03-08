@@ -1,7 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { ScrollFramerSectionComponent } from 'src/app/custom-components/scroll-framer-section/scroll-framer-section.component';
 
 
 function resize() {

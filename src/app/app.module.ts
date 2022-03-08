@@ -9,7 +9,6 @@ import { FooterComponent } from "./footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SmallCardComponent } from "./custom-components/cards/small-card/small-card.component";
-import { NG_EVENT_PLUGINS } from "@tinkoff/ng-event-plugins";
 import { ComingSoonComponent } from "./custom-components/coming-soon/coming-soon.component";
 import { DemoMaterialModule } from "./material-module";
 import { MatNativeDateModule } from "@angular/material/core";
@@ -34,10 +33,6 @@ import { DvaComponent } from "./pages/health/dva/dva.component";
 import { MedicareChildComponent } from "./pages/health/medicare-child/medicare-child.component";
 import { MouthguardsComponent } from "./pages/health/mouthguards/mouthguards.component";
 import { DentalEmergencyComponent } from "./pages/health/dental-emergency/dental-emergency.component";
-import { VgCoreModule } from "@videogular/ngx-videogular/core";
-import { VgControlsModule } from "@videogular/ngx-videogular/controls";
-import { VgOverlayPlayModule } from "@videogular/ngx-videogular/overlay-play";
-import { VgBufferingModule } from "@videogular/ngx-videogular/buffering";
 import { SpecialsComponent } from "./pages/specials/specials.component";
 import { DropdownComponent } from "./custom-components/dropdown/dropdown.component";
 import { SingleToothComponent } from "./pages/implants/single-tooth/single-tooth.component";
@@ -107,13 +102,9 @@ import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropw
     FormsModule,
     HttpClientModule,
     NgImageSliderModule,
-    ClipboardModule,
-    VgCoreModule,
-    VgControlsModule,
-    VgOverlayPlayModule,
-    VgBufferingModule
+    ClipboardModule
   ],
-  providers: [NG_EVENT_PLUGINS, DataService],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

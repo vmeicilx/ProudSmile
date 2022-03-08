@@ -8,7 +8,6 @@ import {
   ViewChild,
 } from "@angular/core";
 import { Router } from "@angular/router";
-import { DataService } from "src/app/shared/data-service";
 
 @Component({
   selector: "app-same-day-crowns",
