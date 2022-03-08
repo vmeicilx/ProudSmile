@@ -12,18 +12,10 @@ function resize() {
   if (window.innerWidth > 1200) {
     const canvas: any = document.getElementById("hero-lightpass-ultra");
     const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
-    const mobileSuggestion = document.getElementById("MobileSuggestion");
 
-    if (canvas && canvasFramer && mobileSuggestion) {
+    if (canvas && canvasFramer) {
       canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
       canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
-
-      if (window.scrollY >= 217 && window.scrollY <= 8000 && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-        mobileSuggestion.style.display = "flex";
-      }
-      else {
-        mobileSuggestion.style.display = "none";
-      }
     }
   }
 }
@@ -31,7 +23,6 @@ function resize() {
 window.onresize = resize;
 
 function startAnimation() {
-  const loadingProgress: any = document.getElementById("LoadingProgressUltra");
   const canvas: any = document.getElementById("hero-lightpass-ultra");
   const context = canvas.getContext("2d");
   const loadingText: any = document.getElementById("LoadingTextUltraThin");
@@ -89,8 +80,7 @@ function startAnimation() {
 
   function countImages() {
     loadedImages = loadedImages + 1;
-    loadingProgress.innerHTML = loadedImages + `/` + frameCount + " frames loaded...";
-    if (loadedImages === 50) {
+    if (loadedImages === frameCount) {
       loadingText.style.display = "none";
       animationContainer.style.display = "block";
       buttons.style.display = "flex";
@@ -115,13 +105,6 @@ function startAnimation() {
   }
 
   function render() {
-    if (frames.frame >= loadedImages) {
-      loadingText.style.display = "flex";
-      loadingText.style.position = "fixed";
-    }
-    else {
-      loadingText.style.display = "none";
-    }
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[frames.frame], 0, 0);
     resize()
@@ -139,7 +122,6 @@ export class UltraThinVeneersComponent implements OnInit {
   @ViewChild("LoadingText") loadingText: ElementRef;
   @ViewChild("SuggestionButton") suggestionButton: ElementRef;
   @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
-  @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   currentFrame = 0;
   framePositions = [700, 1200, 2300, 2900, 3500, 5000, 8100];
@@ -172,25 +154,18 @@ export class UltraThinVeneersComponent implements OnInit {
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
 
-    // if(window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-    //   this.MobileSuggestion.nativeElement.style.display = "flex";
-    // }
-    // else {
-    //   this.MobileSuggestion.nativeElement.style.display = "none";
-    // }
+    if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+      this.suggestionButton.nativeElement.style.display = "block";
+    } else {
+      this.suggestionButton.nativeElement.style.display = "none";
+    }
 
-    // if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-    //   this.suggestionButton.nativeElement.style.display = "block";
-    // } else {
-    //   this.suggestionButton.nativeElement.style.display = "none";
-    // }
-
-    // if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
-    //   this.suggestionButtonUp.nativeElement.style.display = "block";
-    // }
-    // else {
-    //   this.suggestionButtonUp.nativeElement.style.display = "none";
-    // }
+    if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
+      this.suggestionButtonUp.nativeElement.style.display = "block";
+    }
+    else {
+      this.suggestionButtonUp.nativeElement.style.display = "none";
+    }
   }
 
   @HostListener("window:resize", ["$event"])

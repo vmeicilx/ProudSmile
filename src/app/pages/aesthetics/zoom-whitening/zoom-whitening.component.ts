@@ -9,16 +9,16 @@ function resize() {
   if(window.innerWidth > 1200) {
     const canvas: any = document.getElementById("hero-lightpass-zoom");
     const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
-    const mobileSuggestion = document.getElementById("MobileSuggestion");
+    //const mobileSuggestion = document.getElementById("MobileSuggestion");
 
     if(canvas && canvasFramer) {
       canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
       canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
     
       if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-        mobileSuggestion.style.display = "flex";
+        //mobileSuggestion.style.display = "flex";
       } else {
-        mobileSuggestion.style.display = "none";
+        //mobileSuggestion.style.display = "none";
       }
     }
   }
