@@ -1,504 +1,96 @@
-<div class="hide-on-sm">
+<div class="hidden-div hide-on-sm">
+</div>
+
+<div id="LoadingTextPVWeb" #LoadingText class="margin-top-special hide-on-sm"
+  style="background: black; z-index: 20;">
   <div
-    class="margin-top-porcelain height-porcelain"
-    #LoadingText
-    style="background: black"
-  >
-    <div style="width: 100vw; z-index: 1; margin-bottom: 10vw; display: block">
-      <div
-        class="flexy-column color-white cccc font-dog libre-regular center-text padding-top-3 margin-bottom-10 relative-container"
-      >
-        <div class="width-1 margin-bottom-10">
-          <img src="../../../../assets/WhiteShape.svg" />
-        </div>
-        <p class="margin-bottom-10">
-          Loading Porcelain Veneers presentation...
-        </p>
+    class="flexy-column color-white cccc font-dog libre-regular padding-top-3 margin-bottom-10 relative-container full-width">
+    <div class="width-1 margin-bottom-10">
+      <img src="../../../../assets/WhiteShape.svg" />
+    </div>
+    <p class="margin-bottom-10">
+      Loading Porcelain Veneers presentation...</p>
+  </div>
+</div>
+
+<div id="PVWebCanvasContainer" class="hide-on-sm" style="position: relative; height: 100vh; background: black;">
+  <canvas id="hero-lightpass-pvweb"> </canvas>
+  <div class="canvas-framer">
+    <div style="
+          position: absolute;
+          top: 0px;
+          left: 0;
+          height: 4vw;
+          background: linear-gradient(black, transparent);
+          z-index: 6;
+          width: 100vw;
+        "></div>
+    <div style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          background: linear-gradient(90deg, black, transparent);
+          z-index: 6;
+          width: 4vw;
+        "></div>
+
+    <div style="
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          background: linear-gradient(270deg, black, transparent);
+          z-index: 6;
+          width: 4vw;
+        "></div>
+
+    <div style="
+          position: absolute;
+          left: 0;
+          bottom: 0px;
+          height: 4vw;
+          background: linear-gradient(0deg, black, transparent);
+          z-index: 6;
+          width: 100vw;
+        "></div>
+  </div>
+  <div #SuggestionButton style="
+    position: absolute;
+    bottom: 10px;
+    right: 3%;
+    z-index: 10;
+    cursor: pointer;
+  ">
+    <div (click)="onNextClick()" style="display: flex; align-items: center" class="roboto-medium font-extra-small-2">
+      <p #HelperText style="color: #adaeb1; margin-right: 8px">
+        Skip to next chapter<br />
+        or keep scrolling.
+      </p>
+      <div>
+        <img #DownArrow style="transform: rotate(0deg); transition: transform 0.5s" src="../../../../assets/down.svg" />
       </div>
     </div>
   </div>
-
-  <div #AnimContainer class="margin-top-porcelain">
-    <div
-      #PorcelainVeneers
-      style="
-        display: none;
-        height: 23961px;
-        background-color: black;
-        position: relative;
-      "
-    >
-
-      <div
-        #SuggestionButton
-        style="
-          position: fixed;
-          bottom: 20px;
-          right: 3%;
-          z-index: 10;
-          cursor: pointer;
-        "
-      >
-        <div
-          (click)="onNextClick()"
-          style="display: flex; align-items: center"
-          class="roboto-medium font-extra-small-2"
-        >
-          <p #HelperText style="color: #adaeb1; margin-right: 8px">
-            Skip to next chapter<br />
-            or keep scrolling.
-          </p>
-          <div>
-            <img
-              #DownArrow
-              style="transform: rotate(0deg); transition: transform 0.5s"
-              src="../../../../assets/down.svg"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        #SuggestionButtonUp
-        style="
-          position: fixed;
-          bottom: 60px;
-          right: 3%;
-          z-index: 10;
-          cursor: pointer;
-        "
-      >
-        <div
-          (click)="onRevertClick()"
-          style="display: flex; align-items: center"
-          class="roboto-medium font-extra-small-2"
-        >
-          <p style="color: #adaeb1; margin-right: 8px">
-            Revert to first chapter.
-          </p>
-          <div>
-            <img
-              style="transform: rotate(180deg)"
-              src="../../../../assets/down.svg"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div
-        #TopBackground
-        style="
-          background-color: black;
-          position: relative;
-          z-index: 5;
-          width: 100vw;
-        "
-      >
-        <div
-          #TopFade
-          class="background-48"
-          style="position: absolute; bottom: -10vh; height: 11vh; width: 100vw"
-        ></div>
-      </div>
-
-      <div #PresentationView style="position: relative; z-index: 3">
-        <div #FirstFrame style="width: 100vw; position: relative">
-          <img
-            #FirstFrameImg
-            (load)="imgLoaded(FirstFrameImg)"
-            class="horizontal-size"
-            style="max-width: unset; margin: auto"
-            src="../../../../assets/aesthetics/PV/FirstFrame.jpg"
-          />
-        </div>
-
-        <div
-          #SecondFrame
-          style="width: 100vw; position: relative; display: none"
-        >
-          <app-scroll-framer-section
-            #SecondFrameVideo
-            [startAnimation]="secondFrameStartAnimation.asObservable()"
-            [stopAnimation]="secondFrameStopAnimation.asObservable()"
-            urlPattern="../../../../assets/aesthetics/PV/PV1/PV ##id##.jpg"
-            numberOfFrames="193"
-            animationFactor="7000"
-            padding="3"
-            (onFramesLoaded)="showExploreButton()"
-          >
-          </app-scroll-framer-section>
-        </div>
-
-        <div
-          #ThirdFrame
-          style="width: 100vw; position: relative; display: none"
-        >
-          <div>
-            <img
-              #ThirdFrameImg
-              (load)="imgLoaded(ThirdFrameImg)"
-              class="horizontal-size"
-              style="max-width: unset; margin: auto"
-              src="../../../../assets/aesthetics/PV/SecondFrame.jpg"
-            />
-          </div>
-        </div>
-
-        <div
-          #FourthFrame
-          style="width: 100vw; position: relative; display: none"
-        >
-          <app-scroll-framer-section
-            #FourthFrameVideo
-            [startAnimation]="fourthFrameStartAnimation.asObservable()"
-            [stopAnimation]="fourthFrameStopAnimation.asObservable()"
-            urlPattern="../../../../assets/aesthetics/PV/PV2/PV2 ##id##.jpg"
-            numberOfFrames="86"
-            animationFactor="3000"
-            padding="3"
-            isLastSection="false"
-            (onFramesLoaded)="showExploreButton()"
-          >
-          </app-scroll-framer-section>
-        </div>
-
-        <div
-          #FifthFrame
-          style="width: 100vw; position: relative; display: none"
-        >
-          <div>
-            <img
-              #FifthFrameImg
-              (load)="imgLoaded(FifthFrameImg)"
-              class="horizontal-size"
-              style="max-width: unset; margin: auto"
-              src="../../../../assets/aesthetics/PV/FifthFrame.jpg"
-            />
-          </div>
-        </div>
-
-        <div
-          #SixthFrame
-          style="width: 100vw; position: relative; display: none"
-        >
-          <app-scroll-framer-section
-            #SixthFrameVideo
-            [startAnimation]="sixthFrameStartAnimation.asObservable()"
-            [stopAnimation]="sixthFrameStopAnimation.asObservable()"
-            urlPattern="../../../../assets/aesthetics/PV/PV3/PV3 ##id##.jpg"
-            numberOfFrames="136"
-            animationFactor="4000"
-            padding="3"
-            isLastSection="false"
-            (onFramesLoaded)="showExploreButton()"
-          >
-          </app-scroll-framer-section>
-        </div>
-
-        <div
-          #SeventhFrame
-          style="width: 100vw; position: relative; display: none"
-        >
-          <div>
-            <img
-              #SeventhFrameImg
-              (load)="imgLoaded(SeventhFrameImg)"
-              class="horizontal-size"
-              style="max-width: unset; margin: auto"
-              src="../../../../assets/aesthetics/PV/SeventhFrame.jpg"
-            />
-          </div>
-
-          <div
-            #SixthText
-            style="
-              width: 100vw;
-              position: absolute;
-              bottom: 0%;
-              opacity: 0;
-              transition: all 0.5s linear;
-            "
-          >
-            <img
-              style="width: 35%; margin: auto"
-              src="../../../../assets/aesthetics/PV/3DigitalText.svg"
-            />
-          </div>
-        </div>
-
-        <div
-          #EightFrame
-          style="
-            width: 100vw;
-            position: relative;
-            display: none;
-            top: 0;
-            transition: all 0.5s linear;
-          "
-        >
-          <app-scroll-framer-section
-            #EightFrameVideo
-            [startAnimation]="eightFrameStartAnimation.asObservable()"
-            [stopAnimation]="eightFrameStopAnimation.asObservable()"
-            urlPattern="../../../../assets/aesthetics/PV/PV4/PV4 ##id##.jpg"
-            numberOfFrames="127"
-            animationFactor="4000"
-            padding="3"
-            isLastSection="false"
-            (onFramesLoaded)="showExploreButton()"
-          >
-          </app-scroll-framer-section>
-
-          <div
-            style="
-              position: absolute;
-              top: 55vw;
-              display: flex;
-              justify-content: space-around;
-              width: 100vw;
-            "
-          >
-            <div
-              #SeventhText
-              style="
-                position: relative;
-                bottom: 0%;
-                opacity: 0;
-                transition: all 0.5s linear;
-              "
-            >
-              <img
-                style="width: 90%; margin: auto"
-                src="../../../../assets/aesthetics/PV/HateText.svg"
-              />
-            </div>
-            <div
-              #EightText
-              style="
-                position: relative;
-                bottom: 0%;
-                opacity: 0;
-                transition: all 0.5s linear;
-              "
-            >
-              <img
-                style="width: 90%; margin: auto"
-                src="../../../../assets/aesthetics/PV/ScannedText.svg"
-              />
-            </div>
-            <div
-              #NineText
-              style="
-                position: relative;
-                bottom: 0%;
-                opacity: 0;
-                transition: all 0.5s linear;
-              "
-            >
-              <img
-                style="width: 90%; margin: auto"
-                src="../../../../assets/aesthetics/PV/MillingText.svg"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div
-          #NineFrame
-          style="
-            width: 100vw;
-            position: relative;
-            display: none;
-            top: 0;
-            transition: all 0.5s linear;
-          "
-        >
-          <app-scroll-framer-section
-            #NineFrameVideo
-            [startAnimation]="nineFrameStartAnimation.asObservable()"
-            [stopAnimation]="nineFrameStopAnimation.asObservable()"
-            urlPattern="../../../../assets/aesthetics/PV/PV5/PV5 ##id##.jpg"
-            numberOfFrames="35"
-            animationFactor="2000"
-            padding="3"
-            isLastSection="false"
-            (onFramesLoaded)="showExploreButton()"
-          >
-          </app-scroll-framer-section>
-        </div>
-
-        <div
-          #TenFrame
-          style="
-            width: 100vw;
-            position: relative;
-            display: none;
-            top: 0;
-            transition: all 0.5s linear;
-          "
-        >
-          <app-scroll-framer-section
-            #TenFrameVideo
-            [startAnimation]="tenFrameStartAnimation.asObservable()"
-            [stopAnimation]="tenFrameStopAnimation.asObservable()"
-            urlPattern="../../../../assets/aesthetics/PV/PV6/PV6 ##id##.jpg"
-            numberOfFrames="71"
-            animationFactor="2000"
-            padding="3"
-            isLastSection="false"
-            (onFramesLoaded)="showExploreButton()"
-          >
-          </app-scroll-framer-section>
-        </div>
-      </div>
-
-      <div
-        #BottomBackground
-        style="
-          background-color: black;
-          position: relative;
-          z-index: 5;
-          width: 100vw;
-        "
-      >
-        <div
-          #BottomFade
-          class="background-49"
-          style="position: absolute; top: -10vh; height: 11vh; width: 100vw"
-        ></div>
-      </div>
-
-      <div #FirstText style="width: 100vw; position: absolute; z-index: 4">
-        <img
-          #FirstTextImg
-          (load)="calculateTextsTop()"
-          style="width: 40%; margin: auto"
-          src="../../../../assets/aesthetics/PV/PorcelainVeneers.svg"
-        />
-      </div>
-
-      <div #SecondText style="width: 100vw; position: relative; z-index: 4">
-        <img
-          #SecondTextImg
-          (load)="calculateTextsTop()"
-          style="width: 40%; margin: auto"
-          src="../../../../assets/aesthetics/PV/Titlu_1.svg"
-        />
-      </div>
-
-      <div
-        #ThirdText
-        class="buttons-container"
-        style="margin: auto; position: relative; z-index: 4; display: flex"
-      >
-        <button
-          class="book3 book3-specials color-white roboto-medium font-extra-small-2 cursor-pointer"
-          style="margin-right: 2vw"
-          (click)="
-            goToLink(
-              'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-            )
-          "
-        >
-          BOOK YOUR FREE SMILE ASSESSMENT
-        </button>
-        <button
-          class="book3 book3-specials color-white roboto-medium font-extra-small-2 cursor-pointer"
-          style="margin-top: 2vw"
-          (click)="seeGallery()"
-        >
-          SEE BEFORE AND AFTER GALLERY
-        </button>
-      </div>
-
-      <div
-        #FourthText
-        style="width: 100vw; position: absolute; top: 8000px; z-index: 4"
-      >
-        <img
-          style="width: 35%; margin-left: 44%"
-          src="../../../../assets/aesthetics/PV/Titlu_2.svg"
-        />
-      </div>
-
-      <div
-        #FifthText
-        style="width: 100vw; position: absolute; top: 11500px; z-index: 4"
-      >
-        <img
-          style="width: 35%; margin-left: 50%"
-          src="../../../../assets/aesthetics/PV/delicate.svg"
-        />
-      </div>
-
-      <div
-        #TenText
-        style="width: 100vw; position: absolute; top: 21000px; z-index: 4"
-      >
-        <img
-          style="width: 30%; margin-left: 60%"
-          src="../../../../assets/aesthetics/PV/TakeItPersonalText.svg"
-        />
-      </div>
-
-      <div
-        #ElevenText
-        style="width: 100vw; position: absolute; top: 23100px; z-index: 4"
-      >
-        <img
-          style="width: 30%; margin-left: 60%"
-          src="../../../../assets/aesthetics/PV/LastText.svg"
-        />
-      </div>
-
-
-      <div
-        #LastFrame
-        style="
-          display: none;
-          width: 100vw;
-          height: 100vh;
-          position: absolute;
-          top: 23000px;
-          z-index: 4;
-          align-items: center;
-          flex-direction: column;
-        "
-      >
-        <div
-          style="width: 100vw; flex: 1; background: black; position: relative"
-        >
-          <div
-            #TopFade
-            class="background-48"
-            style="
-              position: absolute;
-              bottom: -10vh;
-              height: 11vh;
-              width: 100vw;
-            "
-          ></div>
-        </div>
-        <div>
-          <img
-            #LastFrameImg
-            (load)="imgLoaded(LastFrameImg)"
-            style="max-width: unset; margin: auto"
-            src="../../../../assets/aesthetics/PV/LastFrame.jpg"
-          />
-        </div>
-        <div style="width: 100vw; flex: 1; background: black; position: relative;">
-          <div
-            #BottomFade
-            class="background-49"
-            style="position: absolute; top: -10vh; height: 11vh; width: 100vw"
-          ></div>
-        </div>
+  <div #SuggestionButtonUp style="
+    position: absolute;
+    bottom: 50px;
+    right: 3%;
+    z-index: 10;
+    cursor: pointer;
+  ">
+    <div (click)="onRevertClick()" style="display: flex; align-items: center" class="roboto-medium font-extra-small-2">
+      <p style="color: #adaeb1; margin-right: 8px">
+        Revert to first chapter.
+      </p>
+      <div>
+        <img style="transform: rotate(180deg)" src="../../../../assets/down.svg" />
       </div>
     </div>
   </div>
 </div>
 
-<div id="PVBottomButtons" class="padding-chef flexy-row cccc hide-on-sm" style="
+<div id="PVWebBottomButtons" class="padding-chef flexy-row cccc hide-on-sm" style="
     background: black;
     justify-content: space-around;
     position: relative;
@@ -520,6 +112,7 @@
     SEE BEFORE AND AFTER GALLERY
   </button>
 </div>
+
 
 
 
@@ -591,7 +184,8 @@
     </div>
     <div class="font-small-2 roboto-regular padding-chef" style="margin-bottom: 10vw;">
       <p style="color: #acacac">
-        * this treatment is not suitable to all patients and we as health professionals have an ethic to let you know whether you are
+        * this treatment is not suitable to all patients and we as health professionals have an ethic to let you know
+        whether you are
         a candidate. A comprehensive examination must be performed to check eligibility and to assess the health of your
         teeth prior to receiving this treatment.
       </p>
@@ -607,10 +201,10 @@
 
     <div class="flexy-row cccc">
       <div class="flexy-row cccc" style="flex: 1">
-        <p style="text-align: left;"><span class="roboto-bold">Veneer</span> - Light<br/>source reflecting</p>
+        <p style="text-align: left;"><span class="roboto-bold">Veneer</span> - Light<br />source reflecting</p>
       </div>
       <div class="flexy-row cccc" style="flex: 1">
-        <p style="text-align: left;"><span class="roboto-bold">Natural Tooth</span> - Light<br/>source reflecting</p>
+        <p style="text-align: left;"><span class="roboto-bold">Natural Tooth</span> - Light<br />source reflecting</p>
       </div>
     </div>
 
@@ -765,8 +359,9 @@
       <p class="margin-bottom:5vw;">
         You too can have YOUR smile back, whether you have a gap
         between your teeth, discolored fillings, teeth are that too short or too long, chipped or broken or very yellow
-        teeth, chances are we have a solution for you.<span style="color: #FF4F1B"> Please take a look at our gallery below to see some of our Proud
-          patients.</span> 
+        teeth, chances are we have a solution for you.<span style="color: #FF4F1B"> Please take a look at our gallery
+          below to see some of our Proud
+          patients.</span>
       </p>
     </div>
 

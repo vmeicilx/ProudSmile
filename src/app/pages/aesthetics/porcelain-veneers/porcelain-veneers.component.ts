@@ -12,11 +12,18 @@ import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-f
 function resize() {
 
   if (window.innerWidth > 1200) {
-    const canvas: any = document.getElementById("hero-lightpass-PV");
+    // const canvas: any = document.getElementById("hero-lightpass-PV");
+    // const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+
+    // if (canvas && canvasFramer) {
+    //   canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+    //   canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+    // }
+    const canvas: any = document.getElementById("hero-lightpass-pvweb");
     const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
 
     if (canvas && canvasFramer) {
-      canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+      canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
       canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
     }
   }
@@ -126,6 +133,89 @@ function startAnimationMobile() {
 
 }
 
+function startAnimation() {
+  const canvas: any = document.getElementById("hero-lightpass-pvweb");
+  const context = canvas.getContext("2d");
+  const loadingText: any = document.getElementById("LoadingTextPVWeb");
+  const animationContainer: any = document.getElementById(
+    "PVWebCanvasContainer"
+  );
+  const buttons: any = document.getElementById("PVWebBottomButtons");
+  const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+
+  document.body.style.overflow = "hidden";
+
+  let startValue = "top top";
+  let endValue = "+=10000"
+  canvas.width = 1364;
+  canvas.height = 700;
+
+  canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
+  canvasFramer.style.height = canvas.getBoundingClientRect().height + "px";
+
+  const frameCount = 540;
+  const currentFrame = (index) =>
+    `../../../../assets/aesthetics/PV/PV web/Porcelain Veneers_Web ${(
+      index + 1
+    )
+      .toString()
+      .padStart(3, "0")}.jpg`;
+
+
+  const images = [];
+  const frames = {
+    frame: 0,
+  };
+
+  let loadedImages = 0;
+
+  loadingText.style.display = "flex";
+  animationContainer.style.display = "none";
+  buttons.style.display = "none";
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    img.onload = countImages;
+    images.push(img);
+  }
+
+
+  function countImages() {
+    loadedImages = loadedImages + 1;
+    if (loadedImages === frameCount) {
+      loadingText.style.display = "none";
+      animationContainer.style.display = "block";
+      buttons.style.display = "flex";
+
+      gsap.to(frames, {
+        frame: frameCount - 1,
+        snap: "frame",
+        scrollTrigger: {
+          id: "ScrollTriggerPVWeb",
+          trigger: "#PVWebCanvasContainer",
+          start: startValue,
+          end: endValue,
+          markers: false,
+          scrub: 1,
+          pin: true
+        },
+        onUpdate: render,
+      });
+      render();
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function render() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[frames.frame], 0, 0);
+    resize()
+  }
+
+}
+
+
 
 @Component({
   selector: "app-porcelain-veneers",
@@ -162,43 +252,6 @@ export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("TopBackground") topBackground: ElementRef;
   @ViewChild("BottomBackground") bottomBackground: ElementRef;
 
-  @ViewChild("FirstFrame") firstFrame: ElementRef;
-  @ViewChild("SecondFrame") secondFrame: ElementRef;
-  @ViewChild("ThirdFrame") thirdFrame: ElementRef;
-  @ViewChild("FourthFrame") fourthFrame: ElementRef;
-  @ViewChild("FifthFrame") fifthFrame: ElementRef;
-  @ViewChild("SixthFrame") sixthFrame: ElementRef;
-  @ViewChild("SeventhFrame") seventhFrame: ElementRef;
-  @ViewChild("EightFrame") eightFrame: ElementRef;
-  @ViewChild("NineFrame") nineFrame: ElementRef;
-  @ViewChild("TenFrame") tenFrame: ElementRef;
-  @ViewChild("LastFrame") lastFrame: ElementRef;
-
-  @ViewChild("FirstText") firstText: ElementRef;
-  @ViewChild("FirstTextImg") firstTextImg: ElementRef;
-  @ViewChild("SecondText") secondText: ElementRef;
-  @ViewChild("SecondTextImg") secondTextImg: ElementRef;
-  @ViewChild("ThirdText") thirdText: ElementRef;
-  @ViewChild("SixthText") sixthText: ElementRef;
-  @ViewChild("SeventhText") seventhText: ElementRef;
-  @ViewChild("EightText") eightText: ElementRef;
-  @ViewChild("NineText") nineText: ElementRef;
-  @ViewChild("TenText") tenText: ElementRef;
-  @ViewChild("ElevenText") elevenText: ElementRef;
-  @ViewChild("LastButton") lastButton: ElementRef;
-
-  @ViewChild("FirstFrameImg") firstFrameImg: ElementRef;
-  @ViewChild("SecondFrameVideo") secondFrameVideo: ScrollFramerSectionComponent;
-  @ViewChild("ThirdFrameImg") thirdFrameImg: ElementRef;
-  @ViewChild("FourthFrameVideo") fourthFrameVideo: ScrollFramerSectionComponent;
-  @ViewChild("FifthFrameImg") fifthFrameImg: ElementRef;
-  @ViewChild("SixthFrameVideo") sixthFrameVideo: ScrollFramerSectionComponent;
-  @ViewChild("SeventhFrameImg") seventhFrameImg: ElementRef;
-  @ViewChild("EightFrameVideo") eightFrameVideo: ScrollFramerSectionComponent;
-  @ViewChild("NineFrameVideo") nineFrameVideo: ScrollFramerSectionComponent;
-  @ViewChild("TenFrameVideo") tenFrameVideo: ScrollFramerSectionComponent;
-  @ViewChild("LastFrameImg") lastFrameImg: ScrollFramerSectionComponent;
-
   @ViewChild("goopyVideo") goopyVideo: ElementRef;
   @ViewChild("smileVideo") smileVideo: ElementRef;
   @ViewChild("makeVideo") makeVideo: ElementRef;
@@ -208,7 +261,6 @@ export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("HelperText") HelperText: ElementRef;
 
   @ViewChild("DownArrow") DownArrow: ElementRef;
-  @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   currentFrame = 0;
   framePositions = [
@@ -237,31 +289,11 @@ export class PorcelainVeneersComponent implements OnInit {
 
 
     if (window.innerWidth > 1200) {
-      this.frames = [
-        this.firstFrame.nativeElement,
-        this.secondFrame.nativeElement,
-        this.thirdFrame.nativeElement,
-        this.fourthFrame.nativeElement,
-        this.fifthFrame.nativeElement,
-        this.sixthFrame.nativeElement,
-        this.seventhFrame.nativeElement,
-        this.eightFrame.nativeElement,
-        this.nineFrame.nativeElement,
-        this.tenFrame.nativeElement,
-      ];
 
-      this.framesContent = [
-        this.firstFrameImg.nativeElement,
-        this.secondFrameVideo.scrollCanvas.nativeElement,
-        this.thirdFrameImg.nativeElement,
-        this.fourthFrameVideo.scrollCanvas.nativeElement,
-        this.fifthFrameImg.nativeElement,
-        this.sixthFrameVideo.scrollCanvas.nativeElement,
-        this.seventhFrameImg.nativeElement,
-        this.eightFrameVideo.scrollCanvas.nativeElement,
-        this.nineFrameVideo.scrollCanvas.nativeElement,
-        this.tenFrameVideo.scrollCanvas.nativeElement,
-      ];
+      startAnimation();
+      this.suggestionButton.nativeElement.style.display = "none";
+      this.suggestionButtonUp.nativeElement.style.display = "none";
+      resize();
     }
     else {
       startAnimationMobile();
@@ -332,24 +364,6 @@ export class PorcelainVeneersComponent implements OnInit {
       }
     }
     else {
-      this.renderPresentation();
-
-      if (window.scrollY > 12500 && window.scrollY < 13500) {
-        this.sixthText.nativeElement.style.opacity = "1";
-      }
-      else {
-        this.sixthText.nativeElement.style.opacity = "0";
-
-      }
-
-
-      if (window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-        this.MobileSuggestion.nativeElement.style.display = "flex";
-      }
-      else {
-        this.MobileSuggestion.nativeElement.style.display = "none";
-      }
-
       if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
         this.suggestionButton.nativeElement.style.display = "block";
       } else {
@@ -392,9 +406,6 @@ export class PorcelainVeneersComponent implements OnInit {
         this.topBackground.nativeElement.style.height = "0px";
         this.bottomBackground.nativeElement.style.height = "0px";
       }
-      this.presentationHeight = activeContentRect.height;
-      this.calculateTextsTop();
-      this.renderPresentation();
     }
 
 
@@ -455,234 +466,6 @@ export class PorcelainVeneersComponent implements OnInit {
     }
   }
 
-  renderPresentation() {
-    let parent =
-      this.presentationView.nativeElement.parentElement.getBoundingClientRect();
-    if (parent.top < 0 && parent.top >= -23000) {
-      this.presentationView.nativeElement.style.position = "fixed";
-      this.topBackground.nativeElement.style.position = "fixed";
-      this.bottomBackground.nativeElement.style.position = "fixed";
-      this.presentationView.nativeElement.style.top =
-        this.topBackground.nativeElement.getBoundingClientRect().height + "px";
-      this.topBackground.nativeElement.style.top = "0";
-      this.bottomBackground.nativeElement.style.bottom = "0";
-    } else {
-      this.presentationView.nativeElement.style.position = "relative";
-      this.topBackground.nativeElement.style.position = "relative";
-      this.bottomBackground.nativeElement.style.position = "relative";
-      this.presentationView.nativeElement.style.top = "unset";
-      this.topBackground.nativeElement.style.top = "unset";
-      this.bottomBackground.nativeElement.style.top = "unset";
-    }
-
-    if (parent.top < 0 && parent.top > -1700) {
-      this.setFramesDisplay(0);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -1700 && parent.top > -8700) {
-      this.setFramesDisplay(1);
-      this.secondFrameStartAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -7000 && parent.top > -8000) {
-      this.setFramesDisplay(2);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -8000 && parent.top > -11000) {
-      this.setFramesDisplay(3);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStartAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -11000 && parent.top > -12000) {
-      this.setFramesDisplay(4);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStartAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -12000 && parent.top > -15000) {
-      this.setFramesDisplay(5);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStartAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -15000 && parent.top > -17000) {
-      this.setFramesDisplay(6);
-      if (parent.top <= -15000 && parent.top > -15500) {
-        setTimeout(
-          function () {
-            this.sixthText.nativeElement.style.opacity = 0;
-            this.sixthText.nativeElement.style.bottom = "0%";
-          }.bind(this),
-          20
-        );
-      } else if (parent.top <= -15500 && parent.top > -16500) {
-        setTimeout(
-          function () {
-            this.sixthText.nativeElement.style.opacity = 1;
-            this.sixthText.nativeElement.style.bottom = "9%";
-          }.bind(this),
-          20
-        );
-      } else if (parent.top <= -16500 && parent.top > -17000) {
-        setTimeout(
-          function () {
-            this.sixthText.nativeElement.style.opacity = 0;
-            this.sixthText.nativeElement.style.bottom = "18%";
-          }.bind(this),
-          20
-        );
-      }
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStartAnimation.next();
-      this.sixthFrameStartAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -17000 && parent.top > -20000) {
-      this.setFramesDisplay(7);
-
-      if (parent.top <= -17000 && parent.top > -17200) {
-        setTimeout(
-          function () {
-            this.eightFrame.nativeElement.style.top = "0";
-          }.bind(this),
-          20
-        );
-      } else {
-        this.eightFrame.nativeElement.style.top = "-34vw";
-      }
-
-      if (parent.top <= -17000 && parent.top > -17500) {
-        setTimeout(
-          function () {
-            this.seventhText.nativeElement.style.opacity = 0;
-            this.seventhText.nativeElement.style.bottom = "0%";
-          }.bind(this),
-          20
-        );
-      } else if (parent.top <= -17500) {
-        setTimeout(
-          function () {
-            this.seventhText.nativeElement.style.opacity = 1;
-            this.seventhText.nativeElement.style.bottom = "9%";
-          }.bind(this),
-          20
-        );
-      }
-
-      if (parent.top <= -17000 && parent.top > -18000) {
-        setTimeout(
-          function () {
-            this.eightText.nativeElement.style.opacity = 0;
-            this.eightText.nativeElement.style.bottom = "0%";
-          }.bind(this),
-          20
-        );
-      } else if (parent.top <= -18000) {
-        setTimeout(
-          function () {
-            this.eightText.nativeElement.style.opacity = 1;
-            this.eightText.nativeElement.style.bottom = "9%";
-          }.bind(this),
-          20
-        );
-      }
-
-      if (parent.top <= -17000 && parent.top > -18900) {
-        setTimeout(
-          function () {
-            this.nineText.nativeElement.style.opacity = 0;
-            this.nineText.nativeElement.style.bottom = "0%";
-          }.bind(this),
-          20
-        );
-      } else if (parent.top <= -18900) {
-        setTimeout(
-          function () {
-            this.nineText.nativeElement.style.opacity = 1;
-            this.nineText.nativeElement.style.bottom = "9%";
-          }.bind(this),
-          20
-        );
-      }
-
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStartAnimation.next();
-      this.sixthFrameStartAnimation.next();
-      this.eightFrameStartAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -20000 && parent.top > -21200) {
-      this.setFramesDisplay(8);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStartAnimation.next();
-      this.tenFrameStopAnimation.next();
-    } else if (parent.top <= -21200 && parent.top > -23000) {
-      this.setFramesDisplay(9);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStartAnimation.next();
-    } else if (parent.top < 0 || parent.top <= -23000) {
-      this.setFramesDisplay(-1);
-      this.secondFrameStopAnimation.next();
-      this.fourthFrameStopAnimation.next();
-      this.sixthFrameStopAnimation.next();
-      this.eightFrameStopAnimation.next();
-      this.nineFrameStopAnimation.next();
-      this.tenFrameStopAnimation.next();
-    }
-
-    if (parent.top <= -23000) {
-      this.lastFrame.nativeElement.style.display = "flex";
-    } else {
-      this.lastFrame.nativeElement.style.display = "none";
-    }
-
-    if (window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-      this.suggestionButton.nativeElement.style.display = "block";
-      if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-        this.MobileSuggestion.nativeElement.style.display = "block";
-      }
-    } else {
-      this.suggestionButton.nativeElement.style.display = "none";
-      this.MobileSuggestion.nativeElement.style.display = "none";
-    }
-
-    if (window.scrollY > this.firstFramePosition + 100 && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-      this.suggestionButtonUp.nativeElement.style.display = "block";
-    } else {
-      if (this.currentFrame === this.framePositions.length - 1 && window.scrollY === this.framePositions[this.framePositions.length - 1]) {
-        this.suggestionButtonUp.nativeElement.style.display = "block";
-      } else {
-        this.suggestionButtonUp.nativeElement.style.display = "none";
-      }
-    }
-  }
-
   setFramesDisplay(blockIndex) {
     let i = 0;
     for (i = 0; i < this.frames.length; i++) {
@@ -694,59 +477,6 @@ export class PorcelainVeneersComponent implements OnInit {
         this.frames[i].style.display = "none";
       }
     }
-  }
-
-  imgLoaded(imageRef) {
-
-    if (window.innerWidth > 1200) {
-      let imgWidth = imageRef.width;
-      let imgHeight = imageRef.height;
-      let factor = imgWidth / imgHeight;
-
-      if (window.innerHeight * factor > window.innerWidth) {
-        imageRef.classList.remove("vertical-size");
-        imageRef.classList.add("horizontal-size");
-        var remainingSpaceHeight =
-          (window.innerHeight - window.innerWidth / factor) / 2;
-        this.topBackground.nativeElement.style.height =
-          remainingSpaceHeight + "px";
-        this.bottomBackground.nativeElement.style.height =
-          remainingSpaceHeight + "px";
-        this.presentationHeight = window.innerWidth / factor;
-      } else {
-        imageRef.classList.remove("horizontal-size");
-        imageRef.classList.add("vertical-size");
-        this.topBackground.nativeElement.style.height = "0px";
-        this.bottomBackground.nativeElement.style.height = "0px";
-        this.presentationHeight = imgHeight;
-      }
-      this.calculateTextsTop();
-      this.renderPresentation();
-    }
-  }
-
-  calculateTextsTop() {
-    if (window.innerWidth > 1200) {
-      let firstImageHeight = this.getImageHeight(
-        this.firstTextImg.nativeElement,
-        this.firstTextImgWidth
-      );
-
-      var firstTextTop = window.innerHeight / 2 - firstImageHeight / 2;
-      this.firstText.nativeElement.style.top = firstTextTop + "px";
-
-      var secondTextTop = firstTextTop + this.presentationHeight;
-      var secondTextTop = firstTextTop + 600;
-      this.secondText.nativeElement.style.top = secondTextTop + "px";
-
-      var thirdTextTop = secondTextTop + 40;
-      this.thirdText.nativeElement.style.top = thirdTextTop + "px";
-
-      var elevenTextTop = this.elevenText.nativeElement.getBoundingClientRect().top;
-      var lastButtonTop = elevenTextTop + 40;
-      this.lastButton.nativeElement.style.top = lastButtonTop + "px";
-    }
-
   }
 
   getImageHeight(element, width) {
