@@ -44,7 +44,6 @@ import { SameDayVeneersComponent } from "./pages/aesthetics/same-day-veneers/sam
 import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-whitening.component";
 import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
 import { DataService } from "./shared/data-service";
-import { ScrollFramerSectionComponent } from './custom-components/scroll-framer-section/scroll-framer-section.component';
 import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-after.component';
 import { ScrollFramerFullComponent } from './custom-components/scroll-framer-full/scroll-framer-full.component';
 import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
@@ -85,7 +84,6 @@ import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropw
     SameDayVeneersComponent,
     ZoomWhiteningComponent,
     FacespaFacialComponent,
-    ScrollFramerSectionComponent,
     BeforeAfterComponent,
     ScrollFramerFullComponent,
     MobileHeaderComponent,

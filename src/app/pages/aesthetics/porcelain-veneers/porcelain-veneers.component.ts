@@ -5,9 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from "@angular/core";
-import { Subject } from "rxjs";
 import { Router } from "@angular/router";
-import { ScrollFramerSectionComponent } from "src/app/custom-components/scroll-framer-section/scroll-framer-section.component";
 
 function resize() {
 
@@ -146,7 +144,7 @@ function startAnimation() {
   document.body.style.overflow = "hidden";
 
   let startValue = "top top";
-  let endValue = "+=10000"
+  let endValue = "+=20000"
   canvas.width = 1364;
   canvas.height = 700;
 
@@ -224,69 +222,26 @@ function startAnimation() {
 })
 export class PorcelainVeneersComponent implements OnInit {
 
-  secondFrameStartAnimation: Subject<void> = new Subject<void>();
-  secondFrameStopAnimation: Subject<void> = new Subject<void>();
-
-  fourthFrameStartAnimation: Subject<void> = new Subject<void>();
-  fourthFrameStopAnimation: Subject<void> = new Subject<void>();
-
-  sixthFrameStartAnimation: Subject<void> = new Subject<void>();
-  sixthFrameStopAnimation: Subject<void> = new Subject<void>();
-
-  eightFrameStartAnimation: Subject<void> = new Subject<void>();
-  eightFrameStopAnimation: Subject<void> = new Subject<void>();
-
-  nineFrameStartAnimation: Subject<void> = new Subject<void>();
-  nineFrameStopAnimation: Subject<void> = new Subject<void>();
-
-  tenFrameStartAnimation: Subject<void> = new Subject<void>();
-  tenFrameStopAnimation: Subject<void> = new Subject<void>();
-
-  @ViewChild("LoadingText") loadingText: ElementRef;
-  @ViewChild("PorcelainVeneers") porcelainVeneers: ElementRef;
-  @ViewChild("AnimContainer") animContainer: ElementRef;
-  @ViewChild("TopFade") topFade: ElementRef;
-  @ViewChild("BottomFade") bottomFade: ElementRef;
-  @ViewChild("PresentationView") presentationView: ElementRef;
-
-  @ViewChild("TopBackground") topBackground: ElementRef;
-  @ViewChild("BottomBackground") bottomBackground: ElementRef;
-
   @ViewChild("goopyVideo") goopyVideo: ElementRef;
   @ViewChild("smileVideo") smileVideo: ElementRef;
   @ViewChild("makeVideo") makeVideo: ElementRef;
 
   @ViewChild("SuggestionButton") suggestionButton: ElementRef;
   @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
-  @ViewChild("HelperText") HelperText: ElementRef;
-
-  @ViewChild("DownArrow") DownArrow: ElementRef;
 
   currentFrame = 0;
   framePositions = [
-    1000, 8100, 9500, 11500, 13443, 16143, 20143, 21043, 22043, 23179,
+    540, 4240, 4940, 5740, 6220, 7220, 9320, 12420, 14620, 17120, 19520
   ];
 
-  firstFramePosition = 250;
-  lastFramePosition = 23179;
-
-  sections = 0;
-
-  firstTextImgWidth = 40;
-  secondTextImgWidth = 40;
-  presentationHeight = 0;
-  activeFrameIndex = 0;
-
-  frames = [];
-  framesContent = [];
-
+  firstFramePosition = 240;
+  lastFramePosition = 20120;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void { }
 
   ngAfterViewInit(): void {
-
 
     if (window.innerWidth > 1200) {
 
@@ -306,10 +261,7 @@ export class PorcelainVeneersComponent implements OnInit {
       this.makeVideo.nativeElement.muted = true;
       this.makeVideo.nativeElement.style.display = "block";
     }
-
-
   }
-
 
   goToLink(url: string) {
     window.open(url, "_blank");
@@ -317,8 +269,6 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-
-
     if (window.innerWidth <= 1200) {
 
       let playPromise1;
@@ -382,33 +332,6 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @HostListener("window:resize", ["$event"])
   onResize(event) {
-
-    if (window.innerWidth > 1200) {
-      var activeContent = this.framesContent[this.activeFrameIndex];
-      var activeContentRect = activeContent.getBoundingClientRect();
-
-      if (activeContentRect.width >= window.innerWidth) {
-        activeContent.classList.remove("vertical-size");
-        activeContent.classList.add("horizontal-size");
-      } else if (activeContentRect.height > window.innerHeight) {
-        activeContent.classList.remove("horizontal-size");
-        activeContent.classList.add("vertical-size");
-      }
-
-      if (activeContent.classList.contains("horizontal-size")) {
-        var remainingSpaceHeight =
-          (window.innerHeight - activeContentRect.height) / 2;
-        this.topBackground.nativeElement.style.height =
-          remainingSpaceHeight + "px";
-        this.bottomBackground.nativeElement.style.height =
-          remainingSpaceHeight + "px";
-      } else if (activeContent.classList.contains("vertical-size")) {
-        this.topBackground.nativeElement.style.height = "0px";
-        this.bottomBackground.nativeElement.style.height = "0px";
-      }
-    }
-
-
   }
 
   seeGallery() {
@@ -448,42 +371,4 @@ export class PorcelainVeneersComponent implements OnInit {
       behavior: "smooth",
     });
   }
-
-  showExploreButton() {
-    this.sections += 1;
-
-    if (this.sections === 6) {
-      this.loadingText.nativeElement.style.display = "none";
-      this.porcelainVeneers.nativeElement.style.display = "block";
-
-      window.scrollTo(0, 0);
-      setTimeout(
-        function () {
-          window.scrollTo(0, 0);
-        }.bind(this),
-        20
-      );
-    }
-  }
-
-  setFramesDisplay(blockIndex) {
-    let i = 0;
-    for (i = 0; i < this.frames.length; i++) {
-      if (i === blockIndex) {
-        this.frames[i].style.display = "block";
-        this.activeFrameIndex = i;
-      }
-      else {
-        this.frames[i].style.display = "none";
-      }
-    }
-  }
-
-  getImageHeight(element, width) {
-    let imgWidth = element.width;
-    let imgHeight = element.height;
-    let factor = imgWidth / imgHeight;
-    return ((width / 100) * window.innerWidth) / factor;
-  }
-
 }
