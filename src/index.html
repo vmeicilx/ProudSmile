@@ -1,43 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>ProudSmile</title>
-    <base href="/" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="./assets/Shape.svg" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.js"></script>
-    <script>
-      window.__lc = window.__lc || {};
-      window.__lc.license = "3083582";
-      ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
-    </script>
 
-    <script>
-      LiveChatWidget.call("hide");
+<head>
+  <meta charset="utf-8" />
+  <title>ProudSmile</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./assets/Shape.svg" />
 
-      function startLiveChat() {
-        LiveChatWidget.call("maximize");
-      }
-      function onVisibilityChanged(data) {
-  switch (data.visibility) {
-    case "maximized":
-      break;
-    case "minimized":
+  <!-- Google Tag Manager -->
+
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+
+    })(window, document, 'script', 'dataLayer', 'GTM-528STSK');</script>
+
+  <!-- End Google Tag Manager -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.js"></script>
+  <script>
+    window.__lc = window.__lc || {};
+    window.__lc.license = "3083582";
+    ; (function (n, t, c) { function i(n) { return e._h ? e._h.apply(null, n) : e._q.push(n) } var e = { _q: [], _h: null, _v: "2.0", on: function () { i(["on", c.call(arguments)]) }, once: function () { i(["once", c.call(arguments)]) }, off: function () { i(["off", c.call(arguments)]) }, get: function () { if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load."); return i(["get", c.call(arguments)]) }, call: function () { i(["call", c.call(arguments)]) }, init: function () { var n = t.createElement("script"); n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js", t.head.appendChild(n) } }; !n.__lc.asyncInit && e.init(), n.LiveChatWidget = n.LiveChatWidget || e }(window, document, [].slice))
+  </script>
+
+  <script>
     LiveChatWidget.call("hide");
-      break;
-    case "hidden":
-      break;
-  }
-}
-LiveChatWidget.on('visibility_changed', onVisibilityChanged)
-    </script>
-    
-  </head>
-  <body>
-    <app-root></app-root>
-  </body>
+
+    function startLiveChat() {
+      LiveChatWidget.call("maximize");
+    }
+    function onVisibilityChanged(data) {
+      switch (data.visibility) {
+        case "maximized":
+          break;
+        case "minimized":
+          LiveChatWidget.call("hide");
+          break;
+        case "hidden":
+          break;
+      }
+    }
+    LiveChatWidget.on('visibility_changed', onVisibilityChanged)
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+
+  <noscript><iframe src=https://www.googletagmanager.com/ns.html?id=GTM-528STSK height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- End Google Tag Manager (noscript) -->
+
+  <app-root></app-root>
+</body>
+
 </html>

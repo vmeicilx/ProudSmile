@@ -36,7 +36,6 @@ export class HeaderComponent implements OnInit {
   isAesthetics: boolean = false;
   horizontalPosition: MatSnackBarHorizontalPosition = "center";
   verticalPosition: MatSnackBarVerticalPosition = "top";
-  scheduleText: string;
   appElementRef: ElementRef;
 
   @ViewChild("whyProudSmile") whyProudSmileSubheader: ElementRef;
@@ -694,29 +693,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var today = new Date();
-    var day = today.getDay();
-    if (day === 1) {
-      this.scheduleText = "Today 8:30am - 5:30pm Tuesday 8:30am - 7:00pm";
-    }
-    if (day === 2) {
-      this.scheduleText = "Today 8:30am - 7:00pm Wednesday 8:30am - 6:30pm";
-    }
-    if (day === 3) {
-      this.scheduleText = "Today 8:30am - 6:30pm Thurdsay 8:30am - 5:30pm";
-    }
-    if (day === 4) {
-      this.scheduleText = "Today 8:30am - 5:30pm Friday 8:30am - 5:30pm";
-    }
-    if (day === 5) {
-      this.scheduleText = "Today 8:30am - 5:30pm Saturday and Sunday closed";
-    }
-    if (day === 6) {
-      this.scheduleText = "Today closed Monday 8:30am - 5:30pm";
-    }
-    if (day === 0) {
-      this.scheduleText = "Today closed Monday 8:30am - 5:30pm";
-    }
   }
 
   onLogoClick() {
