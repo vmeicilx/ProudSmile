@@ -48,6 +48,8 @@ import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-aft
 import { ScrollFramerFullComponent } from './custom-components/scroll-framer-full/scroll-framer-full.component';
 import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
 import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropwodn-green.component';
+import { LandingBundallComponent } from './pages/landing-bundall/landing-bundall.component';
+import { LandingPacificComponent } from './pages/landing-pacific/landing-pacific.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropw
     BeforeAfterComponent,
     ScrollFramerFullComponent,
     MobileHeaderComponent,
-    DropwodnGreenComponent
+    DropwodnGreenComponent,
+    LandingBundallComponent,
+    LandingPacificComponent
   ],
   imports: [
     BrowserModule,

@@ -196,6 +196,16 @@ export class ContactPageComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
+  onBundallLanding() {
+    this.router.navigate(["/", "LandingBundall"]);
+    window.scrollTo(0, 0);
+  }
+  onPacificLanding() {
+    this.router.navigate(["/", "LandingPacific"]);
+    window.scrollTo(0, 0);
+  }
+
+
   scrollToContactFormAction() {
     setTimeout(() => {
       document.getElementById("contact-form").scrollIntoView({
