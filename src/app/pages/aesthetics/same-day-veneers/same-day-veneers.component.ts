@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 function resize() {
@@ -99,6 +99,68 @@ function startAnimation() {
 
 }
 
+function addPatterns() {
+  setTimeout(() => {  
+  const pContainer = document.getElementById("patternContainer");
+  pContainer.innerHTML = '';
+  const tContainer = document.getElementById("timeContainer");
+  const tContainerRect = tContainer.getBoundingClientRect();
+  var times = 1;
+  if(tContainerRect) {
+    times = tContainerRect.height / 84;
+  }
+
+
+  for(var j = 0; j< times-1;j++) {
+    const c = document.createElement("div");
+    c.style.paddingLeft = "8vw";
+    c.style.marginBottom = "6px";
+    const i = document.createElement("img");
+    i.style.height = "78px";
+    i.src = "../../../../assets/aesthetics/SameDay/desk/pattern.svg";
+    c.appendChild(i);
+  
+    pContainer.appendChild(c);
+  }
+}, 1000);
+
+
+}
+function addPatternsMobile() {
+  
+
+  setTimeout(() => {  
+    const pContainer = document.getElementById("patternContainerMobile");
+    pContainer.innerHTML = '';
+  const tContainer = document.getElementById("timeContainerMobile");
+  const tContainerRect = tContainer.getBoundingClientRect();
+  console.log(tContainerRect);
+  var times = 1;
+  if(tContainerRect) {
+    times = tContainerRect.height / 43;
+
+  }
+
+
+
+  for(var j = 0; j< times-1;j++) {
+    const c = document.createElement("div");
+    c.style.paddingLeft = "4vw";
+    c.style.marginBottom = "3px";
+    const i = document.createElement("img");
+    i.style.height = "40px";
+    i.src = "../../../../assets/aesthetics/SameDay/desk/pattern.svg";
+    c.appendChild(i);
+  
+    pContainer.appendChild(c);
+  }
+  }, 1000);
+
+
+}
+
+
+
 
 @Component({
   selector: 'app-same-day-veneers',
@@ -113,9 +175,29 @@ export class SameDayVeneersComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    startAnimation();
-    resize();
+    //startAnimation();
+    //resize();
+    if (window.innerWidth > 1200) {
+      addPatterns();
+    }
+    else {
+
+      addPatternsMobile();
+    }
   }
+
+  @HostListener("window:resize", ["$event"])
+  onResize(event) {
+    
+    if (window.innerWidth > 1200) {
+      addPatterns();
+    }
+    else {
+
+      addPatternsMobile();
+    }
+  }
+
 
   goToLink(url: string) {
     window.open(url, "_blank");

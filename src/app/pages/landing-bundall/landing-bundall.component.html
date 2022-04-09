@@ -18,6 +18,14 @@
         <div class="bundall-title">
             <img src="../../../assets/landing/bundall/BundallTitle.svg" />
         </div>
+        <button class="button-1 color-fuscia roboto-medium font-extra-small-2 margin-bottom-6" fxFlexAlign="center" (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
+      ">
+          <img src="../../../assets/contactPage/calendar.svg" />
+          <p>Instant Online Booking</p>
+      </button>
         <div class="bundall-title-2">
             <img src="../../../assets/landing/bundall/title2.svg" />
         </div>
@@ -33,14 +41,7 @@
             </p>
         </div>
 
-        <button class="button-1 color-fuscia roboto-medium font-extra-small-2" fxFlexAlign="center" (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-          )
-        ">
-            <img src="../../../assets/contactPage/calendar.svg" />
-            <p>Instant Online Booking</p>
-        </button>
+
     </div>
 </div>
 
@@ -62,6 +63,14 @@
         <div class="bundall-title">
             <img src="../../../assets/landing/bundall/BundallTitle.svg" />
         </div>
+        <button class="button-1 color-fuscia roboto-medium font-extra-small-2" style="margin-bottom:8vw;" fxFlexAlign="center" (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
+      ">
+          <img src="../../../assets/contactPage/calendar.svg" />
+          <p>Instant Online Booking</p>
+      </button>
         <div class="bundall-title-2">
             <img src="../../../assets/landing/bundall/title2.svg" />
         </div>
@@ -77,14 +86,7 @@
             </p>
         </div>
 
-        <button class="button-1 color-fuscia roboto-medium font-extra-small-2" style="margin-bottom:8vw;" fxFlexAlign="center" (click)="
-          goToLink(
-            'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
-          )
-        ">
-            <img src="../../../assets/contactPage/calendar.svg" />
-            <p>Instant Online Booking</p>
-        </button>
+
     </div>
 </div>
 
@@ -143,7 +145,7 @@
                     </div>
                     <div class="roboto-regular">
                         <p class="left-text" style="color:#565960">3D scanners, in house digital lab, state-of-the-art
-                            chairs so we focus on the human.</p>
+                            chairs so we can focus on you.</p>
                     </div>
                 </div>
             </div>
@@ -206,7 +208,7 @@
                     </div>
                     <div class="roboto-regular">
                         <p class="left-text" style="color:#565960">We accept all funds and we’re preferred providers for
-                            HCF More for Teeth, CBHS Choice Network, HBF Members Plus and NIB First Choice Network</p>
+                            HCF More for Teeth, CBHS Choice Network, Bupa Members First and NIB First Choice Network</p>
                     </div>
                 </div>
             </div>
@@ -327,7 +329,7 @@
                     </div>
                     <div class="roboto-regular">
                         <p class="left-text" style="color:#565960">3D scanners, in house digital lab, state-of-the-art
-                            chairs so we focus on the human.</p>
+                            chairs so we can focus on you.</p>
                     </div>
                 </div>
             </div>
@@ -390,7 +392,7 @@
                     </div>
                     <div class="roboto-regular">
                         <p class="left-text" style="color:#565960">We accept all funds and we’re preferred providers for
-                            HCF More for Teeth, CBHS Choice Network, HBF Members Plus and NIB First Choice Network</p>
+                            HCF More for Teeth, CBHS Choice Network, Bupa Members First and NIB First Choice Network</p>
                     </div>
                 </div>
             </div>
@@ -700,7 +702,7 @@
                 <div class="roboto-bold" style="margin-bottom:1vw;">
                     <p style="text-align: left;">Don`t see the service you need?</p>
                 </div>
-                <div class="roboto-medium" style="cursor: pointer;">
+                <div class="roboto-medium" style="cursor: pointer;" (click)="onContactForm()">
                     <p style="text-align: left;">
                         We are always tring our best to offer all
                         the things you need, but maybe we haven't
@@ -958,7 +960,7 @@
     </div>
 
     
-    <div class="roboto-medium padding-chef" style="cursor: pointer;">
+    <div class="roboto-medium padding-chef" style="cursor: pointer;"  (click)="onContactForm()">
         <p style="text-align: center;">
             We are always tring our best to offer all
             the things you need, but maybe we haven't
@@ -1079,7 +1081,7 @@
                 <p>
                     It's time to be
                     <br />
-                    Proud of yoursel.
+                    Proud of yourself.
                 </p>
             </div>
 
@@ -1101,6 +1103,16 @@
           )
         ">
         <p>BOOK APPOINTMENT</p>
+      </button>
+
+      <button style="margin-bottom:4vw;" class="
+        book3
+        roboto-medium
+        font-small-4
+        color-white
+        margin-bottom-5
+      " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="goToMail('bundall@proudsmile.com.au')">
+        <p>E-mail Bundall</p>
       </button>
     </div>
 
@@ -1149,7 +1161,7 @@
                 <p>
                     It's time to be
                     <br />
-                    Proud of yoursel.
+                    Proud of yourself.
                 </p>
             </div>
 
@@ -1173,6 +1185,16 @@
         <p>BOOK APPOINTMENT</p>
       </button>
     </div>
+
+    <button style="margin-bottom:4vw;" class="
+        book3
+        roboto-medium
+        font-small-4
+        color-white
+        margin-bottom-5
+      " fxLayout fxLayoutAlign="center center" fxLayoutGap="0.5vw" (click)="goToMail('bundall@proudsmile.com.au')">
+        <p>E-mail Bundall</p>
+      </button>
 
 
 

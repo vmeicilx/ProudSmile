@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-pacific',
@@ -9,7 +10,7 @@ export class LandingPacificComponent implements OnInit {
 
   @ViewChild("PurpleCover") purpleCover: ElementRef;
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +29,23 @@ export class LandingPacificComponent implements OnInit {
   
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+
+  goToMail(url: string) {
+    window.open("mailto: " + url, "_self");
+  }
+
+  
+  onContactForm() {
+    const promise1 = new Promise((resolve, reject) => {
+      this.router.navigate(["/", "contact-page-component"]);
+      resolve("Success!");
+    });
+
+    promise1.then((value) => {
+      var clientForm = document.getElementById("ClientForm");
+      clientForm.scrollIntoView(true);
+    });
   }
 
 }
