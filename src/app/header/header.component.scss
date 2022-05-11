@@ -230,6 +230,34 @@
       }
     }
 
+    .menu-bundall {
+      width: 100%;
+
+      .payment-plan-active {
+        font-family: "libreItalic";
+        color: #85920d;
+        font-size: 18px;
+      }
+      .active-text {
+        color: $color-brown;
+        font-family: "robotoBold";
+      }
+    }
+    
+    .menu-pacific {
+      width: 100%;
+
+      .payment-plan-active {
+        font-family: "libreItalic";
+        color: #85920d;
+        font-size: 18px;
+      }
+      .active-text {
+        color: $color-brown;
+        font-family: "robotoBold";
+      }
+    }
+
     .menu2 {
       width: 100%;
     }

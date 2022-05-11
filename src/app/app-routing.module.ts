@@ -31,6 +31,7 @@ import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facesp
 import { BeforeAfterComponent } from "./pages/aesthetics/before-after/before-after.component";
 import { LandingBundallComponent } from "./pages/landing-bundall/landing-bundall.component";
 import { LandingPacificComponent } from "./pages/landing-pacific/landing-pacific.component";
+import { EmailComponent } from "./pages/email/email/email.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -70,6 +71,7 @@ const routes: Routes = [
   { path: "payment-page-component", component: PaymentPageComponent },
   { path: "LandingBundall", component: LandingBundallComponent },
   { path: "LandingPacific", component: LandingPacificComponent },
+  { path: "Proudsmileopenday", component: EmailComponent },
   { path: "contact-page-component", component: ContactPageComponent },
   { path: "contact-page-component/:parameter", component: ContactPageComponent },
   { path: "send", redirectTo: "/send" },

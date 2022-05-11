@@ -31,6 +31,8 @@ export class HeaderComponent implements OnInit {
   isMouseOn: boolean = false;
   scheduleActive: boolean = false;
   isWhyProudSmile: boolean = false;
+  isBundallPage: boolean = false;
+  isPacificPage: boolean = false;
   isHealth: boolean = false;
   isImplants: boolean = false;
   isAesthetics: boolean = false;
@@ -205,6 +207,63 @@ export class HeaderComponent implements OnInit {
       if (val instanceof NavigationEnd) {
         window.scrollTo(0, 0);
         this.styleStatus = val.url === "/HomePage" || val.url === "/";
+
+        this.isBundallPage = val.url === "/LandingBundall";
+        this.isPacificPage = val.url === "/LandingPacific";
+
+        if(val.url==="/Proudsmileopenday") {
+          var header = document.getElementsByTagName("app-header") as HTMLCollectionOf<HTMLElement>;
+          if(header && header[0]) {
+            header[0].style.display = "none";
+          }
+      
+          
+          var footer = document.getElementsByTagName("app-footer") as HTMLCollectionOf<HTMLElement>;
+          if(footer && footer[0]) {
+            footer[0].style.display = "none";
+          }
+        }
+        else {
+          var header = document.getElementsByTagName("app-header") as HTMLCollectionOf<HTMLElement>;
+          if(header && header[0]) {
+            header[0].style.display = null;
+          }
+      
+          
+          var footer = document.getElementsByTagName("app-footer") as HTMLCollectionOf<HTMLElement>;
+          if(footer && footer[0]) {
+            footer[0].style.display = null;
+          }
+        }
+
+        if(window.innerWidth > 1200) {
+          if(this.isBundallPage || this.isPacificPage) {
+            document.getElementById("PrincipalMenu").style.display = "none";
+            if(this.isBundallPage) {
+              document.getElementById("BundallMenu").style.display = "flex";
+            }
+            else {
+              document.getElementById("BundallMenu").style.display = "none";
+            }
+            if(this.isPacificPage) {
+              document.getElementById("PacificMenu").style.display = "flex";
+            }
+            else {
+              document.getElementById("PacificMenu").style.display = "none";
+            }
+          }
+          else {
+            document.getElementById("PrincipalMenu").style.display = "flex";
+            document.getElementById("BundallMenu").style.display = "none";
+            document.getElementById("PacificMenu").style.display = "none";
+          }
+        }
+        else {
+          document.getElementById("BundallMenu").style.display = "none";
+          document.getElementById("PacificMenu").style.display = "none";
+        }
+
+        
 
         this.isWhyProudSmile =
           val.url === "/proud-smile-experience-component" ||
@@ -780,6 +839,10 @@ export class HeaderComponent implements OnInit {
     this.threeDots.nativeElement.style.display = "none";
     this.closeThreeDots.nativeElement.style.display = "block";
     document.documentElement.style.overflowY = "hidden";
+    var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+    if(home && home[0]) {
+      home[0].style.height = "0px";
+    }
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "hidden";
   }
   hideOverlay() {
@@ -787,6 +850,10 @@ export class HeaderComponent implements OnInit {
     this.threeDots.nativeElement.style.display = "block";
     this.closeThreeDots.nativeElement.style.display = "none";
     document.documentElement.style.overflowY = "scroll";
+    var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+    if(home && home[0]) {
+      home[0].style.height = null;
+    }
     //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "scroll";
   }
 
