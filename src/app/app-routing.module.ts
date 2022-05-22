@@ -32,6 +32,7 @@ import { BeforeAfterComponent } from "./pages/aesthetics/before-after/before-aft
 import { LandingBundallComponent } from "./pages/landing-bundall/landing-bundall.component";
 import { LandingPacificComponent } from "./pages/landing-pacific/landing-pacific.component";
 import { EmailComponent } from "./pages/email/email/email.component";
+import { BundallEmailComponent } from "./pages/bundall-email/bundall-email.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -72,6 +73,7 @@ const routes: Routes = [
   { path: "LandingBundall", component: LandingBundallComponent },
   { path: "LandingPacific", component: LandingPacificComponent },
   { path: "Proudsmileopenday", component: EmailComponent },
+  { path: "NewBundallProudSmile", component: BundallEmailComponent },
   { path: "contact-page-component", component: ContactPageComponent },
   { path: "contact-page-component/:parameter", component: ContactPageComponent },
   { path: "send", redirectTo: "/send" },
