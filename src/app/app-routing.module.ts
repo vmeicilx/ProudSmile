@@ -33,6 +33,8 @@ import { LandingBundallComponent } from "./pages/landing-bundall/landing-bundall
 import { LandingPacificComponent } from "./pages/landing-pacific/landing-pacific.component";
 import { EmailComponent } from "./pages/email/email/email.component";
 import { BundallEmailComponent } from "./pages/bundall-email/bundall-email.component";
+import { BlogComponent } from "./blog/blog.component";
+import { BlogArticleComponent } from "./blog-article/blog-article.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/HomePage", pathMatch: "full" },
@@ -74,8 +76,10 @@ const routes: Routes = [
   { path: "LandingPacific", component: LandingPacificComponent },
   { path: "Proudsmileopenday", component: EmailComponent },
   { path: "NewBundallProudSmile", component: BundallEmailComponent },
+  { path: "Blog", component: BlogComponent },
   { path: "contact-page-component", component: ContactPageComponent },
   { path: "contact-page-component/:parameter", component: ContactPageComponent },
+  { path: "BlogArticle/:parameter", component: BlogArticleComponent },
   { path: "send", redirectTo: "/send" },
   { path: "**", redirectTo: "/HomePage" }
 ];

@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 import { gsap } from 'gsap';
 import { Observable } from "rxjs";
@@ -147,7 +148,13 @@ export class BeforeAfterComponent implements OnInit {
   public inBet1;
   public inBet2;
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient, private title: Title, private meta: Meta) {
+    this.title.setTitle("Dentist Gold Coast | Before and After Gallery");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Take a look at our before and after case gallery for some of the amazing smile transformations. We offer a free and obligation free smile assessment.`
+    }]);
+
     this.getJSON().subscribe(data => {
       this.cases = data["cases"];
     });

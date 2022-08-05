@@ -51,6 +51,10 @@ import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropw
 import { LandingBundallComponent } from './pages/landing-bundall/landing-bundall.component';
 import { LandingPacificComponent } from './pages/landing-pacific/landing-pacific.component';
 import { ComponentsModule } from "./components.module";
+import { BlogComponent } from './blog/blog.component';
+import { BlogArticleComponent } from './blog-article/blog-article.component';
+import { GraphQLModule } from './graphql.module';
+import { MarkdownModule } from 'ngx-markdown';
 
 @NgModule({
   declarations: [
@@ -92,7 +96,9 @@ import { ComponentsModule } from "./components.module";
     MobileHeaderComponent,
     DropwodnGreenComponent,
     LandingBundallComponent,
-    LandingPacificComponent
+    LandingPacificComponent,
+    BlogComponent,
+    BlogArticleComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +112,9 @@ import { ComponentsModule } from "./components.module";
     HttpClientModule,
     NgImageSliderModule,
     ClipboardModule,
-    ComponentsModule
+    ComponentsModule,
+    GraphQLModule,
+    MarkdownModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

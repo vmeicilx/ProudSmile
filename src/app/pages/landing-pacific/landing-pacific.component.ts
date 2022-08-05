@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +11,13 @@ export class LandingPacificComponent implements OnInit {
 
   @ViewChild("PurpleCover") purpleCover: ElementRef;
   
-  constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) { 
+    this.title.setTitle("Proud Smile Dental | Broadbeach | Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Proud Smile Dental & Aesthetics (formerly Gold Coast Dental Services) is an ultra modern conveniently located at the Pacific Fair Shopping Mall.`
+    }]);
+  }
 
   ngOnInit(): void {
   }

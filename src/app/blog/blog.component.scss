@@ -1,0 +1,65 @@
+:host {
+
+  ::ng-deep .description {
+    .article-title {
+        font-size: calc(2.46vw + 16.59px);
+        line-height: 1.4em;
+        font-family: "robotoRegular";
+        font-weight: 100;
+    }
+    .article-bold-title {
+        font-size: calc(2.46vw + 16.59px);
+        line-height: 1.4em;
+        font-family: "robotoBold";
+        font-weight: 100;
+    }
+    p {
+        color:#55311B;
+        margin-bottom:1vw;
+        font-family: "robotoRegular";
+        font-size: calc(0.37vw + 16.88px);
+        line-height: 1.4em;
+    }
+}
+   
+    #container .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 24vw;
+        flex-direction: column;
+        padding:4vw;
+        text-align: center;
+      }
+
+      .activeCategory {
+        color: #55311B;
+      }
+      
+      .inactiveCategory {
+        color: #565960;
+        opacity: 0.7;
+      }
+
+      
+      .invisibleContainer {
+        visibility: hidden;
+      }
+
+      .hideContainer {
+        display: none;
+      }
+
+    @media only screen and (min-width: 1201px) {
+
+    }
+  
+    @media only screen and (min-width: 601px) and (max-width: 1200px) {
+
+    }
+  
+    @media only screen and (min-width: 300px) and (max-width: 600px) {
+
+    }
+  }
+  

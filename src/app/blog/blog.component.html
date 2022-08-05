@@ -1,0 +1,86 @@
+<div style="overflow: hidden;">
+  <div class="flexy-column cccc  color-brown padding-top-1" style="background-color: #FEF9F5; padding-bottom:3vw;">
+    <div fxLayout="column" fxLayoutAlign="center center" class=" libre-regular center-text padding-chef"
+      style=" padding-bottom: 6vw;">
+      <p style="font-size: 136px;">
+        <!-- <span>{{siteHeader[0].blogHeaderName }}</span> -->
+        <span>Our Blog</span>
+      </p>
+      <!-- <img src={{siteHeader[0].blogHeaderImage.url}} style="padding-top: 2vw;max-width: 22vw;" /> -->
+    </div>
+
+    <div class="line-17" style="width:100vw;">
+    </div>
+    <div class="flexy-row cccc" style="margin: 2vw 0;">
+      <div *ngFor="let category of categories">
+        <h1
+          [ngClass]="{'activeCategory' : category.attributes.name==currentCategory, 'inactiveCategory' : category.attributes.name!=currentCategory, 'roboto-bold' : true, 'font-small' : true}"
+          style="margin:0 2vw; cursor:pointer;" (click)="onCategoryClick(category.attributes.name)">{{category.attributes.name}}</h1>
+      </div>
+    </div>
+    <div class="line-17" style="width:100vw;">
+    </div>
+  </div>
+
+  <div style="background-color: #FEF9F5; width: 100vw;">
+    <div id="container" style="max-width:75vw; margin:auto;"
+      [ngClass]="{'hideContainer' : filteredPosts.length==0, 'invisibleContainer' : containerOff == true}">
+      <div class="item" *ngFor="let post of filteredPosts">
+        <img src="{{api_url}}{{post.attributes.cover.data.attributes.url}}" />
+        <p class="roboto-bold font-small-3" style="color:#565960;margin:1vw; opacity:0.4;">
+          {{post.attributes.categories.data[0].attributes.name}}</p>
+        
+          <div class="flexy-column sscc">
+            <markdown ngPreserveWhitespaces class="description">
+                {{post.attributes.description}}
+            </markdown>
+        </div>
+        <div class="color-orange roboto-bold link-1 cursor-pointer" fxLayout
+          (click)="onArticlePage(post.id)">
+          <p>Read the whole article</p>
+          <img src="../../../assets/contactPage/arrow-2.svg" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="{'hideContainer' : displayFirst==false}" style="background-color: #FEF9F5; width: 100vw;">
+
+    <div class="line-18" >
+    </div>
+  </div>
+  <div class="flexy-row cccc" style="padding: 3vw ; background-color: #FEF9F5;">
+    <img src="../../assets/blog/last.svg" style="margin:12px; cursor:pointer" [ngClass]="{'hideContainer' : displayLeft==false}"/>
+    <svg [ngClass]="{'hideContainer' : displayFirst==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
+      <g>
+        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        </circle>
+        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{firstText}}</text>
+      </g>
+    </svg>
+    <svg [ngClass]="{'hideContainer' : displaySecond==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
+      <g>
+        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        </circle>
+        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{secondText}}</text>
+      </g>
+    </svg>
+    <svg  [ngClass]="{'hideContainer' : displayThird==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
+      <g>
+        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        </circle>
+        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{thirdText}}</text>
+      </g>
+    </svg>
+    <img src="../../assets/blog/more.svg" style="margin:12px;" [ngClass]="{'hideContainer' : displayMore==false}"/>
+    <svg [ngClass]="{'hideContainer' : displayFourth==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
+      <g>
+        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        </circle>
+        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{fourthText}}</text>
+      </g>
+    </svg>
+    <img  style="margin:12px; cursor:pointer" src="../../assets/blog/last.svg" [ngClass]="{'hideContainer' : displayRight==false}"/>
+    
+  </div>
+</div>

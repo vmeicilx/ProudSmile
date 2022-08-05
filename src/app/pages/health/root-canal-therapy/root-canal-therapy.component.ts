@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 @Component({
@@ -13,7 +14,13 @@ import { Router } from "@angular/router";
   styleUrls: ["./root-canal-therapy.component.scss"]
 })
 export class RootCanalTherapyComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("Painless Root Canal Gold Coast – What to expect");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Root canal therapy effectively provides pain relief in as little as one visit. Book your appointment today. Payment Plans Available.`
+    }, { name: 'keywords', content: 'root canal treatment, root canal therapy, root canal specialist gold coast' }]);
+  }
 
   @ViewChild("rootCanalVideo") video: ElementRef;
   @ViewChild("teethVideo") teeth: ElementRef;

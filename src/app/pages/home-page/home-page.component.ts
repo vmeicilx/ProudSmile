@@ -8,6 +8,7 @@ import {
 } from "@angular/core";
 
 import { Router } from "@angular/router";
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: "app-home-page",
@@ -89,19 +90,27 @@ export class HomePageComponent implements OnInit {
     }
   ];
 
-  constructor(el: ElementRef, renderer: Renderer2, private router: Router) {
+  public href: string = "";
+
+  constructor(el: ElementRef, renderer: Renderer2, private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("Proud Smile Gold Coast: A dental practice but not as you know it");
+    this.meta.addTags([{
+      name: 'description',
+      content: `The dentists you'll actually want to visit. Modern general dentistry and bespoke aesthetic treatments on the Gold Coast - Bundall, Pacific Fair.`
+    }, { name: 'keywords', content: 'dentist gold coast, dental clinic gold coast, dental care center' }]);
     this.elRef = el;
     this.renderer = renderer;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   ngAfterViewInit(): void {
     this.relaxVideo.nativeElement.muted = true;
     this.relaxVideo.nativeElement.style.display = "block";
-    
-    if(window.innerWidth <= 1200) {
-      this.relaxVideo.nativeElement.play();
+
+    if (window.innerWidth <= 1200) {
+      this.relaxVideo.nativeElement.autoplay = true;
     }
   }
 
@@ -116,8 +125,8 @@ export class HomePageComponent implements OnInit {
         playPromise.then(_ => {
           this.relaxVideo.nativeElement.pause();
         })
-        .catch(error => {
-        });
+          .catch(error => {
+          });
       }
     }
   }

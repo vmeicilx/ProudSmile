@@ -1,23 +1,19 @@
-(global as any).WebSocket = require('ws');
-(global as any).XMLHttpRequest = require('xhr2');
-const domino = require('domino');
-const fs = require('fs');
-const path = require('path');
-
-const distFolder = join(process.cwd(), 'dist/motif/browser');
-const template = fs.readFileSync(path.join(distFolder, 'index.html')).toString();
-const win = domino.createWindow(template.toString());
-global['window'] = win;
-global['document'] = win.document;
-global['self'] = win
-global['IDBIndex'] = win.IDBIndex
-global['document'] = win.document
-global['navigator'] = win.navigator
-global['getComputedStyle'] = win.getComputedStyle;
-
-
-
 import 'zone.js/dist/zone-node';
+
+const MockBrowser = require('mock-browser').mocks.MockBrowser;
+const mock = new MockBrowser();
+
+global['document'] = mock.getDocument();
+global['window'] = mock.getWindow();
+
+Object.defineProperty(global['window'].document.body.style, 'transform', {
+  value: () => {
+    return {
+      enumerable: true,
+      configurable: true
+    };
+  },
+});
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';

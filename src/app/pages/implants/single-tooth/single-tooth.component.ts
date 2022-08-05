@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { HeaderComponent } from "src/app/header/header.component";
 
 @Component({
@@ -18,7 +19,13 @@ export class SingleToothComponent implements OnInit {
   @ViewChild("implantVideoSmall") implantVideoSmall: ElementRef;
   @ViewChild("target") scrollTarget: ElementRef;
 
-  constructor() {}
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle("Dental Implants Gold Coast – Get your Teeth Back");
+    this.meta.addTags([{
+      name: 'description',
+      content: `With Dental Implants you can get a second chance to have your teeth back. At Proud Smile we believe affordability and comfort are the most important factors when looking to have implants.`
+    }, { name: 'keywords', content: 'single tooth denture, single tooth implant, single tooth replacement' }]);
+  }
 
   ngOnInit(): void {}
 

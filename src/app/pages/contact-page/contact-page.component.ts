@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import { stringify } from "querystring";
 import { EmailData } from "src/EmailData";
@@ -40,8 +41,14 @@ export class ContactPageComponent implements OnInit {
     private router: Router,
     private _activatedRoute: ActivatedRoute,
     private emailServ: emailService,
-    private http: HttpClient
-  ) {}
+    private http: HttpClient, private title: Title, private meta: Meta
+  ) {
+    this.title.setTitle("Find where we are | Proud Smile Dental | Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Proud Smile Dental offers 2 convenient locations on the Gold Coast in Bundall opposite to HOTA (Home of the Arts) and at Pacific Fair Shopping Mall. Call us now.`
+    }]);
+  }
 
   imageObject: Array<object> = [
     {

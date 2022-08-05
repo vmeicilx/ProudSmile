@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 @Component({
@@ -14,7 +15,13 @@ export class ProudSmileExperienceComponent implements OnInit {
   
   @ViewChild("vennerShortText") vennerShortText: ElementRef;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("The Proud Smile Experience: Dentistry Reinvented");
+    this.meta.addTags([{
+      name: 'description',
+      content: `For decades dentistry has been associated with pain, anxiety, bad smells, cold, too expensive and judgmental. We decided it was time to change.`
+    }]);
+  }
 
   ngOnInit(): void {}
 

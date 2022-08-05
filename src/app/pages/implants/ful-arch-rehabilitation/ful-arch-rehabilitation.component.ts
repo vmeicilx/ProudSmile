@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-ful-arch-rehabilitation",
@@ -18,7 +19,13 @@ export class FulArchRehabilitationComponent implements OnInit {
   @ViewChild("toothContainer") toothContainer: ElementRef;
   @ViewChild("toothImage") toothImage: ElementRef;
 
-  constructor() {}
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle("Full Arch Implants Gold Coast - Free Consultation");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Being able to restore an entire arch of teeth can have an amazing impact if your life. Find out about our minimally invasive approach to dental implants.`
+    }, { name: 'keywords', content: 'full mouth dental implants, full arch dental implants, full mouth dental implants australia' }]);
+  }
 
   ngOnInit(): void {}
 

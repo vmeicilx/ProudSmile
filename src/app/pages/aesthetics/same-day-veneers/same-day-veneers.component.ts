@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 function resize() {
@@ -169,7 +170,13 @@ function addPatternsMobile() {
 })
 export class SameDayVeneersComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) { 
+    this.title.setTitle("Same Day Dental Veneers - Leaders in Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Get your dream smile in just a day, no more waiting, exclusive to Proud Smile. Completely digital, beautiful personalised results, book your day today.`
+    }, { name: 'keywords', content: 'same day veneers, porcelain veneers same day, same day porcelain veneers' }]);
+  }
 
   ngOnInit(): void {
   }

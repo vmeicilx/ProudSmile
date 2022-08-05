@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 function resize() {
@@ -237,7 +238,13 @@ export class PorcelainVeneersComponent implements OnInit {
   firstFramePosition = 240;
   lastFramePosition = 20120;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) { 
+    this.title.setTitle("Bespoke Porcelain Veneers | Gold Coast | Proud Smile");
+    this.meta.addTags([{
+      name: 'description',
+      content: `A stunning smile is not longer for the genetic blessed individuals. You too can have the smile of your dreams with Porcelain Veneers. Book your Free Smile Assessment now.`
+    }, { name: 'keywords', content: 'veneers gold coast, porcelain veneers gold coast, dental veneers gold coast' }]);
+  }
 
   ngOnInit(): void { }
 

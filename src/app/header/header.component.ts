@@ -236,32 +236,36 @@ export class HeaderComponent implements OnInit {
           }
         }
 
-        if(window.innerWidth > 1200) {
-          if(this.isBundallPage || this.isPacificPage) {
-            document.getElementById("PrincipalMenu").style.display = "none";
-            if(this.isBundallPage) {
-              document.getElementById("BundallMenu").style.display = "flex";
-            }
-            else {
-              document.getElementById("BundallMenu").style.display = "none";
-            }
-            if(this.isPacificPage) {
-              document.getElementById("PacificMenu").style.display = "flex";
-            }
-            else {
-              document.getElementById("PacificMenu").style.display = "none";
-            }
-          }
-          else {
-            document.getElementById("PrincipalMenu").style.display = "flex";
-            document.getElementById("BundallMenu").style.display = "none";
-            document.getElementById("PacificMenu").style.display = "none";
-          }
-        }
-        else {
-          document.getElementById("BundallMenu").style.display = "none";
-          document.getElementById("PacificMenu").style.display = "none";
-        }
+        // if(window.innerWidth > 1200) {
+        //   if(this.isBundallPage || this.isPacificPage) {
+        //     document.getElementById("PrincipalMenu").style.display = "none";
+        //     if(this.isBundallPage) {
+        //       document.getElementById("BundallMenu").style.display = "flex";
+        //     }
+        //     else {
+        //       document.getElementById("BundallMenu").style.display = "none";
+        //     }
+        //     if(this.isPacificPage) {
+        //       document.getElementById("PacificMenu").style.display = "flex";
+        //     }
+        //     else {
+        //       document.getElementById("PacificMenu").style.display = "none";
+        //     }
+        //   }
+        //   else {
+        //     document.getElementById("PrincipalMenu").style.display = "flex";
+        //     document.getElementById("BundallMenu").style.display = "none";
+        //     document.getElementById("PacificMenu").style.display = "none";
+        //   }
+        // }
+        // else {
+        //   if(document.getElementById("BundallMenu")) {
+        //     document.getElementById("BundallMenu").style.display = "none";
+        //   }
+        //   if(document.getElementById("PacificMenu")) {
+        //     document.getElementById("PacificMenu").style.display = "none";
+        //   }
+        // }
 
         
 

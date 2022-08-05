@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 function RegisterAdds() {
@@ -105,7 +106,13 @@ function RegisterAdds() {
   styleUrls: ["./specials.component.scss"],
 })
 export class SpecialsComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("Dental Special Offers | Proud Smile | Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Check out our specials. Zoom Whitening only $495. New Patient Exam No Gap for all Health Insurances. Invisalign starting from $2850. PAYG Braces.`
+    }]);
+  }
 
   ngOnInit(): void {}
 

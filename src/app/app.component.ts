@@ -1,5 +1,6 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,12 @@ export class AppComponent implements AfterViewChecked, OnInit{
   radius: number;
   color: string;
 
-  constructor() { }
+  constructor(private metaTagService: Meta) { }
   ngAfterViewChecked(): void {
   }
 
   ngOnInit() {
+
   }
 
 }

@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-implant-dentures",
@@ -14,7 +15,13 @@ import {
 export class ImplantDenturesComponent implements OnInit {
   @ViewChild("overdentureVideo") overdentureVideo: ElementRef;
 
-  constructor() {}
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle("Implant Supported Dentures | Proud Smile Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Increase the stability of your denture with as little as two implants and starting from just $3500. Proud Smile offers minimally invasive implants for faster healing.`
+    }, { name: 'keywords', content: 'implant retained dentures, implant supported dentures, implant supported dentures australia' }]);
+  }
 
   ngOnInit(): void {}
 

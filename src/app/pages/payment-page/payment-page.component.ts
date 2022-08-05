@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-payment-page",
@@ -22,7 +23,13 @@ export class PaymentPageComponent implements OnInit {
   depositNumber: number;
   monthly: number = 62.5;
   weekly: number = 15.63;
-  constructor() {}
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle("Comprehensive Range of Dental Payment Plans | Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `No other practice on the Gold Coast offers a more comprehensive range of interest free payment plans. Whatever your budget is you're guaranteed to find a plan that works for you.`
+    }]);
+  }
 
   imageObject: Array<object> = [
     {

@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 function resize() {
@@ -118,7 +119,13 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
 
   id: number;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("General Dentistry – Proud Smile Dental");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Our Gold Coast locations offer quality general services - white fillings, scale and clean, check ups. We accept all Health Funds and we offer payment plans.`
+    }, { name: 'keywords', content: 'general dentistry services, preventive dental care, general dental care' }]);
+  }
 
   ngOnInit(): void {}
 

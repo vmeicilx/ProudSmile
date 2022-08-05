@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 @Component({
@@ -15,7 +16,13 @@ import { Router } from "@angular/router";
 export class InvasilignComponent implements OnInit {
   @ViewChild("openingVideo") openingVideoEl: ElementRef;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("Invisalign Gold Coast | Levels | Costs | Experienced");
+    this.meta.addTags([{
+      name: 'description',
+      content: `We offer different levels of Invisalign to straighten your teeth, only pay for what you need or want, starting from $2850. Book your Free Assessment now.`
+    }, { name: 'keywords', content: 'invisalign gold coast, invisalign teeth straightening, invisalign braces gold coast' }]);
+  }
 
   ngOnInit(): void {}
 

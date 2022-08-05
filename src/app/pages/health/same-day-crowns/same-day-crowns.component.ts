@@ -7,6 +7,7 @@ import {
   Output,
   ViewChild,
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 @Component({
@@ -26,7 +27,13 @@ export class SameDayCrownsComponent implements OnInit {
 
   vulcanOn: boolean;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private title: Title, private meta: Meta) {
+    this.title.setTitle("Same day Crowns - Designed by us, made by us, for today");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Both our Gold Coast locations offer same day crowns for weak, discoloured or broken teeth. State-of-the-art technology, affordable payment methods. Book Now.`
+    }, { name: 'keywords', content: 'same day crowns, dental crowns gold coast, same day porcelain crowns' }]);
+  }
 
   ngOnInit(): void {}
 

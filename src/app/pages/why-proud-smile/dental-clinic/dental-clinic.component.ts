@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-dental-clinic",
@@ -12,7 +13,13 @@ import {
   styleUrls: ["./dental-clinic.component.scss"]
 })
 export class DentalClinicComponent implements OnInit {
-  constructor() {}
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle("Our Dental Clinic - A dental practice but not as you know it");
+    this.meta.addTags([{
+      name: 'description',
+      content: `The moment you walk through our doors you’ll notice something is different and you may even wonder if you’ve come to the right place. Bundall and Pacific Fair.`
+    }]);
+  }
 
   @ViewChild("practiceButVideo") practiceButVideo: ElementRef;
   @ViewChild("practiceButVideoMobile") practiceButVideoMobile: ElementRef;

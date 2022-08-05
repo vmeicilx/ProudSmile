@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from "@angular/core";
+import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
 function resize() {
@@ -130,7 +131,13 @@ export class UltraThinVeneersComponent implements OnInit {
 
   framesLoadedText = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private title: Title, private meta: Meta) { 
+    this.title.setTitle("Ultra Thin Porcelain Veneers - Proud Smile Gold Coast");
+    this.meta.addTags([{
+      name: 'description',
+      content: `Ultra thin veneers are made to cover your natural teeth with minimal or no preparation required to change the shape and colour of your teeth permanently.`
+    }, { name: 'keywords', content: 'ultra thin veneers, ultra thin porcelain veneers, ultra thin dental veneers' }]);
+  }
 
   ngOnInit(): void {
     //this.framesLoadedText = "0/460";

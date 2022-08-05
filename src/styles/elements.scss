@@ -153,6 +153,34 @@ button {
 .line-16 {
   border-top: 1px solid #cccccc80;
 }
+.line-17 {
+  border-top: 1px solid #55311b;
+  opacity:0.1;
+}
+.line-18 {
+  border-top: 2px solid #55311b;
+  opacity:0.1;
+  width: 60vw;
+  margin:auto;
+}
+.line-19 {
+  border-top: 1px solid #D8D8D8;
+}
+
+
+.quote-start-line {
+  border-top: 1px solid #55311B1A;
+  margin: 7vw 0 2.5vw 0;
+  width: 9vw;
+}
+
+.quote-end-line {
+  border-top: 1px solid #55311B33;
+  width: 30vw;
+  margin: 2.5vw 4vw 2.5vw 0;
+}
+
+
 @media only screen and (min-width: 1201px) {
 }
 

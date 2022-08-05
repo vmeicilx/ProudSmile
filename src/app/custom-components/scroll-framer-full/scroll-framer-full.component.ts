@@ -8,6 +8,11 @@ import {
   Output,
   ViewChild,
 } from "@angular/core";
+import { MatOptionSelectionChange } from "@angular/material/core";
+import { Router } from "@angular/router";
+import fetch from 'node-fetch';
+import { Blob } from 'buffer';
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-scroll-framer-full",
@@ -32,16 +37,19 @@ export class ScrollFramerFullComponent implements OnInit {
   @ViewChild("CanvasClone") CanvasClone: ElementRef;
   //@ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
+
   observer: any;
 
   _observers;
 
-  constructor() {}
+  public href: string = "";
+
+  constructor( private router: Router) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    this.start();
+    this.start(this.router.url);
     //this.showorHideMobileSuggestion();
   }
 
@@ -74,11 +82,15 @@ export class ScrollFramerFullComponent implements OnInit {
       img.addEventListener("load", function () {
         resolve(this);
       });
-      img.src = URL.createObjectURL(blob);
+      if(blob) {
+        
+        //img.src = URL.createObjectURL(new Blob([blob.buffer], {type: 'image/jpeg'})); 
+        img.src = URL.createObjectURL(blob); 
+      }
     });
   };
 
-  async start() {
+  async start(baseUrl: string) {
     const videoContainer = this.scrollFramerContainer.nativeElement;
     const animationContainer = this.animation.nativeElement;
 
@@ -87,6 +99,7 @@ export class ScrollFramerFullComponent implements OnInit {
       start: 1,
       end: this.numberOfFrames,
       padding: this.padding,
+      baseUrl: baseUrl
     });
 
     this.scrollCanvas.nativeElement.height = frames[0].height;
@@ -152,6 +165,7 @@ export class ScrollFramerFullComponent implements OnInit {
 
       const bitmaps = [];
       const calls = [];
+      
 
       // download each frame image and prep it up
       for (let index = start; index <= end; index++) {
@@ -159,7 +173,7 @@ export class ScrollFramerFullComponent implements OnInit {
         const url = urlPattern.replace("##id##", id);
 
         calls.push(
-          fetch(url).then((res) =>
+          fetch(new URL(url, environment.baseURL)).then((res) =>
             res
               .blob()
               .then((blob) =>
