@@ -74,6 +74,16 @@ export class BlogComponent implements OnInit {
       this.currentCategory = "All";
       
       this.setDisplayPages();
+
+      setTimeout(() => {
+        this.magicGrid = new MagicGrid({
+          container: "#container",
+          items: this.filteredPosts.length,
+          animate: true
+        });
+        this.magicGrid.listen();
+        this.magicGrid.positionItems();
+    }, 500)
       
     } catch (error) {
       this.error = error;
@@ -88,15 +98,7 @@ export class BlogComponent implements OnInit {
       )[0] as HTMLElement
     ).style.overflow = "hidden";
 
-    setTimeout(() => {
-      this.magicGrid = new MagicGrid({
-        container: "#container",
-        items: this.filteredPosts.length,
-        animate: true
-      });
-      this.magicGrid.listen();
-      this.magicGrid.positionItems();
-  }, 300)
+    
   }
 
   @HostListener('window:load')

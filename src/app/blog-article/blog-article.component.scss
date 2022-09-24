@@ -1,31 +1,106 @@
 :host {
 
-    ::ng-deep .description {
-            margin-left: 20vw;
-            margin-right: 20vw;
-            margin-bottom: 3vw;
-            .article-title {
-                font-size: calc(2.46vw + 16.59px);
-                line-height: 1.4em;
-                font-family: "robotoRegular";
-                font-weight: 100;
-            }
-            .article-bold-title {
-                font-size: calc(2.46vw + 16.59px);
-                line-height: 1.4em;
-                font-family: "robotoBold";
-                font-weight: 100;
-            }
-            p {
-                color:#565960;
-                opacity: 0.7;
-                font-family: "robotoMedium";
-                font-size: calc(0.3vw + 15.07px);
-                line-height: 1.4em;
+        
+    ::ng-deep .article {
+        h2 {
+            font-size: calc(1.48vw + 11.55px);
+            line-height: 1.4em;
+            font-family: "robotoRegular";
+            a {
+                text-decoration: underline;
             }
         }
-
+        p {
+            color:#55311B;
+            opacity: 0.7;
+            font-family: "robotoRegular";
+            font-size: calc(0.3vw + 15.07px);
+            line-height: 1.4em;
+            a {
+                text-decoration: underline;
+            }
+        }
+        img {
+            margin: 5vw 0;
+        }
+        .quote-text {
+            font-family: "libreItalic";
+            font-size: calc(1.48vw + 11.55px);
+            line-height: 1.4em;
+            margin-bottom: 1.25vw;
+            opacity: 1;
+        }
         
+        .quote-author {
+            font-family: "robotoBold";
+            font-size: calc(0.12vw + 13.62px);
+            line-height: 1.4em;
+            opacity:1;
+        }
+
+        .quote-end {
+            align-items: center;
+            margin-bottom: 5vw;
+            img {
+                content: url("../../assets/blog/quote.svg");
+                margin: 0 !important;
+            }
+            
+          }
+          
+        .quote-share {
+            align-items: center;
+            cursor: pointer;
+            img {
+                content: url("../../assets/blog/Link.svg");
+                margin: 0 !important;
+            }
+            p {
+                margin-right: 1vw;
+                color:#565960;
+                font-family: "robotoRegular";
+                font-size: calc(0.12vw + 13.62px);
+                line-height: 1.4em;
+            }
+            
+          }
+          
+    }
+
+    @media only screen and (min-width: 1201px) {
+      .article-container {
+        padding-top: 233px;
+      }
+
+      .article-content {
+        margin-left:4.5vw
+      }
+
+      ::ng-deep .description {
+        margin-left: 20vw;
+        margin-right: 20vw;
+        margin-bottom: 3vw;
+        .article-title {
+            font-size: calc(2.46vw + 16.59px);
+            line-height: 1.4em;
+            font-family: "robotoRegular";
+            font-weight: 100;
+        }
+        .article-bold-title {
+            font-size: calc(2.46vw + 16.59px);
+            line-height: 1.4em;
+            font-family: "robotoBold";
+            font-weight: 100;
+        }
+        p {
+            color:#565960;
+            opacity: 0.7;
+            font-family: "robotoMedium";
+            font-size: calc(0.3vw + 15.07px);
+            line-height: 1.4em;
+        }
+    }
+
     ::ng-deep .article {
         h2 {
             font-size: calc(1.48vw + 11.55px);
@@ -96,17 +171,208 @@
           }
           
     }
-
-    @media only screen and (min-width: 1201px) {
-      
-    }
+}
   
     @media only screen and (min-width: 601px) and (max-width: 1200px) {
 
+        .article-container {
+            padding-top: 110px;
+            text-align: center;
+          }
+
+          ::ng-deep .description {
+            margin-left: 2vw;
+            margin-right: 2vw;
+            margin-bottom: 3vw;
+            .article-title {
+                font-size: calc(2.46vw + 16.59px);
+                line-height: 1.4em;
+                font-family: "robotoRegular";
+                font-weight: 100;
+            }
+            .article-bold-title {
+                font-size: calc(2.46vw + 16.59px);
+                line-height: 1.4em;
+                font-family: "robotoBold";
+                font-weight: 100;
+            }
+            p {
+                color:#565960;
+                opacity: 0.7;
+                font-family: "robotoMedium";
+                font-size: calc(0.3vw + 15.07px);
+                line-height: 1.4em;
+            }
+        }
+
+        ::ng-deep .article {
+            h2 {
+                font-size: calc(1.48vw + 11.55px);
+                line-height: 1.4em;
+                font-family: "robotoRegular";
+                a {
+                    text-decoration: underline;
+                }
+            }
+            p {
+                color:#55311B;
+                opacity: 0.7;
+                font-family: "robotoRegular";
+                font-size: calc(0.3vw + 15.07px);
+                line-height: 1.4em;
+                a {
+                    text-decoration: underline;
+                }
+            }
+            img {
+                margin: 5vw 0;
+            }
+            .quote-text {
+                font-family: "libreItalic";
+                font-size: calc(1.48vw + 11.55px);
+                line-height: 1.4em;
+                margin-bottom: 1.25vw;
+                opacity: 1;
+            }
+            
+            .quote-author {
+                font-family: "robotoBold";
+                font-size: calc(0.12vw + 13.62px);
+                line-height: 1.4em;
+                opacity:1;
+            }
+    
+            .quote-end {
+                display: none;
+                align-items: center;
+                margin-bottom: 5vw;
+                img {
+                    content: url("../../assets/blog/quote.svg");
+                    margin: 0 !important;
+                }
+                
+              }
+              
+            .quote-share {
+                display: none;
+                align-items: center;
+                cursor: pointer;
+                img {
+                    content: url("../../assets/blog/Link.svg");
+                    margin: 0 !important;
+                }
+                p {
+                    margin-right: 1vw;
+                    color:#565960;
+                    font-family: "robotoRegular";
+                    font-size: calc(0.12vw + 13.62px);
+                    line-height: 1.4em;
+                }
+                
+              }
+              
+        }
     }
   
     @media only screen and (min-width: 300px) and (max-width: 600px) {
 
+        .article-container {
+            padding-top: 110px;
+            text-align: center;
+          }
+
+          ::ng-deep .description {
+            margin-left: 2vw;
+            margin-right: 2vw;
+            margin-bottom: 3vw;
+            .article-title {
+                font-size: calc(2.46vw + 16.59px);
+                line-height: 1.4em;
+                font-family: "robotoRegular";
+                font-weight: 100;
+            }
+            .article-bold-title {
+                font-size: calc(2.46vw + 16.59px);
+                line-height: 1.4em;
+                font-family: "robotoBold";
+                font-weight: 100;
+            }
+            p {
+                color:#565960;
+                opacity: 0.7;
+                font-family: "robotoMedium";
+                font-size: calc(0.3vw + 15.07px);
+                line-height: 1.4em;
+            }
+        }
+
+        ::ng-deep .article {
+            h2 {
+                font-size: calc(1.48vw + 11.55px);
+                line-height: 1.4em;
+                font-family: "robotoRegular";
+                a {
+                    text-decoration: underline;
+                }
+            }
+            p {
+                color:#55311B;
+                opacity: 0.7;
+                font-family: "robotoRegular";
+                font-size: calc(0.3vw + 15.07px);
+                line-height: 1.4em;
+                a {
+                    text-decoration: underline;
+                }
+            }
+            img {
+                margin: 5vw 0;
+            }
+            .quote-text {
+                font-family: "libreItalic";
+                font-size: calc(1.48vw + 11.55px);
+                line-height: 1.4em;
+                margin-bottom: 1.25vw;
+                opacity: 1;
+            }
+            
+            .quote-author {
+                font-family: "robotoBold";
+                font-size: calc(0.12vw + 13.62px);
+                line-height: 1.4em;
+                opacity:1;
+            }
+    
+            .quote-end {
+                display: none;
+                align-items: center;
+                margin-bottom: 5vw;
+                img {
+                    content: url("../../assets/blog/quote.svg");
+                    margin: 0 !important;
+                }
+                
+              }
+              
+            .quote-share {
+                display: none;
+                align-items: center;
+                cursor: pointer;
+                img {
+                    content: url("../../assets/blog/Link.svg");
+                    margin: 0 !important;
+                }
+                p {
+                    margin-right: 1vw;
+                    color:#565960;
+                    font-family: "robotoRegular";
+                    font-size: calc(0.12vw + 13.62px);
+                    line-height: 1.4em;
+                }
+                
+              }
+              
+        }
     }
   }
   

@@ -53,6 +53,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild("SpecialsText") specialsText: ElementRef;
   @ViewChild("ContactText") contactText: ElementRef;
   @ViewChild("CalculatorOverlay") calculatorOverlay: ElementRef;
+  @ViewChild("CalculatorOverlayMobile") calculatorOverlayMobile: ElementRef;
   @ViewChild("hItem") hItem: ElementRef;
 
   @ViewChild("input1Mini") input1: ElementRef;
@@ -107,6 +108,8 @@ export class HeaderComponent implements OnInit {
   WhyProudSmileSecondMenusSecondText: ElementRef;
   @ViewChild("WhyProudSmileSecondMenusThirdText")
   WhyProudSmileSecondMenusThirdText: ElementRef;
+  @ViewChild("WhyProudSmileSecondMenusFourthText")
+  WhyProudSmileSecondMenusFourthText: ElementRef;
 
   @ViewChild("MobileHealthOverlay") MobileHealthOverlay: ElementRef;
   @ViewChild("MobileHealthMiddlePart") MobileHealthMiddlePart: ElementRef;
@@ -236,43 +239,11 @@ export class HeaderComponent implements OnInit {
           }
         }
 
-        // if(window.innerWidth > 1200) {
-        //   if(this.isBundallPage || this.isPacificPage) {
-        //     document.getElementById("PrincipalMenu").style.display = "none";
-        //     if(this.isBundallPage) {
-        //       document.getElementById("BundallMenu").style.display = "flex";
-        //     }
-        //     else {
-        //       document.getElementById("BundallMenu").style.display = "none";
-        //     }
-        //     if(this.isPacificPage) {
-        //       document.getElementById("PacificMenu").style.display = "flex";
-        //     }
-        //     else {
-        //       document.getElementById("PacificMenu").style.display = "none";
-        //     }
-        //   }
-        //   else {
-        //     document.getElementById("PrincipalMenu").style.display = "flex";
-        //     document.getElementById("BundallMenu").style.display = "none";
-        //     document.getElementById("PacificMenu").style.display = "none";
-        //   }
-        // }
-        // else {
-        //   if(document.getElementById("BundallMenu")) {
-        //     document.getElementById("BundallMenu").style.display = "none";
-        //   }
-        //   if(document.getElementById("PacificMenu")) {
-        //     document.getElementById("PacificMenu").style.display = "none";
-        //   }
-        // }
-
-        
-
         this.isWhyProudSmile =
           val.url === "/proud-smile-experience-component" ||
           val.url === "/who-we-are-component" ||
-          val.url === "/dental-clinic-component";
+          val.url === "/dental-clinic-component"||
+          val.url === "/Blog";
 
         this.isImplants =
           val.url === "/SingleTooth" ||
@@ -321,6 +292,10 @@ export class HeaderComponent implements OnInit {
         }
         if (val.url === "/dental-clinic-component") {
           this.setActiveSubheader1(2);
+          this.whyProudSmileText.nativeElement.classList.add("active-text");
+        }
+        if (val.url === "/Blog") {
+          this.setActiveSubheader1(3);
           this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
 
@@ -525,6 +500,8 @@ export class HeaderComponent implements OnInit {
         "#55311b";
       this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color =
         "#55311b";
+        this.WhyProudSmileSecondMenusFourthText.nativeElement.style.color =
+          "#55311b";
       if (index === 0) {
         this.WhyProudSmileSecondMenusFirstText.nativeElement.style.color =
           "#565960";
@@ -537,6 +514,10 @@ export class HeaderComponent implements OnInit {
         this.WhyProudSmileSecondMenusThirdText.nativeElement.style.color =
           "#565960";
         this.whyProudSmileActiveText = "Our Dental Clinic";
+      } else if (index === 3) {
+        this.WhyProudSmileSecondMenusFourthText.nativeElement.style.color =
+          "#565960";
+        this.whyProudSmileActiveText = "Our Blog";
       }
     }
   }
@@ -1027,11 +1008,25 @@ export class HeaderComponent implements OnInit {
     });
   }
   onPaymentPlan() {
-    this.calculatorOverlay.nativeElement.style.display = "block";
+    
+    if (document.documentElement.clientWidth >= 1200) {
+      this.calculatorOverlay.nativeElement.style.display = "block";
+    }
+    else 
+    {
+      this.calculatorOverlayMobile.nativeElement.style.display = "block";
+    }
   }
 
   onCalculatorCancel() {
-    this.calculatorOverlay.nativeElement.style.display = "none";
+    
+    if (document.documentElement.clientWidth >= 1200) {
+      this.calculatorOverlay.nativeElement.style.display = "none";
+    }
+    else 
+    {
+      this.calculatorOverlayMobile.nativeElement.style.display = "none";
+    }
   }
 
   oninput1Mini() {

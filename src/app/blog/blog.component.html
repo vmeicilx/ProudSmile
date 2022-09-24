@@ -1,11 +1,11 @@
-<div style="overflow: hidden;">
-  <div class="flexy-column cccc  color-brown padding-top-1" style="background-color: #FEF9F5; padding-bottom:3vw;">
-    <div fxLayout="column" fxLayoutAlign="center center" class=" libre-regular center-text padding-chef"
-      style=" padding-bottom: 6vw;">
-      <p style="font-size: 136px;">
+<div style="overflow: hidden; background-color: #FEF9F5;" class="padding-top-1">
+  <div class="flexy-column cccc  color-brown" style="background-color: #FEF9F5; padding-bottom:3vw;">
+    <div fxLayout="column" fxLayoutAlign="center center" class=" libre-regular center-text padding-chef blog-title-container"
+      style=" padding-bottom: 6vw; padding-top:9vw">
+      <p class="main-title">
         <span>Our Blog</span>
       </p>
-      <img src="../../assets/blog/BlogText.svg" style="padding-top: 2vw;max-width: 22vw;" />
+      <img src="../../assets/blog/BlogText.svg" class="blog-text" style="padding-top: 2vw;" />
     </div>
 
     <div class="line-17" style="width:100vw;">
@@ -22,7 +22,7 @@
   </div>
 
   <div style="background-color: #FEF9F5; width: 100vw;">
-    <div id="container" style="max-width:75vw; margin:auto;"
+    <div id="container" style=" margin:auto;"
       [ngClass]="{'hideContainer' : filteredPosts.length==0, 'invisibleContainer' : containerOff == true}">
       <div class="item" *ngFor="let post of filteredPosts">
         <img src="{{api_url}}{{post.attributes.cover.data.attributes.url}}" />
@@ -34,7 +34,7 @@
                 {{post.attributes.description}}
             </markdown>
         </div>
-        <div class="color-orange roboto-bold link-1 cursor-pointer" fxLayout
+        <div class="color-orange roboto-bold link-1 cursor-pointer article-link" fxLayout
           (click)="onArticlePage(post.id)">
           <p>Read the whole article</p>
           <img src="../../../assets/contactPage/arrow-2.svg" />

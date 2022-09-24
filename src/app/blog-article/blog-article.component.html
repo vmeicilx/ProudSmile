@@ -1,5 +1,5 @@
 <div style="overflow: hidden;">
-    <div class="flexy-column sscc  color-brown padding-top-1" style="background-color: #FEF9F5; padding-bottom:3vw;">
+    <div class="flexy-column sscc  color-brown article-container" style="background-color: #FEF9F5; padding-bottom:3vw;">
         <div class="flexy-row padding-chef cccc" style="cursor: pointer; margin-bottom: 4.5vw;" (click)="goBack()">
             <img src="../../assets/blog/back.svg"/>
             <p class="roboto-medium font-extra-small" style="opacity:0.5; margin-left:16px">Go Back</p>
@@ -17,7 +17,7 @@
         </div>
 
         <div class="flexy-row padding-chef sscc">
-            <div class="flexy-column cccc" style="max-width:4.3vw;">
+            <div class="flexy-column cccc hide-on-sm" style="max-width:4.3vw;">
                 <p class="color-brown roboto-medium copyright-text" style="opacity:0.8; margin-bottom: 16px; text-align: center;">
                     SHARE THIS STORY
                 </p>
@@ -27,7 +27,7 @@
                 <img src="../../assets/blog/mail.svg" style="margin-bottom: 16px;"/>
                 <img src="../../assets/blog/Link.svg"/>
             </div>
-            <div class="flexy-column" style="margin-left:4.5vw">
+            <div class="flexy-column article-content">
 
                 <markdown ngPreserveWhitespaces class="article">
             {{post.attributes.article}}
@@ -43,6 +43,12 @@
                 </div> -->
 
             </div>
+        </div>
+        <div class="flexy-row cccc hide-on-big">
+            <img src="../../assets/blog/twitter.svg" style="margin: 16px;"/>
+            <img src="../../assets/blog/facebook.svg" style="margin: 16px;"/>
+            <img src="../../assets/blog/mail.svg" style="margin: 16px;"/>
+            <img src="../../assets/blog/Link.svg" style="margin: 16px;"/>
         </div>
     </div>
 </div>
