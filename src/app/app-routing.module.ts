@@ -37,8 +37,7 @@ import { BlogComponent } from "./blog/blog.component";
 import { BlogArticleComponent } from "./blog-article/blog-article.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/HomePage", pathMatch: "full" },
-  { path: "HomePage", component: HomePageComponent },
+  { path: "", component: HomePageComponent, pathMatch: 'full' },
   {
     path: "proud-smile-experience-component",
     component: ProudSmileExperienceComponent
@@ -80,8 +79,7 @@ const routes: Routes = [
   { path: "contact-page-component", component: ContactPageComponent },
   { path: "contact-page-component/:parameter", component: ContactPageComponent },
   { path: "BlogArticle/:parameter", component: BlogArticleComponent },
-  { path: "send", redirectTo: "/send" },
-  { path: "**", redirectTo: "/HomePage" }
+  { path: "send", redirectTo: "/send" }
 ];
 
 @NgModule({

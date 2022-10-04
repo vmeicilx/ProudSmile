@@ -1,4 +1,4 @@
-<div style="overflow: hidden; background-color: #FEF9F5;" class="padding-top-1">
+<div style="overflow: hidden; background-color: #FEF9F5;" class="padding-top-1 blogPage">
   <div class="flexy-column cccc  color-brown" style="background-color: #FEF9F5; padding-bottom:3vw;">
     <div fxLayout="column" fxLayoutAlign="center center" class=" libre-regular center-text padding-chef blog-title-container"
       style=" padding-bottom: 6vw; padding-top:9vw">
@@ -23,9 +23,9 @@
 
   <div style="background-color: #FEF9F5; width: 100vw;">
     <div id="container" style=" margin:auto;"
-      [ngClass]="{'hideContainer' : filteredPosts.length==0, 'invisibleContainer' : containerOff == true}">
+      [ngClass]="{'hideContainer' : filteredPosts && filteredPosts.length==0, 'invisibleContainer' : containerOff == true}">
       <div class="item" *ngFor="let post of filteredPosts">
-        <img src="{{api_url}}{{post.attributes.cover.data.attributes.url}}" />
+        <img class="blogImage" src="{{post.attributes.cover.data.attributes.url}}" />
         <p class="roboto-bold font-small-3" style="color:#565960;margin:1vw; opacity:0.4;">
           {{post.attributes.categories.data[0].attributes.name}}</p>
         
@@ -50,33 +50,33 @@
   </div>
   <div class="flexy-row cccc" style="padding: 3vw ; background-color: #FEF9F5;">
     <img src="../../assets/blog/last.svg" style="margin:12px; cursor:pointer" [ngClass]="{'hideContainer' : displayLeft==false}"/>
-    <svg [ngClass]="{'hideContainer' : displayFirst==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
+    <svg [ngClass]="{'hideContainer' : displayFirst==false}" (click)="onPageClick(1)" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
       <g>
-        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        <circle [ngClass]="{'activePage' : currentPage==1}" style="fill:none;stroke:#AA9588;stroke-width:2.5px;" cx="20" cy="20" r="17">
         </circle>
-        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{firstText}}</text>
+        <text [ngClass]="{'activePageText' : currentPage==1}" class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="18" font-weight="bold" fill="#AA9588">{{firstText}}</text>
       </g>
     </svg>
-    <svg [ngClass]="{'hideContainer' : displaySecond==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
+    <svg [ngClass]="{'hideContainer' : displaySecond==false}" (click)="onPageClick(2)" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
       <g>
-        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        <circle [ngClass]="{'activePage' : currentPage==2}" style="fill:none;stroke:#AA9588;stroke-width:2.5px;" cx="20" cy="20" r="17">
         </circle>
-        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{secondText}}</text>
+        <text [ngClass]="{'activePageText' : currentPage==2}" class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="18" font-weight="bold" fill="#AA9588">{{secondText}}</text>
       </g>
     </svg>
     <svg  [ngClass]="{'hideContainer' : displayThird==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
       <g>
-        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        <circle [ngClass]="{'activePage' : currentPage==3}" style="fill:none;stroke:#AA9588;stroke-width:2.5px;" cx="20" cy="20" r="17">
         </circle>
-        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{thirdText}}</text>
+        <text [ngClass]="{'activePageText' : currentPage==3}" class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="18" font-weight="bold" fill="#AA9588">{{thirdText}}</text>
       </g>
     </svg>
     <img src="../../assets/blog/more.svg" style="margin:12px;" [ngClass]="{'hideContainer' : displayMore==false}"/>
     <svg [ngClass]="{'hideContainer' : displayFourth==false}" style="margin:12px; cursor:pointer" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 40 40" width="40px" height="40px">
       <g>
-        <circle style="fill:none;stroke:#AA9588;stroke-width:3px;" cx="20" cy="20" r="17">
+        <circle style="fill:none;stroke:#AA9588;stroke-width:2.5px;" cx="20" cy="20" r="17">
         </circle>
-        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="21" font-weight="bold" fill="#AA9588">{{fourthText}}</text>
+        <text class="roboto-bold" x="50%" y="50%" text-anchor="middle"  dy=".3em" font-size="18" font-weight="bold" fill="#AA9588">{{fourthText}}</text>
       </g>
     </svg>
     <img  style="margin:12px; cursor:pointer" src="../../assets/blog/last.svg" [ngClass]="{'hideContainer' : displayRight==false}"/>

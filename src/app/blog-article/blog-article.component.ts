@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import axios from 'axios';
+import { Clipboard } from "@angular/cdk/clipboard";
 // import rtfToHTML from '@iarna/rtf-to-html';
 
 @Component({
@@ -15,12 +16,21 @@ export class BlogArticleComponent implements OnInit {
   error = null;
   api_url = "https://proudsmileblog-app-tdioj.ondigitalocean.app";
 
-  constructor(private _activatedRoute: ActivatedRoute, private router: Router) { }
+  twitterLink: string;
+  articleLink: string;
+  facebookLink: string;
+
+  constructor(private _activatedRoute: ActivatedRoute, private router: Router, 
+    private clipboard: Clipboard) { }
 
   async ngOnInit() {
 
     this._activatedRoute.params.subscribe((parameter) => {
       this.articleID = parameter.parameter;
+      
+      this.articleLink = "https://proudsmile.com.au/BlogArticle/" + this.articleID;
+      this.twitterLink = "https://twitter.com/intent/tweet?text=" + this.articleLink;
+      this.facebookLink = "https://www.facebook.com/plugins/share_button.php?href=" + this.articleLink + "&layout=button&size=small&mobile_iframe=true&width=60&height=20&appId";
     });
 
     try {
@@ -44,5 +54,7 @@ export class BlogArticleComponent implements OnInit {
     this.router.navigate(["/", "Blog"]);
   }
 
-
+  copyBlogArticleLink() {
+    this.clipboard.copy(this.articleLink);
+  }
 }

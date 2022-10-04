@@ -13,7 +13,7 @@
             
 
         <div style="margin-bottom: 7vw;">
-            <img src="{{api_url}}{{post.attributes.cover.data.attributes.url}}" />
+            <img src="{{post.attributes.cover.data.attributes.url}}" />
         </div>
 
         <div class="flexy-row padding-chef sscc">
@@ -22,10 +22,24 @@
                     SHARE THIS STORY
                 </p>
                 <div class="line-19" style="width:100%; margin-bottom: 24px;"></div>
-                <img src="../../assets/blog/twitter.svg" style="margin-bottom: 16px;"/>
-                <img src="../../assets/blog/facebook.svg" style="margin-bottom: 16px;"/>
-                <img src="../../assets/blog/mail.svg" style="margin-bottom: 16px;"/>
-                <img src="../../assets/blog/Link.svg"/>
+                <div style="margin-bottom: 16px; position: relative;">
+                    <img src="../../assets/blog/twitter.svg" />
+                    <a class="twitter-share-button" href="{{twitterLink}}" style="position: absolute; top:0;left:0; width:32px;height:32px;"></a>
+                </div>
+                <!-- <div class="fb-share-button" style="margin-bottom: 16px;"
+                data-href="{{articleLink}}" 
+                data-layout="icon_link">
+                </div> -->
+
+                <div style="margin-bottom: 16px; position: relative; cursor: pointer;">
+                    <!-- <img src="../../assets/blog/facebook.svg" /> -->
+                    <iframe style="border:none;overflow:hidden;" [src]="facebookLink | safe" width="70" height="20" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+                
+
+                <!-- <fb-share href="{{articleLink}}" style="margin-bottom: 16px;"></fb-share> -->
+                <!-- <img src="../../assets/blog/mail.svg" style="margin-bottom: 16px;"/> -->
+                <img src="../../assets/blog/Link.svg" (click)="copyBlogArticleLink()" style="cursor: pointer;"/>
             </div>
             <div class="flexy-column article-content">
 
@@ -45,10 +59,24 @@
             </div>
         </div>
         <div class="flexy-row cccc hide-on-big">
-            <img src="../../assets/blog/twitter.svg" style="margin: 16px;"/>
-            <img src="../../assets/blog/facebook.svg" style="margin: 16px;"/>
-            <img src="../../assets/blog/mail.svg" style="margin: 16px;"/>
-            <img src="../../assets/blog/Link.svg" style="margin: 16px;"/>
+            <div style="margin: 16px; position: relative;">
+                <img src="../../assets/blog/twitter.svg" />
+                <a class="twitter-share-button" href="{{twitterLink}}" style="position: absolute; top:0;left:0; width:32px;height:32px;"></a>
+            </div>
+            <!-- <div class="fb-share-button" style="margin-bottom: 16px;"
+            data-href="{{articleLink}}" 
+            data-layout="icon_link">
+            </div> -->
+
+            <div style="margin: 16px; position: relative; cursor: pointer;">
+                <!-- <img src="../../assets/blog/facebook.svg" /> -->
+                <iframe style="border:none;overflow:hidden;" [src]="facebookLink | safe" width="70" height="20" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+            
+
+            <!-- <fb-share href="{{articleLink}}" style="margin-bottom: 16px;"></fb-share> -->
+            <!-- <img src="../../assets/blog/mail.svg" style="margin-bottom: 16px;"/> -->
+            <img src="../../assets/blog/Link.svg" (click)="copyBlogArticleLink()" style="cursor: pointer;"/>
         </div>
     </div>
 </div>

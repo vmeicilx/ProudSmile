@@ -3,6 +3,7 @@ import { BlogDataService } from 'src/services/blog-data.service';
 import MagicGrid from "magic-grid";
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { ImageService } from 'src/services/image.service';
 
 
 
@@ -42,7 +43,24 @@ export class BlogComponent implements OnInit {
   api_url = "https://proudsmileblog-app-tdioj.ondigitalocean.app";
 
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private imageService: ImageService) {
+    this.imageService.imagesLoading$.subscribe(imagesLoaded => {
+      if (imagesLoaded === 0) {
+        setTimeout(() => {
+
+          if(this.filteredPosts && this.filteredPosts.length > 0) {
+            this.magicGrid = new MagicGrid({
+              container: "#container", // Required. Can be a class, id, or an HTMLElement.
+              items: this.filteredPosts.length, // For a grid with 20 items. Required for dynamic content.
+              animate: true, // Optional.,
+            });
+        
+            this.magicGrid.listen();
+            this.magicGrid.positionItems();
+          }
+        }, 100)
+      } 
+    });
   }
 
   async ngOnInit() {
@@ -98,7 +116,21 @@ export class BlogComponent implements OnInit {
       )[0] as HTMLElement
     ).style.overflow = "hidden";
 
+    setTimeout(() => {
+
+      if(this.filteredPosts && this.filteredPosts.length > 0) {
+        this.magicGrid = new MagicGrid({
+          container: "#container", // Required. Can be a class, id, or an HTMLElement.
+          items: this.filteredPosts.length, // For a grid with 20 items. Required for dynamic content.
+          animate: true, // Optional.,
+        });
     
+        this.magicGrid.listen();
+        this.magicGrid.positionItems();
+      }
+    }, 2000)
+
+
   }
 
   @HostListener('window:load')
@@ -157,13 +189,75 @@ export class BlogComponent implements OnInit {
     this.displayFourth = this.numberOfPages > 3;
     this.displayLeft = this.currentPage > 1 && this.numberOfPages > 4;
     this.displayRight = this.currentPage < this.numberOfPages && this.numberOfPages > 4;
-    this.firstText = this.currentPage.toString();
-    this.secondText = (this.currentPage + 1).toString();
-    this.thirdText = (this.currentPage + 2).toString();
-    this.fourthText = (this.currentPage + 3).toString();
+    this.firstText = "1";
+    this.secondText = "2";
+    this.thirdText = "3";
+    this.fourthText = "4";
     this.displayMore = this.numberOfPages > 4;
     if( this.displayMore) {
       this.fourthText = this.numberOfPages.toString();
     }
+  }
+
+  onPageClick(pageNumber: number) {
+      this.currentPage = pageNumber;
+      this.refreshPosts();
+      window.scrollTo(0, 0);
+  }
+
+  async refreshPosts() {
+    try {
+
+      const response = await axios.get(this.api_url + '/api/posts?populate=*', {
+        headers: {
+          Authorization:
+          'Bearer b2afceb61de2072a688b5cc7be86131eeb940fdbff0aca5ade11c65376a047ee2e97c1af3ec8a3a1a860d9b588339677ae2dce9c4dea23226e3377ecd1edd8ee328a22fb9a0f1c7bffebb6acbbee87246320109326cc6eedb6f0c7e44f6b7f76f346d9ee93879eba75eddc9bacfdcf34bfc8932fd549f631cb0f64e4bcbedf59',
+        },
+      });
+      this.posts = response.data.data;
+
+      if(this.currentCategory === "All") {
+        this.filteredPosts = this.posts;
+      }
+      else {
+        this.filteredPosts = this.posts.filter(post => post.attributes.categories.data[0].attributes.name === this.currentCategory);
+      }
+
+      this.filteredPosts = this.filteredPosts.slice((this.currentPage - 1) * this.articlePerPage, this.currentPage * this.articlePerPage);
+      
+      this.filteredPosts.sort((a,b) => a.id > b.id ? 1 : -1);
+      
+      
+      this.setDisplayPages();
+
+      setTimeout(() => {
+        this.magicGrid = new MagicGrid({
+          container: "#container",
+          items: this.filteredPosts.length,
+          animate: true
+        });
+        this.magicGrid.listen();
+        this.magicGrid.positionItems();
+    }, 500)
+      
+    } catch (error) {
+      this.error = error;
+    }
+
+    setTimeout(() => {
+
+      if(this.filteredPosts.length > 0) {
+        this.magicGrid = new MagicGrid({
+          container: "#container", // Required. Can be a class, id, or an HTMLElement.
+          items: this.filteredPosts.length, // For a grid with 20 items. Required for dynamic content.
+          animate: true, // Optional.,
+        });
+    
+        this.magicGrid.listen();
+        this.magicGrid.positionItems();
+      }
+      
+  
+    }, 2000)
   }
 }

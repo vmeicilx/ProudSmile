@@ -55,6 +55,9 @@ import { BlogComponent } from './blog/blog.component';
 import { BlogArticleComponent } from './blog-article/blog-article.component';
 import { GraphQLModule } from './graphql.module';
 import { MarkdownModule } from 'ngx-markdown';
+import { MyImgDirective } from "src/services/image.directive";
+import { FacebookModule } from "ngx-facebook";
+import { SafePipe } from "src/services/SafePipe";
 
 @NgModule({
   declarations: [
@@ -98,7 +101,9 @@ import { MarkdownModule } from 'ngx-markdown';
     LandingBundallComponent,
     LandingPacificComponent,
     BlogComponent,
-    BlogArticleComponent
+    BlogArticleComponent,
+    MyImgDirective,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -114,7 +119,8 @@ import { MarkdownModule } from 'ngx-markdown';
     ClipboardModule,
     ComponentsModule,
     GraphQLModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    FacebookModule.forRoot()
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

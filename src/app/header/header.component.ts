@@ -209,7 +209,7 @@ export class HeaderComponent implements OnInit {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         window.scrollTo(0, 0);
-        this.styleStatus = val.url === "/HomePage" || val.url === "/";
+        this.styleStatus =  val.url === "/";
 
         this.isBundallPage = val.url === "/LandingBundall";
         this.isPacificPage = val.url === "/LandingPacific";
@@ -741,19 +741,33 @@ export class HeaderComponent implements OnInit {
 
   onLogoClick() {
     this.styleStatus = true;
-    this.router.navigate(["/", "HomePage"]);
+    this.router.navigate(["/"]);
     window.scrollTo(0, 0);
   }
 
   onMenuItemClick(item: string) {
     this.router.navigate(["/", item]);
-    this.styleStatus = window.pageYOffset <= 5 && item === "HomePage";
+    this.styleStatus = window.pageYOffset <= 5 && item === "";
     window.scrollTo(0, 0);
   }
 
   onMenuItemClickMobile(item: string) {
     this.router.navigate(["/", item]);
-    this.styleStatus = window.pageYOffset <= 5 && item === "HomePage";
+    this.styleStatus = window.pageYOffset <= 5 && item === "";
+    window.scrollTo(0, 0);
+    this.hideOverlay();
+  }
+
+  
+  onRootLink() {
+    this.router.navigate(["/"]);
+    this.styleStatus = window.pageYOffset <= 5;
+    window.scrollTo(0, 0);
+  }
+
+  onRootLinkMobile() {
+    this.router.navigate(["/"]);
+    this.styleStatus = window.pageYOffset <= 5;
     window.scrollTo(0, 0);
     this.hideOverlay();
   }
@@ -762,7 +776,7 @@ export class HeaderComponent implements OnInit {
   onScroll(event) {
     this.styleStatus =
       window.pageYOffset <= 5 &&
-      this.router.url === "/HomePage" &&
+      this.router.url === "/" &&
       !this.isMouseOn;
   }
 
@@ -787,7 +801,7 @@ export class HeaderComponent implements OnInit {
     this.isMouseOn = false;
     this.styleStatus =
       window.pageYOffset <= 5 &&
-      this.router.url === "/HomePage" &&
+      this.router.url === "/" &&
       !this.scheduleActive;
   }
 
