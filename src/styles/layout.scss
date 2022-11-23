@@ -461,7 +461,7 @@
   }
 
   .hide-on-sm {
-    display: none;
+    display: none !important;
   }
 
   // 10 - 296
@@ -609,7 +609,7 @@
     top: 0px;
   }
   .hide-on-sm {
-    display: none;
+    display: none !important;
   }
   .hide-on-phone {
     display: none;

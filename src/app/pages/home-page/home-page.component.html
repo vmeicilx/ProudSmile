@@ -39,7 +39,7 @@
   <div fxLayout="column" fxLayoutAlign="center center" style="text-align: center"
     class="background-53 font-large libre-regular padding-top-bottom-1">
     <div class="width-1">
-      <img loading="lazy" src="../../../assets/Shape.svg" />
+      <img src="../../../assets/Shape.svg" />
     </div>
     <p>
       The dentist you will<br />
@@ -55,7 +55,7 @@
       background-53
     ">
     <div class="mPeople" style="position: absolute; bottom: 0">
-      <img loading="lazy" src="../../assets/homePage/manyPeople.png" />
+      <img src="../../assets/homePage/manyPeople.png" />
     </div>
     <div fxLayout="column" style="float: right" class="
         flex-1
@@ -66,7 +66,7 @@
         people-section-text
       ">
       <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-        <img loading="lazy" src="../../assets/homePage/1.png" />
+        <img src="../../assets/homePage/1.png" />
       </div>
       <div class="font-dog libre-regular margin-bottom-1">
         <p>
@@ -93,7 +93,7 @@
     </div>
     <div class="flex-1 flexy-column relative-container afford-section-text">
       <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-        <img loading="lazy" src="../../assets/homePage/2.png" />
+        <img src="../../assets/homePage/2.png" />
       </div>
       <div class="font-dog libre-regular margin-bottom-1">
         <p>
@@ -113,7 +113,7 @@
         (click)="seeAllFinancial()">
         <p fxLayout fxLayoutAlign="center center">READ MORE</p>
         <div style="padding-left: 8px">
-          <img loading="lazy" src="../../assets/brownArrow.svg" />
+          <img src="../../assets/brownArrow.svg" />
         </div>
       </div>
     </div>
@@ -126,7 +126,7 @@
     ">
     <div class="flex-1 flexy-column relative-container you-first-text">
       <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-        <img loading="lazy" src="../../assets/homePage/3.svg" />
+        <img src="../../assets/homePage/3.svg" />
       </div>
       <div class="font-cat libre-regular margin-bottom-1">
         <p>
@@ -156,7 +156,7 @@
         technology-text
       ">
       <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
-        <img loading="lazy" src="../../assets/homePage/4.svg" />
+        <img src="../../assets/homePage/4.svg" />
       </div>
       <div class="font-cat libre-regular margin-bottom-1">
         <p>Technology that <span class="libre-italic">Comforts</span></p>
@@ -187,7 +187,7 @@
   </div>
   <div fxLayout fxLayoutAlign="center center">
     <div>
-      <img loading="lazy" src="../../assets/homePage/Team.png" />
+      <img src="../../assets/homePage/Team.png" />
     </div>
   </div>
 </div>
@@ -218,21 +218,58 @@
         <app-button (click)="seeOurClinic()" text="READ MORE"></app-button>
       </div>
       <div style="flex:2">
-        <img loading="lazy" src="../../assets/homePage/group.png" />
+        <img src="../../assets/homePage/group.png" />
       </div>
     </div>
   </div>
 </div>
 
-<div class="flexy-column cccc" style="background-color: black; position: relative">
-  <div fxLayout fxLayoutAlign="center center">
-    <app-scroll-framer-full class="" urlPattern="../../assets/homePage/short/Porcelain Veneers Short ##id##.jpg"
-      numberOfFrames="200" animationFactor="4000" padding="3" (onVideoPreStart)="showTextPre($event)"
-      (onVideoStart)="showText($event)" (onVideoEnd)="hideText($event)">
-    </app-scroll-framer-full>
-  </div>
-  <div #vennerShortText class="venTextDesktop hide-on-sm"
-    style="position: absolute; top: 0; color: white; z-index: 2; right: 15vw">
+<div class="hide-on-sm" id="ProudSmileParent" style=" background: black; display: flex; align-items: center;">
+
+  <div id="ProudSmileCanvasContainer" style="position: relative; ">
+    <canvas id="hero-proudsmile"></canvas>
+    <div class="canvas-framer">
+      <div style="
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 4vw;
+            background: linear-gradient(black, transparent);
+            z-index: 6;
+            width: 100%;
+          "></div>
+      <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, black, transparent);
+            z-index: 6;
+            width: 4vw;
+          "></div>
+  
+      <div style="
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(270deg, black, transparent);
+            z-index: 6;
+            width: 4vw;
+          "></div>
+  
+      <div style="
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            height: 4vw;
+            background: linear-gradient(0deg, black, transparent);
+            z-index: 6;
+            width: 100%;
+          "></div>
+    </div>
+
+    <div class="venTextDesktop hide-on-sm" style="position: absolute; top: 0; color: white; z-index: 10; right: -15vw">
     <div class="
         flex-1
         sscc
@@ -275,94 +312,101 @@
       <app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
     </div>
   </div>
-  <div class="venText hide-on-big" style="
-    color: white;
-    padding-top: 4vw;
-    z-index: 2;
-    position: absolute;
-    top: 2000px;
-  ">
-    <div class="flex-1 sscc gmargin-right-1 no-margin-on-sm venText2" fxLayout="column" style="
-      padding-bottom: 2vw;
-      padding-left: 2vw;
-      padding-right: 2vw;
-      margin: auto;
-    ">
-      <div class="font-wolf libre-regular margin-bottom-1">
-        <p class="title-on-big center-text-on-sm">
-          We’d love to give <br />
-          you a Proud Smile
-        </p>
-      </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm">
-        <p>
-          Our Cosmetic department is second to none and it’s the jewel of our
-          practice. We offer a comprehensive range of treatments to fit any
-          desire and any budget.<br /><br />
-          Our aesthetic treatments are always personalised and completely done
-          in house by our dentists so you are guaranteed to get a predictable
-          result and one that fits your face and personality.
-        </p>
-      </div>
-      <div class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"></div>
-      <div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
-        <p>
-          Don’t want to wait weeks for<br />
-          that perfect smile?<br />
-        </p>
-      </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom: 2vw">
-        <br />
-        <p>
-          Plus, with the introduction of digital dentistry we can now perform
-          some procedures with no need for anaesthetics, such as our Ultra
-          Thin Veneers.
-        </p>
-      </div>
-      <app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
-    </div>
+
+
   </div>
-  <div class="venText hide-on-big" style="
-  color: white;
-  padding-top: 4vw;
-  z-index: 2;
-  position: absolute;
-  top: 100px;
-">
-  <div class="flex-1 sscc gmargin-right-1 no-margin-on-sm venText2" fxLayout="column" style="
-    padding-bottom: 2vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    margin: auto;
-  ">
-    <div class="font-cat libre-regular margin-bottom-1">
-      <p class="title-on-big center-text-on-sm">
-        Aesthetics
-      </p>
-    </div>
+
+</div>
+
+
+<div class="hide-on-big" style="background: black; color:white; padding-top:10vw;">
+  <div class="font-cat libre-regular margin-bottom-1">
+    <p class="title-on-big center-text-on-sm">
+      Aesthetics
+    </p>
   </div>
+  <div class="
+  flex-1
+  sscc
+  padding-chef-on-sm
+  gmargin-right-1
+  no-margin-on-sm
+  margin-bottom-on-sm
+" fxLayout="column" style="padding-bottom: 2vw">
+<div class="font-wolf libre-regular margin-bottom-1">
+  <p class="title-on-big center-text-on-sm">
+    We’d love to give <br />
+    you a Proud Smile
+  </p>
 </div>
+<div class="roboto-thin font-small-3 center-text-on-sm">
+  <p>
+    Our Cosmetic department is second to none and it’s the jewel of our
+    practice. We offer a comprehensive range of treatments to fit any
+    desire and any budget.<br /><br />
+    Our aesthetic treatments are always personalised and completely done
+    in house by our dentists so you are guaranteed to get a predictable
+    result and one that fits your face and personality.
+  </p>
 </div>
+<div class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"></div>
+<div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
+  <p>
+    Don’t want to wait weeks for<br />
+    that perfect smile?<br />
+  </p>
+</div>
+<div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom: 8vw">
+  <br />
+  <p>
+    Plus, with the introduction of digital dentistry we can now perform
+    some procedures with no need for anaesthetics, such as our Ultra Thin
+    Veneers.
+  </p>
+</div>
+<app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
+</div>
+  <div style="position: relative;">
+    <div>
+      <img src="../../../assets/homePage/ladysmall.jpg"/>
+    </div>
+    <div style="
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 8vw;
+            background: linear-gradient(black, transparent);
+            z-index: 6;
+            width: 100%;
+          "></div>
+               
+  </div>
+
+</div>
+
+
+
+
 
 <div class="aestheticsAndHealthSection" fxLayout>
   <div class="aesthetics padding-top-bottom-1 relative-container" fxLayout="column" fxLayoutAlign="start end">
     <div class="absolute-container" style="top: 1%; left: 78%; filter: blur(10px)">
-      <img loading="lazy" src="../../../assets/homePage/Oval1.svg" />
+      <img src="../../../assets/homePage/Oval1.svg" />
     </div>
     <div class="absolute-container" style="top: 82%; left: 20%; filter: blur(10px)">
-      <img loading="lazy" src="../../../assets/homePage/Oval2.svg" />
+      <img src="../../../assets/homePage/Oval2.svg" />
     </div>
     <div class="absolute-container" style="top: 72%; left: 56%; filter: blur(6px)">
-      <img loading="lazy" src="../../../assets/homePage/Oval3.svg" />
+      <img src="../../../assets/homePage/Oval3.svg" />
     </div>
     <div class="absolute-container" style="top: 14%; left: 14%; filter: blur(5px)">
-      <img loading="lazy" src="../../../assets/homePage/Oval4.svg" />
+      <img src="../../../assets/homePage/Oval4.svg" />
     </div>
     <div class="absolute-container" style="top: 68%; left: 22%; filter: blur(28px)">
-      <img loading="lazy" src="../../../assets/homePage/Oval5.svg" />
+      <img src="../../../assets/homePage/Oval5.svg" />
     </div>
     <div class="absolute-container" style="top: 6%; left: 12%; filter: blur(10px)">
-      <img loading="lazy" src="../../../assets/homePage/Oval6.svg" />
+      <img src="../../../assets/homePage/Oval6.svg" />
     </div>
     <div fxLayout="column" fxLayoutAlign="start start">
       <div class="title color-white font-small-3">
@@ -397,13 +441,13 @@
           relative-container
         " style="z-index: 1" fxLayout fxLayoutAlign="center center" (click)="seeAllAesthetic()">
         <div class="hide-on-sm">
-          <img loading="lazy" src="../../../assets/homePage/Dots.png" />
+          <img src="../../../assets/homePage/Dots.png" />
         </div>
         <div class="margin-left-1">
           <p>See all aesthetic services</p>
         </div>
         <div class="margin-left-1">
-          <img loading="lazy" style="max-width: unset" src="../../../assets/homePage/WhiteArrow.svg" />
+          <img style="max-width: unset" src="../../../assets/homePage/WhiteArrow.svg" />
         </div>
       </div>
     </div>
@@ -444,13 +488,13 @@
         relative-container
       " style="z-index: 1" fxLayout fxLayoutAlign="center center" (click)="seeAllHealth()">
       <div class="hide-on-sm">
-        <img loading="lazy" src="../../../assets/homePage/Dots.png" />
+        <img src="../../../assets/homePage/Dots.png" />
       </div>
       <div class="margin-left-1">
         <p>See all health services</p>
       </div>
       <div class="margin-left-1">
-        <img loading="lazy" style="max-width: unset" src="../../../assets/homePage/WhiteArrow.svg" />
+        <img style="max-width: unset" src="../../../assets/homePage/WhiteArrow.svg" />
       </div>
     </div>
   </div>
@@ -464,7 +508,7 @@
     relative-container
   " fxLayout="column" fxLayoutAlign="center center">
   <div>
-    <img class="mobile-size" loading="lazy" src="../../../assets/homePage/Social.svg" />
+    <img class="mobile-size" src="../../../assets/homePage/Social.svg" />
   </div>
   <div class="instaFeed" style="margin-top: 4vw">
     <div class="text margin-bottom-1 padding-chef">
@@ -474,7 +518,7 @@
       <div class="rightText roboto-medium font-extra-small" fxLayout fxLayoutAlign="center center" fxLayoutGap="1vw"
         (click)="goToLink('https://www.instagram.com/proudsmile_dental/')">
         <div>
-          <img loading="lazy" src="../../../assets/homePage/instagram.svg" />
+          <img src="../../../assets/homePage/instagram.svg" />
         </div>
         <p>Follow ProudSmile on Instagram</p>
       </div>
@@ -485,7 +529,7 @@
   </div>
   <div fxLayout="column" fxLayoutAlign="start center">
     <div style="margin-top: 2vw; margin-bottom: 2vw">
-      <img class="mobile-size" loading="lazy" src="../../../assets/homePage/Becomepartofourfamily.svg" />
+      <img class="mobile-size" src="../../../assets/homePage/Becomepartofourfamily.svg" />
     </div>
     <app-button (click)="
       goToLink(

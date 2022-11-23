@@ -2,6 +2,107 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { Meta, Title } from "@angular/platform-browser";
 import { Router } from "@angular/router";
 
+function resize2() {
+  const canvas: any = document.getElementById("hero-proudsmile2");
+  const canvasContainer: any = document.getElementById("ProudSmileCanvasContainer2");
+
+  if(canvas && canvasContainer) {
+    canvasContainer.style.width = canvas.getBoundingClientRect().width + "px";
+    canvasContainer.style.height = canvas.getBoundingClientRect().height + "px";
+  }
+}
+
+window.onresize = resize2;
+
+function startAnimation2() {
+  const canvas: any = document.getElementById("hero-proudsmile2");
+  const context = canvas.getContext("2d");
+  document.body.style.overflow = "hidden";
+
+  let startValue = "top 129px";
+  let endValue = "+=5000";
+
+  if(window.innerWidth < 1200) {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerWidth / (1364 / 700);
+    startValue = "top 80px";
+  }
+  else
+  {
+    canvas.width = 1364;
+    canvas.height = 700;
+  }
+
+
+  const frameCount = 200;
+  const currentFrame = (index) =>
+    `../../../../assets/homePage/short/Porcelain Veneers Short ${(
+      index + 1
+    )
+      .toString()
+      .padStart(3, "0")}.jpg`;
+
+  const images = [];
+  const frames = {
+    frame: 0,
+  };
+
+  let loadedImages = 0;
+
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+    img.onload = countImages;
+    
+    if(window.innerWidth < 1200) {
+      img.width = window.innerWidth;
+      img.height = window.innerWidth / (1364 / 700);
+    }
+    images.push(img);
+  }
+
+  gsap.to(frames, {
+    frame: frameCount - 1,
+    snap: "frame",
+    scrollTrigger: {
+      id: "ScrollTriggerProudSmile2",
+      trigger: "#ProudSmileParent2",
+      start: startValue,
+      end: endValue,
+      markers: false,
+      scrub: 1,
+      pin: true
+    },
+    onUpdate: render2,
+  });
+
+  function countImages() {
+    loadedImages = loadedImages + 1;
+    if (loadedImages === frameCount) {
+      render2();
+      ScrollTrigger.refresh();
+    }
+  }
+
+  function render2() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(images[frames.frame], 0, 0, images[frames.frame].width, images[frames.frame].height, 0, 0, canvas.width, canvas.height);
+    resize2();
+    const canvasParent: any = document.getElementById("ProudSmileParent2");
+
+    if(canvasParent) {
+      if(window.innerWidth < 1200) {
+        canvasParent.style.top = "80px";
+      }
+      else
+      {
+        canvasParent.style.top = "129px";
+      }
+    }
+  }
+}
+
+
 @Component({
   selector: "app-proud-smile-experience",
   templateUrl: "./proud-smile-experience.component.html",
@@ -24,6 +125,18 @@ export class ProudSmileExperienceComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
+    
+    if (window.innerWidth > 1200) {
+
+    setTimeout(() => {
+      startAnimation2();
+      resize2();
+    }, 100);
+  }
+
+  }
 
   playSound1() {
     this.soundButton1.nativeElement.style.animationPlayState = "paused";

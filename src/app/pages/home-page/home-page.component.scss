@@ -135,9 +135,6 @@
     background-color: #030303;
   }
   
-  .people-section {
-  }
-
   .afford-section {
     background-image: url(/assets/homePage/afford-background.png);
     background-size: cover;
@@ -149,6 +146,10 @@
 
   @media only screen and (min-width: 1201px) {
 
+    #ProudSmileParent {
+      height: calc(100vh - 129px);
+    }
+
     .venText {
       padding-top:9vw;
       
@@ -157,9 +158,8 @@
       }
     }
     .venTextDesktop {
-      padding-top:9vw;
       
-      max-width: 25vw;
+      max-width: 36vw;
       
     }
     .technology-section-responsive {
@@ -233,6 +233,12 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+
+    
+    #ProudSmileParent {
+      height: calc(100vh - 80px);
+    }
+
     .mobile-size {
       max-width: 70%;
       margin: auto;
@@ -323,6 +329,13 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+
+    
+    #ProudSmileParent {
+      height: calc(100vh - 80px);
+    }
+
+
     .mobile-size {
       max-width: 70%;
       margin: auto;

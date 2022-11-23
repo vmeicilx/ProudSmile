@@ -124,11 +124,11 @@
           <p class="opacity-5">Sunday</p>
         </div>
         <div fxLayout="column" fxLayoutGap="1vh">
-          <p>8:30 AM - 5:30 PM</p>
-          <p>8:30 AM - 5:30 PM</p>
-          <p>8:30 AM - 5:30 PM</p>
-          <p>8:30 AM - 5:30 PM</p>
-          <p>8:30 AM - 5:30 PM</p>
+          <p>8:30 AM - 5:00 PM</p>
+          <p>8:30 AM - 5:00 PM</p>
+          <p>8:30 AM - 5:00 PM</p>
+          <p>8:30 AM - 5:00 PM</p>
+          <p>8:30 AM - 5:00 PM</p>
           <p>By appointment only</p>
           <p class="opacity-5">Closed</p>
         </div>
@@ -1040,8 +1040,15 @@
 
     <div
       class="menu2 three-dots flexy-row"
-      style="justify-content: flex-end; align-items: flex-end"
+      style="justify-content: flex-end; align-items: center"
     >
+    <button #BookingText (click)="showBookingOverlay()"style="margin-right: 5vw; display: block;">
+      <p class="font-small" style="color:white;">Online Booking</p>
+    </button>
+    <button #Phone style="margin-right: 5vw;display:block;" (click)="showPhoneOverlay()">
+      <img style="width: 32px" src="../../assets/header/phone.svg" />
+    </button>
+
       <button #ThreeDots (click)="showOverlay()" style="display: block">
         <svg
           class="icons"
@@ -1056,6 +1063,8 @@
       <button #CloseThreeDots (click)="hideOverlay()" style="display: none">
         <img style="width: 36px" src="../../assets/header/x.svg" />
       </button>
+
+      
     </div>
 
     <div
@@ -1697,6 +1706,63 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div       
+    #MobilePhoneOverlay
+    class="overlay-mobile"
+    style="
+      background: black;
+      width: 100%;
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 80px;
+    ">
+      <div class="flexy-column" style="width:100%; color:white">
+        <div style="align-self: end; margin-right:16px;">
+          <button #ClosePhone (click)="hidePhoneOverlay()" style="display: none">
+            <img style="width: 36px" src="../../assets/header/x.svg" />
+          </button>
+        </div>
+        <p style="margin-top:2vw; margin-bottom: 6vw; color:white;"><span style="color: #565960;">Proud Smile -</span> Bundall</p>
+        <button style="margin-bottom:8vw; color:white;" class="font-large" 
+        (click)="goToLinkWithotNewTab('tel:0755703311')">07 5570 3311</button>
+        <p style="margin-top:2vw; margin-bottom: 6vw; color:white;"><span style="color: #565960;">Proud Smile -</span> Pacific Fair Mall</p>
+        <button style="margin-bottom:8vw; color:white;" class="font-large" (click)="goToLinkWithotNewTab('tel:0755386277')">07 5538 6277</button>
+      </div>
+    </div>
+    <div       
+    #BookingOverlay
+    class="overlay-mobile"
+    style="
+      background: black;
+      width: 100%;
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 80px;
+    ">
+
+      <div class="flexy-column" style="width:100%; color:white">
+        <div style="align-self: end; margin-right:16px;">
+          <button #CloseBooking (click)="hideBookingOverlay()" style="display: none">
+            <img style="width: 36px" src="../../assets/header/x.svg" />
+          </button>
+        </div>
+        <button class="font-small" style="margin-top:2vw; margin-bottom: 6vw; color:white;"         (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=189270&bLocationSelectionDisabled=true'
+        )
+      "><span style="color: #565960;">Proud Smile -</span> Bundall</button>
+
+        <button class="font-small" style="margin-top:2vw; margin-bottom: 6vw; color:white;" (click)="
+        goToLink(
+          'https://appointments.praktika.net.au/online-booking/step1?Apikey=b385b049-fe49-48be-a25c-83f7af2f3490&iLocationId=3485830&bLocationSelectionDisabled=true'
+        )
+      "><span style="color: #565960;">Proud Smile -</span> Pacific Fair Mall</button>
+        
       </div>
     </div>
   </div>

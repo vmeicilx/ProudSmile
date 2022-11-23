@@ -660,40 +660,61 @@
   </div>
 </div>
 
-<div
-  class="hide-on-phone flexy-column cccc"
-  style="background-color: black; position: relative"
->
-  <div fxLayout fxLayoutAlign="center center">
-    <app-scroll-framer-full
-      class="hide-on-phone"
-      urlPattern="../../assets/homePage/short/Porcelain Veneers Short ##id##.jpg"
-      numberOfFrames="200"
-      animationFactor="4000"
-      padding="3"
-      (onVideoPreStart)="showTextPre()"
-      (onVideoStart)="showText()"
-      (onVideoEnd)="hideText()"
-    >
-    </app-scroll-framer-full>
-  </div>
-  <div
-    #vennerShortText
-    class="venText"
-    style="position: absolute; top: 0; color: white; z-index: 2; right: 15vw"
-  >
-    <div
-      class="
+
+<div class="hide-on-sm" id="ProudSmileParent2" style=" background: black; display: flex; align-items: center;">
+
+  <div id="ProudSmileCanvasContainer2" style="position: relative; ">
+    <canvas id="hero-proudsmile2"></canvas>
+    <div class="canvas-framer">
+      <div style="
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 4vw;
+            background: linear-gradient(black, transparent);
+            z-index: 6;
+            width: 100%;
+          "></div>
+      <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, black, transparent);
+            z-index: 6;
+            width: 4vw;
+          "></div>
+  
+      <div style="
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(270deg, black, transparent);
+            z-index: 6;
+            width: 4vw;
+          "></div>
+  
+      <div style="
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            height: 4vw;
+            background: linear-gradient(0deg, black, transparent);
+            z-index: 6;
+            width: 100%;
+          "></div>
+    </div>
+
+    <div class="venTextDesktop hide-on-sm" style="position: absolute; top: 0; color: white; z-index: 10; right: -15vw">
+    <div class="
         flex-1
         sscc
         padding-chef-on-sm
         gmargin-right-1
         no-margin-on-sm
         margin-bottom-on-sm
-      "
-      fxLayout="column"
-      style="padding-bottom: 2vw"
-    >
+      " fxLayout="column" style="padding-bottom: 2vw">
       <div class="font-wolf libre-regular margin-bottom-1">
         <p class="title-on-big center-text-on-sm">
           We’d love to give <br />
@@ -710,19 +731,14 @@
           result and one that fits your face and personality.
         </p>
       </div>
-      <div
-        class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"
-      ></div>
+      <div class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"></div>
       <div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
         <p>
           Don’t want to wait weeks for<br />
           that perfect smile?<br />
         </p>
       </div>
-      <div
-        class="roboto-thin font-small-3 center-text-on-sm"
-        style="margin-bottom: 2vw"
-      >
+      <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom: 2vw">
         <br />
         <p>
           Plus, with the introduction of digital dentistry we can now perform
@@ -730,13 +746,83 @@
           Veneers.
         </p>
       </div>
-      <app-button
-        text="SEE AESTHETICS PAGE"
-        (click)="seeAllAesthetic()"
-      ></app-button>
+      <app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
     </div>
   </div>
+
+
+  </div>
+
 </div>
+
+
+<div class="hide-on-big" style="background: black; color:white; padding-top:10vw;">
+  <div class="font-cat libre-regular margin-bottom-1">
+    <p class="title-on-big center-text-on-sm">
+      Aesthetics
+    </p>
+  </div>
+  <div class="
+  flex-1
+  sscc
+  padding-chef-on-sm
+  gmargin-right-1
+  no-margin-on-sm
+  margin-bottom-on-sm
+" fxLayout="column" style="padding-bottom: 2vw">
+<div class="font-wolf libre-regular margin-bottom-1">
+  <p class="title-on-big center-text-on-sm">
+    We’d love to give <br />
+    you a Proud Smile
+  </p>
+</div>
+<div class="roboto-thin font-small-3 center-text-on-sm">
+  <p>
+    Our Cosmetic department is second to none and it’s the jewel of our
+    practice. We offer a comprehensive range of treatments to fit any
+    desire and any budget.<br /><br />
+    Our aesthetic treatments are always personalised and completely done
+    in house by our dentists so you are guaranteed to get a predictable
+    result and one that fits your face and personality.
+  </p>
+</div>
+<div class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"></div>
+<div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
+  <p>
+    Don’t want to wait weeks for<br />
+    that perfect smile?<br />
+  </p>
+</div>
+<div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom: 8vw">
+  <br />
+  <p>
+    Plus, with the introduction of digital dentistry we can now perform
+    some procedures with no need for anaesthetics, such as our Ultra Thin
+    Veneers.
+  </p>
+</div>
+<app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
+</div>
+  <div style="position: relative;">
+    <div>
+      <img src="../../../assets/homePage/ladysmall.jpg"/>
+    </div>
+    <div style="
+            position: absolute;
+            top: 0px;
+            left: 0;
+            height: 8vw;
+            background: linear-gradient(black, transparent);
+            z-index: 6;
+            width: 100%;
+          "></div>
+               
+  </div>
+
+</div>
+
+
+
 
 <div
   class="

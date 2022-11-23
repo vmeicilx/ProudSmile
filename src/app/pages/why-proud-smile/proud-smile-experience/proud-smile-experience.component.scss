@@ -158,6 +158,18 @@
   }
 
   @media only screen and (min-width: 1201px) {
+
+    #ProudSmileParent2 {
+      height: calc(100vh - 129px);
+    }
+
+    .venTextDesktop {
+      
+      max-width: 36vw;
+      
+    }
+
+
     .dentistry-section {
       height: 1600px;
       .dentistry-text {
@@ -189,6 +201,10 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+
+    #ProudSmileParent2 {
+      height: calc(100vh - 80px);
+    }
     
     .dentistry-section {
       height: 1600px;
@@ -233,6 +249,10 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+
+    #ProudSmileParent2 {
+      height: calc(100vh - 80px);
+    }
 
     .dentistry-section {
       height: 800px;

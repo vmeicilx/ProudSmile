@@ -62,6 +62,10 @@ export class HeaderComponent implements OnInit {
   @ViewChild("pointerMini") pointer: ElementRef;
   @ViewChild("ThreeDots") threeDots: ElementRef;
   @ViewChild("CloseThreeDots") closeThreeDots: ElementRef;
+  @ViewChild("Phone") phone: ElementRef;
+  @ViewChild("ClosePhone") closePhone: ElementRef;
+  @ViewChild("BookingText") bookingText: ElementRef;
+  @ViewChild("CloseBooking") closeBooking: ElementRef;
 
   @ViewChild("WhyProudSmileMenus") WhyProudSmileMenus: ElementRef;
   @ViewChild("WhyProudSmileMenusWrapper") WhyProudSmileMenusWrapper: ElementRef;
@@ -88,6 +92,8 @@ export class HeaderComponent implements OnInit {
   @ViewChild("ImplantsParentText") ImplantsParentText: ElementRef;
 
   @ViewChild("MobileOverlay") mobileOverlay: ElementRef;
+  @ViewChild("MobilePhoneOverlay") mobilePhoneOverlay: ElementRef;
+  @ViewChild("BookingOverlay") bookingOverlay: ElementRef;
 
   @ViewChild("MobileWhyProudSmileOverlay")
   MobileWhyProudSmileOverlay: ElementRef;
@@ -756,6 +762,8 @@ export class HeaderComponent implements OnInit {
     this.styleStatus = window.pageYOffset <= 5 && item === "";
     window.scrollTo(0, 0);
     this.hideOverlay();
+    this.hidePhoneOverlay();
+    this.hideBookingOverlay();
   }
 
   
@@ -770,6 +778,8 @@ export class HeaderComponent implements OnInit {
     this.styleStatus = window.pageYOffset <= 5;
     window.scrollTo(0, 0);
     this.hideOverlay();
+    this.hidePhoneOverlay();
+    this.hideBookingOverlay();
   }
 
   @HostListener("window:scroll", ["$event"])
@@ -834,26 +844,94 @@ export class HeaderComponent implements OnInit {
   }
 
   showOverlay() {
-    this.mobileOverlay.nativeElement.style.display = "flex";
-    this.threeDots.nativeElement.style.display = "none";
-    this.closeThreeDots.nativeElement.style.display = "block";
-    document.documentElement.style.overflowY = "hidden";
-    var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
-    if(home && home[0]) {
-      home[0].style.height = "0px";
+    if(this.mobileOverlay.nativeElement.style.display === "none") {
+      this.hidePhoneOverlay();
+      this.hideBookingOverlay();
+      this.mobileOverlay.nativeElement.style.display = "flex";
+      this.threeDots.nativeElement.style.display = "none";
+      this.closeThreeDots.nativeElement.style.display = "block";
+      document.documentElement.style.overflowY = "hidden";
+      var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+      if(home && home[0]) {
+        home[0].style.height = "0px";
+      }
     }
-    //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "hidden";
+    else {
+      this.hideOverlay();
+    }
   }
-  hideOverlay() {
-    this.mobileOverlay.nativeElement.style.display = "none";
-    this.threeDots.nativeElement.style.display = "block";
-    this.closeThreeDots.nativeElement.style.display = "none";
-    document.documentElement.style.overflowY = "scroll";
-    var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
-    if(home && home[0]) {
-      home[0].style.height = null;
+
+  showPhoneOverlay() {
+    
+    if(this.mobilePhoneOverlay.nativeElement.style.display === "none") {
+      this.hideOverlay();
+      this.hideBookingOverlay();
+      this.mobilePhoneOverlay.nativeElement.style.display = "flex";
+      this.closePhone.nativeElement.style.display = "block";
+      document.documentElement.style.overflowY = "hidden";
+      var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+      if(home && home[0]) {
+        home[0].style.height = "0px";
+      }
     }
-    //this.elRef.nativeElement.parentElement.parentElement.parentElement.parentElement.style.overflowY = "scroll";
+    else {
+      this.hidePhoneOverlay();
+    }
+  }
+
+  showBookingOverlay() {
+    
+    if(this.bookingOverlay.nativeElement.style.display === "none") {
+      this.hidePhoneOverlay();
+      this.hideOverlay();
+      this.bookingOverlay.nativeElement.style.display = "flex";
+      this.closeBooking.nativeElement.style.display = "block";
+      document.documentElement.style.overflowY = "hidden";
+      var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+      if(home && home[0]) {
+        home[0].style.height = "0px";
+      }
+    }
+    else {
+      this.hideBookingOverlay();
+    }
+  }
+
+  hideOverlay() {
+    if(this.mobileOverlay.nativeElement.style.display === "flex") {
+      this.mobileOverlay.nativeElement.style.display = "none";
+      this.threeDots.nativeElement.style.display = "block";
+      this.closeThreeDots.nativeElement.style.display = "none";
+      document.documentElement.style.overflowY = "scroll";
+      var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+      if(home && home[0]) {
+        home[0].style.height = null;
+      }
+    }
+  }
+
+  hidePhoneOverlay() {
+    if(this.mobilePhoneOverlay.nativeElement.style.display === "flex") {
+      this.mobilePhoneOverlay.nativeElement.style.display = "none";
+      this.closePhone.nativeElement.style.display = "none";
+      document.documentElement.style.overflowY = "scroll";
+      var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+      if(home && home[0]) {
+        home[0].style.height = null;
+      }
+    }
+  }
+
+  hideBookingOverlay() {
+    if(this.bookingOverlay.nativeElement.style.display === "flex") {
+      this.bookingOverlay.nativeElement.style.display = "none";
+      this.closeBooking.nativeElement.style.display = "none";
+      document.documentElement.style.overflowY = "scroll";
+      var home = document.getElementsByTagName("app-home-page") as HTMLCollectionOf<HTMLElement>;
+      if(home && home[0]) {
+        home[0].style.height = null;
+      }
+    }
   }
 
   toggleWhyProudSmile() {
@@ -1183,5 +1261,13 @@ export class HeaderComponent implements OnInit {
     this.input1.nativeElement.value = parseInt(inputValue.toString(), 10);
 
     this.doCalculation(this.input1.nativeElement.value);
+  }
+
+  onMobilePhoneTouch() {
+
+  }
+
+  onMobileCalendarTouch() {
+    
   }
 }
