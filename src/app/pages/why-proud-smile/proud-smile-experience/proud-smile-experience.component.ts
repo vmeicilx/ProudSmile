@@ -130,10 +130,10 @@ export class ProudSmileExperienceComponent implements OnInit {
     
     if (window.innerWidth > 1200) {
 
-    setTimeout(() => {
-      startAnimation2();
-      resize2();
-    }, 100);
+    // setTimeout(() => {
+    //   startAnimation2();
+    //   resize2();
+    // }, 100);
   }
 
   }

@@ -216,10 +216,10 @@ export class HomePageComponent implements OnInit {
     
     if (window.innerWidth > 1200) {
 
-    setTimeout(() => {
-      startAnimation();
-      resize();
-    }, 100);
+    // setTimeout(() => {
+    //   startAnimation();
+    //   resize();
+    // }, 100);
   }
 
   }
