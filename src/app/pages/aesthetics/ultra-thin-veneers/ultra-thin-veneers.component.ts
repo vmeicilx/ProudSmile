@@ -10,15 +10,15 @@ import { Router } from "@angular/router";
 
 function resize() {
 
-  if (window.innerWidth > 1200) {
-    const canvas: any = document.getElementById("hero-lightpass-ultra");
-    const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+  // if (window.innerWidth > 1200) {
+  //   const canvas: any = document.getElementById("hero-lightpass-ultra");
+  //   const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
 
-    if (canvas && canvasFramer) {
-      canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
-      canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
-    }
-  }
+  //   if (canvas && canvasFramer) {
+  //     canvasFramer.style.width = canvas.getBoundingClientRect().width + "px";
+  //     canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+  //   }
+  // }
 }
 
 window.onresize = resize;
@@ -145,13 +145,13 @@ export class UltraThinVeneersComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    if (window.innerWidth > 1200) {
+    // if (window.innerWidth > 1200) {
 
-      startAnimation();
-      this.suggestionButton.nativeElement.style.display = "none";
-      this.suggestionButtonUp.nativeElement.style.display = "none";
-      resize();
-    }
+    //   startAnimation();
+    //   this.suggestionButton.nativeElement.style.display = "none";
+    //   this.suggestionButtonUp.nativeElement.style.display = "none";
+    //   resize();
+    // }
   }
 
   goToLink(url: string) {
@@ -161,26 +161,26 @@ export class UltraThinVeneersComponent implements OnInit {
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
 
-    if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-      this.suggestionButton.nativeElement.style.display = "block";
-    } else {
-      this.suggestionButton.nativeElement.style.display = "none";
-    }
+    // if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+    //   this.suggestionButton.nativeElement.style.display = "block";
+    // } else {
+    //   this.suggestionButton.nativeElement.style.display = "none";
+    // }
 
-    if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
-      this.suggestionButtonUp.nativeElement.style.display = "block";
-    }
-    else {
-      this.suggestionButtonUp.nativeElement.style.display = "none";
-    }
+    // if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
+    //   this.suggestionButtonUp.nativeElement.style.display = "block";
+    // }
+    // else {
+    //   this.suggestionButtonUp.nativeElement.style.display = "none";
+    // }
   }
 
   @HostListener("window:resize", ["$event"])
   onResize(event) {
 
-    if (window.innerWidth > 1200) {
-      resize();
-    }
+    // if (window.innerWidth > 1200) {
+    //   resize();
+    // }
   }
 
   setCurrentFrame() {

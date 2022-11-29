@@ -3,36 +3,36 @@ import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 
-function resize() {
+// function resize() {
 
-  if(window.innerWidth > 1200) {
-    const canvas: any = document.getElementById("hero-lightpass-zoom");
-    const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
-    //const mobileSuggestion = document.getElementById("MobileSuggestion");
+//   if(window.innerWidth > 1200) {
+//     const canvas: any = document.getElementById("hero-lightpass-zoom");
+//     const canvasFramer: any = document.getElementsByClassName("canvas-framer")[0];
+//     //const mobileSuggestion = document.getElementById("MobileSuggestion");
 
-    if(canvas && canvasFramer) {
-      canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
-      canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
+//     if(canvas && canvasFramer) {
+//       canvasFramer.style.width = canvas.getBoundingClientRect().width + 2 + "px";
+//       canvasFramer.style.height = canvas.getBoundingClientRect().height + 2 + "px";
     
-      if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-        //mobileSuggestion.style.display = "flex";
-      } else {
-        //mobileSuggestion.style.display = "none";
-      }
-    }
-  }
-  else {
-    const canvas: any = document.getElementById("hero-lightpass-Zoom");
-    const canvasContainer: any = document.getElementById("ZoomCanvasContainer");
+//       if (window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
+//         //mobileSuggestion.style.display = "flex";
+//       } else {
+//         //mobileSuggestion.style.display = "none";
+//       }
+//     }
+//   }
+//   else {
+//     const canvas: any = document.getElementById("hero-lightpass-Zoom");
+//     const canvasContainer: any = document.getElementById("ZoomCanvasContainer");
 
-    if (canvas && canvasContainer) {
-      canvasContainer.style.width = canvas.getBoundingClientRect().width + "px";
-      canvasContainer.style.height = canvas.getBoundingClientRect().height + "px";
-    }
-  }
-}
+//     if (canvas && canvasContainer) {
+//       canvasContainer.style.width = canvas.getBoundingClientRect().width + "px";
+//       canvasContainer.style.height = canvas.getBoundingClientRect().height + "px";
+//     }
+//   }
+// }
 
-window.onresize = resize;
+//window.onresize = resize;
 
 function startAnimation() {
   const canvas: any = document.getElementById("hero-lightpass-zoom");
@@ -141,7 +141,7 @@ function startAnimation() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[frames.frame], 0, 0);
 
-    resize();
+    //resize();
   }
 
 }
@@ -211,7 +211,7 @@ function startAnimationMobile() {
   function render() {
     context.clearRect(0, 0, canvas.width, canvas.height);
     context.drawImage(images[frames.frame], 0, 0);
-    resize()
+    //resize()
   }
 
 }
@@ -224,34 +224,16 @@ function startAnimationMobile() {
 })
 export class ZoomWhiteningComponent implements OnInit {
 
-  // @ViewChild("LoadingText") loadingText: ElementRef;
-  // @ViewChild("Zoom") zoom: ElementRef;
-  // @ViewChild("AnimContainer") animContainer: ElementRef;
-  // @ViewChild("PresentationView") presentationView: ElementRef;
-  // @ViewChild("BookButton") bookButton: ElementRef;
-  
-  // @ViewChild("FirstFrame") firstFrame: ElementRef;
-  // @ViewChild("SecondFrame") secondFrame: ElementRef;
-  // @ViewChild("LastFrame") lastFrame: ElementRef;
 
   @ViewChild("SuggestionButton") suggestionButton: ElementRef;
   @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
   
-  // @ViewChild("HelperText") HelperText: ElementRef;
-  // @ViewChild("DownArrow") DownArrow: ElementRef;
-  // @ViewChild("MobileSuggestion") MobileSuggestion: ElementRef;
 
   currentFrame = 0;
   framePositions = [1300, 2000, 2900, 4200, 5200, 7000, 10700];
   firstFramePosition = 217;
   lastFramePosition = 10700;
 
-  // sections = 0;
-
-  // activeFrameIndex = 0;
-
-  // frames = [];
-  // framesContent = [];
   
   @ViewChild("zoomVideo") zoomVideo: ElementRef;
 
@@ -267,40 +249,26 @@ export class ZoomWhiteningComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
-    if(window.innerWidth > 1200) {
-    startAnimation();
-    this.suggestionButton.nativeElement.style.display = "none";
-    this.suggestionButtonUp.nativeElement.style.display = "none";
-    //this.MobileSuggestion.nativeElement.style.display = "none";
-    resize();
-    }
-    else {
+    // if(window.innerWidth > 1200) {
+    // startAnimation();
+    // this.suggestionButton.nativeElement.style.display = "none";
+    // this.suggestionButtonUp.nativeElement.style.display = "none";
+    // //this.MobileSuggestion.nativeElement.style.display = "none";
+    // resize();
+    // }
+    // else {
       
-      startAnimationMobile();
-      resize();
-      // this.zoomVideo.nativeElement.muted = true;
-      // this.zoomVideo.nativeElement.style.display = "block";
-      // this.zoomVideo.nativeElement.play();
-    }
+    //   startAnimationMobile();
+    //   resize();
+    //   // this.zoomVideo.nativeElement.muted = true;
+    //   // this.zoomVideo.nativeElement.style.display = "block";
+    //   // this.zoomVideo.nativeElement.play();
+    // }
 
 
 
   }
 
-  // showExploreButton() {
-  //   this.sections += 1;
-
-  //   if(this.sections === 1) {
-
-  //     this.loadingText.nativeElement.style.display = "none";
-  //     this.zoom.nativeElement.style.display = "block";
-      
-  //     window.scrollTo(0, 0)
-  //     setTimeout(function () {
-  //       window.scrollTo(0, 0)
-  //     }.bind(this), 20);
-  //   }
-  // }
 
   seeUltraThin() {
     this.router.navigate(["/", "UltraThinVeneers"]);
@@ -313,110 +281,9 @@ export class ZoomWhiteningComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
-
-    // let playPromise1;
-    // if (ScrollTrigger.isInViewport(this.zoomVideo.nativeElement)) {
-    //   playPromise1 = this.zoomVideo.nativeElement.play();
-    // }
-    // else {
-    //   if (playPromise1 !== undefined) {
-    //     playPromise1.then(_ => {
-    //       this.zoomVideo.nativeElement.pause();
-    //     })
-    //     .catch(error => {
-    //     });
-    //   }
-    // }
-
-    // if(window.scrollY >= this.firstFramePosition && window.scrollY <= this.lastFramePosition && window.innerWidth < 600 && window.innerWidth < window.innerHeight) {
-    //   this.MobileSuggestion.nativeElement.style.display = "flex";
-    // }
-    // else {
-    //   this.MobileSuggestion.nativeElement.style.display = "none";
-    // }
-
-    // if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-    //   this.suggestionButton.nativeElement.style.display = "block";
-    // } else {
-    //   this.suggestionButton.nativeElement.style.display = "none";
-    // }
-
-    // if(window.scrollY > this.firstFramePosition + 100 &&window.scrollY <= this.lastFramePosition) {
-    //   this.suggestionButtonUp.nativeElement.style.display = "block";
-    // }
-    // else {
-    //   this.suggestionButtonUp.nativeElement.style.display = "none";
-    // }
-
-
-    //this.renderPresentation();
   }
 
-  // renderPresentation()
-  // {
-  //   let parent = this.presentationView.nativeElement.parentElement.getBoundingClientRect();
-  //   if(parent.top < 0 && parent.top >= -10000)
-  //   {
-  //     this.presentationView.nativeElement.style.position = "fixed";
-  //     this.presentationView.nativeElement.style.top = "0px";
-  //   }
-  //   else
-  //   {
-  //     this.presentationView.nativeElement.style.position = "relative";
-  //     this.presentationView.nativeElement.style.top = "unset";
-  //   }
 
-  //   if(parent.top < 0 && parent.top > -200)
-  //   {
-  //     this.setFramesDisplay(0);
-  //     this.frameStopAnimation.next();
-  //   }
-  //   else if(parent.top <= -200 && parent.top > -10000) {
-  //     this.setFramesDisplay(1);
-  //     this.frameStartAnimation.next();
-  //   }
-  //   else if(parent.top < 0 || parent.top <= -10000) {
-
-  //     this.setFramesDisplay(-1);
-  //     this.frameStopAnimation.next();
-  //   }
-
-  //   if(parent.top <= -8000 && parent.top > -10000)
-  //   {
-  //     this.bookButton.nativeElement.style.position = "fixed";
-  //     this.bookButton.nativeElement.style.display = "block";
-  //   }
-  //   else
-  //   {
-  //     this.bookButton.nativeElement.style.position = "absolute";
-  //   }
-
-  //   if(parent.top <= -10000)
-  //   {
-  //     this.lastFrame.nativeElement.style.display = "block";
-  //   }
-  //   else
-  //   {
-  //     this.lastFrame.nativeElement.style.display = "none";
-  //   }
-    
-    
-  //   if (window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-  //     this.suggestionButton.nativeElement.style.display = "block";
-  //   } else {
-  //     this.suggestionButton.nativeElement.style.display = "none";
-  //   }
-    
-  //   if (window.scrollY > this.firstFramePosition + 500 && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-  //     this.suggestionButtonUp.nativeElement.style.display = "block";
-  //   } else {
-  //     if (this.currentFrame === this.framePositions.length - 1 && window.scrollY === this.framePositions[this.framePositions.length - 1]) {
-  //       this.suggestionButtonUp.nativeElement.style.display = "block";
-  //     } else {
-  //       this.suggestionButtonUp.nativeElement.style.display = "none";
-  //     }
-  //   }
-  // }
 
   setCurrentFrame() {
     for(var i = 0; i < this.framePositions.length-1; i++)
@@ -436,66 +303,6 @@ export class ZoomWhiteningComponent implements OnInit {
     }
   }
   
-  // setFramesDisplay(blockIndex)
-  // {
-  //   let i = 0;
-  //   for(i = 0; i< this.frames.length;i++)
-  //   {
-  //     if(i === blockIndex)
-  //     {
-  //       this.frames[i].style.display = "block";
-  //       this.activeFrameIndex = i;
-  //     }
-  //     else
-  //     {
-  //       this.frames[i].style.display = "none";
-  //     }
-  //   }
-  // }
-
-  // @HostListener("window:resize", ["$event"])
-  // onResize(event) {
-  //   // var activeContent = this.framesContent[this.activeFrameIndex];
-  //   // var activeContentRect = activeContent.getBoundingClientRect();
-
-  //   // if(activeContentRect.width >= window.innerWidth)
-  //   // {
-  //   //   activeContent.classList.remove("vertical-size");
-  //   //   activeContent.classList.add("horizontal-size");
-  //   // }
-  //   // else if(activeContentRect.height > window.innerHeight)
-  //   // {
-  //   //   activeContent.classList.remove("horizontal-size");
-  //   //   activeContent.classList.add("vertical-size");
-  //   // }
-
-  //   // this.renderPresentation();
-  // }
-
-  // imgLoaded(imageRef){
-  //   let imgWidth = imageRef.width;
-  //   let imgHeight = imageRef.height;
-  //   let factor = imgWidth / imgHeight;
-
-  //   if(window.innerHeight * factor > window.innerWidth)
-  //   {
-  //     imageRef.classList.remove("vertical-size");
-  //     imageRef.classList.add("horizontal-size");
-  //   }
-  //   else 
-  //   {
-  //     imageRef.classList.remove("horizontal-size");
-  //     imageRef.classList.add("vertical-size");
-  //   }
-  //   this.renderPresentation();
-  // }
-
-  // getImageHeight(element, width) {
-  //   let imgWidth = element.width;
-  //   let imgHeight = element.height;
-  //   let factor = imgWidth / imgHeight;
-  //   return (width / 100) * window.innerWidth / factor;
-  // }
   onNextClick() {
     this.setCurrentFrame();
     window.scrollTo({

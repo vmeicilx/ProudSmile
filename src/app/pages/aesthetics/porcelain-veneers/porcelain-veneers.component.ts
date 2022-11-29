@@ -226,6 +226,9 @@ export class PorcelainVeneersComponent implements OnInit {
   @ViewChild("goopyVideo") goopyVideo: ElementRef;
   @ViewChild("smileVideo") smileVideo: ElementRef;
   @ViewChild("makeVideo") makeVideo: ElementRef;
+  @ViewChild("goopyVideoDesk") goopyVideoDesk: ElementRef;
+  @ViewChild("smileVideoDesk") smileVideoDesk: ElementRef;
+  @ViewChild("makeVideoDesk") makeVideoDesk: ElementRef;
 
   @ViewChild("SuggestionButton") suggestionButton: ElementRef;
   @ViewChild("SuggestionButtonUp") suggestionButtonUp: ElementRef;
@@ -251,16 +254,14 @@ export class PorcelainVeneersComponent implements OnInit {
   ngAfterViewInit(): void {
 
     if (window.innerWidth > 1200) {
-
-      startAnimation();
-      this.suggestionButton.nativeElement.style.display = "none";
-      this.suggestionButtonUp.nativeElement.style.display = "none";
-      resize();
+      this.goopyVideoDesk.nativeElement.muted = true;
+      this.goopyVideoDesk.nativeElement.style.display = "block";
+      this.smileVideoDesk.nativeElement.muted = true;
+      this.smileVideoDesk.nativeElement.style.display = "block";
+      this.makeVideoDesk.nativeElement.muted = true;
+      this.makeVideoDesk.nativeElement.style.display = "block";
     }
     else {
-      startAnimationMobile();
-      resize();
-
       this.goopyVideo.nativeElement.muted = true;
       this.goopyVideo.nativeElement.style.display = "block";
       this.smileVideo.nativeElement.muted = true;
@@ -268,6 +269,28 @@ export class PorcelainVeneersComponent implements OnInit {
       this.makeVideo.nativeElement.muted = true;
       this.makeVideo.nativeElement.style.display = "block";
     }
+
+    
+
+
+    // if (window.innerWidth > 1200) {
+
+    //   startAnimation();
+    //   this.suggestionButton.nativeElement.style.display = "none";
+    //   this.suggestionButtonUp.nativeElement.style.display = "none";
+    //   resize();
+    // }
+    // else {
+    //   startAnimationMobile();
+    //   resize();
+
+    //   this.goopyVideo.nativeElement.muted = true;
+    //   this.goopyVideo.nativeElement.style.display = "block";
+    //   this.smileVideo.nativeElement.muted = true;
+    //   this.smileVideo.nativeElement.style.display = "block";
+    //   this.makeVideo.nativeElement.muted = true;
+    //   this.makeVideo.nativeElement.style.display = "block";
+    // }
   }
 
   goToLink(url: string) {
@@ -276,6 +299,7 @@ export class PorcelainVeneersComponent implements OnInit {
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
   onScroll(event) {
+
     if (window.innerWidth <= 1200) {
 
       let playPromise1;
@@ -321,19 +345,108 @@ export class PorcelainVeneersComponent implements OnInit {
       }
     }
     else {
-      if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
-        this.suggestionButton.nativeElement.style.display = "block";
-      } else {
-        this.suggestionButton.nativeElement.style.display = "none";
-      }
-
-      if (window.scrollY > this.firstFramePosition + 100 && window.scrollY <= this.lastFramePosition) {
-        this.suggestionButtonUp.nativeElement.style.display = "block";
+      let playPromise1;
+      if (ScrollTrigger.isInViewport(this.goopyVideoDesk.nativeElement)) {
+        playPromise1 = this.goopyVideoDesk.nativeElement.play();
       }
       else {
-        this.suggestionButtonUp.nativeElement.style.display = "none";
+        if (playPromise1 !== undefined) {
+          playPromise1.then(_ => {
+            this.goopyVideoDesk.nativeElement.pause();
+          })
+            .catch(error => {
+            });
+        }
+      }
+
+      let playPromise2;
+      if (ScrollTrigger.isInViewport(this.smileVideoDesk.nativeElement)) {
+        playPromise2 = this.smileVideoDesk.nativeElement.play();
+      }
+      else {
+        if (playPromise2 !== undefined) {
+          playPromise2.then(_ => {
+            this.smileVideoDesk.nativeElement.pause();
+          })
+            .catch(error => {
+            });
+        }
+      }
+
+      let playPromise3;
+      if (ScrollTrigger.isInViewport(this.makeVideoDesk.nativeElement)) {
+        playPromise3 = this.makeVideoDesk.nativeElement.play();
+      }
+      else {
+        if (playPromise3 !== undefined) {
+          playPromise3.then(_ => {
+            this.makeVideoDesk.nativeElement.pause();
+          })
+            .catch(error => {
+            });
+        }
       }
     }
+
+
+    // if (window.innerWidth <= 1200) {
+
+    //   let playPromise1;
+    //   if (ScrollTrigger.isInViewport(this.goopyVideo.nativeElement)) {
+    //     playPromise1 = this.goopyVideo.nativeElement.play();
+    //   }
+    //   else {
+    //     if (playPromise1 !== undefined) {
+    //       playPromise1.then(_ => {
+    //         this.goopyVideo.nativeElement.pause();
+    //       })
+    //         .catch(error => {
+    //         });
+    //     }
+    //   }
+
+    //   let playPromise2;
+    //   if (ScrollTrigger.isInViewport(this.smileVideo.nativeElement)) {
+    //     playPromise2 = this.smileVideo.nativeElement.play();
+    //   }
+    //   else {
+    //     if (playPromise2 !== undefined) {
+    //       playPromise2.then(_ => {
+    //         this.smileVideo.nativeElement.pause();
+    //       })
+    //         .catch(error => {
+    //         });
+    //     }
+    //   }
+
+    //   let playPromise3;
+    //   if (ScrollTrigger.isInViewport(this.makeVideo.nativeElement)) {
+    //     playPromise3 = this.makeVideo.nativeElement.play();
+    //   }
+    //   else {
+    //     if (playPromise3 !== undefined) {
+    //       playPromise3.then(_ => {
+    //         this.makeVideo.nativeElement.pause();
+    //       })
+    //         .catch(error => {
+    //         });
+    //     }
+    //   }
+    // }
+    // else {
+    //   if (window.scrollY >= this.firstFramePosition && window.scrollY < this.framePositions[this.framePositions.length - 1]) {
+    //     this.suggestionButton.nativeElement.style.display = "block";
+    //   } else {
+    //     this.suggestionButton.nativeElement.style.display = "none";
+    //   }
+
+    //   if (window.scrollY > this.firstFramePosition + 100 && window.scrollY <= this.lastFramePosition) {
+    //     this.suggestionButtonUp.nativeElement.style.display = "block";
+    //   }
+    //   else {
+    //     this.suggestionButtonUp.nativeElement.style.display = "none";
+    //   }
+    // }
 
   }
 
