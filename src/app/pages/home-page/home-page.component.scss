@@ -129,22 +129,20 @@
     }
   }
 
-  .technology-section {
-    background-image: url(/assets/homePage/TechnologyComforts.png);
-    background-repeat: no-repeat;
-    background-color: #030303;
-  }
+
   
-  .afford-section {
-    background-image: url(/assets/homePage/afford-background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    .women {
-      left:50%;
-    }
-  }
+
 
   @media only screen and (min-width: 1201px) {
+
+    .afford-section {
+      background-image: url(/assets/homePage/afford-background.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      .women {
+        left:50%;
+      }
+    }
 
     #ProudSmileParent {
       height: calc(100vh - 129px);
@@ -174,6 +172,12 @@
         justify-content: start;
         width: 500px;
       }
+    }
+
+    .technology-section {
+      background-image: url(/assets/homePage/TechnologyComforts.png);
+      background-repeat: no-repeat;
+      background-color: #030303;
     }
     
   .you-first-section {
@@ -234,7 +238,15 @@
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
 
-    
+        .afford-section {
+      background-image: url(/assets/homePage/afford-background.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      .women {
+        left:50%;
+      }
+    }
+
     #ProudSmileParent {
       height: calc(100vh - 80px);
     }
@@ -326,10 +338,29 @@
         max-width: 75vw;
       }
     }
+
+    .technology-section {
+      background-image: url(/assets/homePage/TechnologyComforts.png);
+      background-repeat: no-repeat;
+      background-color: #030303;
+    }
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
 
+    .afford-section {
+      background-image: url(/assets/homePage/afford-backgroundMobile.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      .women {
+        left:50%;
+      }
+    }
+    .technology-section {
+      background-image: url(/assets/homePage/TechnologyComfortsMobile.png);
+      background-repeat: no-repeat;
+      background-color: #030303;
+    }
     
     #ProudSmileParent {
       height: calc(100vh - 80px);

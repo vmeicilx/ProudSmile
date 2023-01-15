@@ -1,7 +1,11 @@
 <div [ngClass]="'firstSection'">
   <div fxLayout [ngClass]="'homePageImageContainer'">
     <div class="heroImage relative-container">
-      <img src="../../assets/homePage/Hero2.png" />
+      <picture>
+        <source media="(max-width:600px)" srcset="../../assets/homePage/Hero2-small.png">
+        <source media="(min-width:601px)" srcset="../../assets/homePage/Hero2.png">
+        <img src="../../assets/homePage/Hero2.png" alt="The lady with a proud smile.">
+      </picture>
     </div>
     <div [ngClass]="'homePageText'">
       <img src="../../../assets/homePage/homePageText.svg" />
@@ -29,12 +33,6 @@
   </div>
 </div>
 
-<!-- <div class="full-width" fxLayout fxLayoutAlign="center center">
-  <video id="#RelaxVideoFirst" class="full-width" preload="auto" muted #relaxVideo loop playsinline style="background: white;">
-    <source src="../../../assets/dentalClinic/DentalPracticeBut.mp4" type="video/mp4" />
-  </video>
-</div> -->
-
 <div fxLayout="column" fxLayoutAlign="center" class="color-brown">
   <div fxLayout="column" fxLayoutAlign="center center" style="text-align: center"
     class="background-53 font-large libre-regular padding-top-bottom-1">
@@ -55,7 +53,11 @@
       background-53
     ">
     <div class="mPeople" style="position: absolute; bottom: 0">
-      <img src="../../assets/homePage/manyPeople.png" />
+      <picture>
+        <source media="(max-width:600px)" srcset="../../assets/homePage/manyPeople-small.png">
+        <source media="(min-width:601px)" srcset="../../assets/homePage/manyPeople.png">
+        <img src="../../assets/homePage/manyPeople.png" alt="People smilling.">
+      </picture>
     </div>
     <div fxLayout="column" style="float: right" class="
         flex-1
@@ -89,7 +91,11 @@
       relative-container
     ">
     <div class="women" style="position: absolute; bottom: 0">
-      <img src="../../../assets/homePage/woman.png" />
+      <picture>
+        <source media="(max-width:600px)" srcset="../../assets/homePage/woman-small.png">
+        <source media="(min-width:601px)" srcset="../../assets/homePage/woman.png">
+        <img src="../../assets/homePage/woman.png" alt="Payment plan.">
+      </picture>
     </div>
     <div class="flex-1 flexy-column relative-container afford-section-text">
       <div class="margin-right-1 flex-1 margin-bottom-1 max-width-1">
@@ -187,7 +193,11 @@
   </div>
   <div fxLayout fxLayoutAlign="center center">
     <div>
-      <img src="../../assets/homePage/Team.png" />
+      <picture>
+        <source media="(max-width:600px)" srcset="../../assets/homePage/Team-small.png">
+        <source media="(min-width:601px)" srcset="../../assets/homePage/Team.png">
+        <img src="../../assets/homePage/Team.png" alt="The ProduSmile team.">
+      </picture>
     </div>
   </div>
 </div>
@@ -218,105 +228,15 @@
         <app-button (click)="seeOurClinic()" text="READ MORE"></app-button>
       </div>
       <div style="flex:2">
-        <img src="../../assets/homePage/group.png" />
+        <picture>
+          <source media="(max-width:600px)" srcset="../../assets/homePage/group-small.png">
+          <source media="(min-width:601px)" srcset="../../assets/homePage/group.png">
+          <img src="../../assets/homePage/group.png" alt="Coffe, music and Netflix.">
+        </picture>
       </div>
     </div>
   </div>
 </div>
-
-<!-- <div class="hide-on-sm" id="ProudSmileParent" style=" background: black; display: flex; align-items: center;">
-
-  <div id="ProudSmileCanvasContainer" style="position: relative; ">
-    <canvas id="hero-proudsmile"></canvas>
-    <div class="canvas-framer">
-      <div style="
-            position: absolute;
-            top: 0px;
-            left: 0;
-            height: 4vw;
-            background: linear-gradient(black, transparent);
-            z-index: 6;
-            width: 100%;
-          "></div>
-      <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: linear-gradient(90deg, black, transparent);
-            z-index: 6;
-            width: 4vw;
-          "></div>
-  
-      <div style="
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(270deg, black, transparent);
-            z-index: 6;
-            width: 4vw;
-          "></div>
-  
-      <div style="
-            position: absolute;
-            left: 0;
-            bottom: 0px;
-            height: 4vw;
-            background: linear-gradient(0deg, black, transparent);
-            z-index: 6;
-            width: 100%;
-          "></div>
-    </div>
-
-    <div class="venTextDesktop hide-on-sm" style="position: absolute; top: 0; color: white; z-index: 10; right: -15vw">
-    <div class="
-        flex-1
-        sscc
-        padding-chef-on-sm
-        gmargin-right-1
-        no-margin-on-sm
-        margin-bottom-on-sm
-      " fxLayout="column" style="padding-bottom: 2vw">
-      <div class="font-wolf libre-regular margin-bottom-1">
-        <p class="title-on-big center-text-on-sm">
-          We’d love to give <br />
-          you a Proud Smile
-        </p>
-      </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm">
-        <p>
-          Our Cosmetic department is second to none and it’s the jewel of our
-          practice. We offer a comprehensive range of treatments to fit any
-          desire and any budget.<br /><br />
-          Our aesthetic treatments are always personalised and completely done
-          in house by our dentists so you are guaranteed to get a predictable
-          result and one that fits your face and personality.
-        </p>
-      </div>
-      <div class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"></div>
-      <div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
-        <p>
-          Don’t want to wait weeks for<br />
-          that perfect smile?<br />
-        </p>
-      </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom: 2vw">
-        <br />
-        <p>
-          Plus, with the introduction of digital dentistry we can now perform
-          some procedures with no need for anaesthetics, such as our Ultra Thin
-          Veneers.
-        </p>
-      </div>
-      <app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
-    </div>
-  </div>
-
-
-  </div>
-
-</div> -->
 
 <div class="hide-on-sm" style=" background: black; display: flex; align-items: center;">
 
@@ -413,7 +333,6 @@
 
 </div>
 
-
 <div class="hide-on-big" style="background: black; color:white; padding-top:10vw;">
   <div class="font-cat libre-regular margin-bottom-1">
     <p class="title-on-big center-text-on-sm">
@@ -478,10 +397,6 @@
   </div>
 
 </div>
-
-
-
-
 
 <div class="aestheticsAndHealthSection" fxLayout>
   <div class="aesthetics padding-top-bottom-1 relative-container" fxLayout="column" fxLayoutAlign="start end">
