@@ -32,7 +32,7 @@ export class InvasilignComponent implements OnInit {
   }
 
   seeAllFinancial() {
-    this.router.navigate(["/", "payment-page-component"]);
+    this.router.navigate(["/", "PaymentPage"]);
   }
   goToLink(url: string) {
     window.open(url, "_blank");

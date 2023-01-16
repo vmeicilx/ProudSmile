@@ -39,12 +39,12 @@ import { BlogArticleComponent } from "./blog-article/blog-article.component";
 const routes: Routes = [
   { path: "", component: HomePageComponent, pathMatch: 'full' },
   {
-    path: "proud-smile-experience-component",
+    path: "ProudSmileExperience",
     component: ProudSmileExperienceComponent
   },
-  { path: "who-we-are-component", component: WhoWeAreComponent },
-  { path: "dental-clinic-component", component: DentalClinicComponent },
-  { path: "header-component", component: HeaderComponent },
+  { path: "WhoWeAre", component: WhoWeAreComponent },
+  { path: "DentalClinic", component: DentalClinicComponent },
+  { path: "Header", component: HeaderComponent },
   { path: "AnxiousPatients", component: AnxiousPatientsComponent },
   { path: "ClearBraces", component: ClearBracesComponent },
   { path: "DentalEmergency", component: DentalEmergencyComponent },
@@ -69,15 +69,15 @@ const routes: Routes = [
   { path: "FaceSpaFacialAesthetics", component: FacespaFacialComponent },
   { path: "BeforeAndAfter", component: BeforeAfterComponent },
   { path: "Specials", component: SpecialsComponent },
-  { path: "coming-soon-component", component: ComingSoonComponent },
-  { path: "payment-page-component", component: PaymentPageComponent },
+  { path: "ComingSoon", component: ComingSoonComponent },
+  { path: "PaymentPage", component: PaymentPageComponent },
   { path: "LandingBundall", component: LandingBundallComponent },
   { path: "LandingPacific", component: LandingPacificComponent },
   { path: "Proudsmileopenday", component: EmailComponent },
   { path: "NewBundallProudSmile", component: BundallEmailComponent },
   { path: "Blog", component: BlogComponent },
-  { path: "contact-page-component", component: ContactPageComponent },
-  { path: "contact-page-component/:parameter", component: ContactPageComponent },
+  { path: "ContactPage", component: ContactPageComponent },
+  { path: "ContactPage/:parameter", component: ContactPageComponent },
   { path: "BlogArticle/:parameter", component: BlogArticleComponent },
   { path: "send", redirectTo: "/send" }
 ];

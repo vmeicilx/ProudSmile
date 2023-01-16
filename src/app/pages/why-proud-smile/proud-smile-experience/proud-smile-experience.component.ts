@@ -150,7 +150,7 @@ export class ProudSmileExperienceComponent implements OnInit {
   }
 
   seeAllFinancial() {
-    this.router.navigate(["/", "payment-page-component"]);
+    this.router.navigate(["/", "PaymentPage"]);
   }
   seeAllAesthetic() {
     this.router.navigate(["/", "PorcelainVeneers"]);
@@ -166,7 +166,7 @@ export class ProudSmileExperienceComponent implements OnInit {
   }
 
   onWhoWeAre() {
-    this.router.navigate(["/", "who-we-are-component"]);
+    this.router.navigate(["/", "WhoWeAre"]);
   }
 
   showTextPre() {

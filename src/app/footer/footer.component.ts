@@ -58,7 +58,7 @@ export class FooterComponent implements OnInit {
         this.it2.nativeElement.classList.remove("display-none");
         this.it3.nativeElement.classList.remove("display-none");
         this.it4.nativeElement.classList.remove("display-none");
-        if (val.url === "/contact-page-component") {
+        if (val.url === "/ContactPage") {
           this.it1.nativeElement.classList.add("display-none");
           this.it2.nativeElement.classList.add("display-none");
           this.it3.nativeElement.classList.add("display-none");
@@ -75,7 +75,7 @@ export class FooterComponent implements OnInit {
   }
 
   onContactPage() {
-    this.router.navigate(["/", "contact-page-component", true]);
+    this.router.navigate(["/", "ContactPage", true]);
     window.scrollTo(0, 0);
   }
 

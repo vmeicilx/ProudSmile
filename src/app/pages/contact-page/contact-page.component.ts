@@ -199,7 +199,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   onContactPage() {
-    this.router.navigate(["/", "contact-page-component"]);
+    this.router.navigate(["/", "ContactPage"]);
     window.scrollTo(0, 0);
   }
 

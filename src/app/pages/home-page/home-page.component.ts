@@ -154,16 +154,16 @@ export class HomePageComponent implements OnInit {
     window.scrollTo(0, 0);
   }
   seeOurClinic() {
-    this.router.navigate(["/", "dental-clinic-component"]);
+    this.router.navigate(["/", "DentalClinic"]);
     window.scrollTo(0, 0);
   }
   seeProudSmileExperience() {
-    this.router.navigate(["/", "proud-smile-experience-component"]);
+    this.router.navigate(["/", "ProudSmileExperience"]);
     window.scrollTo(0, 0);
   }
 
   seeAllFinancial() {
-    this.router.navigate(["/", "payment-page-component"]);
+    this.router.navigate(["/", "PaymentPage"]);
   }
 
   goToLink(url: string) {
@@ -176,7 +176,7 @@ export class HomePageComponent implements OnInit {
   }
 
   onContactPage() {
-    this.router.navigate(["/contact-page-component/true"]);
+    this.router.navigate(["/ContactPage/true"]);
     window.scrollTo(0, 0);
   }
 }

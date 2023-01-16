@@ -45,7 +45,7 @@ export class LandingPacificComponent implements OnInit {
   
   onContactForm() {
     const promise1 = new Promise((resolve, reject) => {
-      this.router.navigate(["/", "contact-page-component"]);
+      this.router.navigate(["/", "ContactPage"]);
       resolve("Success!");
     });
 

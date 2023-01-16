@@ -19,6 +19,6 @@ export class ClearBracesComponent implements OnInit {
   ngOnInit(): void {}
 
   seeAllFinancial() {
-    this.router.navigate(["/", "payment-page-component"]);
+    this.router.navigate(["/", "PaymentPage"]);
   }
 }

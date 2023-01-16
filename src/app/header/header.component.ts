@@ -246,9 +246,9 @@ export class HeaderComponent implements OnInit {
         }
 
         this.isWhyProudSmile =
-          val.url === "/proud-smile-experience-component" ||
-          val.url === "/who-we-are-component" ||
-          val.url === "/dental-clinic-component"||
+          val.url === "/ProudSmileExperience" ||
+          val.url === "/WhoWeAre" ||
+          val.url === "/DentalClinic"||
           val.url === "/Blog";
 
         this.isImplants =
@@ -288,15 +288,15 @@ export class HeaderComponent implements OnInit {
         this.specialsText.nativeElement.classList.remove("active-text");
         this.contactText.nativeElement.classList.remove("active-text");
 
-        if (val.url === "/proud-smile-experience-component") {
+        if (val.url === "/ProudSmileExperience") {
           this.setActiveSubheader1(0);
           this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
-        if (val.url === "/who-we-are-component") {
+        if (val.url === "/WhoWeAre") {
           this.setActiveSubheader1(1);
           this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
-        if (val.url === "/dental-clinic-component") {
+        if (val.url === "/DentalClinic") {
           this.setActiveSubheader1(2);
           this.whyProudSmileText.nativeElement.classList.add("active-text");
         }
@@ -419,15 +419,11 @@ export class HeaderComponent implements OnInit {
           this.healthText.nativeElement.classList.add("active-text");
         }
 
-        if (val.url === "/aesthetics-component") {
-          this.aestheticsText.nativeElement.classList.add("active-text");
-        }
-
         if (val.url === "/Implants") {
           this.implantsText.nativeElement.classList.add("active-text");
         }
 
-        if (val.url === "/payment-page-component") {
+        if (val.url === "/PaymentPage") {
           this.paymentPlanText.nativeElement.classList.add(
             "payment-plan-active"
           );
@@ -437,7 +433,7 @@ export class HeaderComponent implements OnInit {
           this.specialsText.nativeElement.classList.add("active-text");
         }
 
-        if (val.url === "/contact-page-component") {
+        if (val.url === "/ContactPage") {
           this.contactText.nativeElement.classList.add("active-text");
         }
       }
@@ -1090,7 +1086,7 @@ export class HeaderComponent implements OnInit {
 
   onLiveChat() {
     const promise1 = new Promise((resolve, reject) => {
-      this.router.navigate(["/", "contact-page-component"]);
+      this.router.navigate(["/", "ContactPage"]);
       resolve("Success!");
     });
 

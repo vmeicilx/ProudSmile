@@ -36,7 +36,7 @@ export class RootCanalTherapyComponent implements OnInit {
   }
 
   seeAllFinancial() {
-    this.router.navigate(["/", "payment-page-component"]);
+    this.router.navigate(["/", "PaymentPage"]);
   }
 
   onCrownsClick() {
