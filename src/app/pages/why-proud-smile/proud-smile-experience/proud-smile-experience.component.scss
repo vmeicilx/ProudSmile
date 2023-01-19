@@ -28,11 +28,7 @@
     }
   }
   
-  .dentistry-section {
-    background-image: url(/assets/whyProudSmilePage/mainImage.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+
 
   .imageText {
     .horizontalLine {
@@ -116,20 +112,25 @@
     right: calc(68.83vw - 1376px);
   }
   
-  .NoJudgmentFullDesktop {
-    display: block;
-  }
-
-  .NoJudgmentFullMobile {
-    display: none;
-  }
-
-  
   .face-spa-section {
     padding-left:25vw;
   }
 
   @media only screen and (min-width: 2001px) {
+
+    .NoJudgmentFullDesktop {
+      display: block;
+    }
+  
+    .NoJudgmentFullMobile {
+      display: none;
+    }
+
+    .dentistry-section {
+      background-image: url(/assets/whyProudSmilePage/mainImage.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
     
     .venText {
       max-width: 25vw;
@@ -158,6 +159,20 @@
   }
 
   @media only screen and (min-width: 1201px) {
+
+    .NoJudgmentFullDesktop {
+      display: block;
+    }
+  
+    .NoJudgmentFullMobile {
+      display: none;
+    }
+
+    .dentistry-section {
+      background-image: url(/assets/whyProudSmilePage/mainImage.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
     #ProudSmileParent2 {
       height: calc(100vh - 129px);
@@ -201,6 +216,20 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+
+    .NoJudgmentFullDesktop {
+      display: block;
+    }
+  
+    .NoJudgmentFullMobile {
+      display: none;
+    }
+
+    .dentistry-section {
+      background-image: url(/assets/whyProudSmilePage/mainImage.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
     #ProudSmileParent2 {
       height: calc(100vh - 80px);
@@ -249,6 +278,12 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+
+    .dentistry-section {
+      background-image: url(/assets/whyProudSmilePage/mainImage-small.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
 
     #ProudSmileParent2 {
       height: calc(100vh - 80px);

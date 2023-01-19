@@ -5,13 +5,14 @@
     width: calc(25vw + 1520px);
   }
 
-  .guest-section {
-    background-image: url(/assets/dentalClinic/coffe.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+
 
   @media only screen and (min-width: 1201px) {
+    .guest-section {
+      background-image: url(/assets/dentalClinic/coffe.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
     .coffe {
       width: 100%;
       img {
@@ -37,6 +38,11 @@
   }
 
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .guest-section {
+      background-image: url(/assets/dentalClinic/coffe.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
     .coffe {
       img {
         max-width: 1234px !important;
@@ -61,6 +67,11 @@
   }
 
   @media only screen and (min-width: 300px) and (max-width: 600px) {
+    .guest-section {
+      background-image: url(/assets/dentalClinic/coffe-small.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
     .coffe {
       img {
         max-width: 1234px !important;

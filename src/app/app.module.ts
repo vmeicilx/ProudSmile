@@ -9,7 +9,6 @@ import { FooterComponent } from "./footer/footer.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { SmallCardComponent } from "./custom-components/cards/small-card/small-card.component";
-import { ComingSoonComponent } from "./custom-components/coming-soon/coming-soon.component";
 import { DemoMaterialModule } from "./material-module";
 import { MatNativeDateModule } from "@angular/material/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -66,7 +65,6 @@ import { SafePipe } from "src/services/SafePipe";
     HeaderComponent,
     FooterComponent,
     SmallCardComponent,
-    ComingSoonComponent,
     ButtonComponent,
     ProudSmileExperienceComponent,
     WhoWeAreComponent,

@@ -1,6 +1,10 @@
 <div class="dentistry-section" style="position: relative; margin-top:144px; background: black;">
   <div style="position: absolute; bottom:-53px; z-index:1">
-    <img src="../../../../assets/whyProudSmilePage/mainImage.png" />
+    <picture>
+      <source media="(max-width:600px)" srcset="../../../../assets/whyProudSmilePage/mainImage-small.png">
+      <source media="(min-width:601px)" srcset="../../../../assets/whyProudSmilePage/mainImage.png">
+      <img src="../../../../assets/whyProudSmilePage/mainImage.png" alt="Relax and coffee."/>
+    </picture>
   </div>
 
   <div
@@ -55,7 +59,7 @@
   </div>
 </div>
 
-<div class="NoJudgmentFullDesktop" class="flexy-row" style="position: relative; min-height: 60vw; background: #FECCD5; align-items: end;">
+<div class="flexy-row NoJudgmentFullDesktop" style="position: relative; min-height: 60vw; background: #FECCD5; align-items: end;">
   <div>
     <img
       loading="lazy"
@@ -136,7 +140,7 @@
     <img
       class="no-judgment-image"
       loading="lazy"
-      src="../../../assets/whyProudSmilePage/NoJudgmentFull.png"
+      src="../../../assets/whyProudSmilePage/NoJudgmentFull-small.png"
     />
   </div>
 </div>
@@ -315,10 +319,13 @@
   >
     <div class="flexy-row-w sscc">
       <div class="margin-right-1 no-margin-on-sm" style="flex: 0 0 55%">
-        <img
-          loading="lazy"
+        <picture>
+          <source media="(max-width:600px)" srcset="../../../../assets/healthPage/AnxiousPatients/hand-samll.png">
+          <source media="(min-width:601px)" srcset="../../../../assets/healthPage/AnxiousPatients/hand.png">
+          <img
           src="../../../../assets/healthPage/AnxiousPatients/hand.png"
         />
+        </picture>
       </div>
       <div
         class="flex-1 sscc margin-bottom-on-sm padding-chef-on-sm"
@@ -659,101 +666,6 @@
   </div>
 </div>
 
-
-<!-- <div class="hide-on-sm" id="ProudSmileParent2" style=" background: black; display: flex; align-items: center;">
-
-  <div id="ProudSmileCanvasContainer2" style="position: relative; ">
-    <canvas id="hero-proudsmile2"></canvas>
-    <div class="canvas-framer">
-      <div style="
-            position: absolute;
-            top: 0px;
-            left: 0;
-            height: 4vw;
-            background: linear-gradient(black, transparent);
-            z-index: 6;
-            width: 100%;
-          "></div>
-      <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: linear-gradient(90deg, black, transparent);
-            z-index: 6;
-            width: 4vw;
-          "></div>
-  
-      <div style="
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%;
-            background: linear-gradient(270deg, black, transparent);
-            z-index: 6;
-            width: 4vw;
-          "></div>
-  
-      <div style="
-            position: absolute;
-            left: 0;
-            bottom: 0px;
-            height: 4vw;
-            background: linear-gradient(0deg, black, transparent);
-            z-index: 6;
-            width: 100%;
-          "></div>
-    </div>
-
-    <div class="venTextDesktop hide-on-sm" style="position: absolute; top: 0; color: white; z-index: 10; right: -15vw">
-    <div class="
-        flex-1
-        sscc
-        padding-chef-on-sm
-        gmargin-right-1
-        no-margin-on-sm
-        margin-bottom-on-sm
-      " fxLayout="column" style="padding-bottom: 2vw">
-      <div class="font-wolf libre-regular margin-bottom-1">
-        <p class="title-on-big center-text-on-sm">
-          We’d love to give <br />
-          you a Proud Smile
-        </p>
-      </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm">
-        <p>
-          Our Cosmetic department is second to none and it’s the jewel of our
-          practice. We offer a comprehensive range of treatments to fit any
-          desire and any budget.<br /><br />
-          Our aesthetic treatments are always personalised and completely done
-          in house by our dentists so you are guaranteed to get a predictable
-          result and one that fits your face and personality.
-        </p>
-      </div>
-      <div class="line-6 line-6-on-big opacity-2 full-width margin-top-bottom-2"></div>
-      <div class="subtitle-on-big roboto-small-3 font-medium center-text-on-sm">
-        <p>
-          Don’t want to wait weeks for<br />
-          that perfect smile?<br />
-        </p>
-      </div>
-      <div class="roboto-thin font-small-3 center-text-on-sm" style="margin-bottom: 2vw">
-        <br />
-        <p>
-          Plus, with the introduction of digital dentistry we can now perform
-          some procedures with no need for anaesthetics, such as our Ultra Thin
-          Veneers.
-        </p>
-      </div>
-      <app-button text="SEE AESTHETICS PAGE" (click)="seeAllAesthetic()"></app-button>
-    </div>
-  </div>
-
-
-  </div>
-
-</div> -->
-
 <div class="hide-on-sm" style=" background: black; display: flex; align-items: center;">
 
   <div style="position: relative; ">
@@ -936,6 +848,7 @@
       style="max-width: unset"
       src="../../../assets/whyProudSmilePage/facespa_woman.jpg"
     />
+
   </div>
   <div
     class="absolute-container height-7"

@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { ComingSoonComponent } from "./custom-components/coming-soon/coming-soon.component";
 import { HeaderComponent } from "./header/header.component";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { ProudSmileExperienceComponent } from "./pages/why-proud-smile/proud-smile-experience/proud-smile-experience.component";
@@ -69,7 +68,6 @@ const routes: Routes = [
   { path: "FaceSpaFacialAesthetics", component: FacespaFacialComponent },
   { path: "BeforeAndAfter", component: BeforeAfterComponent },
   { path: "Specials", component: SpecialsComponent },
-  { path: "ComingSoon", component: ComingSoonComponent },
   { path: "PaymentPage", component: PaymentPageComponent },
   { path: "LandingBundall", component: LandingBundallComponent },
   { path: "LandingPacific", component: LandingPacificComponent },
