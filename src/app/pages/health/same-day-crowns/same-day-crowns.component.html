@@ -223,12 +223,25 @@
 </div>
 
 <div class="relative-container">
-  <video preload="auto" #cerec style="width: 100%; background: white;" playsinline>
+  <div class="hide-on-sm" >
+    <video preload="auto" #cerec style="width: 100%; background: white;" playsinline>
+      <source
+        src="../../../../assets/healthPage/SameDayCrowns/Cerec.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
+<div class="hide-on-big" >
+  <video preload="auto" #cerecMobile style="width: 100%; background: white;" playsinline>
     <source
-      src="../../../../assets/healthPage/SameDayCrowns/Cerec.mp4"
+      src="../../../../assets/healthPage/SameDayCrowns/CerecMobile.mp4"
       type="video/mp4"
     />
   </video>
+</div>
+
+
   <div #CerecPreview id="CerPrew" class="relative-container" style="cursor: pointer;" (click)="playVideo()">
     <div>
       <picture>
@@ -751,17 +764,30 @@
     <div class="relative-container flexy-row">
       <div
         #bridgeMask
-        class="absolute-container bridge-mask"
+        class="absolute-container bridge-mask hide-on-sm"
         style="
           width: 100vw;
-          border-top: 12px solid black;
-          border-bottom: 12px solid black;
+          border-top: 12px solid #111011;
+          border-bottom: 24px solid #f7f7f7;
           display: none;
           top: 0px;
         "
       ></div>
-      <video
+      <div
+      #bridgeMaskMobile
+      class="absolute-container bridge-mask hide-on-big"
+      style="
+        width: 100vw;
+        border-top: 12px solid #111011;
+        border-bottom: 34px solid #f7f7f7;
+        display: none;
+        top: 0px;
+      "
+    ></div>
+      <div class="hide-on-sm">
+        <video
         (loadeddata)="bridgeLoaded()"
+        
         preload="auto"
         #bridgeVideo
         style="width: 50vw; background:white"
@@ -772,12 +798,42 @@
           type="video/mp4"
         />
       </video>
-      <video preload="auto" #marylandVideo style="width: 50vw; background:white" playsinline>
+      </div>
+
+      <div class="hide-on-big">
+        <video
+        (loadeddata)="bridgeLoaded()"
+        
+        preload="auto"
+        #bridgeVideoMobile
+        style="width: 50vw; background:white"
+        playsinline
+      >
         <source
-          src="../../../../assets/healthPage/SameDayCrowns/maryland_bridge.mp4"
+          src="../../../../assets/healthPage/SameDayCrowns/Bridge VideoMobile.mp4"
           type="video/mp4"
         />
       </video>
+      </div>
+
+      <div class="hide-on-sm">
+        <video preload="auto"  #marylandVideo style="width: 50vw; background:white" playsinline>
+          <source
+            src="../../../../assets/healthPage/SameDayCrowns/maryland_bridge.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div class="hide-on-big">
+        <video preload="auto"  #marylandVideoMobile style="width: 50vw; background:white" playsinline>
+          <source
+            src="../../../../assets/healthPage/SameDayCrowns/Maryland BridgeMobile.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
     </div>
   </div>
 </div>

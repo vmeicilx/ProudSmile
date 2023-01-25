@@ -76,7 +76,7 @@
   <div class="hide-on-big flexy-column">
     <video class="full-width hide-on-sm" preload="auto" muted #implantVideoSmall loop playsinline
       style="background: white">
-      <source src="../../../../assets/implants/SingleTooth/spiningImplant.mp4" type="video/mp4" />
+      <source src="../../../../assets/implants/SingleTooth/spiningImplantMobile.mp4" type="video/mp4" />
     </video>
     <div class="flexy-column cccc margin-bottom-10" style="margin-top: 10vw">
       <div class="margin-bottom-5 margin-bottom-1">
@@ -123,10 +123,20 @@
 </div>
 
 <div class="padding-chef color-white relative-container height-6" fxLayout="column" fxLayoutAlign="center center">
-  <video loading="lazy" class="height-6" preload="auto" muted #rightVideo loop style="display: none; background: white"
+  <div class="hide-on-sm height-6">
+    <video loading="lazy" class="height-6" preload="auto" muted #rightVideo loop style="display: none; background: white"
     playsinline>
     <source src="../../../../assets/implants/SingleTooth/rightVideo.mp4" type="video/mp4" />
   </video>
+  </div>
+
+<div class="hide-on-big height-6">
+  <video loading="lazy" class="height-6" preload="auto" muted #rightVideoMobile loop style="display: none; background: white"
+  playsinline>
+  <source src="../../../../assets/implants/SingleTooth/RightvideoMobile.mp4" type="video/mp4" />
+</video>
+</div>
+
 
   <div class="absolute-container opacity-7 background-33 height-6 padding-chef padding-top-bottom-1 full-width sscc"
     fxLayout="column">

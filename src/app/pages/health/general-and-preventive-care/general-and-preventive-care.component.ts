@@ -113,6 +113,7 @@ function startAnimation() {
 })
 export class GeneralAndPreventiveCareComponent implements OnInit {
   @ViewChild("firstVideo") video: ElementRef;
+  @ViewChild("firstVideoMobile") videoMobile: ElementRef;
   @ViewChild("PerfectTeeths") PerfectTeeths: ElementRef;
   @ViewChild("Maximize") mazimizeEl: ElementRef;
   @ViewChild("backToGrid") backToGrid: ElementRef;
@@ -132,6 +133,8 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
   ngAfterViewInit(): void {
     this.video.nativeElement.muted = true;
     this.video.nativeElement.style.display = "block";
+    this.videoMobile.nativeElement.muted = true;
+    this.videoMobile.nativeElement.style.display = "block";
 
     startAnimation();
     resize()
@@ -148,6 +151,20 @@ export class GeneralAndPreventiveCareComponent implements OnInit {
         playPromise1
           .then((_) => {
             this.video.nativeElement.pause();
+          })
+          .catch((error) => {});
+      }
+    }
+
+    
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.videoMobile.nativeElement)) {
+      playPromise2 = this.videoMobile.nativeElement.play();
+    } else {
+      if (playPromise2 !== undefined) {
+        playPromise2
+          .then((_) => {
+            this.videoMobile.nativeElement.pause();
           })
           .catch((error) => {});
       }

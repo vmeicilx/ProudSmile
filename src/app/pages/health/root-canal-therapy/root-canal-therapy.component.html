@@ -30,6 +30,7 @@
     fxLayout
     fxLayoutAlign="center center"
   >
+  <div class="hide-on-sm">
     <video
       style="max-width: 1000px; background: white"
       class="full-width"
@@ -44,6 +45,25 @@
         type="video/mp4"
       />
     </video>
+  </div>
+
+  <div class="hide-on-big">
+    <video
+      style="max-width: 1000px; background: white"
+      class="full-width"
+      preload="auto"
+      muted
+      #teethVideoMobile
+      loop
+      playsinline
+    >
+      <source
+        src="../../../../assets/healthPage/RootCanal/TeethMobile.mp4"
+        type="video/mp4"
+      />
+    </video>
+  </div>
+
 
     <div
       class="absolute-container hide-on-sm"
@@ -122,6 +142,7 @@
   fxLayout="column"
   fxLayoutAlign="center center"
 >
+<div class="hide-on-sm">
   <video
     loading="lazy"
     class="height-1"
@@ -137,6 +158,26 @@
       type="video/mp4"
     />
   </video>
+</div>
+
+<div class="hide-on-big">
+  <video
+    loading="lazy"
+    class="height-1"
+    preload="auto"
+    muted
+    #rootCanalVideoMobile
+    loop
+    style="background: white; display: none"
+    playsinline
+  >
+    <source
+      src="../../../../assets/healthPage/RootCanal/What To ExpectMobile.mp4"
+      type="video/mp4"
+    />
+  </video>
+</div>
+
 
   <div
     class="

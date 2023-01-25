@@ -6,7 +6,6 @@ import {
   ViewChild
 } from "@angular/core";
 import { Meta, Title } from "@angular/platform-browser";
-import { HeaderComponent } from "src/app/header/header.component";
 
 @Component({
   selector: "app-single-tooth",
@@ -15,6 +14,7 @@ import { HeaderComponent } from "src/app/header/header.component";
 })
 export class SingleToothComponent implements OnInit {
   @ViewChild("rightVideo") rightVideo: ElementRef;
+  @ViewChild("rightVideoMobile") rightVideoMobile: ElementRef;
   @ViewChild("implantVideo") implantVideo: ElementRef;
   @ViewChild("implantVideoSmall") implantVideoSmall: ElementRef;
   @ViewChild("target") scrollTarget: ElementRef;
@@ -31,9 +31,11 @@ export class SingleToothComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.rightVideo.nativeElement.muted = true;
+    this.rightVideoMobile.nativeElement.muted = true;
     this.implantVideo.nativeElement.muted = true;
     this.implantVideoSmall.nativeElement.muted = true;
     this.rightVideo.nativeElement.style.display = "block";
+    this.rightVideoMobile.nativeElement.style.display = "block";
     this.implantVideo.nativeElement.style.display = "block";
     this.implantVideoSmall.nativeElement.style.display = "block";
     if(window.innerWidth <= 1200) {
@@ -51,6 +53,19 @@ export class SingleToothComponent implements OnInit {
         playPromise1
           .then((_) => {
             this.rightVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
+      }
+    }
+
+    let playPromise4;
+    if (ScrollTrigger.isInViewport(this.rightVideoMobile.nativeElement)) {
+      playPromise4 = this.rightVideoMobile.nativeElement.play();
+    } else {
+      if (playPromise4 !== undefined) {
+        playPromise4
+          .then((_) => {
+            this.rightVideoMobile.nativeElement.pause();
           })
           .catch((error) => {});
       }

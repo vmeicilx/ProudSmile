@@ -14,6 +14,7 @@ import { Meta, Title } from "@angular/platform-browser";
 })
 export class ImplantDenturesComponent implements OnInit {
   @ViewChild("overdentureVideo") overdentureVideo: ElementRef;
+  @ViewChild("overdentureVideoMobile") overdentureVideoMobile: ElementRef;
 
   constructor(private title: Title, private meta: Meta) {
     this.title.setTitle("Implant Supported Dentures | Proud Smile Gold Coast");
@@ -28,6 +29,8 @@ export class ImplantDenturesComponent implements OnInit {
   ngAfterViewInit(): void {
     this.overdentureVideo.nativeElement.muted = true;
     this.overdentureVideo.nativeElement.style.display = "block";
+    this.overdentureVideoMobile.nativeElement.muted = true;
+    this.overdentureVideoMobile.nativeElement.style.display = "block";
   }
 
   @HostListener("window:scroll", ["$event"]) // for window scroll events
@@ -40,6 +43,20 @@ export class ImplantDenturesComponent implements OnInit {
       if (playPromise !== undefined) {
         playPromise.then(_ => {
           this.overdentureVideo.nativeElement.pause();
+        })
+        .catch(error => {
+        });
+      }
+    }
+
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.overdentureVideoMobile.nativeElement)) {
+      playPromise2 = this.overdentureVideoMobile.nativeElement.play();
+    }
+    else {
+      if (playPromise2 !== undefined) {
+        playPromise2.then(_ => {
+          this.overdentureVideoMobile.nativeElement.pause();
         })
         .catch(error => {
         });

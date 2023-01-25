@@ -362,7 +362,7 @@
     justify-content: center;
   }
   .hide-on-big {
-    display: none;
+    display: none !important;
   }
   .max-width-unset-on-big {
     max-width: unset !important;

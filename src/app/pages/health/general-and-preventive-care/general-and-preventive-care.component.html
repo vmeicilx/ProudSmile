@@ -359,10 +359,20 @@
 </div>
 
 <div class="padding-chef color-white relative-container height-5" fxLayout="column" fxLayoutAlign="center center">
-  <video loading="lazy" class="height-5" preload="auto" muted #firstVideo loop style="display: none" playsinline
+  <div class="hide-on-sm">
+    <video loading="lazy" class="height-5" preload="auto" muted #firstVideo loop style="display: none" playsinline
     style="background: white;">
     <source src="../../../../assets/healthPage/GeneralAndPreventive/General_Preventative_Care.mp4" type="video/mp4" />
   </video>
+  </div>
+
+  <div class="hide-on-bug">
+    <video loading="lazy" class="height-5" preload="auto" muted #firstVideoMobile loop style="display: none" playsinline
+    style="background: white;">
+    <source src="../../../../assets/healthPage/GeneralAndPreventive/General Preventative CareMobile.mp4" type="video/mp4" />
+  </video>
+  </div>
+
 
   <div class="
       absolute-container

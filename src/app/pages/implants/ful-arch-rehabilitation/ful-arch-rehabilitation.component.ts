@@ -16,6 +16,7 @@ export class FulArchRehabilitationComponent implements OnInit {
   @ViewChild("ErwContainer") erwContainer: ElementRef;
   @ViewChild("ErwImg") erwImg: ElementRef;
   @ViewChild("biocareVideo") biocareVideo: ElementRef;
+  @ViewChild("biocareVideoMobile") biocareVideoMobile: ElementRef;
   @ViewChild("toothContainer") toothContainer: ElementRef;
   @ViewChild("toothImage") toothImage: ElementRef;
 
@@ -32,6 +33,8 @@ export class FulArchRehabilitationComponent implements OnInit {
   ngAfterViewInit(): void {
     this.biocareVideo.nativeElement.muted = true;
     this.biocareVideo.nativeElement.style.display = "block";
+    this.biocareVideoMobile.nativeElement.muted = true;
+    this.biocareVideoMobile.nativeElement.style.display = "block";
   }
 
   erwImgLoad() {
@@ -58,6 +61,19 @@ export class FulArchRehabilitationComponent implements OnInit {
         playPromise1
           .then((_) => {
             this.biocareVideo.nativeElement.pause();
+          })
+          .catch((error) => {});
+      }
+    }
+
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.biocareVideoMobile.nativeElement)) {
+      playPromise2 = this.biocareVideoMobile.nativeElement.play();
+    } else {
+      if (playPromise2 !== undefined) {
+        playPromise2
+          .then((_) => {
+            this.biocareVideoMobile.nativeElement.pause();
           })
           .catch((error) => {});
       }

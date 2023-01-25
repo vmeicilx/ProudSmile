@@ -15,6 +15,7 @@ import { Router } from "@angular/router";
 })
 export class InvasilignComponent implements OnInit {
   @ViewChild("openingVideo") openingVideoEl: ElementRef;
+  @ViewChild("openingVideoMobile") openingVideoElMobile: ElementRef;
 
   constructor(private router: Router, private title: Title, private meta: Meta) {
     this.title.setTitle("Invisalign Gold Coast | Levels | Costs | Experienced");
@@ -29,6 +30,8 @@ export class InvasilignComponent implements OnInit {
   ngAfterViewInit(): void {
     this.openingVideoEl.nativeElement.muted = true;
     this.openingVideoEl.nativeElement.style.display = "block";
+    this.openingVideoElMobile.nativeElement.muted = true;
+    this.openingVideoElMobile.nativeElement.style.display = "block";
   }
 
   seeAllFinancial() {
@@ -48,6 +51,21 @@ export class InvasilignComponent implements OnInit {
       if (playPromise1 !== undefined) {
         playPromise1.then(_ => {
           this.openingVideoEl.nativeElement.pause();
+        })
+        .catch(error => {
+        });
+      }
+    }
+
+    
+    let playPromise2;
+    if (ScrollTrigger.isInViewport(this.openingVideoElMobile.nativeElement)) {
+      playPromise2 = this.openingVideoElMobile.nativeElement.play();
+    }
+    else {
+      if (playPromise2 !== undefined) {
+        playPromise2.then(_ => {
+          this.openingVideoElMobile.nativeElement.pause();
         })
         .catch(error => {
         });

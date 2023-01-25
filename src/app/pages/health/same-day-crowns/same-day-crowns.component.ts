@@ -19,7 +19,11 @@ export class SameDayCrownsComponent implements OnInit {
   @ViewChild("cerec") cerecVideo: ElementRef;
   @ViewChild("bridgeVideo") bridgeVideo: ElementRef;
   @ViewChild("marylandVideo") marylandVideo: ElementRef;
+  @ViewChild("cerecMobile") cerecVideoMobile: ElementRef;
+  @ViewChild("bridgeVideoMobile") bridgeVideoMobile: ElementRef;
+  @ViewChild("marylandVideoMobile") marylandVideoMobile: ElementRef;
   @ViewChild("bridgeMask") bridgeMask: ElementRef;
+  @ViewChild("bridgeMaskMobile") bridgeMaskMobile: ElementRef;
   @ViewChild("Vulcan") vulcan: ElementRef;
   @ViewChild("PlayButton") PlayButton: ElementRef;
   @ViewChild("CerecPreview") CerecPreview: ElementRef;
@@ -44,8 +48,14 @@ export class SameDayCrownsComponent implements OnInit {
     this.marylandVideo.nativeElement.style.display = "block";
     this.cerecVideo.nativeElement.muted = false;
     this.cerecVideo.nativeElement.style.display = "none";
+    this.cerecVideoMobile.nativeElement.muted = false;
+    this.cerecVideoMobile.nativeElement.style.display = "none";
+    this.bridgeVideoMobile.nativeElement.muted = true;
+    this.bridgeVideoMobile.nativeElement.style.display = "block";
+    this.marylandVideoMobile.nativeElement.muted = true;
+    this.marylandVideoMobile.nativeElement.style.display = "block";
 
-    if (window.innerWidth > 1200) {
+    if (window.innerWidth >= 1200) {
       if (
         typeof this.cerecVideo.nativeElement.onfullscreenchange != "undefined"
       ) {
@@ -53,6 +63,18 @@ export class SameDayCrownsComponent implements OnInit {
           this.fullscreenChangeHandler;
       } else {
         this.cerecVideo.nativeElement.onwebkitfullscreenchange =
+          this.fullscreenChangeHandler;
+      }
+    }
+
+    if (window.innerWidth < 1200) {
+      if (
+        typeof this.cerecVideoMobile.nativeElement.onfullscreenchange != "undefined"
+      ) {
+        this.cerecVideoMobile.nativeElement.onfullscreenchange =
+          this.fullscreenChangeHandler;
+      } else {
+        this.cerecVideoMobile.nativeElement.onwebkitfullscreenchange =
           this.fullscreenChangeHandler;
       }
     }
@@ -90,6 +112,32 @@ export class SameDayCrownsComponent implements OnInit {
           .catch((error) => {});
       }
     }
+
+    let playPromise3;
+    if (ScrollTrigger.isInViewport(this.bridgeVideoMobile.nativeElement)) {
+      playPromise3 = this.bridgeVideoMobile.nativeElement.play();
+    } else {
+      if (playPromise3 !== undefined) {
+        playPromise3
+          .then((_) => {
+            this.bridgeVideoMobile.nativeElement.pause();
+          })
+          .catch((error) => {});
+      }
+    }
+
+    let playPromise4;
+    if (ScrollTrigger.isInViewport(this.marylandVideoMobile.nativeElement)) {
+      playPromise4 = this.marylandVideoMobile.nativeElement.play();
+    } else {
+      if (playPromise4 !== undefined) {
+        playPromise4
+          .then((_) => {
+            this.marylandVideoMobile.nativeElement.pause();
+          })
+          .catch((error) => {});
+      }
+    }
   }
 
   @HostListener("window:resize", ["$event"])
@@ -112,10 +160,26 @@ export class SameDayCrownsComponent implements OnInit {
   }
 
   playVideo() {
+    
     let video = this.cerecVideo.nativeElement;
+    
+    if (window.innerWidth >= 1200) {
+      video = this.cerecVideo.nativeElement;
+      
     video.style.display = "block";
-
-    if (window.innerWidth > 1200) {
+      video.setAttribute("controls", "controls");
+      if (
+        typeof document.exitFullscreen != "undefined" &&
+        document.fullscreenEnabled === true
+      ) {
+        video.requestFullscreen();
+      } else {
+        video.webkitRequestFullScreen();
+      }
+    }
+    else if(window.innerWidth < 1200) {
+      video = this.cerecVideoMobile.nativeElement;
+      video.style.display = "block";
       video.setAttribute("controls", "controls");
       if (
         typeof document.exitFullscreen != "undefined" &&
@@ -139,12 +203,31 @@ export class SameDayCrownsComponent implements OnInit {
   }
 
   bridgeLoaded() {
+    if (window.innerWidth >= 1200) {
+      
+      
     this.bridgeMask.nativeElement.style.display = "block";
+      }
+      else if(window.innerWidth < 1200) {
+        
+      
+    this.bridgeMaskMobile.nativeElement.style.display = "block";
+      }
+      
     this.setMaskHeight();
   }
 
   setMaskHeight() {
+    
+    if (window.innerWidth >= 1200) {
+      
     this.bridgeMask.nativeElement.style.height =
-    this.bridgeVideo.nativeElement.getBoundingClientRect().height - 24 + "px";
+    this.bridgeVideo.nativeElement.getBoundingClientRect().height - 12 + "px";
+    }
+    else if(window.innerWidth < 1200) {
+      
+    this.bridgeMaskMobile.nativeElement.style.height =
+    this.bridgeVideoMobile.nativeElement.getBoundingClientRect().height - 12 + "px";
+    }
   }
 }

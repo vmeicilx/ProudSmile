@@ -24,15 +24,28 @@ export class RootCanalTherapyComponent implements OnInit {
 
   @ViewChild("rootCanalVideo") video: ElementRef;
   @ViewChild("teethVideo") teeth: ElementRef;
+  @ViewChild("rootCanalVideoMobile") videoMobile: ElementRef;
+  @ViewChild("teethVideoMobile") teethMobile: ElementRef;
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.video.nativeElement.muted = true;
-    this.teeth.nativeElement.muted = true;
-    this.video.nativeElement.style.display = "block";
-    this.video.nativeElement.playbackRate = 0.4;
-    this.teeth.nativeElement.play();
+    if(window.innerWidth < 1200) {
+
+      this.videoMobile.nativeElement.muted = true;
+      this.teethMobile.nativeElement.muted = true;
+      this.videoMobile.nativeElement.style.display = "block";
+      this.videoMobile.nativeElement.playbackRate = 0.4;
+      this.teethMobile.nativeElement.play();
+    }
+    else {
+      this.video.nativeElement.muted = true;
+      this.teeth.nativeElement.muted = true;
+      this.video.nativeElement.style.display = "block";
+      this.video.nativeElement.playbackRate = 0.4;
+      this.teeth.nativeElement.play();
+
+    }
   }
 
   seeAllFinancial() {
@@ -67,6 +80,34 @@ export class RootCanalTherapyComponent implements OnInit {
       if (playPromise2 !== undefined) {
         playPromise2.then(_ => {
           this.teeth.nativeElement.pause();
+        })
+        .catch(error => {
+        });
+      }
+    }
+    
+    let playPromise3;
+    if (ScrollTrigger.isInViewport(this.videoMobile.nativeElement)) {
+      playPromise3 = this.videoMobile.nativeElement.play();
+    }
+    else {
+      if (playPromise3 !== undefined) {
+        playPromise3.then(_ => {
+          this.videoMobile.nativeElement.pause();
+        })
+        .catch(error => {
+        });
+      }
+    }
+    
+    let playPromise4;
+    if (ScrollTrigger.isInViewport(this.teethMobile.nativeElement)) {
+      playPromise4 = this.teethMobile.nativeElement.play();
+    }
+    else {
+      if (playPromise4 !== undefined) {
+        playPromise4.then(_ => {
+          this.teethMobile.nativeElement.pause();
         })
         .catch(error => {
         });
