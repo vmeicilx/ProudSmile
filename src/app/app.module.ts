@@ -44,7 +44,6 @@ import { ZoomWhiteningComponent } from "./pages/aesthetics/zoom-whitening/zoom-w
 import { FacespaFacialComponent } from "./pages/aesthetics/facespa-facial/facespa-facial.component";
 import { DataService } from "./shared/data-service";
 import { BeforeAfterComponent } from './pages/aesthetics/before-after/before-after.component';
-import { ScrollFramerFullComponent } from './custom-components/scroll-framer-full/scroll-framer-full.component';
 import { MobileHeaderComponent } from './mobile-header/mobile-header.component';
 import { DropwodnGreenComponent } from './custom-components/dropwodn-green/dropwodn-green.component';
 import { LandingBundallComponent } from './pages/landing-bundall/landing-bundall.component';
@@ -93,7 +92,6 @@ import { SafePipe } from "src/services/SafePipe";
     ZoomWhiteningComponent,
     FacespaFacialComponent,
     BeforeAfterComponent,
-    ScrollFramerFullComponent,
     MobileHeaderComponent,
     DropwodnGreenComponent,
     LandingBundallComponent,

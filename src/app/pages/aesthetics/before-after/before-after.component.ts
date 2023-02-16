@@ -148,6 +148,8 @@ export class BeforeAfterComponent implements OnInit {
   public inBet1;
   public inBet2;
 
+  galleryPath = "../../../../assets/aesthetics/BeforeAndAfter/Gallery/";
+
   constructor(private router: Router, private http: HttpClient, private title: Title, private meta: Meta) {
     this.title.setTitle("Dentist Gold Coast | Before and After Gallery");
     this.meta.addTags([{
@@ -165,7 +167,11 @@ export class BeforeAfterComponent implements OnInit {
     return this.http.get(this._jsonURL);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    if (window.innerWidth < 1200) {
+      this.galleryPath = "../../../../assets/aesthetics/BeforeAndAfter/GalleryMobile/";
+    }
+  }
 
   ngAfterViewInit(): void {
     this.art1.nativeElement.style.opacity = "1";

@@ -63,7 +63,11 @@
   >
     <div fxLayout="column" fxLayoutGap="4vh">
       <div>
-        <img class="bundallImage" loading="lazy" src="../../../assets/contactPage/Bundall_1.png" />
+        <picture>
+          <source media="(max-width:600px)" srcset="../../../assets/contactPage/Bundall_1Mobile.png">
+          <source media="(min-width:601px)" srcset="../../../assets/contactPage/Bundall_1.png">
+          <img class="bundallImage" loading="lazy" src="../../../assets/contactPage/Bundall_1.png" />
+        </picture>
       </div>
       <div
         class="font-small"

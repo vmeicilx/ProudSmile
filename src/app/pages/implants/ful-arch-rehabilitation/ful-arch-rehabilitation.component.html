@@ -1,9 +1,14 @@
 <div class="color-white margin-top-7 relative-container">
-  <img
+  <picture>
+    <source media="(max-width:600px)" srcset="../../../../assets/implants/FullArch/BitmapMobile.png" >
+    <source media="(min-width:601px)" srcset="../../../../assets/implants/FullArch/Bitmap.png" >
+    <img
     class="absolute-container full-height"
     style="max-width: unset; right: 0"
     src="../../../../assets/implants/FullArch/Bitmap.png"
   />
+  </picture>
+
   <div
     class="absolute-container full-height"
     style="width: 100%; height: 100%"
@@ -80,7 +85,7 @@
         class="gel flex-1 margin-bottom-on-sm"
         style="width: 80vw; z-index: 1"
       >
-        <img src="../../../../assets/implants/FullArch/tooth.png" />
+        <img src="../../../../assets/implants/FullArch/toothMobile.png" />
       </div>
       <div
         class="padding-chef ssss margin-bottom-on-sm relative-container"
@@ -161,7 +166,7 @@
         <img
           #ErwImg
           loading="lazy"
-          src="../../../../assets/implants/FullArch/erwin.png"
+          src="../../../../assets/implants/FullArch/erwinMobile.png"
           (load)="erwImgLoad()"
         />
       </div>
