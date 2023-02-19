@@ -34,6 +34,8 @@ import { EmailComponent } from "./pages/email/email/email.component";
 import { BundallEmailComponent } from "./pages/bundall-email/bundall-email.component";
 import { BlogComponent } from "./blog/blog.component";
 import { BlogArticleComponent } from "./blog-article/blog-article.component";
+import { ThankyouBundallComponent } from "./pages/thankyou-bundall/thankyou-bundall.component";
+import { ThankyouPacificComponent } from "./pages/thankyou-pacific/thankyou-pacific.component";
 
 const routes: Routes = [
   { path: "", component: HomePageComponent, pathMatch: 'full' },
@@ -73,6 +75,8 @@ const routes: Routes = [
   { path: "LandingPacific", component: LandingPacificComponent },
   { path: "Proudsmileopenday", component: EmailComponent },
   { path: "NewBundallProudSmile", component: BundallEmailComponent },
+  { path: "ThankYouBundall", component: ThankyouBundallComponent },
+  { path: "ThankYouPacific", component: ThankyouPacificComponent },
   { path: "Blog", component: BlogComponent },
   { path: "ContactPage", component: ContactPageComponent },
   { path: "ContactPage/:parameter", component: ContactPageComponent },

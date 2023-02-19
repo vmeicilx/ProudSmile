@@ -56,6 +56,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { MyImgDirective } from "src/services/image.directive";
 import { FacebookModule } from "ngx-facebook";
 import { SafePipe } from "src/services/SafePipe";
+import { ThankyouBundallComponent } from './pages/thankyou-bundall/thankyou-bundall.component';
+import { ThankyouPacificComponent } from './pages/thankyou-pacific/thankyou-pacific.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +101,9 @@ import { SafePipe } from "src/services/SafePipe";
     BlogComponent,
     BlogArticleComponent,
     MyImgDirective,
-    SafePipe
+    SafePipe,
+    ThankyouBundallComponent,
+    ThankyouPacificComponent
   ],
   imports: [
     BrowserModule,
